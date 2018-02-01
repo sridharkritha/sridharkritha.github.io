@@ -9,6 +9,9 @@ window.addEventListener('load', function() {
 5. 4 folds -> 100% + 100% + 100% + (90 - 95)%
 6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 
+Note: 
+1. EW cann't be folder in Win only
+
 */
 
     function myFunction() 
