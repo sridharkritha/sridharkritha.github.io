@@ -9,23 +9,17 @@
 <body>
 <!-- 1. INPUT -->
 <!-- Time of meeting -->
-Time: <input type="time" name="time"> <br>
-
+Time: <input type="time" id="timeId" name="time"> <br>
+<!-- total number of horse running -->
+Runners(#): <input type="number" id="nRunnersId"  class="nRunnersInputField"> <br>
 <!-- Horse Number -->
-Horse Number: <input type="number" id="horseId"  class="hNoInputField"> <br>
-<!-- All possible odds as buttons -->
+H Number: <input type="number" id="horseId"  class="hNoInputField"> <br>
 <!--
+Input Masking - odd: xx / xx
 https://stackoverflow.com/questions/12578507/how-to-implement-an-input-with-a-mask
-https://css-tricks.com/input-masking/
--->
-<!-- Odd: <input type="time" name="time"> <br> -->
-
-<!--
-  Input Masking
- date.match(/.*\/$/m) => any string ends with '/'
 -->
 Odd:
-<input type="text" name="date" placeholder="xx / xx" onkeyup="
+<input type="text" id="oddId" name="date" placeholder="xx / xx" onkeyup="
   var date = this.value; 
   if (window.event.keyCode == 8) {
     // Backspace
@@ -34,25 +28,27 @@ Odd:
   else if (date.match(/^\d{2}$/) !== null) {   
      this.value = date + '/';
   }" maxlength="5">
+  <br>
+
+<!-- % of win as slide bar -->
+Win(%): <input type="number" id="winPercentageId"  class="winPercentageInputField"> <br><br>
 
 <!-- 3 radio choice - win, ew, win/ew  -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="WIN_ONLY"> <span class = "btnProp">&nbsp; Win Only</span><br><br>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_PLACES"> <span class = "btnProp">&nbsp; 2 Places</span><br><br>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_PLACES"> <span class = "btnProp">&nbsp; 3 Places</span><br><br>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FOUR_PLACES"> <span class = "btnProp">&nbsp; 4 Places</span><br><br>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="WIN_ONLY"> <span class = "btnProp">&nbsp; Win Only</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_PLACES"> <span class = "btnProp">&nbsp; 2 Places</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_PLACES"> <span class = "btnProp">&nbsp; 3 Places</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FOUR_PLACES"> <span class = "btnProp">&nbsp; 4 Places</span>
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FIVE_PLACES"> <span class = "btnProp">&nbsp; 5 Places</span><br><br>
-<!-- % of win as slide bar -->
-Win(%): <input type="number" id="winPercentageId"  class="winPercentageInputField"> <br>
-<!-- total number of horse running -->
-#Runners: <input type="number" id="nRunnersId"  class="nRunnersInputField"> <br>
+
+
 
 <!-- 2. OUTPUT OPTIONS -->
 <!-- 2 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_FOLD"> <span class = "btnProp">&nbsp; 2 Fold</span><br><br>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_FOLD"> <span class = "btnProp">&nbsp; 2 Fold</span>
 <!-- 3 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_FOLD"> <span class = "btnProp">&nbsp; 3 Fold</span><br><br>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_FOLD"> <span class = "btnProp">&nbsp; 3 Fold</span>
 <!-- 4 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FOUR_FOLD"> <span class = "btnProp">&nbsp; 4 Fold</span><br><br>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FOUR_FOLD"> <span class = "btnProp">&nbsp; 4 Fold</span>
 <!-- 5 Fold -->
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FIVE_FOLD"> <span class = "btnProp">&nbsp; 5 Fold</span><br><br>
 
@@ -80,8 +76,10 @@ Win(%): <input type="number" id="winPercentageId"  class="winPercentageInputFiel
   <br> <br>
 
    <div id="displayElement"></div> -->
-         
-        
+   <button type="button" id="btnFoldId" > FOLD </button> 
+   <button type="button" id="btnPrevId" > PREV </button>
+   <button type="button" id="btnNextId" > NEXT </button>
+   
 
 </body>
 
