@@ -14,11 +14,56 @@ Note:
 
 */
 
-    function myFunction() 
-    { 
-        var name, age; 
-        name = document.getElementById("inputName").value;
-        age  = parseInt(document.getElementById("inputAge").value);
-        document.getElementById("displayElement").innerHTML = name +" " + age; 
-    }
-}) // window.addEventListener('load', function() {
+
+
+var raceData = [];
+document.getElementById('btnFoldId').onclick = function () { }
+document.getElementById('btnPrevId').onclick = function () 
+{ 
+    for (var key in raceData) {
+        if (raceData.hasOwnProperty(key)) {
+           var obj = raceData[key];
+           for (var prop in obj) {
+              if (obj.hasOwnProperty(prop)) {
+                 alert(prop + " = " + obj[prop]);
+              }
+           }
+        }
+     }
+
+}
+
+document.getElementById('btnNextId').onclick = function () { 
+
+    time = document.getElementById("timeId").value;
+    horseNo = document.getElementById("horseId").value;
+    odd = document.getElementById("oddId").value;
+    winPercentage = document.getElementById("winPercentageId").value;
+    nRunners = document.getElementById("nRunnersId").value;
+
+    raceData.push({time:time,horseNo:horseNo,odd:odd,winPercentage:winPercentage,nRunners:nRunners});
+
+    clear();
+}
+
+function clear()
+{
+    document.getElementById("timeId").value = '';
+    document.getElementById("horseId").value = '';
+    document.getElementById("oddId").value = '';
+    document.getElementById("winPercentageId").value = '';
+    document.getElementById("nRunnersId").value = '';
+}
+
+
+
+
+
+    // function myFunction() 
+    // { 
+    //     var name, age; 
+    //     name = document.getElementById("inputName").value;
+    //     age  = parseInt(document.getElementById("inputAge").value);
+    //     document.getElementById("displayElement").innerHTML = name +" " + age; 
+    // }
+}); // window.addEventListener('load', function() {
