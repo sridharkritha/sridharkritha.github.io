@@ -97,23 +97,28 @@ window.addEventListener('load', function ()
 			horse = document.getElementById("horseId").value;
 			odd = document.getElementById("oddId").value;
 			winPercentage = document.getElementById("winPercentageId").value;
-
 			if(time && nRunners && horse && odd && winPercentage)
 			{
-				++pageNoCurr;
-				pageNoTotal = pageNoCurr;
-
 				// DB: Race meeting 
 				raceData.push({
+					pageNo:pageNoCurr,
 					time: time,
 					horse: horse,
 					odd: odd,
 					winPercentage: winPercentage,
 					nRunners: nRunners
 				});
-
+				++pageNoCurr;
+				pageNoTotal = pageNoCurr;
 				clear();
 			}
+
+		}
+		else if (pageNoCurr === pageNoTotal - 1) 
+		{
+			// Last page reached
+			++pageNoCurr;
+			clear();
 		} 
 		else if (pageNoCurr < pageNoTotal) 
 		{
