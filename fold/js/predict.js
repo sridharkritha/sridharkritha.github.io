@@ -16,6 +16,29 @@ window.addEventListener('load', function ()
 	var pageNoCurr = 0; // current page number
 	var pageNoTotal = 0; // total page numbers
 	var prevPosition = 0;
+	
+	showValue = function (newValue, slide) 
+	{
+		document.getElementById(slide).innerHTML=newValue;
+	}
+
+	userRadioOption = function (radioOption) 
+    {
+		/*
+        userOption = radioOption.value;
+
+		WIN_ONLY
+		TWO_PLACES
+		THREE_PLACES
+		FOUR_PLACES 
+		FIVE_PLACES 
+        document.getElementById("digitFirst_mul").disabled = true;
+        document.getElementById("digitSecond_mul").disabled = true;
+        document.getElementById("digitFirst_add").disabled = true;
+		document.getElementById("digitSecond_add").disabled = true;
+		*/
+		
+	}
 
 	function clear() 
 	{
@@ -112,7 +135,6 @@ window.addEventListener('load', function ()
 				pageNoTotal = pageNoCurr;
 				clear();
 			}
-
 		}
 		else if (pageNoCurr === pageNoTotal - 1) 
 		{
