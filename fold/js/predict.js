@@ -16,13 +16,24 @@ window.addEventListener('load', function ()
 	var pageNoCurr = 0; // current page number
 	var pageNoTotal = 0; // total page numbers
 	var prevPosition = 0;
+	    // Enum - Win Type
+		var WIN_TYPE = {
+				WIN_ONLY		: 'WIN_ONLY',           
+				TWO_PLACES		: 'TWO_PLACES',	     
+				THREE_PLACES	: 'THREE_PLACES',     
+				FOUR_PLACES		: 'FOUR_PLACES',       
+				FIVE_PLACES		: 'FIVE_PLACES',
+				DEFAULT_PLACES	: 'DEFAULT_PLACES',       
+		};
+	
+	var winType = WIN_TYPE.DEFAULT_PLACES;
 	
 	showValue = function (newValue, slide) 
 	{
 		document.getElementById(slide).innerHTML=newValue;
 	}
 
-	userRadioOption = function (radioOption) 
+	winTypeRadioOption = function (radioOption) 
     {
 		/*
         userOption = radioOption.value;
