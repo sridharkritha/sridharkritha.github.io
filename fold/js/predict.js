@@ -16,39 +16,38 @@ window.addEventListener('load', function ()
 	var pageNoCurr = 0; // current page number
 	var pageNoTotal = 0; // total page numbers
 	var prevPosition = 0;
-	    // Enum - Win Type
-		var WIN_TYPE = {
-				WIN_ONLY		: 'WIN_ONLY',           
-				TWO_PLACES		: 'TWO_PLACES',	     
-				THREE_PLACES	: 'THREE_PLACES',     
-				FOUR_PLACES		: 'FOUR_PLACES',       
-				FIVE_PLACES		: 'FIVE_PLACES',
-				DEFAULT_PLACES	: 'DEFAULT_PLACES',       
-		};
-	
-	var winType = WIN_TYPE.DEFAULT_PLACES;
-	
-	showValue = function (newValue, slide) 
-	{
-		document.getElementById(slide).innerHTML=newValue;
-	}
+	// Enum - Win Type
+	var WIN_TYPE = {
+		WIN_ONLY		: 'WIN_ONLY',           
+		TWO_PLACES		: 'TWO_PLACES',	     
+		THREE_PLACES	: 'THREE_PLACES',     
+		FOUR_PLACES		: 'FOUR_PLACES',       
+		FIVE_PLACES		: 'FIVE_PLACES',       
+	};	
+	var winTypeData = WIN_TYPE.WIN_ONLY;
+
+	// Enum - Fold Type
+	var FOLD_TYPE = {
+		TWO_FOLD	 :'TWO_FOLD', 
+		THREE_FOLD	 :'THREE_FOLD',
+		FOUR_FOLD	 :'FOUR_FOLD',
+		FIVE_FOLD	 :'FIVE_FOLD',		
+	};
+	var foldTypeData = FOLD_TYPE.TWO_FOLD;
 
 	winTypeRadioOption = function (radioOption) 
     {
-		/*
-        userOption = radioOption.value;
+		winTypeData = radioOption.value;		
+	}
 
-		WIN_ONLY
-		TWO_PLACES
-		THREE_PLACES
-		FOUR_PLACES 
-		FIVE_PLACES 
-        document.getElementById("digitFirst_mul").disabled = true;
-        document.getElementById("digitSecond_mul").disabled = true;
-        document.getElementById("digitFirst_add").disabled = true;
-		document.getElementById("digitSecond_add").disabled = true;
-		*/
-		
+	foldTypeRadioOption = function (radioOption) 
+    {
+		foldTypeData = radioOption.value;		
+	}
+
+	showValue = function (newValue, slide) 
+	{
+		document.getElementById(slide).innerHTML=newValue;
 	}
 
 	function clear() 
@@ -58,6 +57,7 @@ window.addEventListener('load', function ()
 		document.getElementById("oddId").value = '';
 		document.getElementById("winPercentageId").value = '';
 		document.getElementById("nRunnersId").value = '';
+		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';		
 	}
 
 	function populateRaceCard(key) 
@@ -126,21 +126,29 @@ window.addEventListener('load', function ()
 	{
 		if (pageNoCurr === pageNoTotal) 
 		{
-			time = document.getElementById("timeId").value;
-			nRunners = document.getElementById("nRunnersId").value;
-			horse = document.getElementById("horseId").value;
-			odd = document.getElementById("oddId").value;
-			winPercentage = document.getElementById("winPercentageId").value;
-			if(time && nRunners && horse && odd && winPercentage)
+			timeData = document.getElementById("timeId").value;
+			nRunnersData = document.getElementById("nRunnersId").value;
+			horseData = document.getElementById("horseId").value;
+			winPercentageData = document.getElementById("winPercentageId").value;
+			oddData = document.getElementById("oddId").value;			
+			// oddNumerator = Number(oddData.slice(0,2));
+			// oddDenominator = Number(oddData.slice(3,5));
+			oddFraction = Number(oddData.slice(0,2)) / Number(oddData.slice(3,5));
+			if(timeData && nRunnersData && horseData && oddData && winPercentageData)
 			{
 				// DB: Race meeting 
 				raceData.push({
 					pageNo:pageNoCurr,
-					time: time,
-					horse: horse,
-					odd: odd,
-					winPercentage: winPercentage,
-					nRunners: nRunners
+					time: timeData,
+					horse: horseData,
+					odd: {
+						string: oddData,
+						fraction: oddFraction,
+					},					
+					winPercentage: winPercentageData,
+					nRunners: nRunnersData,
+					winType: winTypeData		
+					
 				});
 				++pageNoCurr;
 				pageNoTotal = pageNoCurr;
