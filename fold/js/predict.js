@@ -60,6 +60,97 @@ window.addEventListener('load', function ()
 		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';		
 	}
 
+	function dbCollection()
+	{
+		var winOnlyDB = [];
+		var allEachWayDB = [];
+		var twoWayDB = [];
+		var threeWayDB = [];
+		var fourWayDB = [];
+		var fiveWayDB = [];  
+		
+		var allWinPercentRankDB = [];
+
+		// Browse the object in ascending order / in the order creation 
+		for (var key in raceData) 
+		{
+			if (raceData.hasOwnProperty(key)) 
+			{
+				// Store as a array instead of object for doing sorting at later stage
+				allWinPercentRankDB.push([key, raceData[key]]);		
+			}
+		}
+
+		// Sort by decending order of win percentage [100% -> 0%]
+		allWinPercentRankDB.sort(function(a, b) 
+		{			
+			return Number(b[1].winPercentage) - Number(a[1].winPercentage);
+		});
+
+		for(var i = 0; i < allWinPercentRankDB.length; ++i)
+		{
+			switch(allWinPercentRankDB[i][1].winType)
+			{
+					case 'WIN_ONLY':
+						winOnlyDB.push(allWinPercentRankDB[i][1]);
+						break;    
+					case 'TWO_PLACES':
+						twoWayDB.push(allWinPercentRankDB[i][1]);
+						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						break;
+					case 'THREE_PLACES':
+						threeWayDB.push(allWinPercentRankDB[i][1]);
+						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						break;
+					case 'FOUR_PLACES':
+						fourWayDB.push(allWinPercentRankDB[i][1]);
+						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						break; 
+					case 'FIVE_PLACES':
+						fiveWayDB.push(allWinPercentRankDB[i][1]);
+						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						break;
+			}	
+		}
+
+		
+		/*
+		// Browse the object in ascending order / in the order creation 
+		for (var key in raceData) 
+		{
+			if (raceData.hasOwnProperty(key)) 
+			{
+				switch(raceData[key].winType)
+				{
+					case 'WIN_ONLY':
+						winOnlyDB.push(raceData[key]);
+						break;    
+					case 'TWO_PLACES':
+						twoWayDB.push(raceData[key]);
+						allEachWayDB.push(raceData[key]);
+						break;
+					case 'THREE_PLACES':
+						threeWayDB.push(raceData[key]);
+						allEachWayDB.push(raceData[key]);
+						break;
+					case 'FOUR_PLACES':
+						fourWayDB.push(raceData[key]);
+						allEachWayDB.push(raceData[key]);
+						break; 
+					case 'FIVE_PLACES':
+						fiveWayDB.push(raceData[key]);
+						allEachWayDB.push(raceData[key]);
+						break;
+				}	
+			}			
+		}
+
+		*/
+
+		var test;
+		test = 5;
+	}
+
 	function populateRaceCard(key) 
 	{
 		// Browse the object in Desending order
@@ -94,7 +185,10 @@ window.addEventListener('load', function ()
 		}
 	}
 
-	document.getElementById('btnFoldId').onclick = function () {};
+	document.getElementById('btnFoldId').onclick = function () 
+	{
+		dbCollection();
+	};
 
 	document.getElementById('btnPrevId').onclick = function () 
 	{
@@ -141,18 +235,17 @@ window.addEventListener('load', function ()
 					pageNo:pageNoCurr,
 					time: timeData,
 					horse: horseData,
-					odd: {
-						string: oddData,
-						fraction: oddFraction,
-					},					
 					winPercentage: winPercentageData,
 					nRunners: nRunnersData,
-					winType: winTypeData		
-					
+					winType: winTypeData,	
+					odd: {
+						string: oddData,
+						fraction: oddFraction, // Is not possible to use math function directly here ?
+					}					
 				});
 				++pageNoCurr;
 				pageNoTotal = pageNoCurr;
-				clear();
+				clear();				
 			}
 		}
 		else if (pageNoCurr === pageNoTotal - 1) 
