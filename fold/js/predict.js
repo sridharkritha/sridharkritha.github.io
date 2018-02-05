@@ -18,34 +18,34 @@ window.addEventListener('load', function ()
 	var prevPosition = 0;
 	// Enum - Win Type
 	var WIN_TYPE = {
-		WIN_ONLY		: 'WIN_ONLY',           
-		TWO_PLACES		: 'TWO_PLACES',	     
-		THREE_PLACES	: 'THREE_PLACES',     
-		FOUR_PLACES		: 'FOUR_PLACES',       
-		FIVE_PLACES		: 'FIVE_PLACES',       
+		WIN_ONLY		: 'WIN_ONLY',
+		TWO_PLACES		: 'TWO_PLACES',
+		THREE_PLACES	: 'THREE_PLACES',
+		FOUR_PLACES		: 'FOUR_PLACES',
+		FIVE_PLACES		: 'FIVE_PLACES',
 	};	
 	var winTypeData = WIN_TYPE.WIN_ONLY;
 
 	// Enum - Fold Type
 	var FOLD_TYPE = {
-		TWO_FOLD	 :'TWO_FOLD', 
+		TWO_FOLD	 :'TWO_FOLD',
 		THREE_FOLD	 :'THREE_FOLD',
 		FOUR_FOLD	 :'FOUR_FOLD',
-		FIVE_FOLD	 :'FIVE_FOLD',		
+		FIVE_FOLD	 :'FIVE_FOLD',
 	};
 	var foldTypeData = FOLD_TYPE.TWO_FOLD;
 
 	winTypeRadioOption = function (radioOption) 
-    {
-		winTypeData = radioOption.value;		
+	{
+		winTypeData = radioOption.value;
 	}
 
 	foldTypeRadioOption = function (radioOption) 
     {
-		foldTypeData = radioOption.value;		
+		foldTypeData = radioOption.value;
 	}
 
-	showValue = function (newValue, slide) 
+	showValue = function (newValue, slide)
 	{
 		document.getElementById(slide).innerHTML=newValue;
 	}
@@ -57,11 +57,12 @@ window.addEventListener('load', function ()
 		document.getElementById("oddId").value = '';
 		document.getElementById("winPercentageId").value = '';
 		document.getElementById("nRunnersId").value = '';
-		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';		
+		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
 	}
 
 	function dbCollection()
 	{
+		var allWinPercentRankDB = [];
 		var winOnlyDB = [];
 		var allEachWayDB = [];
 		var twoWayDB = [];
@@ -69,7 +70,14 @@ window.addEventListener('load', function ()
 		var fourWayDB = [];
 		var fiveWayDB = [];  
 		
-		var allWinPercentRankDB = [];
+		// Clean the array
+		allWinPercentRankDB.length = 0;
+		winOnlyDB.length = 0;
+		allEachWayDB.length = 0;
+		twoWayDB.length = 0;
+		threeWayDB.length = 0;
+		fourWayDB.length = 0;
+		fiveWayDB.length = 0; 
 
 		// Browse the object in ascending order / in the order creation 
 		for (var key in raceData) 
@@ -77,11 +85,11 @@ window.addEventListener('load', function ()
 			if (raceData.hasOwnProperty(key)) 
 			{
 				// Store as a array instead of object for doing sorting at later stage
-				allWinPercentRankDB.push([key, raceData[key]]);		
+				allWinPercentRankDB.push([key, raceData[key]]);
 			}
 		}
 
-		// Sort by decending order of win percentage [100% -> 0%]
+		// Sort by descending order of win percentage [100% -> 0%]
 		allWinPercentRankDB.sort(function(a, b) 
 		{			
 			return Number(b[1].winPercentage) - Number(a[1].winPercentage);
@@ -93,7 +101,7 @@ window.addEventListener('load', function ()
 			{
 					case 'WIN_ONLY':
 						winOnlyDB.push(allWinPercentRankDB[i][1]);
-						break;    
+						break;
 					case 'TWO_PLACES':
 						twoWayDB.push(allWinPercentRankDB[i][1]);
 						allEachWayDB.push(allWinPercentRankDB[i][1]);
@@ -110,45 +118,8 @@ window.addEventListener('load', function ()
 						fiveWayDB.push(allWinPercentRankDB[i][1]);
 						allEachWayDB.push(allWinPercentRankDB[i][1]);
 						break;
-			}	
+			}
 		}
-
-		
-		/*
-		// Browse the object in ascending order / in the order creation 
-		for (var key in raceData) 
-		{
-			if (raceData.hasOwnProperty(key)) 
-			{
-				switch(raceData[key].winType)
-				{
-					case 'WIN_ONLY':
-						winOnlyDB.push(raceData[key]);
-						break;    
-					case 'TWO_PLACES':
-						twoWayDB.push(raceData[key]);
-						allEachWayDB.push(raceData[key]);
-						break;
-					case 'THREE_PLACES':
-						threeWayDB.push(raceData[key]);
-						allEachWayDB.push(raceData[key]);
-						break;
-					case 'FOUR_PLACES':
-						fourWayDB.push(raceData[key]);
-						allEachWayDB.push(raceData[key]);
-						break; 
-					case 'FIVE_PLACES':
-						fiveWayDB.push(raceData[key]);
-						allEachWayDB.push(raceData[key]);
-						break;
-				}	
-			}			
-		}
-
-		*/
-
-		var test;
-		test = 5;
 	}
 
 	function populateRaceCard(key) 
@@ -241,11 +212,11 @@ window.addEventListener('load', function ()
 					odd: {
 						string: oddData,
 						fraction: oddFraction, // Is not possible to use math function directly here ?
-					}					
+					}
 				});
 				++pageNoCurr;
 				pageNoTotal = pageNoCurr;
-				clear();				
+				clear();
 			}
 		}
 		else if (pageNoCurr === pageNoTotal - 1) 
