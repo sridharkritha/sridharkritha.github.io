@@ -13,3 +13,8 @@
     background-color:orangered;
     /*transform: translate(-10px, 200px);     */
 }
+
+.lineBreakID {
+    display: block;
+    margin-top: 1.5%; /* line gap height*/
+}
