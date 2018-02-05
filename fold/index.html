@@ -7,6 +7,8 @@
 </head>
 
 <body>
+
+ <div id="divForm">
 <!-- 1. INPUT -->
 <!-- Time of meeting -->
 Time: <input type="time" id="timeId" name="time"> <br>
@@ -25,32 +27,32 @@ Odd:
     // Backspace
     // alert('Undo!') 
   }
-  else if (date.match(/^\d{2}$/) !== null) {   
+  else if (date.match(/^\d{2}$/) !== null) {
      this.value = date + '/';
   }" maxlength="5">
   <br>
 
 <!-- % of win as slide bar -->
-Win(%): <input type="number" id="winPercentageId"  class="winPercentageInputField"> <br><br>
+Win(%): 
+<!-- <input type="number" id="winPercentageId"  class="winPercentageInputField">  -->
+<input type='range' id="winPercentageId" min='0' max='100' value='50' step='1' onchange= 'showValue(this.value,"sliderID")'> <span id="sliderID" >50</span><br><br>	
 
-<!-- 3 radio choice - win, ew, win/ew  -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="WIN_ONLY"> <span class = "btnProp">&nbsp; Win Only</span>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_PLACES"> <span class = "btnProp">&nbsp; 2 Places</span>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_PLACES"> <span class = "btnProp">&nbsp; 3 Places</span>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FOUR_PLACES"> <span class = "btnProp">&nbsp; 4 Places</span>
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FIVE_PLACES"> <span class = "btnProp">&nbsp; 5 Places</span><br><br>
-
-
+<!-- 3 radio choice - win only, 2,3,4,5 places ew -->
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="WIN_ONLY"> <span class = "btnProp">&nbsp; Win Only</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="TWO_PLACES"> <span class = "btnProp">&nbsp; 2 Places</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="THREE_PLACES"> <span class = "btnProp">&nbsp; 3 Places</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="FOUR_PLACES"> <span class = "btnProp">&nbsp; 4 Places</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="FIVE_PLACES"> <span class = "btnProp">&nbsp; 5 Places</span><br><br>
 
 <!-- 2. OUTPUT OPTIONS -->
 <!-- 2 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_FOLD"> <span class = "btnProp">&nbsp; 2 Fold</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="TWO_FOLD"> <span class = "btnProp">&nbsp; 2 Fold</span>
 <!-- 3 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_FOLD"> <span class = "btnProp">&nbsp; 3 Fold</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="THREE_FOLD"> <span class = "btnProp">&nbsp; 3 Fold</span>
 <!-- 4 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FOUR_FOLD"> <span class = "btnProp">&nbsp; 4 Fold</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="FOUR_FOLD"> <span class = "btnProp">&nbsp; 4 Fold</span>
 <!-- 5 Fold -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="FIVE_FOLD"> <span class = "btnProp">&nbsp; 5 Fold</span><br><br>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="FIVE_FOLD"> <span class = "btnProp">&nbsp; 5 Fold</span><br><br>
 
 <!-- 3. FINAL OUTPUT -->
 <!-- Time of meeting -->
@@ -64,22 +66,16 @@ Win(%): <input type="number" id="winPercentageId"  class="winPercentageInputFiel
 <!-- Fold total outcome -->
 <span id = "foldTotalPayoutId"></span>
 
+<button type="button" id="btnFoldId" > FOLD </button> 
+<button type="button" id="btnPrevId" > PREV </button>
+<button type="button" id="btnNextId" > NEXT </button>
 
+</div>  <!-- end of divForm -->
 
-<!-- min="12:00" max="18:00" -->
-<!-- 
-  Name: <input type="text"   id="inputName" class="numPadSz"><br>
-  Age:  <input type="number" id="inputAge"  class="numPadSz"><br>
-  
-  <button type="button" onclick="myFunction()">Try it</button>
-
-  <br> <br>
-
-   <div id="displayElement"></div> -->
-   <button type="button" id="btnFoldId" > FOLD </button> 
-   <button type="button" id="btnPrevId" > PREV </button>
-   <button type="button" id="btnNextId" > NEXT </button>
-   
+<div id="divSettings">
+<span id="predictDataId"></span>
+<button type="button" id="btnCloseId" > CLOSE </button>
+</div> <!-- end of DivSettings -->
 
 </body>
 

@@ -16,6 +16,50 @@ window.addEventListener('load', function ()
 	var pageNoCurr = 0; // current page number
 	var pageNoTotal = 0; // total page numbers
 	var prevPosition = 0;
+	// DB Collections
+	var allOddRankDB = [];
+	var allWinPercentRankDB = [];
+	var allEachWayPercentRankDB = [];
+
+	var winOnlyPercentRankDB = [];
+	var twoWayPercentRankDB = [];
+	var threeWayPercentRankDB = [];
+	var fourWayPercentRankDB = [];
+	var fiveWayPercentRankDB = [];
+
+	// Enum - Win Type
+	var WIN_TYPE = {
+		WIN_ONLY		: 'WIN_ONLY',
+		TWO_PLACES		: 'TWO_PLACES',
+		THREE_PLACES	: 'THREE_PLACES',
+		FOUR_PLACES		: 'FOUR_PLACES',
+		FIVE_PLACES		: 'FIVE_PLACES',
+	};	
+	var winTypeData = WIN_TYPE.WIN_ONLY;
+
+	// Enum - Fold Type
+	var FOLD_TYPE = {
+		TWO_FOLD	 :'TWO_FOLD',
+		THREE_FOLD	 :'THREE_FOLD',
+		FOUR_FOLD	 :'FOUR_FOLD',
+		FIVE_FOLD	 :'FIVE_FOLD',
+	};
+	var foldTypeData = FOLD_TYPE.TWO_FOLD;
+
+	winTypeRadioOption = function (radioOption) 
+	{
+		winTypeData = radioOption.value;
+	}
+
+	foldTypeRadioOption = function (radioOption) 
+    {
+		foldTypeData = radioOption.value;
+	}
+
+	showValue = function (newValue, slide)
+	{
+		document.getElementById(slide).innerHTML=newValue;
+	}
 
 	function clear() 
 	{
@@ -24,6 +68,69 @@ window.addEventListener('load', function ()
 		document.getElementById("oddId").value = '';
 		document.getElementById("winPercentageId").value = '';
 		document.getElementById("nRunnersId").value = '';
+		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
+	}
+
+	function dbCollection()
+	{
+		// Clean the array
+		allWinPercentRankDB.length = 0;
+		allOddRankDB.length = 0;
+		winOnlyPercentRankDB.length = 0;
+		allEachWayPercentRankDB.length = 0;
+		twoWayPercentRankDB.length = 0;
+		threeWayPercentRankDB.length = 0;
+		fourWayPercentRankDB.length = 0;
+		fiveWayPercentRankDB.length = 0; 
+
+		// Browse the object in ascending order / in the order creation 
+		for (var key in raceData) 
+		{
+			if (raceData.hasOwnProperty(key)) 
+			{
+				// Store as a array instead of object for doing sorting at the later stage
+				allWinPercentRankDB.push([key, raceData[key]]);
+				allOddRankDB.push([key, raceData[key]]);
+			}
+		}
+
+		// Sort by ascending order of odd value [ex: 10/11  -> 15/2 ]
+		allOddRankDB.sort(function(a, b) 
+		{			
+			return Number(a[1].odd.fraction) - Number(b[1].odd.fraction);
+		});
+
+		// Sort by descending order of win percentage [100% -> 0%]
+		allWinPercentRankDB.sort(function(a, b) 
+		{			
+			return Number(b[1].winPercentage) - Number(a[1].winPercentage);
+		});
+
+		for(var i = 0; i < allWinPercentRankDB.length; ++i)
+		{
+			switch(allWinPercentRankDB[i][1].winType)
+			{
+					case 'WIN_ONLY':
+						winOnlyPercentRankDB.push(allWinPercentRankDB[i][1]);
+						break;
+					case 'TWO_PLACES':
+						twoWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						break;
+					case 'THREE_PLACES':
+						threeWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						break;
+					case 'FOUR_PLACES':
+						fourWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						break; 
+					case 'FIVE_PLACES':
+						fiveWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						break;
+			}
+		}
 	}
 
 	function populateRaceCard(key) 
@@ -60,7 +167,34 @@ window.addEventListener('load', function ()
 		}
 	}
 
-	document.getElementById('btnFoldId').onclick = function () {};
+	function printPrediction()
+	{
+		for(var i = 0; i < allWinPercentRankDB.length; ++i)
+		{
+			document.getElementById("predictDataId").innerHTML = allWinPercentRankDB[i][1].time + '	' + allWinPercentRankDB[i][1].winPercentage + '	' + allWinPercentRankDB[i][1].odd.string + '<br />';
+		}
+	}
+
+	document.getElementById('btnFoldId').onclick = function () 
+	{
+		dbCollection();
+		printPrediction();
+
+		var divForm = document.getElementById('divForm');
+		var divSettings = document.getElementById('divSettings');
+
+		divForm.style.display = 'none';
+		divSettings.style.display = 'block';
+	};
+
+	document.getElementById('btnCloseId').onclick = function () 
+	{
+		var divForm = document.getElementById('divForm');
+		var divSettings = document.getElementById('divSettings');
+
+		divForm.style.display = 'block';
+		divSettings.style.display = 'none';
+	};
 
 	document.getElementById('btnPrevId').onclick = function () 
 	{
@@ -92,27 +226,33 @@ window.addEventListener('load', function ()
 	{
 		if (pageNoCurr === pageNoTotal) 
 		{
-			time = document.getElementById("timeId").value;
-			nRunners = document.getElementById("nRunnersId").value;
-			horse = document.getElementById("horseId").value;
-			odd = document.getElementById("oddId").value;
-			winPercentage = document.getElementById("winPercentageId").value;
-			if(time && nRunners && horse && odd && winPercentage)
+			timeData = document.getElementById("timeId").value;
+			nRunnersData = document.getElementById("nRunnersId").value;
+			horseData = document.getElementById("horseId").value;
+			winPercentageData = document.getElementById("winPercentageId").value;
+			oddData = document.getElementById("oddId").value;			
+			// oddNumerator = Number(oddData.slice(0,2));
+			// oddDenominator = Number(oddData.slice(3,5));
+			oddFraction = Number(oddData.slice(0,2)) / Number(oddData.slice(3,5));
+			if(timeData && nRunnersData && horseData && oddData && winPercentageData)
 			{
 				// DB: Race meeting 
 				raceData.push({
 					pageNo:pageNoCurr,
-					time: time,
-					horse: horse,
-					odd: odd,
-					winPercentage: winPercentage,
-					nRunners: nRunners
+					time: timeData,
+					horse: horseData,
+					winPercentage: winPercentageData,
+					nRunners: nRunnersData,
+					winType: winTypeData,	
+					odd: {
+						string: oddData,
+						fraction: oddFraction, // Is not possible to use math function directly here ?
+					}
 				});
 				++pageNoCurr;
 				pageNoTotal = pageNoCurr;
 				clear();
 			}
-
 		}
 		else if (pageNoCurr === pageNoTotal - 1) 
 		{
