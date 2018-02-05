@@ -1,0 +1,15 @@
+#divForm {
+    display: 'block';
+    z-index: 0;
+    /* border: solid 1px blue;
+    background-color:orangered; */
+
+}
+
+#divSettings {
+    display: none;
+    z-index: 10;
+    border: solid 1px blue;
+    background-color:orangered;
+    /*transform: translate(-10px, 200px);     */
+}

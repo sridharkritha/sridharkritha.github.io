@@ -16,6 +16,17 @@ window.addEventListener('load', function ()
 	var pageNoCurr = 0; // current page number
 	var pageNoTotal = 0; // total page numbers
 	var prevPosition = 0;
+	// DB Collections
+	var allOddRankDB = [];
+	var allWinPercentRankDB = [];
+	var allEachWayPercentRankDB = [];
+
+	var winOnlyPercentRankDB = [];
+	var twoWayPercentRankDB = [];
+	var threeWayPercentRankDB = [];
+	var fourWayPercentRankDB = [];
+	var fiveWayPercentRankDB = [];
+
 	// Enum - Win Type
 	var WIN_TYPE = {
 		WIN_ONLY		: 'WIN_ONLY',
@@ -62,16 +73,6 @@ window.addEventListener('load', function ()
 
 	function dbCollection()
 	{
-		var allOddRankDB = [];
-		var allWinPercentRankDB = [];
-		var allEachWayPercentRankDB = [];
-
-		var winOnlyPercentRankDB = [];
-		var twoWayPercentRankDB = [];
-		var threeWayPercentRankDB = [];
-		var fourWayPercentRankDB = [];
-		var fiveWayPercentRankDB = [];
-		
 		// Clean the array
 		allWinPercentRankDB.length = 0;
 		allOddRankDB.length = 0;
@@ -166,9 +167,33 @@ window.addEventListener('load', function ()
 		}
 	}
 
+	function printPrediction()
+	{
+		for(var i = 0; i < allWinPercentRankDB.length; ++i)
+		{
+			document.getElementById("predictDataId").innerHTML = allWinPercentRankDB[i][1].time + '	' + allWinPercentRankDB[i][1].winPercentage + '	' + allWinPercentRankDB[i][1].odd.string + '<br />';
+		}
+	}
+
 	document.getElementById('btnFoldId').onclick = function () 
 	{
 		dbCollection();
+		printPrediction();
+
+		var divForm = document.getElementById('divForm');
+		var divSettings = document.getElementById('divSettings');
+
+		divForm.style.display = 'none';
+		divSettings.style.display = 'block';
+	};
+
+	document.getElementById('btnCloseId').onclick = function () 
+	{
+		var divForm = document.getElementById('divForm');
+		var divSettings = document.getElementById('divSettings');
+
+		divForm.style.display = 'block';
+		divSettings.style.display = 'none';
 	};
 
 	document.getElementById('btnPrevId').onclick = function () 
