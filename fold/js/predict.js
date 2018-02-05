@@ -5,11 +5,11 @@ window.addEventListener('load', function ()
 	2. Grouping one half 100% winners and another half 90% winners
 	3. 2 folds -> 100% + (90 - 95)%
 	4. 3 folds -> 100% + 100% + (90 - 95)%
-	5. 4 folds -> 100% + 100% + 100% + (90 - 95)%
+	5. 4 folds -> 100% + 100% + (90 - 95)% + (90 - 95)%
 	6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 
 	Note: 
-	1. EW can't be folder in Win only
+	1. EW can't be fold into Win only
 	*/
 
 	var raceData = [];
@@ -20,20 +20,19 @@ window.addEventListener('load', function ()
 	var allOddRankDB = [];
 	var allWinPercentRankDB = [];
 	var allEachWayPercentRankDB = [];
+	var allTimeRankDB = [];
 
 	var winOnlyPercentRankDB = [];
 	var twoWayPercentRankDB = [];
 	var threeWayPercentRankDB = [];
-	var fourWayPercentRankDB = [];
-	var fiveWayPercentRankDB = [];
+	var fourWayPercentRankDB = [];	
 
 	// Enum - Win Type
 	var WIN_TYPE = {
 		WIN_ONLY		: 'WIN_ONLY',
 		TWO_PLACES		: 'TWO_PLACES',
 		THREE_PLACES	: 'THREE_PLACES',
-		FOUR_PLACES		: 'FOUR_PLACES',
-		FIVE_PLACES		: 'FIVE_PLACES',
+		MORE_PLACES		: 'MORE_PLACES',
 	};	
 	var winTypeData = WIN_TYPE.WIN_ONLY;
 
@@ -76,12 +75,12 @@ window.addEventListener('load', function ()
 		// Clean the array
 		allWinPercentRankDB.length = 0;
 		allOddRankDB.length = 0;
-		winOnlyPercentRankDB.length = 0;
 		allEachWayPercentRankDB.length = 0;
+		allTimeRankDB.length = 0;
+		winOnlyPercentRankDB.length = 0;		
 		twoWayPercentRankDB.length = 0;
 		threeWayPercentRankDB.length = 0;
-		fourWayPercentRankDB.length = 0;
-		fiveWayPercentRankDB.length = 0; 
+		fourWayPercentRankDB.length = 0;		
 
 		// Browse the object in ascending order / in the order creation 
 		for (var key in raceData) 
@@ -91,6 +90,8 @@ window.addEventListener('load', function ()
 				// Store as a array instead of object for doing sorting at the later stage
 				allWinPercentRankDB.push([key, raceData[key]]);
 				allOddRankDB.push([key, raceData[key]]);
+				allTimeRankDB.push([key, raceData[key]]);
+				
 			}
 		}
 
@@ -104,6 +105,28 @@ window.addEventListener('load', function ()
 		allWinPercentRankDB.sort(function(a, b) 
 		{			
 			return Number(b[1].winPercentage) - Number(a[1].winPercentage);
+		});
+
+		// Sort by ascending order of odd value [ex: 9.30, 10.25, 11.57 ]
+		allTimeRankDB.sort(function(a, b) 
+		{
+			var hrA = Number(a[1].time.slice(0,2));
+			var minA = Number(a[1].time.slice(3,5));
+			var hrB = Number(b[1].time.slice(0,2)); 
+			var minB = Number(b[1].time.slice(3,5));
+
+			if(hrA === hrB)
+			{
+				return minA < minB ? false :  true;			
+			}
+			else if(hrA < hrB)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
 		});
 
 		for(var i = 0; i < allWinPercentRankDB.length; ++i)
@@ -121,14 +144,10 @@ window.addEventListener('load', function ()
 						threeWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break;
-					case 'FOUR_PLACES':
+					case 'MORE_PLACES':
 						fourWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break; 
-					case 'FIVE_PLACES':
-						fiveWayPercentRankDB.push(allWinPercentRankDB[i][1]);
-						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
-						break;
 			}
 		}
 	}
@@ -169,9 +188,13 @@ window.addEventListener('load', function ()
 
 	function printPrediction()
 	{
+		document.getElementById("predictDataId").innerHTML = '';
+
 		for(var i = 0; i < allWinPercentRankDB.length; ++i)
 		{
-			document.getElementById("predictDataId").innerHTML = allWinPercentRankDB[i][1].time + '	' + allWinPercentRankDB[i][1].winPercentage + '	' + allWinPercentRankDB[i][1].odd.string + '<br />';
+			document.getElementById("predictDataId").innerHTML += allWinPercentRankDB[i][1].time + '	' 
+			+ allWinPercentRankDB[i][1].winPercentage + '	' 
+				+ allWinPercentRankDB[i][1].odd.string + '<br />';
 		}
 	}
 
@@ -234,7 +257,9 @@ window.addEventListener('load', function ()
 			// oddNumerator = Number(oddData.slice(0,2));
 			// oddDenominator = Number(oddData.slice(3,5));
 			oddFraction = Number(oddData.slice(0,2)) / Number(oddData.slice(3,5));
-			if(timeData && nRunnersData && horseData && oddData && winPercentageData)
+
+			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
+			if(1)
 			{
 				// DB: Race meeting 
 				raceData.push({
