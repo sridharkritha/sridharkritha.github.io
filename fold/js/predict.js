@@ -62,32 +62,42 @@ window.addEventListener('load', function ()
 
 	function dbCollection()
 	{
+		var allOddRankDB = [];
 		var allWinPercentRankDB = [];
-		var winOnlyDB = [];
-		var allEachWayDB = [];
-		var twoWayDB = [];
-		var threeWayDB = [];
-		var fourWayDB = [];
-		var fiveWayDB = [];  
+		var allEachWayPercentRankDB = [];
+
+		var winOnlyPercentRankDB = [];
+		var twoWayPercentRankDB = [];
+		var threeWayPercentRankDB = [];
+		var fourWayPercentRankDB = [];
+		var fiveWayPercentRankDB = [];
 		
 		// Clean the array
 		allWinPercentRankDB.length = 0;
-		winOnlyDB.length = 0;
-		allEachWayDB.length = 0;
-		twoWayDB.length = 0;
-		threeWayDB.length = 0;
-		fourWayDB.length = 0;
-		fiveWayDB.length = 0; 
+		allOddRankDB.length = 0;
+		winOnlyPercentRankDB.length = 0;
+		allEachWayPercentRankDB.length = 0;
+		twoWayPercentRankDB.length = 0;
+		threeWayPercentRankDB.length = 0;
+		fourWayPercentRankDB.length = 0;
+		fiveWayPercentRankDB.length = 0; 
 
 		// Browse the object in ascending order / in the order creation 
 		for (var key in raceData) 
 		{
 			if (raceData.hasOwnProperty(key)) 
 			{
-				// Store as a array instead of object for doing sorting at later stage
+				// Store as a array instead of object for doing sorting at the later stage
 				allWinPercentRankDB.push([key, raceData[key]]);
+				allOddRankDB.push([key, raceData[key]]);
 			}
 		}
+
+		// Sort by ascending order of odd value [ex: 10/11  -> 15/2 ]
+		allOddRankDB.sort(function(a, b) 
+		{			
+			return Number(a[1].odd.fraction) - Number(b[1].odd.fraction);
+		});
 
 		// Sort by descending order of win percentage [100% -> 0%]
 		allWinPercentRankDB.sort(function(a, b) 
@@ -100,23 +110,23 @@ window.addEventListener('load', function ()
 			switch(allWinPercentRankDB[i][1].winType)
 			{
 					case 'WIN_ONLY':
-						winOnlyDB.push(allWinPercentRankDB[i][1]);
+						winOnlyPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break;
 					case 'TWO_PLACES':
-						twoWayDB.push(allWinPercentRankDB[i][1]);
-						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						twoWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break;
 					case 'THREE_PLACES':
-						threeWayDB.push(allWinPercentRankDB[i][1]);
-						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						threeWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break;
 					case 'FOUR_PLACES':
-						fourWayDB.push(allWinPercentRankDB[i][1]);
-						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						fourWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break; 
 					case 'FIVE_PLACES':
-						fiveWayDB.push(allWinPercentRankDB[i][1]);
-						allEachWayDB.push(allWinPercentRankDB[i][1]);
+						fiveWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
 						break;
 			}
 		}
