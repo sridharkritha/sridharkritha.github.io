@@ -1,0 +1,36 @@
+body {
+ font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ padding: 100px;
+ /*background: pink;*/
+}
+
+table {
+/* basic */ 
+ /* background-color: #fff; */
+ margin: 0 auto;
+ width: 200px;
+ padding: 100px;
+ text-align: center;
+/* border-radius */
+ border-radius: 20px;
+/* box-shadow */
+ box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+ border-collapse: collapse;
+}
+
+table td{
+  color: white;
+}
+
+td.one{
+    border-radius: 20px 0 0 0;
+    background-color: black;
+}
+td.two{
+    border-radius: 0 20px 0 0;
+    background-color: darkgreen;
+}
+td.three{
+    border-radius: 0 0 20px 20px;
+    background-color: darkred;
+}

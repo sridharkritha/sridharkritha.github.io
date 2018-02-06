@@ -1,0 +1,15 @@
+ul {
+    list-style-type: square;
+}
+ul > li {
+    color: white;  /* white bullet box*/
+}
+ul > li > span {
+    color: white; /*white text color*/
+}
+
+p.aboutfont {
+    font-style: normal;
+    text-align:justify;
+	font-family:Georgia;
+}
