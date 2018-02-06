@@ -1,0 +1,124 @@
+iPage DB Hosting:
+*****************
+1. DB Creation:
+---------------
+Database Name: contact
+ 
+2. Table Creation (Contact Us):
+------------------
+Table Name: customer
+Fields: sno, date, author, email, subject, text
+
+CREATE TABLE customer(sno INT NOT NULL AUTO_INCREMENT,PRIMARY KEY(sno),date datetime NOT NULL,author VARCHAR(32), email VARCHAR(32), subject VARCHAR(255), text TEXT);
+
+3. PHP Agent: (contactUploder.php)
+----------------------------------
+<? ob_start(); ?>
+<?php
+// Inserting data with variable from HTML form - input.php
+
+//database connection - localhost,root,password
+$con = mysql_connect("sridharkritha.ipagemysql.com", "sridharkritha", "22441844");
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db("contact"); // db name
+
+$order="INSERT INTO customer (date, author, email, subject, text)
+VALUES
+(NOW(),'$_POST[author]','$_POST[email]','$_POST[subject]','$_POST[text]')";
+
+//declare in the order variable
+$result = mysql_query($order);	//order executes
+if($result)
+{
+	echo("<br>Input data is succeed");
+} 
+else
+{
+	echo("<br>Input data is fail");
+        die('Error: ' . mysql_error());
+}
+
+mysql_close($con);
+header("Location: contact.php"); // going back to html form from php
+?>
+<? ob_flush(); ?>
+
+
+
+4. Table Creation (Employee Login):
+------------------
+Table Name: emplogin
+Fields: sno, date, email, subject
+
+CREATE TABLE emplogin(sno INT NOT NULL AUTO_INCREMENT,PRIMARY KEY(sno),date datetime NOT NULL,email VARCHAR(32), subject VARCHAR(255));
+
+5. PHP Agent: (eLoginChecker.php)
+----------------------------------
+
+<? ob_start(); ?>
+<?php
+// Inserting data with variable from HTML form - input.php
+
+//database connection - localhost,root,password
+$con = mysql_connect("sridharkritha.ipagemysql.com", "sridharkritha", "22441844");
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db("contact"); // db name
+
+$order="INSERT INTO emplogin (date, email, subject)
+VALUES
+(NOW(),'$_POST[email]','$_POST[subject]')";
+
+//declare in the order variable
+$result = mysql_query($order);	//order executes
+if($result)
+{
+	echo("<br>Input data is succeed");
+} 
+else
+{
+	echo("<br>Input data is fail");
+        die('Error: ' . mysql_error());
+}
+
+mysql_close($con);
+header("Location: employee_login.php"); // going back to html form from php
+?>
+<? ob_flush(); ?>
+
+
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Free DB Hosting:
+----------------
+
+
+
+
+
+CREATE TABLE Customer(SNo INT NOT NULL AUTO_INCREMENT,PRIMARY KEY(SNo),Name VARCHAR(32), Email VARCHAR(32), Subject VARCHAR(255), Message TEXT);
+
+
+INSERT INTO Customer VALUES(1, 'Muthu', 'kritharaman@gmail.com', 'Purchase Order', 'Hello Sir, Need 5000 Bombay Hooks Immediately. Thanks, Muthu.'); 
+
+
+    krithagroups_99k_contactus  - db
+ 
+    778263_sridhar@localhost.
+
+
+
+
+
+
+date, author, email, subject, text
+
+

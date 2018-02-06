@@ -1,0 +1,107 @@
+// js
+
+
+
+$(document).ready(function(){
+    $('.editbtn').click(function(e){
+        $(this).html($(this).html() == 'edit' ? 'modify' : 'edit');
+        
+        e.preventDefault();
+    $(this).closest("tr").nextUntil(".favRow").toggleClass("open");
+    });
+});
+
+
+// css
+
+tbody tr {
+    display : none; /* hide the table row */
+}
+
+tr.favRow {
+    display : table-row; /* show the table row */
+}
+
+
+tr.open {
+    display : table-row; /* show the table row */
+}
+
+
+
+// html
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Destination</th>
+        <th>Updated on</th>
+    </tr>
+    </thead>
+    <tbody>
+     <tr class="favRow">
+        <td>sridhar</td>
+        <td>1</td>
+        <td>City 1</td>
+        <td>22/10</td>
+    </tr>
+   <tr class="favRow">
+        <td>muthu</td>
+        <td>2</td>
+        <td>City 1</td>
+        <td>22/10</td>
+    </tr>
+    <tr class="favRow">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button class="editbtn">edit</button></td>
+    </tr>
+    
+    <tr>
+        <td></td>
+        <td>3</td>
+        <td>City 1</td>
+        <td>22/10</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>4</td>
+        <td>City 2</td>
+        <td>22/10</td>
+    </tr>
+      <tr class="favRow">
+        <td>kavitha</td>
+        <td>5</td>
+        <td>City 1</td>
+        <td>22/10</td>
+    </tr>
+    <tr class="favRow">
+        <td>monica</td>
+        <td>6</td>
+        <td>City 1</td>
+        <td>22/10</td>
+    </tr>
+    <tr class="favRow">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><button class="editbtn">edit</button></td>
+    </tr>
+  
+    <tr>
+        <td></td>
+        <td>7</td>
+        <td>City 1</td>
+        <td>22/10</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>8</td>
+        <td>City 2</td>
+        <td>22/10</td>
+    </tr>
+    </tbody>
+</table>
