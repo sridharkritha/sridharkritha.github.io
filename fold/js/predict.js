@@ -152,13 +152,13 @@ window.addEventListener('load', function ()
 		}
 	}
 
-	function populateRaceCard(key) 
+	function populateRaceCard(pageNumber) 
 	{
 		// Browse the object in Desending order
-		// for(var key = raceData.length - 1; key >= 0; --key)
-		if (raceData.hasOwnProperty(key)) 
+		// for(var pageNumber = raceData.length - 1; pageNumber >= 0; --pageNumber)
+		if (raceData.hasOwnProperty(pageNumber)) 
 		{
-			var obj = raceData[key];
+			var obj = raceData[pageNumber];
 			for (var prop in obj) {
 				if (obj.hasOwnProperty(prop)) 
 				{
@@ -184,6 +184,51 @@ window.addEventListener('load', function ()
 				}
 			}
 		}
+	}
+
+	function checkForEditAndUpdate(pageNumber)
+	{
+		if (raceData.hasOwnProperty(pageNumber)) 
+		{
+			var obj = raceData[pageNumber];
+			for (var prop in obj) 
+			{
+				if (obj.hasOwnProperty(prop)) 
+				{
+					// alert(prop + " = " + obj[prop]);
+					switch (prop) 
+					{
+						case "time":
+							document.getElementById("timeId").value = obj[prop];
+							break;
+						case "nRunners":
+							document.getElementById("nRunnersId").value = obj[prop];
+							break;
+						case "horse":
+							document.getElementById("horseId").value = obj[prop];
+							break;
+						case "odd":
+							document.getElementById("oddId").value = obj[prop];
+							break;
+						case "winPercentage":
+							document.getElementById("winPercentageId").value = obj[prop];
+							break;
+					}
+				}
+			}
+		}
+	}
+
+	function fetchFormValues() 
+	{
+		timeData = document.getElementById("timeId").value;
+		nRunnersData = document.getElementById("nRunnersId").value;
+		horseData = document.getElementById("horseId").value;
+		winPercentageData = document.getElementById("winPercentageId").value;
+		oddData = document.getElementById("oddId").value;
+		// oddNumerator = Number(oddData.slice(0,2));
+		// oddDenominator = Number(oddData.slice(3,5));
+		oddFraction = Number(oddData.slice(0, 2)) / Number(oddData.slice(3, 5));
 	}
 
 	function printPrediction()
@@ -234,29 +279,24 @@ window.addEventListener('load', function ()
 		}
 		}
 		*/
-		var key = 0;
+		var pageNumber = 0;
 
 		if (pageNoCurr) 
 		{
 			--pageNoCurr;
-			key = pageNoCurr;
+			pageNumber = pageNoCurr;
 		}
 
-		populateRaceCard(key);
+		populateRaceCard(pageNumber);
 	};
 
 	document.getElementById('btnNextId').onclick = function () 
 	{
 		if (pageNoCurr === pageNoTotal) 
 		{
-			timeData = document.getElementById("timeId").value;
-			nRunnersData = document.getElementById("nRunnersId").value;
-			horseData = document.getElementById("horseId").value;
-			winPercentageData = document.getElementById("winPercentageId").value;
-			oddData = document.getElementById("oddId").value;			
-			// oddNumerator = Number(oddData.slice(0,2));
-			// oddDenominator = Number(oddData.slice(3,5));
-			oddFraction = Number(oddData.slice(0,2)) / Number(oddData.slice(3,5));
+			fetchFormValues();
+
+			// checkForEditAndUpdate(pageNoCurr);
 
 			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
 			if(1)
@@ -291,4 +331,14 @@ window.addEventListener('load', function ()
 			populateRaceCard(pageNoCurr);
 		}
 	};
+
+	// Move the focus to next field when an enter key (#13) has been pressed (behave just like a tab key)
+	document.addEventListener('keydown', function (event) {
+		if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
+		  var form = event.target.form;
+		  var index = Array.prototype.indexOf.call(form, event.target);
+		  form.elements[index + 1].focus();
+		  event.preventDefault();
+		}
+	  });
 }); // window.addEventListener('load', function() {
