@@ -82,7 +82,7 @@ window.addEventListener('load', function ()
 
 	  while(loop)
 	  {
-		nFold = loop - 1; 
+		nFold = loop = loop - 1; 
 
 		var a = null, b = null, c = null, d = null;
 
@@ -93,7 +93,7 @@ window.addEventListener('load', function ()
 			c = winOnly[2][winOnly[0].length - 1];
 			d = winOnly[3][winOnly[0].length - 1];
 
-			while(a&&b&&c)
+			while(a&&b&&c&&d)
 			{
 				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
 																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
@@ -141,7 +141,7 @@ window.addEventListener('load', function ()
 			while(a&&b)
 			{
 				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
-																	b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
+																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
 																	'---------------------------------'+ '<br />';
 
 				winOnly[0].pop();
