@@ -9,6 +9,7 @@
 <body>
 
  <div id="divForm">
+<form METHOD="POST">
 <!-- 1. INPUT -->
 <!-- Time of meeting -->
 Time: <input type="time" id="timeId" name="time">
@@ -38,7 +39,7 @@ Odd:
 <!-- % of win as slide bar -->
 Win(%): 
 <!-- <input type="number" id="winPercentageId"  class="winPercentageInputField">  -->
-<input type='range' id="winPercentageId" min='0' max='100' value='50' step='1' onchange= 'showValue(this.value,"sliderID")'> <span id="sliderID" >50</span>
+<input type='range' id="winPercentageId" min='0' max='100' value='50' step='1' onchange= 'showValue(this.value,"sliderID")' oninput = 'showValue(this.value,"sliderID")'> <span id="sliderID" >50</span>
 <span class="lineBreakID" ></span>
 <!-- 3 radio choice - win only, 2,3,4,5 places ew -->
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="WIN_ONLY"> <span class = "btnProp">&nbsp; Win Only</span>
@@ -72,6 +73,7 @@ Win(%):
 <button type="button" id="btnPrevId" > PREV </button>
 <button type="button" id="btnNextId" > NEXT </button>
 
+</form>
 </div>  <!-- end of divForm -->
 
 <div id="divSettings">

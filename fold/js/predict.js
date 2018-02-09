@@ -18,14 +18,28 @@ window.addEventListener('load', function ()
 	var prevPosition = 0;
 	// DB Collections
 	var allOddRankDB = [];
-	var allWinPercentRankDB = [];
+	var allWinEachWayPercentRankDB = [];
 	var allEachWayPercentRankDB = [];
 	var allTimeRankDB = [];
 
-	var winOnlyPercentRankDB = [];
+	var allWinOnlyPercentRankDB = [];
 	var twoWayPercentRankDB = [];
 	var threeWayPercentRankDB = [];
-	var fourWayPercentRankDB = [];	
+	var fourWayPercentRankDB = [];
+
+	////////////////////////////////////////////////////////////
+	var winOnlyClass_100_100 = []; // Class 1 - XXXXXX
+	var winOnlyClass_95_99   = []; // Class 2 - Fold 2
+	var winOnlyClass_90_94   = []; // Class 3 - Fold 3
+	var winOnlyClass_85_89   = []; // Class 4 - Fold 4
+	var winOnlyClass_80_84   = []; // Class 5 - Fold 5
+	////////////////////////////////////////////////////
+	var winOnlyClass_75_79   = []; // Class 6
+	var winOnlyClass_70_74   = []; // Class 7
+	var winOnlyClass_0_69    = []; // Class 8
+	////////////////////////////////////////////////////////////
+	
+	var selectedList = [];
 
 	// Enum - Win Type
 	var WIN_TYPE = {
@@ -70,17 +84,95 @@ window.addEventListener('load', function ()
 		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
 	}
 
+	//2 folds -> 100% + (90 - 95)%
+	function winOnlyTwoFold()
+	{
+		selectedList
+
+		for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
+		{
+			// document.getElementById("predictDataId").innerHTML += allWinEachWayPercentRankDB[i][1].time + '	' 
+			// + allWinEachWayPercentRankDB[i][1].winPercentage + '	' 
+			// 	+ allWinEachWayPercentRankDB[i][1].odd.string + '<br />';
+			document.getElementById("predictDataId").innerHTML += allWinOnlyPercentRankDB[i][1].time + '	' 
+			+ allWinOnlyPercentRankDB[i][1].winPercentage + '	' 
+				+ allWinOnlyPercentRankDB[i][1].odd.string + '<br />';
+		}
+	}
+
+	function classify()
+	{
+		/*
+		3. 2 folds -> 100% + (90 - 95)%
+		4. 3 folds -> 100% + 100% + (90 - 95)%
+		5. 4 folds -> 100% + 100% + (90 - 95)% + (90 - 95)%
+		6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
+		*/
+		////////////////////////////////////////////////////////////
+		winOnlyClass_100_100.length = 0; // Class 1 - XXXXXX
+		winOnlyClass_95_99.length = 0;   // Class 2 - Fold 2
+		winOnlyClass_90_94.length = 0;   // Class 3 - Fold 3
+		winOnlyClass_85_89.length = 0;   // Class 4 - Fold 4
+		winOnlyClass_80_84.length = 0;   // Class 5 - Fold 5
+		////////////////////////////////////////////////////////////
+		winOnlyClass_75_79.length = 0;   // Class 6
+		winOnlyClass_70_74.length = 0;   // Class 7
+		winOnlyClass_0_69.length = 0;    // Class 8
+		////////////////////////////////////////////////////////////
+
+		
+		for(var i = 0; i < allWinOnlyPercentRankDB.length; ++i)
+		{
+			if(Number(allWinOnlyPercentRankDB[i].winPercentage) === 100)
+			{
+				winOnlyClass_100_100.push(allWinOnlyPercentRankDB[i]);
+			}
+			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 94)
+			{
+				winOnlyClass_95_99.push(allWinOnlyPercentRankDB[i]);
+			}
+			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 89)
+			{
+				winOnlyClass_90_94.push(allWinOnlyPercentRankDB[i]);
+			}
+			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 84)
+			{
+				winOnlyClass_85_89.push(allWinOnlyPercentRankDB[i]);
+			}
+			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 79)
+			{
+				winOnlyClass_80_84.push(allWinOnlyPercentRankDB[i]);
+			}
+			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 74)
+			{
+				winOnlyClass_75_79.push(allWinOnlyPercentRankDB[i]);
+			}
+			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 69)
+			{
+				winOnlyClass_70_74.push(allWinOnlyPercentRankDB[i]);
+			}
+			else
+			{
+				winOnlyClass_0_69.push(allWinOnlyPercentRankDB[i]);
+			}			
+		}
+	}
+
 	function dbCollection()
 	{
 		// Clean the array
-		allWinPercentRankDB.length = 0;
-		allOddRankDB.length = 0;
+		allWinEachWayPercentRankDB.length = 0;
+		allWinOnlyPercentRankDB.length = 0;	
 		allEachWayPercentRankDB.length = 0;
-		allTimeRankDB.length = 0;
-		winOnlyPercentRankDB.length = 0;		
+
 		twoWayPercentRankDB.length = 0;
 		threeWayPercentRankDB.length = 0;
-		fourWayPercentRankDB.length = 0;		
+		fourWayPercentRankDB.length = 0;
+
+		allOddRankDB.length = 0;		
+		allTimeRankDB.length = 0;	
+		
+		selectedList.length = 0;
 
 		// Browse the object in ascending order / in the order creation 
 		for (var key in raceData) 
@@ -88,10 +180,11 @@ window.addEventListener('load', function ()
 			if (raceData.hasOwnProperty(key)) 
 			{
 				// Store as a array instead of object for doing sorting at the later stage
-				allWinPercentRankDB.push([key, raceData[key]]);
+				allWinEachWayPercentRankDB.push([key, raceData[key]]);
 				allOddRankDB.push([key, raceData[key]]);
 				allTimeRankDB.push([key, raceData[key]]);
-				
+
+				selectedList.push([key, false]);				
 			}
 		}
 
@@ -102,7 +195,7 @@ window.addEventListener('load', function ()
 		});
 
 		// Sort by descending order of win percentage [100% -> 0%]
-		allWinPercentRankDB.sort(function(a, b) 
+		allWinEachWayPercentRankDB.sort(function(a, b) 
 		{			
 			return Number(b[1].winPercentage) - Number(a[1].winPercentage);
 		});
@@ -129,36 +222,37 @@ window.addEventListener('load', function ()
 			}
 		});
 
-		for(var i = 0; i < allWinPercentRankDB.length; ++i)
+		for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
 		{
-			switch(allWinPercentRankDB[i][1].winType)
+			switch(allWinEachWayPercentRankDB[i][1].winType)
 			{
 					case 'WIN_ONLY':
-						winOnlyPercentRankDB.push(allWinPercentRankDB[i][1]);
+						allWinOnlyPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
 						break;
 					case 'TWO_PLACES':
-						twoWayPercentRankDB.push(allWinPercentRankDB[i][1]);
-						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						twoWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
 						break;
 					case 'THREE_PLACES':
-						threeWayPercentRankDB.push(allWinPercentRankDB[i][1]);
-						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						threeWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
 						break;
 					case 'MORE_PLACES':
-						fourWayPercentRankDB.push(allWinPercentRankDB[i][1]);
-						allEachWayPercentRankDB.push(allWinPercentRankDB[i][1]);
+						fourWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
+						allEachWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
 						break; 
 			}
 		}
+		classify();
 	}
 
-	function populateRaceCard(key) 
+	function populateRaceCard(pageNumber) 
 	{
 		// Browse the object in Desending order
-		// for(var key = raceData.length - 1; key >= 0; --key)
-		if (raceData.hasOwnProperty(key)) 
+		// for(var pageNumber = raceData.length - 1; pageNumber >= 0; --pageNumber)
+		if (raceData.hasOwnProperty(pageNumber)) 
 		{
-			var obj = raceData[key];
+			var obj = raceData[pageNumber];
 			for (var prop in obj) {
 				if (obj.hasOwnProperty(prop)) 
 				{
@@ -186,16 +280,64 @@ window.addEventListener('load', function ()
 		}
 	}
 
+	function editAndUpdate(pageNumber)
+	{
+		if (raceData.hasOwnProperty(pageNumber)) 
+		{
+			var obj = raceData[pageNumber];
+			// Browse through all the properties inside an object
+			for (var prop in obj) 
+			{
+				if (obj.hasOwnProperty(prop)) 
+				{
+					// alert(prop + " = " + obj[prop]);
+					switch (prop) 
+					{
+						case "time":
+							obj[prop] = document.getElementById("timeId").value;
+							break;
+						case "nRunners":
+							obj[prop] = document.getElementById("nRunnersId").value;
+							break;
+						case "horse":
+							obj[prop] = document.getElementById("horseId").value;
+							break;
+						case "odd":
+							obj[prop] = document.getElementById("oddId").value;
+							break;
+						case "winPercentage":
+							obj[prop] = document.getElementById("winPercentageId").value;
+							break;
+					}
+				}
+			}
+		}
+	}
+
+	function fetchFormValues() 
+	{
+		timeData = document.getElementById("timeId").value;
+		nRunnersData = document.getElementById("nRunnersId").value;
+		horseData = document.getElementById("horseId").value;
+		winPercentageData = document.getElementById("winPercentageId").value;
+		oddData = document.getElementById("oddId").value;
+		// oddNumerator = Number(oddData.slice(0,2));
+		// oddDenominator = Number(oddData.slice(3,5));
+		oddFraction = Number(oddData.slice(0, 2)) / Number(oddData.slice(3, 5));
+	}
+
 	function printPrediction()
 	{
-		document.getElementById("predictDataId").innerHTML = '';
+		document.getElementById("predictDataId").innerHTML = 'Time	%	Odd' + '<br />';
 
-		for(var i = 0; i < allWinPercentRankDB.length; ++i)
-		{
-			document.getElementById("predictDataId").innerHTML += allWinPercentRankDB[i][1].time + '	' 
-			+ allWinPercentRankDB[i][1].winPercentage + '	' 
-				+ allWinPercentRankDB[i][1].odd.string + '<br />';
-		}
+		winOnlyTwoFold();
+
+		// for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
+		// {
+		// 	document.getElementById("predictDataId").innerHTML += allWinEachWayPercentRankDB[i][1].time + '	' 
+		// 	+ allWinEachWayPercentRankDB[i][1].winPercentage + '	' 
+		// 		+ allWinEachWayPercentRankDB[i][1].odd.string + '<br />';
+		// }
 	}
 
 	document.getElementById('btnFoldId').onclick = function () 
@@ -234,29 +376,23 @@ window.addEventListener('load', function ()
 		}
 		}
 		*/
-		var key = 0;
+		var pageNumber = 0;
 
 		if (pageNoCurr) 
 		{
+			editAndUpdate(pageNoCurr);
 			--pageNoCurr;
-			key = pageNoCurr;
+			pageNumber = pageNoCurr;
 		}
 
-		populateRaceCard(key);
+		populateRaceCard(pageNumber);
 	};
 
 	document.getElementById('btnNextId').onclick = function () 
 	{
 		if (pageNoCurr === pageNoTotal) 
 		{
-			timeData = document.getElementById("timeId").value;
-			nRunnersData = document.getElementById("nRunnersId").value;
-			horseData = document.getElementById("horseId").value;
-			winPercentageData = document.getElementById("winPercentageId").value;
-			oddData = document.getElementById("oddId").value;			
-			// oddNumerator = Number(oddData.slice(0,2));
-			// oddDenominator = Number(oddData.slice(3,5));
-			oddFraction = Number(oddData.slice(0,2)) / Number(oddData.slice(3,5));
+			fetchFormValues();			
 
 			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
 			if(1)
@@ -282,13 +418,25 @@ window.addEventListener('load', function ()
 		else if (pageNoCurr === pageNoTotal - 1) 
 		{
 			// Last page reached
+			editAndUpdate(pageNoCurr);
 			++pageNoCurr;
 			clear();
 		} 
 		else if (pageNoCurr < pageNoTotal) 
-		{
+		{	
+			editAndUpdate(pageNoCurr);		
 			++pageNoCurr;
-			populateRaceCard(pageNoCurr);
+			populateRaceCard(pageNoCurr);			
 		}
 	};
+
+	// Move the focus to next field when an enter key (#13) has been pressed (behave just like a tab key)
+	document.addEventListener('keydown', function (event) {
+		if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
+		  var form = event.target.form;
+		  var index = Array.prototype.indexOf.call(form, event.target);
+		  form.elements[index + 1].focus();
+		  event.preventDefault();
+		}
+	  });
 }); // window.addEventListener('load', function() {
