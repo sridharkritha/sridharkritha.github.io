@@ -11,7 +11,6 @@ window.addEventListener('load', function ()
 	Note: 
 	1. EW can't be fold into Win only
 	*/
-
 	var raceData = [];
 	var pageNoCurr = 0; // current page number
 	var pageNoTotal = 0; // total page numbers
@@ -26,18 +25,8 @@ window.addEventListener('load', function ()
 	var twoWayPercentRankDB = [];
 	var threeWayPercentRankDB = [];
 	var fourWayPercentRankDB = [];
-
-	////////////////////////////////////////////////////////////
-	var winOnlyClass_100_100 = []; // Class 1 - XXXXXX
-	var winOnlyClass_95_99   = []; // Class 2 - Fold 2
-	var winOnlyClass_90_94   = []; // Class 3 - Fold 3
-	var winOnlyClass_85_89   = []; // Class 4 - Fold 4
-	var winOnlyClass_80_84   = []; // Class 5 - Fold 5
-	////////////////////////////////////////////////////
-	var winOnlyClass_75_79   = []; // Class 6
-	var winOnlyClass_70_74   = []; // Class 7
-	var winOnlyClass_0_69    = []; // Class 8
-	////////////////////////////////////////////////////////////
+	// Result
+	var output_winOrEwPercentClass = [];
 	
 	var selectedList = [];
 
@@ -65,7 +54,7 @@ window.addEventListener('load', function ()
 	}
 
 	foldTypeRadioOption = function (radioOption) 
-    {
+	{
 		foldTypeData = radioOption.value;
 	}
 
@@ -82,79 +71,169 @@ window.addEventListener('load', function ()
 		document.getElementById("winPercentageId").value = '';
 		document.getElementById("nRunnersId").value = '';
 		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
-	}
+	}	
 
 	//2 folds -> 100% + (90 - 95)%
-	function winOnlyTwoFold()
+	function winOnlyTwoFold(nFold, winOrEw)
 	{
-		selectedList
+		var winOnly = shakthi(winOrEw);
 
-		for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
+		loop = 5;
+
+	  while(loop)
+	  {
+		nFold = loop - 1; 
+
+		var a = null, b = null, c = null, d = null;
+
+		if(nFold === 4)
 		{
-			// document.getElementById("predictDataId").innerHTML += allWinEachWayPercentRankDB[i][1].time + '	' 
-			// + allWinEachWayPercentRankDB[i][1].winPercentage + '	' 
-			// 	+ allWinEachWayPercentRankDB[i][1].odd.string + '<br />';
-			document.getElementById("predictDataId").innerHTML += allWinOnlyPercentRankDB[i][1].time + '	' 
-			+ allWinOnlyPercentRankDB[i][1].winPercentage + '	' 
-				+ allWinOnlyPercentRankDB[i][1].odd.string + '<br />';
+			a = winOnly[0][winOnly[0].length - 1];
+			b = winOnly[1][winOnly[0].length - 1];
+			c = winOnly[2][winOnly[0].length - 1];
+			d = winOnly[3][winOnly[0].length - 1];
+
+			while(a&&b&&c)
+			{
+				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
+																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
+																	  c.time + '	' + c.winPercentage + '	'+ c.odd.string + '<br />' +
+																	  d.time + '	' + d.winPercentage + '	'+ d.odd.string + '<br />' +
+																	'---------------------------------'+ '<br />';
+
+				winOnly[0].pop();
+				winOnly[1].pop();
+				winOnly[2].pop();
+				winOnly[3].pop();
+				a = winOnly[0][winOnly[0].length - 1];
+				b = winOnly[1][winOnly[0].length - 1];
+				c = winOnly[2][winOnly[0].length - 1];
+				d = winOnly[3][winOnly[0].length - 1];
+			}
 		}
+		else if(nFold === 3)
+		{
+			a = winOnly[0][winOnly[0].length - 1];
+			b = winOnly[1][winOnly[0].length - 1];
+			c = winOnly[2][winOnly[0].length - 1];
+
+			while(a&&b&&c)
+			{
+				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
+																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
+																	  c.time + '	' + c.winPercentage + '	'+ c.odd.string + '<br />' +
+																	'---------------------------------'+ '<br />';
+
+				winOnly[0].pop();
+				winOnly[1].pop();
+				winOnly[2].pop();
+				a = winOnly[0][winOnly[0].length - 1];
+				b = winOnly[1][winOnly[0].length - 1];
+				c = winOnly[2][winOnly[0].length - 1];
+			}
+		}
+
+		else if(nFold === 2)
+		{
+			a = winOnly[0][winOnly[0].length - 1];
+			b = winOnly[1][winOnly[0].length - 1];
+
+			while(a&&b)
+			{
+				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
+																	b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
+																	'---------------------------------'+ '<br />';
+
+				winOnly[0].pop();
+				winOnly[1].pop();
+				a = winOnly[0][winOnly[0].length - 1];
+				b = winOnly[1][winOnly[0].length - 1];
+			}
+		}
+	 } // fold loop
 	}
 
-	function classify()
+	function shakthi(input_winOrEwPercentDB)
 	{
-		/*
-		3. 2 folds -> 100% + (90 - 95)%
-		4. 3 folds -> 100% + 100% + (90 - 95)%
-		5. 4 folds -> 100% + 100% + (90 - 95)% + (90 - 95)%
-		6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
-		*/
-		////////////////////////////////////////////////////////////
-		winOnlyClass_100_100.length = 0; // Class 1 - XXXXXX
-		winOnlyClass_95_99.length = 0;   // Class 2 - Fold 2
-		winOnlyClass_90_94.length = 0;   // Class 3 - Fold 3
-		winOnlyClass_85_89.length = 0;   // Class 4 - Fold 4
-		winOnlyClass_80_84.length = 0;   // Class 5 - Fold 5
-		////////////////////////////////////////////////////////////
-		winOnlyClass_75_79.length = 0;   // Class 6
-		winOnlyClass_70_74.length = 0;   // Class 7
-		winOnlyClass_0_69.length = 0;    // Class 8
-		////////////////////////////////////////////////////////////
+		var class_100_100 = [];
+		var class_95_99 = [];
+		var class_90_94 = [];
+		var class_85_89 = [];
+		var class_80_84 = [];
+		var class_75_79 = [];
+		var class_70_74 = [];
+		var class_0_69  = [];
 
+		output_winOrEwPercentClass.length = 0;
 		
-		for(var i = 0; i < allWinOnlyPercentRankDB.length; ++i)
-		{
-			if(Number(allWinOnlyPercentRankDB[i].winPercentage) === 100)
-			{
-				winOnlyClass_100_100.push(allWinOnlyPercentRankDB[i]);
-			}
-			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 94)
-			{
-				winOnlyClass_95_99.push(allWinOnlyPercentRankDB[i]);
-			}
-			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 89)
-			{
-				winOnlyClass_90_94.push(allWinOnlyPercentRankDB[i]);
-			}
-			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 84)
-			{
-				winOnlyClass_85_89.push(allWinOnlyPercentRankDB[i]);
-			}
-			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 79)
-			{
-				winOnlyClass_80_84.push(allWinOnlyPercentRankDB[i]);
-			}
-			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 74)
-			{
-				winOnlyClass_75_79.push(allWinOnlyPercentRankDB[i]);
-			}
-			else if(Number(allWinOnlyPercentRankDB[i].winPercentage) > 69)
-			{
-				winOnlyClass_70_74.push(allWinOnlyPercentRankDB[i]);
-			}
-			else
-			{
-				winOnlyClass_0_69.push(allWinOnlyPercentRankDB[i]);
-			}			
+		 for(var i = 0; i < input_winOrEwPercentDB.length; ++i)
+		 {
+			 if(Number(input_winOrEwPercentDB[i].winPercentage) === 100)
+			 {
+				 class_100_100.push(input_winOrEwPercentDB[i]);
+			 }
+			 else if(Number(input_winOrEwPercentDB[i].winPercentage) > 94)
+			 {
+				 class_95_99.push(input_winOrEwPercentDB[i]);
+			 }
+			 else if(Number(input_winOrEwPercentDB[i].winPercentage) > 89)
+			 {
+				 class_90_94.push(input_winOrEwPercentDB[i]);
+			 }
+			 else if(Number(input_winOrEwPercentDB[i].winPercentage) > 84)
+			 {
+				 class_85_89.push(input_winOrEwPercentDB[i]);
+			 }
+			 else if(Number(input_winOrEwPercentDB[i].winPercentage) > 79)
+			 {
+				 class_80_84.push(input_winOrEwPercentDB[i]);
+			 }
+			 else if(Number(input_winOrEwPercentDB[i].winPercentage) > 74)
+			 {
+				 class_75_79.push(input_winOrEwPercentDB[i]);
+			 }
+			 else if(Number(input_winOrEwPercentDB[i].winPercentage) > 69)
+			 {
+				 class_70_74.push(input_winOrEwPercentDB[i]);
+			 }
+			 else
+			 {
+				 class_0_69.push(input_winOrEwPercentDB[i]);
+			 }
+		 }
+ 
+		 // Shuffle the pots !
+		 shuffle(class_100_100); // Class 1 - XXXXXX
+		 shuffle(class_95_99);   // Class 2 - Fold 2
+		 shuffle(class_90_94);   // Class 3 - Fold 3
+		 shuffle(class_85_89);   // Class 4 - Fold 4
+		 shuffle(class_80_84);   // Class 5 - Fold 5
+		 shuffle(class_75_79);   // Class 6
+		 shuffle(class_70_74);   // Class 7
+		 shuffle(class_0_69);    // Class 8
+
+		 output_winOrEwPercentClass.push( 
+			class_100_100,
+			class_95_99,
+			class_90_94,
+			class_85_89,
+			class_80_84,
+			class_75_79,
+			class_70_74,
+			class_0_69 
+		 );
+
+		 return  output_winOrEwPercentClass;
+	}
+
+	// Shuffles array
+	function shuffle(a) {
+		var j, x, i;
+		for (i = a.length; i; i--) {
+			j = Math.floor(Math.random() * i);
+			x = a[i - 1];
+			a[i - 1] = a[j];
+			a[j] = x;
 		}
 	}
 
@@ -162,15 +241,15 @@ window.addEventListener('load', function ()
 	{
 		// Clean the array
 		allWinEachWayPercentRankDB.length = 0;
-		allWinOnlyPercentRankDB.length = 0;	
+		allWinOnlyPercentRankDB.length = 0;
 		allEachWayPercentRankDB.length = 0;
 
 		twoWayPercentRankDB.length = 0;
 		threeWayPercentRankDB.length = 0;
 		fourWayPercentRankDB.length = 0;
 
-		allOddRankDB.length = 0;		
-		allTimeRankDB.length = 0;	
+		allOddRankDB.length = 0;
+		allTimeRankDB.length = 0;
 		
 		selectedList.length = 0;
 
@@ -184,7 +263,7 @@ window.addEventListener('load', function ()
 				allOddRankDB.push([key, raceData[key]]);
 				allTimeRankDB.push([key, raceData[key]]);
 
-				selectedList.push([key, false]);				
+				selectedList.push([key, false]);
 			}
 		}
 
@@ -210,7 +289,7 @@ window.addEventListener('load', function ()
 
 			if(hrA === hrB)
 			{
-				return minA < minB ? false :  true;			
+				return minA < minB ? false :  true;
 			}
 			else if(hrA < hrB)
 			{
@@ -243,7 +322,6 @@ window.addEventListener('load', function ()
 						break; 
 			}
 		}
-		classify();
 	}
 
 	function populateRaceCard(pageNumber) 
@@ -330,7 +408,8 @@ window.addEventListener('load', function ()
 	{
 		document.getElementById("predictDataId").innerHTML = 'Time	%	Odd' + '<br />';
 
-		winOnlyTwoFold();
+		winOnlyTwoFold(2, allWinOnlyPercentRankDB);
+		// winOnlyTwoFold(2, allEachWayPercentRankDB);
 
 		// for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
 		// {
@@ -343,6 +422,7 @@ window.addEventListener('load', function ()
 	document.getElementById('btnFoldId').onclick = function () 
 	{
 		dbCollection();
+		
 		printPrediction();
 
 		var divForm = document.getElementById('divForm');
@@ -392,7 +472,7 @@ window.addEventListener('load', function ()
 	{
 		if (pageNoCurr === pageNoTotal) 
 		{
-			fetchFormValues();			
+			fetchFormValues();
 
 			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
 			if(1)
@@ -424,9 +504,9 @@ window.addEventListener('load', function ()
 		} 
 		else if (pageNoCurr < pageNoTotal) 
 		{	
-			editAndUpdate(pageNoCurr);		
+			editAndUpdate(pageNoCurr);
 			++pageNoCurr;
-			populateRaceCard(pageNoCurr);			
+			populateRaceCard(pageNoCurr);
 		}
 	};
 
