@@ -73,7 +73,7 @@ window.addEventListener('load', function ()
 		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
 	}	
 
-			/*
+		/*
 		1. Grouping 100% chance winners
 		2. Grouping one half 100% winners and another half 90% winners
 		3. 2 folds -> 100% + (90 - 95)%
@@ -82,152 +82,184 @@ window.addEventListener('load', function ()
 		6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 		*/
 
-		function getObject(n,winOnly)
+		function printResult(a,b,c,d)
 		{
-			var a = 0, b = 0, c = 0, d = 0, index = 0, endStart = 1; 
+			if(a)
+			{
+				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />';	
+			}
+
+			if(b)
+			{
+				document.getElementById("predictDataId").innerHTML += b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />';	
+			}
+
+			if(c)
+			{
+				document.getElementById("predictDataId").innerHTML += c.time + '	' + c.winPercentage + '	'+ c.odd.string + '<br />';	
+			}
+
+			if(d)
+			{
+				document.getElementById("predictDataId").innerHTML += d.time + '	' + d.winPercentage + '	'+ d.odd.string + '<br />';	
+			}
+
+			document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
+		}
+
+		function printNewline()
+		{
+			document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
+		}
+
+		function gold(winOrEw)
+		{
+			var winOnly = shakthi(winOrEw);
+
+			var a = 0, b = 0, c = 0, d = 0, index = 0; 
+
+			var n = 4;
+
 			if(n === 4)
 			{
-				// 4 folds -> 100% + 100% + (90 - 95)% + (90 - 95)%
-				index = 0;
-				endStart = 1;
-				while(!winOnly[index][winOnly[0].length - endStart])
+				--n;
+				while(true)
 				{
-					endStart = 1;
-					if(index > 1) break; 
-					++index;					
+					index = 0;
+
+					// 100, 100, 95-99, 90-94
+					// 100, 95-99, 95-99, 90-94				
+					a  = winOnly[index][winOnly[0].length - 1];   // 100%
+					a2 = winOnly[index][winOnly[0].length - 2];   // 100%
+					b  = winOnly[index+1][winOnly[0].length - 1]; // 95-99
+					b2 = winOnly[index+1][winOnly[0].length - 2]; // 95-99
+					c  = winOnly[index+2][winOnly[0].length - 1]; // 90-95
+					
+					if(a&&a2&&b&&c)
+					{
+						// 100, 100, 95-99, 90-94
+						winOnly[index].pop();
+						winOnly[index].pop();
+						winOnly[index+1].pop();
+						winOnly[index+2].pop();
+
+						printResult(a,a2,b,c);
+						continue;
+					}
+
+					if(a&&b&&b2&&c)
+					{
+						// 100, 95-99, 95-99, 90-94	
+						winOnly[index].pop();
+						winOnly[index+1].pop();
+						winOnly[index+1].pop();
+						winOnly[index+2].pop();
+
+						printResult(a,b,b2,c);
+						continue;
+					}
+					
+					break;
 				}
-				a = winOnly[index][winOnly[0].length - endStart]; // 100_100% - 95_99%
+			}
+
+			if(n === 3)
+			{
+				--n;
+				while(true)
+				{
+					index = 0;
 				
-				if(index === 0) endStart = 2
+					a = winOnly[index][winOnly[0].length - 1];   // 100%
+					b = winOnly[index+1][winOnly[0].length - 1]; // 95-99
+					c = winOnly[index+2][winOnly[0].length - 1]; // 90-95
+					d = winOnly[index+3][winOnly[0].length - 1]; // 85-90
+					if(a&&b&&c)
+					{
+						// 100, 95-99, 90-95
+						winOnly[index].pop();
+						winOnly[index+1].pop();
+						winOnly[index+2].pop();
 
-				while(!winOnly[index][winOnly[0].length - endStart])
-				{
-					endStart = 1;
-					if(index > 1) break; 
-					++index;					
-				}
-				b = winOnly[index][winOnly[0].length - endStart]; // 100_100% - 95_99%
+						printResult(a,b,c);
+						continue;
+					}
 
-				index = index + 1;
-				endStart = 1;
-				while(!winOnly[index][winOnly[0].length - endStart])
-				{
-					endStart = 1;
-					if(index > 2) break; 
-					++index;
-				}
-				c = winOnly[index][winOnly[0].length - endStart]; // 90_94% - 85_89%
+					if(a&&c&&d)
+					{
+						// 100, 95-99, 90-95
+						winOnly[index].pop();
+						winOnly[index+2].pop();
+						winOnly[index+3].pop();
 
-				index = index + 1;
-				endStart = 1;
-				d = winOnly[index][winOnly[0].length - endStart]; // 85_89% - 80_84%
+						printResult(a,c,d);
+						continue;
+					}
 
-				if(a&&b&&c&&d)
-				{
-					return [a,b,c,d];
-				}
-				else
-				{
-					return false;
+					if(b&&c&&d)
+					{
+						// 100, 95-99, 90-95
+						winOnly[index+1].pop();
+						winOnly[index+2].pop();
+						winOnly[index+3].pop();
+
+						printResult(b,c,d);
+						continue;
+					}
+
+					break;
 				}
 			}
-		}
-
-	//2 folds -> 100% + (90 - 95)%
-	function winOnlyTwoFold(winOrEw)
-	{
-	
-	var winOnly = shakthi(winOrEw);
-
-	var nFold = 4, loop = 5, index = 0;
-
-	  while(loop)
-	  {
-		nFold = loop = loop - 1; 
-
-		var a = null, b = null, c = null, d = null;
-
-		if(nFold === 4)
-		{
-			/*
-			var x = getObject(4,winOnly);
-			if(x)
-			{
-				for(var i = 0; i<4; --i)
-				{
-					document.getElementById("predictDataId").innerHTML += x[i].time + '	' + x[i].winPercentage + '	'+ x[i].odd.string + '<br />';
-				}
-				document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
-			}
-			*/
 			
-			
-			index = 0;
-			
-			a = winOnly[0][winOnly[0].length - 1];
-			b = winOnly[0][winOnly[0].length - 2];
-			c = winOnly[1][winOnly[0].length - 1];
-			d = winOnly[2][winOnly[0].length - 1];
-
-			while(a&&b&&c&&d)
+			if(n === 2)
 			{
-				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
-																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
-																	  c.time + '	' + c.winPercentage + '	'+ c.odd.string + '<br />' +
-																	  d.time + '	' + d.winPercentage + '	'+ d.odd.string + '<br />' +
-																	'---------------------------------'+ '<br />';
+				--n;
+				// 95-90, 80-85
+				// 85-90, 80-85
+				// 85-90, 75-80
+				while(true)
+				{
+					index = 0;
 
-				winOnly[0].pop();
-				winOnly[0].pop();
-				winOnly[1].pop();
-				winOnly[3].pop();
-				a = winOnly[0][winOnly[0].length - 1];
-				b = winOnly[0][winOnly[0].length - 1];
-				c = winOnly[1][winOnly[0].length - 1];
-				d = winOnly[2][winOnly[0].length - 1];
-			}		
-		}
-		else if(nFold === 3)
-		{
-			a = winOnly[0][winOnly[0].length - 1];
-			b = winOnly[0][winOnly[0].length - 1];
-			c = winOnly[1][winOnly[0].length - 1];
+					a = winOnly[index+2][winOnly[0].length - 1]; // 95-90
+					b = winOnly[index+3][winOnly[0].length - 1]; // 85-90
+					c = winOnly[index+4][winOnly[0].length - 1]; // 80-85
+					d = winOnly[index+5][winOnly[0].length - 1]; // 75-80
 
-			while(a&&b&&c)
-			{
-				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
-																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
-																	  c.time + '	' + c.winPercentage + '	'+ c.odd.string + '<br />' +
-																	'---------------------------------'+ '<br />';
+					if(a&&c)
+					{
+						// 95-90, 80-85						
+						winOnly[index+2].pop();
+						winOnly[index+4].pop();
 
-				winOnly[0].pop();
-				winOnly[0].pop();
-				winOnly[1].pop();
-				a = winOnly[0][winOnly[0].length - 1];
-				b = winOnly[0][winOnly[0].length - 1];
-				c = winOnly[1][winOnly[0].length - 1];
+						printResult(a,c);
+						continue;
+					}
+
+					if(b&&c)
+					{
+						// 85-90, 80-85 						
+						winOnly[index+3].pop();
+						winOnly[index+4].pop();
+
+						printResult(b,c);
+						continue;
+					}
+
+					if(b&&d)
+					{
+						// 85-90, 75-80						
+						winOnly[index+3].pop();
+						winOnly[index+5].pop();
+
+						printResult(b,d);
+						continue;
+					}
+
+					break;
+				}
 			}
 		}
-
-		else if(nFold === 2)
-		{
-			a = winOnly[0][winOnly[0].length - 1];
-			b = winOnly[1][winOnly[0].length - 1];
-
-			while(a&&b)
-			{
-				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />' + 
-																	  b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />' +
-																	'---------------------------------'+ '<br />';
-
-				winOnly[0].pop();
-				winOnly[1].pop();
-				a = winOnly[0][winOnly[0].length - 1];
-				b = winOnly[1][winOnly[0].length - 1];
-			}
-		}
-	 } // fold loop
-	}
 
 	function shakthi(input_winOrEwPercentDB)
 	{
@@ -484,18 +516,11 @@ window.addEventListener('load', function ()
 	{
 		document.getElementById("predictDataId").innerHTML = 'Time	%	Odd' + '<br />';
 
-        document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'WIN ONLY' +'<br />';
-		winOnlyTwoFold(allWinOnlyPercentRankDB);
+		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'WIN ONLY' +'<br />';
+		gold(allWinOnlyPercentRankDB);		
 
 		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'EACH WAY' +'<br />';
-		winOnlyTwoFold(allEachWayPercentRankDB);
-
-		// for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
-		// {
-		// 	document.getElementById("predictDataId").innerHTML += allWinEachWayPercentRankDB[i][1].time + '	' 
-		// 	+ allWinEachWayPercentRankDB[i][1].winPercentage + '	' 
-		// 		+ allWinEachWayPercentRankDB[i][1].odd.string + '<br />';
-		// }
+		gold(allEachWayPercentRankDB);
 	}
 
 	document.getElementById('btnFoldId').onclick = function () 
