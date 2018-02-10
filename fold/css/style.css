@@ -57,14 +57,14 @@
     }
 
     input[type="text"] {
-        width: 10%;
+        width: 15%;
         height: 40px;
         font-size: 90%;
         font-weight: bold;
     }
 
     input[type="number"] {
-        width: 5%;
+        width: 7%;
         height: 40px;
         font-size: 90%;
         font-weight: bold;
