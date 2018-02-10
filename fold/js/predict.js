@@ -73,21 +73,7 @@ window.addEventListener('load', function ()
 		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
 	}	
 
-	//2 folds -> 100% + (90 - 95)%
-	function winOnlyTwoFold(winOrEw)
-	{
-	
-	var winOnly = shakthi(winOrEw);
-
-	var nFold = 4, loop = 5;
-
-	  while(loop)
-	  {
-		nFold = loop = loop - 1; 
-
-		var a = null, b = null, c = null, d = null;
-
-		/*
+			/*
 		1. Grouping 100% chance winners
 		2. Grouping one half 100% winners and another half 90% winners
 		3. 2 folds -> 100% + (90 - 95)%
@@ -96,10 +82,90 @@ window.addEventListener('load', function ()
 		6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 		*/
 
+		function getObject(n,winOnly)
+		{
+			var a = 0, b = 0, c = 0, d = 0, index = 0, endStart = 1; 
+			if(n === 4)
+			{
+				// 4 folds -> 100% + 100% + (90 - 95)% + (90 - 95)%
+				index = 0;
+				endStart = 1;
+				while(!winOnly[index][winOnly[0].length - endStart])
+				{
+					endStart = 1;
+					if(index > 1) break; 
+					++index;					
+				}
+				a = winOnly[index][winOnly[0].length - endStart]; // 100_100% - 95_99%
+				
+				if(index === 0) endStart = 2
+
+				while(!winOnly[index][winOnly[0].length - endStart])
+				{
+					endStart = 1;
+					if(index > 1) break; 
+					++index;					
+				}
+				b = winOnly[index][winOnly[0].length - endStart]; // 100_100% - 95_99%
+
+				index = index + 1;
+				endStart = 1;
+				while(!winOnly[index][winOnly[0].length - endStart])
+				{
+					endStart = 1;
+					if(index > 2) break; 
+					++index;
+				}
+				c = winOnly[index][winOnly[0].length - endStart]; // 90_94% - 85_89%
+
+				index = index + 1;
+				endStart = 1;
+				d = winOnly[index][winOnly[0].length - endStart]; // 85_89% - 80_84%
+
+				if(a&&b&&c&&d)
+				{
+					return [a,b,c,d];
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+
+	//2 folds -> 100% + (90 - 95)%
+	function winOnlyTwoFold(winOrEw)
+	{
+	
+	var winOnly = shakthi(winOrEw);
+
+	var nFold = 4, loop = 5, index = 0;
+
+	  while(loop)
+	  {
+		nFold = loop = loop - 1; 
+
+		var a = null, b = null, c = null, d = null;
+
 		if(nFold === 4)
 		{
+			/*
+			var x = getObject(4,winOnly);
+			if(x)
+			{
+				for(var i = 0; i<4; --i)
+				{
+					document.getElementById("predictDataId").innerHTML += x[i].time + '	' + x[i].winPercentage + '	'+ x[i].odd.string + '<br />';
+				}
+				document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
+			}
+			*/
+			
+			
+			index = 0;
+			
 			a = winOnly[0][winOnly[0].length - 1];
-			b = winOnly[0][winOnly[0].length - 1];
+			b = winOnly[0][winOnly[0].length - 2];
 			c = winOnly[1][winOnly[0].length - 1];
 			d = winOnly[2][winOnly[0].length - 1];
 
@@ -119,7 +185,7 @@ window.addEventListener('load', function ()
 				b = winOnly[0][winOnly[0].length - 1];
 				c = winOnly[1][winOnly[0].length - 1];
 				d = winOnly[2][winOnly[0].length - 1];
-			}
+			}		
 		}
 		else if(nFold === 3)
 		{
@@ -418,7 +484,10 @@ window.addEventListener('load', function ()
 	{
 		document.getElementById("predictDataId").innerHTML = 'Time	%	Odd' + '<br />';
 
+        document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'WIN ONLY' +'<br />';
 		winOnlyTwoFold(allWinOnlyPercentRankDB);
+
+		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'EACH WAY' +'<br />';
 		winOnlyTwoFold(allEachWayPercentRankDB);
 
 		// for(var i = 0; i < allWinEachWayPercentRankDB.length; ++i)
