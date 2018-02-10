@@ -56,6 +56,47 @@
         font-weight: bold;
     }
 
+    input[type="text"] {
+        width: 10%;
+        height: 40px;
+        font-size: 90%;
+        font-weight: bold;
+    }
+
+    input[type="number"] {
+        width: 5%;
+        height: 40px;
+        font-size: 90%;
+        font-weight: bold;
+    }
+
+    input[type="time"] {
+        width: 11%;
+        height: 40px;
+        font-size: 90%;
+        font-weight: bold;
+    }
+
+    input[type="range"] {
+        width: 30%;       
+    }
+
+    .radioProp {
+        width: 30px;
+        height: 30px;    
+    }
+
+    .btnProp {  
+        /* width: 17%; */
+        width: 24%;
+        height: 50px;
+        font-size: 90%;
+        font-weight: bold;
+        /* font-size: 300%;
+        font-weight: bold; */
+    }
+
+
 
 
 #divForm {
