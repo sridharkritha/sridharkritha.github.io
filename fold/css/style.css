@@ -1,3 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    
+    html, body{
+    height:100%;
+    width:100%;
+    }
+    
+    #container {
+    /* background-color: gold; */
+    background-color: black;
+    }
+    
+    /* Centered Horizontally and Vertically */
+    .centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border: solid 2px red;       
+    }
+    
+    .halfHeight {
+    border: solid 2px blue;
+    height: 90%;
+    }
+    
+    .centerHorizontal_Div{
+    /* Horizontally Centered Inside An Another DIV */
+    /*width: 50%; 
+    margin: 0 auto;    */
+    display: block;
+    margin: 0 auto;
+    text-align: center;  
+    
+    font-size: 300%;
+        font-weight: bold;
+    }
+    
+    .centerHorizontal_Btn{
+    /* Horizontally Centered Inside An Another DIV */   
+    display:block;
+    margin: 0 auto; 
+    text-align: center; 
+    
+    
+    }
+    
+    .btnProp {  
+        /* width: 17%; */
+        width: 27%;
+        height: 10%;
+        font-size: 300%;
+        font-weight: bold;
+    }
+
+
+
 #divForm {
     display: 'block';
     z-index: 0;
