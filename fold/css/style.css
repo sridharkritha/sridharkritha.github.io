@@ -38,23 +38,21 @@
     text-align: center;  
     
     font-size: 300%;
-        font-weight: bold;
+    font-weight: bold;
     }
     
     .centerHorizontal_Btn{
     /* Horizontally Centered Inside An Another DIV */   
     display:block;
     margin: 0 auto; 
-    text-align: center; 
-    
-    
+    text-align: center;    
     }
     
     .btnProp {  
         /* width: 17%; */
         width: 27%;
         height: 10%;
-        font-size: 300%;
+        /* font-size: 300%; */
         font-weight: bold;
     }
 
