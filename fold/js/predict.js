@@ -491,7 +491,7 @@ window.addEventListener('load', function ()
 							document.getElementById("horseId").value = obj[prop];
 							break;
 						case "odd":
-							document.getElementById("oddId").value = obj[prop];
+							document.getElementById("oddId").value = obj[prop].string;
 							break;
 						case "winPercentage":
 							document.getElementById("winPercentageId").value = obj[prop];
@@ -525,7 +525,7 @@ window.addEventListener('load', function ()
 							obj[prop] = document.getElementById("horseId").value;
 							break;
 						case "odd":
-							obj[prop] = document.getElementById("oddId").value;
+							obj[prop].string = document.getElementById("oddId").value;
 							break;
 						case "winPercentage":
 							obj[prop] = document.getElementById("winPercentageId").value;
@@ -618,7 +618,8 @@ window.addEventListener('load', function ()
 		{
 			fetchFormValues();
 
-			if(timeData && nRunnersData && horseData && oddData && winPercentageData)
+			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
+			if(timeData && horseData && oddData && winPercentageData)
 			// if(1)
 			{
 				// DB: Race meeting 
