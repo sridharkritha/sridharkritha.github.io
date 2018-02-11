@@ -27,6 +27,7 @@ window.addEventListener('load', function ()
 	var fourWayPercentRankDB = [];
 	// Result
 	var output_winOrEwPercentClass = [];
+	var tvShow = [];
 	
 	var selectedList = [];
 
@@ -82,41 +83,30 @@ window.addEventListener('load', function ()
 		6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 		*/
 
-		function printResult(a,b,c,d)
+		function printResult(objArray)
 		{
-			if(a)
+			var isContainsAnyValid =  false;
+			for(var i = 0; i < objArray.length; ++i)
 			{
-				document.getElementById("predictDataId").innerHTML += a.time + '	' + a.winPercentage + '	'+ a.odd.string + '<br />';	
+				if(objArray[i])
+				{
+					isContainsAnyValid =  true;
+
+					document.getElementById("predictDataId").innerHTML += objArray[i].time + '	' + objArray[i].winPercentage + '	'+ objArray[i].odd.string + '<br />';	
+				}
 			}
 
-			if(b)
+			if(isContainsAnyValid)
 			{
-				document.getElementById("predictDataId").innerHTML += b.time + '	' + b.winPercentage + '	'+ b.odd.string + '<br />';	
-			}
-
-			if(c)
-			{
-				document.getElementById("predictDataId").innerHTML += c.time + '	' + c.winPercentage + '	'+ c.odd.string + '<br />';	
-			}
-
-			if(d)
-			{
-				document.getElementById("predictDataId").innerHTML += d.time + '	' + d.winPercentage + '	'+ d.odd.string + '<br />';	
-			}
-
-			document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
+				document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
+			}			
 		}
 
-		function printNewline()
+		function goldCup(array)
 		{
-			document.getElementById("predictDataId").innerHTML += '---------------------------------'+ '<br />';
-		}
+			var winOrEw = shakthiClassify(array);
 
-		function gold(winOrEw)
-		{
-			var winOnly = shakthi(winOrEw);
-
-			var a = 0, b = 0, c = 0, d = 0, index = 0; 
+			var a = 0, b = 0, c = 0, d = 0, e = 0, index = 0; 
 
 			var n = 4;
 
@@ -129,33 +119,33 @@ window.addEventListener('load', function ()
 
 					// 100, 100, 95-99, 90-94
 					// 100, 95-99, 95-99, 90-94				
-					a  = winOnly[index][winOnly[0].length - 1];   // 100%
-					a2 = winOnly[index][winOnly[0].length - 2];   // 100%
-					b  = winOnly[index+1][winOnly[0].length - 1]; // 95-99
-					b2 = winOnly[index+1][winOnly[0].length - 2]; // 95-99
-					c  = winOnly[index+2][winOnly[0].length - 1]; // 90-95
+					a  = winOrEw[index+0][winOrEw[index+0].length - 1];   // 100%
+					a2 = winOrEw[index+0][winOrEw[index+0].length - 2];   // 100%
+					b  = winOrEw[index+1][winOrEw[index+1].length - 1]; // 95-99
+					b2 = winOrEw[index+1][winOrEw[index+1].length - 2]; // 95-99
+					c  = winOrEw[index+2][winOrEw[index+2].length - 1]; // 90-95
 					
 					if(a&&a2&&b&&c)
 					{
 						// 100, 100, 95-99, 90-94
-						winOnly[index].pop();
-						winOnly[index].pop();
-						winOnly[index+1].pop();
-						winOnly[index+2].pop();
+						winOrEw[index+0].pop();
+						winOrEw[index+0].pop();
+						winOrEw[index+1].pop();
+						winOrEw[index+2].pop();
 
-						printResult(a,a2,b,c);
+						printResult([a,a2,b,c]);
 						continue;
 					}
 
 					if(a&&b&&b2&&c)
 					{
 						// 100, 95-99, 95-99, 90-94	
-						winOnly[index].pop();
-						winOnly[index+1].pop();
-						winOnly[index+1].pop();
-						winOnly[index+2].pop();
+						winOrEw[index+0].pop();
+						winOrEw[index+1].pop();
+						winOrEw[index+1].pop();
+						winOrEw[index+2].pop();
 
-						printResult(a,b,b2,c);
+						printResult([a,b,b2,c]);
 						continue;
 					}
 					
@@ -170,40 +160,40 @@ window.addEventListener('load', function ()
 				{
 					index = 0;
 				
-					a = winOnly[index][winOnly[0].length - 1];   // 100%
-					b = winOnly[index+1][winOnly[0].length - 1]; // 95-99
-					c = winOnly[index+2][winOnly[0].length - 1]; // 90-95
-					d = winOnly[index+3][winOnly[0].length - 1]; // 85-90
+					a = winOrEw[index+0][winOrEw[index+0].length - 1];   // 100%
+					b = winOrEw[index+1][winOrEw[index+1].length - 1]; // 95-99
+					c = winOrEw[index+2][winOrEw[index+2].length - 1]; // 90-95
+					d = winOrEw[index+3][winOrEw[index+3].length - 1]; // 85-90
 					if(a&&b&&c)
 					{
 						// 100, 95-99, 90-95
-						winOnly[index].pop();
-						winOnly[index+1].pop();
-						winOnly[index+2].pop();
+						winOrEw[index+0].pop();
+						winOrEw[index+1].pop();
+						winOrEw[index+2].pop();
 
-						printResult(a,b,c);
+						printResult([a,b,c]);
 						continue;
 					}
 
 					if(a&&c&&d)
 					{
 						// 100, 95-99, 90-95
-						winOnly[index].pop();
-						winOnly[index+2].pop();
-						winOnly[index+3].pop();
+						winOrEw[index+0].pop();
+						winOrEw[index+2].pop();
+						winOrEw[index+3].pop();
 
-						printResult(a,c,d);
+						printResult([a,c,d]);
 						continue;
 					}
 
 					if(b&&c&&d)
 					{
 						// 100, 95-99, 90-95
-						winOnly[index+1].pop();
-						winOnly[index+2].pop();
-						winOnly[index+3].pop();
+						winOrEw[index+1].pop();
+						winOrEw[index+2].pop();
+						winOrEw[index+3].pop();
 
-						printResult(b,c,d);
+						printResult([b,c,d]);
 						continue;
 					}
 
@@ -221,47 +211,100 @@ window.addEventListener('load', function ()
 				{
 					index = 0;
 
-					a = winOnly[index+2][winOnly[0].length - 1]; // 95-90
-					b = winOnly[index+3][winOnly[0].length - 1]; // 85-90
-					c = winOnly[index+4][winOnly[0].length - 1]; // 80-85
-					d = winOnly[index+5][winOnly[0].length - 1]; // 75-80
+					a = winOrEw[index+2][winOrEw[index+2].length - 1]; // 95-90
+					b = winOrEw[index+3][winOrEw[index+3].length - 1]; // 85-90
+					c = winOrEw[index+4][winOrEw[index+4].length - 1]; // 80-85
+					d = winOrEw[index+5][winOrEw[index+5].length - 1]; // 75-80
 
 					if(a&&c)
 					{
 						// 95-90, 80-85						
-						winOnly[index+2].pop();
-						winOnly[index+4].pop();
+						winOrEw[index+2].pop();
+						winOrEw[index+4].pop();
 
-						printResult(a,c);
+						printResult([a,c]);
 						continue;
 					}
 
 					if(b&&c)
 					{
 						// 85-90, 80-85 						
-						winOnly[index+3].pop();
-						winOnly[index+4].pop();
+						winOrEw[index+3].pop();
+						winOrEw[index+4].pop();
 
-						printResult(b,c);
+						printResult([b,c]);
 						continue;
 					}
 
 					if(b&&d)
 					{
 						// 85-90, 75-80						
-						winOnly[index+3].pop();
-						winOnly[index+5].pop();
+						winOrEw[index+3].pop();
+						winOrEw[index+5].pop();
 
-						printResult(b,d);
+						printResult([b,d]);
 						continue;
 					}
 
 					break;
 				}
 			}
+
+			// Remaining 
+			var remainingPot = [];
+			// 100%, 95-99, 90-95, 85-90, 80-85
+			for(var c = 0; c < 5; ++c) 
+			{
+				var len =  winOrEw[c].length;
+				for(var i = 0; i < len; ++i)
+				{
+					remainingPot.push(winOrEw[c].pop());
+
+					len =  winOrEw[c].length + 1; // for pop length change
+				}
+			}
+
+			while(true)
+			{
+				if( remainingPot.length > 3)
+				{
+					printResult([remainingPot.pop(),remainingPot.pop(),remainingPot.pop(),remainingPot.pop()]);
+					continue;
+				}
+
+				if( remainingPot.length > 2)
+				{
+					printResult([remainingPot.pop(),remainingPot.pop(),remainingPot.pop()]);
+					continue;
+				}
+
+				if( remainingPot.length > 1)
+				{
+					printResult([remainingPot.pop(),remainingPot.pop()]);
+					continue;
+				}
+				break;
+			}
+
+			// TV SHOW DB
+			for(var c = 0; c < winOrEw.length; ++c)
+			{
+				for(var i = 0; i < winOrEw[c].length; ++i)
+				{
+					tvShow.push(winOrEw[c].pop());
+				}
+			}
 		}
 
-	function shakthi(input_winOrEwPercentDB)
+	function losingTvShowGroup()
+	{
+		for(var c = 0; c < tvShow.length; ++c)
+		{
+			printResult([tvShow.pop()]);
+		}
+	}
+
+	function shakthiClassify(input_winOrEwPercentDB)
 	{
 		var class_100_100 = [];
 		var class_95_99 = [];
@@ -332,17 +375,6 @@ window.addEventListener('load', function ()
 		 );
 
 		 return  output_winOrEwPercentClass;
-	}
-
-	// Shuffles array
-	function shuffle(a) {
-		var j, x, i;
-		for (i = a.length; i; i--) {
-			j = Math.floor(Math.random() * i);
-			x = a[i - 1];
-			a[i - 1] = a[j];
-			a[j] = x;
-		}
 	}
 
 	function dbCollection()
@@ -514,13 +546,17 @@ window.addEventListener('load', function ()
 
 	function printPrediction()
 	{
+		tvShow.length = 0;
 		document.getElementById("predictDataId").innerHTML = 'Time	%	Odd' + '<br />';
 
 		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'WIN ONLY' +'<br />';
-		gold(allWinOnlyPercentRankDB);		
+		goldCup(allWinOnlyPercentRankDB);		
 
 		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'EACH WAY' +'<br />';
-		gold(allEachWayPercentRankDB);
+		goldCup(allEachWayPercentRankDB);
+
+		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />'+ 'TV SHOW' +'<br />';
+		losingTvShowGroup();
 	}
 
 	document.getElementById('btnFoldId').onclick = function () 
@@ -614,6 +650,19 @@ window.addEventListener('load', function ()
 		}
 	};
 
+/////////////////////////////////////////////// UTILITY FUNCTIONS ///////////////////////////////////////////////////////////
+
+	// Shuffles array
+	function shuffle(a) {
+		var j, x, i;
+		for (i = a.length; i; i--) {
+			j = Math.floor(Math.random() * i);
+			x = a[i - 1];
+			a[i - 1] = a[j];
+			a[j] = x;
+		}
+	}
+
 	// Move the focus to next field when an enter key (#13) has been pressed (behave just like a tab key)
 	document.addEventListener('keydown', function (event) {
 		if (event.keyCode === 13 && event.target.nodeName === 'INPUT') {
@@ -623,4 +672,5 @@ window.addEventListener('load', function ()
 		  event.preventDefault();
 		}
 	  });
+
 }); // window.addEventListener('load', function() {
