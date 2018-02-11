@@ -289,19 +289,23 @@ window.addEventListener('load', function ()
 			// TV SHOW DB
 			for(var c = 0; c < winOrEw.length; ++c)
 			{
-				for(var i = 0; i < winOrEw[c].length; ++i)
+				var len =  winOrEw[c].length;
+				for(var i = 0; i < len; ++i)
 				{
 					tvShow.push(winOrEw[c].pop());
+					len =  winOrEw[c].length + 1;
 				}
 			}
 		}
 
 	function losingTvShowGroup()
 	{
-		for(var c = 0; c < tvShow.length; ++c)
-		{
-			printResult([tvShow.pop()]);
-		}
+		printResult(tvShow);
+		tvShow.length  = 0;
+		// for(var c = 0; c < tvShow.length; ++c)
+		// {
+		// 	printResult([tvShow.pop()]);
+		// }
 	}
 
 	function shakthiClassify(input_winOrEwPercentDB)
@@ -614,8 +618,8 @@ window.addEventListener('load', function ()
 		{
 			fetchFormValues();
 
-			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
-			if(1)
+			if(timeData && nRunnersData && horseData && oddData && winPercentageData)
+			// if(1)
 			{
 				// DB: Race meeting 
 				raceData.push({
