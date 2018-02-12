@@ -15,7 +15,7 @@
 
 <!-- 1. INPUT -->
 <!-- Time of meeting -->
-Time: <input type="time" id="timeId" name="time">
+Time: <input type="time" id="timeId" name="time" autofocus>
 <span class="lineBreakID" ></span>
 <!-- total number of horse running -->
 <!-- Runners(#): <input type="number" id="nRunnersId"  class="nRunnersInputField">
@@ -45,9 +45,11 @@ Win(%):
 <input type='range' id="winPercentageId" min='0' max='100' value='50' step='1' onchange= 'showValue(this.value,"sliderID")' oninput = 'showValue(this.value,"sliderID")'> <span id="sliderID" >50</span>
 <span class="lineBreakID" ></span>
 <!-- 3 radio choice - win only, 2,3,4,5 places ew -->
-<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="WIN_ONLY"> <span class = "">&nbsp; Win Only</span>
+<input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="WIN_ONLY" checked> <span class = "">&nbsp; Win Only</span>
+<!--
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="TWO_PLACES"> <span class = "">&nbsp; 2 Places</span>
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="THREE_PLACES"> <span class = "">&nbsp; 3 Places</span>
+-->
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="MORE_PLACES"> <span class = "">&nbsp; N Places</span>
 <span class="lineBreakID" ></span>
 <!-- 2. OUTPUT OPTIONS -->
@@ -61,30 +63,28 @@ Win(%):
 <!-- <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="FIVE_FOLD"> <span class = "btnProp">&nbsp; 5 Fold</span>
 <span class="lineBreakID" ></span> -->
 
-<!-- 3. FINAL OUTPUT -->
-<!-- Time of meeting -->
-<span id = "timeOfMeetingId"></span>
-<!-- Horse Number -->
-<span id = "horseNumberId"></span>
-<!-- Odd -->
-<span id = "oddId"></span>
-<!-- Total horses running -->
-<span id = "nRunnersId"></span>
-<!-- Fold total outcome -->
-<span id = "foldTotalPayoutId"></span>
-
+<button type="button" id="btnNextId" class = "btnProp"> NEXT </button>
 <button type="button" id="btnFoldId" class = "btnProp"> FOLD </button> 
 <button type="button" id="btnPrevId" class = "btnProp"> PREV </button>
-<button type="button" id="btnNextId" class = "btnProp"> NEXT </button>
+
 
 </form>
 </div>  <!-- end of div class="centerHorizontal_Div"  -->
 </div>  <!-- end of divForm -->
 
-<div id="divSettings">
+<!-- 3. FINAL OUTPUT -->
+<!-- <div id="divSettings">
+
 <span id="predictDataId"></span>
 <button type="button" id="btnCloseId" > CLOSE </button>
-</div> <!-- end of DivSettings -->
+
+</div> -->
+
+<div id="divSettings">
+<button type="button" id="btnCloseId" > CLOSE </button>
+</div>
+
+<!-- end of DivSettings -->
 
 </body>
 

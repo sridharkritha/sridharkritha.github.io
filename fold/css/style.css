@@ -109,7 +109,8 @@
     z-index: 10;
     border: solid 1px blue;
     background-color:orangered;
-    /*transform: translate(-10px, 200px);     */
+    font-size: 150%;
+    font-weight: bold;
 }
 
 .lineBreakID {

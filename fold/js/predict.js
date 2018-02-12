@@ -28,6 +28,9 @@ window.addEventListener('load', function () {
 	var output_winOrEwPercentClass = [];
 	var tvShow = [];
 
+	var colourDivId ='';
+	var nameCounter = 1;
+
 	var selectedList = [];
 
 	// Enum - Win Type
@@ -65,8 +68,30 @@ window.addEventListener('load', function () {
 		document.getElementById("horseId").value = '';
 		document.getElementById("oddId").value = '';
 		document.getElementById("winPercentageId").value = '';
-		document.getElementById("nRunnersId").value = '';
+		// document.getElementById("nRunnersId").value = '';
 		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
+	}
+
+	function removeAllChild()
+	{
+		var myNode = document.getElementById("divSettings");
+		while (myNode.firstChild) {
+			myNode.removeChild(myNode.firstChild);
+		}
+	}
+
+	function createColourDiv()
+	{
+		// Coloured Div Rows Result
+		colourDivId ='colourDivId'+ (++nameCounter);	
+
+		var div = document.createElement("div");
+		div.style.background = getRandomColor();
+		div.style.color = "white";	
+		div.id = colourDivId;
+		document.getElementById("divSettings").appendChild(div);
+
+		return colourDivId;
 	}
 
 	/*
@@ -104,24 +129,25 @@ window.addEventListener('load', function () {
 			else {
 				return true;
 			}
-		});
+		});		
 
 		///////////////////////// Print the result ///////////////////////////////////
+		var divId = createColourDiv();
 
 		var isContainsAnyValid = false;
 		for (var i = 0; i < printDataByTime.length; ++i) {
 			if (printDataByTime[i]) {
 				isContainsAnyValid = true;
 
-				document.getElementById("predictDataId").innerHTML += printDataByTime[i][1].time + '	' +
-					printDataByTime[i][1].horse + '	' + printDataByTime[i][1].winPercentage + '	' +
+				document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
+					printDataByTime[i][1].horse + ' &emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
 					printDataByTime[i][1].odd.string + '<br />';
 			}
 		}
-
-		if (isContainsAnyValid) {
-			document.getElementById("predictDataId").innerHTML += '---------------------------------' + '<br />';
-		}
+		
+		// if (isContainsAnyValid) {
+		// 	document.getElementById("predictDataId").innerHTML += '---------------------------------' + '<br />';
+		// }
 	}
 
 	function goldCup(array) {
@@ -451,7 +477,7 @@ window.addEventListener('load', function () {
 							document.getElementById("timeId").value = obj[prop];
 							break;
 						case "nRunners":
-							document.getElementById("nRunnersId").value = obj[prop];
+							// document.getElementById("nRunnersId").value = obj[prop];
 							break;
 						case "horse":
 							document.getElementById("horseId").value = obj[prop];
@@ -480,7 +506,7 @@ window.addEventListener('load', function () {
 							obj[prop] = document.getElementById("timeId").value;
 							break;
 						case "nRunners":
-							obj[prop] = document.getElementById("nRunnersId").value;
+							// obj[prop] = document.getElementById("nRunnersId").value;
 							break;
 						case "horse":
 							obj[prop] = document.getElementById("horseId").value;
@@ -499,7 +525,15 @@ window.addEventListener('load', function () {
 
 	function fetchFormValues() {
 		timeData = document.getElementById("timeId").value;
-		nRunnersData = document.getElementById("nRunnersId").value;
+
+		var railwayHour = Number(timeData.slice(0,2));
+		if(railwayHour > 12)
+		{
+			railwayHour = railwayHour - 12;
+			timeData = railwayHour < 10 ? '0'+ railwayHour + timeData.slice(2,5) :  railwayHour + timeData.slice(2,5);
+		}
+
+		// nRunnersData = document.getElementById("nRunnersId").value;
 		horseData = document.getElementById("horseId").value;
 		winPercentageData = document.getElementById("winPercentageId").value;
 		oddData = document.getElementById("oddId").value;
@@ -510,7 +544,20 @@ window.addEventListener('load', function () {
 
 	function printPrediction() {
 		tvShow.length = 0;
-		document.getElementById("predictDataId").innerHTML = 'Time	%	Odd' + '<br />';
+	
+		document.getElementById(createColourDiv()).innerHTML = 'Time &emsp; Hno &emsp; % &emsp; Odd';
+
+		document.getElementById(createColourDiv()).innerHTML = 'WIN ONLY';
+		goldCup(allWinOnlyPercentRankDB);
+
+		document.getElementById(createColourDiv()).innerHTML = 'EACH WAY';
+		goldCup(allEachWayPercentRankDB);
+
+		document.getElementById(createColourDiv()).innerHTML = 'TV SHOW';
+		losingTvShowGroup();
+
+		/*
+		document.getElementById("predictDataId").innerHTML = 'Time &emsp; Hno &emsp; % &emsp; Odd' + '<br />';
 
 		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />' + 'WIN ONLY' + '<br />';
 		goldCup(allWinOnlyPercentRankDB);
@@ -520,6 +567,7 @@ window.addEventListener('load', function () {
 
 		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />' + 'TV SHOW' + '<br />';
 		losingTvShowGroup();
+		*/
 	}
 
 	document.getElementById('btnFoldId').onclick = function () {
@@ -537,6 +585,8 @@ window.addEventListener('load', function () {
 	document.getElementById('btnCloseId').onclick = function () {
 		var divForm = document.getElementById('divForm');
 		var divSettings = document.getElementById('divSettings');
+
+		removeAllChild(); // remove all childrens of 'divSettings'
 
 		divForm.style.display = 'block';
 		divSettings.style.display = 'none';
@@ -570,17 +620,19 @@ window.addEventListener('load', function () {
 	document.getElementById('btnNextId').onclick = function () {
 		if (pageNoCurr === pageNoTotal) {
 			fetchFormValues();
+			document.getElementById("timeId").focus();
 
 			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
 			// if(timeData && horseData && oddData && winPercentageData)
 			if (1) {
+				
 				// DB: Race meeting 
 				raceData.push({
 					pageNo: pageNoCurr,
 					time: timeData,
 					horse: horseData,
 					winPercentage: winPercentageData,
-					nRunners: nRunnersData,
+					// nRunners: nRunnersData,
 					winType: winTypeData,
 					odd: {
 						string: oddData,
@@ -627,5 +679,32 @@ window.addEventListener('load', function () {
 			event.preventDefault();
 		}
 	});
+
+	// Get a random colour
+	function getRandomColor() 
+    {
+        /*
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+        }   
+        return color;
+        */
+        // Ref: http://htmlcolorcodes.com/
+        var color = [
+            '#C70039', '#FF5733', '#FFC30F', '#808000',
+            '#008080',
+            '#B9770E',
+            '#239B56',
+
+            '#616A6B',
+            '#1F618D',
+
+            '#CD5C5C',
+            '#AF7AC5', '#2980B9', '#45B39D', '#B7950B'
+        ];
+        return color[Math.floor(Math.random() * color.length)];
+    }
 
 }); // window.addEventListener('load', function() {
