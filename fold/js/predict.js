@@ -79,6 +79,7 @@ window.addEventListener('load', function () {
 	*/
 
 	function printResult(objArray) {
+		var printDataByTime = [];
 		// Browse the object in ascending order / in the order creation 
 		for (var key in objArray) {
 			if (objArray.hasOwnProperty(key)) {
@@ -112,9 +113,9 @@ window.addEventListener('load', function () {
 			if (printDataByTime[i]) {
 				isContainsAnyValid = true;
 
-				document.getElementById("predictDataId").innerHTML += printDataByTime[i].time + '	' +
-					printDataByTime[i].horse + '	' + printDataByTime[i].winPercentage + '	' +
-					printDataByTime[i].odd.string + '<br />';
+				document.getElementById("predictDataId").innerHTML += printDataByTime[i][1].time + '	' +
+					printDataByTime[i][1].horse + '	' + printDataByTime[i][1].winPercentage + '	' +
+					printDataByTime[i][1].odd.string + '<br />';
 			}
 		}
 
