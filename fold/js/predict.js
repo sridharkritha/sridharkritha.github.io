@@ -74,20 +74,30 @@ window.addEventListener('load', function () {
 
 	function removeAllChild()
 	{
-		var myNode = document.getElementById("divSettings");
-		while (myNode.firstChild) {
-			myNode.removeChild(myNode.firstChild);
-		}
+		var divNode = document.getElementById("divSettings");
+		for (var i = 0; i < divNode.childNodes.length; i++) {
+			// Only remove the 'DIV' child nodes and ignore button and other text nodes
+			if (divNode.childNodes[i].tagName=='DIV') {
+				divNode.removeChild(divNode.childNodes[i]);
+				--i; // bcos we are changing the node length by removing a node
+			}
+		 }
 	}
 
-	function createColourDiv()
+	function createColourDiv(colourValue)
 	{
 		// Coloured Div Rows Result
-		colourDivId ='colourDivId'+ (++nameCounter);	
-
+		colourDivId ='colourDivId'+ (++nameCounter);
 		var div = document.createElement("div");
-		div.style.background = getRandomColor();
-		div.style.color = "white";	
+		if(colourValue)
+		{
+			div.style.background = colourValue;
+		}
+		else
+		{
+			div.style.background = getRandomColor();
+		}		
+		div.style.color = "white";
 		div.id = colourDivId;
 		document.getElementById("divSettings").appendChild(div);
 
@@ -108,7 +118,7 @@ window.addEventListener('load', function () {
 		// Browse the object in ascending order / in the order creation 
 		for (var key in objArray) {
 			if (objArray.hasOwnProperty(key)) {
-				// Store as a array instead of object for doing sorting at the later stage				
+				// Store as a array instead of object for doing sorting at the later stage
 				printDataByTime.push([key, objArray[key]]);
 			}
 		}
@@ -134,20 +144,13 @@ window.addEventListener('load', function () {
 		///////////////////////// Print the result ///////////////////////////////////
 		var divId = createColourDiv();
 
-		var isContainsAnyValid = false;
 		for (var i = 0; i < printDataByTime.length; ++i) {
 			if (printDataByTime[i]) {
-				isContainsAnyValid = true;
-
 				document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
 					printDataByTime[i][1].horse + ' &emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
 					printDataByTime[i][1].odd.string + '<br />';
 			}
 		}
-		
-		// if (isContainsAnyValid) {
-		// 	document.getElementById("predictDataId").innerHTML += '---------------------------------' + '<br />';
-		// }
 	}
 
 	function goldCup(array) {
@@ -162,7 +165,7 @@ window.addEventListener('load', function () {
 				index = 0;
 
 				// 100, 100, 95-99, 90-94
-				// 100, 95-99, 95-99, 90-94				
+				// 100, 95-99, 95-99, 90-94
 				a = winOrEw[index + 0][winOrEw[index + 0].length - 1];   // 100%
 				a2 = winOrEw[index + 0][winOrEw[index + 0].length - 2];   // 100%
 				b = winOrEw[index + 1][winOrEw[index + 1].length - 1]; // 95-99
@@ -251,7 +254,7 @@ window.addEventListener('load', function () {
 				d = winOrEw[index + 5][winOrEw[index + 5].length - 1]; // 75-80
 
 				if (a && c) {
-					// 95-90, 80-85						
+					// 95-90, 80-85
 					winOrEw[index + 2].pop();
 					winOrEw[index + 4].pop();
 
@@ -260,7 +263,7 @@ window.addEventListener('load', function () {
 				}
 
 				if (b && c) {
-					// 85-90, 80-85 						
+					// 85-90, 80-85
 					winOrEw[index + 3].pop();
 					winOrEw[index + 4].pop();
 
@@ -269,7 +272,7 @@ window.addEventListener('load', function () {
 				}
 
 				if (b && d) {
-					// 85-90, 75-80						
+					// 85-90, 75-80
 					winOrEw[index + 3].pop();
 					winOrEw[index + 5].pop();
 
@@ -466,7 +469,6 @@ window.addEventListener('load', function () {
 
 	function populateRaceCard(pageNumber) {
 		// Browse the object in Desending order
-		// for(var pageNumber = raceData.length - 1; pageNumber >= 0; --pageNumber)
 		if (raceData.hasOwnProperty(pageNumber)) {
 			var obj = raceData[pageNumber];
 			for (var prop in obj) {
@@ -545,29 +547,16 @@ window.addEventListener('load', function () {
 	function printPrediction() {
 		tvShow.length = 0;
 	
-		document.getElementById(createColourDiv()).innerHTML = 'Time &emsp; Hno &emsp; % &emsp; Odd';
+		document.getElementById(createColourDiv('#000000')).innerHTML = 'Time &emsp; Hno &emsp; % &emsp; Odd';
 
-		document.getElementById(createColourDiv()).innerHTML = 'WIN ONLY';
+		document.getElementById(createColourDiv('#000000')).innerHTML = 'WIN ONLY';
 		goldCup(allWinOnlyPercentRankDB);
 
-		document.getElementById(createColourDiv()).innerHTML = 'EACH WAY';
+		document.getElementById(createColourDiv('#000000')).innerHTML = 'EACH WAY';
 		goldCup(allEachWayPercentRankDB);
 
-		document.getElementById(createColourDiv()).innerHTML = 'TV SHOW';
+		document.getElementById(createColourDiv('#000000')).innerHTML = 'TV SHOW';
 		losingTvShowGroup();
-
-		/*
-		document.getElementById("predictDataId").innerHTML = 'Time &emsp; Hno &emsp; % &emsp; Odd' + '<br />';
-
-		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />' + 'WIN ONLY' + '<br />';
-		goldCup(allWinOnlyPercentRankDB);
-
-		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />' + 'EACH WAY' + '<br />';
-		goldCup(allEachWayPercentRankDB);
-
-		document.getElementById("predictDataId").innerHTML += '----------------------' + '<br />' + 'TV SHOW' + '<br />';
-		losingTvShowGroup();
-		*/
 	}
 
 	document.getElementById('btnFoldId').onclick = function () {
