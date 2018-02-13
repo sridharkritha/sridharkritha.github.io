@@ -147,8 +147,9 @@ window.addEventListener('load', function () {
 		for (var i = 0; i < printDataByTime.length; ++i) {
 			if (printDataByTime[i]) {
 				document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
-					printDataByTime[i][1].horse + ' &emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
-					printDataByTime[i][1].odd.string + '<br />';
+					printDataByTime[i][1].odd.string + ' &emsp; ' +
+					printDataByTime[i][1].horse + ' &emsp;&emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
+					 '<br />';
 			}
 		}
 	}
@@ -310,6 +311,12 @@ window.addEventListener('load', function () {
 				printResult([remainingPot.pop(), remainingPot.pop()]);
 				continue;
 			}
+
+			if (remainingPot.length === 1) {
+				printResult([remainingPot.pop()]);
+				continue;
+			}
+
 			break;
 		}
 
@@ -547,16 +554,25 @@ window.addEventListener('load', function () {
 	function printPrediction() {
 		tvShow.length = 0;
 	
-		document.getElementById(createColourDiv('#000000')).innerHTML = 'Time &emsp; Hno &emsp; % &emsp; Odd';
+		document.getElementById(createColourDiv('#581845')).innerHTML = 'Time &emsp; Odd &emsp; Hno &emsp; % ';
 
-		document.getElementById(createColourDiv('#000000')).innerHTML = 'WIN ONLY';
-		goldCup(allWinOnlyPercentRankDB);
+		if(allWinOnlyPercentRankDB.length)
+		{
+			document.getElementById(createColourDiv('#000000')).innerHTML = 'WIN ONLY';
+			goldCup(allWinOnlyPercentRankDB);
+		}
+		
+		if(allEachWayPercentRankDB.length)
+		{
+			document.getElementById(createColourDiv('#000000')).innerHTML = 'EACH WAY';
+			goldCup(allEachWayPercentRankDB);
+		}		
 
-		document.getElementById(createColourDiv('#000000')).innerHTML = 'EACH WAY';
-		goldCup(allEachWayPercentRankDB);
-
-		document.getElementById(createColourDiv('#000000')).innerHTML = 'TV SHOW';
-		losingTvShowGroup();
+		if(tvShow.length)
+		{
+			document.getElementById(createColourDiv('#000000')).innerHTML = 'TV SHOW';
+			losingTvShowGroup();
+		}		
 	}
 
 	document.getElementById('btnFoldId').onclick = function () {
