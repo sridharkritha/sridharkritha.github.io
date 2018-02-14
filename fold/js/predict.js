@@ -628,8 +628,9 @@ window.addEventListener('load', function () {
 			document.getElementById("timeId").focus();
 
 			// if(timeData && nRunnersData && horseData && oddData && winPercentageData)
-			// if(timeData && horseData && oddData && winPercentageData)
-			if (1) {
+			if(timeData && horseData && oddData && winPercentageData)
+			// if (1) 
+			{
 				
 				// DB: Race meeting 
 				raceData.push({
