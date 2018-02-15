@@ -163,7 +163,8 @@ window.addEventListener('load', function() {
 
         // Text to Speech
         // ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
-        textToSpeech = new SpeechSynthesisUtterance(qStr);
+        // window.speechSynthesis.cancel();
+        textToSpeech = new SpeechSynthesisUtterance(qStr);        
         window.speechSynthesis.speak(textToSpeech);
 
         if (isUserOptionChanged) 
@@ -192,6 +193,7 @@ window.addEventListener('load', function() {
 
         // Text to Speech
         // ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
+        // window.speechSynthesis.cancel();
         textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
         window.speechSynthesis.speak(textToSpeech);
 
