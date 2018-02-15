@@ -1,0 +1,203 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+html, body{
+height:100%;
+width:100%;
+}
+
+#container {
+/* background-color: gold; */
+background-color: black;
+}
+
+/* Centered Horizontally and Vertically */
+.centered {
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+margin: auto;
+border: solid 2px red;       
+}
+
+.halfHeight {
+border: solid 2px blue;
+height: 90%;
+}
+
+.centerHorizontal_Div{
+/* Horizontally Centered Inside An Another DIV */
+/*width: 50%; 
+margin: 0 auto;    */
+display: block;
+margin: 0 auto;
+text-align: center;    
+}
+
+.centerHorizontal_Btn{
+/* Horizontally Centered Inside An Another DIV */   
+display:block;
+margin: 0 auto; 
+text-align: center;   
+}
+
+.btnProp {  
+    /* width: 17%; */
+    width: 27%;
+    height: 10%;
+    font-size: 300%;
+    font-weight: bold;
+}
+
+.radioProp {
+    width: 50px;
+    height:50px;    
+}
+.radioInput {        
+/* text-align: center;  */
+font-size: 300%;
+font-weight: bold;
+width: 200px;
+height: 70px;
+}
+
+#autoTimerInput {        
+/* text-align: center;  */
+font-size: 300%;
+font-weight: bold;
+width: 100px;
+height: 70px;
+}
+
+#timer {
+    position: absolute;
+    left: 75%;
+    font-weight: bold;
+    font-size: 400%;
+    color: white;
+}
+
+.leftAlign {
+    position: absolute;
+    left: 72%;
+}
+
+.rightMargin {
+    margin-left:5%;
+}
+
+#numOne {    
+    font-size: 1300%;
+    font-stretch: expanded;
+    font-weight: bold;
+    /* font-weight: 900;     */
+    /* height: 25%;     */
+    color: white;
+    }
+    
+#ansId {        
+    /* text-align: center;  */   
+    width: 56%;
+    font-size: 700%; /* HEIGHT - height: 150px;*/    
+    font-weight: bold;
+}
+
+.numPadSz {
+position: relative;
+display: inline-block;
+text-align: center;
+width: 14%;
+font-size: 700%; /* HEIGHT - height: 120px;*/
+font-weight: bold;
+}
+
+.clearBtnSz {
+    /* position: relative; */
+    /* display: inline-block; */
+    /* top: -18px; */
+    
+    /* width: 180px; */
+    /* height: 120px; */
+    width: 28%;
+    font-size: 700%; /* HEIGHT - height: 120px;*/
+    font-weight: bold;    
+    }
+
+#settingsDiv {
+    display: none;
+    z-index: 10;
+    border: solid 1px blue;
+    background-color:orangered;
+    /*transform: translate(-10px, 200px);     */
+    }
+
+/*********************************************** Browser Specific ************************************************************/
+
+/* Remove input box up and down spinner*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+/* display: none; <- Crashes Chrome on hover */
+-webkit-appearance: none;
+margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* Slide On / Off buttons*/
+.switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}

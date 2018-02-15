@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>mindcalc</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/animation.js"> </script>
+</head>
+
+<body>
+    <div class="centered" id="container">
+            <div class="centered halfHeight">    
+     <!--SETTINGS -->     
+     <button type="button" id="btnOpenSettings" class = "btnProp"> Settings </button>  
+     <!-- Timer -->
+     <span id="timer"></span><br>
+    <!-- Question -->
+        <div class="centerHorizontal_Div" id="numOne"></div><br>
+    <!-- Answer input box -->
+    <div class="centerHorizontal_Div" >
+        <input  id="ansId" name="field1"  /> 
+    </div> <br><br><br>           
+    <!-- Number Pad -->
+        <div id="numPad" class="centerHorizontal_Div">
+                <button type="button" id="numPadBtn1" class="numPadSz"> 1 </button>
+                <button type="button" id="numPadBtn2" class="numPadSz"> 2 </button>
+                <button type="button" id="numPadBtn3" class="numPadSz"> 3 </button>
+                <button type="button" id="numPadBtn4" class="numPadSz"> 4 </button><br><br>
+                <button type="button" id="numPadBtn5" class="numPadSz"> 5 </button>
+                <button type="button" id="numPadBtn6" class="numPadSz"> 6 </button>
+                <button type="button" id="numPadBtn7" class="numPadSz"> 7 </button>
+                <button type="button" id="numPadBtn8" class="numPadSz"> 8 </button><br><br>
+                <button type="button" id="numPadBtn9" class="numPadSz"> 9 </button>
+                <button type="button" id="numPadBtn0" class="numPadSz"> 0 </button>
+                <button type="button" id="numPadBtnC" class = "clearBtnSz"> CLR </button> 
+        </div> <br> <br>
+    <!-- Control Buttons -->
+              <!-- <button type="button" id="numPadBtnC" class = "btnProp"> CLEAR </button>  -->
+              <button type="button" id="autoModeBtn" class = "btnProp leftAlign"> Auto </button> 
+              <button type="button" id="btnNext" class="centerHorizontal_Div btnProp"> NEXT </button>
+            </div>      
+        </div>
+    <!-- Settings Panel -->     
+    <div id="settingsDiv" class="centered halfHeight">
+        <span class = "btnProp centerHorizontal_Div">Settings</span>
+        
+        <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_DIGITS_MULT"> <span class = "btnProp">&nbsp; 2 digits x 2 digits</span><br><br>
+        <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="TWO_DIGITS_SQR"> <span class = "btnProp">&nbsp; 2 digits Square</span><br><br>
+        <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_TWO_DIGITS_ADD"> <span class = "btnProp">&nbsp; 3 digits + 2 digits</span><br><br>
+        <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="THREE_SPL_TWO_DIGITS_ADD"> <span class = "btnProp">&nbsp; 3 digits (x10) + 2 digits</span><br><br>
+        <br>
+        <div >
+        <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="VAR_LEN_MULT">&nbsp;&nbsp;
+        <input type="number" class = "radioInput" id="digitFirst_mul"> <span class = "btnProp">&nbsp; X &nbsp;</span>
+        <input type="number" class = "radioInput" id="digitSecond_mul">
+        </div>
+        <br>
+        <div>
+        <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="VAR_LEN_ADD">&nbsp;&nbsp;
+        <input type="number" class = "radioInput" id="digitFirst_add"> <span class = "btnProp">&nbsp; + &nbsp;</span>
+        <input type="number" class = "radioInput" id="digitSecond_add">
+        </div>
+        <br>
+        <span class = "btnProp rightMargin">Auto Timer &nbsp;</span> <input type="number" id="autoTimerInput">
+
+        <button type="button" id="btnSaveSettings" class = "btnProp leftAlign"> OK </button>
+      </div>
+    </div>
+
+</body>
+
+</html>
