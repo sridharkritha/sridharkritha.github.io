@@ -460,7 +460,14 @@ window.addEventListener('load', function () {
 					break;
 				case 'TWO_PLACES':
 					twoWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
-					allEachWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
+					if (Number(allWinEachWayPercentRankDB[i][1].winPercentage) < 96) 
+					{
+						allWinOnlyPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
+					}
+					else
+					{
+						allEachWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
+					}
 					break;
 				case 'THREE_PLACES':
 					threeWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
@@ -568,7 +575,7 @@ window.addEventListener('load', function () {
 			goldCup(allEachWayPercentRankDB);
 		}		
 
-		if(tvShow.length)
+		// if(tvShow.length)
 		{
 			document.getElementById(createColourDiv('#000000')).innerHTML = 'TV SHOW';
 			losingTvShowGroup();
