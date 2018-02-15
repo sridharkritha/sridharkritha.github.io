@@ -51,6 +51,39 @@ window.addEventListener('load', function () {
 	};
 	var foldTypeData = FOLD_TYPE.TWO_FOLD;
 
+	// Save the object into browser local storage
+	function browserCacheSave() 
+	{		 
+		// JSON.stringify => Converts an object into sequence of strings 
+		localStorage.setItem('savedObject', JSON.stringify(raceData));
+	}
+
+	// Clean all browser local storage
+	function browserCacheClear() 
+	{		
+		window.localStorage.clear(); // clear all local storage
+	}
+
+	// Restore the data from browser cached storage
+	function browserCacheRestore() 
+	{
+		// Browser based presistance local storage
+		// Retrieve the object from storage
+		var retrievedObject = localStorage.getItem('savedObject');
+		if(retrievedObject)
+		{
+			// JSON.parse => Converts string form of object in to original Json object form
+			raceData = JSON.parse(retrievedObject);
+			// console.log('retrievedObject: ', JSON.parse(retrievedObject));			
+		}		
+	}
+
+	// Self-Invoking Functions
+	(function () {
+		browserCacheRestore();
+	})();
+
+    // Radio type
 	winTypeRadioOption = function (radioOption) {
 		winTypeData = radioOption.value;
 	}
@@ -602,6 +635,10 @@ window.addEventListener('load', function () {
 
 		divForm.style.display = 'block';
 		divSettings.style.display = 'none';
+	};	
+
+	document.getElementById('btnCleanId').onclick = function () {
+		browserCacheClear(); // clear all local storage
 	};
 
 	document.getElementById('btnPrevId').onclick = function () {
@@ -655,6 +692,7 @@ window.addEventListener('load', function () {
 				++pageNoCurr;
 				pageNoTotal = pageNoCurr;
 				clear();
+				browserCacheSave();
 			}
 		}
 		else if (pageNoCurr === pageNoTotal - 1) {
