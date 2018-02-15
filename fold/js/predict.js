@@ -146,7 +146,7 @@ window.addEventListener('load', function () {
 	6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 	*/
 
-	function printResult(objArray) {
+	function printResult(objArray, colourValue) {
 		var printDataByTime = [];
 		// Browse the object in ascending order / in the order creation 
 		for (var key in objArray) {
@@ -175,7 +175,7 @@ window.addEventListener('load', function () {
 		});		
 
 		///////////////////////// Print the result ///////////////////////////////////
-		var divId = createColourDiv();
+		var divId = createColourDiv(colourValue);
 
 		for (var i = 0; i < printDataByTime.length; ++i) {
 			if (printDataByTime[i]) {
@@ -331,22 +331,22 @@ window.addEventListener('load', function () {
 
 		while (true) {
 			if (remainingPot.length > 3) {
-				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop(), remainingPot.pop()]);
+				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop(), remainingPot.pop()],'#FF0000');
 				continue;
 			}
 
 			if (remainingPot.length > 2) {
-				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop()]);
+				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop()],'#FF0000');
 				continue;
 			}
 
 			if (remainingPot.length > 1) {
-				printResult([remainingPot.pop(), remainingPot.pop()]);
+				printResult([remainingPot.pop(), remainingPot.pop()],'#FF0000');
 				continue;
 			}
 
 			if (remainingPot.length === 1) {
-				printResult([remainingPot.pop()]);
+				printResult([remainingPot.pop()],'#FF0000');
 				continue;
 			}
 

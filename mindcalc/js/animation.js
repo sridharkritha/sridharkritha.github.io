@@ -255,7 +255,7 @@ window.addEventListener('load', function() {
             document.getElementById("ansId").value += num;
             checkAnswer();
         }       
-    }
+	}
     
     // Number Pad
     document.getElementById('numPadBtn1').onclick = function () { appendNumPadValue(1); }
