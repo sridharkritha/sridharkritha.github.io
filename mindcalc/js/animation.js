@@ -12,6 +12,8 @@ window.addEventListener('load', function() {
     var digitalTimerString = '00:00:00';
     var isAnswerVerified = false;
 
+    var textToSpeech = null;
+
     timeoutSec = timeoutSecConst;
 
     // Enum
@@ -157,7 +159,12 @@ window.addEventListener('load', function() {
         }
 
         document.getElementById("numOne").innerHTML = qStr;
-        //document.getElementById("container").style.backgroundColor = '#239B56'; // getRandomColor();      
+        //document.getElementById("container").style.backgroundColor = '#239B56'; // getRandomColor();
+
+        // Text to Speech
+        // ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
+        textToSpeech = new SpeechSynthesisUtterance(qStr);
+        window.speechSynthesis.speak(textToSpeech);
 
         if (isUserOptionChanged) 
         {
@@ -182,6 +189,12 @@ window.addEventListener('load', function() {
         }
 
         var eLen = expAns.toString().length;
+
+        // Text to Speech
+        // ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
+        textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
+        window.speechSynthesis.speak(textToSpeech);
+
         var ans = 0;
         if(flashAnswerNext)
         {
