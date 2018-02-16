@@ -159,7 +159,7 @@ window.addEventListener('load', function() {
         }
 
         document.getElementById("numOne").innerHTML = qStr;
-        //document.getElementById("container").style.backgroundColor = '#239B56'; // getRandomColor();
+        //document.getElementById("divMainAppId").style.backgroundColor = '#239B56'; // getRandomColor();
 
         // Text to Speech
         // ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
@@ -223,13 +223,13 @@ window.addEventListener('load', function() {
         {
             // Tick Mark as HTML entity in UTF-8  ->  &#10004;
             document.getElementById("ansId").value += " " + decodeEntities('&#10004;');  
-            setAnswerVerified()         
+            setAnswerVerified();
         }
         else if (ans !== expAns && eLen === uLen) 
         {
            // Cross Mark as HTML entity in UTF-8 ->  &#10008;
             document.getElementById("ansId").value += " " + decodeEntities('&#10008;'); 
-            setAnswerVerified();  
+            setAnswerVerified();
         } 
     }  
 
@@ -334,7 +334,26 @@ window.addEventListener('load', function() {
         {
             quest();
         }.bind(this),1000);
-    }
+    };
+
+    
+    var btnHide = document.getElementById('btnIdHide');
+    btnHide.onclick = function () 
+    {
+        var divMainApp = document.getElementById('divMainAppId');
+        var divHide = document.getElementById('hideDiv');
+
+        if (!divHide.style.display || divHide.style.display === 'none') 
+        {
+            divHide.style.display = 'block';
+            divMainApp.style.display = 'none';
+        }
+        else 
+        {
+            divHide.style.display = 'none';
+            divMainApp.style.display = 'block';
+        }
+    };
  
     // Settings Panel
     var btnSet = document.getElementById('btnOpenSettings');

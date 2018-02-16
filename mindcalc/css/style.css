@@ -8,7 +8,7 @@ height:100%;
 width:100%;
 }
 
-#container {
+#divMainAppId {
 /* background-color: gold; */
 background-color: black;
 }
@@ -47,7 +47,7 @@ text-align: center;
 
 .btnProp {  
     /* width: 17%; */
-    width: 27%;
+    width: 17%;
     height: 10%;
     font-size: 300%;
     font-weight: bold;
@@ -83,7 +83,12 @@ height: 70px;
 
 .leftAlign {
     position: absolute;
-    left: 72%;
+    left: 61%;
+}
+
+.rightAlign {
+    position: absolute;
+    left: 22%;
 }
 
 .rightMargin {
@@ -133,6 +138,14 @@ font-weight: bold;
     border: solid 1px blue;
     background-color:orangered;
     /*transform: translate(-10px, 200px);     */
+    }
+
+#hideDiv 
+    {
+        display: none;
+        z-index: 10;
+        border: solid 1px blue;
+        background-color:green;
     }
 
 /*********************************************** Browser Specific ************************************************************/
