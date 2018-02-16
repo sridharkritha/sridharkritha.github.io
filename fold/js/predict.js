@@ -62,6 +62,7 @@ window.addEventListener('load', function () {
 	function browserCacheClear() 
 	{		
 		window.localStorage.clear(); // clear all local storage
+		raceData.length = 0;
 	}
 
 	// Restore the data from browser cached storage
@@ -74,7 +75,8 @@ window.addEventListener('load', function () {
 		{
 			// JSON.parse => Converts string form of object in to original Json object form
 			raceData = JSON.parse(retrievedObject);
-			// console.log('retrievedObject: ', JSON.parse(retrievedObject));			
+			// console.log('retrievedObject: ', JSON.parse(retrievedObject));
+			pageNoTotal = raceData.length;
 		}		
 	}
 
@@ -102,7 +104,7 @@ window.addEventListener('load', function () {
 		document.getElementById("oddId").value = '';
 		document.getElementById("winPercentageId").value = '';
 		// document.getElementById("nRunnersId").value = '';
-		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '50';
+		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '89';
 	}
 
 	function removeAllChild()
@@ -146,7 +148,7 @@ window.addEventListener('load', function () {
 	6. 5 folds -> 100% + 100% + 100% + (90 - 95)% + (80 - 90)%
 	*/
 
-	function printResult(objArray, colourValue) {
+	function printResult(objArray, colourValue = 0) {
 		var printDataByTime = [];
 		// Browse the object in ascending order / in the order creation 
 		for (var key in objArray) {
