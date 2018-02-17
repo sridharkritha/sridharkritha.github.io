@@ -331,24 +331,29 @@ window.addEventListener('load', function () {
 			}
 		}
 
+		if(remainingPot.length) 
+		{
+			document.getElementById(createColourDiv('#000000')).innerHTML = 'REMAINING';
+		}
+
 		while (true) {
 			if (remainingPot.length > 3) {
-				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop(), remainingPot.pop()],'#FF0000');
+				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop(), remainingPot.pop()]);
 				continue;
 			}
 
 			if (remainingPot.length > 2) {
-				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop()],'#FF0000');
+				printResult([remainingPot.pop(), remainingPot.pop(), remainingPot.pop()]);
 				continue;
 			}
 
 			if (remainingPot.length > 1) {
-				printResult([remainingPot.pop(), remainingPot.pop()],'#FF0000');
+				printResult([remainingPot.pop(), remainingPot.pop()]);
 				continue;
 			}
 
 			if (remainingPot.length === 1) {
-				printResult([remainingPot.pop()],'#FF0000');
+				printResult([remainingPot.pop()]);
 				continue;
 			}
 
