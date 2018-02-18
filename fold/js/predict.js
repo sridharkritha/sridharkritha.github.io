@@ -104,7 +104,7 @@ window.addEventListener('load', function () {
 		document.getElementById("oddId").value = '';
 		document.getElementById("winPercentageId").value = '';
 		// document.getElementById("nRunnersId").value = '';
-		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '89';
+		document.getElementById("winPercentageId").value = document.getElementById("sliderID").innerHTML = '93';
 	}
 
 	function removeAllChild()
@@ -207,17 +207,7 @@ window.addEventListener('load', function () {
 				b = winOrEw[index + 1][winOrEw[index + 1].length - 1]; // 95-99
 				b2 = winOrEw[index + 1][winOrEw[index + 1].length - 2]; // 95-99
 				c = winOrEw[index + 2][winOrEw[index + 2].length - 1]; // 90-95
-
-				if (a && a2 && b && c) {
-					// 100, 100, 95-99, 90-94
-					winOrEw[index + 0].pop();
-					winOrEw[index + 0].pop();
-					winOrEw[index + 1].pop();
-					winOrEw[index + 2].pop();
-
-					printResult([a, a2, b, c]);
-					continue;
-				}
+				d = winOrEw[index + 3][winOrEw[index + 3].length - 1]; // 85-90
 
 				if (a && b && b2 && c) {
 					// 100, 95-99, 95-99, 90-94	
@@ -227,6 +217,29 @@ window.addEventListener('load', function () {
 					winOrEw[index + 2].pop();
 
 					printResult([a, b, b2, c]);
+					continue;
+				}
+
+				if (a && a2 && b && c) // 100, 100, 95-99, 90-94
+				{
+					
+					winOrEw[index + 0].pop();
+					winOrEw[index + 0].pop();
+					winOrEw[index + 1].pop();
+					winOrEw[index + 2].pop();
+
+					printResult([a, a2, b, c]);
+					continue;
+				}
+
+				if (a && b && c && d) // 100, 95-99, 90-94, 85 - 90
+				{
+					winOrEw[index + 0].pop();
+					winOrEw[index + 1].pop();
+					winOrEw[index + 2].pop();
+					winOrEw[index + 3].pop();
+
+					printResult([a, b, c, d]);
 					continue;
 				}
 				break;
