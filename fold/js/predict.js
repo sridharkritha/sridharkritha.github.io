@@ -179,12 +179,27 @@ window.addEventListener('load', function () {
 		///////////////////////// Print the result ///////////////////////////////////
 		var divId = createColourDiv(colourValue);
 
+		var rtp = 1;
+
 		for (var i = 0; i < printDataByTime.length; ++i) {
 			if (printDataByTime[i]) {
-				document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
+				rtp *= printDataByTime[i][1].odd.fraction + 1;
+
+				if(i === printDataByTime.length - 1)
+				{
+					document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
+					printDataByTime[i][1].odd.string + ' &emsp; ' +
+					printDataByTime[i][1].horse + ' &emsp;&emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
+					rtp + '<br />';
+				}
+				else
+				{
+
+					document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
 					printDataByTime[i][1].odd.string + ' &emsp; ' +
 					printDataByTime[i][1].horse + ' &emsp;&emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
 					 '<br />';
+				}
 			}
 		}
 	}
@@ -614,7 +629,7 @@ window.addEventListener('load', function () {
 	function printPrediction() {
 		tvShow.length = 0;
 	
-		document.getElementById(createColourDiv('#581845')).innerHTML = 'Time &emsp; Odd &emsp; Hno &emsp; % ';
+		document.getElementById(createColourDiv('#581845')).innerHTML = 'Time &emsp; Odd &emsp; Hno &emsp; % &emsp; RTP';
 
 		if(allWinOnlyPercentRankDB.length)
 		{
