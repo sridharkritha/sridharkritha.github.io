@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +8,24 @@
     height:100%;
     width:100%;
     }
+
+/* html, body { height: 100%; width: 100%; margin: 0; } */
+
+.heightCentered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.responsiveHeight {
+    height: 16vh; /* 100 / 6 = 16*/
+    /* background-color: blue; */
+}
+
+.responsiveHeightRed {
+       height: 16vh; /* 100 / 6 = 16*/
+    /* background-color: red; */
+}
     
     #container {
     /* background-color: gold; */
@@ -88,8 +107,8 @@
         font-weight: bold; */
     }       
 
-    .btnSmallProp {  
-        width: 13%;
+    .btnSmallProp {
+        width: 18%;
         height: 50px;
         font-size: 90%;
         font-weight: bold;

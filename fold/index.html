@@ -9,24 +9,35 @@
 
 <body>
 
- <div id="divForm">
+<div id="divForm">
 <div class="centerHorizontal_Div">
 <form METHOD="POST">
 
 <!-- 1. INPUT -->
 <!-- Time of meeting -->
+
+<div class="responsiveHeight">
+<div class="heightCentered">
 Time: <input type="time" id="timeId" name="time" autofocus>
 <span class="lineBreakID" ></span>
+</div>
+</div>
 <!-- total number of horse running -->
 <!-- Runners(#): <input type="number" id="nRunnersId"  class="nRunnersInputField">
 <span class="lineBreakID" ></span> -->
 <!-- Horse Number -->
+<div class="responsiveHeightRed">
+<div class="heightCentered">
 H Number: <input type="number" id="horseId"  class="hNoInputField">
 <span class="lineBreakID" ></span>
+</div>
+</div>
 <!--
 Input Masking - odd: xx / xx
 https://stackoverflow.com/questions/12578507/how-to-implement-an-input-with-a-mask
 -->
+<div class="responsiveHeight">
+<div class="heightCentered">
 Odd:
 <input type="text" id="oddId" name="date" placeholder="xx / xx" onkeyup="
   var date = this.value; 
@@ -38,13 +49,20 @@ Odd:
      this.value = date + '/';
   }" maxlength="5">
   <span class="lineBreakID" ></span>
-
+</div>
+</div>
 <!-- % of win as slide bar -->
+<div class="responsiveHeightRed">
+<div class="heightCentered">
 Win(%): 
 <!-- <input type="number" id="winPercentageId"  class="winPercentageInputField">  -->
 <input type='range' id="winPercentageId" min='0' max='100' value='93' step='1' onchange= 'showValue(this.value,"sliderID")' oninput = 'showValue(this.value,"sliderID")'> <span id="sliderID" >93</span>
 <span class="lineBreakID" ></span>
+</div>
+</div>
 <!-- 3 radio choice - win only, 2,3,4,5 places ew -->
+<div class="responsiveHeight">
+<div class="heightCentered">
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="WIN_ONLY" checked> <span class = "">&nbsp; Win Only</span>
 <!--
 <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="winTypeRadioOption(this);" value="TWO_PLACES"> <span class = "">&nbsp; 2 Places</span>
@@ -54,6 +72,8 @@ Win(%):
 &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button type="button" id="btnCleanId" class = "btnSmallProp"> CLEAN </button>
 <span class="lineBreakID" ></span>
+</div>
+</div>
 <!-- 2. OUTPUT OPTIONS -->
 <!-- 2 Fold -->
 <!-- <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="TWO_FOLD"> <span class = "btnProp">&nbsp; 2 Fold</span> -->
@@ -64,11 +84,13 @@ Win(%):
 <!-- 5 Fold -->
 <!-- <input type="radio" class = "radioProp rightMargin" name="modeRadio" onclick="foldTypeRadioOption(this);" value="FIVE_FOLD"> <span class = "btnProp">&nbsp; 5 Fold</span>
 <span class="lineBreakID" ></span> -->
-
+<div class="responsiveHeightRed">
+<div class="heightCentered">
 <button type="button" id="btnNextId" class = "btnProp"> NEXT </button>
 <button type="button" id="btnFoldId" class = "btnProp"> FOLD </button>
 <button type="button" id="btnPrevId" class = "btnProp"> PREV </button>
-
+</div>
+</div>
 
 </form>
 </div>  <!-- end of div class="centerHorizontal_Div"  -->
