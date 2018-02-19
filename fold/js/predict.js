@@ -30,6 +30,7 @@ window.addEventListener('load', function () {
 
 	var colourDivId ='';
 	var nameCounter = 1;
+	var sNo = 0;
 
 	var selectedList = [];
 
@@ -178,16 +179,28 @@ window.addEventListener('load', function () {
 
 		///////////////////////// Print the result ///////////////////////////////////
 		var divId = createColourDiv(colourValue);
+		var horizDivId = createColourDiv('#000000');
+		document.getElementById(horizDivId).style.height = '5px'
 
 		var rtp = 1;
 
 		for (var i = 0; i < printDataByTime.length; ++i) {
 			if (printDataByTime[i]) {
 				rtp *= printDataByTime[i][1].odd.fraction + 1;
+				if(!i)
+				{
+					document.getElementById(divId).innerHTML += ++sNo;
+				}
+				else
+				{
+					document.getElementById(divId).innerHTML += sNo;
+				}
 
 				if(i === printDataByTime.length - 1)
 				{
-					document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
+					rtp = Math.round(rtp * 100) / 100; // round to 2 decimal places
+					
+					document.getElementById(divId).innerHTML += ' &emsp; ' + printDataByTime[i][1].time + ' &emsp; ' +
 					printDataByTime[i][1].odd.string + ' &emsp; ' +
 					printDataByTime[i][1].horse + ' &emsp;&emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
 					rtp + '<br />';
@@ -195,7 +208,7 @@ window.addEventListener('load', function () {
 				else
 				{
 
-					document.getElementById(divId).innerHTML += printDataByTime[i][1].time + ' &emsp; ' +
+					document.getElementById(divId).innerHTML += ' &emsp; ' + printDataByTime[i][1].time + ' &emsp; ' +
 					printDataByTime[i][1].odd.string + ' &emsp; ' +
 					printDataByTime[i][1].horse + ' &emsp;&emsp; ' + printDataByTime[i][1].winPercentage + ' &emsp; ' +
 					 '<br />';
@@ -528,7 +541,8 @@ window.addEventListener('load', function () {
 					break;
 				case 'TWO_PLACES':
 					twoWayPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
-					if (Number(allWinEachWayPercentRankDB[i][1].winPercentage) < 96) 
+					if (Number(allWinEachWayPercentRankDB[i][1].winPercentage) < 96 || 
+								allWinEachWayPercentRankDB[i][1].odd.fraction < 0.89) 
 					{
 						allWinOnlyPercentRankDB.push(allWinEachWayPercentRankDB[i][1]);
 					}
@@ -627,9 +641,11 @@ window.addEventListener('load', function () {
 	}
 
 	function printPrediction() {
+		// Reset
 		tvShow.length = 0;
+		sNo = 0;
 	
-		document.getElementById(createColourDiv('#581845')).innerHTML = 'Time &emsp; Odd &emsp; Hno &emsp; % &emsp; RTP';
+		document.getElementById(createColourDiv('#581845')).innerHTML = '# &emsp; Time &emsp; Odd &emsp; Hno &emsp; % &emsp; RTP';
 
 		if(allWinOnlyPercentRankDB.length)
 		{
@@ -650,9 +666,14 @@ window.addEventListener('load', function () {
 		}		
 	}
 
+	document.getElementById('btnShuffleId').onclick = function () {
+		removeAllChild(); // remove all childrens of 'divSettings'
+		dbCollection();
+		printPrediction();
+	};
+
 	document.getElementById('btnFoldId').onclick = function () {
 		dbCollection();
-
 		printPrediction();
 
 		var divForm = document.getElementById('divForm');
@@ -782,13 +803,28 @@ window.addEventListener('load', function () {
             '#C70039', '#FF5733', '#FFC30F', '#808000',
             '#008080',
             '#B9770E',
-            '#239B56',
-
-            '#616A6B',
-            '#1F618D',
-
-            '#CD5C5C',
-            '#AF7AC5', '#2980B9', '#45B39D', '#B7950B'
+			'#239B56',
+			'#77866',
+			'#150303',
+			'#402b12',
+			'#3e4012',
+			'#584B18',
+			'#339966',
+			'#660066',
+			'#cc9900',
+			'#800000',
+			'#808000',
+			'#008080',
+			'#0000FF',
+			'#800080',
+			'#cc0000',
+			'#003300',
+			'#ff5050',
+			'#990099',
+			'#616A6B',
+			'#1F618D',
+			'#CD5C5C',
+			'#AF7AC5', '#2980B9', '#45B39D', '#B7950B'
         ];
         return color[Math.floor(Math.random() * color.length)];
     }
