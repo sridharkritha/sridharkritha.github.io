@@ -12,6 +12,10 @@ window.addEventListener('load', function() {
     var digitalTimerString = '00:00:00';
     var isAnswerVerified = false;
 
+    var faqNums = [[6,7,'+'],[7,8,'+'],[6,8,'+']];
+    var op = '+';
+    var tempAry = [];
+
     var textToSpeech = null;
 
     timeoutSec = timeoutSecConst;
@@ -22,11 +26,12 @@ window.addEventListener('load', function() {
         AUTO_MODE: 'AUTO_MODE',
         TWO_DIGITS_MULT: 'TWO_DIGITS_MULT',
         TWO_DIGITS_SQR: 'TWO_DIGITS_SQR',
-        THREE_TWO_DIGITS_ADD: 'THREE_TWO_DIGITS_ADD', 
-        THREE_SPL_TWO_DIGITS_ADD: 'THREE_SPL_TWO_DIGITS_ADD',  // 3 digits multiple of 10 x 2 digits      
+        THREE_TWO_DIGITS_ADD: 'THREE_TWO_DIGITS_ADD',
+        THREE_SPL_TWO_DIGITS_ADD: 'THREE_SPL_TWO_DIGITS_ADD',  // 3 digits multiple of 10 x 2 digits
         VAR_LEN_MULT: 'VAR_LEN_MULT',
         VAR_LEN_ADD: 'VAR_LEN_ADD',
-        TWO_DIGITS_SPL: 'TWO_DIGITS_SPL',        
+        TWO_DIGITS_SPL: 'TWO_DIGITS_SPL',
+        FAQ_DIGITS: 'FAQ_DIGITS',
     };
 
     // var userOption =  USER_OPTION.THREE_TWO_DIGITS_ADD;
@@ -73,6 +78,12 @@ window.addEventListener('load', function() {
       
         switch (userOption) 
         {
+            case USER_OPTION.FAQ_DIGITS:
+                tempAry = faqNums[randomRange(0, faqNums.length - 1)]
+                num1 = tempAry[0];
+                num2 = tempAry[1];
+                op   = tempAry[2];
+                break;
             case USER_OPTION.THREE_TWO_DIGITS_ADD:
                 num1 = randomRange(100, 999);
                 num2 = randomRange(10, 99);
@@ -146,8 +157,13 @@ window.addEventListener('load', function() {
 
         var qStr;
 
-        if (userOption == USER_OPTION.VAR_LEN_ADD || userOption == USER_OPTION.THREE_TWO_DIGITS_ADD
-            || userOption == USER_OPTION.THREE_SPL_TWO_DIGITS_ADD)
+        if (userOption == USER_OPTION.FAQ_DIGITS)
+        {
+            if (num1 > num2) qStr = num1.toString() + ' ' + op + ' ' + num2.toString();
+            else qStr = num2.toString() + ' ' + op + ' ' + num1.toString();
+        }
+        else if (userOption == USER_OPTION.VAR_LEN_ADD || userOption == USER_OPTION.THREE_TWO_DIGITS_ADD || 
+                 userOption == USER_OPTION.THREE_SPL_TWO_DIGITS_ADD)
         {
             if (num1 > num2) qStr = num1.toString() + ' + ' + num2.toString();
             else qStr = num2.toString() + ' + ' + num1.toString();
@@ -164,7 +180,7 @@ window.addEventListener('load', function() {
         // Text to Speech
         // ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
         // window.speechSynthesis.cancel();
-        textToSpeech = new SpeechSynthesisUtterance(qStr);        
+        textToSpeech = new SpeechSynthesisUtterance(qStr);
         window.speechSynthesis.speak(textToSpeech);
 
         if (isUserOptionChanged) 
@@ -175,12 +191,30 @@ window.addEventListener('load', function() {
         }
     }
 
+    window.speechSynthesis.cancel();
     createQuestion(false);
 
     function checkAnswer() 
     {
-        var expAns = 0;
-        if (userOption == USER_OPTION.VAR_LEN_ADD || userOption == USER_OPTION.THREE_TWO_DIGITS_ADD || userOption == USER_OPTION.THREE_SPL_TWO_DIGITS_ADD) 
+        var expAns = 0; 
+
+        if (userOption == USER_OPTION.FAQ_DIGITS)
+        {
+            switch(op)
+            {
+                case '+':
+                    expAns = num1 + num2;
+                break;
+                case '-':
+                    expAns = num1 - num2;
+                break;
+                case '*':
+                    expAns = num1 * num2;
+                break;
+            }
+        }
+        else if (userOption == USER_OPTION.VAR_LEN_ADD || userOption == USER_OPTION.THREE_TWO_DIGITS_ADD || 
+                 userOption == USER_OPTION.THREE_SPL_TWO_DIGITS_ADD) 
         {
             expAns = num1 + num2;
         }
@@ -366,9 +400,12 @@ window.addEventListener('load', function() {
         document.getElementById("digitSecond_add").disabled = true;
 
         var div = document.getElementById('settingsDiv');
+        var divMain = document.getElementById('divMainAppId');
+        
         if (!div.style.display || div.style.display === 'none') 
         {
             div.style.display = 'block';
+            divMain.style.display = 'none';
         }
         else 
         {
@@ -380,12 +417,14 @@ window.addEventListener('load', function() {
     btnSave.addEventListener('click', function () 
     {
         var div = document.getElementById('settingsDiv');
+        var divMain = document.getElementById('divMainAppId');
         if (!div.style.display || div.style.display === 'none') 
         {
             div.style.display = 'block';
         }
         else 
         {
+            divMain.style.display = 'block';
             div.style.display = 'none';
             // Check the Radio Buttons
             var radios = document.getElementsByName("modeRadio");
