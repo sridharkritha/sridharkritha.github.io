@@ -93,7 +93,8 @@ window.addEventListener('load', function () {
 			case USER_OPTION.FAQ_ADD_DIGITS:
 				tempAry = faqAdd[randomRange(0, faqAdd.length - 1)];
 				num1 = randomRange(0, 9) * 10 + tempAry[0];
-				num2 = randomRange(0, 9) * 10 + tempAry[1];
+				// num2 = randomRange(0, 9) * 10 + tempAry[1];
+				num2 = tempAry[1];
 				operator = tempAry[2];
 				break;
 			case USER_OPTION.FAQ_MUL_DIGITS:
@@ -383,6 +384,11 @@ window.addEventListener('load', function () {
 		}.bind(this), 1000);
 	};
 
+	var btnEasyMode = document.getElementById('btnIdEasyMode');
+	btnEasyMode.onclick = function () {
+		alert("hai");
+	};
+
 
 	var btnHide = document.getElementById('btnIdHide');
 	btnHide.onclick = function () {
@@ -437,7 +443,7 @@ window.addEventListener('load', function () {
 			}
 
 			if (userOption == 'VAR_LEN_MULT') {
-				// Get the User setting values                
+				// Get the User setting values
 				str_digit_num1 = document.getElementById("digitFirst_mul").value;
 				str_digit_num2 = document.getElementById("digitSecond_mul").value;
 				digit_num1 = parseInt(str_digit_num1);

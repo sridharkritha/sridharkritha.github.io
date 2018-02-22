@@ -53,6 +53,14 @@ text-align: center;
     font-weight: bold;
 }
 
+.btnMiniProp {  
+    /* width: 17%; */
+    width: 10%;
+    height: 3%;
+    font-size: 300%;
+    font-weight: bold;
+}
+
 .radioProp {
     width: 50px;
     height:50px;    
