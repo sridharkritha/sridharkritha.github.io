@@ -29,7 +29,8 @@ window.addEventListener('load', function () {
 	];
 
 	var faqMul = [
-		['-', 9, '*'], // Note: Don't use '$' instead of '-' bcos it has spl meaning. 
+		['-', 9, 'X'], // Note: Don't use '$' instead of '-' bcos it has spl meaning. 
+		['-', 11, 'X'],
 	];
 
 	var operator = '+';
@@ -99,7 +100,7 @@ window.addEventListener('load', function () {
 				tempAry = faqMul[randomRange(0, faqMul.length - 1)];
 				if(tempAry[0]=== '-')
 				{
-					num1 = tempAry[0] =  randomRange(10, 99);
+					num1 =  randomRange(10, 99);
 				}
 				else
 				{
@@ -225,7 +226,7 @@ window.addEventListener('load', function () {
 				case '-':
 					expAns = num1 - num2;
 					break;
-				case '*':
+				case 'X':
 					expAns = num1 * num2;
 					break;
 			}
