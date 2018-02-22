@@ -25,11 +25,11 @@ window.addEventListener('load', function () {
 	var faqAdd = [
 		[6, 7, '+'],
 		[7, 8, '+'],
-		[6, 8, '+'],		
+		[6, 8, '+'],
 	];
 
-	var faqMul = [		
-		[1, 9, '*'],
+	var faqMul = [
+		['-', 9, '*'], // Note: Don't use '$' instead of '-' bcos it has spl meaning. 
 	];
 
 	var operator = '+';
@@ -97,8 +97,16 @@ window.addEventListener('load', function () {
 				break;
 			case USER_OPTION.FAQ_MUL_DIGITS:
 				tempAry = faqMul[randomRange(0, faqMul.length - 1)];
-				num1 = randomRange(0, 9) * 10 + tempAry[0];
-				num2 = randomRange(0, 9) * 10 + tempAry[1];
+				if(tempAry[0]=== '-')
+				{
+					num1 = tempAry[0] =  randomRange(10, 99);
+				}
+				else
+				{
+					num1 = randomRange(0, 9) * 10 + tempAry[0];
+				}
+				
+				num2 = tempAry[1];
 				operator = tempAry[2];
 				break;
 			case USER_OPTION.THREE_TWO_DIGITS_ADD:
