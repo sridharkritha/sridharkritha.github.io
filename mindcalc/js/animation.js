@@ -20,17 +20,18 @@ window.addEventListener('load', function () {
 		timeoutSec = 0,
 		timeoutSecConst = 6 * 60;
 	var digitalTimerString = '00:00:00';
-	var isAnswerVerified = false;
+	var isAnswerVerified = false,
+		isEasyMode = false;
 
 	var faqAdd = [
-		[6, 7, '+'],
+		[6, 7, '+'], // [endDigit, endDigit, operator]
 		[7, 8, '+'],
 		[6, 8, '+'],
 	];
 
 	var faqMul = [
-		['-', 9, 'X'], // Note: Don't use '$' instead of '-' bcos it has spl meaning. 
-		['-', 11, 'X'],
+		['-', 9, 'X'], // [anyDigit, endDigit, operator]
+		['-', 11, 'X'], // Note: Don't use '$' instead of '-' bcos it has spl meaning.
 	];
 
 	var operator = '+';
@@ -92,9 +93,16 @@ window.addEventListener('load', function () {
 		switch (userOption) {
 			case USER_OPTION.FAQ_ADD_DIGITS:
 				tempAry = faqAdd[randomRange(0, faqAdd.length - 1)];
-				num1 = randomRange(0, 9) * 10 + tempAry[0];
-				// num2 = randomRange(0, 9) * 10 + tempAry[1];
-				num2 = tempAry[1];
+				if(isEasyMode)
+				{
+					num1 = randomRange(0, 9) * 10 + tempAry[0];
+					num2 = tempAry[1];
+				}
+				else
+				{
+					num1 = randomRange(1, 9) * 10 + tempAry[0];
+					num2 = randomRange(1, 9) * 10 + tempAry[1];
+				}
 				operator = tempAry[2];
 				break;
 			case USER_OPTION.FAQ_MUL_DIGITS:
@@ -386,7 +394,7 @@ window.addEventListener('load', function () {
 
 	var btnEasyMode = document.getElementById('btnIdEasyMode');
 	btnEasyMode.onclick = function () {
-		alert("hai");
+		isEasyMode = true;
 	};
 
 
