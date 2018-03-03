@@ -21,7 +21,8 @@ window.addEventListener('load', function () {
 		timeoutSecConst = 6 * 60;
 	var digitalTimerString = '00:00:00';
 	var isAnswerVerified = false,
-		isEasyMode = false;
+		isEasyMode = false,
+		isAudioOff = true;
 
 	var faqAdd = [
 		[6, 7, '+'], // [endDigit, endDigit, operator]
@@ -210,8 +211,8 @@ window.addEventListener('load', function () {
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
 		// window.speechSynthesis.cancel();
-		textToSpeech = new SpeechSynthesisUtterance(qStr);
-		window.speechSynthesis.speak(textToSpeech);
+		// textToSpeech = new SpeechSynthesisUtterance(qStr);
+		// window.speechSynthesis.speak(textToSpeech);
 
 		if (isUserOptionChanged) {
 			isUserOptionChanged = false;
@@ -251,8 +252,11 @@ window.addEventListener('load', function () {
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
 		// window.speechSynthesis.cancel();
-		textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
-		window.speechSynthesis.speak(textToSpeech);
+		if(isAudioOff)
+		{
+			textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
+			window.speechSynthesis.speak(textToSpeech);
+		}
 
 		var ans = 0;
 		if (flashAnswerNext) {
@@ -394,9 +398,27 @@ window.addEventListener('load', function () {
 
 	var btnEasyMode = document.getElementById('btnIdEasyMode');
 	btnEasyMode.onclick = function () {
-		isEasyMode = true;
+		if(isEasyMode)
+		{
+			isEasyMode = false;
+		}
+		else
+		{
+			isEasyMode = true;
+		}
 	};
 
+	var btnEasyMode = document.getElementById('btnIdAudioOff');
+	btnEasyMode.onclick = function () {
+		if(isAudioOff)
+		{
+			isAudioOff = false;
+		}
+		else
+		{
+			isAudioOff = true;
+		}
+	};
 
 	var btnHide = document.getElementById('btnIdHide');
 	btnHide.onclick = function () {
