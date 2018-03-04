@@ -22,7 +22,8 @@ window.addEventListener('load', function () {
 	var digitalTimerString = '00:00:00';
 	var isAnswerVerified = false,
 		isEasyMode = false,
-		isAudioOff = true;
+		isAudioOff = true,
+		onLoadAudio = false;
 
 	var faqAdd = [
 		[6, 7, '+'], // [endDigit, endDigit, operator]
@@ -210,9 +211,14 @@ window.addEventListener('load', function () {
 
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
-		// window.speechSynthesis.cancel();
-		// textToSpeech = new SpeechSynthesisUtterance(qStr);
-		// window.speechSynthesis.speak(textToSpeech);
+		if(onLoadAudio)
+		{
+			window.speechSynthesis.cancel();
+			textToSpeech = new SpeechSynthesisUtterance(qStr);
+			window.speechSynthesis.speak(textToSpeech);
+		}
+		onLoadAudio = true;
+		
 
 		if (isUserOptionChanged) {
 			isUserOptionChanged = false;
