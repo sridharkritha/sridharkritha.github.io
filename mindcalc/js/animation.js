@@ -211,7 +211,7 @@ window.addEventListener('load', function () {
 
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
-		if(onLoadAudio)
+		if(onLoadAudio && isAudioOff)
 		{
 			window.speechSynthesis.cancel();
 			textToSpeech = new SpeechSynthesisUtterance(qStr);
