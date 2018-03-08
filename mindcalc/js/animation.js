@@ -211,7 +211,7 @@ window.addEventListener('load', function () {
 
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
-		if(onLoadAudio && isAudioOff)
+		// if(onLoadAudio && isAudioOff)
 		{
 			window.speechSynthesis.cancel();
 			textToSpeech = new SpeechSynthesisUtterance(qStr);
@@ -258,7 +258,7 @@ window.addEventListener('load', function () {
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
 		// window.speechSynthesis.cancel();
-		if(isAudioOff)
+		// if(isAudioOff)
 		{
 			textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
 			window.speechSynthesis.speak(textToSpeech);
