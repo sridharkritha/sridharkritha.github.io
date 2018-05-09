@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 				// MySQL Update - start
 				// Get text
-				$fileDescription = mysqli_real_escape_string($dbname, $_POST['fileDescription']);
+				$fileDescription = mysqli_real_escape_string($conn, $_POST['fileDescription']);
 				// $fileDescription = mysql_real_escape_string($_POST['fileDescription']); 
 				$filePath = "uploads/".$name;
 				
