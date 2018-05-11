@@ -34,7 +34,7 @@
 	       
 	       	if (is_file($folder . '/' . $result)) {
 	       		echo '
-	       		<div class="col-md-3">
+	       		<div class="col-md-4">
 		       		<div class="thumbnail">
 			       		<img src="'.$folder . '/' . $result.'" alt="...">
 				       		<div class="caption">
