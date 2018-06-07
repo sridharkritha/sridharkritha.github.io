@@ -12,8 +12,9 @@ $dbname = "derby";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($conn->connect_error)
+{
+	die("Connection failed: " . $conn->connect_error);
 }
 
 // $conn->close();
@@ -29,43 +30,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$tmpName  = $_FILES['file']['tmp_name'];
 	$error    = $_FILES['file']['error'];
 	$size     = $_FILES['file']['size'];
-    $ext	  = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-  
+	$ext	  = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+
 	switch ($error) {
 		case UPLOAD_ERR_OK:
 			$valid = true;
 			//validate file extensions
-			if ( !in_array($ext, array('jpg','jpeg','png','gif')) ) {
+			if ( !in_array($ext, array('jpg','jpeg','png','gif')) ) 
+			{
 				$valid = false;
 				$response = 'Invalid file extension.';
 			}
 			//validate file size
-			if ( $size/1024/1024 > 2 ) {
+			if ( $size/1024/1024 > 2 ) 
+			{
 				$valid = false;
 				$response = 'File size is exceeding maximum allowed size.';
 			}
 			//upload file
-			if ($valid) {
+			if ($valid)
+			{
 				$targetPath =  dirname( __FILE__ ) . DIRECTORY_SEPARATOR. 'uploads' . DIRECTORY_SEPARATOR. $name;
 				move_uploaded_file($tmpName,$targetPath);
 
 				// MySQL Update - start
 				// Get text
 				$fileDescription = mysqli_real_escape_string($conn, $_POST['fileDescription']);
-				// $fileDescription = mysql_real_escape_string($_POST['fileDescription']); 
 				$filePath = "uploads/".$name;
-				
-	  
+
 				$sql =  sprintf("INSERT INTO photoTable (fileDescription, filePath) VALUES ('%s', '%s')", $fileDescription, $filePath);
-				// $sql = "INSERT INTO photoTable (fileDescription, filePath) VALUES ('John', 'Doe')";
-				if ($conn->query($sql) === TRUE) {
+
+				if ($conn->query($sql) === TRUE)
+				{
 					echo "New record created successfully";
-				} else {
+				}
+				else
+				{
 					echo "Error: " . $sql . "<br>" . $conn->error;
 				}
 				// MySQL Update - end
 
-				header( 'Location: index.php' ) ;
+				header( 'Location: index.php' );
 				exit;
 			}
 			break;
