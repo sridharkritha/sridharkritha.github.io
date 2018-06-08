@@ -1,11 +1,15 @@
 window.addEventListener('load', function() {
 	var countries = ['Australia', 'Costa Rica', 'Belgium', 'Iran'];
+	var countryA, countryB, countryAgoal, countryBgoal;
+	var objDB = [];
+	countryA = countryB = countries[0];
+	countryAgoal = countryAgoal = 0;
 	////////////////////////////////////////  TEAM A ////////////////////////////////////////////////////////
 	///////////////////  INPUT BOX
 	var nodeInputBoxA = document.createElement('INPUT');
 	nodeInputBoxA.setAttribute("id", "teamA_inputbox");
 	nodeInputBoxA.setAttribute("type", "number");
-	nodeInputBoxA.setAttribute("value", 9);
+	nodeInputBoxA.setAttribute("value", 0);
 	// Add to HTML documents
 	document.getElementById("teamA").appendChild(nodeInputBoxA);
 	////////////////// DROP DOWN 
@@ -23,7 +27,7 @@ window.addEventListener('load', function() {
 	var nodeInputBoxB = document.createElement('INPUT');
 	nodeInputBoxB.setAttribute("id", "teamB_inputbox");
 	nodeInputBoxB.setAttribute("type", "number");
-	nodeInputBoxB.setAttribute("value", 15);
+	nodeInputBoxB.setAttribute("value", 0);
 	// Add to HTML documents
 	document.getElementById("teamA").appendChild(nodeInputBoxB);
 	////////////////// DROP DOWN 
@@ -38,13 +42,11 @@ window.addEventListener('load', function() {
 	document.getElementById("teamA").appendChild(nodeDropDownB);
 	///////////////////////////////////////// Buttons //////////////////////////////////////////////////////
 	var btn = document.createElement("BUTTON");        // Create a <button> element
+	btn.setAttribute("id", "btnId");
 	var t = document.createTextNode("Add");       // Create a text node
 	btn.appendChild(t);                                // Append the text to <button>
-	// document.body.appendChild(btn);                    // Append <button> to <body>
-	document.getElementById("teamA").appendChild(btn);
-
+	document.getElementById("teamA").appendChild(btn); // Append <button> to <body>
 	/////////////////////////////////////// EVENT HANDLERS //////////////////////////////////////////////////
-
 	// Event Handler for Drop down
 	document.querySelector('select[id="teamA_dropdown"]').onchange = OnTeamAorBselected;
 	document.querySelector('select[id="teamB_dropdown"]').onchange = OnTeamAorBselected;
@@ -52,9 +54,34 @@ window.addEventListener('load', function() {
 	function OnTeamAorBselected(event) {
 		var countryList = event.target; // Drop Down teamA_dropdown or teamB_dropdown
 		var selCountry = countryList.options[countryList.selectedIndex].value;
+		if(countryList.id === "teamA_dropdown")
+		{
+			countryA = countries[selCountry];
+		}
+		else if(countryList.id === "teamB_dropdown")
+		{
+			countryB = countries[selCountry];
+		}
 		// Display the result
-		var result = document.getElementById("result");
-		result.innerHTML += countries[selCountry];
+		// var result = document.getElementById("result");
+		// result.innerHTML += countries[selCountry];
+	}
+	
+	// Event Handler for Button
+	document.getElementById("btnId").addEventListener("click", displayDate);
+	// Callback function - for Button click
+	function displayDate() {
+		countryAgoal = document.getElementById("teamA_inputbox").value;
+		countryBgoal = document.getElementById("teamB_inputbox").value;
+
+		var obj = {}; // (or) var obj = new Object();
+		obj.Agoal = countryAgoal;
+		obj.Bgoal = countryBgoal;
+		obj.Acountry = countryA;
+		obj.Bcountry = countryB;
+		objDB.push(obj);
+
+		document.getElementById("result").innerHTML = countryAgoal + " " + countryA + countryBgoal + " " + countryB ;
 	}
 }); // window.addEventListener('load', function() {
 
