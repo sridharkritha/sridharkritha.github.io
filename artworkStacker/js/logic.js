@@ -13,7 +13,33 @@ function handleFileSelect(evt) {
         continue;
 	  }
 
+	  // FileReader
+		var img = document.createElement("img");
+		var reader = new FileReader();
+		reader.onload = function(e) 
+		{
+			img.src = e.target.result;
+
+			img.onload = function() {
+				// Use a canvas
+				var canvas = document.getElementById("myCanvas");
+				var ctx = canvas.getContext("2d");
+				// TRS
+				ctx.translate(350,200);
+				ctx.rotate(30 * Math.PI/180);
+				var scale = 0.5;
+				var xCoord = img.width/2 ;
+				var yCoord = img.height/2;
+				ctx.setTransform(scale, 0, 0, scale, xCoord,yCoord); // sets scale and origin
+				ctx.drawImage(img, 0, 0,img.width, img.height);
+			  };
+		};
+		reader.readAsDataURL(f);
+
+
+
 	  /*
+	  // File information
 	  var output = [];
 	  output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
                   f.size, ' bytes, last modified: ',
@@ -21,7 +47,9 @@ function handleFileSelect(evt) {
 				  '</li>');
 	*/
 
-	
+	/*
+	// Thumbnail image(s) one after another by sidewise
+
       var reader = new FileReader();
       // Closure to capture the file information.
       reader.onload = (function(event) {
@@ -36,8 +64,10 @@ function handleFileSelect(evt) {
 
       // Read in the image file as a data URL.
 	  reader.readAsDataURL(f);
+	  */
 	
 	}
+	// File Information
 	// document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
   }
 
