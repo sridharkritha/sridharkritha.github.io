@@ -5,3 +5,30 @@
   }
 
 .noThumbnail {}
+
+#myCanvas {
+	border: 1px solid red;
+}
+
+
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+input,
+label {
+    width: 3%;
+}
+
+input {
+    margin: 1rem 0;
+}
+
+label {
+    display: inline;
+    font-size: 20px;
+}
+
