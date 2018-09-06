@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Canvas Bounding box -->
+        <style>  #myCanvas { border: 1px solid  red}    </style>
+        <script>        
+        function draw() {
+        var width = 200, height = 100, centerX = 120, centerY = 300,radius = 100;
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        // ctx.globalAlpha = 0.3;
+
+        // Canvas Rectangle      
+        /* 
+        ctx.beginPath();
+        ctx.rect(0,0,500,500); // Canvas Area                   
+        ctx.strokeStyle = "purple"
+        ctx.stroke();
+        */
+
+     
+        ////////////// Line - Shape  ////////////////////////////////
+        ctx.beginPath();       
+        ctx.moveTo(0,0);        
+        ctx.lineTo(width,0);
+        ctx.lineTo(width,height);
+        ctx.lineTo(0,height);
+        ctx.closePath(); // ctx.lineTo(0,0);
+        // Fill       
+        ctx.fillStyle = "yellow";
+        ctx.fill();       
+        // Stoke
+        ctx.lineWidth = 3;               
+        ctx.strokeStyle = "blue"
+        ctx.stroke();
+
+        /////////////////////// Rectangle - Shape //////////////////
+        ctx.beginPath();
+        ctx.rect(250,0,width,height);
+        // Fill       
+        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)'; // "pink"; // 
+        ctx.fill();       
+        // Stoke
+        ctx.lineWidth = 3;               
+        ctx.strokeStyle = "green"
+        ctx.stroke();
+
+        ///////////////////////// Circle - Shape /////////////////////
+        ctx.beginPath()
+        // Semi Circle
+        ctx.arc(centerX,centerY,radius,0, 1* Math.PI, true);
+        ctx.closePath(); // Note the closed path call
+        ctx.stroke();
+
+        ctx.beginPath()
+        // Full Circle
+        ctx.arc(centerX+100,centerY,radius,0, 2* Math.PI, true);
+        ctx.closePath();
+        ctx.stroke();   
+        ///////////////////////////// Path2D() ///////////////////////////        
+         var rectangle = new Path2D();
+         rectangle.rect(10, 400, 50, 50);
+     
+         var circle = new Path2D();
+         circle.moveTo(125, 35);
+         circle.arc(100, 400, 25, 0, 2 * Math.PI);
+     
+         ctx.stroke(rectangle);
+         ctx.fill(circle);
+
+        }
+        </script>
+    </head>
+    
+<body onload = "draw()">
+    <canvas id="myCanvas" width = "500" height = "500">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+   
+</body>
+</html>

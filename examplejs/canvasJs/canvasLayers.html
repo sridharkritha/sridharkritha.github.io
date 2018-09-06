@@ -1,0 +1,108 @@
+<!DOCTYPE>
+<html>
+<head>
+    <style>
+        /* Placing one Canvas on top of another */
+        #viewport { position: relative; }       
+        /* Canvas Border */
+        #myCanvasOne   { position: absolute; top: 0;   left: 0;   z-index: 0; background-color:rgba(255,0,0,0.4); border: 1px solid red }
+        #myCanvasTwo   { position: absolute; top: 200; left: 100; z-index: 1; background-color:rgba(0,255,0,0.4); border: 1px solid green }
+        #myCanvasThree { position: absolute; top: 400; left: 200; z-index: 2; background-color:rgba(0,0,255,0.4); border: 1px solid blue }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var canvasOne = document.getElementById("myCanvasOne");
+            var ctxOne = canvasOne.getContext("2d");
+            var canvasTwo = document.getElementById("myCanvasTwo");
+            var ctxTwo = canvasTwo.getContext("2d");
+            var canvasThree = document.getElementById("myCanvasThree");
+            var ctxThree = canvasThree.getContext("2d");
+
+            var isImageOneLoaded = false, isImageTwoLoaded = false, isImageThreeLoaded = false;            
+            var transOne   = { x: canvasOne.width / 2,   y: canvasOne.height / 2 };
+            var transTwo   = { x: canvasTwo.width / 2,   y: canvasTwo.height / 2 };
+            var transThree = { x: canvasThree.width / 2, y: canvasThree.height / 2 };
+            var angleInDegrees = 0;
+            var scaleFactor = 1; 
+            var offsetAngle = 2, offsetScale = 0.01, offsetTranslate = 5; 
+            var dx = 1, dy = 1;
+
+            var imageOne = new Image();
+            imageOne.onload = function () {
+                isImageOneLoaded = true;
+                ctxOne.drawImage(imageOne, 0,0);
+            }
+            imageOne.src = "blue.png";
+
+            
+            var imageTwo = new Image();
+            imageTwo.onload = function () {
+                isImageTwoLoaded = true;
+                ctxTwo.drawImage(imageTwo, 0,0);
+            }
+            imageTwo.src = "pic.png";
+
+            var imageThree = new Image();
+            imageThree.onload = function () {
+                isImageThreeLoaded = true;
+                ctxThree.drawImage(imageThree, 0,0);
+            }
+            imageThree.src = "pink.png";
+
+             function drawRotated(canvas, context, image, trans, degrees, scaleFactor) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.save();
+                // Translate -> Rotate -> Scale               
+                context.translate(trans.x, trans.y);
+                context.rotate(degrees * Math.PI / 180);
+                context.scale(scaleFactor, scaleFactor);
+                context.drawImage(image, -image.width / 2, -image.width / 2);
+                context.restore();
+            }
+
+            function renderer() {
+                if (isImageOneLoaded) {
+                    angleInDegrees += offsetAngle;
+                    drawRotated(canvasOne,ctxOne, imageOne, transOne, angleInDegrees, 1)                    
+                    // Text
+                    ctxOne.font = "bold 18px Arial";
+                    ctxOne.fillText("Canvas Layer 1", canvasOne.width - 200, 50);                    
+                }
+                  if (isImageTwoLoaded) {
+                      if( transTwo.x + dx > canvasTwo.width || transTwo.x + dx < 0) dx = -dx;
+                      if( transTwo.y + dy > canvasTwo.height || transTwo.y + dy < 0) dy = -dy;
+                    transTwo.x += dx;
+                    transTwo.y += dy;
+                    drawRotated(canvasTwo,ctxTwo, imageTwo, transTwo, 0, 1) 
+                    // Text
+                    ctxTwo.font = "bold 18px Arial";
+                    ctxTwo.fillText("Canvas Layer 2", canvasTwo.width - 200, 50);                     
+                    // Hide the Canvas(canvasTwo) not the Contex (ctxTwo)
+                    // canvasTwo.style.display="none"; // block / inline
+                   
+                }
+
+                if (isImageThreeLoaded) {
+                    if(scaleFactor + offsetScale > 1 || scaleFactor + offsetScale < 0) offsetScale = -offsetScale;
+                    scaleFactor += offsetScale;
+                    drawRotated(canvasThree,ctxThree, imageThree, transThree, 0, scaleFactor) 
+                    // Text
+                    ctxThree.font = "bold 18px Arial";
+                    ctxThree.fillText("Canvas Layer 3", canvasThree.width - 200, 50);  
+                }
+
+                window.requestAnimationFrame(renderer);
+            }
+            renderer();
+        });
+    </script>
+</head>
+<body>
+    <div id="viewport">
+    <canvas id="myCanvasOne" width="600" height="500"> </canvas>
+    <canvas id="myCanvasTwo" width="600" height="500"> </canvas>
+    <canvas id="myCanvasThree" width="600" height="500"> </canvas>
+    </div>
+</body>
+</html>

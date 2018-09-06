@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Canvas Bounding box -->
+    <style>
+        #myCanvas {
+            border: 1px solid red
+        }
+    </style>
+    <script>
+        function draw() {
+            var angle = 0;
+            var isCanvasRotate = false;
+            // load image from url
+            var imgPink = new Image();
+            imgPink.src = 'pink.png';
+            var imgBlue = new Image();
+            imgBlue.src = 'blue.png';
+
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            render();
+         
+            function render() {
+                ctx.save();
+                // Clear area for repeated use
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Guide shapes - Full Circle and Rectangle
+                ctx.beginPath()
+                // Inner Circle
+                ctx.arc(canvas.width / 2, canvas.height / 2, imgPink.width / 2, 0, 2 * Math.PI, true);
+                ctx.stroke();
+                ctx.beginPath()
+                // Outer Circle
+                ctx.arc(canvas.width / 2, canvas.height / 2, imgPink.width / 2 + 53, 0, 2 * Math.PI, true);               
+                ctx.rect(canvas.width / 2 - imgPink.width / 2, canvas.height / 2 - imgPink.height / 2, imgPink.width, imgPink.height);
+                ctx.stroke();
+
+                // Transform the context to the point on the canvas that the object should rotate about.
+                //  Translate our coordinates so 0,0 is in the center of the canvas
+                ctx.translate(canvas.width / 2, canvas.height / 2);
+                //  Rotate the context
+                ctx.rotate((++angle * Math.PI) / 180);
+                // ctx.rotate(0);  
+                isCanvasRotate = false;             
+                // Draw a image
+                if(isCanvasRotate)
+                {
+                    // RECOMMENDED
+                    // Canvas based rotation. So all the object on the canvas do rotation
+                   ctx.translate(-imgPink.width / 2, -imgPink.height / 2);
+                   ctx.drawImage(imgPink, 0,0);                   
+                   ctx.drawImage(imgBlue, imgPink.width + 53,0);                 
+                }
+                else
+                {
+                    // Image only rotation
+                   ctx.drawImage(imgPink, -imgPink.width / 2, -imgPink.height / 2);
+                   ctx.drawImage(imgBlue, -imgPink.width / 2, -imgPink.height / 2 + imgPink.width + 53);
+                   // ctx.drawImage(imgBlue, -imgPink.width / 2 + imgPink.width + 53, -imgPink.height / 2);                   
+                   // ctx.drawImage(imgBlue, 0,0)
+                }               
+                //  Reset the translate so clearRect works correctly
+                ctx.translate(-canvas.width / 2, -canvas.height / 2);
+                // Restore the original state
+                ctx.restore();
+                //  requestAnimationFrame is a one shot function, needs to keep calling itself
+                window.requestAnimationFrame(render);
+            }
+        }
+    </script>
+</head>
+
+<body onload="draw()">
+    <canvas id="myCanvas" width="1000" height="500">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+</body>
+
+</html>

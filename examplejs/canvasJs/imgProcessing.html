@@ -1,0 +1,247 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <style>
+        canvas {
+            border: 1px solid red
+        }
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var isImageOneLoaded = false;
+            var imageData, iData;
+
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+
+            var image = new Image(); // document.createElement("img");
+
+            image.onload = function () {
+                ctx.drawImage(image, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+                // ctx.drawImage(image, 0,0);
+                // Note: Will get CORS isssue if the image is CORS friendly
+                //imageData = ctx.getImageData(0, 0, image.width,  image.width);
+                imageData = ctx.getImageData(canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2, canvas.width, canvas.height);
+                iData = imageData.data;
+            }
+            // image.src = "blue.png";
+            // To satisfy CORS, you can host your images on a CORS friendly site like dropbox.com
+            image.crossOrigin = "Anonymous";
+            image.src = "https://dl.dropboxusercontent.com/u/139992952/stackoverflow/colorhouse.png";
+
+
+            function invertColour() {
+                for (var i = 0; i < iData.length; i += 4) {
+                    iData[i] = 255 - iData[i];     // red
+                    iData[i + 1] = 255 - iData[i + 1]; // green
+                    iData[i + 2] = 255 - iData[i + 2]; // blue
+                    //iData[i + 3] = avg; // alpha
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            }
+
+            function grayscaleColour() {
+                for (var i = 0; i < iData.length; i += 4) {
+                    var avg = (iData[i] + iData[i + 1] + iData[i + 2]) / 3;
+                    iData[i] = avg; // red
+                    iData[i + 1] = avg; // green
+                    iData[i + 2] = avg; // blue
+                    //iData[i + 3] = avg; // alpha
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            }            
+
+            $("#invertColour").click(function () {
+                // document.write('<div>sridhar</div>');
+                invertColour();
+            });
+
+            $("#greyscaleColour").click(function () {
+                grayscaleColour();
+            });
+
+            $("#greyscaleColour").click(function () {
+                grayscaleColour();
+            });
+
+            $(".sliderR").on("input", function changeRchannel() {
+                for (var i = 0; i < iData.length; i += 4) {
+                    iData[i] = this.value;     // red                
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            });
+
+            $(".sliderG").on("input", function changeGchannel() {
+                for (var i = 0; i < iData.length; i += 4) {
+                    iData[i + 1] = this.value; // green               
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            });
+
+            $(".sliderB").on("input", function changeBchannel() {
+                for (var i = 0; i < iData.length; i += 4) {
+                    iData[i + 2] = this.value; // blue                
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            });
+
+            $(".sliderA").on("input", function changeAchannel() {
+                for (var i = 0; i < iData.length; i += 4) {
+                    iData[i + 3] = this.value; // alpha
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            });
+
+            
+           
+
+
+            //  function renderer() {
+            //     if (isImageOneLoaded) {
+            //         ctx.drawImage(image, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            //     }
+            //  }
+
+            //   <input id="slider1" type="range" min="0" max="255" step="1" />
+
+// Ref: http://jsfiddle.net/m1erickson/326yc/
+//      http://www.useragentman.com/blog/2010/08/28/coding-colors-easily-using-css3-hsl-notation/
+// HSL : Advantage compare to RGB is you can play with different shades of chosen single colour. (i.e, Different shades of Red )
+// HSV color wheel: “Young Guys Can Be Messy Rascals” ( Yellow, Green, Cyan, Blue, Magenta and Red ). These colors are spaced out by angles of 60 degrees
+// Hue (0 - 360 degree) is a degree on the color wheel; 0 (or 360) is red, 120 is green, 240 is blue. Numbers in between reflect different shades.
+// Saturation / Colourfulness  ( 0 - 100 %) is a percentage value; 0% is the shade of gray, 100% is the full colour.
+// Lightness / Darkness ( 0 - 100 %) is also a percentage; 0% is dark (black), 100% is light (white), and 50% is the normal / average.
+// ex: hsl(120, 100%, 50%) } /* green */ 
+//     hsl(120, 100%, 25%) } /* light green */ 
+
+ $(".sliderH").on("input", function changeHchannel() {
+                for (var i = 0; i < iData.length; i += 4) {
+                     red   = iData[i + 0];
+                     green = iData[i + 1];
+                     blue  = iData[i + 2];
+                     alpha = iData[i + 3];
+                     var hsl = rgbToHsl(red, green, blue);
+                     hsl.h = hsl.h + this.value; // hue
+                     hue = hsl.h * 360 ;
+                     var newRgb = hslToRgb(hsl.h, hsl.s, hsl.l);
+                     iData[i + 0] = newRgb.r;
+                     iData[i + 1] = newRgb.g;
+                     iData[i + 2] = newRgb.b;
+                     iData[i + 3] = 255;
+                }
+                ctx.putImageData(imageData, canvas.width / 2 - image.width / 2, canvas.height / 2 - image.width / 2);
+            });
+
+
+
+            function rgbToHsl(r, g, b) {
+    r /= 255, g /= 255, b /= 255;
+    var max = Math.max(r, g, b),
+        min = Math.min(r, g, b);
+    var h, s, l = (max + min) / 2;
+
+    if (max == min) {
+        h = s = 0; // achromatic
+    } else {
+        var d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch (max) {
+            case r:
+                h = (g - b) / d + (g < b ? 6 : 0);
+                break;
+            case g:
+                h = (b - r) / d + 2;
+                break;
+            case b:
+                h = (r - g) / d + 4;
+                break;
+        }
+        h /= 6;
+    }
+
+    return ({
+        h: h,
+        s: s,
+        l: l,
+    });
+}
+
+
+function hslToRgb(h, s, l) {
+    var r, g, b;
+
+    if (s == 0) {
+        r = g = b = l; // achromatic
+    } else {
+        function hue2rgb(p, q, t) {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1 / 6) return p + (q - p) * 6 * t;
+            if (t < 1 / 2) return q;
+            if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+            return p;
+        }
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    return ({
+        r: Math.round(r * 255),
+        g: Math.round(g * 255),
+        b: Math.round(b * 255),
+    });
+}
+
+            
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" width=700 height=600></canvas><br>
+    <button id="invertColour">Invert Colour</button>
+    <button id="greyscaleColour">Grayscale Colour</button>
+
+
+    <form id="myform">
+        R
+        <input class="sliderR" type="range" name="redRange" min="0" max="255" value="0" oninput="this.form.redOutputId.value=this.value"
+        />
+        <output id="redOutputId">0</output> <br> G
+        <input class="sliderG" type="range" name="greenRange" min="0" max="255" value="0" oninput="this.form.greenOutputId.value=this.value"
+        />
+        <output id="greenOutputId">0</output> <br> B
+        <input class="sliderB" type="range" name="blueRange" min="0" max="255" value="0" oninput="this.form.blueOutputId.value=this.value"
+        />
+        <output id="blueOutputId">0</output> <br>
+        <!--
+        A
+        <input class="sliderA" type="range" name="alphaRange" min="0" max="255" value="0" oninput="this.form.alphaOutputId.value=this.value"
+        />
+        <output id="alphaOutputId">A</output>
+        -->
+        H
+         <input class="sliderH" type="range" name="hueRange" min="0" max="360" value="0" oninput="this.form.hueOutputId.value=this.value"
+        />
+        <output id="hueOutputId">0</output> <br> S
+        <input class="sliderS" type="range" name="satRange" min="0" max="100" value="0" oninput="this.form.satOutputId.value=this.value"
+        />
+        <output id="satOutputId">0</output> <br> L
+        <input class="sliderL" type="range" name="ligRange" min="0" max="100" value="0" oninput="this.form.ligOutputId.value=this.value"
+        />
+        <output id="ligOutputId">0</output> <br>
+    </form>
+
+
+
+</body>
+
+</html>
