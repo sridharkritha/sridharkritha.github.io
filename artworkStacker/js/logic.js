@@ -16,6 +16,8 @@ window.addEventListener('load', function() {
 			// Position
 			posX = parseInt(document.getElementById("positionX").value) || 0;
 			posY = parseInt(document.getElementById("positionY").value) || 0;
+			// Z - Index
+			zIndex = parseFloat(document.getElementById("zIndex").value) || 100;
 			// Scale
 			scaleX = parseFloat(document.getElementById("scaleX").value) || 1;
 			scaleY = parseFloat(document.getElementById("scaleY").value) || 1;
@@ -27,8 +29,25 @@ window.addEventListener('load', function() {
 			img.height = parseInt(document.getElementById("resolutionHeight").value) || img.height;
 
 			// Use a canvas
-			canvas = document.getElementById("myCanvas");
-			ctx = canvas.getContext("2d");
+			// <canvas id="myCanvas" width="1920" height="1080"></canvas>
+			// canvas = document.getElementById("myCanvas");
+			// ctx = canvas.getContext("2d");
+
+			// Dynamically create a canvas of image size to be loaded
+			var canv = document.createElement('canvas');
+			canv.id = 'someId';
+			canv.width = img.width - clipX; // get original canvas width
+			canv.height = img.height - clipY; //get original canvas height
+			canv.style.position = "absolute";
+			canv.style.left = 0;
+			canv.style.top = 0;
+			canv.style.border = '1px solid blue';
+			canv.style.zIndex = zIndex;
+			
+			document.body.appendChild(canv); // adds the canvas to the body element
+
+			ctx = canv.getContext("2d");
+
 			// TRS
 			ctx.translate(posX, posY);
 			// ctx.rotate(30 * Math.PI/180);
