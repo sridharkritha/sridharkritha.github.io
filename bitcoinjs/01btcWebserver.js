@@ -1,5 +1,5 @@
 var http = require("http");
-// request is simillar like curl which can be used 
+// request is similar like curl which can be used 
 // to pull the content from external website
 var request = require("request"); // npm install request --save
 
