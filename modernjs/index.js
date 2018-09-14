@@ -15,6 +15,19 @@ console.log("Hello from JavaScript!");
 // ref: https://stackoverflow.com/questions/19850234/node-js-variable-declaration-and-scope
 // https://stackoverflow.com/questions/43627622/what-is-the-global-object-in-nodejs/43630118
 // https://www.hacksparrow.com/global-variables-in-node-js.html
+// https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript?rq=1
+// https://stackoverflow.com/questions/30469755/why-a-variable-defined-global-is-undefined
+
+
+
+// http://www.hacksparrow.com/javascript-apply-and-call.html
+
+// https://www.hacksparrow.com/javascript-convert-arguments-to-array.html
+// https://stackoverflow.com/questions/960866/how-can-i-convert-the-arguments-object-to-an-array-in-javascript
+// https://johnresig.com/apps/learn/#43
+// https://stackoverflow.com/questions/4301920/john-resig-advanced-javascript-question
+
+
 
 firstName = 'Sridhar';     // without var
 var lastName = 'Krishnan'; // with var

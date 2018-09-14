@@ -15,7 +15,7 @@ const BrowserWindow = electron.BrowserWindow;
 // Global declaration so that main window is not GC
 let mainWindow;
 
-/ / Close all windows closed
+// Close all windows closed
 app.on ('window-all-closed', function () {
    if (process.platform! = 'darwin') {
      app.quit ();
