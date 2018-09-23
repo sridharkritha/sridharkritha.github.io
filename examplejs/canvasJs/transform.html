@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Canvas Bounding box -->
+    <style>
+        #myCanvas {
+            border: 1px solid red
+        }
+    </style>
+    <script>
+        function draw() {
+            var posX = 0, posY = 0;
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+            var once = true;
+
+            var test = {
+                x: 0,
+                y: 0,
+                vx: 0.01,
+                vy: 0.01,
+                render: function () {
+
+                    // load image from url
+                    var imgPink = new Image();
+                    imgPink.onload = function () {
+                        ctx.clearRect(0, 0, 500, 500);
+                        ctx.drawImage(imgPink, posX, posY);                        
+                    }
+                    imgPink.src = 'pink.png';
+/*
+                    var imgBlue = new Image();
+                    imgBlue.onload = function () {
+                        // ctx.clearRect(0, 0, 500, 500);                       
+                        ctx.drawImage(imgBlue, posX+100, posY+100);
+                    }                    
+                    imgBlue.src = 'blue.png';
+*/
+                   // ctx.save();
+                    ctx.translate(imgPink.width/2, imgPink.height/2);
+
+                    // translate  
+                    test.x += test.vx;
+                    test.y += test.vy;
+                    //ctx.translate(test.x, test.y);
+                    ctx.rotate((Math.PI / 180) * 1); // rotate
+                    // if (once) { once = false; ctx.scale(1, 2); }
+                    // ctx.restore();
+                    ctx.translate(0,0);
+                    window.requestAnimationFrame(test.render); // test.render();                      
+                }
+            };
+            test.render();
+        }
+    </script>
+</head>
+
+<body onload="draw()">
+    <canvas id="myCanvas" width="500" height="500">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+</body>
+
+</html>

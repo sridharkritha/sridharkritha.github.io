@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>  
+  <body>
+   <canvas id="myCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        // load image from data url
+        var imageObj = new Image();
+       //  imageObj.addEventListener('load',function() { context.drawImage(this, 0, 0); }, false);
+        imageObj.onload = function() {   context.drawImage(this, 0, 0);  };
+        imageObj.src = 'https://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png';      
+
+    </script>
+  </body>
+</html>  

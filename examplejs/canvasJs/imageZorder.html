@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+    <style> #myCanvas { border: 1px solid red } </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+            // Class Member Variables
+            function Square(x, y, size, color) {
+                this.x = x; this.y = y; this.size = size; this.color = color;
+                this.zindex = 0;
+            }
+            // Class Member function
+            Square.prototype.draw = function (ctx) {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.x, this.y, this.size, this.size);
+            }
+            // Object Array
+            var objAry = [
+                new Square(10, 10, 50, 'blue'), new Square(40, 10, 40, 'red'), new Square(30, 50, 30, 'green'),
+                new Square(60, 30, 40, '#111'), new Square(0, 30, 20, '#444'), new Square(70, 00, 40, '#999')
+            ];
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < objAry.length; i++) objAry[i].draw(ctx);
+            }
+            draw();
+
+            setInterval(function () {
+                // set a z index at random for each square
+             objAry.forEach(function (v) { v.zindex = Math.random() });
+                // sort the list according to zindex
+             objAry.sort(function (a, b) { return a.zindex - b.zindex });
+                draw();
+            }, 1000);
+
+        });
+    </script>
+</head>
+
+<body>
+    <canvas id="myCanvas" widht="100" height="100"></canvas>
+</body>
+
+</html>

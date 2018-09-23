@@ -1,0 +1,76 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Example</title> 
+  <!-- 
+    npm install
+  Even if you deleted node_modules folder, you can install all dependencies modules(browserify, uglify) which are mentioned in package.json 
+-->
+  <!-- note: include moment.min.js before index.js --> 
+
+  <!-- Method 1 -->
+  <!-- manually download and save the external file from the website - http://momentjs.com -->
+  <!-- 
+       <script src="moment.min.js"></script>  
+   -->
+
+  <!-- Method 2 -->
+  <!-- download and install by npm install command:
+       npm install moment --save 
+  -->
+  <!-- 
+    <script src="node_modules/moment/min/moment.min.js"></script> 
+  -->
+
+  <!-- Method 3 -->
+  <!-- 1. inside index.js => var moment = require('moment');
+       2. convert index.js -> bundle.js
+       3. delete index.js and use bundle.js
+    npm install -g browserify --save 
+    browserify index.js -o bundle.js
+  -->
+  <!-- <script src="bundle.js"></script> -->
+
+  <!-- Method 4 -->
+  <!-- 
+    Convert ES6 to ES5
+     npm install babelify babel-preset-es2015 --save
+
+     npm install -g watchify --save     ????
+  -->
+
+  <!-- Method 5 -->
+  <!-- 
+    ref: https://stackoverflow.com/questions/15590702/how-to-get-minified-output-with-browserify
+     minify the code
+     npm install -g uglify-js --save
+     browserify index.js | uglifyjs > bundleMini.js
+  -->
+  <script src="bundleMini.js"></script>
+
+
+</head>
+<body>
+  <h1>Hello from HTML!</h1>
+  <p> 
+1. npm init 
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Creates package.json inside the root folder
+  <br>
+2. npm install moment --save
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Creates node_modules folder and Instead of manually downloading the external file (moment.js) from (http://momentjs.com/) - 
+It uses npm install command to download the file.
+
+   Check the package.json, you will see the downloaded 'moment.js' info under the dependencies.
+   <br>
+   ex:
+   "dependencies": {
+    "moment": "^2.22.2"
+  }
+
+  </p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Artwork Stacker</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/logic.js">
+	</script>
+</head>
+
+<body>
+	<canvas id="myCanvas" width="1920" height="1080">
+		<!-- Insert fallback content here -->
+		Sorry, your browser doesn't support canvas technology
+	</canvas>
+
+	<fieldset>
+		<legend>Asset Details</legend>
+
+		<label for="positionX">Game Position - X:</label>
+		<input type="number" id="positionX" name="positionX" placeholder="0 px" step="1" />
+		<label for="positionY"> - Y:</label>
+		<input type="number" id="positionY" name="positionY" placeholder="0 px" step="1" />
+		</br>
+		<label for="zIndex">z - Index:</label>
+		<input type="number" id="zIndex" name="zIndex" placeholder="100" step="1" />
+		</br>
+		<label for="scaleX">Scale - X:</label>
+		<input type="number" id="scaleX" name="scaleX" placeholder="1" step="1" />
+		<label for="scaleY"> - Y:</label>
+		<input type="number" id="scaleY" name="scaleY" placeholder="1" step="1" />
+		
+		</br>
+		<label for="ClipTopPositionX">Clip TopPosition - X:</label>
+		<input type="number" id="ClipTopPositionX" name="ClipTopPositionX" placeholder="0 px" step="1" />
+		<label for="ClipTopPositionY"> - Y:</label>
+		<input type="number" id="ClipTopPositionY" name="ClipTopPositionY" placeholder="0 px" step="1" />
+
+		<label for="resolutionWidth">Resolution - Width:</label>
+		<input type="number" id="resolutionWidth" name="resolutionWidth" placeholder="1920 px" step="1" />
+		<label for="resolutionHeight"> - Height:</label>
+		<input type="number" id="resolutionHeight" name="resolutionHeight" placeholder="1080 px" step="1" />
+		</br>
+		<input type="file" id="files" name="files[]" multiple />
+		</br>
+		<input type="submit" id="updateBtnId" value="Update">
+
+	</fieldset>
+
+	<output id="list"></output>
+
+</body>
+
+</html>

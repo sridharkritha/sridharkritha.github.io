@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Rotate example</title>
+  <style>
+    canvas {
+    border:solid blue 1px;
+    background-color:red;
+    }
+  </style>
+  </head>
+  <body>   
+    <canvas id="MyCanvas" width="400" height="400">This browser or document mode doesn't support canvas</canvas> 
+  
+    <script type="text/javascript">
+      var canvas = document.getElementById("MyCanvas");
+
+
+      // Ref: https://msdn.microsoft.com/library/ff975427.aspx
+      function draw() {
+     
+        if (canvas.getContext) {
+          var cW = canvas.width / 2;
+          var cH = canvas.height / 2;
+
+          var ctx = canvas.getContext("2d");
+          ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear area for repeated use
+
+          //  Set the angle between each vertex (5 internal, 5 external)
+          var vertAngle = (2 * Math.PI) / 10;
+
+          //  Size of star
+          var radius = 175;
+
+          //  Star center point
+          var starCenter = [0, 0]
+          
+          //  Translate our coordinates so 0,0 is in the center of the canvas
+          ctx.translate(cW, cH);
+
+          //  And rotate it 1 degrees
+          ctx.rotate((1 * Math.PI) / 180);
+
+          //  Start shape, blue lines, yellow fill
+          ctx.beginPath();
+          
+          //  Build the star hitting 10 points (11 to complete)
+          for (var i = 11; i != 0; i--) {
+            var r = radius * (i % 2 + 1) / 2;  // Alternate between inside and outside points
+            var curAngle = vertAngle * i;  //  Calculate angle of the current point
+            ctx.lineTo((r * Math.sin(curAngle)) + starCenter[0], (r * Math.cos(curAngle)) + starCenter[1]);
+          }
+
+            //  Fill and stroke
+          ctx.strokeStyle = "blue";
+          ctx.lineWidth = "5"
+          ctx.fillStyle = "yellow";
+          ctx.stroke();
+          ctx.fill();
+
+          //  Reset the translate so clearRect works correctly
+          ctx.translate(-cW, -cH);
+          }
+       }
+
+      animate();  //  Start animating the star
+
+      //  Animate calls the draw function every time the system lets it draw
+      function animate() {
+        draw();
+        //  requestAnimationFrame is a one shot function, needs to keep calling itself
+        window.requestAnimationFrame(animate);
+      }
+    </script>
+
+  </body>
+</html>

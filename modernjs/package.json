@@ -1,0 +1,17 @@
+{
+  "name": "modernjs",
+  "version": "1.0.0",
+  "description": "tutorial about modern js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sridhar",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^10.0.0",
+    "moment": "^2.22.2"
+  }
+}

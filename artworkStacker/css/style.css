@@ -1,0 +1,34 @@
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+
+.noThumbnail {}
+
+#myCanvas {
+	border: 1px solid red;
+}
+
+
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+input,
+label {
+    width: 3%;
+}
+
+input {
+    margin: 1rem 0;
+}
+
+label {
+    display: inline;
+    font-size: 20px;
+}
+
