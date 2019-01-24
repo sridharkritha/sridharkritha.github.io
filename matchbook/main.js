@@ -3,6 +3,26 @@
 	var request = require('request');
 	var fs = require('fs');
 
+	requestResponse = function(url, method, headers) {
+		var options = {
+			method: 'GET',
+			headers: { 'user-agent': 'api-doc-test-client' }
+		};
+
+		if(!url) return null;
+		options.url = url;
+		if(method)	options.method = method;
+		if(headers)	options.headers = headers;
+
+		request(options, function (error, response, body) {
+			if (error) throw new Error(error);
+	
+			console.log(body);
+		});
+	};
+
+	
+
 	// Login
 	// Login to Matchbook and create a new session.
 	// The response includes a session token value. This value should be included with all subsequent requests as either a 
@@ -10,7 +30,6 @@
 	// Matchbook sessions live for approximately 6 hours so only 1 login request every 6 hours is required. The same session 
 	// should be used for all requests in that period.
 	login = function () {
-
 	// Asynchronous 'json' file read
 	fs.readFile('./../../../credential.json', function(err, data) {
 		if (err) throw err;
@@ -632,7 +651,12 @@
 	(function () {
 
 		login();
+
 		// logout();
+
+		setTimeout(function(){
+			getSession();
+		}.bind(this), 5000);
 
 	})();
 }());
