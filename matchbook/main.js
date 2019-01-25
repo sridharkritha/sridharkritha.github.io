@@ -35,15 +35,17 @@
 		if (err) throw err;
 		var credential = JSON.parse(data);
 		console.log(credential);
+		/*
 		request.post(
 			'https://api.matchbook.com/bpapi/rest/security/session',
 			{ json: credential}, // username and passwords
 			function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					console.log(body)
+					console.log(body);
 				}
 			}
 		);
+		*/
 	});
 	};
 
@@ -654,9 +656,26 @@
 
 		// logout();
 
+		/*
 		setTimeout(function(){
 			getSession();
 		}.bind(this), 5000);
+		*/
 
 	})();
 }());
+
+/*
+C# Project: https://www.dropbox.com/s/nm32ispvu8jr7hp/BpapiConsoleProject.zip?dl=0
+
+Get Events
+
+You can use the Live Betting category or navigation entry to help you with this.
+Examples: 
+https://www.matchbook.com/edge/rest/events?sport-ids=1&tag-url-names=live-betting&price-depth=0
+https://api.matchbook.com/edge/rest/events?sport-ids=8&category-ids=410468520880009
+https://api.matchbook.com/edge/rest/events?sport-ids=8&tag-url-names=live-betting
+You can get all sport_ids and competitions :
+https://api.matchbook.com/edge/rest/navigation
+
+*/
