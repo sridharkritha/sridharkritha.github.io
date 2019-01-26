@@ -3,7 +3,7 @@
 	var request = require('request');
 	var fs = require('fs');
 
-	requestResponse = function(url, method, headers) {
+	requestResponse = function(url, method, headers, qs) {
 		var options = {
 			method: 'GET',
 			headers: { 'user-agent': 'api-doc-test-client' }
@@ -13,6 +13,7 @@
 		options.url = url;
 		if(method)	options.method = method;
 		if(headers)	options.headers = headers;
+		if(qs)	options.qs = qs;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -95,8 +96,7 @@
 			url: 'https://api.matchbook.com/bpapi/rest/security/session',
 			headers: { 
 				'user-agent': 'api-doc-test-client',
-				'cookie': '279123_30575a741ede6952fef2849e7a46c7'
-				
+				'session-token': '279123_30575a741ede6952fef2849e7a46c7'
 			}
 		};
 
