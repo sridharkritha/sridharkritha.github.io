@@ -34,18 +34,38 @@
 	fs.readFile('./../../../credential.json', function(err, data) {
 		if (err) throw err;
 		var credential = JSON.parse(data);
-		console.log(credential);
-		/*
+		// console.log(credential);
+		
 		request.post(
 			'https://api.matchbook.com/bpapi/rest/security/session',
 			{ json: credential}, // username and passwords
 			function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					console.log(body);
+					console.log(body['session-token']);
+					//console.log(body);
+
+					//////////////////////////////////////////////////////////////
+					// getSession
+					var options = {
+						method: 'GET',
+						url: 'https://api.matchbook.com/bpapi/rest/security/session',
+						headers: { 
+							'Content-Type': 'application/json',
+							'user-agent': 'api-doc-test-client' 
+						}
+					};
+
+					// Cookie data for maintaining the session
+					options.headers['session-token'] = body['session-token'];
+			
+					request(options, function (error, response, body) {
+						if (error) throw new Error(error);
+						console.log(options);
+						console.log(body);
+					});
 				}
 			}
 		);
-		*/
 	});
 	};
 
@@ -73,7 +93,11 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/security/session',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'user-agent': 'api-doc-test-client',
+				'cookie': '279123_30575a741ede6952fef2849e7a46c7'
+				
+			}
 		};
 
 		request(options, function (error, response, body) {
@@ -661,6 +685,8 @@
 			getSession();
 		}.bind(this), 5000);
 		*/
+
+		// getSession();
 
 	})();
 }());
