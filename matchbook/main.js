@@ -2,6 +2,7 @@
 	// https://developers.matchbook.com/reference
 	var request = require('request');
 	var fs = require('fs');
+	var sessionToken = null;
 
 	requestResponse = function(url, method, headers, qs) {
 		var options = {
@@ -42,8 +43,9 @@
 			{ json: credential}, // username and passwords
 			function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					console.log(body['session-token']);
-					//console.log(body);
+					sessionToken = body['session-token'];
+					// console.log(sessionToken);
+					// console.log(body);
 
 					//////////////////////////////////////////////////////////////
 					// getSession
@@ -57,12 +59,12 @@
 					};
 
 					// Cookie data for maintaining the session
-					options.headers['session-token'] = body['session-token'];
+					options.headers['session-token'] = sessionToken;
 			
 					request(options, function (error, response, body) {
 						if (error) throw new Error(error);
-						console.log(options);
-						console.log(body);
+						// console.log(options);
+						// console.log(body);
 					});
 				}
 			}
@@ -76,8 +78,14 @@
 		var options = {
 			method: 'DELETE',
 			url: 'https://api.matchbook.com/bpapi/rest/security/session',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -95,10 +103,13 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/security/session',
 			headers: { 
-				'user-agent': 'api-doc-test-client',
-				'session-token': '279123_30575a741ede6952fef2849e7a46c7'
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
 			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -114,8 +125,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/account',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -131,8 +148,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/account/balance',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -148,8 +171,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/account/balance',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -178,8 +207,14 @@
 				order: 'name asc',
 				status: 'active'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -195,8 +230,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/navigation',
 			qs: { offset: '0', 'per-page': '20' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -224,8 +265,14 @@
 				'minimum-liquidity': '10',
 				'include-event-participants': 'false'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -235,7 +282,7 @@
 	};
 
 	// Get Event
-	getEvents = function () {
+	getEvent = function (event_id) {
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/events/:event_id',
@@ -249,8 +296,17 @@
 				'minimum-liquidity': '10',
 				'include-event-participants': 'false'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// event id
+		options.url = 'https://api.matchbook.com/edge/rest/events/:'+event_id;
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -276,8 +332,14 @@
 				'price-mode': 'expanded',
 				'minimum-liquidity': '10'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -300,8 +362,14 @@
 				'price-mode': 'expanded',
 				'minimum-liquidity': '10'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -326,8 +394,14 @@
 				'odds-type': 'DECIMAL',
 				'minimum-liquidity': '10'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -350,8 +424,14 @@
 				'odds-type': 'DECIMAL',
 				'minimum-liquidity': '10'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -373,8 +453,14 @@
 				'minimum-liquidity': '10',
 				'price-mode': 'expanded'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -397,8 +483,14 @@
 				'minimum-liquidity': '10',
 				'old-format': 'false'
 			},
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -413,9 +505,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/popular/sports',
 			qs: { 'num-sports': '5' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
 
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
@@ -447,8 +544,14 @@
 		var options = {
 			method: 'DELETE',
 			url: 'https://api.matchbook.com/edge/rest/v2/offers',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -463,8 +566,14 @@
 		var options = {
 			method: 'DELETE',
 			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -480,8 +589,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/v2/offers',
 			qs: { offset: '0', 'per-page': '20', 'include-edits': 'false' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -497,8 +612,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id',
 			qs: { 'include-edits': 'false' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -514,8 +635,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits',
 			qs: { offset: '0', 'per-page': '20' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -530,8 +657,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits/:offer_edit_id',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -547,8 +680,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/reports/transactions',
 			qs: { offset: '0', 'per-page': '20', categories: 'categories' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -564,8 +703,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/reports/v1/transactions',
 			qs: { offset: '0', 'per-page': '20' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -582,8 +727,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/reports/v2/offers/current',
 			qs: { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -599,8 +750,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/reports/v2/bets/current',
 			qs: { offset: '0', 'per-page': '50', 'odds-type': 'DECIMAL' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -615,8 +772,14 @@
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/reports/v2/bets/settled',
 			qs: { offset: '0', 'per-page': '20' },
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -631,8 +794,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/lookups/countries',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -648,8 +817,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/lookups/regions/:country_id',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -664,8 +839,14 @@
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/bpapi/rest/lookups/currencies',
-			headers: { 'user-agent': 'api-doc-test-client' }
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
 		};
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -680,14 +861,16 @@
 
 		// logout();
 
-		/*
+		
+
+		
 		setTimeout(function(){
-			getSession();
+			// getSession();
+			// getAccount();
+			// getEvents();
+			getEvent('241798357140019');
+			// getSports();
 		}.bind(this), 5000);
-		*/
-
-		// getSession();
-
 	})();
 }());
 
