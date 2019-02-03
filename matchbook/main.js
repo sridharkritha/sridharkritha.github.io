@@ -4,6 +4,16 @@
 	var fs = require('fs');
 	var sessionToken = null;
 
+	writeJsonFile = function(jsonResponse)
+	{
+		var data = JSON.stringify(jsonResponse, null, 2);
+		// Asynchronous file write
+		fs.writeFile('./output.json', data, function(err) {
+			if (err) throw err;
+			console.log('Data written to file');
+		});
+	}
+
 	requestResponse = function(url, method, headers, qs) {
 		var options = {
 			method: 'GET',
@@ -219,6 +229,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
+			writeJsonFile(body)
 			console.log(body);
 		});
 	};
@@ -248,7 +259,7 @@
 
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
-	getEvents = function () {
+	getEvents = function (ids) {
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/events',
@@ -270,6 +281,11 @@
 				'user-agent': 'api-doc-test-client' 
 			}
 		};
+
+		if(ids)
+		{
+			options.qs.ids = ids;
+		}
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -867,15 +883,21 @@
 		setTimeout(function(){
 			// getSession();
 			// getAccount();
+			// getEvents('24776400363101');   //:24735152712200,
 			// getEvents();
-			getEvent('241798357140019');
+			 getEvent('241798357140019');
 			// getSports();
+			// getPopularMarkets();
+			//getNavigation();
 		}.bind(this), 5000);
 	})();
 }());
 
 /*
 C# Project: https://www.dropbox.com/s/nm32ispvu8jr7hp/BpapiConsoleProject.zip?dl=0
+
+Submit offers:
+https://developers.matchbook.com/discuss/5af4eef233a27b0003957a07
 
 Get Events
 
