@@ -229,7 +229,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			writeJsonFile(body);
+			// writeJsonFile(body);
 			console.log(body);
 		});
 	};
@@ -287,7 +287,7 @@
 		{
 			//options.qs['sport-ids'] = ids;
 			//options.qs['ids'] = ids;
-			options.url = 'https://api.matchbook.com/edge/rest/events?sport-ids=' + ids;
+			options.url = 'https://api.matchbook.com/edge/rest/events?sport-ids=' + sportId;
 		}
 
 		// Cookie data for maintaining the session
@@ -304,7 +304,6 @@
 	getEvent = function (event_id) {
 		var options = {
 			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events/:event_id',
 			qs:
 			{
 				'exchange-type': 'back-lay',
@@ -322,7 +321,7 @@
 		};
 
 		// event id
-		options.url = 'https://api.matchbook.com/edge/rest/events/:'+event_id;
+		options.url = 'https://api.matchbook.com/edge/rest/events/'+event_id;
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -398,10 +397,9 @@
 	};
 
 	// Get Runners
-	getRunners = function () {
+	getRunners = function (eventId, marketId) {
 		var options = {
 			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners',
 			qs:
 			{
 				states: 'open,suspended',
@@ -418,6 +416,9 @@
 				'user-agent': 'api-doc-test-client' 
 			}
 		};
+
+		// event id and market id
+		options.url = 'https://api.matchbook.com/edge/rest/events/'+ eventId +'/markets/' + marketId + '/runners';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -894,9 +895,26 @@
 			//getNavigation();
 
 			////////////////////////////////////////
-			//getSports(); // gives sport-id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"},
-			getEvents('24735152712200');
+			// input  - null
+			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
+			// https://api.matchbook.com/edge/rest/lookups/sports
+			// getSports();
 
+			// input  - sports id
+			// output - event id
+			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
+			// getEvents('24735152712200'); // sportsid
+
+			// input  - event id
+			// output - id (player)
+			// https://api.matchbook.com/edge/rest/events/1033210398700016
+			// getEvent('1033210398700016'); // eventid
+
+			// input - event id, market id
+			// output -
+			// https://www.matchbook.com/edge/rest/events/1033210398700016/markets/1033210399940016/runners
+			getRunners('1033210398700016','1033210399940016');
+			
 		}.bind(this), 5000);
 	})();
 }());
