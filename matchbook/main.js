@@ -229,7 +229,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			writeJsonFile(body)
+			writeJsonFile(body);
 			console.log(body);
 		});
 	};
@@ -259,15 +259,16 @@
 
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
-	getEvents = function (ids) {
+	getEvents = function (sportId) {
 		var options = {
 			method: 'GET',
 			url: 'https://api.matchbook.com/edge/rest/events',
 			qs:
 			{
-				offset: '0',
+				'offset': '0',
 				'per-page': '20',
-				states: 'open,suspended,closed,graded',
+				// 'states': 'open,suspended,closed,graded',
+				'states': 'open',
 				'exchange-type': 'back-lay',
 				'odds-type': 'DECIMAL',
 				'include-prices': 'false',
@@ -282,9 +283,11 @@
 			}
 		};
 
-		if(ids)
+		if(sportId)
 		{
-			options.qs.ids = ids;
+			//options.qs['sport-ids'] = ids;
+			//options.qs['ids'] = ids;
+			options.url = 'https://api.matchbook.com/edge/rest/events?sport-ids=' + ids;
 		}
 
 		// Cookie data for maintaining the session
@@ -885,15 +888,30 @@
 			// getAccount();
 			// getEvents('24776400363101');   //:24735152712200,
 			// getEvents();
-			 getEvent('241798357140019');
-			// getSports();
+			// getEvent('241798357140019');
+			
 			// getPopularMarkets();
 			//getNavigation();
+
+			////////////////////////////////////////
+			//getSports(); // gives sport-id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"},
+			getEvents('24735152712200');
+
 		}.bind(this), 5000);
 	})();
 }());
 
 /*
+
+mb_get_sports
+mb_get_events
+mb_get_markets
+
+https://github.com/xanadunf/matchbook
+
+
+
+
 C# Project: https://www.dropbox.com/s/nm32ispvu8jr7hp/BpapiConsoleProject.zip?dl=0
 
 Submit offers:
