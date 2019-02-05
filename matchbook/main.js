@@ -3,10 +3,18 @@
 	var request = require('request');
 	var fs = require('fs');
 	var sessionToken = null;
+	var db = {};
+	db.sport = {};
 
-	writeJsonFile = function(jsonResponse)
+	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
+	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
+	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
+
+	writeJsonFile = function(jsonString)
 	{
-		var data = JSON.stringify(jsonResponse, null, 2);
+		var jsonFormat = JSON.parse(jsonString);
+		var data = JSON.stringify(jsonFormat, null, 2);
+		
 		// Asynchronous file write
 		fs.writeFile('./output.json', data, function(err) {
 			if (err) throw err;
@@ -229,8 +237,18 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			// writeJsonFile(body);
+			var jsonFormat = JSON.parse(body);
+			var length = jsonFormat['sports'];
+			length = jsonFormat['sports'].length;
+
+			for(var i = 0; i < jsonFormat['sports'].length; ++i)
+			{
+				db.sport[jsonFormat['sports'][i].name] = jsonFormat['sports'][i].id;
+			}
+
+			 writeJsonFile(body);
 			console.log(body);
+			console.log(Object.keys(db.sport));
 		});
 	};
 
@@ -898,7 +916,7 @@
 			// input  - null
 			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
 			// https://api.matchbook.com/edge/rest/lookups/sports
-			// getSports();
+			getSports();
 
 			// input  - sports id
 			// output - event id
@@ -913,7 +931,7 @@
 			// input - event id, market id
 			// output -
 			// https://www.matchbook.com/edge/rest/events/1033210398700016/markets/1033210399940016/runners
-			getRunners('1033210398700016','1033210399940016');
+			//getRunners('1033210398700016','1033210399940016');
 			
 		}.bind(this), 5000);
 	})();
