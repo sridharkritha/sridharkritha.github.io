@@ -4,19 +4,21 @@
 	var fs = require('fs');
 	var sessionToken = null;
 	var db = {};
-	db.sport = {};
+	db.sportId = {};
+	db.eventId = {};
+	db.runnerId = {};
 
 	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 
-	writeJsonFile = function(jsonString)
+	writeJsonFile = function(jsonString, fileName)
 	{
 		var jsonFormat = JSON.parse(jsonString);
 		var data = JSON.stringify(jsonFormat, null, 2);
 		
 		// Asynchronous file write
-		fs.writeFile('./output.json', data, function(err) {
+		fs.writeFile(fileName, data, function(err) {
 			if (err) throw err;
 			console.log('Data written to file');
 		});
@@ -238,17 +240,15 @@
 			if (error) throw new Error(error);
 
 			var jsonFormat = JSON.parse(body);
-			var length = jsonFormat['sports'];
-			length = jsonFormat['sports'].length;
 
 			for(var i = 0; i < jsonFormat['sports'].length; ++i)
 			{
-				db.sport[jsonFormat['sports'][i].name] = jsonFormat['sports'][i].id;
+				db.sportId[jsonFormat['sports'][i].name] = jsonFormat['sports'][i].id;
 			}
 
-			 writeJsonFile(body);
-			console.log(body);
-			console.log(Object.keys(db.sport));
+			writeJsonFile(body,'sportsList.json');
+			// console.log(body);
+			// console.log(Object.keys(db.sportId));
 		});
 	};
 
@@ -314,6 +314,16 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
+			var jsonFormat = JSON.parse(body);
+
+			for(var i = 0; i < jsonFormat['events'].length; ++i)
+			{
+				db.eventId[jsonFormat['events'][i].name] = jsonFormat['events'][i].id;
+			}
+
+			writeJsonFile(body,'event.json');
+			console.log(Object.keys(db.eventId));
+
 			console.log(body);
 		});
 	};
@@ -347,7 +357,23 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			var jsonFormat = JSON.parse(body);
+
+			var runners = jsonFormat.markets[0].runners;
+
+			for(var i = 0; i < runners.length; ++i)
+			{
+				// db.runnerId[runners[i].name] = runners[i].id;
+				db.runnerId[runners[i].name] = {};
+				db.runnerId[runners[i].name].runnerId = runners[i].id;
+				db.runnerId[runners[i].name].back = runners[i]['prices'][0].odds;
+				db.runnerId[runners[i].name].lay = runners[i]['prices'][3].odds;
+			}
+
+			writeJsonFile(body,'runners.json');
+			console.log(Object.keys(db.runnerId));
+
+			//console.log(body);
 		});
 	};
 
@@ -922,11 +948,21 @@
 			// output - event id
 			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 			// getEvents('24735152712200'); // sportsid
+			setTimeout(function() { getEvents(db.sportId['Horse Racing']); }.bind(this), 2000);
+
+			
 
 			// input  - event id
 			// output - id (player)
 			// https://api.matchbook.com/edge/rest/events/1033210398700016
 			// getEvent('1033210398700016'); // eventid
+			
+			setTimeout(function() {
+				var arr = Object.keys(db.eventId);
+				getEvent(db.eventId[arr[0]]);
+			}.bind(this), 4000);
+
+			
 
 			// input - event id, market id
 			// output -
