@@ -361,13 +361,34 @@
 
 			var runners = jsonFormat.markets[0].runners;
 
-			for(var i = 0; i < runners.length; ++i)
+			for(var runner in runners)
 			{
-				// db.runnerId[runners[i].name] = runners[i].id;
-				db.runnerId[runners[i].name] = {};
-				db.runnerId[runners[i].name].runnerId = runners[i].id;
-				db.runnerId[runners[i].name].back = runners[i]['prices'][0].odds;
-				db.runnerId[runners[i].name].lay = runners[i]['prices'][3].odds;
+				if(runners.hasOwnProperty(runner))
+				{
+					runner = Number(runner);
+					db.runnerId[runners[runner].name] = {};
+					db.runnerId[runners[runner].name].runnerId = runners[runner].id;
+
+					var back = [];
+					var lay = [];
+					for(var price in runners[runner]['prices'])
+					{
+						if(runners[runner]['prices'].hasOwnProperty(price))
+						{
+							if(runners[runner]['prices'][price]['side'] === "back")
+							{
+								back.push(Number(runners[runner]['prices'][price].odds));
+							}
+							else if(runners[runner]['prices'][price]['side'] === "lay")
+							{
+								lay.push(Number(runners[runner]['prices'][price].odds));
+							}
+						}
+					}
+
+					db.runnerId[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
+					db.runnerId[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
+				}
 			}
 
 			writeJsonFile(body,'runners.json');
