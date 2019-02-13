@@ -22,7 +22,7 @@
 			if (err) throw err;
 			console.log('Data written to file');
 		});
-	}
+	};
 
 	requestResponse = function(url, method, headers, qs) {
 		var options = {
@@ -42,8 +42,6 @@
 			console.log(body);
 		});
 	};
-
-	
 
 	// Login
 	// Login to Matchbook and create a new session.
@@ -67,7 +65,6 @@
 					// console.log(sessionToken);
 					// console.log(body);
 
-					//////////////////////////////////////////////////////////////
 					// getSession
 					var options = {
 						method: 'GET',
@@ -241,10 +238,19 @@
 
 			var jsonFormat = JSON.parse(body);
 
-			for(var i = 0; i < jsonFormat['sports'].length; ++i)
+			for(var sport in jsonFormat['sports'])
 			{
-				db.sportId[jsonFormat['sports'][i].name] = jsonFormat['sports'][i].id;
+				if( jsonFormat['sports'].hasOwnProperty(sport))
+				{
+					sport = Number(sport);
+					db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
+				}
 			}
+
+			// for(var i = 0; i < jsonFormat['sports'].length; ++i)
+			// {
+			// 	db.sportId[jsonFormat['sports'][i].name] = jsonFormat['sports'][i].id;
+			// }
 
 			writeJsonFile(body,'sportsList.json');
 			// console.log(body);
@@ -316,10 +322,19 @@
 
 			var jsonFormat = JSON.parse(body);
 
-			for(var i = 0; i < jsonFormat['events'].length; ++i)
+			for(var event in jsonFormat['events'])
 			{
-				db.eventId[jsonFormat['events'][i].name] = jsonFormat['events'][i].id;
+				if( jsonFormat['events'].hasOwnProperty(sport))
+				{
+					sport = Number(event);
+					db.sportId[jsonFormat['events'][event].name] = jsonFormat['events'][event].id;
+				}
 			}
+
+			// for(var i = 0; i < jsonFormat['events'].length; ++i)
+			// {
+			// 	db.eventId[jsonFormat['events'][i].name] = jsonFormat['events'][i].id;
+			// }
 
 			writeJsonFile(body,'event.json');
 			console.log(Object.keys(db.eventId));
