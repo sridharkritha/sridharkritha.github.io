@@ -6,4 +6,4 @@ window.addEventListener('load', function() {
         age  = parseInt(document.getElementById("inputAge").value);
         document.getElementById("displayElement").innerHTML = name +" " + age; 
     }
-}) // window.addEventListener('load', function() {
+}); // window.addEventListener('load', function() {
