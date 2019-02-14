@@ -35,7 +35,47 @@
 		});
 	};
 
-	requestResponse = function(url, method, headers, qs) {
+	//requestResponse(options, obj, keys, closureSave);	
+	requestResponse = function(options, obj, keys, closureSave) {
+		var i;
+		i = 5;
+		request(options, function (error, response, body) {
+			if (error) throw new Error(error);
+
+			var jsonFormat = JSON.parse(body);
+
+			for(var key in jsonFormat[obj])
+			{
+				if( jsonFormat[obj].hasOwnProperty(key))
+				{
+					key = Number(key);
+					var name = jsonFormat[obj][key][keys[0]];
+					// db.sportId[closureSave][name] = {};
+					db.sportId[closureSave].events = {};
+
+					db.sportId[closureSave].events[name] = {};
+
+					for(var i = 1; i < keys.length; ++i)
+					{
+						// db.sportId[closureSave][name][keys[i]] = jsonFormat[obj][key][keys[i]];
+						db.sportId[closureSave].events[name][keys[i]] = jsonFormat[obj][key][keys[i]];
+					}
+					//db.eventId[jsonFormat[obj][key].name] = jsonFormat[obj][key].id;
+
+					//db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
+				}
+			}
+
+			writeJsonFile(body,'event.json');
+			// console.log(Object.keys(db.eventId));
+
+			// console.log(body);
+		});
+
+
+
+		/////////////////////////////////////////////////////////////////////////////////
+		/*
 		var options = getDefaultOptions();
 
 		if(!url) return null;
@@ -49,6 +89,7 @@
 	
 			//console.log(body);
 		});
+		*/
 	};
 
 	// Login
@@ -262,7 +303,10 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
+		// requestResponse(options, 'events', 'closureSave');
+		requestResponse(options, 'events', ['name', 'id'],'Horse Racing');
 
+		/*
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
@@ -284,6 +328,7 @@
 
 			// console.log(body);
 		});
+		*/
 	};
 
 	// Get Event
