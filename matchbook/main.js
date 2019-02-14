@@ -31,7 +31,7 @@
 		// Asynchronous file write
 		fs.writeFile(fileName, data, function(err) {
 			if (err) throw err;
-			console.log('Data written to file');
+			//console.log('Data written to file');
 		});
 	};
 
@@ -47,7 +47,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 	
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -104,7 +104,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -122,7 +122,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -139,7 +139,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -156,7 +156,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -171,7 +171,7 @@
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -203,14 +203,11 @@
 				if( jsonFormat['sports'].hasOwnProperty(sport))
 				{
 					sport = Number(sport);
-					db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
+					// db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
+					db.sportId[jsonFormat['sports'][sport].name] = {};
+					db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
 				}
 			}
-
-			// for(var i = 0; i < jsonFormat['sports'].length; ++i)
-			// {
-			// 	db.sportId[jsonFormat['sports'][i].name] = jsonFormat['sports'][i].id;
-			// }
 
 			writeJsonFile(body,'sportsList.json');
 			// console.log(body);
@@ -231,7 +228,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			// console.log(body);
 		});
 	};
 
@@ -258,11 +255,13 @@
 		{
 			//options.qs['sport-ids'] = ids;
 			//options.qs['ids'] = ids;
-			options.url = 'https://api.matchbook.com/edge/rest/events?sport-ids=' + sportId;
+			options.url = 'https://api.matchbook.com/edge/rest/events?sport-ids=' + sportId.id;
 		}
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
+
+		// closure needed for storing the sport name ????
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -275,13 +274,15 @@
 				{
 					event = Number(event);
 					db.eventId[jsonFormat['events'][event].name] = jsonFormat['events'][event].id;
+
+					//db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
 				}
 			}
 
 			writeJsonFile(body,'event.json');
-			console.log(Object.keys(db.eventId));
+			// console.log(Object.keys(db.eventId));
 
-			console.log(body);
+			// console.log(body);
 		});
 	};
 
@@ -342,7 +343,7 @@
 			}
 
 			writeJsonFile(body,'runners.json');
-			console.log(Object.keys(db.runnerId));
+			//console.log(Object.keys(db.runnerId));
 
 			//console.log(body);
 		});
@@ -370,7 +371,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -393,7 +394,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -420,7 +421,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -443,7 +444,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	}
 
@@ -465,7 +466,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -488,7 +489,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -503,7 +504,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -538,7 +539,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -555,7 +556,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -572,7 +573,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -589,7 +590,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -606,7 +607,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -622,7 +623,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -639,7 +640,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -656,7 +657,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -674,7 +675,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -691,7 +692,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -707,7 +708,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -723,7 +724,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -740,7 +741,7 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
@@ -756,30 +757,17 @@
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
-			console.log(body);
+			//console.log(body);
 		});
 	};
 
 	(function () {
 
 		login();
-
 		// logout();
-
-		
-
 		
 		setTimeout(function(){
-			// getSession();
-			// getAccount();
-			// getEvents('24776400363101');   //:24735152712200,
-			// getEvents();
-			// getEvent('241798357140019');
-			
-			// getPopularMarkets();
-			//getNavigation();
 
-			////////////////////////////////////////
 			// input  - null
 			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
 			// https://api.matchbook.com/edge/rest/lookups/sports
@@ -789,7 +777,8 @@
 			// output - event id
 			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 			// getEvents('24735152712200'); // sportsid
-			setTimeout(function() { getEvents(db.sportId['Horse Racing']); }.bind(this), 2000);
+			setTimeout(function() { 
+				getEvents(db.sportId['Horse Racing']); }.bind(this), 2000);
 
 			
 
