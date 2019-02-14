@@ -8,6 +8,17 @@
 	db.eventId = {};
 	db.runnerId = {};
 
+	getDefaultOptions = function()
+	{
+		return {
+			method: 'GET',
+			headers: { 
+				'Content-Type': 'application/json',
+				'user-agent': 'api-doc-test-client' 
+			}
+		};
+	};
+
 	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
@@ -25,10 +36,7 @@
 	};
 
 	requestResponse = function(url, method, headers, qs) {
-		var options = {
-			method: 'GET',
-			headers: { 'user-agent': 'api-doc-test-client' }
-		};
+		var options = getDefaultOptions();
 
 		if(!url) return null;
 		options.url = url;
@@ -66,14 +74,8 @@
 					// console.log(body);
 
 					// getSession
-					var options = {
-						method: 'GET',
-						url: 'https://api.matchbook.com/bpapi/rest/security/session',
-						headers: { 
-							'Content-Type': 'application/json',
-							'user-agent': 'api-doc-test-client' 
-						}
-					};
+					var options = getDefaultOptions();
+					options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
 
 					// Cookie data for maintaining the session
 					options.headers['session-token'] = sessionToken;
@@ -92,14 +94,9 @@
 	// Logout
 	// Logout from Matchbook and terminate the current session.
 	logout = function () {
-		var options = {
-			method: 'DELETE',
-			url: 'https://api.matchbook.com/bpapi/rest/security/session',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.method = 'DELETE';
+		options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -116,14 +113,8 @@
 	// This API provides the ability to validate a session is still active. A successful response indicates a valid and active
 	// session. A 401 response means that the session has expired.
 	getSession = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/bpapi/rest/security/session',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -139,14 +130,8 @@
 	// Get the account information for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
 	getAccount = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/account',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/account';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -162,14 +147,8 @@
 	// Get the casino wallet balance for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
 	getCasioWalletBalance = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/bpapi/rest/account/balance',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/bpapi/rest/account/balance';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -185,15 +164,8 @@
 	// Get the new sports balance for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
 	getSportsWalletBalance = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/account/balance',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
-
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/account/balance';
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
 
@@ -214,21 +186,9 @@
 	// Get Sports
 	// Get the list of sports supported by Matchbook
 	getSports = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/lookups/sports',
-			qs:
-			{
-				offset: '0',
-				'per-page': '20',
-				order: 'name asc',
-				status: 'active'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/lookups/sports';
+		options.qs = { offset: '0', 'per-page': '20', order: 'name asc', status: 'active' };
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -261,15 +221,9 @@
 	// Get Navigation
 	// Get the tree structure used for the navigation of events.
 	getNavigation = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/navigation',
-			qs: { offset: '0', 'per-page': '20' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/navigation';
+		options.qs = { offset: '0', 'per-page': '20'};
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -284,28 +238,21 @@
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
 	getEvents = function (sportId) {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events',
-			qs:
-			{
-				'offset': '0',
-				'per-page': '20',
-				// 'states': 'open,suspended,closed,graded',
-				'states': 'open',
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'include-prices': 'false',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'minimum-liquidity': '10',
-				'include-event-participants': 'false'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/events';
+		options.qs = {
+			'offset': '0',
+			'per-page': '20',
+			// 'states': 'open,suspended,closed,graded',
+			'states': 'open',
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'include-prices': 'false',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'minimum-liquidity': '10',
+			'include-event-participants': 'false'
+		};		
 
 		if(sportId)
 		{
@@ -324,17 +271,12 @@
 
 			for(var event in jsonFormat['events'])
 			{
-				if( jsonFormat['events'].hasOwnProperty(sport))
+				if( jsonFormat['events'].hasOwnProperty(event))
 				{
-					sport = Number(event);
-					db.sportId[jsonFormat['events'][event].name] = jsonFormat['events'][event].id;
+					event = Number(event);
+					db.eventId[jsonFormat['events'][event].name] = jsonFormat['events'][event].id;
 				}
 			}
-
-			// for(var i = 0; i < jsonFormat['events'].length; ++i)
-			// {
-			// 	db.eventId[jsonFormat['events'][i].name] = jsonFormat['events'][i].id;
-			// }
 
 			writeJsonFile(body,'event.json');
 			console.log(Object.keys(db.eventId));
@@ -345,22 +287,15 @@
 
 	// Get Event
 	getEvent = function (event_id) {
-		var options = {
-			method: 'GET',
-			qs:
-			{
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'include-prices': 'false',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'minimum-liquidity': '10',
-				'include-event-participants': 'false'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
+		var options = getDefaultOptions();
+		options.qs = {
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'include-prices': 'false',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'minimum-liquidity': '10',
+			'include-event-participants': 'false'
 		};
 
 		// event id
@@ -415,25 +350,18 @@
 
 	// Get Markets
 	getMarkets = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events/:event_id/markets',
-			qs:
-			{
-				offset: '0',
-				'per-page': '20',
-				states: 'open,suspended',
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'include-prices': 'false',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'minimum-liquidity': '10'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets';
+		options.qs = {
+			offset: '0',
+			'per-page': '20',
+			states: 'open,suspended',
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'include-prices': 'false',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'minimum-liquidity': '10'
 		};
 
 		// Cookie data for maintaining the session
@@ -448,22 +376,15 @@
 
 	// Get Market
 	getMarket = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id',
-			qs:
-			{
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id';
+		options.qs = {
 				'exchange-type': 'back-lay',
 				'odds-type': 'DECIMAL',
 				'include-prices': 'false',
 				'price-depth': '3',
 				'price-mode': 'expanded',
 				'minimum-liquidity': '10'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
 		};
 
 		// Cookie data for maintaining the session
@@ -478,23 +399,16 @@
 
 	// Get Runners
 	getRunners = function (eventId, marketId) {
-		var options = {
-			method: 'GET',
-			qs:
-			{
-				states: 'open,suspended',
-				'include-withdrawn': 'true',
-				'include-prices': 'true',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'minimum-liquidity': '10'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
+		var options = getDefaultOptions();
+		options.qs = {
+			states: 'open,suspended',
+			'include-withdrawn': 'true',
+			'include-prices': 'true',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'minimum-liquidity': '10'
 		};
 
 		// event id and market id
@@ -512,22 +426,15 @@
 
 	// Get Runner
 	getRunner = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners/:runner_id',
-			qs:
-			{
-				'include-prices': 'false',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'minimum-liquidity': '10'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners/:runner_id';
+		options.qs = {
+			'include-prices': 'false',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'minimum-liquidity': '10'
 		};
 
 		// Cookie data for maintaining the session
@@ -542,21 +449,14 @@
 
 	// Get Prices
 	getPrices = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners/:runner_id/prices',
-			qs:
-			{
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners/:runner_id/prices';
+		options.qs = {
 				'exchange-type': 'back-lay',
 				'odds-type': 'DECIMAL',
 				depth: '3',
 				'minimum-liquidity': '10',
 				'price-mode': 'expanded'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
 		};
 
 		// Cookie data for maintaining the session
@@ -571,23 +471,16 @@
 
 	// Get Popular Markets
 	getPopularMarkets = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/popular-markets',
-			qs:
-			{
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'minimum-liquidity': '10',
-				'old-format': 'false'
-			},
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/popular-markets';
+		options.qs = {
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'minimum-liquidity': '10',
+			'old-format': 'false'
+		};		
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -601,15 +494,9 @@
 
 	// Get Popular Sports
 	getPopularSports = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/popular/sports',
-			qs: { 'num-sports': '5' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/popular/sports';
+		options.qs = { 'num-sports': '5' };
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -641,14 +528,9 @@
 	// Cancel Offers
 	// Cancel some or all of your open offers.
 	cancelOffers = function () {
-		var options = {
-			method: 'DELETE',
-			url: 'https://api.matchbook.com/edge/rest/v2/offers',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.method = 'DELETE';
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -663,15 +545,10 @@
 	// Cancel Offer
 	// Cancel a specific unmatched offer.
 	cancelOffer = function () {
-		var options = {
-			method: 'DELETE',
-			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
-
+		var options = getDefaultOptions();
+		options.method = 'DELETE';
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id';
+		
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
 
@@ -685,15 +562,9 @@
 	// Get Offers
 	// Get the current unsettled offers. This can include offers in all statuses.
 	getOffers = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/v2/offers',
-			qs: { offset: '0', 'per-page': '20', 'include-edits': 'false' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
+		options.qs = { offset: '0', 'per-page': '20', 'include-edits': 'false' };
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -708,15 +579,9 @@
 	// Get Offer
 	// Get a single specific unsettled offer.
 	getOffer = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id',
-			qs: { 'include-edits': 'false' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id';
+		options.qs = { offset: '0', 'per-page': '20', 'include-edits': 'false' };
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -731,15 +596,9 @@
 	// Get Offer Edits
 	// Get a single specific unsettled offer.
 	getOfferEdits = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits',
-			qs: { offset: '0', 'per-page': '20' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits';
+		options.qs = { offset: '0', 'per-page': '20' };
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -754,14 +613,8 @@
 	// Get Offer Edit
 	// Get a single specific unsettled offer.
 	getOfferEdit = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits/:offer_edit_id',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits/:offer_edit_id';		
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -776,15 +629,9 @@
 	// Get Old Wallet Transactions
 	// Get a list of transactions on the old Matchbook wallet.
 	getOldWalletTransactions = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/bpapi/rest/reports/transactions',
-			qs: { offset: '0', 'per-page': '20', categories: 'categories' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/bpapi/rest/reports/transactions';
+		options.qs = { offset: '0', 'per-page': '20', categories: 'categories'};
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -799,15 +646,9 @@
 	// Get New Wallet Transactions
 	// Get a list of transactions on the New Matchbook wallet.
 	getNewWalletTransactions = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/reports/v1/transactions',
-			qs: { offset: '0', 'per-page': '20' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/reports/v1/transactions';
+		options.qs = { offset: '0', 'per-page': '20'};
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -823,15 +664,9 @@
 	// Get Current Offers
 	// Get a list of current offers i.e. offers on markets yet to be settled.
 	getCurrentOffers = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/reports/v2/offers/current',
-			qs: { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/reports/v2/offers/current';
+		options.qs = { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL'};
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -846,15 +681,9 @@
 	// Get Current Bets
 	// Get a list of current bets i.e. bets on markets yet to be settled.
 	getCurrentBets = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/reports/v2/bets/current',
-			qs: { offset: '0', 'per-page': '50', 'odds-type': 'DECIMAL' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/reports/v2/bets/current';
+		options.qs = { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL'};
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -868,15 +697,9 @@
 
 	// Get Settled Bets
 	getSettledBets = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/edge/rest/reports/v2/bets/settled',
-			qs: { offset: '0', 'per-page': '20' },
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/reports/v2/bets/settled';
+		options.qs = { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL'};
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -891,14 +714,8 @@
 	// Get Countries
 	// Get the list of countries used for account registration.
 	getCountries = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/bpapi/rest/lookups/countries',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/bpapi/rest/lookups/countries';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -914,14 +731,8 @@
 	// Get Regions
 	// Get the list of regions within a Country for account registration.
 	getRegions = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/bpapi/rest/lookups/regions/:country_id',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/bpapi/rest/lookups/regions/:country_id';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -936,14 +747,8 @@
 	// Get Currencies
 	// Get the list of currencies supported by Matchbook.
 	getCurrencies = function () {
-		var options = {
-			method: 'GET',
-			url: 'https://api.matchbook.com/bpapi/rest/lookups/currencies',
-			headers: { 
-				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
-			}
-		};
+		var options = getDefaultOptions();
+		options.url = 'https://api.matchbook.com/bpapi/rest/lookups/currencies';
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -996,7 +801,7 @@
 			setTimeout(function() {
 				var arr = Object.keys(db.eventId);
 				getEvent(db.eventId[arr[0]]);
-			}.bind(this), 4000);
+			}.bind(this), 10000);
 
 			
 
