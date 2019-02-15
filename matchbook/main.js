@@ -35,12 +35,11 @@
 		});
 	};
 
-	//requestResponse(options, obj, keys, closureSave);	
-	requestResponse = function(options, obj, keys, closureSave) {
-		var i;
-		i = 5;
+	requestResponse = function(options, obj, destObj, keys, closureSave) {
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
+
+			db.sportId[closureSave][obj] = {};
 
 			var jsonFormat = JSON.parse(body);
 
@@ -49,26 +48,18 @@
 				if( jsonFormat[obj].hasOwnProperty(key))
 				{
 					key = Number(key);
-					var name = jsonFormat[obj][key][keys[0]];
-					// db.sportId[closureSave][name] = {};
-					db.sportId[closureSave].events = {};
+					var name = jsonFormat[obj][key][destObj];
+					db.sportId[closureSave][obj][name] = {};
 
-					db.sportId[closureSave].events[name] = {};
-
-					for(var i = 1; i < keys.length; ++i)
+					for(var i = 0; i < keys.length; ++i)
 					{
-						// db.sportId[closureSave][name][keys[i]] = jsonFormat[obj][key][keys[i]];
-						db.sportId[closureSave].events[name][keys[i]] = jsonFormat[obj][key][keys[i]];
+						db.sportId[closureSave][obj][name][keys[i]] = jsonFormat[obj][key][keys[i]];
 					}
-					//db.eventId[jsonFormat[obj][key].name] = jsonFormat[obj][key].id;
-
-					//db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
 				}
 			}
 
 			writeJsonFile(body,'event.json');
 			// console.log(Object.keys(db.eventId));
-
 			// console.log(body);
 		});
 
@@ -303,8 +294,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		// requestResponse(options, 'events', 'closureSave');
-		requestResponse(options, 'events', ['name', 'id'],'Horse Racing');
+		requestResponse(options, 'events', 'name', ['id'],'Horse Racing');
 
 		/*
 		request(options, function (error, response, body) {
@@ -331,6 +321,74 @@
 		*/
 	};
 
+		// Get Event
+		getEvent = function (event_id, returnFunction) {
+			var options = getDefaultOptions();
+			options.qs = {
+				'exchange-type': 'back-lay',
+				'odds-type': 'DECIMAL',
+				'include-prices': 'false',
+				'price-depth': '3',
+				'price-mode': 'expanded',
+				'minimum-liquidity': '10',
+				'include-event-participants': 'false'
+			};
+	
+			// event id
+			options.url = 'https://api.matchbook.com/edge/rest/events/'+event_id;
+	
+			// Cookie data for maintaining the session
+			options.headers['session-token'] = sessionToken;
+	
+			request(options, function (error, response, body) {
+				if (error) throw new Error(error);
+	
+				var jsonFormat = JSON.parse(body);
+	
+				var runners = jsonFormat.markets[0].runners;
+
+				var runnersObj = {};
+	
+				for(var runner in runners)
+				{
+					if(runners.hasOwnProperty(runner))
+					{
+						runner = Number(runner);
+						
+						runnersObj[runners[runner].name] = {};
+						runnersObj[runners[runner].name].runnerId = runners[runner].id;
+	
+						var back = [];
+						var lay = [];
+						for(var price in runners[runner]['prices'])
+						{
+							if(runners[runner]['prices'].hasOwnProperty(price))
+							{
+								if(runners[runner]['prices'][price]['side'] === "back")
+								{
+									back.push(Number(runners[runner]['prices'][price].odds));
+								}
+								else if(runners[runner]['prices'][price]['side'] === "lay")
+								{
+									lay.push(Number(runners[runner]['prices'][price].odds));
+								}
+							}
+						}
+	
+						runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
+						runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
+					}
+				}
+
+				returnFunction(runnersObj); // return the object from the callback function 
+	
+				writeJsonFile(body,'runners.json');
+				//console.log(Object.keys(runnersObj));
+				//console.log(body);
+			});
+		};
+
+	/*
 	// Get Event
 	getEvent = function (event_id) {
 		var options = getDefaultOptions();
@@ -393,6 +451,7 @@
 			//console.log(body);
 		});
 	};
+	*/
 
 	// Get Markets
 	getMarkets = function () {
@@ -806,6 +865,14 @@
 		});
 	};
 
+	getEventInfo = function(sportName, event, eventId) {
+		getEvent(eventId, function(obj) {
+					console.log(obj);
+			db.sportId[sportName].events[event] = obj;
+			db.sportId[sportName].events[event].id = eventId;
+		});
+	};
+
 	(function () {
 
 		login();
@@ -833,8 +900,15 @@
 			// getEvent('1033210398700016'); // eventid
 			
 			setTimeout(function() {
-				var arr = Object.keys(db.eventId);
-				getEvent(db.eventId[arr[0]]);
+				// var arr = Object.keys(db.eventId);
+				// getEvent(db.eventId[arr[0]]);
+				var arr = Object.keys(db.sportId['Horse Racing'].events);
+				// getEvent(db.sportId['Horse Racing'].events[arr[0]].id, function(obj) {
+				// 	console.log(obj);
+				// });
+
+				getEventInfo('Horse Racing', arr[0], db.sportId['Horse Racing'].events[arr[0]].id);
+
 			}.bind(this), 10000);
 
 			
