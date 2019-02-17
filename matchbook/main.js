@@ -25,7 +25,8 @@
 
 	writeJsonFile = function(jsonString, fileName)
 	{
-		var jsonFormat = JSON.parse(jsonString);
+		// var jsonFormat = JSON.parse(jsonString);
+		var jsonFormat = jsonString;
 		var data = JSON.stringify(jsonFormat, null, 2);
 		
 		// Asynchronous file write
@@ -58,7 +59,7 @@
 				}
 			}
 
-			writeJsonFile(body,'event.json');
+			//writeJsonFile(body,'event.json');
 			// console.log(Object.keys(db.eventId));
 			// console.log(body);
 		});
@@ -241,7 +242,7 @@
 				}
 			}
 
-			writeJsonFile(body,'sportsList.json');
+			// writeJsonFile(body,'sportsList.json');
 			// console.log(body);
 			// console.log(Object.keys(db.sportId));
 		});
@@ -382,7 +383,7 @@
 
 				returnFunction(runnersObj); // return the object from the callback function 
 	
-				writeJsonFile(body,'runners.json');
+				// writeJsonFile(body,'runners.json');
 				//console.log(Object.keys(runnersObj));
 				//console.log(body);
 			});
@@ -865,11 +866,19 @@
 		});
 	};
 
+	var nCallbacks = 0;
+	var nCallbacksCompleted = 0;
 	getEventInfo = function(sportName, event, eventId) {
 		getEvent(eventId, function(obj) {
 					console.log(obj);
 			db.sportId[sportName].events[event] = obj;
 			db.sportId[sportName].events[event].id = eventId;
+
+			++nCallbacksCompleted;
+			if(nCallbacks === nCallbacksCompleted)
+			{
+				writeJsonFile(db.sportId[sportName],'result.json');
+			}
 		});
 	};
 
@@ -907,7 +916,13 @@
 				// 	console.log(obj);
 				// });
 
-				getEventInfo('Horse Racing', arr[0], db.sportId['Horse Racing'].events[arr[0]].id);
+				// getEventInfo('Horse Racing', arr[0], db.sportId['Horse Racing'].events[arr[0]].id);
+
+				nCallbacks = arr.length;
+				for(var i = 0; i < arr.length; ++i)
+				{
+					getEventInfo('Horse Racing', arr[i], db.sportId['Horse Racing'].events[arr[i]].id);
+				}
 
 			}.bind(this), 10000);
 
