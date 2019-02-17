@@ -25,8 +25,13 @@
 
 	writeJsonFile = function(jsonString, fileName)
 	{
-		// var jsonFormat = JSON.parse(jsonString);
 		var jsonFormat = jsonString;
+
+		if(typeof jsonString === 'string')
+		{
+			jsonFormat = JSON.parse(jsonString);
+		}
+		
 		var data = JSON.stringify(jsonFormat, null, 2);
 		
 		// Asynchronous file write
@@ -295,9 +300,9 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id'],'Horse Racing');
+		requestResponse(options, 'events', 'id', ['name'],'Horse Racing');
 
-		/*
+		/*cls
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
