@@ -300,7 +300,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'id', ['name'],'Horse Racing');
+		requestResponse(options, 'events', 'name', ['id'],'Horse Racing');
 
 		/*cls
 		request(options, function (error, response, body) {
@@ -874,7 +874,7 @@
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
 	getEventInfo = function(sportName, event, eventId) {
-		getEvent(eventId, function(obj) {
+		getEvent(event, function(obj) {
 					console.log(obj);
 			db.sportId[sportName].events[event] = obj;
 			db.sportId[sportName].events[event].id = eventId;
