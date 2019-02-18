@@ -874,7 +874,7 @@
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
 	getEventInfo = function(sportName, event, eventId) {
-		getEvent(event, function(obj) {
+		getEvent(eventId, function(obj) {
 					console.log(obj);
 			db.sportId[sportName].events[event] = obj;
 			db.sportId[sportName].events[event].id = eventId;
@@ -967,5 +967,9 @@ https://api.matchbook.com/edge/rest/events?sport-ids=8&category-ids=410468520880
 https://api.matchbook.com/edge/rest/events?sport-ids=8&tag-url-names=live-betting
 You can get all sport_ids and competitions :
 https://api.matchbook.com/edge/rest/navigation
+
+// Local web server
+
+c:\Webserver> http-server  -p 8059 -c-1
 
 */
