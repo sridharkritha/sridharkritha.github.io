@@ -41,9 +41,11 @@
 		});
 	};
 
-	requestResponse = function(options, obj, destObj, keys, closureSave) {
+	requestResponse = function(options, obj, destObj, keys, closureSave, callback) {
 		request(options, function (error, response, body) {
-			if (error) throw new Error(error);
+			if (error) {
+				return callback(error,null);
+			}
 
 			db.sportId[closureSave][obj] = {};
 
@@ -67,26 +69,8 @@
 			//writeJsonFile(body,'event.json');
 			// console.log(Object.keys(db.eventId));
 			// console.log(body);
+			return callback(null,true);
 		});
-
-
-
-		/////////////////////////////////////////////////////////////////////////////////
-		/*
-		var options = getDefaultOptions();
-
-		if(!url) return null;
-		options.url = url;
-		if(method)	options.method = method;
-		if(headers)	options.headers = headers;
-		if(qs)	options.qs = qs;
-
-		request(options, function (error, response, body) {
-			if (error) throw new Error(error);
-	
-			//console.log(body);
-		});
-		*/
 	};
 
 	// Login
@@ -95,7 +79,7 @@
 	// cookie named "session-token" or a header named "session-token".
 	// Matchbook sessions live for approximately 6 hours so only 1 login request every 6 hours is required. The same session 
 	// should be used for all requests in that period.
-	login = function () {
+	login = function (callback) {
 	// Asynchronous 'json' file read
 	fs.readFile('./../../../credential.json', function(err, data) {
 		if (err) throw err;
@@ -110,19 +94,10 @@
 					sessionToken = body['session-token'];
 					// console.log(sessionToken);
 					// console.log(body);
-
-					// getSession
-					var options = getDefaultOptions();
-					options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
-
-					// Cookie data for maintaining the session
-					options.headers['session-token'] = sessionToken;
-			
-					request(options, function (error, response, body) {
-						if (error) throw new Error(error);
-						// console.log(options);
-						// console.log(body);
-					});
+					 return callback(null,sessionToken);
+				}
+				else {
+					return callback(error,null);
 				}
 			}
 		);
@@ -223,7 +198,7 @@
 
 	// Get Sports
 	// Get the list of sports supported by Matchbook
-	getSports = function () {
+	getSports = function (sessionToken, callback) {
 		var options = getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/lookups/sports';
 		options.qs = { offset: '0', 'per-page': '20', order: 'name asc', status: 'active' };
@@ -232,7 +207,10 @@
 		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
-			if (error) throw new Error(error);
+			if (error)
+			{
+				return callback(error,null);
+			} 
 
 			var jsonFormat = JSON.parse(body);
 
@@ -250,6 +228,7 @@
 			// writeJsonFile(body,'sportsList.json');
 			// console.log(body);
 			// console.log(Object.keys(db.sportId));
+			return callback(null,sessionToken);
 		});
 	};
 
@@ -272,7 +251,7 @@
 
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
-	getEvents = function (sportId) {
+	getEvents = function (sportId, callback) {
 		var options = getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events';
 		options.qs = {
@@ -300,7 +279,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id'],'Horse Racing');
+		requestResponse(options, 'events', 'name', ['id'],'Horse Racing', callback);
 
 		/*cls
 		request(options, function (error, response, body) {
@@ -873,7 +852,7 @@
 
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
-	getEventInfo = function(sportName, event, eventId) {
+	getEventInfo = function(sportName, event, eventId, callback) {
 		getEvent(eventId, function(obj) {
 					console.log(obj);
 			db.sportId[sportName].events[event] = obj;
@@ -884,12 +863,71 @@
 			{
 				writeJsonFile(db.sportId[sportName],'result.json');
 			}
+
+			return callback(null,eventId);
 		});
 	};
 
 	(function () {
 
-		login();
+		login(function(err, sessionToken) {
+			if(err){
+				console.log(err);
+			}
+			else{
+				console.log(sessionToken); // sessionToken
+			
+			// input  - null
+			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
+			// https://api.matchbook.com/edge/rest/lookups/sports
+			getSports(sessionToken, function(err, data) {
+				if(err){
+					console.log(err);
+					throw new Error(err);
+				}
+				else{
+					console.log(data);
+
+					// input  - sports id
+					// output - event id
+					// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
+					// getEvents('24735152712200'); // sportsid		
+					getEvents(db.sportId['Horse Racing'], function(err, data) {
+						if(err){
+							console.log(err);
+							throw new Error(err);
+						}
+						else{
+							console.log(data);
+							var arr = Object.keys(db.sportId['Horse Racing'].events);
+							
+							nCallbacks = arr.length;
+							for(var i = 0; i < arr.length; ++i)
+							{
+								// input  - event id
+								// output - id (player)
+								// https://api.matchbook.com/edge/rest/events/1033210398700016
+								getEventInfo('Horse Racing', arr[i],
+								db.sportId['Horse Racing'].events[arr[i]].id,
+								function(err, data) {
+									if(err){
+										console.log(err);
+										throw new Error(err);
+									}
+									else{
+										console.log(data);
+									}
+								});
+							}
+						}
+						}); // getEvents
+				}
+			}); // getSports
+		} 
+		});// login
+		
+		/*
+		// login();
 		// logout();
 		
 		setTimeout(function(){
@@ -905,7 +943,6 @@
 			// getEvents('24735152712200'); // sportsid
 			setTimeout(function() { 
 				getEvents(db.sportId['Horse Racing']); }.bind(this), 2000);
-
 			
 
 			// input  - event id
@@ -931,14 +968,14 @@
 
 			}.bind(this), 10000);
 
-			
-
 			// input - event id, market id
 			// output -
 			// https://www.matchbook.com/edge/rest/events/1033210398700016/markets/1033210399940016/runners
 			//getRunners('1033210398700016','1033210399940016');
 			
 		}.bind(this), 5000);
+		*/
+
 	})();
 }());
 
