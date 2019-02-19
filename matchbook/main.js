@@ -942,57 +942,6 @@
 				run(sessionToken);
 		} 
 		});// login
-		
-		/*
-		// login();
-		// logout();
-		
-		setTimeout(function(){
-
-			// input  - null
-			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
-			// https://api.matchbook.com/edge/rest/lookups/sports
-			getSports();
-
-			// input  - sports id
-			// output - event id
-			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
-			// getEvents('24735152712200'); // sportsid
-			setTimeout(function() { 
-				getEvents(db.sportId['Horse Racing']); }.bind(this), 2000);
-			
-
-			// input  - event id
-			// output - id (player)
-			// https://api.matchbook.com/edge/rest/events/1033210398700016
-			// getEvent('1033210398700016'); // eventid
-			
-			setTimeout(function() {
-				// var arr = Object.keys(db.eventId);
-				// getEvent(db.eventId[arr[0]]);
-				var arr = Object.keys(db.sportId['Horse Racing'].events);
-				// getEvent(db.sportId['Horse Racing'].events[arr[0]].id, function(obj) {
-				// 	console.log(obj);
-				// });
-
-				// getEventInfo('Horse Racing', arr[0], db.sportId['Horse Racing'].events[arr[0]].id);
-
-				nCallbacks = arr.length;
-				for(var i = 0; i < arr.length; ++i)
-				{
-					getEventInfo('Horse Racing', arr[i], db.sportId['Horse Racing'].events[arr[i]].id);
-				}
-
-			}.bind(this), 10000);
-
-			// input - event id, market id
-			// output -
-			// https://www.matchbook.com/edge/rest/events/1033210398700016/markets/1033210399940016/runners
-			//getRunners('1033210398700016','1033210399940016');
-			
-		}.bind(this), 5000);
-		*/
-
 	})();
 }());
 
@@ -1003,8 +952,6 @@ mb_get_events
 mb_get_markets
 
 https://github.com/xanadunf/matchbook
-
-
 
 
 C# Project: https://www.dropbox.com/s/nm32ispvu8jr7hp/BpapiConsoleProject.zip?dl=0
