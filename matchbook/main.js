@@ -7,6 +7,8 @@
 	db.sportId = {};
 	db.eventId = {};
 	db.runnerId = {};
+	var pastTime = 0;
+	var currentTime = 0;
 
 	getDefaultOptions = function()
 	{
@@ -861,22 +863,18 @@
 			++nCallbacksCompleted;
 			if(nCallbacks === nCallbacksCompleted)
 			{
+				nCallbacksCompleted = 0;
 				writeJsonFile(db.sportId[sportName],'result.json');
+				return callback(null,true);
 			}
 
-			return callback(null,eventId);
+			return callback(null,false);
 		});
 	};
 
-	(function () {
-
-		login(function(err, sessionToken) {
-			if(err){
-				console.log(err);
-			}
-			else{
-				console.log(sessionToken); // sessionToken
-			
+	run = function(sessionToken)
+	{
+		pastTime = new Date();
 			// input  - null
 			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
 			// https://api.matchbook.com/edge/rest/lookups/sports
@@ -915,7 +913,16 @@
 										throw new Error(err);
 									}
 									else{
-										console.log(data);
+										if(data) {
+											console.log(data);
+											currentTime = new Date();
+											remainingTime = currentTime - pastTime;
+											remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+											setTimeout(function() {
+												run(sessionToken);
+											}.bind(this), remainingTime);
+										}
+										
 									}
 								});
 							}
@@ -923,6 +930,16 @@
 						}); // getEvents
 				}
 			}); // getSports
+	};
+
+	(function () {
+		login(function(err, sessionToken) {
+			if(err){
+				console.log(err);
+			}
+			else{
+				console.log(sessionToken); // sessionToken
+				run(sessionToken);
 		} 
 		});// login
 		
