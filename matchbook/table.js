@@ -163,13 +163,27 @@ updateLiveData = function()
 {
 	var now = new Date();
 	// Date string is appended as a query with live data for not to use the cached version 
-	var url = 'result.json?' + now.getTime();
+	/*
+	// Method 1: GET - send file ( file.json)
+	var url = 'sri.json?' + now.getTime();
 	xhr = getXmlHttpRequestObject();
 	xhr.onreadystatechange = evenHandler;
 	// asynchronous requests
-	xhr.open("GET", url, true);
+	xhr.open("GET", url, true);	
 	// Send the request over the network
 	xhr.send(null);
+	*/
+
+	// Method 2: POST - send object( json object)
+	xhr = getXmlHttpRequestObject();
+	xhr.onreadystatechange = evenHandler;
+	//xhr.open("POST", "/json-handler");
+	var url = "hello";
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+	//xhr.send(JSON.stringify({name:"John Rambo", time:"2pm"}));
+	var data = JSON.stringify({"email":"tomb@raider.com","name":"LaraCroft"});
+	xhr.send(data);
 };
 
 updateLiveData();
