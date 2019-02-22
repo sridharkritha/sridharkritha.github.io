@@ -1048,7 +1048,6 @@ You can get all sport_ids and competitions :
 https://api.matchbook.com/edge/rest/navigation
 
 // Local web server
-
-c:\Webserver> http-server  -p 8059 -c-1
+http-server  -p 8059 -c-1
 
 */
