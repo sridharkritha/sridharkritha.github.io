@@ -785,7 +785,7 @@
 
 	run = function(sessionToken)
 	{
-		pastTime = new Date();
+		pastTime = new Date().getTime();
 			// input  - null
 			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
 			// https://api.matchbook.com/edge/rest/lookups/sports
@@ -826,7 +826,9 @@
 									else{
 										if(data) {
 											console.log(data); // result data
-											currentTime = new Date();
+											// fun(JSON.parse(xhr.responseText), 'events');
+											fun(data, 'events');
+											currentTime = new Date().getTime();
 											remainingTime = currentTime - pastTime;
 											remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
 											setTimeout(function() {
@@ -856,10 +858,11 @@
 	})(); // IIF - Main entry (login)
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$/
+	//////////////////// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$/
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////// Table Creation - start /////////////////////////////////////////
-/*
+// fun(JSON.parse(xhr.responseText), 'events');
+
 var key = 'events';
 function fun(obj, explore)
 {
@@ -976,6 +979,7 @@ function fun(obj, explore)
 		divContainer.appendChild(table);
 	}
 
+/*
 //////////////////////////////////////// Ajax - start //////////////////////////////////////////////////////////////////
 var xhr = null;
 	
@@ -1049,5 +1053,7 @@ https://api.matchbook.com/edge/rest/navigation
 
 // Local web server
 http-server  -p 8059 -c-1
+// browserify
+npm install -g browserify --save
 
 */
