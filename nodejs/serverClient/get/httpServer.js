@@ -13,4 +13,16 @@ server.listen(1212); // listening on port 1212
 How to run Run:
 1. node httpServer.js
 
+
+2. 
+Browser:
+Directly communicate the server by typing the url in the browser
+
+http://localhost:1212
+
+(or)
+
+3. Curl: 
+curl http://localhost:1212
+
 */
