@@ -827,7 +827,7 @@
 										if(data) {
 											console.log(data); // result data
 											// fun(JSON.parse(xhr.responseText), 'events');
-											fun(data, 'events');
+											// fun(data, 'events');
 											currentTime = new Date().getTime();
 											remainingTime = currentTime - pastTime;
 											remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
@@ -862,7 +862,7 @@
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////// Table Creation - start /////////////////////////////////////////
 // fun(JSON.parse(xhr.responseText), 'events');
-
+/*
 var key = 'events';
 function fun(obj, explore)
 {
@@ -978,6 +978,7 @@ function fun(obj, explore)
 		divContainer.innerHTML = "";
 		divContainer.appendChild(table);
 	}
+*/
 
 /*
 //////////////////////////////////////// Ajax - start //////////////////////////////////////////////////////////////////
@@ -1051,9 +1052,11 @@ https://api.matchbook.com/edge/rest/events?sport-ids=8&tag-url-names=live-bettin
 You can get all sport_ids and competitions :
 https://api.matchbook.com/edge/rest/navigation
 
-// Local web server
-http-server  -p 8059 -c-1
+
 // browserify
 npm install -g browserify --save
+
+// Local web server
+http-server  -p 8059 -c-1
 
 */
