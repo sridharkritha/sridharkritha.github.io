@@ -281,7 +281,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id'],'Horse Racing', callback);
+		requestResponse(options, 'events', 'name', ['id','start'],'Horse Racing', callback);
 	};
 
 		// Get Event
@@ -513,6 +513,13 @@
 	// Submit Offers
 	// Submit one or more offers i.e. your intention or willingness to have bets with other users.
 	submitOffers = function (callback) {
+		// "16:30 Wincanton": {
+		// 	"5 Tikkapick": {
+		// 	  "runnerId": 1052216604020016,
+		// 	  "back": 2.40,
+		// 	  "lay": 2.64
+		// 	},
+
 		var luckyBet = {
 			"odds-type":"DECIMAL",
 			"exchange-type":"back-lay",
@@ -794,11 +801,12 @@
 
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
-	getEventInfo = function(sportName, event, eventId, callback) {
+	getEventInfo = function(sportName, event, eventId, startTime, callback) {
 		getEvent(eventId, function(obj) {
 					console.log(obj);
 			db.sportId[sportName].events[event] = obj;
 			db.sportId[sportName].events[event].id = eventId;
+			db.sportId[sportName].events[event].start = startTime;
 
 			++nCallbacksCompleted;
 			if(nCallbacks === nCallbacksCompleted)
@@ -847,6 +855,7 @@
 								// https://api.matchbook.com/edge/rest/events/1033210398700016
 								getEventInfo('Horse Racing', arr[i],
 								db.sportId['Horse Racing'].events[arr[i]].id,
+								db.sportId['Horse Racing'].events[arr[i]].start,
 								function(err, data) {
 									if(err){
 										console.log(err);
@@ -883,7 +892,7 @@
 				console.log(sessionToken); // sessionToken
 				run(sessionToken);
 
-				if(1) {
+				if(0) {
 					//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
 					// PLACE BET - CAREFULLY
 					//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
@@ -896,7 +905,7 @@
 								console.log(response);
 							}
 						}); // submitOffers
-					}.bind(this), 2000);
+					}.bind(this), 0);
 				}
 		} 
 		}); // login
