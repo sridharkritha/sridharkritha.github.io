@@ -43,7 +43,7 @@
 		});
 	};
 
-	requestResponse = function(options, obj, destObj, keys, closureSave, callback) {
+	requestResponse = function(options, obj, destObj, keys, filterDay, closureSave, callback) {
 		request(options, function (error, response, body) {
 			if (error) {
 				return callback(error,null);
@@ -58,6 +58,53 @@
 				if( jsonFormat[obj].hasOwnProperty(key))
 				{
 					key = Number(key);
+
+					/////////////////////////////////////////////////////////////////////
+					var index = keys.indexOf("start");
+					var dateString;
+
+					if(index !== -1)
+					{
+						dateString = jsonFormat[obj][key][keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
+						//dateString = keys[index]; // "start": "2019-03-01T16:10:00.000Z"
+						var dateTime = dateString.split('T');
+						var jsonDate = dateTime[0];
+						var time = dateTime[1];
+						var hourMin = time.split(':');
+						var hour = hourMin[0];
+						var min = hourMin[1];
+
+						var currentDate;
+						if(filterDay === 'today')
+						{
+							// Thu Feb 28 2019 22:04:39 GMT+0000
+							currentDate = new Date();
+						}
+						else if(filterDay === 'tomorrow')
+						{
+							// Fri Mar 01 2019 00:04:39 GMT+0000
+							var today = new Date();
+							var tomorrow = new Date();
+							currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
+						}
+						
+						// 2019-02-28
+						var systemDate = currentDate.toLocaleDateString(undefined, {
+							day: '2-digit',
+							month: '2-digit',
+							year: 'numeric'
+						});
+
+						if(systemDate !== jsonDate)
+						{
+							continue; // skip
+						}
+
+						//var currentHour  = today.getHours(); // 24
+						//var currentMinutes  = today.getMinutes(); // 4
+					}
+
+					///////////////////////////////////////////////////////////////////////
 					var name = jsonFormat[obj][key][destObj];
 					db.sportId[closureSave][obj][name] = {};
 
@@ -281,7 +328,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id','start'],'Horse Racing', callback);
+		requestResponse(options, 'events', 'name', ['id','start'],'today', 'Horse Racing', callback);
 	};
 
 		// Get Event
