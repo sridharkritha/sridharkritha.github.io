@@ -7,6 +7,8 @@
 	db.sportId = {};
 	db.eventId = {};
 	db.runnerId = {};
+	var predictedWinners = [];
+	var winConfidencePercentage = 100; // 100% or more
 	var pastTime = 0;
 	var currentTime = 0;
 
@@ -66,14 +68,7 @@
 					if(index !== -1)
 					{
 						dateString = jsonFormat[obj][key][keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
-						//dateString = keys[index]; // "start": "2019-03-01T16:10:00.000Z"
-						var dateTime = dateString.split('T');
-						var jsonDate = dateTime[0];
-						var time = dateTime[1];
-						var hourMin = time.split(':');
-						var hour = hourMin[0];
-						var min = hourMin[1];
-
+						var dateObject = new Date(dateString);
 						var currentDate;
 						if(filterDay === 'today')
 						{
@@ -87,21 +82,12 @@
 							var tomorrow = new Date();
 							currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
 						}
-						
-						// 2019-02-28
-						var systemDate = currentDate.toLocaleDateString(undefined, {
-							day: '2-digit',
-							month: '2-digit',
-							year: 'numeric'
-						});
 
-						if(systemDate !== jsonDate)
+						if(dateObject.getDate() !== currentDate.getDate() && dateObject.getMonth() !== currentDate.getMonth()
+							&& dateObject.getFullYear() !== currentDate.getFullYear())
 						{
 							continue; // skip
 						}
-
-						//var currentHour  = today.getHours(); // 24
-						//var currentMinutes  = today.getMinutes(); // 4
 					}
 
 					///////////////////////////////////////////////////////////////////////
@@ -845,6 +831,73 @@
 			//console.log(body);
 		});
 	};
+	// {
+	// 	"id": 24735152712200,
+	// 	"events": {
+	// 	  "16:30 Wincanton": {
+	// 		"5 Tikkapick": {
+	// 		  "runnerId": 1052216604020016,
+	// 		  "back": 2.42,
+	// 		  "lay": 2.44
+	// 		},
+
+	findLuckyMatch = function(jsonObj, objLevelFilter) {
+		for(var prop in jsonObj) {
+			if(jsonObj.hasOwnProperty(prop)) {
+				if(prop === objLevelFilter) { // events: { }
+				for(var race in jsonObj[prop]) { 
+					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
+						var startTime = jsonObj[prop][race].start;
+						var raceId = jsonObj[prop][race].id;
+						var raceName = race;
+						var luckyRunner = [];
+						for(var runner in jsonObj[prop][race]) { 
+							if(jsonObj[prop][race].hasOwnProperty(runner)) {
+								
+								if(typeof jsonObj[prop][race][runner] === "object")
+								{
+									var runnerObj = jsonObj[prop][race][runner];
+									runnerObj.name = runner;
+									var back = jsonObj[prop][race][runner].back;
+									if(!back)
+									{
+										back = Number.MAX_VALUE;
+									}
+									luckyRunner.push([back, runnerObj]);
+								}
+							}
+						}
+
+						// {
+						// 	"runner-id":1052216604020016,
+						// 	"side":"back",
+						// 	"odds": 2.4,
+						// 	"stake": 0.0
+						// }
+
+						luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
+						if(luckyRunner.length > 1)
+						{
+							// Calculating the win chance by comparing with very next competitor 
+							var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+							luckyRunner[0][1].winPercentage = winPercentage;
+							luckyRunner[0][1].startTime = startTime;
+							luckyRunner[0][1].raceId = raceId;
+							luckyRunner[0][1].raceName = raceName;
+							jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+
+							// Build the predictedWinner list
+							if(winPercentage > winConfidencePercentage)
+							{
+								predictedWinners.push(luckyRunner[0][1]);
+							}
+						}
+					}
+				}
+				}
+			}
+		}
+	};
 
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
@@ -858,6 +911,8 @@
 			++nCallbacksCompleted;
 			if(nCallbacks === nCallbacksCompleted)
 			{
+				findLuckyMatch(db.sportId[sportName], "events");
+
 				nCallbacksCompleted = 0;
 				writeJsonFile(db.sportId[sportName],'result.json');
 				return callback(null, db.sportId[sportName]);
@@ -884,7 +939,7 @@
 					// input  - sports id
 					// output - event id
 					// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
-					// getEvents('24735152712200'); // sportsid		
+					// getEvents('24735152712200'); // sportsid
 					getEvents(db.sportId['Horse Racing'], function(err, data) {
 						if(err){
 							console.log(err);
@@ -956,7 +1011,7 @@
 				}
 		} 
 		}); // login
-	})(); // IIF - Main entry (login)	
+	})(); // IIF - Main entry (login)
 }()); // namespace
 
 /*
