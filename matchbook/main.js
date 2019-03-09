@@ -11,6 +11,7 @@
 	var winConfidencePercentage = 100; // 100% or more
 	var pastTime = 0;
 	var currentTime = 0;
+	var betNow = [];
 
 	getDefaultOptions = function()
 	{
@@ -553,17 +554,20 @@
 		// 	  "lay": 2.64
 		// 	},
 
-		var luckyBet = {
-			"odds-type":"DECIMAL",
-			"exchange-type":"back-lay",
-			"offers":
-			  [{
-				  "runner-id":1052216604020016,
-				  "side":"back",
-				  "odds": 2.4,
-				  "stake": 0.0
-			  }
-		  ]};
+		// var luckyBet = {
+		// 	"odds-type":"DECIMAL",
+		// 	"exchange-type":"back-lay",
+		// 	"offers":
+		// 	  [{
+		// 		  "runner-id":1052216604020016,
+		// 		  "side":"back",
+		// 		  "odds": 2.4,
+		// 		  "stake": 0.0
+		// 	  }
+		//   ]};
+
+		var luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
+			luckyBet.offers = betNow; // list of bets
 
 		var options = getDefaultOptions();
 		options.method = 'POST';
@@ -853,7 +857,6 @@
 						var luckyRunner = [];
 						for(var runner in jsonObj[prop][race]) { 
 							if(jsonObj[prop][race].hasOwnProperty(runner)) {
-								
 								if(typeof jsonObj[prop][race][runner] === "object")
 								{
 									var runnerObj = jsonObj[prop][race][runner];
@@ -867,13 +870,6 @@
 								}
 							}
 						}
-
-						// {
-						// 	"runner-id":1052216604020016,
-						// 	"side":"back",
-						// 	"odds": 2.4,
-						// 	"stake": 0.0
-						// }
 
 						luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
 						if(luckyRunner.length > 1)
@@ -897,7 +893,43 @@
 				}
 			}
 		}
+		findHotBet(predictedWinners);
 	};
+
+findHotBet = function(predictedWinners) {
+	betNow = [];
+	for(var i = 0; i < predictedWinners.length; ++i) {
+		var obj = predictedWinners[i];
+		var startTime = new Date(obj.startTime);
+		var currentTime =  new Date();
+
+		// {
+						// 	"runner-id":1052216604020016,
+						// 	"side":"back",
+						// 	"odds": 2.4,
+						// 	"stake": 0.0
+						// }
+
+		if( startTime.getDate() === currentTime.getDate() && 
+			startTime.getMonth() === currentTime.getMonth() && 
+			startTime.getFullYear() === currentTime.getFullYear())
+		{
+			st = startTime.getHours() * 60 + startTime.getMinutes();
+			ct = currentTime.getHours() * 60 + currentTime.getMinutes();
+			if(ct - st > 1) // 1 min past from the start time
+			{
+				var betObj = {};
+				betObj['runner-id'] = predictedWinners[i].raceId;
+				betObj.odds = predictedWinners[i].back;
+				betObj.side = 'back';
+				betObj.stake = 1.0;
+
+				betNow.push(betObj);
+			}
+		}
+	}
+};
+	///////////////////////////////////////////////////////////////////////////
 
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
