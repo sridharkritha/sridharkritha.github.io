@@ -8,7 +8,9 @@
 	db.eventId = {};
 	db.runnerId = {};
 	var predictedWinners = [];
+	var successfulBets = [];
 	var winConfidencePercentage = 100; // 100% or more
+	var minProfitOdd = 1; // even 1/1 = 1
 	var pastTime = 0;
 	var currentTime = 0;
 	var betNow = [];
@@ -851,41 +853,47 @@
 				if(prop === objLevelFilter) { // events: { }
 				for(var race in jsonObj[prop]) { 
 					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
-						var startTime = jsonObj[prop][race].start;
 						var raceId = jsonObj[prop][race].id;
-						var raceName = race;
-						var luckyRunner = [];
-						for(var runner in jsonObj[prop][race]) { 
-							if(jsonObj[prop][race].hasOwnProperty(runner)) {
-								if(typeof jsonObj[prop][race][runner] === "object")
-								{
-									var runnerObj = jsonObj[prop][race][runner];
-									runnerObj.name = runner;
-									var back = jsonObj[prop][race][runner].back;
-									if(!back)
+
+						// Check if already a successful bet placed on that event
+						if(successfulBets.indexOf(raceId) === -1)
+						{
+							var startTime = jsonObj[prop][race].start;
+							var raceName = race;
+							var luckyRunner = [];
+							for(var runner in jsonObj[prop][race]) { 
+								if(jsonObj[prop][race].hasOwnProperty(runner)) {
+									if(typeof jsonObj[prop][race][runner] === "object")
 									{
-										back = Number.MAX_VALUE;
+										var runnerObj = jsonObj[prop][race][runner];
+										runnerObj.name = runner;
+										var back = jsonObj[prop][race][runner].back;
+										if(!back)
+										{
+											back = Number.MAX_VALUE;
+										}
+										luckyRunner.push([back, runnerObj]);
 									}
-									luckyRunner.push([back, runnerObj]);
 								}
 							}
-						}
-
-						luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
-						if(luckyRunner.length > 1)
-						{
-							// Calculating the win chance by comparing with very next competitor 
-							var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
-							luckyRunner[0][1].winPercentage = winPercentage;
-							luckyRunner[0][1].startTime = startTime;
-							luckyRunner[0][1].raceId = raceId;
-							luckyRunner[0][1].raceName = raceName;
-							jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
-
-							// Build the predictedWinner list
-							if(winPercentage > winConfidencePercentage)
+	
+							luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
+							if(luckyRunner.length > 1)
 							{
-								predictedWinners.push(luckyRunner[0][1]);
+								// Calculating the win chance by comparing with very next competitor 
+								var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+								var profitOdd = luckyRunner[0][1].back - 1;
+								luckyRunner[0][1].winPercentage = winPercentage;
+								luckyRunner[0][1].startTime = startTime;
+								luckyRunner[0][1].raceId = raceId;
+								luckyRunner[0][1].raceName = raceName;
+								jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+	
+								// Build the predictedWinner list
+								if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd))
+								{
+									predictedWinners.push(luckyRunner[0][1]);
+								}
 							}
 						}
 					}
@@ -1037,6 +1045,13 @@ findHotBet = function(predictedWinners) {
 							}
 							else{
 								console.log(response);
+								for(var i = 0; i < response.offers.length; ++i) {
+									var lastBetResult = response.offers[i];
+									if(lastBetResult.status === 'matched') {
+										// successfulBets.push(lastBetResult['runner-id']);
+										successfulBets.push(lastBetResult['event-id']);
+									}
+								}
 							}
 						}); // submitOffers
 					}.bind(this), 0);
