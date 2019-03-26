@@ -8,14 +8,14 @@
 	db.eventId = {};
 	db.runnerId = {};
 	var predictedWinners = [];
-	var successfulBets = [];
-	var winConfidencePercentage = 100; // ex: 100  (100% or more)
-	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	var successfulBets = [];	
 	var pastTime = 0;
 	var currentTime = 0;
 	var betNow = [];
 
 /////////////////////////////////////////////
+	var winConfidencePercentage = 100; // ex: 100  (100% or more)
+	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var isLockedForBetting = true;   ////////
 /////////////////////////////////////////////
 
