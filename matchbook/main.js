@@ -9,11 +9,15 @@
 	db.runnerId = {};
 	var predictedWinners = [];
 	var successfulBets = [];
-	var winConfidencePercentage = 100; // 100% or more
-	var minProfitOdd = 1; // even 1/1 = 1
+	var winConfidencePercentage = 100; // ex: 100  (100% or more)
+	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var pastTime = 0;
 	var currentTime = 0;
 	var betNow = [];
+
+/////////////////////////////////////////////
+	var isLockedForBetting = true;   ////////
+/////////////////////////////////////////////
 
 	getDefaultOptions = function()
 	{
@@ -30,12 +34,10 @@
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 
-	writeJsonFile = function(jsonString, fileName)
-	{
+	writeJsonFile = function(jsonString, fileName) {
 		var jsonFormat = jsonString;
 
-		if(typeof jsonString === 'string')
-		{
+		if(typeof jsonString === 'string') {
 			jsonFormat = JSON.parse(jsonString);
 		}
 		
@@ -63,8 +65,6 @@
 				if( jsonFormat[obj].hasOwnProperty(key))
 				{
 					key = Number(key);
-
-					/////////////////////////////////////////////////////////////////////
 					var index = keys.indexOf("start");
 					var dateString;
 
@@ -93,7 +93,6 @@
 						}
 					}
 
-					///////////////////////////////////////////////////////////////////////
 					var name = jsonFormat[obj][key][destObj];
 					db.sportId[closureSave][obj][name] = {};
 
@@ -245,8 +244,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
-			if (error)
-			{
+			if (error) {
 				return callback(error,null);
 			} 
 
@@ -484,7 +482,7 @@
 
 			//console.log(body);
 		});
-	}
+	};
 
 	// Get Prices
 	getPrices = function () {
@@ -578,17 +576,20 @@
 		options.headers['session-token'] = sessionToken;
 		options.json = luckyBet; // Bet info
 
-		request(options, function (error, response, body) {
-
-			if (!error && response.statusCode == 200) {
-				console.log(response);
-				return callback(null, response);
-			}
-			else {
-				console.log(response.statusCode + "Error in bet placed");
-				return callback(error,null);
-			}
-		});
+		if(luckyBet.offers.length) {
+			if(isLockedForBetting) {
+				request(options, function (error, response, body) {
+					if (!error && response.statusCode == 200) {
+						console.log(response);
+						return callback(null, response);
+					}
+					else {
+						console.log(response.statusCode + "Error in bet placed");
+						return callback(error,null);
+					}
+				});
+			}//if(0)
+		}
 	};
 
 	// Edit Offers
@@ -854,48 +855,58 @@
 				for(var race in jsonObj[prop]) { 
 					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
 						var raceId = jsonObj[prop][race].id;
+						// successfulBets = [1,2,3,4,5];
+						// writeJsonFile(successfulBets,'successfulBets.json');
+						// setTimeout(function() {
+						// Asynchronous 'json' file read
+						fs.readFile('successfulBets.json', function(err, data) {
+							if (err) throw err;
+							successfulBets = JSON.parse(data);
+							// console.log(successfulBets);
 
-						// Check if already a successful bet placed on that event
-						if(successfulBets.indexOf(raceId) === -1)
-						{
-							var startTime = jsonObj[prop][race].start;
-							var raceName = race;
-							var luckyRunner = [];
-							for(var runner in jsonObj[prop][race]) { 
-								if(jsonObj[prop][race].hasOwnProperty(runner)) {
-									if(typeof jsonObj[prop][race][runner] === "object")
-									{
-										var runnerObj = jsonObj[prop][race][runner];
-										runnerObj.name = runner;
-										var back = jsonObj[prop][race][runner].back;
-										if(!back)
+							// Check if already a successful bet has been placed on that event
+							if(successfulBets.indexOf(raceId) === -1)
+							{
+								var startTime = jsonObj[prop][race].start;
+								var raceName = race;
+								var luckyRunner = [];
+								for(var runner in jsonObj[prop][race]) { 
+									if(jsonObj[prop][race].hasOwnProperty(runner)) {
+										if(typeof jsonObj[prop][race][runner] === "object")
 										{
-											back = Number.MAX_VALUE;
+											var runnerObj = jsonObj[prop][race][runner];
+											runnerObj.name = runner;
+											var back = jsonObj[prop][race][runner].back;
+											if(!back)
+											{
+												back = Number.MAX_VALUE;
+											}
+											luckyRunner.push([back, runnerObj]);
 										}
-										luckyRunner.push([back, runnerObj]);
+									}
+								}
+		
+								luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
+								if(luckyRunner.length > 1)
+								{
+									// Calculating the win chance by comparing with very next competitor 
+									var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+									var profitOdd = luckyRunner[0][1].back - 1;
+									luckyRunner[0][1].winPercentage = winPercentage;
+									luckyRunner[0][1].startTime = startTime;
+									luckyRunner[0][1].raceId = raceId;
+									luckyRunner[0][1].raceName = raceName;
+									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+		
+									// Build the predictedWinner list
+									if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd))
+									{
+										predictedWinners.push(luckyRunner[0][1]);
 									}
 								}
 							}
-	
-							luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
-							if(luckyRunner.length > 1)
-							{
-								// Calculating the win chance by comparing with very next competitor 
-								var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
-								var profitOdd = luckyRunner[0][1].back - 1;
-								luckyRunner[0][1].winPercentage = winPercentage;
-								luckyRunner[0][1].startTime = startTime;
-								luckyRunner[0][1].raceId = raceId;
-								luckyRunner[0][1].raceName = raceName;
-								jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
-	
-								// Build the predictedWinner list
-								if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd))
-								{
-									predictedWinners.push(luckyRunner[0][1]);
-								}
-							}
-						}
+						});
+//}.bind(this), 5000); // timeout
 					}
 				}
 				}
@@ -904,40 +915,39 @@
 		findHotBet(predictedWinners);
 	};
 
-findHotBet = function(predictedWinners) {
-	betNow = [];
-	for(var i = 0; i < predictedWinners.length; ++i) {
-		var obj = predictedWinners[i];
-		var startTime = new Date(obj.startTime);
-		var currentTime =  new Date();
+	findHotBet = function(predictedWinners) {
+		betNow = [];
+		for(var i = 0; i < predictedWinners.length; ++i) {
+			var obj = predictedWinners[i];
+			var startTime = new Date(obj.startTime);
+			var currentTime =  new Date();
 
-		// {
-						// 	"runner-id":1052216604020016,
-						// 	"side":"back",
-						// 	"odds": 2.4,
-						// 	"stake": 0.0
-						// }
+			// {
+							// 	"runner-id":1052216604020016,
+							// 	"side":"back",
+							// 	"odds": 2.4,
+							// 	"stake": 0.0
+							// }
 
-		if( startTime.getDate() === currentTime.getDate() && 
-			startTime.getMonth() === currentTime.getMonth() && 
-			startTime.getFullYear() === currentTime.getFullYear())
-		{
-			st = startTime.getHours() * 60 + startTime.getMinutes();
-			ct = currentTime.getHours() * 60 + currentTime.getMinutes();
-			if(ct - st > 1) // 1 min past from the start time
+			if( startTime.getDate() === currentTime.getDate() && 
+				startTime.getMonth() === currentTime.getMonth() && 
+				startTime.getFullYear() === currentTime.getFullYear())
 			{
-				var betObj = {};
-				betObj['runner-id'] = predictedWinners[i].raceId;
-				betObj.odds = predictedWinners[i].back;
-				betObj.side = 'back';
-				betObj.stake = 1.0;
+				st = startTime.getHours() * 60 + startTime.getMinutes();
+				ct = currentTime.getHours() * 60 + currentTime.getMinutes();
+				if(ct - st > 1) // 1 min past from the start time
+				{
+					var betObj = {};
+					betObj['runner-id'] = predictedWinners[i].raceId;
+					betObj.odds = predictedWinners[i].back;
+					betObj.side = 'back';
+					betObj.stake = 1.0;
 
-				betNow.push(betObj);
+					betNow.push(betObj);
+				}
 			}
 		}
-	}
-};
-	///////////////////////////////////////////////////////////////////////////
+	};
 
 	var nCallbacks = 0;
 	var nCallbacksCompleted = 0;
@@ -957,7 +967,6 @@ findHotBet = function(predictedWinners) {
 				writeJsonFile(db.sportId[sportName],'result.json');
 				return callback(null, db.sportId[sportName]);
 			}
-
 			return callback(null,false);
 		});
 	};
@@ -1012,10 +1021,31 @@ findHotBet = function(predictedWinners) {
 											remainingTime = currentTime - pastTime;
 											remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
 											setTimeout(function() {
-												// run(sessionToken);
+												run(sessionToken);
 											}.bind(this), remainingTime);
+
+											//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
+											// PLACE BET - CAREFULLY :)
+											//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
+											setTimeout(function() {
+												submitOffers(function(err, response) {
+													if(err){
+														console.log(err);
+													}
+													else{
+														console.log(response);
+														for(var i = 0; i < response.offers.length; ++i) {
+															var lastBetResult = response.offers[i];
+															if(lastBetResult.status === 'matched') {
+																// successfulBets.push(lastBetResult['runner-id']);
+																successfulBets.push(lastBetResult['event-id']);
+																writeJsonFile(successfulBets,'successfulBets.json');
+															}
+														}
+													}
+												});
+											}.bind(this), 0);
 										}
-										
 									}
 								});
 							}
@@ -1033,29 +1063,6 @@ findHotBet = function(predictedWinners) {
 			else{
 				console.log(sessionToken); // sessionToken
 				run(sessionToken);
-
-				if(0) {
-					//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
-					// PLACE BET - CAREFULLY
-					//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
-					setTimeout(function() {
-						submitOffers(function(err, response) {
-							if(err){
-								console.log(err);
-							}
-							else{
-								console.log(response);
-								for(var i = 0; i < response.offers.length; ++i) {
-									var lastBetResult = response.offers[i];
-									if(lastBetResult.status === 'matched') {
-										// successfulBets.push(lastBetResult['runner-id']);
-										successfulBets.push(lastBetResult['event-id']);
-									}
-								}
-							}
-						}); // submitOffers
-					}.bind(this), 0);
-				}
 		} 
 		}); // login
 	})(); // IIF - Main entry (login)
