@@ -13,11 +13,16 @@
 	var currentTime = 0;
 	var betNow = [];
 
-/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-	var isLockedForBetting = true;   ////////
-/////////////////////////////////////////////
+	var isLockedForBetting = true;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
+	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
+	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 
 	getDefaultOptions = function()
 	{
@@ -29,10 +34,6 @@
 			}
 		};
 	};
-
-	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
-	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
-	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 
 	writeJsonFile = function(jsonString, fileName) {
 		var jsonFormat = jsonString;
@@ -318,72 +319,72 @@
 		requestResponse(options, 'events', 'name', ['id','start'],'today', 'Horse Racing', callback);
 	};
 
-		// Get Event
-		getEvent = function (event_id, returnFunction) {
-			var options = getDefaultOptions();
-			options.qs = {
-				'exchange-type': 'back-lay',
-				'odds-type': 'DECIMAL',
-				'include-prices': 'false',
-				'price-depth': '3',
-				'price-mode': 'expanded',
-				'minimum-liquidity': '10',
-				'include-event-participants': 'false'
-			};
-	
-			// event id
-			options.url = 'https://api.matchbook.com/edge/rest/events/'+event_id;
-	
-			// Cookie data for maintaining the session
-			options.headers['session-token'] = sessionToken;
-	
-			request(options, function (error, response, body) {
-				if (error) throw new Error(error);
-	
-				var jsonFormat = JSON.parse(body);
-	
-				var runners = jsonFormat.markets[0].runners;
+	// Get Event
+	getEvent = function (event_id, returnFunction) {
+		var options = getDefaultOptions();
+		options.qs = {
+			'exchange-type': 'back-lay',
+			'odds-type': 'DECIMAL',
+			'include-prices': 'false',
+			'price-depth': '3',
+			'price-mode': 'expanded',
+			'minimum-liquidity': '10',
+			'include-event-participants': 'false'
+		};
 
-				var runnersObj = {};
-	
-				for(var runner in runners)
+		// event id
+		options.url = 'https://api.matchbook.com/edge/rest/events/'+event_id;
+
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
+
+		request(options, function (error, response, body) {
+			if (error) throw new Error(error);
+
+			var jsonFormat = JSON.parse(body);
+
+			var runners = jsonFormat.markets[0].runners;
+
+			var runnersObj = {};
+
+			for(var runner in runners)
+			{
+				if(runners.hasOwnProperty(runner))
 				{
-					if(runners.hasOwnProperty(runner))
+					runner = Number(runner);
+					
+					runnersObj[runners[runner].name] = {};
+					runnersObj[runners[runner].name].runnerId = runners[runner].id;
+
+					var back = [];
+					var lay = [];
+					for(var price in runners[runner]['prices'])
 					{
-						runner = Number(runner);
-						
-						runnersObj[runners[runner].name] = {};
-						runnersObj[runners[runner].name].runnerId = runners[runner].id;
-	
-						var back = [];
-						var lay = [];
-						for(var price in runners[runner]['prices'])
+						if(runners[runner]['prices'].hasOwnProperty(price))
 						{
-							if(runners[runner]['prices'].hasOwnProperty(price))
+							if(runners[runner]['prices'][price]['side'] === "back")
 							{
-								if(runners[runner]['prices'][price]['side'] === "back")
-								{
-									back.push(Number(runners[runner]['prices'][price].odds));
-								}
-								else if(runners[runner]['prices'][price]['side'] === "lay")
-								{
-									lay.push(Number(runners[runner]['prices'][price].odds));
-								}
+								back.push(Number(runners[runner]['prices'][price].odds));
+							}
+							else if(runners[runner]['prices'][price]['side'] === "lay")
+							{
+								lay.push(Number(runners[runner]['prices'][price].odds));
 							}
 						}
-	
-						runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
-						runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
 					}
-				}
 
-				returnFunction(runnersObj); // return the object from the callback function 
-	
-				// writeJsonFile(body,'runners.json');
-				//console.log(Object.keys(runnersObj));
-				//console.log(body);
-			});
-		};
+					runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
+					runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
+				}
+			}
+
+			returnFunction(runnersObj); // return the object from the callback function 
+
+			// writeJsonFile(body,'runners.json');
+			//console.log(Object.keys(runnersObj));
+			//console.log(body);
+		});
+	};
 
 	// Get Markets
 	getMarkets = function () {
@@ -544,54 +545,7 @@
 		});
 	};
 
-	// Submit Offers
-	// Submit one or more offers i.e. your intention or willingness to have bets with other users.
-	submitOffers = function (callback) {
-		// "16:30 Wincanton": {
-		// 	"5 Tikkapick": {
-		// 	  "runnerId": 1052216604020016,
-		// 	  "back": 2.40,
-		// 	  "lay": 2.64
-		// 	},
-
-		// var luckyBet = {
-		// 	"odds-type":"DECIMAL",
-		// 	"exchange-type":"back-lay",
-		// 	"offers":
-		// 	  [{
-		// 		  "runner-id":1052216604020016,
-		// 		  "side":"back",
-		// 		  "odds": 2.4,
-		// 		  "stake": 0.0
-		// 	  }
-		//   ]};
-
-		var luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
-			luckyBet.offers = betNow; // list of bets
-
-		var options = getDefaultOptions();
-		options.method = 'POST';
-		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
-		// Cookie data for maintaining the session
-		options.headers['session-token'] = sessionToken;
-		options.json = luckyBet; // Bet info
-
-		if(luckyBet.offers.length) {
-			if(isLockedForBetting) {
-				request(options, function (error, response, body) {
-					if (!error && response.statusCode == 200) {
-						console.log(response);
-						return callback(null, response);
-					}
-					else {
-						console.log(response.statusCode + "Error in bet placed");
-						return callback(error,null);
-					}
-				});
-			}//if(0)
-		}
-	};
-
+	
 	// Edit Offers
 	// Update the odds or the remaining stake on one or more unmatched offers.
 	editOffers = function () {
@@ -806,7 +760,6 @@
 		});
 	};
 
-
 	// Get Regions
 	// Get the list of regions within a Country for account registration.
 	getRegions = function () {
@@ -838,6 +791,8 @@
 			//console.log(body);
 		});
 	};
+
+
 	// {
 	// 	"id": 24735152712200,
 	// 	"events": {
@@ -848,71 +803,72 @@
 	// 		  "lay": 2.44
 	// 		},
 
-	findLuckyMatch = function(jsonObj, objLevelFilter) {
-		for(var prop in jsonObj) {
-			if(jsonObj.hasOwnProperty(prop)) {
-				if(prop === objLevelFilter) { // events: { }
-				for(var race in jsonObj[prop]) { 
-					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
-						var raceId = jsonObj[prop][race].id;
-						// successfulBets = [1,2,3,4,5];
-						// writeJsonFile(successfulBets,'successfulBets.json');
-						// setTimeout(function() {
-						// Asynchronous 'json' file read
-						fs.readFile('successfulBets.json', function(err, data) {
-							if (err) throw err;
-							successfulBets = JSON.parse(data);
-							// console.log(successfulBets);
+	findLuckyMatch = function(jsonObj, objLevelFilter, callback) {
+		// Asynchronous 'json' file read
+		fs.readFile('successfulBets.json', function(err, data) {
+			if (err) throw err;
+			successfulBets = JSON.parse(data);
+			// console.log(successfulBets);
+			for(var prop in jsonObj) {
+				if(jsonObj.hasOwnProperty(prop)) {
+					if(prop === objLevelFilter) { // events: { }
+					for(var race in jsonObj[prop]) { 
+						if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
+							var raceId = jsonObj[prop][race].id;
+							// successfulBets = [1,2,3,4,5];
+							// writeJsonFile(successfulBets,'successfulBets.json');
+							// setTimeout(function() {
 
-							// Check if already a successful bet has been placed on that event
-							if(successfulBets.indexOf(raceId) === -1)
-							{
-								var startTime = jsonObj[prop][race].start;
-								var raceName = race;
-								var luckyRunner = [];
-								for(var runner in jsonObj[prop][race]) { 
-									if(jsonObj[prop][race].hasOwnProperty(runner)) {
-										if(typeof jsonObj[prop][race][runner] === "object")
-										{
-											var runnerObj = jsonObj[prop][race][runner];
-											runnerObj.name = runner;
-											var back = jsonObj[prop][race][runner].back;
-											if(!back)
+								// Check if already a successful bet has been placed on that event
+								if(successfulBets.indexOf(raceId) === -1)
+								{
+									var startTime = jsonObj[prop][race].start;
+									var raceName = race;
+									var luckyRunner = [];
+									for(var runner in jsonObj[prop][race]) { 
+										if(jsonObj[prop][race].hasOwnProperty(runner)) {
+											if(typeof jsonObj[prop][race][runner] === "object")
 											{
-												back = Number.MAX_VALUE;
+												var runnerObj = jsonObj[prop][race][runner];
+												runnerObj.name = runner;
+												var back = jsonObj[prop][race][runner].back;
+												if(!back)
+												{
+													back = Number.MAX_VALUE;
+												}
+												luckyRunner.push([back, runnerObj]);
 											}
-											luckyRunner.push([back, runnerObj]);
+										}
+									}
+			
+									luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
+									if(luckyRunner.length > 1)
+									{
+										// Calculating the win chance by comparing with very next competitor 
+										var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+										var profitOdd = luckyRunner[0][1].back - 1;
+										luckyRunner[0][1].winPercentage = winPercentage;
+										luckyRunner[0][1].startTime = startTime;
+										luckyRunner[0][1].raceId = raceId;
+										luckyRunner[0][1].raceName = raceName;
+										jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+			
+										// Build the predictedWinner list
+										if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd))
+										{
+											predictedWinners.push(luckyRunner[0][1]);
 										}
 									}
 								}
-		
-								luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
-								if(luckyRunner.length > 1)
-								{
-									// Calculating the win chance by comparing with very next competitor 
-									var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
-									var profitOdd = luckyRunner[0][1].back - 1;
-									luckyRunner[0][1].winPercentage = winPercentage;
-									luckyRunner[0][1].startTime = startTime;
-									luckyRunner[0][1].raceId = raceId;
-									luckyRunner[0][1].raceName = raceName;
-									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
-		
-									// Build the predictedWinner list
-									if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd))
-									{
-										predictedWinners.push(luckyRunner[0][1]);
-									}
-								}
-							}
-						});
-//}.bind(this), 5000); // timeout
+	//}.bind(this), 5000); // timeout
+						}
+					}
 					}
 				}
-				}
 			}
-		}
-		findHotBet(predictedWinners);
+		betNow = findHotBet(predictedWinners);
+		return callback(null, betNow);
+		});
 	};
 
 	findHotBet = function(predictedWinners) {
@@ -922,20 +878,22 @@
 			var startTime = new Date(obj.startTime);
 			var currentTime =  new Date();
 
-			// {
-							// 	"runner-id":1052216604020016,
-							// 	"side":"back",
-							// 	"odds": 2.4,
-							// 	"stake": 0.0
-							// }
+			// { 	"runner-id":1052216604020016,
+				// 	"side":"back",
+				// 	"odds": 2.4,
+				// 	"stake": 0.0
+			// }
 
 			if( startTime.getDate() === currentTime.getDate() && 
 				startTime.getMonth() === currentTime.getMonth() && 
 				startTime.getFullYear() === currentTime.getFullYear())
 			{
-				st = startTime.getHours() * 60 + startTime.getMinutes();
-				ct = currentTime.getHours() * 60 + currentTime.getMinutes();
-				if(ct - st > 1) // 1 min past from the start time
+				// st = startTime.getHours() * 60 + startTime.getMinutes();
+				// ct = currentTime.getHours() * 60 + currentTime.getMinutes();
+				// if(ct - st > 1) // 1 min past from the start time
+
+				// betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
 					var betObj = {};
 					betObj['runner-id'] = predictedWinners[i].raceId;
@@ -946,6 +904,55 @@
 					betNow.push(betObj);
 				}
 			}
+		}
+		return betNow;
+	};
+
+		// Submit Offers
+	// Submit one or more offers i.e. your intention or willingness to have bets with other users.
+	submitOffers = function (callback) {
+		// "16:30 Wincanton": {
+		// 	"5 Tikkapick": {
+		// 	  "runnerId": 1052216604020016,
+		// 	  "back": 2.40,
+		// 	  "lay": 2.64
+		// 	},
+
+		// var luckyBet = {
+		// 	"odds-type":"DECIMAL",
+		// 	"exchange-type":"back-lay",
+		// 	"offers":
+		// 	  [{
+		// 		  "runner-id":1052216604020016,
+		// 		  "side":"back",
+		// 		  "odds": 2.4,
+		// 		  "stake": 0.0
+		// 	  }
+		//   ]};
+
+		var luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
+			luckyBet.offers = betNow; // list of bets
+
+		var options = getDefaultOptions();
+		options.method = 'POST';
+		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = sessionToken;
+		options.json = luckyBet; // Bet info
+
+		if(luckyBet.offers.length) {
+			if(isLockedForBetting) {
+				request(options, function (error, response, body) {
+					if (!error && response.statusCode == 200) {
+						console.log(response);
+						return callback(null, response);
+					}
+					else {
+						console.log(response.statusCode + "Error in bet placed");
+						return callback(error,null);
+					}
+				});
+			}//if(0)
 		}
 	};
 
@@ -961,11 +968,29 @@
 			++nCallbacksCompleted;
 			if(nCallbacks === nCallbacksCompleted)
 			{
-				findLuckyMatch(db.sportId[sportName], "events");
-
 				nCallbacksCompleted = 0;
 				writeJsonFile(db.sportId[sportName],'result.json');
-				return callback(null, db.sportId[sportName]);
+
+				//findLuckyMatch(db.sportId[sportName], "events");
+
+				////////////////////////////////////////////////
+
+				findLuckyMatch(db.sportId[sportName], "events", function(err, data) {
+						if(err){
+							console.log(err);
+							throw new Error(err);
+						}
+						else{
+							if(data) {
+								return callback(null, db.sportId[sportName]);
+							}
+						}
+					});
+
+
+				////////////////////////////////////////////////////
+
+				//return callback(null, db.sportId[sportName]);
 			}
 			return callback(null,false);
 		});
