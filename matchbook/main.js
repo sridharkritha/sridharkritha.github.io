@@ -13,10 +13,10 @@
 	var currentTime = 0;
 	var betNow = [];
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
 	var isLockedForBetting = true;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,7 +30,8 @@
 			method: 'GET',
 			headers: { 
 				'Content-Type': 'application/json',
-				'user-agent': 'api-doc-test-client' 
+				'Accept': 'application/json',
+				'user-agent': 'api-doc-test-client'
 			}
 		};
 	};
@@ -809,6 +810,7 @@
 			if (err) throw err;
 			successfulBets = JSON.parse(data);
 			// console.log(successfulBets);
+			predictedWinners = [];
 			for(var prop in jsonObj) {
 				if(jsonObj.hasOwnProperty(prop)) {
 					if(prop === objLevelFilter) { // events: { }
@@ -896,7 +898,7 @@
 				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
 					var betObj = {};
-					betObj['runner-id'] = predictedWinners[i].raceId;
+					betObj['runner-id'] = predictedWinners[i].runnerId;
 					betObj.odds = predictedWinners[i].back;
 					betObj.side = 'back';
 					betObj.stake = 1.0;
@@ -930,6 +932,8 @@
 		// 	  }
 		//   ]};
 
+		// "{"odds-type":"DECIMAL","exchange-type":"back-lay","offers":[{"runner-id":1076420113760015,"odds":1.34482,"side":"back","stake":1}]}"
+
 		var luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
 			luckyBet.offers = betNow; // list of bets
 
@@ -938,17 +942,19 @@
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
+		// options.json = JSON.stringify(luckyBet); // Bet info
+		// options.body = JSON.stringify(luckyBet); // Bet info
 		options.json = luckyBet; // Bet info
 
 		if(luckyBet.offers.length) {
-			if(isLockedForBetting) {
+			if(!isLockedForBetting) {
 				request(options, function (error, response, body) {
 					if (!error && response.statusCode == 200) {
 						console.log(response);
 						return callback(null, response);
 					}
 					else {
-						console.log(response.statusCode + "Error in bet placed");
+						console.log(response.statusCode + " Error in bet placed");
 						return callback(error,null);
 					}
 				});
