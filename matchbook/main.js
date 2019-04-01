@@ -806,7 +806,7 @@
 
 	luckyMatchFilter = function(successfulBets, jsonObj, objLevelFilter, callback) {
 		// console.log(successfulBets);
-		predictedWinners = [];
+		predictedWinners = []; 
 		for(var prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
 				if(prop === objLevelFilter) { // events: { }
