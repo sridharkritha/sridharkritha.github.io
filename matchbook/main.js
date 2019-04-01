@@ -16,12 +16,29 @@
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var betMinutesOffset = 50; // place bet: +1 min before the start time, -5 min after the start time
-	var isLockedForBetting = false; // true
+	var isLockedForBetting = true; // true
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
+
+	getCurrentTimeDate = function() {
+		var today = new Date();
+		var date = (today.getDate().toString().length < 2 ? '0'+ today.getDate() : today.getDate())
+							+'-'+
+					((today.getMonth()+1).toString().length < 2 ? '0'+ (today.getMonth()+1) : (today.getMonth()+1))
+							+'-'+	today.getFullYear();
+		var time = (today.getHours().toString().length < 2 ? '0'+ today.getHours() : today.getHours())
+							+':'+
+					(today.getMinutes().toString().length < 2 ? '0'+ today.getMinutes() : today.getMinutes())
+							+':'+
+					(today.getSeconds().toString().length < 2 ? '0'+ today.getSeconds() : today.getSeconds());
+
+		var timeDate = time + '                     ' + date;
+
+		return timeDate;
+	};
 
 	getDefaultOptions = function()
 	{
@@ -90,8 +107,8 @@
 								currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
 							}
 	
-							if(dateObject.getDate() !== currentDate.getDate() && dateObject.getMonth() !== currentDate.getMonth()
-								&& dateObject.getFullYear() !== currentDate.getFullYear())
+							if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
+								|| dateObject.getFullYear() !== currentDate.getFullYear())
 							{
 								continue; // skip
 							}
@@ -1001,7 +1018,7 @@
 	var nCallbacksCompleted = 0;
 	getEventInfo = function(sportName, event, eventId, startTime, callback) {
 		getEvent(eventId, function(obj) {
-					console.log(obj);
+					//console.log(obj);
 			db.sportId[sportName].events[event] = obj;  /// ?? events --- null
 			db.sportId[sportName].events[event].id = eventId;
 			db.sportId[sportName].events[event].start = startTime;
@@ -1030,6 +1047,8 @@
 
 	run = function(sessionToken, sportsInterested)
 	{
+		console.log(getCurrentTimeDate());
+
 		pastTime = new Date().getTime();
 			// input  - null
 			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
@@ -1067,7 +1086,8 @@
 							throw new Error(err);
 						}
 						else{
-							console.log(data);
+							//console.log(data);
+							if('events' in db.sportId[sport]) {
 							var arr = Object.keys(db.sportId[sport].events);
 							nCallbacks = arr.length;
 							
@@ -1087,7 +1107,7 @@
 									}
 									else{
 										if(data) {
-											console.log(data); // result data
+											//console.log(data); // result data
 											// fun(JSON.parse(xhr.responseText), 'events');
 											// fun(data, 'events');
 										
@@ -1136,6 +1156,7 @@
 								});
 							}
 						}
+					}
 
 						/*
 						// on last sports
@@ -1167,7 +1188,7 @@
 				console.log(err);
 			}
 			else{
-				console.log(sessionToken); // sessionToken
+				//console.log(sessionToken); // sessionToken
 
 				//var sportsInterested = ['Horse Racing'];
 
