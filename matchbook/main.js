@@ -5,10 +5,9 @@
 	var sessionToken = null;
 	var db = {};
 	db.sportId = {};
-	db.eventId = {};
-	db.runnerId = {};
 	var predictedWinners = [];
 	var successfulBets = null; // array
+	var report = [];
 	var pastTime = 0;
 	var currentTime = 0;
 	var betNow = [];
@@ -58,52 +57,61 @@
 				return callback(error,null);
 			}
 
-			db.sportId[closureSave][obj] = {};
-
+//if(0){ //test
 			var jsonFormat = JSON.parse(body);
 
-			for(var key in jsonFormat[obj])
-			{
-				if( jsonFormat[obj].hasOwnProperty(key))
+			if (Object.keys(jsonFormat[obj]).length) {
+				// not empty
+				db.sportId[closureSave][obj] = {};
+
+				for(var key in jsonFormat[obj])
 				{
-					key = Number(key);
-					var index = keys.indexOf("start");
-					var dateString;
-
-					if(index !== -1)
+					if( jsonFormat[obj].hasOwnProperty(key))
 					{
-						dateString = jsonFormat[obj][key][keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
-						var dateObject = new Date(dateString);
-						var currentDate;
-						if(filterDay === 'today')
+						key = Number(key);
+						var index = keys.indexOf("start");
+						var dateString;
+	
+						if(index !== -1)
 						{
-							// Thu Feb 28 2019 22:04:39 GMT+0000
-							currentDate = new Date();
+							dateString = jsonFormat[obj][key][keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
+							var dateObject = new Date(dateString);
+							var currentDate;
+							if(filterDay === 'today')
+							{
+								// Thu Feb 28 2019 22:04:39 GMT+0000
+								currentDate = new Date();
+							}
+							else if(filterDay === 'tomorrow')
+							{
+								// Fri Mar 01 2019 00:04:39 GMT+0000
+								var today = new Date();
+								var tomorrow = new Date();
+								currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
+							}
+	
+							if(dateObject.getDate() !== currentDate.getDate() && dateObject.getMonth() !== currentDate.getMonth()
+								&& dateObject.getFullYear() !== currentDate.getFullYear())
+							{
+								continue; // skip
+							}
 						}
-						else if(filterDay === 'tomorrow')
+	
+						var name = jsonFormat[obj][key][destObj];
+						db.sportId[closureSave][obj][name] = {};
+	
+						for(var i = 0; i < keys.length; ++i)
 						{
-							// Fri Mar 01 2019 00:04:39 GMT+0000
-							var today = new Date();
-							var tomorrow = new Date();
-							currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
+							db.sportId[closureSave][obj][name][keys[i]] = jsonFormat[obj][key][keys[i]];
 						}
-
-						if(dateObject.getDate() !== currentDate.getDate() && dateObject.getMonth() !== currentDate.getMonth()
-							&& dateObject.getFullYear() !== currentDate.getFullYear())
-						{
-							continue; // skip
-						}
-					}
-
-					var name = jsonFormat[obj][key][destObj];
-					db.sportId[closureSave][obj][name] = {};
-
-					for(var i = 0; i < keys.length; ++i)
-					{
-						db.sportId[closureSave][obj][name][keys[i]] = jsonFormat[obj][key][keys[i]];
 					}
 				}
 			}
+			else {
+				var e;
+				e = "empty";
+			}
+//		}//test
 
 			//writeJsonFile(body,'event.json');
 			// console.log(Object.keys(db.eventId));
@@ -289,7 +297,8 @@
 
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
-	getEvents = function (sportId, callback) {
+	getEvents = function (sport, callback) {
+		var sportId = db.sportId[sport];
 		var options = getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events';
 		options.qs = {
@@ -317,7 +326,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id','start'],'today', 'Horse Racing', callback);
+		requestResponse(options, 'events', 'name', ['id','start'],'today', sport, callback);
 	};
 
 	// Get Event
@@ -340,13 +349,18 @@
 		options.headers['session-token'] = sessionToken;
 
 		request(options, function (error, response, body) {
-			if (error) throw new Error(error);
+			if (error) 
+			throw new Error(error);
 
 			var jsonFormat = JSON.parse(body);
 
-			var runners = jsonFormat.markets[0].runners;
+			
 
 			var runnersObj = {};
+
+			if(jsonFormat.markets.length && jsonFormat.markets[0].name === 'WIN') {
+
+			var runners = jsonFormat.markets[0].runners;
 
 			for(var runner in runners)
 			{
@@ -378,6 +392,7 @@
 					runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
 				}
 			}
+		}
 
 			returnFunction(runnersObj); // return the object from the callback function 
 
@@ -844,11 +859,14 @@
 								{
 									// Calculating the win chance by comparing with very next competitor 
 									var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+									luckyRunner[0][1].numberOfRunners = luckyRunner.length;
+									winPercentage = winPercentage + (5 / luckyRunner.length * 6); 
 									var profitOdd = luckyRunner[0][1].back - 1;
 									luckyRunner[0][1].winPercentage = winPercentage;
 									luckyRunner[0][1].startTime = startTime;
 									luckyRunner[0][1].raceId = raceId;
 									luckyRunner[0][1].raceName = raceName;
+								
 									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
 		
 									// Build the predictedWinner list
@@ -858,7 +876,6 @@
 									}
 								}
 							}
-//}.bind(this), 5000); // timeout
 					}
 				}
 				}
@@ -909,7 +926,7 @@
 				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
 					var betObj = {};
-					betObj['runner-id'] = predictedWinners[i].runnerId;					
+					betObj['runner-id'] = predictedWinners[i].runnerId;
 					betObj.odds = predictedWinners[i].back;
 					betObj.side = 'back';
 					betObj.stake = 1.0;
@@ -985,7 +1002,7 @@
 	getEventInfo = function(sportName, event, eventId, startTime, callback) {
 		getEvent(eventId, function(obj) {
 					console.log(obj);
-			db.sportId[sportName].events[event] = obj;
+			db.sportId[sportName].events[event] = obj;  /// ?? events --- null
 			db.sportId[sportName].events[event].id = eventId;
 			db.sportId[sportName].events[event].start = startTime;
 
@@ -1011,7 +1028,7 @@
 		});
 	};
 
-	run = function(sessionToken)
+	run = function(sessionToken, sportsInterested)
 	{
 		pastTime = new Date().getTime();
 			// input  - null
@@ -1023,31 +1040,47 @@
 					throw new Error(err);
 				}
 				else{
-					console.log(data);
+					//console.log(data);
+					var getEventsCallbackCount = -1;
+					sportsInterested.forEach(function(sport, index, array) {						
+					// 	// ... code code code for this one element
+					// 	someAsynchronousFunction(arrayElement, function() {
+					// 	  arrayElement.doSomething();
+					// 	});
+					//   });
 
+				
+
+					//for(var sportsCount = 0; sportsCount < sportsInterested.length; ++sportsCount) {
 					// input  - sports id
 					// output - event id
 					// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 					// getEvents('24735152712200'); // sportsid
-					getEvents(db.sportId['Horse Racing'], function(err, data) {
+					// getEvents(sportsInterested[sportsCount], function(err, data) {
+					// getEvents(db.sportId['Horse Racing'], function(err, data) {
+					getEvents(sport, function(err, data) {
+						++getEventsCallbackCount;
+						var getEventInfoCallbackCount = -1;
+
 						if(err){
 							console.log(err);
 							throw new Error(err);
 						}
 						else{
 							console.log(data);
-							var arr = Object.keys(db.sportId['Horse Racing'].events);
-							
+							var arr = Object.keys(db.sportId[sport].events);
 							nCallbacks = arr.length;
+							
 							for(var i = 0; i < arr.length; ++i)
 							{
 								// input  - event id
 								// output - id (player)
 								// https://api.matchbook.com/edge/rest/events/1033210398700016
-								getEventInfo('Horse Racing', arr[i],
-								db.sportId['Horse Racing'].events[arr[i]].id,
-								db.sportId['Horse Racing'].events[arr[i]].start,
+								getEventInfo(sport, arr[i],
+								db.sportId[sport].events[arr[i]].id,
+								db.sportId[sport].events[arr[i]].start,
 								function(err, data) {
+									++getEventInfoCallbackCount;
 									if(err){
 										console.log(err);
 										throw new Error(err);
@@ -1057,13 +1090,7 @@
 											console.log(data); // result data
 											// fun(JSON.parse(xhr.responseText), 'events');
 											// fun(data, 'events');
-											currentTime = new Date().getTime();
-											remainingTime = currentTime - pastTime;
-											remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
-											setTimeout(function() {
-												run(sessionToken);
-											}.bind(this), remainingTime);
-
+										
 											//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
 											// PLACE BET - CAREFULLY :)
 											//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
@@ -1079,6 +1106,13 @@
 															if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
 																// successfulBets.push(lastBetResult['runner-id']);
 																successfulBets.push(lastBetResult['event-id']);
+																report.push({   "event-id":lastBetResult['event-id'],
+																				"status":lastBetResult['status'],
+																				"decimal-odds":lastBetResult['decimal-odds'],
+																				"event-name":lastBetResult['event-name'],
+																				"runner-name":lastBetResult['runner-name'] });
+
+																writeJsonFile(report,'report.json');
 																writeJsonFile(successfulBets,'successfulBets.json');
 															}
 														}
@@ -1087,10 +1121,42 @@
 											}.bind(this), 0);
 										}
 									}
+									if((getEventInfoCallbackCount === arr.length - 1) && (getEventsCallbackCount === array.length - 1))
+									{
+										getEventInfoCallbackCount = -1;
+										getEventsCallbackCount = -1;
+
+										currentTime = new Date().getTime();
+										remainingTime = currentTime - pastTime;
+										remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+										setTimeout(function() {
+											run(sessionToken, sportsInterested);
+										}.bind(this), remainingTime);
+									}
 								});
 							}
 						}
+
+						/*
+						// on last sports
+						// if(index === array.length - 1) {
+						if(getEventsCallbackCount === array.length - 1) {
+							getEventsCallbackCount = -1;
+							currentTime = new Date().getTime();
+							remainingTime = currentTime - pastTime;
+							remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+							setTimeout(function() {
+								run(sessionToken, sportsInterested);
+							}.bind(this), remainingTime);
+						}
+						*/
+
 						}); // getEvents
+
+						
+					}); //forEach
+
+					
 				}
 			}); // getSports
 	}; // run
@@ -1102,7 +1168,14 @@
 			}
 			else{
 				console.log(sessionToken); // sessionToken
-				run(sessionToken);
+
+				//var sportsInterested = ['Horse Racing'];
+
+				var sportsInterested = ['Horse Racing','Greyhound Racing'];
+
+				
+				
+				run(sessionToken, sportsInterested);
 		} 
 		}); // login
 	})(); // IIF - Main entry (login)
