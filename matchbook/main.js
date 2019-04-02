@@ -11,6 +11,8 @@
 	var pastTime = 0;
 	var currentTime = 0;
 	var betNow = [];
+	var sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
+	var sessionStartTime = 0;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
@@ -157,6 +159,7 @@
 			function (error, response, body) {
 				if (!error && response.statusCode == 200) {
 					sessionToken = body['session-token'];
+					sessionStartTime = new Date().getTime();
 					// console.log(sessionToken);
 					// console.log(body);
 					 return callback(null,sessionToken);
@@ -1074,21 +1077,11 @@
 				else{
 					//console.log(data);
 					var getEventsCallbackCount = -1;
-					sportsInterested.forEach(function(sport, index, array) {						
-					// 	// ... code code code for this one element
-					// 	someAsynchronousFunction(arrayElement, function() {
-					// 	  arrayElement.doSomething();
-					// 	});
-					//   });
-
-				
-
-					//for(var sportsCount = 0; sportsCount < sportsInterested.length; ++sportsCount) {
+					sportsInterested.forEach(function(sport, index, array) {
 					// input  - sports id
 					// output - event id
 					// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 					// getEvents('24735152712200'); // sportsid
-					// getEvents(sportsInterested[sportsCount], function(err, data) {
 					// getEvents(db.sportId['Horse Racing'], function(err, data) {
 					getEvents(sport, function(err, data) {
 						++getEventsCallbackCount;
@@ -1096,7 +1089,10 @@
 
 						if(err){
 							console.log(err);
-							throw new Error(err);
+							console.log("ERROR: TRYING AGAIN BY A NEW REQUEST");
+							run(sessionToken, sportsInterested);
+
+							// throw new Error(err);
 						}
 						else{
 							//console.log(data);
@@ -1137,13 +1133,14 @@
 														for(var i = 0; i < response.body.offers.length; ++i) {
 															var lastBetResult = response.body.offers[i];
 															if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-															
-																successfulBets.push({   "event-id":lastBetResult['event-id'],
-																				"status":lastBetResult['status'],
-																				"decimal-odds":lastBetResult['decimal-odds'],
-																				"event-name":lastBetResult['event-name'],
-																				"runner-name":lastBetResult['runner-name'],
-																				"time": getCurrentTimeDate() });
+																var obj = {   "event-id":lastBetResult['event-id'],
+																"status":lastBetResult['status'],
+																"decimal-odds":lastBetResult['decimal-odds'],
+																"event-name":lastBetResult['event-name'],
+																"runner-name":lastBetResult['runner-name'],
+																"time": getCurrentTimeDate() };
+																console.log(obj);
+																successfulBets.push(obj);
 																
 																writeJsonFile(successfulBets,'successfulBets.json');
 															}
@@ -1162,55 +1159,42 @@
 										remainingTime = currentTime - pastTime;
 										remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
 										setTimeout(function() {
-											run(sessionToken, sportsInterested);
+											// Check for session expire timeout
+											if(currentTime - sessionStartTime > sessionExpireTimeLimit) {
+												getNewSession();
+											}
+											else {
+												run(sessionToken, sportsInterested);
+											}
 										}.bind(this), remainingTime);
 									}
 								});
 							}
 						}
 					}
-
-						/*
-						// on last sports
-						// if(index === array.length - 1) {
-						if(getEventsCallbackCount === array.length - 1) {
-							getEventsCallbackCount = -1;
-							currentTime = new Date().getTime();
-							remainingTime = currentTime - pastTime;
-							remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
-							setTimeout(function() {
-								run(sessionToken, sportsInterested);
-							}.bind(this), remainingTime);
-						}
-						*/
-
 						}); // getEvents
-
-						
 					}); //forEach
-
-					
 				}
 			}); // getSports
 	}; // run
 
-	(function () {
+	getNewSession = function() {
 		login(function(err, sessionToken) {
 			if(err){
 				console.log(err);
 			}
 			else{
-				//console.log(sessionToken); // sessionToken
-
 				//var sportsInterested = ['Horse Racing'];
-
 				var sportsInterested = ['Horse Racing','Greyhound Racing'];
-
-				
 				
 				run(sessionToken, sportsInterested);
 		} 
 		}); // login
+	};
+
+	// Entry Function
+	(function () {
+		getNewSession();	
 	})(); // IIF - Main entry (login)
 }()); // namespace
 
