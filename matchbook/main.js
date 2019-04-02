@@ -17,8 +17,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-	var betMinutesOffset = 50; // place bet: +1 min before the start time, -5 min after the start time
-	var isLockedForBetting = true; // true
+	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+	var isLockedForBetting = false; // true
 	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,6 +51,8 @@
 				'Content-Type': 'application/json',
 				'Accept': 'application/json',
 				'user-agent': 'api-doc-test-client'
+				//, 'Accept-Encoding': 'gzip' 
+				, 'gzip': true
 			}
 		};
 	};
@@ -852,7 +854,7 @@
 	// 		  "lay": 2.44
 	// 		},
 
-	luckyMatchFilter = function(successfulBets, jsonObj, objLevelFilter, callback) {
+	luckyMatchFilter = function(jsonObj, objLevelFilter, callback) {
 		predictedWinners = []; 
 		for(var prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
@@ -915,7 +917,7 @@
 	findLuckyMatch = function(jsonObj, objLevelFilter, callback) {
 		if(successfulBets) {
 			// Read from array
-			luckyMatchFilter(successfulBets, jsonObj, objLevelFilter, callback);
+			luckyMatchFilter(jsonObj, objLevelFilter, callback);
 		}
 		else {
 			// Read from file
@@ -926,10 +928,10 @@
 					successfulBets = JSON.parse(data);
 				}
 				else {
-					successfulBets = {} ;
+					successfulBets = [] ;
 				}
 				
-				luckyMatchFilter(successfulBets, jsonObj, objLevelFilter, callback);
+				luckyMatchFilter(jsonObj, objLevelFilter, callback);
 			});
 		}		
 	};
@@ -959,8 +961,18 @@
 				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
 					var betObj = {};
+
+					var fractionNumber = 0;
+					fractionNumber = predictedWinners[i].back;
+					var numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
+					var numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
+					var roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
+					var roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
+
+					betObj.odds = roundedOdd; // for reducing the commission charge
+					// betObj.odds = predictedWinners[i].back;
 					betObj['runner-id'] = predictedWinners[i].runnerId;
-					betObj.odds = predictedWinners[i].back;
+				
 					betObj.side = 'back';
 					betObj.stake = 1.0;
 
