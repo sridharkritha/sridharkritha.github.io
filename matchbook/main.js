@@ -13,18 +13,29 @@
 	var betNow = [];
 	var sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
 	var sessionStartTime = 0;
+	var sportsList = [];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+	var betMinutesOffset = 180; // place bet: +1 min before the start time, -5 min after the start time
 	var isLockedForBetting = false; // true
 	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	if(isLockedForBetting)
+	{
+		winConfidencePercentage = 10; // ex: 100  (100% or more)
+		minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+		betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
+		whichDayEvent = 'today'; // 'today'   or    'tomorrow'
+	}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
+*/
 
 	getCurrentTimeDate = function() {
 		var today = new Date();
@@ -38,7 +49,7 @@
 							+':'+
 					(today.getSeconds().toString().length < 2 ? '0'+ today.getSeconds() : today.getSeconds());
 
-		var timeDate = time + '                     ' + date;
+		var timeDate = time + '		' + date;
 
 		return timeDate;
 	};
@@ -282,6 +293,8 @@
 			} 
 
 			var jsonFormat = JSON.parse(body);
+			var sportsName = null;
+			sportsList = [];
 
 			for(var sport in jsonFormat['sports'])
 			{
@@ -289,6 +302,8 @@
 				{
 					sport = Number(sport);
 					// db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
+					sportsName = jsonFormat['sports'][sport].name;
+					sportsList.push(sportsName);
 					db.sportId[jsonFormat['sports'][sport].name] = {};
 					db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
 				}
@@ -381,7 +396,9 @@
 
 			var runnersObj = {};
 
-			if(jsonFormat.markets.length && jsonFormat.markets[0].name === 'WIN') {
+			if(jsonFormat.markets.length)
+			//if(jsonFormat.markets.length && (jsonFormat.markets[0].name === 'WIN' || jsonFormat.markets[0].name === 'Winner'))
+			{
 
 			var runners = jsonFormat.markets[0].runners;
 
@@ -889,12 +906,12 @@
 									// Calculating the win chance by comparing with very next competitor 
 									var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
 									luckyRunner[0][1].numberOfRunners = luckyRunner.length;
-									winPercentage = winPercentage + (5 / luckyRunner.length * 6); 
-									var profitOdd = luckyRunner[0][1].back - 1;
+									// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
 									luckyRunner[0][1].winPercentage = winPercentage;
 									luckyRunner[0][1].startTime = startTime;
 									luckyRunner[0][1].raceId = raceId;
 									luckyRunner[0][1].raceName = raceName;
+									var profitOdd = luckyRunner[0][1].back - 1;
 								
 									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
 		
@@ -1023,7 +1040,7 @@
 			if(!isLockedForBetting) {
 				request(options, function (error, response, body) {
 					if (!error && response.statusCode == 200) {
-						console.log(response);
+						//console.log(response);
 						return callback(null, response);
 					}
 					else {
@@ -1089,6 +1106,12 @@
 				else{
 					//console.log(data);
 					var getEventsCallbackCount = -1;
+
+					if(sportsInterested.length === 1 && sportsInterested[0].toLowerCase() === 'all')
+					{
+						sportsInterested = sportsList;
+					}
+					
 					sportsInterested.forEach(function(sport, index, array) {
 					// input  - sports id
 					// output - event id
@@ -1141,7 +1164,7 @@
 														console.log(err);
 													}
 													else{
-														console.log(response);
+														//console.log(response);
 														for(var i = 0; i < response.body.offers.length; ++i) {
 															var lastBetResult = response.body.offers[i];
 															if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
@@ -1197,7 +1220,11 @@
 			}
 			else{
 				//var sportsInterested = ['Horse Racing'];
-				var sportsInterested = ['Horse Racing','Greyhound Racing'];
+				//var sportsInterested = ['Cricket'];
+				
+				var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];
+
+				// var sportsInterested = ['ALL'];
 				
 				run(sessionToken, sportsInterested);
 		} 
