@@ -17,6 +17,7 @@
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var betMinutesOffset = 50; // place bet: +1 min before the start time, -5 min after the start time
 	var isLockedForBetting = true; // true
+	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
@@ -343,7 +344,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id','start'],'today', sport, callback);
+		requestResponse(options, 'events', 'name', ['id','start'], whichDayEvent, sport, callback);
 	};
 
 	// Get Event
@@ -825,6 +826,18 @@
 		});
 	};
 
+	isAlreadyBetPlacedEvent = function(eventId) {
+		if(successfulBets && successfulBets.length) {
+			for(var count  = 0; count < successfulBets.length; ++count) {
+				if("event-id" in  successfulBets[count]) {
+					if(successfulBets[count]["event-id"] === eventId) 
+						return true;
+				}
+			}
+		}
+		return false;
+	};
+
 
 	// {
 	// 	"id": 24735152712200,
@@ -837,7 +850,6 @@
 	// 		},
 
 	luckyMatchFilter = function(successfulBets, jsonObj, objLevelFilter, callback) {
-		// console.log(successfulBets);
 		predictedWinners = []; 
 		for(var prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
@@ -845,25 +857,20 @@
 				for(var race in jsonObj[prop]) { 
 					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
 						var raceId = jsonObj[prop][race].id;
-						// successfulBets = [1,2,3,4,5];
-						// writeJsonFile(successfulBets,'successfulBets.json');
-						// setTimeout(function() {
 
 							// Check if already a successful bet has been placed on that event
-							if(successfulBets.indexOf(raceId) === -1)
+							if(!isAlreadyBetPlacedEvent(raceId))
 							{
 								var startTime = jsonObj[prop][race].start;
 								var raceName = race;
 								var luckyRunner = [];
 								for(var runner in jsonObj[prop][race]) { 
 									if(jsonObj[prop][race].hasOwnProperty(runner)) {
-										if(typeof jsonObj[prop][race][runner] === "object")
-										{
+										if(typeof jsonObj[prop][race][runner] === "object") {
 											var runnerObj = jsonObj[prop][race][runner];
 											runnerObj.name = runner;
 											var back = jsonObj[prop][race][runner].back;
-											if(!back)
-											{
+											if(!back) {
 												back = Number.MAX_VALUE;
 											}
 											luckyRunner.push([back, runnerObj]);
@@ -912,7 +919,13 @@
 			// Asynchronous 'json' file read
 			fs.readFile('successfulBets.json', function(err, data) {
 				if (err) throw err;
-				successfulBets = JSON.parse(data);
+				if(data && data.length) {
+					successfulBets = JSON.parse(data);
+				}
+				else {
+					successfulBets = {} ;
+				}
+				
 				luckyMatchFilter(successfulBets, jsonObj, objLevelFilter, callback);
 			});
 		}		
@@ -1124,15 +1137,14 @@
 														for(var i = 0; i < response.body.offers.length; ++i) {
 															var lastBetResult = response.body.offers[i];
 															if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-																// successfulBets.push(lastBetResult['runner-id']);
-																successfulBets.push(lastBetResult['event-id']);
-																report.push({   "event-id":lastBetResult['event-id'],
+															
+																successfulBets.push({   "event-id":lastBetResult['event-id'],
 																				"status":lastBetResult['status'],
 																				"decimal-odds":lastBetResult['decimal-odds'],
 																				"event-name":lastBetResult['event-name'],
-																				"runner-name":lastBetResult['runner-name'] });
-
-																writeJsonFile(report,'report.json');
+																				"runner-name":lastBetResult['runner-name'],
+																				"time": getCurrentTimeDate() });
+																
 																writeJsonFile(successfulBets,'successfulBets.json');
 															}
 														}
