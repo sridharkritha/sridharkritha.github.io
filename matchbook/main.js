@@ -991,7 +991,7 @@
 					betObj['runner-id'] = predictedWinners[i].runnerId;
 				
 					betObj.side = 'back';
-					betObj.stake = 1.0;
+					betObj.stake = 0.1; // 1.0
 
 					betNow.push(betObj);
 				}
@@ -1219,10 +1219,10 @@
 				console.log(err);
 			}
 			else{
-				//var sportsInterested = ['Horse Racing'];
+				var sportsInterested = ['Horse Racing'];
 				//var sportsInterested = ['Cricket'];
 				
-				var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];
+				//var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];
 
 				// var sportsInterested = ['ALL'];
 				
