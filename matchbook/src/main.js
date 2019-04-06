@@ -20,15 +20,15 @@
 	var sportsList = [];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	var winConfidencePercentage = 100; // ex: 100  (100% or more)
-	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	var winConfidencePercentage = 90; // ex: 100  (100% or more)
+	var minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time	
 	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
-	var isLockedForBetting = true; // true
+	var isLockedForBetting = false; // true
 
 	if(isLockedForBetting)
 	{
-		winConfidencePercentage = 10; // ex: 100  (100% or more)
+		winConfidencePercentage = 1; // ex: 100  (100% or more)
 		minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
 		whichDayEvent = 'today'; // 'today'   or    'tomorrow'
@@ -266,6 +266,11 @@
 			if(jsonFormat.markets.length)
 			//if(jsonFormat.markets.length && (jsonFormat.markets[0].name === 'WIN' || jsonFormat.markets[0].name === 'Winner'))
 			{
+				if(jsonFormat.name === "13:05 Turffontein")
+				{
+					var x;
+					x = 10;
+				}
 
 			var runners = jsonFormat.markets[0].runners;
 
@@ -445,6 +450,8 @@
 				// betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
 				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
+					if(!(currentTime.getTime() > startTime.getTime() + 2* 60*1000))
+					{
 					var betObj = {};
 
 					var fractionNumber = 0;
@@ -472,6 +479,7 @@
 					}
 
 					betNow.push(betObj);
+				}
 				}
 			}
 		}
