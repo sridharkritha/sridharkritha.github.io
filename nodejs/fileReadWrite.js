@@ -4,7 +4,7 @@ https://gyandeeps.com/json-file-write/
 http://stackabuse.com/reading-and-writing-json-files-with-node-js/
 */
 
-/////////////////////////////////// 1. Write a simple word(hello sridhar) in a file ////////////////////////////////////
+/////////////////////////////////// 1. Write a simple world(hello sridhar) in a file ////////////////////////////////////
 /*
 // 
 var fs = require("fs");

@@ -24,7 +24,7 @@
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time	
 	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
-	var isLockedForBetting = true; // true
+	var isLockedForBetting = false; // true
 
 	if(isLockedForBetting)
 	{
@@ -588,128 +588,135 @@
 		});
 	};
 
+	callback_getSports = function(err, data) {
+		if(err){
+			console.log(err);
+			throw new Error(err);
+		}
+		else{
+			//console.log(data);
+
+			if(sportsInterested.length === 1 && sportsInterested[0].toLowerCase() === 'all')
+			{
+				sportsInterested = sportsList;
+			}
+
+			var getEventsCallbackCount = -1;
+			// Calling callback functions inside a loop
+			sportsInterested.forEach(function(sport, index, array) {
+			// input  - sports id
+			// output - event id
+			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
+			// getEvents('24735152712200'); // sportsid
+			// getEvents(db.sportId['Horse Racing'], function(err, data) {
+			getEvents(sport, callback_getEvents); // getEvents
+			}); //forEach
+		}
+	};
+
+	callback_getEvents = function(err, data) {
+		++getEventsCallbackCount;
+		var getEventInfoCallbackCount = -1;
+
+		if(err){
+			console.log(err);
+			console.log("ERROR: TRYING AGAIN BY A NEW REQUEST");
+			run(sessionToken, sportsInterested);
+
+			// throw new Error(err);
+		}
+		else{
+			//console.log(data);
+			if('events' in db.sportId[sport]) {
+			var arr = Object.keys(db.sportId[sport].events);
+			nCallbacks = arr.length;
+			
+			for(var i = 0; i < arr.length; ++i)
+			{
+				// input  - event id
+				// output - id (player)
+				// https://api.matchbook.com/edge/rest/events/1033210398700016
+				getEventInfo(sport, arr[i], db.sportId[sport].events[arr[i]].id, db.sportId[sport].events[arr[i]].start,
+							callback_getEventInfo);
+			}
+		}
+	}
+	};
+
+
+	callback_getEventInfo = function(err, data) {
+		++getEventInfoCallbackCount;
+		if(err){
+			console.log(err);
+			throw new Error(err);
+		}
+		else{
+			if(data) {
+				submitOffers(callback_submitOffers);
+			}
+		}
+		if((getEventInfoCallbackCount === arr.length - 1) && (getEventsCallbackCount === array.length - 1))
+		{
+			getEventInfoCallbackCount = -1;
+			getEventsCallbackCount = -1;
+
+			currentTime = new Date().getTime();
+			remainingTime = currentTime - pastTime;
+			remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+			setTimeout(function() {
+				// Check for session expire timeout
+				if(currentTime - sessionStartTime > sessionExpireTimeLimit) {
+					getNewSession();
+				}
+				else {
+					run(sessionToken, sportsInterested);
+				}
+			}.bind(this), remainingTime);
+		}
+	};
+
+
+	callback_submitOffers = function(err, response) {
+		if(err){
+			console.log(err);
+		}
+		else{
+			//console.log(response);
+			for(var i = 0; i < response.body.offers.length; ++i) {
+				var lastBetResult = response.body.offers[i];
+				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
+					var obj = {   "event-id":lastBetResult['event-id'],
+					"status":lastBetResult['status'],
+					"decimal-odds":lastBetResult['decimal-odds'],
+					"event-name":lastBetResult['event-name'],
+					"runner-name":lastBetResult['runner-name'],
+					"time": UTIL.getCurrentTimeDate() };
+					console.log(obj);
+					successfulBets.push(obj);
+					
+					UTIL.writeJsonFile(successfulBets,'./data/successfulBets.json');
+				}
+			}
+		}
+	};
+
+	findSportsIds = function(sportsInterested) {
+		// input  - null
+		// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
+		// https://api.matchbook.com/edge/rest/lookups/sports
+		getSports(sessionToken, callback_getSports);
+	};
+
+
+
 	run = function(sessionToken, sportsInterested)
 	{
 		console.log(UTIL.getCurrentTimeDate());
-
 		pastTime = new Date().getTime();
-			// input  - null
-			// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
-			// https://api.matchbook.com/edge/rest/lookups/sports
-			getSports(sessionToken, function(err, data) {
-				if(err){
-					console.log(err);
-					throw new Error(err);
-				}
-				else{
-					//console.log(data);
-					var getEventsCallbackCount = -1;
 
-					if(sportsInterested.length === 1 && sportsInterested[0].toLowerCase() === 'all')
-					{
-						sportsInterested = sportsList;
-					}
-					
-					sportsInterested.forEach(function(sport, index, array) {
-					// input  - sports id
-					// output - event id
-					// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
-					// getEvents('24735152712200'); // sportsid
-					// getEvents(db.sportId['Horse Racing'], function(err, data) {
-					getEvents(sport, function(err, data) {
-						++getEventsCallbackCount;
-						var getEventInfoCallbackCount = -1;
+		findSportsIds(sportsInterested);
+	};
 
-						if(err){
-							console.log(err);
-							console.log("ERROR: TRYING AGAIN BY A NEW REQUEST");
-							run(sessionToken, sportsInterested);
-
-							// throw new Error(err);
-						}
-						else{
-							//console.log(data);
-							if('events' in db.sportId[sport]) {
-							var arr = Object.keys(db.sportId[sport].events);
-							nCallbacks = arr.length;
-							
-							for(var i = 0; i < arr.length; ++i)
-							{
-								// input  - event id
-								// output - id (player)
-								// https://api.matchbook.com/edge/rest/events/1033210398700016
-								getEventInfo(sport, arr[i],
-								db.sportId[sport].events[arr[i]].id,
-								db.sportId[sport].events[arr[i]].start,
-								function(err, data) {
-									++getEventInfoCallbackCount;
-									if(err){
-										console.log(err);
-										throw new Error(err);
-									}
-									else{
-										if(data) {
-											//console.log(data); // result data
-											// fun(JSON.parse(xhr.responseText), 'events');
-											// fun(data, 'events');
-										
-											//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
-											// PLACE BET - CAREFULLY :)
-											//££££££££££££££££££££££££££££££££££££££££££££££££££££££££££
-											setTimeout(function() {
-												submitOffers(function(err, response) {
-													if(err){
-														console.log(err);
-													}
-													else{
-														//console.log(response);
-														for(var i = 0; i < response.body.offers.length; ++i) {
-															var lastBetResult = response.body.offers[i];
-															if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-																var obj = {   "event-id":lastBetResult['event-id'],
-																"status":lastBetResult['status'],
-																"decimal-odds":lastBetResult['decimal-odds'],
-																"event-name":lastBetResult['event-name'],
-																"runner-name":lastBetResult['runner-name'],
-																"time": UTIL.getCurrentTimeDate() };
-																console.log(obj);
-																successfulBets.push(obj);
-																
-																UTIL.writeJsonFile(successfulBets,'./data/successfulBets.json');
-															}
-														}
-													}
-												});
-											}.bind(this), 0);
-										}
-									}
-									if((getEventInfoCallbackCount === arr.length - 1) && (getEventsCallbackCount === array.length - 1))
-									{
-										getEventInfoCallbackCount = -1;
-										getEventsCallbackCount = -1;
-
-										currentTime = new Date().getTime();
-										remainingTime = currentTime - pastTime;
-										remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
-										setTimeout(function() {
-											// Check for session expire timeout
-											if(currentTime - sessionStartTime > sessionExpireTimeLimit) {
-												getNewSession();
-											}
-											else {
-												run(sessionToken, sportsInterested);
-											}
-										}.bind(this), remainingTime);
-									}
-								});
-							}
-						}
-					}
-						}); // getEvents
-					}); //forEach
-				}
-			}); // getSports
-	}; // run
 
 	getNewSession = function() {
 		login(function(err, sessionToken) {
@@ -719,9 +726,7 @@
 			else{
 				var sportsInterested = ['Horse Racing'];
 				//var sportsInterested = ['Cricket'];
-				
 				//var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];
-
 				// var sportsInterested = ['ALL'];
 				
 				run(sessionToken, sportsInterested);
