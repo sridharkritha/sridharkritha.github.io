@@ -5,7 +5,7 @@
 	////////////////
 	var UTIL = require('./util');
 	var MISC = require('./misc');
-
+	var sri = 0;
 	var sessionToken = null;
 	var db = {};
 	db.sportId = {};
@@ -115,7 +115,7 @@
 					}
 				}
 			}
-
+			
 			//UTIL.writeJsonFile(body,'event.json');
 			// console.log(Object.keys(db.eventId));
 			// console.log(body);
@@ -566,20 +566,20 @@
 		}
 	};
 
-
 	var nCallbacksCompleted = 0;
-	getEventInfo = function(sportName, event, eventId, startTime, events_cbCount, cbCount, callback) {
+	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
 					//console.log(obj);
+			
 			db.sportId[sportName].events[event] = obj;  /// ?? events --- null
 			db.sportId[sportName].events[event].id = eventId;
 			db.sportId[sportName].events[event].start = startTime;
 
 			//++nCallbacksCompleted;
-			++cbCount.currentCount;
-			if(cbCount.currentCount === cbCount.totalCount)
+			++events_cbCount.currentCount;
+			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				cbCount.currentCount = cbCount.totalCount = 0;
+				events_cbCount.currentCount = events_cbCount.totalCount = 0;
 				//nCallbacksCompleted = 0;
 				UTIL.writeJsonFile(db.sportId[sportName],'./data/result.json');
 
@@ -599,23 +599,34 @@
 		});
 	};
 
+	run = function()
+	{
+		++sri;
+		console.log(UTIL.getCurrentTimeDate());
+		pastTime = new Date().getTime();
+
+		findSportsIds();
+	};
+
+	findSportsIds = function() {
+		// input  - null
+		// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
+		// https://api.matchbook.com/edge/rest/lookups/sports
+		getSports(callback_getSports);
+	};
+
 	callback_getSports = function(err, data) {
-		if(err){
+		if(err) {
 			console.log(err);
 			throw new Error(err);
 		}
 		else{
-			//console.log(data);
-
-			if(sportsInterested.length === 1 && sportsInterested[0].toLowerCase() === 'all')
-			{
+			if(sportsInterested.length === 1 && sportsInterested[0].toLowerCase() === 'all') {
 				sportsInterested = sportsList;
 			}
 
 			getEventsCallbackCount = -1;
-
-		
-			var events_cbCount = new callbackCount(0, sportsInterested.length);
+			var sports_cbCount = new callbackCount(0, sportsInterested.length);
 			// Calling callback functions inside a loop
 			sportsInterested.forEach(function(sport) {
 			// input  - sports id
@@ -623,16 +634,16 @@
 			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 			// getEvents('24735152712200'); // sportsid
 			// getEvents(db.sportId['Horse Racing'], function(err, data) {
-			getEvents(sport, events_cbCount, callback_getEvents);
+			getEvents(sport, sports_cbCount, callback_getEvents);
 			}); //forEach
 		}
 	};
 
-	callback_getEvents = function(err, events_cbCount, sport) {
+	callback_getEvents = function(err, sports_cbCount, sport) {
 		++getEventsCallbackCount;
 		getEventInfoCallbackCount = -1;
 
-		// ++events_cbCount.currentCount;
+		// ++sports_cbCount.currentCount;
 
 		if(err){
 			console.log(err);
@@ -643,43 +654,20 @@
 		}
 		else{
 			if('events' in db.sportId[sport]) {
-
-				/*
-				// 14:00 Newbury, 14:10 Fontwell, 14:20 Ayr, 14:35 Newbury, 14:40 Fairview...... etc
-				var arr = Object.keys(db.sportId[sport].events);
-				nCallbacks = arr.length;
-				
-				for(var i = 0; i < arr.length; ++i)
-				{
-					// input  - event id
-					// output - id (player)
-					// https://api.matchbook.com/edge/rest/events/1033210398700016
-					getEventInfo(sport, arr[i], db.sportId[sport].events[arr[i]].id, db.sportId[sport].events[arr[i]].start,
-								callback_getEventInfo);
-				}
-				*/
-
-
-				
-				///////////////////////
 				// 14:00 Newbury, 14:10 Fontwell, 14:20 Ayr, 14:35 Newbury, 14:40 Fairview...... etc
 				var races = Object.keys(db.sportId[sport].events);
-				var cbCount = new callbackCount(0, races.length);
+				var events_cbCount = new callbackCount(0, races.length);
+
+				--sri;
+				console.log(sri);
+
 				races.forEach(function(race) {
 					// input  - event id
 					// output - id (player)
 					// https://api.matchbook.com/edge/rest/events/1033210398700016
-					getEventInfo(sport, race, db.sportId[sport].events[race].id, db.sportId[sport].events[race].start, events_cbCount, cbCount, callback_getEventInfo);
+					getEventInfo(sport, race, db.sportId[sport].events[race].id, db.sportId[sport].events[race].start, 
+									sports_cbCount, events_cbCount, callback_getEventInfo);
 				}); //forEach
-
-				/*
-				Object.keys(db.sportId[sport].events).forEach(function(race, index, races) {
-					// input  - event id
-					// output - id (player)
-					// https://api.matchbook.com/edge/rest/events/1033210398700016
-					getEventInfo(sport, race, db.sportId[sport].events[race].id, db.sportId[sport].events[race].start, races.length, callback_getEventInfo);
-				}); //forEach
-				*/
 			}
 		}
 	};
@@ -755,22 +743,6 @@
 			run();
 		} 
 	};
-
-	findSportsIds = function() {
-		// input  - null
-		// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
-		// https://api.matchbook.com/edge/rest/lookups/sports
-		getSports(callback_getSports);
-	};
-
-	run = function()
-	{
-		console.log(UTIL.getCurrentTimeDate());
-		pastTime = new Date().getTime();
-
-		findSportsIds();
-	};
-
 
 	getNewSession = function() {
 		login(loginCallback); // login
