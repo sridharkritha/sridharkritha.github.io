@@ -18,9 +18,6 @@
 	var sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
 	var sessionStartTime = 0;
 	var sportsList = [];
-	var getEventsCallbackCount = -1;
-	var getEventInfoCallbackCount = -1;
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	var winConfidencePercentage = 100; // ex: 100  (100% or more)
 	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
@@ -61,10 +58,10 @@
 		return false;
 	};
 
-	requestResponse = function(options, obj, destObj, keys, filterDay, closureSave, cbCount, callback) {
+	requestResponse = function(options, obj, destObj, keys, filterDay, closureSave, sports_cbCount, callback) {
 		request(options, function (error, response, body) {
 			if (error) {
-				return callback(error, cbCount, null);
+				return callback(error, sports_cbCount, null);
 			}
 			var jsonFormat = JSON.parse(body);
 
@@ -119,7 +116,8 @@
 			//UTIL.writeJsonFile(body,'event.json');
 			// console.log(Object.keys(db.eventId));
 			// console.log(body);
-			return callback(null, cbCount, closureSave);
+			// ++sports_cbCount.currentCount;
+			return callback(null, sports_cbCount, closureSave);
 		});
 	};
 
@@ -213,7 +211,7 @@
 
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
-	getEvents = function (sport, cbCount, callback) {
+	getEvents = function (sport, sports_cbCount, callback) {
 		var sportId = db.sportId[sport];
 		var options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events';
@@ -242,7 +240,7 @@
 		options.headers['session-token'] = sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id','start'], whichDayEvent, sport, cbCount, callback);
+		requestResponse(options, 'events', 'name', ['id','start'], whichDayEvent, sport, sports_cbCount, callback);
 	};
 
 	// Get Event
@@ -579,7 +577,7 @@
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				events_cbCount.currentCount = events_cbCount.totalCount = 0;
+				// events_cbCount.currentCount = events_cbCount.totalCount = 0;
 				//nCallbacksCompleted = 0;
 				UTIL.writeJsonFile(db.sportId[sportName],'./data/result.json');
 
@@ -590,12 +588,12 @@
 						}
 						else{
 							if(data) {
-								return callback(null, events_cbCount, true);
+								return callback(null, sports_cbCount, events_cbCount, true);
 							}
 						}
 					});
 			}
-			return callback(null, events_cbCount, false);
+			return callback(null, sports_cbCount, events_cbCount, false);
 		});
 	};
 
@@ -625,7 +623,10 @@
 				sportsInterested = sportsList;
 			}
 
-			getEventsCallbackCount = -1;
+			--sri;
+			console.log(sri);
+
+
 			var sports_cbCount = new callbackCount(0, sportsInterested.length);
 			// Calling callback functions inside a loop
 			sportsInterested.forEach(function(sport) {
@@ -640,11 +641,6 @@
 	};
 
 	callback_getEvents = function(err, sports_cbCount, sport) {
-		++getEventsCallbackCount;
-		getEventInfoCallbackCount = -1;
-
-		// ++sports_cbCount.currentCount;
-
 		if(err){
 			console.log(err);
 			console.log("ERROR: TRYING AGAIN BY A NEW REQUEST");
@@ -658,9 +654,6 @@
 				var races = Object.keys(db.sportId[sport].events);
 				var events_cbCount = new callbackCount(0, races.length);
 
-				--sri;
-				console.log(sri);
-
 				races.forEach(function(race) {
 					// input  - event id
 					// output - id (player)
@@ -672,29 +665,24 @@
 		}
 	};
 
-	callback_getEventInfo = function(err, events_cbCount, isReadyForBetting) {
-		++getEventInfoCallbackCount;
-
+	callback_getEventInfo = function(err, sports_cbCount, events_cbCount, isReadyForBetting) {
 		if(err){
 			console.log(err);
 			throw new Error(err);
 		}
 
 		if(isReadyForBetting) {
-			
-			++events_cbCount.currentCount;
+
+			++sports_cbCount.currentCount;
 
 			submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
-		}
-
+		// }
 		
-		if(events_cbCount.currentCount === events_cbCount.totalCount)
-		//if((getEventInfoCallbackCount === arr.length - 1) && (getEventsCallbackCount === array.length - 1))
+		if(events_cbCount.totalCount && events_cbCount.currentCount === events_cbCount.totalCount &&
+		   sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
 		{
 			events_cbCount.currentCount = events_cbCount.totalCount = 0;
-			
-			getEventInfoCallbackCount = -1;
-			getEventsCallbackCount = -1;
+			sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
 
 			currentTime = new Date().getTime();
 			remainingTime = currentTime - pastTime;
@@ -708,6 +696,7 @@
 					run();
 				}
 			}.bind(this), remainingTime);
+		}
 		}
 	};
 
