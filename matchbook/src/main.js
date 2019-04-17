@@ -4,6 +4,7 @@
 	var fs = require('fs');
 	////////////////
 	var UTIL = require('./util');
+	var DOOR = require('./door');
 	var MISC = require('./misc');
 	var sri = 0;
 	var sessionToken = null;
@@ -118,55 +119,6 @@
 			// console.log(body);
 			// ++sports_cbCount.currentCount;
 			return callback(null, sports_cbCount, closureSave);
-		});
-	};
-
-	// Login
-	// Login to Matchbook and create a new session.
-	// The response includes a session token value. This value should be included with all subsequent requests as either a 
-	// cookie named "session-token" or a header named "session-token".
-	// Matchbook sessions live for approximately 6 hours so only 1 login request every 6 hours is required. The same session 
-	// should be used for all requests in that period.
-	login = function (callback) {
-	// Asynchronous 'json' file read
-	fs.readFile('./../../../../credential.json', function(err, data) {
-		if (err) throw err;
-		var credential = JSON.parse(data);
-		// console.log(credential);
-		
-		request.post(
-			'https://api.matchbook.com/bpapi/rest/security/session',
-			{ json: credential}, // username and passwords
-			function (error, response, body) {
-				if (!error && response.statusCode == 200) {
-					sessionToken = body['session-token'];
-					sessionStartTime = new Date().getTime();
-					// console.log(sessionToken);
-					// console.log(body);
-					 return callback(null);
-				}
-				else {
-					return callback(error);
-				}
-			}
-		);
-	});
-	};
-
-	// Logout
-	// Logout from Matchbook and terminate the current session.
-	logout = function () {
-		var options = UTIL.UTIL.getDefaultOptions();
-		options.method = 'DELETE';
-		options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
-
-		// Cookie data for maintaining the session
-		options.headers['session-token'] = sessionToken;
-
-		request(options, function (error, response, body) {
-			if (error) throw new Error(error);
-
-			//console.log(body);
 		});
 	};
 
@@ -399,8 +351,7 @@
 				{
 					if(err.code === 'ENOENT')
 					{
-						// File is not exist
-						// Creat a empty file
+						// File is not exist, creat a empty file
 						fs.closeSync(fs.openSync('./data/successfulBets.json', 'w'));
 						successfulBets = [] ;
 						luckyMatchFilter(jsonObj, objLevelFilter, callback);
@@ -409,9 +360,7 @@
 				}
 				else
 				{
-					// File is exist
-					// Read from file
-					// Asynchronous 'json' file read
+					// File is exist, read from the file (Asynchronous 'json' file read)
 					fs.readFile('./data/successfulBets.json', function(err, data) {
 						if (err) throw err;
 						if(data && data.length) {
@@ -452,33 +401,36 @@
 				// betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
 				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
-					var betObj = {};
-
-					var fractionNumber = 0;
-					fractionNumber = predictedWinners[i].back;
-					var numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
-					var numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
-					var roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
-					var roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
-
-					betObj.odds = roundedOdd; // for reducing the commission charge
-					// betObj.odds = predictedWinners[i].back;
-					betObj['runner-id'] = predictedWinners[i].runnerId;
-				
-					betObj.side = 'back';
-					betObj.stake = 0.1; // 1.0
-
-					if(isLockedForBetting)
+					if(!(currentTime.getTime() > startTime.getTime() + 2* 60*1000))
 					{
-						// mock bet
-						betObj['event-id'] = predictedWinners[i].raceId;
-						betObj['status'] = 'matched';
-						betObj['decimal-odds'] = betObj.odds;
-						betObj['event-name'] =  predictedWinners[i].raceName;
-						betObj['runner-name'] = predictedWinners[i].name;
-					}
+						var betObj = {};
 
-					betNow.push(betObj);
+						var fractionNumber = 0;
+						fractionNumber = predictedWinners[i].back;
+						var numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
+						var numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
+						var roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
+						var roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
+
+						betObj.odds = roundedOdd; // for reducing the commission charge
+						// betObj.odds = predictedWinners[i].back;
+						betObj['runner-id'] = predictedWinners[i].runnerId;
+					
+						betObj.side = 'back';
+						betObj.stake = 0.1; // 1.0
+
+						if(isLockedForBetting)
+						{
+							// mock bet
+							betObj['event-id'] = predictedWinners[i].raceId;
+							betObj['status'] = 'matched';
+							betObj['decimal-odds'] = betObj.odds;
+							betObj['event-name'] =  predictedWinners[i].raceName;
+							betObj['runner-name'] = predictedWinners[i].name;
+						}
+
+						betNow.push(betObj);
+					}
 				}
 			}
 		}
@@ -564,7 +516,6 @@
 		}
 	};
 
-	var nCallbacksCompleted = 0;
 	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
 					//console.log(obj);
@@ -573,12 +524,9 @@
 			db.sportId[sportName].events[event].id = eventId;
 			db.sportId[sportName].events[event].start = startTime;
 
-			//++nCallbacksCompleted;
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				// events_cbCount.currentCount = events_cbCount.totalCount = 0;
-				//nCallbacksCompleted = 0;
 				UTIL.writeJsonFile(db.sportId[sportName],'./data/result.json');
 
 				findLuckyMatch(db.sportId[sportName], "events", function(err, data) {
@@ -734,7 +682,7 @@
 	};
 
 	getNewSession = function() {
-		login(loginCallback); // login
+		DOOR.login(loginCallback); // login
 	};
 
 	// Entry Function
