@@ -25,12 +25,13 @@ var DOOR = (function() {
 					if (!error && response.statusCode == 200) {
 						sessionToken = body['session-token'];
 						sessionStartTime = new Date().getTime();
-						// console.log(sessionToken);
-						// console.log(body);
-						 return callback(null);
+
+						 return callback(null, sessionToken, sessionStartTime);
 					}
 					else {
-						return callback(error);
+						console.log(body);
+
+						return callback(error, null, 0);
 					}
 				}
 			);
@@ -39,7 +40,7 @@ var DOOR = (function() {
 	
 		// Logout
 		// Logout from Matchbook and terminate the current session.
-		logout: function () {
+		logout: function (sessionToken) {
 			var options = UTIL.UTIL.getDefaultOptions();
 			options.method = 'DELETE';
 			options.url = 'https://api.matchbook.com/bpapi/rest/security/session';

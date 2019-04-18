@@ -2,10 +2,11 @@
 	// https://developers.matchbook.com/reference
 	var request = require('request');
 	var fs = require('fs');
-	////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	var UTIL = require('./util');
 	var DOOR = require('./door');
 	var MISC = require('./misc');
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	var sri = 0;
 	var sessionToken = null;
 	var db = {};
@@ -392,14 +393,9 @@
 				// 	"stake": 0.0
 			// }
 
-			if( startTime.getDate() === currentTime.getDate() && 
-				startTime.getMonth() === currentTime.getMonth() && 
+			if( startTime.getDate() === currentTime.getDate() && startTime.getMonth() === currentTime.getMonth() && 
 				startTime.getFullYear() === currentTime.getFullYear())
 			{
-				// st = startTime.getHours() * 60 + startTime.getMinutes();
-				// ct = currentTime.getHours() * 60 + currentTime.getMinutes();
-				// if(ct - st > 1) // 1 min past from the start time
-
 				// betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
 				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
 				{
@@ -512,7 +508,6 @@
 					successfulBets.push(obj);
 					
 					UTIL.writeJsonFile(successfulBets,'./data/mockSuccessfulBets.json');
-
 				}
 			}
 		}
@@ -628,25 +623,25 @@
 			submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
 		// }
 		
-		if(events_cbCount.totalCount && events_cbCount.currentCount === events_cbCount.totalCount &&
-		   sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
-		{
-			events_cbCount.currentCount = events_cbCount.totalCount = 0;
-			sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
+			if(events_cbCount.totalCount && events_cbCount.currentCount === events_cbCount.totalCount &&
+				sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
+			{
+				events_cbCount.currentCount = events_cbCount.totalCount = 0;
+				sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
 
-			currentTime = new Date().getTime();
-			remainingTime = currentTime - pastTime;
-			remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
-			setTimeout(function() {
-				// Check for session expire timeout
-				if(currentTime - sessionStartTime > sessionExpireTimeLimit) {
-					getNewSession();
-				}
-				else {
-					run();
-				}
-			}.bind(this), remainingTime);
-		}
+				currentTime = new Date().getTime();
+				remainingTime = currentTime - pastTime;
+				remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+				setTimeout(function() {
+					// Check for session expire timeout
+					if(currentTime - sessionStartTime > sessionExpireTimeLimit) {
+						getNewSession();
+					}
+					else {
+						run();
+					}
+				}.bind(this), remainingTime);
+			}
 		}
 	};
 
@@ -674,11 +669,15 @@
 		}
 	};
 
-	loginCallback = function(err) {
+	loginCallback = function(err, sessionToken, sessionStartTime) {
 		if(err){
+			sessionToken = null;
+			sessionStartTime = 0;
 			console.log(err);
 		}
 		else{
+			sessionToken = sessionToken;
+			sessionStartTime = sessionStartTime;
 			run();
 		} 
 	};
