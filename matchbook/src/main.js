@@ -24,7 +24,7 @@
 	var minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time	
 	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
-	var isLockedForBetting = false; // true
+	var isLockedForBetting = true; // true
 
 	if(isLockedForBetting)
 	{
