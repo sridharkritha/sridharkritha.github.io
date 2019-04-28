@@ -11,7 +11,15 @@ window.onload = function () {
 	var geometry = new THREE.BoxGeometry(700, 700, 700, 1, 1, 1); 
 	var material = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
 	var cube = new THREE.Mesh(geometry, material);
+	//cube.position.y = 30;
 	scene.add(cube);
+
+	// Seconde geometry with material and added to the scene as well.
+	// var mysphere = new THREE.SphereGeometry(5, 32, 32);	
+	// var sphereMaterial = new THREE.MeshLambertMaterial( { color: 0x00ff00} );
+	// var sphere = new THREE.Mesh(mysphere, sphereMaterial);
+	// sphere.position.y = 10;
+	// scene.add( sphere );
 
 	// Animation
 	function render() {
