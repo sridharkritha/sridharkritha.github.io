@@ -1,3 +1,86 @@
+	var arr = [1, 2, 3];
+	// it inherits from Array.prototype?
+	alert( arr.__proto__ === Array.prototype ); // true
+	// then from Object.prototype?
+	alert( arr.__proto__.__proto__ === Object.prototype ); // true
+	// and null on the top.
+	alert( arr.__proto__.__proto__.__proto__ ); // null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 //hasOwnProperty() Vs in
 
@@ -28,22 +111,6 @@ console.log(book.hasOwnProperty("toString"));  //false
 console.log("toString" in book); //true
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 // NOT bitwise operator (~). 
  ~N = -(N+1)
 ~-2 = -(-2+1) =  1 
