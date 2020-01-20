@@ -22,7 +22,7 @@ var UTIL = (function() {
 			var timeDate = time + '		' + date;
 		
 			return timeDate;
-		},		
+		},
 
 		getDefaultOptions: function()
 		{

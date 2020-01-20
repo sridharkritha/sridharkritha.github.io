@@ -283,7 +283,11 @@ var obj = { 'name': 'jay', 'school': 'willowcroft', 'location': 'didcot'};
 console.log( Object.keys(obj)[0] ); // name
 // value
 console.log( obj[Object.keys(obj)[0]] ); // jay
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> async
 
 // indexOf() : method returns the first index at which a given element can be found in the array/String object, or -1 if it is not present
 // Array.prototype.indexOf()
@@ -300,7 +304,11 @@ if(paragraph.indexOf('fox') !== -1)
 	console.log(paragraph.indexOf('fox')); // 16
 }
 
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> async
 
 
 
