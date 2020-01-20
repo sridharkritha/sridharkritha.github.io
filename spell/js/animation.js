@@ -1,23 +1,36 @@
 window.addEventListener('load', function () {
+	var running = false;
+	var wordCount = wordList.length;
+	var wordDelay = 2000;
+	var clearIntervalHandle = null;
+	var utterThis = null;
 
-	var decodeEntities = (function () { })();
+	startSpeaking = function() {
+		var word = wordList[Math.floor(Math.random() * wordCount)];     // 0 to wordCount - 1
 
+		window.speechSynthesis.cancel();
+		utterThis  = new SpeechSynthesisUtterance(word);
 
-	// Number Pad
+		utterThis.addEventListener('boundary', function(event) { 
+			console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
+			if(running) {
+				clearInterval(clearIntervalHandle);
+				clearIntervalHandle = setTimeout(function() { this.startSpeaking(); }, wordDelay);
+			} 
+		});
+
+		window.speechSynthesis.speak(utterThis );
+	};
+
+	// Stop button
+	document.getElementById('stop').onclick = function () { running = false; };
+
+	// speak button
 	document.getElementById('speak').onclick = function () {
-		var wordCount = wordList.length;
-		var clearIntervalHandle = null;
-
-		clearInterval(clearIntervalHandle)
-		clearIntervalHandle = setInterval(() => {
-			var word = wordList[Math.floor(Math.random() * wordCount)];     // 0 to wordCount - 1
-			window.speechSynthesis.cancel();
-			textToSpeech = new SpeechSynthesisUtterance(word);
-			window.speechSynthesis.speak(textToSpeech);
-		}, 1000);
-
-		// var qStr = "Jay is going to do show and tell tomorrow.";
-
+		if(!running) {
+			running = true;
+			startSpeaking();
+		}
 	};
 
 
