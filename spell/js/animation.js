@@ -13,8 +13,8 @@ window.addEventListener('load', function () {
 
 		utterThis.addEventListener('boundary', function(event) { 
 			console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
+			clearInterval(clearIntervalHandle);
 			if(running) {
-				clearInterval(clearIntervalHandle);
 				clearIntervalHandle = setTimeout(function() { this.startSpeaking(); }, wordDelay);
 			} 
 		});
@@ -25,7 +25,11 @@ window.addEventListener('load', function () {
 	// Stop button
 	document.getElementById('stop').onclick = function () { running = false; };
 
-	// speak button
+	// Next button
+	document.getElementById('next').onclick = function () {
+		running = false; startSpeaking(); };
+
+	// Auto speak button
 	document.getElementById('speak').onclick = function () {
 		if(!running) {
 			running = true;
@@ -33,5 +37,13 @@ window.addEventListener('load', function () {
 		}
 	};
 
+	// Text Area
+	document.getElementById('txtArea').onkeypress = function (event) {
+		if (event.keyCode == 13 && !event.shiftKey) {
+			running = false;
+			startSpeaking();
+		}
+
+	};
 
 }); // window.addEventListener('load', function() {
