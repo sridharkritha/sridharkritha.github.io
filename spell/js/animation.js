@@ -39,6 +39,7 @@ window.addEventListener('load', function () {
 
 	// Text Area
 	document.getElementById('txtArea').onkeypress = function (event) {
+		// Enter key code is 13
 		if (event.keyCode == 13 && !event.shiftKey) {
 			running = false;
 			startSpeaking();
