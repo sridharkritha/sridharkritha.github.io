@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
 	var running = false;
+	var wordList = level0;
 	var wordCount = wordList.length;
 	var wordDelay = 2000;
 	var clearIntervalHandle = null;
@@ -24,6 +25,10 @@ window.addEventListener('load', function () {
 		return word;
 	};
 
+	setIndexOneStepBack = function() {
+		index = (index + wordCount - 1) % wordCount;
+	};
+
 	startSpeaking = function() {
 		window.speechSynthesis.cancel();
 		utterThis  = new SpeechSynthesisUtterance(this.getWord());
@@ -44,7 +49,16 @@ window.addEventListener('load', function () {
 
 	// Next button
 	document.getElementById('next').onclick = function () {
-		running = false; startSpeaking(); };
+		running = false;
+		startSpeaking();
+	};
+
+	// Previous button
+	document.getElementById('btnIdPrevious').onclick = function () {
+		running = false;
+		setIndexOneStepBack();
+		startSpeaking();
+	};
 
 	// Auto speak button
 	document.getElementById('speak').onclick = function () {
@@ -52,6 +66,24 @@ window.addEventListener('load', function () {
 			running = true;
 			startSpeaking();
 		}
+	};
+
+	// Drop down for level selection
+	document.getElementById('dropIdLevels').onchange = function () {
+		var level = Number(this.options[this.selectedIndex].value);
+		switch(level)
+		{
+			case 0:
+				wordList = level0;
+				break;
+			case 1:
+				wordList = level1;
+				break;
+			default:
+				wordList = level0;
+		}
+		wordCount = wordList.length;
+		index = 0;
 	};
 
 	// Speak in random order

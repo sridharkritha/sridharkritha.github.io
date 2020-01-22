@@ -1,11 +1,4 @@
 // window.addEventListener('load', function () {
-
-	var colors = {
-		text:'#000000',
-		background:'#aaaaaa',
-		something_else:'blue'
-	 };
-
 var level1 = [
 "obvious",
 "discrete",
@@ -46,7 +39,7 @@ var level1 = [
 "entirely plucked out"
 ];
 
-var wordList = [
+var level0 = [
 "individual",
 "obvious",
 "opinion",
