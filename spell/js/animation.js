@@ -4,12 +4,29 @@ window.addEventListener('load', function () {
 	var wordDelay = 2000;
 	var clearIntervalHandle = null;
 	var utterThis = null;
+	var isRandomMode = false;
+	var index = 0;
+
+	getWord = function() {
+		var word;
+		if(isRandomMode)
+		{
+			word = wordList[Math.floor(Math.random() * wordCount)];     // 0 to wordCount - 1
+		}
+		else
+		{
+			// this.index = this.index++;
+			// index = (index++) % wordCount;
+			index = index % wordCount;
+			word = wordList[index];
+			index = index + 1;
+		}
+		return word;
+	};
 
 	startSpeaking = function() {
-		var word = wordList[Math.floor(Math.random() * wordCount)];     // 0 to wordCount - 1
-
 		window.speechSynthesis.cancel();
-		utterThis  = new SpeechSynthesisUtterance(word);
+		utterThis  = new SpeechSynthesisUtterance(this.getWord());
 
 		utterThis.addEventListener('boundary', function(event) { 
 			console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
@@ -37,13 +54,17 @@ window.addEventListener('load', function () {
 		}
 	};
 
+	// Speak in random order
+	document.getElementById('btnIdRandomMode').onclick = function () {
+		isRandomMode = isRandomMode ? isRandomMode = false : isRandomMode = true; // toggle
+	};
+
 	// Text Area
 	document.getElementById('txtArea').onkeypress = function (event) {
 		if (event.keyCode == 13 && !event.shiftKey) {
 			running = false;
 			startSpeaking();
 		}
-
 	};
 
 }); // window.addEventListener('load', function() {
