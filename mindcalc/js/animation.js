@@ -168,6 +168,16 @@ window.addEventListener('load', function () {
 				// 1000 9999
 				num1 = randomRange(Math.pow(10, digit_num1 - 1), Math.pow(10, digit_num1) - 1);
 				num2 = randomRange(Math.pow(10, digit_num2 - 1), Math.pow(10, digit_num2) - 1);
+				if(!isEasyMode)
+				{
+					while(num1 == 1) {
+						num1 = randomRange(Math.pow(10, digit_num1 - 1), Math.pow(10, digit_num1) - 1);
+					}
+
+					while(num2 == 1) {
+						num2 = randomRange(Math.pow(10, digit_num2 - 1), Math.pow(10, digit_num2) - 1);
+					}
+				}
 				// Persistent Data (even after refresh)
 				persistLastSetting = 'VAR_LEN_MULT' + ',' + str_digit_num1 + ',' + str_digit_num2; // 2,2 ;               
 				break;
@@ -214,7 +224,9 @@ window.addEventListener('load', function () {
 		// if(onLoadAudio && isAudioOff)
 		{
 			window.speechSynthesis.cancel();
-			textToSpeech = new SpeechSynthesisUtterance(qStr);
+			// var txt = qStr.replace("X", " into ")
+			// textToSpeech = new SpeechSynthesisUtterance(txt);
+			textToSpeech = new SpeechSynthesisUtterance(qStr.replace("X", "into"));
 			window.speechSynthesis.speak(textToSpeech);
 		}
 		onLoadAudio = true;
