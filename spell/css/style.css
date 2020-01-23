@@ -1,4 +1,17 @@
 .fullHeight {
     height: 100vh;
     background-color: rgba(7, 49, 9, 0.849);
-  }
+}
+
+.middle {
+  /* ref: https://www.w3.org/Style/Examples/007/center.en.html#block */
+  background: black;
+  color: rgba(7, 49, 9, 0.849);
+  border-radius: 1em;
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
