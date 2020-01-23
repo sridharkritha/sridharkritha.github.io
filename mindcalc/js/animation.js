@@ -33,7 +33,16 @@ window.addEventListener('load', function () {
 
 	var faqMul = [
 		['-', 9, 'X'], // [anyDigit, endDigit, operator]
-		['-', 11, 'X'], // Note: Don't use '$' instead of '-' bcos it has spl meaning.
+		['-', 11, 'X'], // Note: Don't use '$' bcos it has spl meaning. Use '-' .
+	];
+
+	var memoryBank = [
+		'4x6',
+		'4x7',
+		'4x8',
+		'6x7',
+		'6x8',
+		'7x8'
 	];
 
 	var operator = '+';
@@ -56,6 +65,7 @@ window.addEventListener('load', function () {
 		TWO_DIGITS_SPL: 'TWO_DIGITS_SPL',
 		FAQ_ADD_DIGITS: 'FAQ_ADD_DIGITS',
 		FAQ_MUL_DIGITS: 'FAQ_MUL_DIGITS',
+		FAQ_MEMORY_BANK: 'FAQ_MEMORY_BANK'
 	};
 
 	// var userOption =  USER_OPTION.THREE_TWO_DIGITS_ADD;
@@ -89,10 +99,25 @@ window.addEventListener('load', function () {
 		createQuestion(isUserOptionChanged);
 	}
 
+	function reorder(num1, num2) {
+		if(randomRange(0, 1)) 
+			return [num1, num2];
+		else 
+			return [num2, num1];
+	}
+
 	function createQuestion(isUserOptionChanged) {
 		clearAnswer(); // Clear input field
 
 		switch (userOption) {
+			case USER_OPTION.FAQ_MEMORY_BANK:
+				var str = memoryBank[randomRange(0, memoryBank.length - 1)];
+				operator = 'X';
+				var ary = str.split(/x/i);
+				var swap = reorder(ary[0], ary[1]);
+				num1 = swap[0];
+				num2 = swap[1];
+				break;
 			case USER_OPTION.FAQ_ADD_DIGITS:
 				tempAry = faqAdd[randomRange(0, faqAdd.length - 1)];
 				if(isEasyMode)
@@ -179,7 +204,7 @@ window.addEventListener('load', function () {
 					}
 				}
 				// Persistent Data (even after refresh)
-				persistLastSetting = 'VAR_LEN_MULT' + ',' + str_digit_num1 + ',' + str_digit_num2; // 2,2 ;               
+				persistLastSetting = 'VAR_LEN_MULT' + ',' + str_digit_num1 + ',' + str_digit_num2; // 2,2 ;
 				break;
 
 			case USER_OPTION.VAR_LEN_ADD:
@@ -204,7 +229,11 @@ window.addEventListener('load', function () {
 
 		var qStr;
 
-		if (userOption == USER_OPTION.FAQ_ADD_DIGITS || userOption == USER_OPTION.FAQ_MUL_DIGITS) {
+		
+		if (userOption == USER_OPTION.FAQ_MEMORY_BANK) {
+			qStr = num1.toString() + ' ' + operator + ' ' + num2.toString();
+		} 
+		else if (userOption == USER_OPTION.FAQ_ADD_DIGITS || userOption == USER_OPTION.FAQ_MUL_DIGITS) {
 			if (num1 > num2) qStr = num1.toString() + ' ' + operator + ' ' + num2.toString();
 			else qStr = num2.toString() + ' ' + operator + ' ' + num1.toString();
 		} else if (userOption == USER_OPTION.VAR_LEN_ADD || userOption == USER_OPTION.THREE_TWO_DIGITS_ADD ||
