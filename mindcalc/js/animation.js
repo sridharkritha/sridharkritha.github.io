@@ -4,7 +4,8 @@ window.addEventListener('load', function () {
 	var num1 = 0,
 		num2 = 0,
 		digit_num1 = 2,
-		digit_num2 = 2;
+		digit_num2 = 2,
+		lastGeneratedNumbers = [-1,-1];
 	var str_num1 = null,
 		str_num2 = null,
 		str_digit_num1 = null,
@@ -71,6 +72,17 @@ window.addEventListener('load', function () {
 	// var userOption =  USER_OPTION.THREE_TWO_DIGITS_ADD;
 	var userOption = USER_OPTION.ALL_DEFAULT;
 
+	// Machine state
+	var STATE_MACHINE = {
+		QUESTION_STATE: 'QUESTION_STATE',
+		ANSWER_STATE:   'ANSWER_STATE',
+	};
+	var machineState = STATE_MACHINE.QUESTION_STATE;
+
+	var isQuestionSpeechComplete = false;
+	var isAnswerSpeechComplete = false;
+	var isFirstRun = true;
+
 	///////////////////////////////////////////////////////////////////////////////////
 	// Persistent Data (even after refresh)
 	var persistLastSetting = null;
@@ -106,15 +118,18 @@ window.addEventListener('load', function () {
 			return [num2, num1];
 	}
 
-	function createQuestion(isUserOptionChanged) {
-		clearAnswer(); // Clear input field
+	function generateNumbers(userOption)
+	{
+		var str;
+		var ary;
+		var swap;
 
 		switch (userOption) {
 			case USER_OPTION.FAQ_MEMORY_BANK:
-				var str = memoryBank[randomRange(0, memoryBank.length - 1)];
+				str = memoryBank[randomRange(0, memoryBank.length - 1)];
 				operator = 'X';
-				var ary = str.split(/x/i);
-				var swap = reorder(ary[0], ary[1]);
+				ary = str.split(/x/i);
+				swap = reorder(ary[0], ary[1]);
 				num1 = swap[0];
 				num2 = swap[1];
 				break;
@@ -227,8 +242,21 @@ window.addEventListener('load', function () {
 				// error
 		}
 
-		var qStr;
+		return [Number(num1), Number(num2)];
+	}
 
+	function createQuestion(isUserOptionChanged) {
+		var qStr;
+		var numbers = generateNumbers(userOption);
+
+		while(lastGeneratedNumbers[0] === numbers[0] && lastGeneratedNumbers[1] === numbers[1])
+		{
+			numbers = generateNumbers(userOption); // avoids showing the last displayed number
+		}
+
+		lastGeneratedNumbers = numbers;
+
+		clearAnswer(); // Clear input field
 		
 		if (userOption == USER_OPTION.FAQ_MEMORY_BANK) {
 			qStr = num1.toString() + ' ' + operator + ' ' + num2.toString();
@@ -251,11 +279,25 @@ window.addEventListener('load', function () {
 		// Text to Speech
 		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
 		// if(onLoadAudio && isAudioOff)
+		if(isFirstRun)
+		{
+			isFirstRun = false;
+			isQuestionSpeechComplete = true;
+		}
+		else
 		{
 			window.speechSynthesis.cancel();
 			// var txt = qStr.replace("X", " into ")
 			// textToSpeech = new SpeechSynthesisUtterance(txt);
 			textToSpeech = new SpeechSynthesisUtterance(qStr.replace("X", "into"));
+			isQuestionSpeechComplete = false;
+			isAnswerSpeechComplete = false;
+			// Event listener for speech completion
+			textToSpeech.addEventListener('boundary', function(event) { 
+				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
+				isQuestionSpeechComplete = true;
+			});
+
 			window.speechSynthesis.speak(textToSpeech);
 		}
 		onLoadAudio = true;
@@ -302,6 +344,14 @@ window.addEventListener('load', function () {
 		// if(isAudioOff)
 		{
 			textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
+			isQuestionSpeechComplete = false;
+			isAnswerSpeechComplete = false;
+			// Event listener for speech completion
+			textToSpeech.addEventListener('boundary', function(event) { 
+				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
+				isAnswerSpeechComplete = true;
+			});
+
 			window.speechSynthesis.speak(textToSpeech);
 		}
 
@@ -320,7 +370,7 @@ window.addEventListener('load', function () {
 				userOption == USER_OPTION.THREE_SPL_TWO_DIGITS_ADD) && num1 + num2 === ans) {
 			// Tick Mark as HTML entity in UTF-8  ->  &#10004;
 			document.getElementById("ansId").value += " " + decodeEntities('&#10004;');
-			setAnswerVerified()
+			setAnswerVerified();
 		} else if ((userOption != USER_OPTION.VAR_LEN_ADD || userOption != USER_OPTION.THREE_TWO_DIGITS_ADD ||
 				userOption != USER_OPTION.THREE_SPL_TWO_DIGITS_ADD) && num1 * num2 === ans) {
 			// Tick Mark as HTML entity in UTF-8  ->  &#10004;
@@ -405,7 +455,7 @@ window.addEventListener('load', function () {
 			document.getElementById("timer").innerHTML = "";
 			autoMode();
 		}
-	}
+	};
 
 	// Auto Mode
 	function autoMode() {
@@ -414,15 +464,32 @@ window.addEventListener('load', function () {
 	}
 
 	function repeatOften() {
-		if (digitalTimerCounter === timeoutSec) // 60*6
+		switch(machineState)
 		{
-			flashAnswerNext = true;
-			checkAnswer(); // fill and check answer
-		} else if (digitalTimerCounter > timeoutSec + 120) // 60*8
-		{
-			digitalTimerCounter = 0;
-			quest();
+			case STATE_MACHINE.QUESTION_STATE:
+				if (isQuestionSpeechComplete && digitalTimerCounter > timeoutSec) // 60*6
+				{
+					flashAnswerNext = true;
+					checkAnswer(); // fill and check answer
+
+					isQuestionSpeechComplete = false;
+					isAnswerSpeechComplete = false;
+					machineState = STATE_MACHINE.ANSWER_STATE;
+				}
+				break;
+			case STATE_MACHINE.ANSWER_STATE:
+				if (isAnswerSpeechComplete && digitalTimerCounter > timeoutSec + 120) // 60*8
+				{
+					digitalTimerCounter = 0;
+					quest();
+
+					isQuestionSpeechComplete = false;
+					isAnswerSpeechComplete = false;
+					machineState = STATE_MACHINE.QUESTION_STATE;
+				}
+				break;
 		}
+
 		++digitalTimerCounter;
 		var milliSec = digitalTimerCounter % 60;
 		var sec = Math.floor(digitalTimerCounter / 60) % 60;
@@ -455,7 +522,7 @@ window.addEventListener('load', function () {
 		}
 	};
 
-	var btnEasyMode = document.getElementById('btnIdAudioOff');
+	btnEasyMode = document.getElementById('btnIdAudioOff');
 	btnEasyMode.onclick = function () {
 		if(isAudioOff)
 		{
