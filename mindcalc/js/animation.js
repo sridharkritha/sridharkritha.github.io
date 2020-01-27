@@ -12,6 +12,7 @@ window.addEventListener('load', function () {
 		str_digit_num2 = null;
 	var isUserOptionChanged = false;
 	var isAutoMode = false,
+		isNextMode = false,
 		flashAnswerNext = false;
 	var clrIntrQuest = null;
 	var clrIntrAns = null;
@@ -49,7 +50,7 @@ window.addEventListener('load', function () {
 	var operator = '+';
 	var tempAry = [];
 
-	var textToSpeech = null;
+	var textToSpeech = null, clearAnswerTimeout = null;
 
 	timeoutSec = timeoutSecConst;
 
@@ -289,16 +290,16 @@ window.addEventListener('load', function () {
 			window.speechSynthesis.cancel();
 			// var txt = qStr.replace("X", " into ")
 			// textToSpeech = new SpeechSynthesisUtterance(txt);
-			textToSpeech = new SpeechSynthesisUtterance(qStr.replace("X", "into"));
+			questionToSpeech = new SpeechSynthesisUtterance(qStr.replace("X", "into"));
 			isQuestionSpeechComplete = false;
 			isAnswerSpeechComplete = false;
 			// Event listener for speech completion
-			textToSpeech.addEventListener('boundary', function(event) { 
+			questionToSpeech.addEventListener('boundary', function(event) { 
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				isQuestionSpeechComplete = true;
 			});
 
-			window.speechSynthesis.speak(textToSpeech);
+			window.speechSynthesis.speak(questionToSpeech);
 		}
 		onLoadAudio = true;
 		
@@ -343,16 +344,23 @@ window.addEventListener('load', function () {
 		// window.speechSynthesis.cancel();
 		// if(isAudioOff)
 		{
-			textToSpeech = new SpeechSynthesisUtterance(expAns.toString());
+			answerToSpeech = new SpeechSynthesisUtterance(expAns.toString());
 			isQuestionSpeechComplete = false;
 			isAnswerSpeechComplete = false;
 			// Event listener for speech completion
-			textToSpeech.addEventListener('boundary', function(event) { 
+			answerToSpeech.addEventListener('boundary', function(event) { 
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				isAnswerSpeechComplete = true;
+				if(isNextMode)
+				{
+					clearTimeout(clearAnswerTimeout);
+					clearAnswerTimeout = setTimeout(function () {
+						quest();
+					}.bind(this), 1000);
+				}
 			});
 
-			window.speechSynthesis.speak(textToSpeech);
+			window.speechSynthesis.speak(answerToSpeech);
 		}
 
 		var ans = 0;
@@ -447,6 +455,7 @@ window.addEventListener('load', function () {
 			cancelAnimationFrame(reqAnimatId);
 		} else {
 			isAutoMode = true;
+			isNextMode = false;
 			clearInterval(clrIntrQuest);
 			clearInterval(clrIntrAns);
 			clearInterval(clrIntrTimer);
@@ -502,12 +511,12 @@ window.addEventListener('load', function () {
 
 	var btnNext = document.getElementById('btnNext');
 	btnNext.onclick = function () {
-		clearAnswer();
-		flashAnswerNext = true;
-		checkAnswer(); // fill and check answer
-		setTimeout(function () {
-			quest();
-		}.bind(this), 1000);
+		if(!isAutoMode && isQuestionSpeechComplete) {
+			isNextMode = true;
+			clearAnswer();
+			flashAnswerNext = true;
+			checkAnswer(); // fill and check answer
+		}
 	};
 
 	var btnEasyMode = document.getElementById('btnIdEasyMode');
