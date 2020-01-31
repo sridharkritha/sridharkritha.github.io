@@ -12,11 +12,12 @@ window.addEventListener('load', function () {
 		str_digit_num2 = null;
 	var isUserOptionChanged = false;
 	var isAutoMode = false,
-		isNextMode = false,
+		isNextMode = true,
 		flashAnswerNext = false;
 	var clrIntrQuest = null;
 	var clrIntrAns = null;
 	var clrIntrTimer = null;
+	var answerToSpeechDelayTimeout = null;
 	var digitalTimerCounter = 0,
 		sec = 0,
 		timeoutSec = 0,
@@ -315,6 +316,37 @@ window.addEventListener('load', function () {
 	window.speechSynthesis.cancel();
 	createQuestion(false);
 
+	function sayAnswerThenQuestionNext(expAns)
+	{
+		// Text to Speech
+		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
+		// window.speechSynthesis.cancel();
+		// if(isAudioOff)
+		{
+			answerToSpeech = new SpeechSynthesisUtterance(expAns.toString());
+			isQuestionSpeechComplete = false;
+			isAnswerSpeechComplete = false;
+			// Event listener for speech completion
+			answerToSpeech.addEventListener('boundary', function(event) { 
+				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
+				clearTimeout(answerToSpeechDelayTimeout);
+				answerToSpeechDelayTimeout = setTimeout(function() {
+					isAnswerSpeechComplete = true;
+				}.bind(this), 500);
+				
+				if(isNextMode)
+				{
+					clearTimeout(clearAnswerTimeout);
+					clearAnswerTimeout = setTimeout(function () {
+						quest();
+					}.bind(this), 1000);
+				}
+			});
+
+			window.speechSynthesis.speak(answerToSpeech);
+		}
+	}
+
 	function checkAnswer() {
 		var expAns = 0;
 
@@ -339,29 +371,7 @@ window.addEventListener('load', function () {
 
 		var eLen = expAns.toString().length;
 
-		// Text to Speech
-		// ref: http://blog.teamtreehouse.com/getting-started-speech-synthesis-api
-		// window.speechSynthesis.cancel();
-		// if(isAudioOff)
-		{
-			answerToSpeech = new SpeechSynthesisUtterance(expAns.toString());
-			isQuestionSpeechComplete = false;
-			isAnswerSpeechComplete = false;
-			// Event listener for speech completion
-			answerToSpeech.addEventListener('boundary', function(event) { 
-				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
-				isAnswerSpeechComplete = true;
-				if(isNextMode)
-				{
-					clearTimeout(clearAnswerTimeout);
-					clearAnswerTimeout = setTimeout(function () {
-						quest();
-					}.bind(this), 1000);
-				}
-			});
-
-			window.speechSynthesis.speak(answerToSpeech);
-		}
+		// sayAnswerThenQuestionNext(expAns);
 
 		var ans = 0;
 		if (flashAnswerNext) {
@@ -379,15 +389,18 @@ window.addEventListener('load', function () {
 			// Tick Mark as HTML entity in UTF-8  ->  &#10004;
 			document.getElementById("ansId").value += " " + decodeEntities('&#10004;');
 			setAnswerVerified();
+			sayAnswerThenQuestionNext(expAns);
 		} else if ((userOption != USER_OPTION.VAR_LEN_ADD || userOption != USER_OPTION.THREE_TWO_DIGITS_ADD ||
 				userOption != USER_OPTION.THREE_SPL_TWO_DIGITS_ADD) && num1 * num2 === ans) {
 			// Tick Mark as HTML entity in UTF-8  ->  &#10004;
 			document.getElementById("ansId").value += " " + decodeEntities('&#10004;');
 			setAnswerVerified();
+			sayAnswerThenQuestionNext(expAns);
 		} else if (ans !== expAns && eLen === uLen) {
 			// Cross Mark as HTML entity in UTF-8 ->  &#10008;
 			document.getElementById("ansId").value += " " + decodeEntities('&#10008;');
 			setAnswerVerified();
+			sayAnswerThenQuestionNext(expAns);
 		}
 	}
 
@@ -447,6 +460,7 @@ window.addEventListener('load', function () {
 	document.getElementById('autoModeBtn').onclick = function () {
 		if (isAutoMode) {
 			isAutoMode = false;
+			isNextMode = true;
 			clearInterval(clrIntrQuest);
 			clearInterval(clrIntrAns);
 			clearInterval(clrIntrTimer);
