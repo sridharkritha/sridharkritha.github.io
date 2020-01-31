@@ -84,8 +84,8 @@ window.addEventListener('load', function () {
 	var isQuestionSpeechComplete = false;
 	var isAnswerSpeechComplete = false;
 	var isFirstRun = true;
-
-	///////////////////////////////////////////////////////////////////////////////////
+	
+	///////////////////////////////////////////////////////////////////////////////////	
 	// Persistent Data (even after refresh)
 	var persistLastSetting = null;
 	var testMode = true;
@@ -569,6 +569,10 @@ window.addEventListener('load', function () {
 			divHide.style.display = 'none';
 			divMainApp.style.display = 'block';
 		}
+
+		// Loop over the audio - idle mode
+		document.getElementById("idAudioPlayer").playbackRate = document.getElementById("idAudioPlayer").playbackRate * 0.1;
+		document.getElementById("idAudioPlayer").play();
 	};
 
 	// Settings Panel
