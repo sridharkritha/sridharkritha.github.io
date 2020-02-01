@@ -571,8 +571,8 @@ window.addEventListener('load', function () {
 		}
 
 		// Loop over the audio - idle mode
-		document.getElementById("idAudioPlayer").playbackRate = document.getElementById("idAudioPlayer").playbackRate * 0.1;
-		document.getElementById("idAudioPlayer").play();
+		// document.getElementById("idAudioPlayer").playbackRate = document.getElementById("idAudioPlayer").playbackRate * 0.1;
+		// document.getElementById("idAudioPlayer").play();
 	};
 
 	// Settings Panel
