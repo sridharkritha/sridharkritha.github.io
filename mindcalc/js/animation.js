@@ -27,6 +27,7 @@ window.addEventListener('load', function () {
 		isEasyMode = false,
 		isAudioOff = true,
 		onLoadAudio = false;
+	var runOnce = true;
 
 	var faqAdd = [
 		[6, 7, '+'], // [endDigit, endDigit, operator]
@@ -422,6 +423,17 @@ window.addEventListener('load', function () {
 		}
 	}
 
+	function speakWelcome() {
+		if(runOnce)
+		{
+			runOnce = false;
+			window.speechSynthesis.cancel();
+			answerToSpeech = new SpeechSynthesisUtterance("Hello World");
+			window.speechSynthesis.speak(answerToSpeech);
+
+		}
+	}
+
 	// Number Pad
 	document.getElementById('numPadBtn1').onclick = function () {
 		appendNumPadValue(1);
@@ -525,6 +537,7 @@ window.addEventListener('load', function () {
 
 	var btnNext = document.getElementById('btnNext');
 	btnNext.onclick = function () {
+		speakWelcome();
 		if(!isAutoMode && isQuestionSpeechComplete) {
 			isNextMode = true;
 			clearAnswer();
