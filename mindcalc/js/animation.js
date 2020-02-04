@@ -28,6 +28,7 @@ window.addEventListener('load', function () {
 		isAudioOff = true,
 		onLoadAudio = false;
 	var runOnce = true;
+	var introSpeech = null;
 
 	var faqAdd = [
 		[6, 7, '+'], // [endDigit, endDigit, operator]
@@ -428,9 +429,8 @@ window.addEventListener('load', function () {
 		{
 			runOnce = false;
 			window.speechSynthesis.cancel();
-			answerToSpeech = new SpeechSynthesisUtterance("Hello World");
-			window.speechSynthesis.speak(answerToSpeech);
-
+			introSpeech = new SpeechSynthesisUtterance("Hello World");
+			window.speechSynthesis.speak(introSpeech);
 		}
 	}
 
