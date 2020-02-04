@@ -300,7 +300,7 @@ window.addEventListener('load', function () {
 			questionToSpeech.addEventListener('boundary', function(event) { 
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				isQuestionSpeechComplete = true;
-			});
+			}.bind(this));
 
 			window.speechSynthesis.speak(questionToSpeech);
 		}
@@ -329,7 +329,8 @@ window.addEventListener('load', function () {
 			isQuestionSpeechComplete = false;
 			isAnswerSpeechComplete = false;
 			// Event listener for speech completion
-			answerToSpeech.addEventListener('boundary', function(event) { 
+			// answerToSpeech.addEventListener('boundary', function(event) { 
+				answerToSpeech.onboundary = function(event) {
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				clearTimeout(answerToSpeechDelayTimeout);
 				answerToSpeechDelayTimeout = setTimeout(function() {
@@ -343,7 +344,8 @@ window.addEventListener('load', function () {
 						quest();
 					}.bind(this), 1000);
 				}
-			});
+			}
+			// .bind(this));
 
 			window.speechSynthesis.speak(answerToSpeech);
 		}
