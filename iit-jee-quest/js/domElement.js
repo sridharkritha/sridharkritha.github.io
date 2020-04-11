@@ -1,5 +1,9 @@
 window.addEventListener('load', function () {
 
+// Root Object: documnet
+// Root Element: <html></html>
+// Branch Elements: <head></head> <body></body> etc.,
+// All elements have the appendChild method
 createElement = function(obj) {
 	var element = null;
 	if(obj) {
@@ -14,7 +18,7 @@ createElement = function(obj) {
 };
 
 setElementStyle = function(element, styleObject) {
-	Object.assign(element.style, styleObject); // append to the existing style instead of rewritting.
+	Object.assign(element.style, styleObject); // append to the existing style instead of overwritting.
 };
 
 createTextNote = function(parentElement, text) {
