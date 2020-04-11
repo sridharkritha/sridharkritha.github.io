@@ -27,6 +27,8 @@ window.addEventListener('load', function () {
 		isEasyMode = false,
 		isAudioOff = true,
 		onLoadAudio = false;
+	var runOnce = true;
+	var introSpeech = null;
 
 	var faqAdd = [
 		[6, 7, '+'], // [endDigit, endDigit, operator]
@@ -298,7 +300,7 @@ window.addEventListener('load', function () {
 			questionToSpeech.addEventListener('boundary', function(event) { 
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				isQuestionSpeechComplete = true;
-			});
+			}.bind(this));
 
 			window.speechSynthesis.speak(questionToSpeech);
 		}
@@ -327,7 +329,8 @@ window.addEventListener('load', function () {
 			isQuestionSpeechComplete = false;
 			isAnswerSpeechComplete = false;
 			// Event listener for speech completion
-			answerToSpeech.addEventListener('boundary', function(event) { 
+			// answerToSpeech.addEventListener('boundary', function(event) { 
+				answerToSpeech.onboundary = function(event) {
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				clearTimeout(answerToSpeechDelayTimeout);
 				answerToSpeechDelayTimeout = setTimeout(function() {
@@ -341,7 +344,8 @@ window.addEventListener('load', function () {
 						quest();
 					}.bind(this), 1000);
 				}
-			});
+			}
+			// .bind(this));
 
 			window.speechSynthesis.speak(answerToSpeech);
 		}
@@ -419,6 +423,16 @@ window.addEventListener('load', function () {
 		} else if (!isAnswerVerified) {
 			document.getElementById("ansId").value += num;
 			checkAnswer();
+		}
+	}
+
+	function speakWelcome() {
+		if(runOnce)
+		{
+			runOnce = false;
+			window.speechSynthesis.cancel();
+			introSpeech = new SpeechSynthesisUtterance("Hello World");
+			window.speechSynthesis.speak(introSpeech);
 		}
 	}
 
@@ -525,6 +539,7 @@ window.addEventListener('load', function () {
 
 	var btnNext = document.getElementById('btnNext');
 	btnNext.onclick = function () {
+		speakWelcome();
 		if(!isAutoMode && isQuestionSpeechComplete) {
 			isNextMode = true;
 			clearAnswer();
