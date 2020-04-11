@@ -12,6 +12,10 @@ createElement = function(obj) {
 			if(obj.id)		element.setAttribute('id', obj.id);
 			if(obj.class)	element.setAttribute('class', obj.class);
 			if(obj.style)	setElementStyle(element, obj.style);
+			if(obj.textValue) {
+				var textNode = document.createTextNode(obj.textValue); 
+				this.appendToElement(element, textNode);
+			}
 		}
 	}
 	return element; 
@@ -22,6 +26,10 @@ setElementStyle = function(element, styleObject) {
 };
 
 createTextNote = function(parentElement, text) {
+	// Note: Unlike DOM element, text NODE does NOT have 'id' property. So you can NOT access by 'document.getElementById()'.
+	// Also text node is NOT consider as a child, it is a content of the parent element.
+	// myDiv.children.length; Excludes the text node
+	// myDiv.childNodes.length; Includes the text node. Returns a live NodeList of child nodes of the given element.
 	var textNode = document.createTextNode(text); 
 	this.appendToElement(parentElement, textNode);
 };
@@ -45,11 +53,14 @@ var divRootContainerElement = this.createElement({ "type": "div", "id": "rootCon
 this.appendToBody(divRootContainerElement);
 
 
-var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "style":  { background:"#a5d6a7" }});
+var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": "Hello World", "style":  { background:"#a5d6a7" }});
 // this.setElementStyle(divQuestionElement, {  position: "absolute", width:"100%", height:"100%", background:"#EEEEEE" });
-this.createTextNote(divQuestionElement, "Hello Sridhar - Question");
+// this.createTextNote(divQuestionElement, "Hello Sridhar - Question");
+// this.createTextNote(divQuestionElement, "Hello Krishnan - Question");
+// var one = this.createElement({ "type": "div", "id": "divOne", "style":  { background:"#a5d6a7" }});
+// this.appendToElement(divQuestionElement, one);
 this.appendToElement(divRootContainerElement, divQuestionElement);
-
+/*
 var divAnswerElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
 this.createTextNote(divAnswerElement, "Hello Jay - Answer");
 this.appendToElement(divRootContainerElement, divAnswerElement);
@@ -61,6 +72,24 @@ this.appendToElement(divRootContainerElement, testElement);
 var testElement2 = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
 this.createTextNote(testElement2, this.answers["1"]);
 this.appendToElement(divRootContainerElement, testElement2);
+*/
+var nQuestions = Object.keys(this.questions).length; // No. of entries in an object
+var questionCounter = 0;
+// Click Event Handler
+document.getElementById('btnIdBackward').addEventListener('click', function () {
+	if(questionCounter > 0) --questionCounter;
+
+	divQuestionElement.childNodes[0].nodeValue = this.questions[questionCounter];
+	this.appendToElement(divRootContainerElement, divQuestionElement);
+}.bind(this));
+
+document.getElementById('btnIdForward').addEventListener('click', function () {
+	if(questionCounter < nQuestions) ++questionCounter;
+
+	var childs = divQuestionElement.childNodes;
+	childs[0].nodeValue = this.questions[questionCounter];
+	this.appendToElement(divRootContainerElement, divQuestionElement);
+}.bind(this));
 
 
 }); // window.addEventListener('load', function() {

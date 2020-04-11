@@ -1,28 +1,30 @@
 /* Button - Forward and Backward */
 /* https://www.w3schools.com/howto/howto_css_animate_buttons.asp */
-.button {
+.buttonNavigation {
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #9c27b0;
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 28px;
-  padding: 20px;
-  width: 80px;
+  padding: 0px;
+  width: 50px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
 }
 
-.button span {
+.buttonNavigation span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
+  top: -2px;
 }
 
-.button span:after {
-  content: '\2770\2770';   
+/* backward navigation button */
+.buttonBackward span:after {
+  content: '\2770\2770'; /* https://www.w3schools.com/cssref/css_entities.asp */
   position: absolute;
   opacity: 0;
   top: 0;
@@ -30,20 +32,38 @@
   transition: 0.5s;
 }
 
-.button .buttBackward {
-  content: '\2770\2770'; /*  2771 */
-}
-
-.button span:before {
+.buttonBackward span:before {
   content: ' \2770';
 }
 
-
-.button:hover span {
+.buttonBackward:hover span {
   padding-right: 25px;
 }
 
-.button:hover span:after {
+.buttonBackward:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+/* forward navigation button */
+.buttonForward span:after {
+  content: '\2771\2771';   
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 100px;
+  transition: 0.5s;
+}
+
+.buttonForward span:before {
+  content: ' \2771';
+}
+
+.buttonForward:hover span {
+  padding-left: 25px;
+}
+
+.buttonForward:hover span:after {
+  opacity: 1;
+  left: 0;
 }
