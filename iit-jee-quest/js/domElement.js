@@ -34,6 +34,14 @@ createTextNote = function(parentElement, text) {
 	this.appendToElement(parentElement, textNode);
 };
 
+// Note: https://javascript.info/modifying-document
+// This set of methods provides more ways to insert:
+// node.append(...nodes or strings) – append nodes or strings at the end of node,
+// node.prepend(...nodes or strings) – insert nodes or strings at the beginning of node,
+// node.before(...nodes or strings) –- insert nodes or strings before node,
+// node.after(...nodes or strings) –- insert nodes or strings after node,
+// node.replaceWith(...nodes or strings) –- replaces node with the given nodes or strings.
+
 appendToElement = function(parentElement, childElement){
 	// all elements have the appendChild method
 	parentElement.appendChild(childElement);
@@ -52,14 +60,30 @@ var divRootContainerElement = this.createElement({ "type": "div", "id": "rootCon
 						}});
 this.appendToBody(divRootContainerElement);
 
-
-var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": "Hello World", "style":  { background:"#a5d6a7" }});
+var questionCounter = 0;
+var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
 // this.setElementStyle(divQuestionElement, {  position: "absolute", width:"100%", height:"100%", background:"#EEEEEE" });
 // this.createTextNote(divQuestionElement, "Hello Sridhar - Question");
 // this.createTextNote(divQuestionElement, "Hello Krishnan - Question");
 // var one = this.createElement({ "type": "div", "id": "divOne", "style":  { background:"#a5d6a7" }});
 // this.appendToElement(divQuestionElement, one);
 this.appendToElement(divRootContainerElement, divQuestionElement);
+
+
+createAnswerElement = function(index, answerString)
+{
+	var text = "No anwers yet";
+	if(answerString) { text = answerString; }
+	return this.createElement({ "type": "div", "id": "divAnswer" + i, "textValue": text, "style":  { background:"#FFFFEE" }});
+};
+
+var divAnswerElements = [];
+for(var i = 0; i < 3; ++i) {
+	divAnswerElements[i] = this.createAnswerElement(i);
+	this.appendToElement(divRootContainerElement, divAnswerElements[i]);
+}
+
+
 /*
 var divAnswerElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
 this.createTextNote(divAnswerElement, "Hello Jay - Answer");
@@ -74,22 +98,32 @@ this.createTextNote(testElement2, this.answers["1"]);
 this.appendToElement(divRootContainerElement, testElement2);
 */
 var nQuestions = Object.keys(this.questions).length; // No. of entries in an object
-var questionCounter = 0;
+
 // Click Event Handler
 document.getElementById('btnIdBackward').addEventListener('click', function () {
-	if(questionCounter > 0) --questionCounter;
-
-	divQuestionElement.childNodes[0].nodeValue = this.questions[questionCounter];
-	this.appendToElement(divRootContainerElement, divQuestionElement);
+	questionCounter = (--questionCounter + nQuestions) % nQuestions;
+	this.populateQuestionAnswers(questionCounter);
 }.bind(this));
 
 document.getElementById('btnIdForward').addEventListener('click', function () {
-	if(questionCounter < nQuestions) ++questionCounter;
-
-	var childs = divQuestionElement.childNodes;
-	childs[0].nodeValue = this.questions[questionCounter];
-	this.appendToElement(divRootContainerElement, divQuestionElement);
+	questionCounter = (++questionCounter + nQuestions) % nQuestions;
+	this.populateQuestionAnswers(questionCounter);
 }.bind(this));
+
+populateQuestionAnswers = function(questionIndex) {
+	divQuestionElement.childNodes[0].nodeValue = this.questions[questionIndex].Question;
+
+	var nAnswers = Object.keys(this.questions[questionIndex].Answers).length;
+	for(var i = 0; i < nAnswers; ++i) {
+		if(divAnswerElements.length > i) {
+			divAnswerElements[i].childNodes[0].nodeValue = this.questions[questionIndex].Answers[i];
+		}
+		else {
+			divAnswerElements[i] = this.createAnswerElement(i, this.questions[questionIndex].Answers[i]);
+			this.appendToElement(divRootContainerElement, divAnswerElements[i]);
+		}
+	}
+};
 
 
 }); // window.addEventListener('load', function() {
