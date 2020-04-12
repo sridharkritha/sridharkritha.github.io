@@ -1,0 +1,19 @@
+Image Uploader
+Input text box
+	Math formula editor
+	sub comments section for the discussion about the answers 
+User registeration and Login
+Open id login
+logo
+Bookmarks
+	Folder support for catergorization
+voting system
+avatar user Image
+Related question suggestions
+Question tags for question catergorization
+view count
+
+
+
+
+

@@ -74,7 +74,7 @@ createAnswerElement = function(index, answerString)
 {
 	var text = "No anwers yet";
 	if(answerString) { text = answerString; }
-	return this.createElement({ "type": "div", "id": "divAnswer" + i, "textValue": text, "style":  { background:"#FFFFEE" }});
+	return this.createElement({ "type": "div", "id": "divAnswer" + index, "textValue": text, "style":  { background:"#FFFFEE" }});
 };
 
 var divAnswerElements = [];
@@ -110,6 +110,14 @@ document.getElementById('btnIdForward').addEventListener('click', function () {
 	this.populateQuestionAnswers(questionCounter);
 }.bind(this));
 
+showElement = function(id) {
+	document.getElementById(id).style.display = 'block'; // show
+};
+
+hideElement = function(id) {
+	document.getElementById(id).style.display = 'none'; // hide
+};
+
 populateQuestionAnswers = function(questionIndex) {
 	divQuestionElement.childNodes[0].nodeValue = this.questions[questionIndex].Question;
 
@@ -117,10 +125,18 @@ populateQuestionAnswers = function(questionIndex) {
 	for(var i = 0; i < nAnswers; ++i) {
 		if(divAnswerElements.length > i) {
 			divAnswerElements[i].childNodes[0].nodeValue = this.questions[questionIndex].Answers[i];
+			this.showElement(divAnswerElements[i].id);
 		}
 		else {
 			divAnswerElements[i] = this.createAnswerElement(i, this.questions[questionIndex].Answers[i]);
 			this.appendToElement(divRootContainerElement, divAnswerElements[i]);
+		}
+	}
+
+	if(nAnswers < divAnswerElements.length )
+	{
+		for(var i = nAnswers; i < divAnswerElements.length; ++i) {
+			this.hideElement(divAnswerElements[i].id);
 		}
 	}
 };
