@@ -8,7 +8,7 @@ logo
 Bookmarks
 	Folder support for catergorization
 voting system
-avatar user Image
+avatar user Image - www.gravatar.com
 Related question suggestions
 Question tags for question catergorization
 view count

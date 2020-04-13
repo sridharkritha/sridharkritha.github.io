@@ -1,0 +1,28 @@
+.intLink {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #0000ff;
+  }
+
+  textarea {
+	min-height: 5em;
+	max-height: 50vh;
+	width: 100%;
+}
+
+/****************************************************************/
+.textAreaControlPanelWrapper {
+	width: 200px;
+	height: 100px;
+	border: 1px grey solid;
+	/* box-shadow: inset 40px 0 10px -10px #bbbbbb; */
+  }
+  
+  .textAreaContentWrapper {
+	width: 200px;
+	height: 80px;
+	margin-top: 20px;
+	background-color: lightblue;
+	position:relative;
+	z-index:-1;
+  }
