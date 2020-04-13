@@ -59,7 +59,11 @@ var divRootContainerElement = this.createElement({ "type": "div", "id": "rootCon
 						}});
 this.appendToBody(divRootContainerElement);
 
+var divQuestionElement;
+var divAnswerElements = [];
+var divTxtAreaCtrlPanelWrap;
 var questionCounter = 0;
+/*
 var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
 // this.setElementStyle(divQuestionElement, {  position: "absolute", width:"100%", height:"100%", background:"#EEEEEE" });
 // this.createTextNote(divQuestionElement, "Hello Sridhar - Question");
@@ -67,6 +71,7 @@ var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion"
 // var one = this.createElement({ "type": "div", "id": "divOne", "style":  { background:"#a5d6a7" }});
 // this.appendToElement(divQuestionElement, one);
 this.appendToElement(divRootContainerElement, divQuestionElement);
+*/
 
 createAnswerElement = function(index, answerString)
 {
@@ -75,11 +80,30 @@ createAnswerElement = function(index, answerString)
 	return this.createElement({ "type": "div", "id": "divAnswer" + index, "textValue": text, "style":  { background:"#FFFFEE" }});
 };
 
-var divAnswerElements = [];
-for(var i = 0; i < 3; ++i) {
-	divAnswerElements[i] = this.createAnswerElement(i);
-	this.appendToElement(divRootContainerElement, divAnswerElements[i]);
-}
+main = function() {
+	// Question
+	divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
+	this.appendToElement(divRootContainerElement, divQuestionElement);
+
+	// Answer(s)
+	divAnswerElements[0] = this.createAnswerElement(0);
+	this.appendToElement(divRootContainerElement, divAnswerElements[0]);
+
+	// Text Area
+	divTxtAreaCtrlPanelWrap = this.createElement({ "type": "div", "class": "textAreaControlPanelWrapper"});
+
+	var ulTxtAreaButton = this.createElement({ "type": "ul", "class": "ul-txtAreaButton"});
+	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-bold-txtAreaButton"}));
+	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-italic-txtAreaButton"}));
+	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-code-txtAreaButton"}));
+	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-image-txtAreaButton"}));
+
+	divTxtAreaCtrlPanelWrap.appendChild(ulTxtAreaButton);
+
+	this.appendToElement(divRootContainerElement, divTxtAreaCtrlPanelWrap);
+
+}.bind(this)();
+
 
 /*
 var divAnswerElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
@@ -136,6 +160,60 @@ populateQuestionAnswers = function(questionIndex) {
 			this.hideElement(divAnswerElements[i].id);
 		}
 	}
+
+	/////////////////////////////
+	// var divTxtAreaCtrlPanelWrap = this.createElement({ "type": "div", "class": "textAreaControlPanelWrapper"});
+
+	// var ulTxtAreaButton = this.createElement({ "type": "ul", "class": "ul-txtAreaButton"});
+	// ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-bold-txtAreaButton"}));
+	// ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-italic-txtAreaButton"}));
+	// ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-code-txtAreaButton"}));
+	// ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-image-txtAreaButton"}));
+
+	// divTxtAreaCtrlPanelWrap.appendChild(ulTxtAreaButton);
+
+
+
+	// <div class="textAreaControlPanelWrapper">
+	// 	<ul class="ul-txtAreaButton">
+	// 		<li class="li-txtAreaButton" id="li-bold-txtAreaButton"></li>
+	// 		<li class="li-txtAreaButton" id="li-italic-txtAreaButton"></li>
+	// 		<li class="li-txtAreaButton" id="li-code-txtAreaButton"></li>
+	// 		<li class="li-txtAreaButton" id="li-image-txtAreaButton"></li>
+	// 	</ul>
+
+	// 	<div class="textAreaContentWrapper">
+	// 		<p><textarea id="txtAreaId" name="myTxtArea"> Jay Bose Sridhar </textarea></p> 
+	// 	</div>
+	// </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 
