@@ -1,28 +1,28 @@
-.intLink {
+/* .intLink {
 	cursor: pointer;
 	text-decoration: underline;
 	color: #0000ff;
-  }
+  } */
 
-  textarea {
+  /* textarea {
 	min-height: 5em;
 	max-height: 50vh;
 	width: 100%;
-}
+} */
 
 /****************************************************************/
 .textAreaControlPanelWrapper {
-	width: 200px;
+	width: 800px;
 	height: 100px;
-	border: 1px grey solid;
-	/* box-shadow: inset 40px 0 10px -10px #bbbbbb; */
-  }
+	border: 2px purple solid;
+}
   
-  .textAreaContentWrapper {
-	width: 200px;
+.textAreaContentWrapper {
+	width: 800px;
 	height: 80px;
-	margin-top: 20px;
-	background-color: lightblue;
+	margin-top: 0px;
+	background-color: yellow;
 	position:relative;
-	z-index:-1;
+	border: 2px green solid;
+	/* z-index:-1; */
   }

@@ -3,7 +3,11 @@
 // Ref: https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement
 // selectStart: http://help.dottoro.com/ljtqbjui.php
 function insertMetachars(sStartTag, sEndTag) {
-	var bDouble = arguments.length > 1, oMsgInput = document.myForm.myTxtArea, nSelStart = oMsgInput.selectionStart, nSelEnd = oMsgInput.selectionEnd, sOldText = oMsgInput.value;
+	var bDouble = arguments.length > 1;
+	var oMsgInput = document.getElementById('txtAreaId');
+	var nSelStart = oMsgInput.selectionStart;
+	var nSelEnd = oMsgInput.selectionEnd;
+	var sOldText = oMsgInput.value;
 	oMsgInput.value = sOldText.substring(0, nSelStart) + (bDouble ? sStartTag + sOldText.substring(nSelStart, nSelEnd) + sEndTag : sStartTag) + sOldText.substring(nSelEnd);
 	oMsgInput.setSelectionRange(bDouble || nSelStart === nSelEnd ? nSelStart + sStartTag.length : nSelStart, (bDouble ? nSelEnd : nSelStart) + sStartTag.length);
 	oMsgInput.focus();
@@ -46,7 +50,26 @@ window.addEventListener('load', function () {
 
   document.getElementById('preview').addEventListener('click', function () {
 	document.getElementById('results').innerHTML = document.getElementById('txtAreaId').value;
-	//$('#results').html($('textarea').val().replace(/\n/g, '<br>'));
+ }.bind(this));
+
+
+document.getElementById('li-bold-txtAreaButton').addEventListener('click', function () {
+	this.insertMetachars('<strong>','</\strong>');
 }.bind(this));
+
+document.getElementById('li-italic-txtAreaButton').addEventListener('click', function () {
+	this.insertMetachars('<em>','</\em>');
+}.bind(this));
+
+document.getElementById('li-code-txtAreaButton').addEventListener('click', function () {
+	this.insertMetachars('<code>','</\code>');
+}.bind(this));
+
+document.getElementById('li-image-txtAreaButton').addEventListener('click', function () {
+	this.insertMetachars('<img>','</\img>');
+}.bind(this));
+
+
+
 
 }); // window.addEventListener('load', function() {

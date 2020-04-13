@@ -1,0 +1,86 @@
+.li-txtAreaButton {
+	display: inline-block;  /* horizontal listing */	
+	color: white;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	text-decoration: none;
+	background-image: url(../images/wmd-buttons.svg);
+	background-position: 0 0;
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+}
+
+#li-bold-txtAreaButton {
+	background-position: 0px 0px;
+
+}
+#li-italic-txtAreaButton {
+	background-position: -20px 0px;
+
+}
+#li-code-txtAreaButton {
+	background-position: -80px 0px;
+
+}
+#li-image-txtAreaButton {
+	background-position: -100px 0px;
+}
+
+.ul-txtAreaButton {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: red;
+}
+
+
+/* .wmd-button {
+    max-width: 28px;
+    height: 44px;
+    flex: 10 0 23px;
+    padding: 0;
+    padding: 12px 0 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wmd-button>span {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.wmd-button>span {
+    background-image: url(https://cdn.sstatic.net/Img/unified/wmd-buttons.svg?v=71f92841a4f1);
+    background-size: initial !important;
+} */
+
+
+
+/* ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333333;
+  }
+  
+  li {
+	float: left;
+  }
+  
+  li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+  }
+  
+  li a:hover {
+	background-color: #111111;
+  } */
