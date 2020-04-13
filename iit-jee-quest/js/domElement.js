@@ -18,7 +18,7 @@ createElement = function(obj) {
 			}
 		}
 	}
-	return element; 
+	return element;
 };
 
 setElementStyle = function(element, styleObject) {
@@ -52,7 +52,6 @@ appendToBody = function(childElement){
 	document.body.appendChild(childElement);
 };
 
-
 var divRootContainerElement = this.createElement({ "type": "div", "id": "rootContainer", "style":  { 
 							"background" 	:"blue", "padding": "2px", // 2px of blue background will be visible bcos of padding
 							"border-left"	: "solid 10px red", // 10px of red is visible outside of the padding
@@ -69,7 +68,6 @@ var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion"
 // this.appendToElement(divQuestionElement, one);
 this.appendToElement(divRootContainerElement, divQuestionElement);
 
-
 createAnswerElement = function(index, answerString)
 {
 	var text = "No anwers yet";
@@ -82,7 +80,6 @@ for(var i = 0; i < 3; ++i) {
 	divAnswerElements[i] = this.createAnswerElement(i);
 	this.appendToElement(divRootContainerElement, divAnswerElements[i]);
 }
-
 
 /*
 var divAnswerElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
