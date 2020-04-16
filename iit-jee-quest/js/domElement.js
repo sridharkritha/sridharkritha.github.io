@@ -53,41 +53,71 @@ appendToBody = function(childElement){
 };
 
 var divRootContainerElement = this.createElement({ "type": "div", "id": "rootContainer", "style":  { 
-							"background" 	:"blue", "padding": "2px", // 2px of blue background will be visible bcos of padding
-							"border-left"	: "solid 10px red", // 10px of red is visible outside of the padding
-							"margin"		: "5px"				// 5px of empty space(colour-less) around the border
-						}});
+									"background" 	:"blue", "padding": "2px", // 2px of blue background will be visible bcos of padding
+									"border-left"	: "solid 10px red", // 10px of red is visible outside of the padding
+									"margin"		: "5px"				// 5px of empty space(colour-less) around the border
+							}});
 this.appendToBody(divRootContainerElement);
 
 var divQuestionElement;
 var divAnswerElements = [];
 var divTxtAreaCtrlPanelWrap;
 var questionCounter = 0;
-/*
-var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
-// this.setElementStyle(divQuestionElement, {  position: "absolute", width:"100%", height:"100%", background:"#EEEEEE" });
-// this.createTextNote(divQuestionElement, "Hello Sridhar - Question");
-// this.createTextNote(divQuestionElement, "Hello Krishnan - Question");
-// var one = this.createElement({ "type": "div", "id": "divOne", "style":  { background:"#a5d6a7" }});
-// this.appendToElement(divQuestionElement, one);
-this.appendToElement(divRootContainerElement, divQuestionElement);
-*/
+var divQuestionWrapper = null;
+var divAnswersWrapper  = null;
+var divTextAreaWrapper = null;
+
 
 createAnswerElement = function(index, answerString)
 {
-	var text = "No anwers yet";
+	var text = "No answers yet";
 	if(answerString) { text = answerString; }
 	return this.createElement({ "type": "div", "id": "divAnswer" + index, "textValue": text, "style":  { background:"#FFFFEE" }});
 };
 
+populateQuestionAnswers = function(questionIndex) {
+	// Question
+	divQuestionElement.childNodes[0].nodeValue = this.questions[questionIndex].Question;
+	// Answers
+	var nAnswers = Object.keys(this.questions[questionIndex].Answers).length;
+	for(var i = 0; i < nAnswers; ++i) {
+		if(divAnswerElements.length > i) {
+			divAnswerElements[i].childNodes[0].nodeValue = this.questions[questionIndex].Answers[i];
+			this.showElement(divAnswerElements[i].id);
+		}
+		else {
+			divAnswerElements[i] = this.createAnswerElement(i, this.questions[questionIndex].Answers[i]);
+			this.appendToElement(divAnswersWrapper, divAnswerElements[i]);
+		}
+	}
+
+	if(nAnswers < divAnswerElements.length )
+	{
+		for(i = nAnswers; i < divAnswerElements.length; ++i) {
+			this.hideElement(divAnswerElements[i].id);
+		}
+	}
+};
+
+
 main = function() {
+
+	// Question Wrappers
+	divQuestionWrapper = this.createElement({ "type": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper"});
+	this.appendToElement(divRootContainerElement, divQuestionWrapper);
+	// Answers Wrappers
+	divAnswersWrapper = this.createElement({ "type": "div", "class": "divClassAnswersWrapper","id": "divIdAnswersWrapper"});
+	this.appendToElement(divRootContainerElement, divAnswersWrapper);
+	// Text Area Wrapper
+	divTextAreaWrapper = this.createElement({ "type": "div", "class": "divClassTextAreaWrapper","id": "divIdTextAreaWrapper"});
+	this.appendToElement(divRootContainerElement, divTextAreaWrapper);
+
 	// Question
 	divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
-	this.appendToElement(divRootContainerElement, divQuestionElement);
+	this.appendToElement(divQuestionWrapper, divQuestionElement);
 
 	// Answer(s)
-	divAnswerElements[0] = this.createAnswerElement(0);
-	this.appendToElement(divRootContainerElement, divAnswerElements[0]);
+	this.populateQuestionAnswers(questionCounter);
 
 	// Text Area
 	divTxtAreaCtrlPanelWrap = this.createElement({ "type": "div", "class": "textAreaControlPanelWrapper"});
@@ -100,24 +130,12 @@ main = function() {
 
 	divTxtAreaCtrlPanelWrap.appendChild(ulTxtAreaButton);
 
-	this.appendToElement(divRootContainerElement, divTxtAreaCtrlPanelWrap);
+	this.appendToElement(divTextAreaWrapper, divTxtAreaCtrlPanelWrap);
 
 }.bind(this)();
 
 
-/*
-var divAnswerElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
-this.createTextNote(divAnswerElement, "Hello Jay - Answer");
-this.appendToElement(divRootContainerElement, divAnswerElement);
-
-var testElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
-this.createTextNote(testElement, this.questions["1"]);
-this.appendToElement(divRootContainerElement, testElement);
-
-var testElement2 = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
-this.createTextNote(testElement2, this.answers["1"]);
-this.appendToElement(divRootContainerElement, testElement2);
-*/
+// Database
 var nQuestions = Object.keys(this.questions).length; // No. of entries in an object
 
 // Click Event Handler
@@ -139,27 +157,34 @@ hideElement = function(id) {
 	document.getElementById(id).style.display = 'none'; // hide
 };
 
-populateQuestionAnswers = function(questionIndex) {
-	divQuestionElement.childNodes[0].nodeValue = this.questions[questionIndex].Question;
+}); // window.addEventListener('load', function() {
 
-	var nAnswers = Object.keys(this.questions[questionIndex].Answers).length;
-	for(var i = 0; i < nAnswers; ++i) {
-		if(divAnswerElements.length > i) {
-			divAnswerElements[i].childNodes[0].nodeValue = this.questions[questionIndex].Answers[i];
-			this.showElement(divAnswerElements[i].id);
-		}
-		else {
-			divAnswerElements[i] = this.createAnswerElement(i, this.questions[questionIndex].Answers[i]);
-			this.appendToElement(divRootContainerElement, divAnswerElements[i]);
-		}
-	}
 
-	if(nAnswers < divAnswerElements.length )
-	{
-		for(var i = nAnswers; i < divAnswerElements.length; ++i) {
-			this.hideElement(divAnswerElements[i].id);
-		}
-	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+var divQuestionElement = this.createElement({ "type": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
+// this.setElementStyle(divQuestionElement, {  position: "absolute", width:"100%", height:"100%", background:"#EEEEEE" });
+// this.createTextNote(divQuestionElement, "Hello Sridhar - Question");
+// this.createTextNote(divQuestionElement, "Hello Krishnan - Question");
+// var one = this.createElement({ "type": "div", "id": "divOne", "style":  { background:"#a5d6a7" }});
+// this.appendToElement(divQuestionElement, one);
+this.appendToElement(divRootContainerElement, divQuestionElement);
+*/
+
+/*
+var divAnswerElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
+this.createTextNote(divAnswerElement, "Hello Jay - Answer");
+this.appendToElement(divRootContainerElement, divAnswerElement);
+
+var testElement = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
+this.createTextNote(testElement, this.questions["1"]);
+this.appendToElement(divRootContainerElement, testElement);
+
+var testElement2 = this.createElement({ "type": "div", "id": "divAnswer", "style":  { background:"#FFFFEE" }});
+this.createTextNote(testElement2, this.answers["1"]);
+this.appendToElement(divRootContainerElement, testElement2);
+*/
 
 	/////////////////////////////
 	// var divTxtAreaCtrlPanelWrap = this.createElement({ "type": "div", "class": "textAreaControlPanelWrapper"});
@@ -186,37 +211,3 @@ populateQuestionAnswers = function(questionIndex) {
 	// 		<p><textarea id="txtAreaId" name="myTxtArea"> Jay Bose Sridhar </textarea></p> 
 	// 	</div>
 	// </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-};
-
-
-}); // window.addEventListener('load', function() {
-
-
