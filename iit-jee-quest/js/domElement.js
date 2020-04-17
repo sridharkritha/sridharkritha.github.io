@@ -136,6 +136,10 @@ main = function() {
 	divTxtAreaContentWrapper.appendChild(textarea);
 	this.appendToElement(divTextAreaWrapper, divTxtAreaContentWrapper);
 
+	// Text area previewer
+	var textAreaPreviewer = this.createElement({ "type": "div", "id": "textAreaPreviewer"});
+	this.appendToElement(divTextAreaWrapper, textAreaPreviewer);
+
 }.bind(this)();
 
 

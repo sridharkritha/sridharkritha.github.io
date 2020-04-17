@@ -27,9 +27,7 @@ window.addEventListener('load', function () {
 		autoExpand(event.target);
 	}, false);
 
-	document.getElementById('preview').addEventListener('click', function () {
-		document.getElementById('results').innerHTML = document.getElementById('txtAreaId').value;
-	}.bind(this));
+
 
 	// Ref: https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement
 	// selectStart: http://help.dottoro.com/ljtqbjui.php
@@ -59,4 +57,26 @@ window.addEventListener('load', function () {
 	document.getElementById('li-image-txtAreaButton').addEventListener('click', function () {
 		this.insertMetachars('<img>','</\img>');
 	}.bind(this));
+
+	// text area previewer
+	var dynamicText = "";
+	var textAreaRef = document.getElementById('txtAreaId');
+	textAreaRef.addEventListener('keyup', function (code) {				// textAreaRef.onkeyup = function() { }
+		document.getElementById('textAreaPreviewer').innerHTML = textAreaRef.value;
+
+		// dynamicText += code.key;
+		// document.getElementById('textAreaPreviewer').innerHTML += code.key;
+		// "Space"
+		// "Enter"
+
+		// tabspace inside text area: https://stackoverflow.com/questions/6637341/use-tab-to-indent-in-textarea
+		// https://www.w3schools.com/html/html_entities.asp
+		// https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+
+
+	}.bind(this));
+
+
+
+
 }); // window.addEventListener('load', function() {
