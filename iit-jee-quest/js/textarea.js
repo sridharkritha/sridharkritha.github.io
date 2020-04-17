@@ -1,17 +1,6 @@
 // Global function : Before document load
 
-// Ref: https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement
-// selectStart: http://help.dottoro.com/ljtqbjui.php
-function insertMetachars(sStartTag, sEndTag) {
-	var bDouble = arguments.length > 1;
-	var oMsgInput = document.getElementById('txtAreaId');
-	var nSelStart = oMsgInput.selectionStart;
-	var nSelEnd = oMsgInput.selectionEnd;
-	var sOldText = oMsgInput.value;
-	oMsgInput.value = sOldText.substring(0, nSelStart) + (bDouble ? sStartTag + sOldText.substring(nSelStart, nSelEnd) + sEndTag : sStartTag) + sOldText.substring(nSelEnd);
-	oMsgInput.setSelectionRange(bDouble || nSelStart === nSelEnd ? nSelStart + sStartTag.length : nSelStart, (bDouble ? nSelEnd : nSelStart) + sStartTag.length);
-	oMsgInput.focus();
-}
+
 
 // Auto expand 
 // https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
@@ -41,6 +30,19 @@ window.addEventListener('load', function () {
 	document.getElementById('preview').addEventListener('click', function () {
 		document.getElementById('results').innerHTML = document.getElementById('txtAreaId').value;
 	}.bind(this));
+
+	// Ref: https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement
+	// selectStart: http://help.dottoro.com/ljtqbjui.php
+	insertMetachars = function(sStartTag, sEndTag) {
+		var bDouble = arguments.length > 1;
+		var oMsgInput = document.getElementById('txtAreaId');
+		var nSelStart = oMsgInput.selectionStart;
+		var nSelEnd = oMsgInput.selectionEnd;
+		var sOldText = oMsgInput.value;
+		oMsgInput.value = sOldText.substring(0, nSelStart) + (bDouble ? sStartTag + sOldText.substring(nSelStart, nSelEnd) + sEndTag : sStartTag) + sOldText.substring(nSelEnd);
+		oMsgInput.setSelectionRange(bDouble || nSelStart === nSelEnd ? nSelStart + sStartTag.length : nSelStart, (bDouble ? nSelEnd : nSelStart) + sStartTag.length);
+		oMsgInput.focus();
+	};
 
 	document.getElementById('li-bold-txtAreaButton').addEventListener('click', function () {
 		this.insertMetachars('<strong>','</\strong>');

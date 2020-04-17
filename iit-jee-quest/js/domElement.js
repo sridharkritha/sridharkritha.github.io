@@ -101,7 +101,6 @@ populateQuestionAnswers = function(questionIndex) {
 
 
 main = function() {
-
 	// Question Wrappers
 	divQuestionWrapper = this.createElement({ "type": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper"});
 	this.appendToElement(divRootContainerElement, divQuestionWrapper);
@@ -121,7 +120,7 @@ main = function() {
 
 	// Text Area
 	divTxtAreaCtrlPanelWrap = this.createElement({ "type": "div", "class": "textAreaControlPanelWrapper"});
-
+	// Control panel of text area
 	var ulTxtAreaButton = this.createElement({ "type": "ul", "class": "ul-txtAreaButton"});
 	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-bold-txtAreaButton"}));
 	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-italic-txtAreaButton"}));
@@ -129,8 +128,13 @@ main = function() {
 	ulTxtAreaButton.appendChild(this.createElement({ "type": "li", "class": "li-txtAreaButton", "id": "li-image-txtAreaButton"}));
 
 	divTxtAreaCtrlPanelWrap.appendChild(ulTxtAreaButton);
-
 	this.appendToElement(divTextAreaWrapper, divTxtAreaCtrlPanelWrap);
+
+	// message area of text area
+	var divTxtAreaContentWrapper = this.createElement({ "type": "div", "class": "textAreaContentWrapper"});
+	var textarea = this.createElement({ "type": "textarea", "id": "txtAreaId"});
+	divTxtAreaContentWrapper.appendChild(textarea);
+	this.appendToElement(divTextAreaWrapper, divTxtAreaContentWrapper);
 
 }.bind(this)();
 
