@@ -2,15 +2,17 @@ Image Uploader
 Input text box
 	Math formula editor
 	sub comments section for the discussion about the answers 
-User registeration and Login
-Open id login
+User registration and Login
+	Open id login
 logo
 Bookmarks
-	Folder support for catergorization
+	Folder support for categorization
 voting system
+	question quality - basic, medium, advanced
+	answer quality - basic, medium, advanced
 avatar user Image - www.gravatar.com
-Related question suggestions
-Question tags for question catergorization
+Related questions suggestions
+Question tags for question categorization
 view count
 
 
