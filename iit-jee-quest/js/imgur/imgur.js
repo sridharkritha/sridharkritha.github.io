@@ -35,18 +35,6 @@
     };
 
     Imgur.prototype = {
-        createEls: function (name, props, text) {
-            var el = document.createElement(name), p;
-            for (p in props) {
-                if (props.hasOwnProperty(p)) {
-                    el[p] = props[p];
-                }
-            }
-            if (text) {
-                el.appendChild(document.createTextNode(text));
-            }
-            return el;
-        },
         insertAfter: function (referenceNode, newNode) {
             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
         },
@@ -76,9 +64,9 @@
         createDragZone: function () {
             var p1, p2, input;
 
-                p1 = this.createEls('p', {}, 'Drop Image File Here');
-                p2 = this.createEls('p', {}, 'Or click here to select image');
-            input = this.createEls('input', {type: 'file', className: 'input', accept: 'image/*'});
+                p1 = createHtmlElement({"eType":'p', 'textValue': 'Drop Image File Here'});
+                p2 = createHtmlElement({"eType":'p', 'textValue': 'Or click here to select image'});
+            input = createHtmlElement({"eType":'input', type: 'file', "class": 'input', accept: 'image/*'});
 
             Array.prototype.forEach.call(this.info, function (zone) {
                 zone.appendChild(p1);
@@ -92,17 +80,16 @@
         },
         loading: function () {
             var div, table, img;
-
-            div = this.createEls('div', {className: 'loading-modal'});
-            table = this.createEls('table', {className: 'loading-table'});
-            img = this.createEls('img', {className: 'loading-image', src: './css/imgur/loading-spin.svg'});
+            div = createHtmlElement({"eType": "div", "class": "loading-modal"});
+            table = createHtmlElement({"eType":'table', "class": 'loading-table'});
+            img =  createHtmlElement({"eType":'img', "class": 'loading-image', src: './css/imgur/loading-spin.svg'});
 
             div.appendChild(table);
             table.appendChild(img);
-            document.body.appendChild(div);
+            appendToElement(divImgDlgBoxWrapper, div); // divImgDlgBoxWrapper - global object
         },
         status: function (el) {
-            var div = this.createEls('div', {className: 'status'});
+            var div = createHtmlElement({"eType":'div', "class": 'status'});
 
             this.insertAfter(el, div);
         },

@@ -1,3 +1,5 @@
+window.addEventListener('load', function () {
+
 var feedback = function(res) {
     if (res.success === true) {
         var get_link = res.data.link.replace(/^http:\/\//i, 'https://');
@@ -10,4 +12,6 @@ var feedback = function(res) {
 new Imgur({
     clientid: '271e5071940b388', // '4409588f10776f7', //You can change this ClientID
     callback: feedback
+});
+
 });
