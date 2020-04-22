@@ -124,13 +124,13 @@ populateQuestionAnswers = function(questionIndex) {
 main = function() {
 	// WRAPPERS
 	// Question Wrappers
-	divQuestionWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper"});
+	divQuestionWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper","style": { "background" :"CRIMSON", "padding": "5px" }});
 	this.appendToElement(divRootContainerElement, divQuestionWrapper);
 	// Answers Wrappers
-	divAnswersWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassAnswersWrapper","id": "divIdAnswersWrapper"});
+	divAnswersWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassAnswersWrapper","id": "divIdAnswersWrapper", "style": { "background" :"GOLD", "padding": "5px" }});
 	this.appendToElement(divRootContainerElement, divAnswersWrapper);
 	// Text Area Wrapper
-	divTextAreaWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassTextAreaWrapper","id": "divIdTextAreaWrapper"});
+	divTextAreaWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassTextAreaWrapper","id": "divIdTextAreaWrapper", "style": { "background" :"OLIVE", "padding": "5px" }});
 	this.appendToElement(divRootContainerElement, divTextAreaWrapper);
 
 	// POPULATE THE CONTENTS INSIDE THE WRAPPERS

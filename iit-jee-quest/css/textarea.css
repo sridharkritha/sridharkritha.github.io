@@ -12,6 +12,7 @@
 
 #textAreaPreviewer {
 	white-space: pre; /* any white-space in the element should appear exactly as it does in the textarea */
+	background-color: #f08;
 }
 
 /****************************************************************/
