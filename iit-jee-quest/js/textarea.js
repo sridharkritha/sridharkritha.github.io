@@ -55,7 +55,10 @@ window.addEventListener('load', function () {
 	}.bind(this));
 
 	document.getElementById('li-image-txtAreaButton').addEventListener('click', function () {
-		this.insertMetachars('<img>','</\img>');
+		var showHideToggle = document.querySelector('#divImgDlgBoxWrapperId').style;
+		showHideToggle.display = showHideToggle.display === "block" ? "none" : "block";
+
+		// this.insertMetachars('<img>','</\img>');
 	}.bind(this));
 
 	// text area previewer

@@ -155,7 +155,7 @@ main = function() {
 
 	// image dialog box
 	// divImgDlgBoxWrapper - global object can be used across different files
-	divImgDlgBoxWrapper = this.createHtmlElement({ "eType": "div", "class": "divImgDlgBoxWrapper"});
+	divImgDlgBoxWrapper = this.createHtmlElement({ "eType": "div", "class": "divImgDlgBoxWrapper", "id": "divImgDlgBoxWrapperId","style": { "display" : "none" }});
 	var dropzone = this.createHtmlElement({ "eType": "div", "class": "dropzone"});
 	var info = this.createHtmlElement({ "eType": "div", "class": "info"});
 	this.appendToElement(dropzone, info);
