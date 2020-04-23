@@ -7,6 +7,9 @@ window.addEventListener('load', function () {
 createHtmlElement = function(obj) {
 	var element = null;
 	var prop = null;
+	var aryClassNames = [];
+	var arySize = 0;
+	var i = 0;
 	if(obj) {
 		if(obj.eType) 	element = document.createElement(obj.eType); // createElement('div');
 		if(0) // element) 
@@ -25,10 +28,15 @@ createHtmlElement = function(obj) {
 				for (prop in obj) {
 					if (obj.hasOwnProperty(prop)) {
 						if(prop === 'eType') continue;
-						// "classA classB" => "classA" , "classB"
-						// \s+   : one or more white space
-						// \",\" : ","
-						else if(prop === 'class') element.classList.add(obj[prop].replace(/\s+/g, "\",\""));
+						else if(prop === 'class') {
+							// trim the leading and ending spaces: "      classA        classB  " => "classA        classB"
+							// split by 1 or more space \s+
+							aryClassNames = obj[prop].trim().split(/\s+/); // ["classA", "classB"]
+
+							for(i = 0, arySize = aryClassNames.length; i < arySize; ++i) {
+								element.classList.add(aryClassNames[i]);
+							}
+						}
 						else if(prop === 'id')		element.setAttribute('id', obj[prop]);
 						else if(prop === 'style') setElementStyle(element, obj[prop]);
 						else if(prop === 'textValue') this.appendToElement(element, document.createTextNode(obj[prop]));
@@ -73,6 +81,9 @@ appendToBody = function(childElement){
 	document.body.appendChild(childElement);
 };
 
+// Ref: https://gomakethings.com/two-ways-to-set-an-elements-css-with-vanilla-javascript/
+// https://davidwalsh.name/add-rules-stylesheets
+// https://javascript.info/styles-and-classes
 var divRootContainerElement = this.createHtmlElement({ "eType": "div", "id": "rootContainer", "style":  { 
 									"background" 	:"blue", "padding": "2px", // 2px of blue background will be visible bcos of padding
 									"border-left"	: "solid 10px red", // 10px of red is visible outside of the padding
@@ -172,6 +183,10 @@ main = function() {
 	var textAreaPreviewer = this.createHtmlElement({ "eType": "div", "id": "textAreaPreviewer"});
 	this.appendToElement(divTextAreaWrapper, textAreaPreviewer);
 
+	// Post your answer button
+	var buttonPostYourAnswer = this.createHtmlElement({ "eType": "button",  "id": "buttonPostYourAnswer", "class": "postYourAnswerBtn  success"});
+	this.appendToElement(divTextAreaWrapper, buttonPostYourAnswer);
+
 }.bind(this)();
 
 
@@ -182,12 +197,12 @@ var nQuestions = Object.keys(this.questions).length; // No. of entries in an obj
 document.getElementById('btnIdBackward').addEventListener('click', function () {
 	questionCounter = (--questionCounter + nQuestions) % nQuestions;
 	this.populateQuestionAnswers(questionCounter);
-}.bind(this));
+}.bind(this), false);
 
 document.getElementById('btnIdForward').addEventListener('click', function () {
 	questionCounter = (++questionCounter + nQuestions) % nQuestions;
 	this.populateQuestionAnswers(questionCounter);
-}.bind(this));
+}.bind(this), false);
 
 showElement = function(id) {
 	document.getElementById(id).style.display = 'block'; // show
@@ -197,7 +212,7 @@ hideElement = function(id) {
 	document.getElementById(id).style.display = 'none'; // hide
 };
 
-}); // window.addEventListener('load', function() {
+}, false); // window.addEventListener('load', function() {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

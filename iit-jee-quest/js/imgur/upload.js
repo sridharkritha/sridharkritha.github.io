@@ -12,7 +12,13 @@ window.addEventListener('load', function () {
 
 			// document.getElementById('txtAreaId').value += 'Image : ' + '<br><input class="image-url" value=\"' + get_link + '\"/>';
 
+			// Append the text on the text area
 			document.getElementById('txtAreaId').value += '<img alt="Imgur-Upload" src=\"' + get_link + '\"/>';
+			// Update the preview
+			document.getElementById('textAreaPreviewer').innerHTML = document.getElementById('txtAreaId').value;
+
+			// Hide the image uploader dialog box
+			document.querySelector('#divImgDlgBoxWrapperId').style.display = "none";
 		}
 	};
 
@@ -21,4 +27,4 @@ window.addEventListener('load', function () {
 					callback: feedback
 	});
 
-});
+}, false);

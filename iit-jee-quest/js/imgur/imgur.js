@@ -84,7 +84,6 @@
 		status: function (el) {
 			var div = createHtmlElement({ "eType": 'div', "class": 'status', "id": "uploadStatus" });
 			appendToElement(document.getElementById('textAreaPreviewer'), div);
-			// this.insertAfter(el, div);
 		},
 
 		matchFiles: function (file, zone) {

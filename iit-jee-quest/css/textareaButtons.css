@@ -39,3 +39,24 @@
 	width: 100%;
 	padding: 0;
 }
+
+/* post your answer button */
+.postYourAnswerBtn {
+	border: none;
+	color: white;
+	padding: 14px 28px;
+	font-size: 24px;
+	cursor: pointer;
+	width: 12em;
+  }
+  
+.success {background-color: #F08;}
+.success::after { 
+	background-color: #F08;
+	content:'Post Your Answer';
+}
+.success:hover:after {  /*:hover and :after are Psuedo Elements */
+	background-color: rgb(20, 233, 109);
+	content:'Thanks !';
+}
+.success:hover { background-color: rgb(20, 233, 109); }

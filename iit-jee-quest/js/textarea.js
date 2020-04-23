@@ -19,6 +19,17 @@ var autoExpand = function (field) {
 	field.style.height = height + 'px';
 };
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Ref: https://www.bitdegree.org/learn/javascript-addeventlistener
+// addEventListener(event, callback, propagationDirection)
+// propagationDirection : default to false. i.e, It uses 'BUBBLING' propagation. If True then it uses 'CAPTUREING' propagation.
+// Ex: when you have an <img> element in a <div>, and the <img> element is clicked, which click event will have to be handled first ?
+// Bubbling (false): click event on the <img> element is handled first, and then click event on the <div> element is handled. 
+// CAPTUREING(true): <div> callback handled first and <img> callback handled second.
+
+// NOTE: All 'HTML elements(<h1>, <img>, <div>)' and 'DOM objects (window, xmlHttpRequest)' can listen/react to 'HTML DOM events'. You can attach
+// 'addEventListener' to any HTML elements and DOM object for listening to HTML DOM events. 
+
 window.addEventListener('load', function () {
 	// Auto expand 
 	// https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
@@ -44,7 +55,7 @@ window.addEventListener('load', function () {
 
 	document.getElementById('li-bold-txtAreaButton').addEventListener('click', function () {
 		this.insertMetachars('<strong>','</\strong>');
-	}.bind(this));
+	}.bind(this), false);
 
 	document.getElementById('li-italic-txtAreaButton').addEventListener('click', function () {
 		this.insertMetachars('<em>','</\em>');
@@ -52,14 +63,13 @@ window.addEventListener('load', function () {
 
 	document.getElementById('li-code-txtAreaButton').addEventListener('click', function () {
 		this.insertMetachars('<code>','</\code>');
-	}.bind(this));
+	}.bind(this), false);
 
 	document.getElementById('li-image-txtAreaButton').addEventListener('click', function () {
+		// toggle the image uploader dialog box
 		var showHideToggle = document.querySelector('#divImgDlgBoxWrapperId').style;
 		showHideToggle.display = showHideToggle.display === "block" ? "none" : "block";
-
-		// this.insertMetachars('<img>','</\img>');
-	}.bind(this));
+	}.bind(this), false);
 
 	// text area previewer
 	var textAreaRef = document.getElementById('txtAreaId');
@@ -72,7 +82,24 @@ window.addEventListener('load', function () {
 		// tabspace inside text area: https://stackoverflow.com/questions/6637341/use-tab-to-indent-in-textarea
 		// https://www.w3schools.com/html/html_entities.asp
 		// https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
-	}.bind(this));
+	}.bind(this), false);
+
+
+	// Post your answers
+	document.querySelector('#buttonPostYourAnswer').addEventListener('click', function () {
+		var previewer = document.querySelector('#textAreaPreviewer');
+		var textArea = document.querySelector('#txtAreaId');
+		var divAnswersWrapper = document.querySelector('#divIdAnswersWrapper');
+
+
+		var divElement = createHtmlElement({ "eType": "div", "style":  { background:"#FFFFEE" }});
+		divElement.innerHTML = previewer.innerHTML;
+		// Clear
+		previewer.innerHTML = "";
+		textArea.value = "";		
+		appendToElement(divAnswersWrapper, divElement);
+
+	}.bind(this), false);
 
 
 
