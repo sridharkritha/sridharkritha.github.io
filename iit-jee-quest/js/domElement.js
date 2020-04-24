@@ -5,9 +5,7 @@ window.addEventListener('load', function () {
  */
 var divQuestionElement;
 var divAnswerElements = [];
-var divTxtAreaCtrlPanelWrap;
 var questionCounter = 0;
-var divQuestionWrapper = null;
 var divAnswersWrapper  = null;
 var divTextAreaWrapper = null;
 
@@ -66,8 +64,7 @@ createTextNote = function(parentElement, text) {
 	// Also text node is NOT consider as a child, it is a content of the parent element.
 	// myDiv.children.length; Excludes the text node
 	// myDiv.childNodes.length; Includes the text node. Returns a live NodeList of child nodes of the given element.
-	var textNode = document.createTextNode(text); 
-	this.appendToElement(parentElement, textNode);
+	this.appendToElement(parentElement,  document.createTextNode(text));
 };
 
 // Note: https://javascript.info/modifying-document
@@ -178,7 +175,7 @@ populateQuestionAnswers = function(questionCounter) {
 main = function() {
 	// WRAPPERS
 	// Question Wrappers
-	divQuestionWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper","style": { "background" :"CRIMSON", "padding": "5px" }});
+	var divQuestionWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper","style": { "background" :"CRIMSON", "padding": "5px" }});
 	this.appendToElement(divRootContainerElement, divQuestionWrapper);
 	// Answers Wrappers
 	divAnswersWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassAnswersWrapper","id": "divIdAnswersWrapper", "style": { "background" :"GOLD", "padding": "5px" }});
@@ -196,7 +193,7 @@ main = function() {
 	this.populateQuestionAnswers(questionCounter);
 
 	// TEXT AREA
-	divTxtAreaCtrlPanelWrap = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaControlPanelWrapper"});
+	var divTxtAreaCtrlPanelWrap = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaControlPanelWrapper"});
 	// Control panel of text area
 	var ulTxtAreaButton = this.createHtmlElement({ "eType": "ul", "class": "ul-txtAreaButton"});
 	ulTxtAreaButton.appendChild(this.createHtmlElement({ "eType": "li", "class": "li-txtAreaButton", "id": "li-bold-txtAreaButton"}));
@@ -206,6 +203,7 @@ main = function() {
 
 	divTxtAreaCtrlPanelWrap.appendChild(ulTxtAreaButton);
 	this.appendToElement(divTextAreaWrapper, divTxtAreaCtrlPanelWrap);
+	divTxtAreaCtrlPanelWrap = null; // clear the reference and notify the GC
 
 	// image dialog box
 	// divImgDlgBoxWrapper - global object can be used across different files
@@ -215,20 +213,25 @@ main = function() {
 	this.appendToElement(dropzone, info);
 	this.appendToElement(divImgDlgBoxWrapper, dropzone);
 	this.appendToElement(divTextAreaWrapper, divImgDlgBoxWrapper);
+	dropzone = null; // clear the reference and notify the GC
+	info = null; 	 // clear the reference and notify the GC
 
 	// message area of text area wrapper
 	var divTxtAreaContentWrapper = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaContentWrapper"});
 	var textarea = this.createHtmlElement({ "eType": "textarea", "id": "txtAreaId"});
 	divTxtAreaContentWrapper.appendChild(textarea);
 	this.appendToElement(divTextAreaWrapper, divTxtAreaContentWrapper);
+	divTxtAreaContentWrapper = null; // clear the reference and notify the GC
 
 	// Text area previewer
 	var textAreaPreviewer = this.createHtmlElement({ "eType": "div", "id": "textAreaPreviewer"});
 	this.appendToElement(divTextAreaWrapper, textAreaPreviewer);
+	textAreaPreviewer = null; // clear the reference and notify the GC
 
 	// Post your answer button
 	var buttonPostYourAnswer = this.createHtmlElement({ "eType": "button",  "id": "buttonPostYourAnswer", "class": "postYourAnswerBtn  success"});
 	this.appendToElement(divTextAreaWrapper, buttonPostYourAnswer);
+	buttonPostYourAnswer = null; // clear the reference and notify the GC
 
 }.bind(this)();
 
