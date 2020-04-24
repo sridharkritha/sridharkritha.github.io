@@ -87,20 +87,31 @@ window.addEventListener('load', function () {
 
 	// Post your answers
 	document.querySelector('#buttonPostYourAnswer').addEventListener('click', function () {
-		var previewer = document.querySelector('#textAreaPreviewer');
-		var textArea = document.querySelector('#txtAreaId');
-		var divAnswersWrapper = document.querySelector('#divIdAnswersWrapper');
+		var previewer         = document.querySelector('#textAreaPreviewer');
+		var textArea          = document.querySelector('#txtAreaId');
+		// var divAnswersWrapper = document.querySelector('#divIdAnswersWrapper');
+		// var divNewAnswerPostedElement       = createHtmlElement({ "eType": "div", "style":  { background:"#FFFFEE" }});
+		// divNewAnswerPostedElement.innerHTML = previewer.innerHTML;
 
+		// appendToElement(divAnswersWrapper, divNewAnswerPostedElement);
 
-		var divElement = createHtmlElement({ "eType": "div", "style":  { background:"#FFFFEE" }});
-		divElement.innerHTML = previewer.innerHTML;
+		// add new DIV answer
+		addNewAnswerElement(previewer.innerHTML);
+		// Update the db answer
+		updateDbNewPostedAnswer(previewer.innerHTML);
+
 		// Clear
 		previewer.innerHTML = "";
-		textArea.value = "";		
-		appendToElement(divAnswersWrapper, divElement);
-
+		textArea.value = "";
 	}.bind(this), false);
 
+	updateDbNewPostedAnswer = function(postedAnswer) {
+		// Update the db answer
+		var questionCounter = getQuestionIndex();
+		var nAnswers = Object.keys(questions[questionCounter].Answers).length;
+
+		questions[questionCounter].Answers[nAnswers] = postedAnswer;
+	};
 
 
 

@@ -1,59 +1,66 @@
 window.addEventListener('load', function () {
 
-// Root Object: documnet
-// Root Element: <html></html>
-// Branch Elements: <head></head> <body></body> etc.,
-// All elements have the appendChild method
+/**
+ * Global variables inside the file
+ */
+var divQuestionElement;
+var divAnswerElements = [];
+var divTxtAreaCtrlPanelWrap;
+var questionCounter = 0;
+var divQuestionWrapper = null;
+var divAnswersWrapper  = null;
+var divTextAreaWrapper = null;
+
+/**
+ * Root Object: documnet
+ * Root Element: <html></html>
+ * Branch Elements: <head></head> <body></body> etc.,
+ * All elements have the appendChild method
+ */
 createHtmlElement = function(obj) {
 	var element = null;
 	var prop = null;
 	var aryClassNames = [];
 	var arySize = 0;
 	var i = 0;
+
 	if(obj) {
 		if(obj.eType) 	element = document.createElement(obj.eType); // createElement('div');
-		if(0) // element) 
-		{
-			if(obj.id)		element.setAttribute('id', obj.id);
-			else if(obj.class)	element.setAttribute('class', obj.class);
-			else if(obj.style)	setElementStyle(element, obj.style);
-			else if(obj.textValue) {
-				var textNode = document.createTextNode(obj.textValue); 
-				this.appendToElement(element, textNode);
-			}
-		}
-		else 
-		{	
-			if(element) {
-				for (prop in obj) {
-					if (obj.hasOwnProperty(prop)) {
-						if(prop === 'eType') continue;
-						else if(prop === 'class') {
-							// trim the leading and ending spaces: "      classA        classB  " => "classA        classB"
-							// split by 1 or more space \s+
-							aryClassNames = obj[prop].trim().split(/\s+/); // ["classA", "classB"]
 
-							for(i = 0, arySize = aryClassNames.length; i < arySize; ++i) {
-								element.classList.add(aryClassNames[i]);
-							}
+		if(element) {
+			for (prop in obj) {
+				if (obj.hasOwnProperty(prop)) {
+					if(prop === 'eType') continue;
+					else if(prop === 'class') {
+						// trim the leading and ending spaces: "      classA        classB  " => "classA        classB"
+						// split by 1 or more space \s+
+						aryClassNames = obj[prop].trim().split(/\s+/); // ["classA", "classB"]
+
+						for(i = 0, arySize = aryClassNames.length; i < arySize; ++i) {
+							element.classList.add(aryClassNames[i]);
 						}
-						else if(prop === 'id')		element.setAttribute('id', obj[prop]);
-						else if(prop === 'style') setElementStyle(element, obj[prop]);
-						else if(prop === 'textValue') this.appendToElement(element, document.createTextNode(obj[prop]));
-						else element[prop] = obj[prop];
 					}
+					else if(prop === 'id')		element.setAttribute('id', obj[prop]);
+					else if(prop === 'style') setElementStyle(element, obj[prop]);
+					else if(prop === 'textValue') this.appendToElement(element, document.createTextNode(obj[prop]));
+					else element[prop] = obj[prop];
 				}
 			}
-		}
+		}		
 	}
 	return element;
 };
 
-
+/**
+ * Append to the existing style instead of overwriting.
+ */
 setElementStyle = function(element, styleObject) {
-	Object.assign(element.style, styleObject); // append to the existing style instead of overwritting.
+	Object.assign(element.style, styleObject); // append to the existing style instead of overwriting.
 };
 
+/**
+ * Create text node
+ */
 createTextNote = function(parentElement, text) {
 	// Note: Unlike DOM element, text NODE does NOT have 'id' property. So you can NOT access by 'document.getElementById()'.
 	// Also text node is NOT consider as a child, it is a content of the parent element.
@@ -71,11 +78,17 @@ createTextNote = function(parentElement, text) {
 // node.after(...nodes or strings) –- insert nodes or strings after node,
 // node.replaceWith(...nodes or strings) –- replaces node with the given nodes or strings.
 
+/**
+ * Add a child node to the parent node
+ */
 appendToElement = function(parentElement, childElement){
 	// all elements have the appendChild method
 	parentElement.appendChild(childElement);
 };
 
+/**
+ * Add a child node to document.body
+ */
 appendToBody = function(childElement){
 	// all elements have the appendChild method
 	document.body.appendChild(childElement);
@@ -84,6 +97,9 @@ appendToBody = function(childElement){
 // Ref: https://gomakethings.com/two-ways-to-set-an-elements-css-with-vanilla-javascript/
 // https://davidwalsh.name/add-rules-stylesheets
 // https://javascript.info/styles-and-classes
+/**
+ * Create a HTML element
+ */
 var divRootContainerElement = this.createHtmlElement({ "eType": "div", "id": "rootContainer", "style":  { 
 									"background" 	:"blue", "padding": "2px", // 2px of blue background will be visible bcos of padding
 									"border-left"	: "solid 10px red", // 10px of red is visible outside of the padding
@@ -91,47 +107,74 @@ var divRootContainerElement = this.createHtmlElement({ "eType": "div", "id": "ro
 							}});
 this.appendToBody(divRootContainerElement);
 
-var divQuestionElement;
-var divAnswerElements = [];
-var divTxtAreaCtrlPanelWrap;
-var questionCounter = 0;
-var divQuestionWrapper = null;
-var divAnswersWrapper  = null;
-var divTextAreaWrapper = null;
 
 
+/**
+ * Get the current question index
+ */
+getQuestionIndex = function() {
+	return questionCounter;
+};
+
+/**
+ * Create a answer DIV element
+ */
 createAnswerElement = function(index, answerString)
 {
 	var text = "No answers yet";
 	if(answerString) { text = answerString; }
-	return this.createHtmlElement({ "eType": "div", "id": "divAnswer" + index, "textValue": text, "style":  { background:"#FFFFEE" }});
+	return this.createHtmlElement({ "eType": "div", "id": "divAnswer" + index, "textValue": text, "style":  { background:"#FFFFEE",
+									"border"	: "solid 1px red", // 1px of red is visible outside of the padding
+									"white-space": "pre" /* any white-space in the element should appear exactly as it does in the textarea */
+ 								}});
 };
 
-populateQuestionAnswers = function(questionIndex) {
+/**
+ * Create a answer DIV element and append to answer wrapper
+ */
+addNewAnswerElement = function(ans)
+{
+	var index = divAnswerElements.length;
+	divAnswerElements.push(this.createAnswerElement(index, ans));
+	this.appendToElement(divAnswersWrapper, divAnswerElements[index]);
+};
+
+/**
+ * Populate question and all answers for the question index
+ */
+populateQuestionAnswers = function(questionCounter) {
+	var removeNode = null;
 	// Question
-	divQuestionElement.childNodes[0].nodeValue = this.questions[questionIndex].Question;
+	divQuestionElement.childNodes[0].nodeValue = this.questions[questionCounter].Question;
 	// Answers
-	var nAnswers = Object.keys(this.questions[questionIndex].Answers).length;
+	var nAnswers = Object.keys(this.questions[questionCounter].Answers).length;
 	for(var i = 0; i < nAnswers; ++i) {
 		if(divAnswerElements.length > i) {
-			divAnswerElements[i].childNodes[0].nodeValue = this.questions[questionIndex].Answers[i];
+			divAnswerElements[i].childNodes[0].nodeValue = this.questions[questionCounter].Answers[i];
 			this.showElement(divAnswerElements[i].id);
 		}
 		else {
-			divAnswerElements[i] = this.createAnswerElement(i, this.questions[questionIndex].Answers[i]);
-			this.appendToElement(divAnswersWrapper, divAnswerElements[i]);
+			this.addNewAnswerElement(this.questions[questionCounter].Answers[i]);
 		}
 	}
 
+	// delete the unused nodes
 	if(nAnswers < divAnswerElements.length )
 	{
-		for(i = nAnswers; i < divAnswerElements.length; ++i) {
-			this.hideElement(divAnswerElements[i].id);
+		// Note: loop BACKWARDS is MUST bcos we are deleting the array elements in a loop
+		for( i = divAnswerElements.length - 1; i >= nAnswers; --i) {
+			removeNode = divAnswerElements[i];
+			// this.hideElement(divAnswerElements[i].id);
+			removeNode.parentNode.removeChild(removeNode);  // delete node    pattern from the parent node
+			divAnswerElements.splice(i, 1); 				// delete element pattern from the array
+			removeNode = null;								// notify the GC
 		}
 	}
 };
 
-
+/**
+ * MAIN STARTUP FUNCTION
+ */
 main = function() {
 	// WRAPPERS
 	// Question Wrappers
@@ -193,7 +236,10 @@ main = function() {
 // Database
 var nQuestions = Object.keys(this.questions).length; // No. of entries in an object
 
-// Click Event Handler
+
+/**
+ * Click Event Handler
+ */
 document.getElementById('btnIdBackward').addEventListener('click', function () {
 	questionCounter = (--questionCounter + nQuestions) % nQuestions;
 	this.populateQuestionAnswers(questionCounter);

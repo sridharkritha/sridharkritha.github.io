@@ -14,6 +14,9 @@ avatar user Image - www.gravatar.com
 Related questions suggestions
 Question tags for question categorization
 view count
+finding memory leaks -  remove unwanted created elements, remove/clear the attached JS objects from dom node before removing the dom node
+
+
 
 
 
@@ -24,6 +27,9 @@ Advertisment:
 
 Image Uploader:
 	https://apidocs.imgur.com/?version=latest
+
+Adding Claps with particle animation:
+	https://medium.com/hackernoon/how-i-implemented-the-medium-clap-from-scratch-4a16ac90ad3b
 
 
 
