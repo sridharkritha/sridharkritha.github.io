@@ -48,6 +48,7 @@
 	font-size: 24px;
 	cursor: pointer;
 	width: 12em;
+	background-color: #F08;
   }
   
 .success {background-color: #F08;}

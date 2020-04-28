@@ -31,6 +31,9 @@ Image Uploader:
 Adding Claps with particle animation:
 	https://medium.com/hackernoon/how-i-implemented-the-medium-clap-from-scratch-4a16ac90ad3b
 
+Image Optimization:
+	https://images.guide/
+
 
 
 

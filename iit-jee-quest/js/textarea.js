@@ -89,11 +89,6 @@ window.addEventListener('load', function () {
 	document.querySelector('#buttonPostYourAnswer').addEventListener('click', function () {
 		var previewer         = document.querySelector('#textAreaPreviewer');
 		var textArea          = document.querySelector('#txtAreaId');
-		// var divAnswersWrapper = document.querySelector('#divIdAnswersWrapper');
-		// var divNewAnswerPostedElement       = createHtmlElement({ "eType": "div", "style":  { background:"#FFFFEE" }});
-		// divNewAnswerPostedElement.innerHTML = previewer.innerHTML;
-
-		// appendToElement(divAnswersWrapper, divNewAnswerPostedElement);
 
 		// add new DIV answer
 		addNewAnswerElement(previewer.innerHTML);

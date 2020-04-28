@@ -10,7 +10,7 @@ var divAnswersWrapper  = null;
 var divTextAreaWrapper = null;
 
 /**
- * Root Object: documnet
+ * Root Object: document
  * Root Element: <html></html>
  * Branch Elements: <head></head> <body></body> etc.,
  * All elements have the appendChild method
@@ -41,7 +41,8 @@ createHtmlElement = function(obj) {
 					else if(prop === 'id')		element.setAttribute('id', obj[prop]);
 					else if(prop === 'style') setElementStyle(element, obj[prop]);
 					else if(prop === 'textValue') this.appendToElement(element, document.createTextNode(obj[prop]));
-					else element[prop] = obj[prop];
+					else element.setAttribute(prop, obj[prop]);
+					//else element[prop] = obj[prop];
 				}
 			}
 		}		
@@ -169,11 +170,16 @@ populateQuestionAnswers = function(questionCounter) {
 	}
 };
 
+
+// var questionWrapper         = document.querySelector('#divIdQuestionWrapper');
+// var answersWrapper         =  document.querySelector('#divIdAnswersWrapper');
+// var textAreaWrapper         =  document.querySelector('#divIdTextAreaWrapper');
+
 /**
  * MAIN STARTUP FUNCTION
  */
 main = function() {
-	// WRAPPERS
+	// MAIN WRAPPERS
 	// Question Wrappers
 	var divQuestionWrapper = this.createHtmlElement({ "eType": "div", "class": "divClassQuestionWrapper","id": "divIdQuestionWrapper","style": { "background" :"CRIMSON", "padding": "5px" }});
 	this.appendToElement(divRootContainerElement, divQuestionWrapper);
@@ -189,10 +195,37 @@ main = function() {
 	divQuestionElement = this.createHtmlElement({ "eType": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
 	this.appendToElement(divQuestionWrapper, divQuestionElement);
 
-	// ANSWERS
+
+	// <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10"></input>
+	///////////////////////////////////////// Ask Question ///////////////////////////////////////////////////////////
+	// input box for posting a QUESTION TITLE
+	var divInputBoxAskQuestionTitleWrapper = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaContentWrapper","style": { background:"blue", "display" : "block" }});
+
+	// Label - Title
+	var breakLabel = this.createHtmlElement({ "eType": "div"}); // Break
+	var questionTitleLabel = this.createHtmlElement({ "eType": "label", "id": "questionTitleLable", "textValue": "Title"});
+	breakLabel.appendChild(questionTitleLabel);
+	questionTitleLabel = null; // clear the reference and notify the GC
+
+	// input box - Title
+	var breakInputBox = this.createHtmlElement({ "eType": "div"}); // Break
+	var inputBoxQuestionTitle = this.createHtmlElement({ "eType": "input", "type": "text", "id": "inputBoxQuestionTitle", "minlength" :"4", "maxlength":"8", "size":"10"});
+	breakInputBox.appendChild(inputBoxQuestionTitle);
+	inputBoxQuestionTitle = null; // clear the reference and notify the GC
+
+	// Append label and textbox
+	divInputBoxAskQuestionTitleWrapper.appendChild(breakLabel);
+	divInputBoxAskQuestionTitleWrapper.appendChild(breakInputBox);
+	breakLabel = null; // clear the reference and notify the GC
+	breakInputBox = null; // clear the reference and notify the GC
+
+	this.appendToElement(divQuestionWrapper, divInputBoxAskQuestionTitleWrapper);
+	divInputBoxAskQuestionTitleWrapper = null; // clear the reference and notify the GC
+
+	/////////////////////////////////////  ANSWERS //////////////////////////////////////////////////////////
 	this.populateQuestionAnswers(questionCounter);
 
-	// TEXT AREA
+	////////////////////////////////////// TEXT AREA ///////////////////////////////////////////////////////////////
 	var divTxtAreaCtrlPanelWrap = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaControlPanelWrapper"});
 	// Control panel of text area
 	var ulTxtAreaButton = this.createHtmlElement({ "eType": "ul", "class": "ul-txtAreaButton"});
@@ -216,10 +249,13 @@ main = function() {
 	dropzone = null; // clear the reference and notify the GC
 	info = null; 	 // clear the reference and notify the GC
 
-	// message area of text area wrapper
+
+
+	// message area for posting an ANSWER
 	var divTxtAreaContentWrapper = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaContentWrapper"});
 	var textarea = this.createHtmlElement({ "eType": "textarea", "id": "txtAreaId"});
 	divTxtAreaContentWrapper.appendChild(textarea);
+	textarea = null; // clear the reference and notify the GC
 	this.appendToElement(divTextAreaWrapper, divTxtAreaContentWrapper);
 	divTxtAreaContentWrapper = null; // clear the reference and notify the GC
 
