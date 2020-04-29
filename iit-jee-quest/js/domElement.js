@@ -3,11 +3,22 @@ window.addEventListener('load', function () {
 /**
  * Global variables inside the file
  */
-var divQuestionElement;
+var divQuestionTitleElement = null;
+var divQuestionElement = null;
 var divAnswerElements = [];
 var questionCounter = 0;
 var divAnswersWrapper  = null;
 var divTextAreaWrapper = null;
+var nQuestions = 0;
+
+/**
+ * Update the db question count
+ */
+
+updateDbQuestionCount = function() {
+	// Database
+	nQuestions = Object.keys(this.questions).length; // No. of entries in an object
+};
 
 /**
  * Root Object: document
@@ -142,7 +153,10 @@ addNewAnswerElement = function(ans)
  */
 populateQuestionAnswers = function(questionCounter) {
 	var removeNode = null;
-	// Question
+
+	// Question - Title
+	divQuestionTitleElement.childNodes[0].nodeValue = this.questions[questionCounter].Title;
+	// Question - Content
 	divQuestionElement.childNodes[0].nodeValue = this.questions[questionCounter].Question;
 	// Answers
 	var nAnswers = Object.keys(this.questions[questionCounter].Answers).length;
@@ -191,7 +205,11 @@ main = function() {
 	this.appendToElement(divRootContainerElement, divTextAreaWrapper);
 
 	// POPULATE THE CONTENTS INSIDE THE WRAPPERS
-	// QESTIONS
+	this.updateDbQuestionCount();
+	// QUESTIONS - Title
+	divQuestionTitleElement = this.createHtmlElement({ "eType": "div", "id": "divQuestionTitle", "textValue": this.questions[questionCounter].Title, "style":  { background:"orange" }});
+	this.appendToElement(divQuestionWrapper, divQuestionTitleElement);
+	// QUESTIONS - Content
 	divQuestionElement = this.createHtmlElement({ "eType": "div", "id": "divQuestion", "textValue": this.questions[questionCounter].Question, "style":  { background:"#a5d6a7" }});
 	this.appendToElement(divQuestionWrapper, divQuestionElement);
 
@@ -199,7 +217,7 @@ main = function() {
 	// <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="10"></input>
 	///////////////////////////////////////// Ask Question ///////////////////////////////////////////////////////////
 	// input box for posting a QUESTION TITLE
-	var divInputBoxAskQuestionTitleWrapper = this.createHtmlElement({ "eType": "div", "class": "textAreaCommon textAreaContentWrapper","style": { background:"blue", "display" : "block" }});
+	var divInputBoxAskQuestionTitleWrapper = this.createHtmlElement({ "eType": "div", "id": "divIdAskQuestionWrapper", "style": { background:"blue", "display" : "none" }});
 
 	// Label - Title
 	var breakLabel = this.createHtmlElement({ "eType": "div"}); // Break
@@ -209,7 +227,7 @@ main = function() {
 
 	// input box - Title
 	var breakInputBox = this.createHtmlElement({ "eType": "div"}); // Break
-	var inputBoxQuestionTitle = this.createHtmlElement({ "eType": "input", "type": "text", "id": "inputBoxQuestionTitle", "minlength" :"4", "maxlength":"8", "size":"10"});
+	var inputBoxQuestionTitle = this.createHtmlElement({ "eType": "input", "type": "text", "id": "inputBoxQuestionTitle", "minlength" :"10", "maxlength":"150", "size":"160"});
 	breakInputBox.appendChild(inputBoxQuestionTitle);
 	inputBoxQuestionTitle = null; // clear the reference and notify the GC
 
@@ -270,10 +288,6 @@ main = function() {
 	buttonPostYourAnswer = null; // clear the reference and notify the GC
 
 }.bind(this)();
-
-
-// Database
-var nQuestions = Object.keys(this.questions).length; // No. of entries in an object
 
 
 /**

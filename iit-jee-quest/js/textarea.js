@@ -108,6 +108,87 @@ window.addEventListener('load', function () {
 		questions[questionCounter].Answers[nAnswers] = postedAnswer;
 	};
 
+	updateDbNewPostedQuestion = function(postedTitle, postedQuestion) {
+		// Question Count
+		var nQuestions = Object.keys(this.questions).length;
+
+		// Update the db answer
+		questions[nQuestions] = {};
+		questions[nQuestions].Answers = {};
+		questions[nQuestions].Title = postedTitle;
+		questions[nQuestions].Question = postedQuestion;
+
+		// update database entry count
+		updateDbQuestionCount();
+
+		// show the question 
+		populateQuestionAnswers(nQuestions);
+	};
+
+	setCurrentQuestionElementsVisibleState = function(status) {
+		var questionTitle = null;
+		var existingQuestion = null;
+		var answersWrapper = null;
+
+		if(status === true) {
+			questionTitle = document.querySelector('#divQuestionTitle');
+			questionTitle.style.display = "block"; // Show question element 
+
+			existingQuestion         = document.querySelector('#divQuestion');
+			existingQuestion.style.display = "block"; // Show question element
+
+			answersWrapper         = document.querySelector('#divIdAnswersWrapper');
+			answersWrapper.style.display = "block"; // Show answers wrapper element		
+		}
+		else
+		{
+			questionTitle = document.querySelector('#divQuestionTitle');
+			questionTitle.style.display = "none"; // Hide question element 
+
+			existingQuestion         = document.querySelector('#divQuestion');
+			existingQuestion.style.display = "none"; // Hide question element
+
+			answersWrapper         = document.querySelector('#divIdAnswersWrapper');
+			answersWrapper.style.display = "none"; // Hide answers wrapper element		
+		}
+	};	
+
+
+
+	// Ask a question
+	document.querySelector('#btnIdAskQuestion').addEventListener('click', function () {
+
+		setCurrentQuestionElementsVisibleState(false); // hide the current question elements
+
+		var newQuestion         = document.querySelector('#divIdAskQuestionWrapper');
+		newQuestion.style.display = "block"; // show new question wrapper element
+	}.bind(this), false);
+
+	// Post your question
+	document.querySelector('#btnIdPostQuestion').addEventListener('click', function () {
+		
+		var questTitle        = document.querySelector('#inputBoxQuestionTitle');
+		var textArea          = document.querySelector('#txtAreaId');
+		var previewer         = document.querySelector('#textAreaPreviewer');
+
+
+		// Update the db question
+		updateDbNewPostedQuestion(questTitle.value, previewer.innerHTML);
+
+		setCurrentQuestionElementsVisibleState(true); // show the question elements
+
+		var newQuestion         = document.querySelector('#divIdAskQuestionWrapper');
+		newQuestion.style.display = "none"; // hide the new question wrapper element
+
+		// Clear
+		questTitle.value = "";
+		textArea.value = "";
+		previewer.innerHTML = "";
+	}.bind(this), false);
+
+
+	
+
 
 
 }); // window.addEventListener('load', function() {
