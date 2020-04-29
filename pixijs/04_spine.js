@@ -1,3 +1,8 @@
+// NOTE: File access(images) are allowed through web server so run local HTTP server.
+// http-server -c-1
+// If HTTP server is NOT installed then install by
+// npm install -g http-server 
+
 window.addEventListener('load', function () {
 
 	// Global variables
