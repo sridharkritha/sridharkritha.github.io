@@ -35,9 +35,9 @@ window.addEventListener('load', function () {
 		// Pixi renders the image on the GPU with WebGL, the image needs to be in a format that the GPU can process. 
 		// A WebGL-ready image is called a texture. 
 		PIXI.loader
-		//.add([ "./images/cat.png"])
-			.add(["./images/cat.png", "./images/texturepacked/treasureHunter.json"])
-			// .add(["./images/texturepacked/treasureHunter.json"])
+		//.add([ "./assets/cat.png"])
+			.add(["./assets/cat.png", "./assets/texturepacked/treasureHunter.json"])
+			// .add(["./assets/texturepacked/treasureHunter.json"])
 			.load(setup); // call the `setup` function when loading and conversion has completed
 
 
@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
 	function setup() {
 		// Create the cat sprite from texture format
 		//  it’s always best to make a sprite from a texture
-		let cat = new PIXI.Sprite(PIXI.loader.resources["./images/cat.png"].texture); // texture NOT textures
+		let cat = new PIXI.Sprite(PIXI.loader.resources["./assets/cat.png"].texture); // texture NOT textures
 		
 
 		//Change the sprite's position
@@ -70,7 +70,7 @@ window.addEventListener('load', function () {
 		// "stage" object is the root container for all the visible things in your scene. 
 		app.stage.addChild(cat); // Add the cat to the stage.
 
-		var frameFromTextureAtlas = new PIXI.Sprite(PIXI.loader.resources["./images/texturepacked/treasureHunter.json"].textures["explorer.png"]); // textures NOT texture
+		var frameFromTextureAtlas = new PIXI.Sprite(PIXI.loader.resources["./assets/texturepacked/treasureHunter.json"].textures["explorer.png"]); // textures NOT texture
 		app.stage.addChild(frameFromTextureAtlas); // Add the image to the stage.
 
 
