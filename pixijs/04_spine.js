@@ -2,6 +2,8 @@
 // http-server -c-1
 // If HTTP server is NOT installed then install by
 // npm install -g http-server 
+// run the example
+// http://127.0.0.1:8080/00_index.html
 
 window.addEventListener('load', function () {
 
