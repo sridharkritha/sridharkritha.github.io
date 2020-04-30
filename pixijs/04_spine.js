@@ -5,6 +5,9 @@
 // run the example
 // http://127.0.0.1:8080/00_index.html
 
+// ref: https://pixijs.io/examples/#/plugin-spine/spineboy.js
+// https://github.com/pixijs/examples/blob/gh-pages/examples/js/plugin-spine/spineboy.js
+
 window.addEventListener('load', function () {
 
 	// Global variables
