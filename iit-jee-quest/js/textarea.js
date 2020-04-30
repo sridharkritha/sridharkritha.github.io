@@ -30,15 +30,13 @@ var autoExpand = function (field) {
 // NOTE: All 'HTML elements(<h1>, <img>, <div>)' and 'DOM objects (window, xmlHttpRequest)' can listen/react to 'HTML DOM events'. You can attach
 // 'addEventListener' to any HTML elements and DOM object for listening to HTML DOM events. 
 
-window.addEventListener('load', function () {
-	// Auto expand 
-	// https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
-	document.addEventListener('input', function (event) {
-		if (event.target.tagName.toLowerCase() !== 'textarea') return;
-		autoExpand(event.target);
+	window.addEventListener('load', function () {
+		// Auto expand 
+		// https://gomakethings.com/automatically-expand-a-textarea-as-the-user-types-using-vanilla-javascript/
+		document.addEventListener('input', function (event) {
+			if (event.target.tagName.toLowerCase() !== 'textarea') return;
+			autoExpand(event.target);
 	}, false);
-
-
 
 	// Ref: https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement
 	// selectStart: http://help.dottoro.com/ljtqbjui.php
@@ -84,7 +82,6 @@ window.addEventListener('load', function () {
 		// https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
 	}.bind(this), false);
 
-
 	// Post your answers
 	document.querySelector('#buttonPostYourAnswer').addEventListener('click', function () {
 		var previewer         = document.querySelector('#textAreaPreviewer');
@@ -126,42 +123,41 @@ window.addEventListener('load', function () {
 	};
 
 	setCurrentQuestionElementsVisibleState = function(status) {
-		var questionTitle = null;
-		var existingQuestion = null;
-		var answersWrapper = null;
+		var index = 0;
+		var selectors = 0;
+		var answerSelectors   = ['#divQuestionTitle', '#divQuestion', '#divIdAnswersWrapper','#buttonPostYourAnswer',
+								'#btnIdAskQuestion'];
+		var questionSelectors = ['#btnIdPostQuestion','#btnIdCancelQuestion','#divIdAskQuestionWrapper'];
 
 		if(status === true) {
-			questionTitle = document.querySelector('#divQuestionTitle');
-			questionTitle.style.display = "block"; // Show question element 
+			for(index = 0, selectors = answerSelectors.length; index < selectors; ++index) {
+				document.querySelector(answerSelectors[index]).style.display = "block"; // Show the element
+			}
 
-			existingQuestion         = document.querySelector('#divQuestion');
-			existingQuestion.style.display = "block"; // Show question element
-
-			answersWrapper         = document.querySelector('#divIdAnswersWrapper');
-			answersWrapper.style.display = "block"; // Show answers wrapper element		
+			for(index = 0, selectors = questionSelectors.length; index < selectors; ++index) {
+				document.querySelector(questionSelectors[index]).style.display = "none"; // Hide the element
+			}
 		}
 		else
 		{
-			questionTitle = document.querySelector('#divQuestionTitle');
-			questionTitle.style.display = "none"; // Hide question element 
+			for(index = 0, selectors = answerSelectors.length; index < selectors; ++index) {
+				document.querySelector(answerSelectors[index]).style.display = "none"; // Hide the element
+			}
 
-			existingQuestion         = document.querySelector('#divQuestion');
-			existingQuestion.style.display = "none"; // Hide question element
-
-			answersWrapper         = document.querySelector('#divIdAnswersWrapper');
-			answersWrapper.style.display = "none"; // Hide answers wrapper element		
+			for(index = 0, selectors = questionSelectors.length; index < selectors; ++index) {
+				document.querySelector(questionSelectors[index]).style.display = "block"; // Show the element
+			}
 		}
-	};	
+	};
 
-
+	// Cancel the ask a question form
+	document.querySelector('#btnIdCancelQuestion').addEventListener('click', function () {
+		setCurrentQuestionElementsVisibleState(true); // show the question elements
+	}.bind(this), false);
 
 	// Ask a question
 	document.querySelector('#btnIdAskQuestion').addEventListener('click', function () {
-
 		setCurrentQuestionElementsVisibleState(false); // hide the current question elements
-
-		var newQuestion         = document.querySelector('#divIdAskQuestionWrapper');
-		newQuestion.style.display = "block"; // show new question wrapper element
 	}.bind(this), false);
 
 	// Post your question
@@ -171,24 +167,17 @@ window.addEventListener('load', function () {
 		var textArea          = document.querySelector('#txtAreaId');
 		var previewer         = document.querySelector('#textAreaPreviewer');
 
-
-		// Update the db question
-		updateDbNewPostedQuestion(questTitle.value, previewer.innerHTML);
-
 		setCurrentQuestionElementsVisibleState(true); // show the question elements
 
-		var newQuestion         = document.querySelector('#divIdAskQuestionWrapper');
-		newQuestion.style.display = "none"; // hide the new question wrapper element
+		if(questTitle.value != "" && textArea.value != "")
+		{
+			// Update the db question
+			updateDbNewPostedQuestion(questTitle.value, previewer.innerHTML);
+		}
 
 		// Clear
 		questTitle.value = "";
 		textArea.value = "";
 		previewer.innerHTML = "";
 	}.bind(this), false);
-
-
-	
-
-
-
 }); // window.addEventListener('load', function() {
