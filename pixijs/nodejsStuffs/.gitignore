@@ -1,0 +1,2 @@
+# Don't push anything from the 'node_modules' folder
+**/node_modules
