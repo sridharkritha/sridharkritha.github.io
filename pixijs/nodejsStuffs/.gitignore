@@ -1,2 +1,5 @@
-# Don't push anything from the 'node_modules' folder
+# Don't push anything from the 'node_modules' folder. Do the recursively do the same for inner directories by '**/'
 **/node_modules
+
+# Except this file
+!.gitignore

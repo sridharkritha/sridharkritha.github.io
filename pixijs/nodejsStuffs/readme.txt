@@ -41,10 +41,13 @@
 8. Ignore "node_modules" from git push
   Add below lines in a file '.gitignore' (create at root folder if it is not exist)
 
-#################################################################
-  # Don't push anything from the 'node_modules' folder
-  **/node_modules
-##################################################################
+####################################################################################################################
+# Don't push anything from the 'node_modules' folder. Do the recursively do the same for inner directories by '**/'
+**/node_modules
+
+# Except this file
+!.gitignore
+####################################################################################################################
 
 
 
@@ -74,6 +77,26 @@ How to debug the nodejs based server.js using visual code:
 3. Debugger will starts automatically. So set the break points wherever you likes.
 // Ref: https://medium.com/the-node-js-collection/debug-your-node-js-app-in-60-seconds-9ee942a453f0
 // https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-code-in-visual-studio-code
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Url Tips:
+How to make a webpage not to use any cache ?
+Include "?" or "&" as appropriate with some "random number" in the url link
+
+ex: 
+1. http://foo.com/bar.html                => http://foo.com/bar.html?12345
+2. http://foo.com/bar.html?foobar=baz     => http://foo.com/bar.html?foobar=baz&12345
+
+As the local cache is indexed by URL, this causes every request to be unique, thereby bypassing the cache.
+
+You can automatically adjust URLs using the following code:
+/*************************************************************************************/
+var oReq = new XMLHttpRequest();
+oReq.open("GET", url + ((/\?/).test(url) ? "&" : "?") + (new Date()).getTime());
+oReq.send(null);
+/*************************************************************************************/
+
+
 
 
 
