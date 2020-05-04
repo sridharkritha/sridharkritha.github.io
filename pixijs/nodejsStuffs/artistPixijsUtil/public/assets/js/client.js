@@ -1,3 +1,6 @@
+
+
+
 /**
  * Upload the photos using ajax request.
  *
@@ -106,6 +109,7 @@ $('#upload-photos').on('submit', function (event) {
 
 // On form submit, handle the file uploads.
 $('#idRenderPlz').on('click', function (event) {
+
 	event.preventDefault();
 
 	init(spineJson);

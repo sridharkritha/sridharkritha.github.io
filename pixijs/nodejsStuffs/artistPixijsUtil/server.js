@@ -16,6 +16,18 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
+
+
+
+
+/**
+ * Index route
+ */
+app.get('/delete_photos', function (req, res) {
+	
+	deleteOldFiles();
+});
+
 /**
  * Index route
  */
@@ -39,13 +51,15 @@ app.get('/', function (req, res) {
 					days = Math.round((Date.now() - createdAt) / (1000 * 60 * 60 * 24));
 
 				if (days > 1) {
-					fs.unlink(filesPath + file);
+					fs.unlink(filesPath + file); // delete 1 day old files
 				}
 			});
 		});
 	});
 
 	res.sendFile(path.join(__dirname, 'views/index.html'));
+
+	deleteOldFiles();
 });
 
 /**
@@ -120,3 +134,30 @@ app.post('/upload_photos', function (req, res) {
 app.listen(app.get('port'), function () {
 	console.log('Express started at port ' + app.get('port'));
 });
+
+
+
+// Delete the files inside the upload folder
+function deleteOldFiles() {
+	var files = fs.readdirSync('./uploads');
+	for( var i = 0, n = files.length; i < n; ++i) {
+		var fullPath = './uploads/' + files[i];
+		if (fs.statSync(fullPath).isDirectory()){
+			// fs.rmdir(fullPath, function (err) {
+			// 	if (err) throw err;
+			// 		// if no error, folder has been deleted successfully
+			// 		console.log('Folder deleted!');
+			// });
+		} else {
+			// delete file named 'sample.txt'
+			fs.unlink(fullPath, function (err) {
+				if (err) throw err;
+				// if no error, file has been deleted successfully
+				console.log('File deleted!');
+			});
+		}
+	}
+}
+
+
+

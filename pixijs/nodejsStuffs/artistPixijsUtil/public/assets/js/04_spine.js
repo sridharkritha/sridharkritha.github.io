@@ -67,6 +67,9 @@
 		 }
 
 		 app.stage.addChild(spineBoy);
+
+
+		 requestForDeletingOldFiles();
 		
 	
 
@@ -96,7 +99,26 @@
 
 // }, false);
 
-
+/**
+ * Upload the photos using ajax request.
+ *
+ * @param formData
+ */
+function requestForDeletingOldFiles() {
+	$.ajax({
+		url: '/delete_photos',
+		method: 'get',
+		data: null,
+		processData: false,
+		contentType: false,
+		xhr: function () {
+			var xhr = new XMLHttpRequest();
+			return xhr;
+		}
+	}).done(handleSuccess).fail(function (xhr, status) {
+		alert(status);
+	});
+}
 
 
 
