@@ -15,26 +15,63 @@
 
 	// init();
 
+	var spinRef = null;
+
 	function init(spineJsonUrl) {
 		 app = new PIXI.Application();
 		document.body.appendChild(app.view);
 
+		var fileNameFromPath = spineJsonUrl.replace(/^.*[\\\/]/, ''); // extract the file name from path
+		var arr = fileNameFromPath.split(".");
+		var fileNameWithoutExt = arr[0];
+		var extension = arr[1];
+
+		if(extension === 'json') {
+			spinRef = fileNameWithoutExt;
+		}
+
+
 		// load spine data
-		app.loader
+		PIXI.loaders.shared
+		//app.loader
 			// .add('spineboy', './assets/spineAnimation/spineboy/spineboy.json')
-			.add('spineboy', spineJsonUrl)
+			.add(fileNameWithoutExt, spineJsonUrl)
 			.load(onAssetsLoaded);
 	}	
 	
 	function onAssetsLoaded(loader, res) {
 		// create a spine boy
-		const spineBoy = new PIXI.spine.Spine(res.spineboy.spineData);
-	
+		//  const spineBoy = new PIXI.spine.Spine(res.spineboy.spineData);
+		const spineBoy = new PIXI.spine.Spine(res[spinRef].spineData);
+
+		 var listAnimations = [];
+		 var nAnimations = 0;
+		 var animationName = null;
+		 for(var i = 0, nAnimations = spineBoy.spineData.animations.length; i < nAnimations; ++i) {
+			 console.log(spineBoy.spineData.animations[i].name);
+			 animationName = spineBoy.spineData.animations[i].name;
+		 }
+
 		// set the position
-		spineBoy.x = app.screen.width / 2;
-		spineBoy.y = app.screen.height;
+		// spineBoy.x = app.screen.width / 2;
+		// spineBoy.y = app.screen.height;
+
+		spineBoy.x = 0;
+		spineBoy.y = 0;
 	
-		spineBoy.scale.set(1.5);
+		// spineBoy.scale.set(1.5);
+
+		 if(animationName) {
+			// play animation forever, little boy!
+			spineBoy.state.setAnimation(0, animationName, true);
+		 }
+
+		 app.stage.addChild(spineBoy);
+		
+	
+
+
+		/*
 	
 		// set up the mixes!
 		spineBoy.stateData.setMix('walk', 'jump', 0.2);
@@ -49,6 +86,12 @@
 			spineBoy.state.setAnimation(0, 'jump', false);
 			spineBoy.state.addAnimation(0, 'walk', true, 0);
 		});
+		*/
+
+
+		// setTimeout(function() {
+		// 	spineBoy.state.clearTrack(0); // stop the spin animation
+		// }.bind(this), 3000);
 	}
 
 // }, false);
