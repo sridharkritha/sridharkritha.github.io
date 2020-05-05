@@ -47,7 +47,20 @@
 			// .add('spineboy', './assets/spineAnimation/spineboy/spineboy.json')
 			.add(fileNameWithoutExt, spineJsonUrl)
 			.load(onAssetsLoaded);
-	}	
+	}
+
+	function animationButton(spineBoy, animationName) {
+		var button = document.createElement('button');
+		button.innerHTML = "  " + animationName + "  "; // 'click me';
+		button.onclick = function(){
+			//alert('here be dragons');
+			//spineBoy.state.setAnimation(0, 'jump', false);
+			//spineBoy.state.addAnimation(0, 'walk', true, 0);
+			spineBoy.state.addAnimation(0, animationName, true, 0);
+			return false;
+		};
+		document.body.appendChild(button);
+	}
 	
 	function onAssetsLoaded(loader, res) {
 		// create a spine boy
@@ -60,7 +73,13 @@
 		 for(var i = 0, nAnimations = spineBoy.spineData.animations.length; i < nAnimations; ++i) {
 			 console.log(spineBoy.spineData.animations[i].name);
 			 animationName = spineBoy.spineData.animations[i].name;
+
+			 
+			if(nAnimations > 1) {
+				animationButton(spineBoy, animationName);
+			}
 		 }
+
 
 		// set the position
 		// spineBoy.x = app.screen.width / 2;
@@ -71,6 +90,7 @@
 	
 		// spineBoy.scale.set(1.5);
 
+
 		 if(animationName) {
 			// play animation forever, little boy!
 			spineBoy.state.setAnimation(0, animationName, true);
@@ -79,13 +99,13 @@
 		 app.stage.addChild(spineBoy);
 
 
-		 requestForDeletingOldFiles();
+		 // requestForDeletingOldFiles();
 		
 	
 
 
-		/*
-	
+		
+	/*
 		// set up the mixes!
 		spineBoy.stateData.setMix('walk', 'jump', 0.2);
 		spineBoy.stateData.setMix('jump', 'walk', 0.4);
@@ -95,11 +115,13 @@
 	
 		app.stage.addChild(spineBoy);
 	
+		app.stage.interactive = true;
 		app.stage.on('pointerdown', () => {
 			spineBoy.state.setAnimation(0, 'jump', false);
 			spineBoy.state.addAnimation(0, 'walk', true, 0);
 		});
 		*/
+
 
 
 		// setTimeout(function() {

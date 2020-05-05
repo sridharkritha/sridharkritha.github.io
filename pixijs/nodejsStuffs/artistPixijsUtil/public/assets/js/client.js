@@ -52,7 +52,7 @@ function handleSuccess(data) {
 			{
 				html += '<div class="col-xs-6 col-md-4"><a href="#" class="thumbnail"><img src="' + img.publicPath + '" alt="' + img.filename + '"></a></div>';
 			} else {
-				html += '<div class="col-xs-6 col-md-2"><a href="#" class="thumbnail">' + img.filename + '</a></div>';
+				html += '<div class="col-xs-6 col-md-4"><a href="#" class="thumbnail">' + img.filename + '</a></div>';
 			}
 
 			if((/\.(json)$/i).test(img.publicPath)) // (/\.(gif|jpe?g|tiff|png|webp|bmp)$/i).test(filename)

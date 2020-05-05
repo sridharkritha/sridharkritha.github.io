@@ -38,7 +38,8 @@
 				<form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="photos-input">File input (.json, .atlas, .png)</label>
-						<input id="photos-input" type="file" name="photos[]" multiple="multiple" >
+						<!-- File Selector -->
+						<input id="photos-input" type="file" name="photos[]" multiple="multiple" >					
 						<p class="help-block">Pls upload all the spine animation related files.</p>
 					</div>
 					<!-- <input type="hidden" name="csrf_token" value="just_a_text_field" />
@@ -55,14 +56,26 @@
 						</div>
 					</div>
 				</div>
-				<!-- Render PlzProgress Bar -->
-				<input class="btn btn-default" id = "idRenderPlz" type="submit" name="Photo Uploads" value="Render Plz" disabled />
+
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Photos Album Container -->
+						<div id="album" class="row"></div>
+					</div>
+				</div>
+
+
+				<div class="row">
+				<div class="col text-center">
+					<!-- Render PlzProgress Bar -->
+					<input class="btn btn-default" id = "idRenderPlz" type="submit" name="Photo Uploads" value="Render Plz" disabled />
+				</div>
+				</div>
 			</div>
 			<div class="col-md-4"></div>
 		</div>
-		<!-- Photos Album Container -->
-		<div id="album" class="row"></div>
-		<br/><br/>
+
+		<br/>
 		<!-- Copyright -->
 		<div class="row"><div class="col-md-12"><p style="text-align:center;">******** RESULT(S) ********</p></div></div>
 	</div>
