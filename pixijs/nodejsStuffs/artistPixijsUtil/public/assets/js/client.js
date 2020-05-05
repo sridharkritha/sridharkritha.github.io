@@ -1,6 +1,4 @@
 
-
-
 /**
  * Upload the photos using ajax request.
  *

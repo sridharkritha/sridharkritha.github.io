@@ -21,9 +21,10 @@
 		 app = new PIXI.Application();
 		document.body.appendChild(app.view);
 
-		var fileNameFromPath = spineJsonUrl.replace(/^.*[\\\/]/, ''); // extract the file name from path
+		var fileNameFromPath = spineJsonUrl.replace(/^.*[\\\/]/, ''); // extract the last file name part from the full path
 		var arr = fileNameFromPath.split(".");
-		var fileNameWithoutExt = arr[0];
+		var fileNameWithoutExt = arr[0] + '-' + Date.now(); // file name without extension
+		// fileNameWithoutExt = spineJsonUrl.replace(/[\.\/]/g, '_'); // replace '/' [OR] '.' by '-' 
 		var extension = arr[1];
 
 		if(extension === 'json') {

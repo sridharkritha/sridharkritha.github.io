@@ -17,7 +17,7 @@ app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
 
-
+var sessionDirectoryName = null;
 
 
 /**
@@ -32,8 +32,9 @@ app.get('/delete_photos', function (req, res) {
  * Index route
  */
 app.get('/', function (req, res) {
+	/*
 	// Don't bother about this :)
-	var filesPath = path.join(__dirname, 'uploads/');
+	var filesPath = path.join(__dirname, sessionDirectoryName);
 	fs.readdir(filesPath, function (err, files) {
 		if (err) {
 			console.log(err);
@@ -56,10 +57,14 @@ app.get('/', function (req, res) {
 			});
 		});
 	});
-
+*/
 	res.sendFile(path.join(__dirname, 'views/index.html'));
 
-	deleteOldFiles();
+	//deleteOldFiles();
+
+	// create a new directory for each new session for refresh/users
+	sessionDirectoryName = 'uploads/'+ Date.now() + '/';
+	fs.mkdirSync(sessionDirectoryName);
 });
 
 /**
@@ -92,19 +97,21 @@ app.post('/upload_photos', function (req, res) {
 		// Check the file type, must be either png,jpg or jpeg
 		// if (type !== null && (type.ext === 'png' || type.ext === 'jpg' || type.ext === 'jpeg' || type.ext === 'json' || type.ext === 'atlas')) {
 		if(1)	{
+
+
 		// Assign new file name
 			// filename = Date.now() + '-' + file.name;
 			filename = file.name;
 
 			// Move the file with the new file name
-			fs.rename(file.path, path.join(__dirname, 'uploads/' + filename));
+			fs.rename(file.path, path.join(__dirname, sessionDirectoryName + filename));
 
 			// Add to the list of photos
 			photos.push({
 				status: true,
 				filename: filename,
 				// type:  type.ext,
-				publicPath: 'uploads/' + filename
+				publicPath: sessionDirectoryName + filename    // 'uploads/'
 			});
 		} else {
 			photos.push({
