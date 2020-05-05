@@ -59,6 +59,7 @@ function handleSuccess(data) {
 			{
 				spineJson = img.publicPath;
 				// init(img.publicPath);
+				$("#idRenderPlz").removeAttr("disabled"); // enable the 'Render Plz' button
 			}
 		}
 
@@ -70,6 +71,7 @@ function handleSuccess(data) {
 
 // Set the progress bar to 0 when a file(s) is selected.
 $('#photos-input').on('change', function () {
+	$("#idRenderPlz").attr("disabled", "disabled"); // disable the 'Render Plz' button
 	$('.progress-bar').width('0%');
 });
 

@@ -37,16 +37,14 @@
 				<!-- Photos upload Form -->
 				<form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
 					<div class="form-group">
-						<label for="photos-input">File input</label>
+						<label for="photos-input">File input (.json, .atlas, .png)</label>
 						<input id="photos-input" type="file" name="photos[]" multiple="multiple" >
-						<p class="help-block">You can upload up to 3 files.</p>
+						<p class="help-block">Pls upload all the spine animation related files.</p>
 					</div>
 					<!-- <input type="hidden" name="csrf_token" value="just_a_text_field" />
 					<input class="btn btn-default" type="submit" name="Photo Uploads" value="Upload Photos" /> -->
 				</form>
-				<br/>
-				<!-- <button type="button" id="idRenderBtn">RenderIt!</button> -->
-				<input class="btn btn-default" id = "idRenderPlz" type="submit" name="Photo Uploads" value="Render Plz" />
+
 				<!-- Progress Bar -->
 				<div class="row">
 					<div class="col-md-12">
@@ -57,6 +55,8 @@
 						</div>
 					</div>
 				</div>
+				<!-- Render PlzProgress Bar -->
+				<input class="btn btn-default" id = "idRenderPlz" type="submit" name="Photo Uploads" value="Render Plz" disabled />
 			</div>
 			<div class="col-md-4"></div>
 		</div>
@@ -64,7 +64,7 @@
 		<div id="album" class="row"></div>
 		<br/><br/>
 		<!-- Copyright -->
-		<div class="row"><div class="col-md-12"><p style="text-align:center;">&copy; Codedodle 2016</p></div></div>
+		<div class="row"><div class="col-md-12"><p style="text-align:center;">******** RESULT(S) ********</p></div></div>
 	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

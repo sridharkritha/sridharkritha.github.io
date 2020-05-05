@@ -18,7 +18,16 @@
 	var spinRef = null;
 
 	function init(spineJsonUrl) {
-		 app = new PIXI.Application();
+		 app = new PIXI.Application( {
+			// produces a black 256 pixel by 256 pixel canvas element
+											width: window.innerWidth,         // default: 800   
+											height: 512 // window.innerHeight / 2,        // default: 600
+											// antialias: true,    // default: false
+											// transparent: false, // default: false / show canvas
+											// resolution: 1,      // default: 1
+											// forceCanvas: false	// default WebGL
+										 }
+		 );
 		document.body.appendChild(app.view);
 
 		var fileNameFromPath = spineJsonUrl.replace(/^.*[\\\/]/, ''); // extract the last file name part from the full path
@@ -57,8 +66,8 @@
 		// spineBoy.x = app.screen.width / 2;
 		// spineBoy.y = app.screen.height;
 
-		spineBoy.x = 0;
-		spineBoy.y = 0;
+		spineBoy.x = app.screen.width / 4 - 40;  //500;
+		spineBoy.y = 0 ; //500;
 	
 		// spineBoy.scale.set(1.5);
 
