@@ -37,6 +37,18 @@
    npm uninstall express --save-optional  // save the package under "optionalDependencies"
 
 
+5. package.json:
+
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.14.0"
+  },
+
+  "^1.19.0" -  ^ caret symbol gives the approval that you can install if there is higher available
+
+  package-lock.json: It stores an exact, versioned dependency tree rather than using starred versioning like package.json itself (e.g. "^1.19.0"). 
+
+
 
 8. Ignore "node_modules" from git push
   Add below lines in a file '.gitignore' (create at root folder if it is not exist)
@@ -48,6 +60,10 @@
 # Except this file
 !.gitignore
 ####################################################################################################################
+
+
+nvm - node version manager
+npm - node package manager
 
 
 
