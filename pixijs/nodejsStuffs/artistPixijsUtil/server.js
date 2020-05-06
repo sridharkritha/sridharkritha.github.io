@@ -24,7 +24,7 @@ var sessionDirectoryName = null;
  * Index route
  */
 app.get('/delete_photos', function (req, res) {
-	
+
 	deleteOldFiles();
 });
 

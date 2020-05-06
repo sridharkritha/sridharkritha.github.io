@@ -42,8 +42,8 @@
 
 
 		// load spine data
-		PIXI.loaders.shared
-		//app.loader
+		//PIXI.loaders.shared
+		app.loader
 			// .add('spineboy', './assets/spineAnimation/spineboy/spineboy.json')
 			.add(fileNameWithoutExt, spineJsonUrl)
 			.load(onAssetsLoaded);
