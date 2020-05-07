@@ -62,7 +62,7 @@
 ####################################################################################################################
 
 
-nvm - node version manager
+nvm - node version manager. You can switch between different version of 'node'
 npm - node package manager
 
 
