@@ -100,42 +100,91 @@ app.ticker.add((delta) => {
 
 
         /////////////////////////////Star war Background  - end   //////////////////////////////////////
+        function keyboard(value) {
+            let key = {};
+            key.value = value;
+            key.isDown = false;
+            key.isUp = true;
+            key.press = undefined;
+            key.release = undefined;
+            //The `downHandler`
+            key.downHandler = event => {
+              if (event.key === key.value) {
+                if (key.isUp && key.press) key.press();
+                // key.isDown = true;
+                // key.isUp = false;
+                event.preventDefault();
+              }
+            };
+          
+            //The `upHandler`
+            key.upHandler = event => {
+              if (event.key === key.value) {
+                if (key.isDown && key.release) key.release();
+                // key.isDown = false;
+                // key.isUp = true;
+                event.preventDefault();
+              }
+            };
+          
+            //Attach event listeners
+            const downListener = key.downHandler.bind(key);
+            const upListener = key.upHandler.bind(key);
+            
+            window.addEventListener("keydown", downListener, false);
+            window.addEventListener("keyup", upListener, false);
+            
+            // Detach event listeners
+            key.unsubscribe = () => {
+              window.removeEventListener("keydown", downListener);
+              window.removeEventListener("keyup", upListener);
+            };
+            
+            return key;
+          }
+
+
+
+
+        ////////////////////////////// Keyboard - end
         
         PIXI.loader
             // .add('./assets/jayAssets/fighter.json')
             // .add('./assets/jayAssets/ufo.jpg')
             .add(["./assets/jayAssets/ufo.png", "./assets/jayAssets/fighter.json"])
-            // .add(["./assets/cat.png"])
+            // .add(["./assets/ufo.png"])
             .load(onAssetsLoaded);
         
         function onAssetsLoaded() {
-            // UFO
-            let cat = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
+            //////////////////////////////////////// UFO
+            let ufo = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
             //Change the sprite's position
-            cat.x = 96;
-            cat.y = 96;	  
+            ufo.x = 96;
+            ufo.y = 96;	  
             //Change the sprite's size
-            cat.width = 80;
-            cat.height = 120;
+            ufo.width = 80;
+            ufo.height = 120;
             //scale to doubled the size
-            cat.scale.x = 0.5;
-            cat.scale.y = 0.5;
+            ufo.scale.x = 0.5;
+            ufo.scale.y = 0.5;
             // Rotation
-            // cat.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
-            cat.pivot.set(64/2, 64/2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
-            // cat.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
+            // ufo.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
+            ufo.pivot.set(64/2, 64/2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+            // ufo.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
 
             // Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
             // "stage" is a Pixi Container object. 
             // "stage" object is the root container for all the visible things in your scene. 
-            app.stage.addChild(cat); // Add the cat to the stage.
+            app.stage.addChild(ufo); // Add the ufo to the stage.
 
-            // JET
+            ///////////////////////////////////////// JET
 
             // create an array of textures from an image path
             const frames = [];
         
-            for (let i = 0; i < 30; i++) {
+            // for (let i = 0; i < 30; i++) 
+            for (let i = 0; i < 1; i++) 
+            {
                 const val = i < 10 ? `0${i}` : i;
         
                 // magically works since the spritesheet was loaded with the pixi loader
@@ -150,17 +199,94 @@ app.ticker.add((delta) => {
              * so you can change its position, its anchor, mask it, etc
              */
             anim.x = app.screen.width / 2;
-            anim.y = app.screen.height / 2;
+            anim.y = app.screen.height - 150; // app.screen.height / 2;
             anim.anchor.set(0.5);
             anim.animationSpeed = 0.5;
             anim.play();
         
             app.stage.addChild(anim);
+
+            var xOffsetJet = 0;
         
             // Animate the rotation
             app.ticker.add(() => {
-                anim.rotation += 0.01;
+               //anim.rotation += 0.01;
+            //    xOffsetJet = (xOffsetJet + 1) %  app.screen.width;
+            //    anim.x = xOffsetJet;
             });
+
+// keyboard control - start
+//Capture the keyboard arrow keys
+let left = keyboard("ArrowLeft"),
+up = keyboard("ArrowUp"),
+right = keyboard("ArrowRight"),
+down = keyboard("ArrowDown");
+
+//Left arrow key `press` method
+left.press = () => {
+//Change the cat's velocity when the key is pressed
+xOffsetJet = (app.screen.width + xOffsetJet - 10) %  app.screen.width;
+anim.x = xOffsetJet < 100 ? 100 : xOffsetJet;
+console.log(anim.x);
+};
+
+/*
+//Left arrow key `release` method
+left.release = () => {
+//If the left arrow has been released, and the right arrow isn't down,
+//and the cat isn't moving vertically:
+//Stop the cat
+if (!right.isDown && cat.vy === 0) {
+cat.vx = 0;
+}
+};
+*/
+
+//Right
+right.press = () => {
+    xOffsetJet = (xOffsetJet + 10) %  app.screen.width;
+    anim.x = xOffsetJet + 100  > app.screen.width ? app.screen.width - 100 : xOffsetJet;
+};
+// right.release = () => {
+// if (!left.isDown && cat.vy === 0) {
+// cat.vx = 0;
+// }
+// };
+
+
+
+
+
+
+
+
+
+//Up
+up.press = () => {
+cat.vy = -5;
+cat.vx = 0;
+};
+up.release = () => {
+if (!down.isDown && cat.vx === 0) {
+cat.vy = 0;
+}
+};
+
+
+
+//Down
+down.press = () => {
+cat.vy = 5;
+cat.vx = 0;
+};
+down.release = () => {
+if (!up.isDown && cat.vx === 0) {
+cat.vy = 0;
+}
+};
+
+// keyboard control - end
+
         }
     }
 }, false);
