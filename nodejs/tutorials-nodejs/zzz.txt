@@ -1,0 +1,358 @@
+Express.js: "Sinatra (framework for Ruby) inspired Web development framework for Node.js"
+- Easy route URLs to callbacks
+- Middleware (from connect)
+- Environment based configuration
+- Redirect helpers
+- File Uploads
+
+
+Life Is Like Riding a Bicycle. To Keep Your Balance You Must Keep Moving. - Albert Einstein.
+"Which statement seems more true: (1) I have a brain. (2) I am a brain. - Douglas Hofstadter
+
+///////////////////////////////////////////////////////////////////////////////////////
+How to change the default version of node to use:
+    nvm use 8.9.4   // switching version by 'use' only stay until closing the terminal 
+    nvm alias default 9.5 // change the default version to 9.5 permanently
+
+Versioning Packages:
+^4.13.5  => Automatically Updates to => 4.X.X
+~4.13.5  => Automatically Updates to => 4.13.X
+4.13.5   => Exact Copy               => 4.13.5
+
+
+.npmrc: npm config file - Can configure by project, user, global basis.
+Instead of writing commands like --save in every install you could configure in that file.
+    vi ~/.npmrc       // open in using bash
+
+    save = true
+    save-exact = true     // this will do --save while doing installation.
+
+
+node debug:
+
+// app.js
+var debug = require('debug')('app');
+console.log("Hello World"); // display in console
+debug("Hello Sridhar");     // DONOT display in console by defalut. 
+
+To see the msg inside the debug then
+> set DEBUG=* & node app.js     // very descriptive debug msg's
+> set DEBUG=app & node app.js     // Your application specific
+
+/////////////////////////////////////////
+
+chalk: module gives color priniting in the console:
+
+var chalk = require('chalk');
+console.log("Hello" + chalk.red('world'));
+
+////////////////////////////////////
+morgan: module gives console log of res and res msg when interacting with browser.
+var express = require('express');
+var morgan = require('morgan');
+
+var app = express();
+// Use morgan as a middleware
+// app.use(morgan('combined')); // detailed log
+app.use(morgan('tiny')); // minimized log
+
+////////////////////////////////////////////
+serving HTML files(index.html, files from cdn) from server:
+views/index.html
+    <html>
+    <head> 
+    <link rel="stylesheet" href="https://bootstrapcdn.com/bootrap.css>  // from cdn
+    </head>
+        <body> 
+            SERVING UP HTML 
+            <script src="https://jquerycdn.com/jquery.min.js"></script>   // from cdn
+            </body>
+    </html>
+
+app.js
+var path = require('path');
+
+app.get('/', function(req,res) {
+    // res.sendFile(__dirname + '/views/index.html)); // OK
+    // res.sendFile(path.join(__dirname, 'views/', '/index.html')); // OK
+    res.sendFile(path.join(__dirname, 'views/index.html)); // OK
+});
+
+serving static files(from public folder NOT from CDN) from server:
+
+public/css/bootrap.css
+public/js/jquery.js
+
+views/index.html
+    <html>
+    <head> 
+    <link rel="stylesheet" href="css/bootrap.css>  // from local public folder
+    </head>
+        <body> 
+            SERVING UP HTML 
+            <script src="js/jquery.js"></script> // from local public folder
+            </body>
+    </html>
+
+app.js
+var path = require('path');
+
+app.use(express.static(path.join(__dirname, '/public/'))); // use the static files (public/js/jquery.js - NOT from cdn) on the configured folder
+
+app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist'))); // Other way of including files from the installed files.
+
+app.get('/', function(req,res) {
+    // res.sendFile(__dirname + '/views/index.html)); // OK
+    // res.sendFile(path.join(__dirname, 'views/', '/index.html')); // Best - OK
+    res.sendFile(path.join(__dirname, 'views/index.html)); // OK
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////
+airbnb style guide
+Frontend cheat sheet
+ES6 and Node.js compatibility - https://node.green/
+////////////////////////////////////////////////////////////////////////////////////////////
+Always install eslint(or other packages which will have other dependency modules in future) better install
+locally NOT globally.
+
+npm uninstall -g eslint
+npm install eslint
+eslint --init
+
+"lint": "eslint app.js"
+
+npm run lint
+
+eslint can automatically fix coding guideline bugs for you by below command:
+
+./node_modules/.bin/eslint app.js --fix
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+Templating Engine:
+
+/public/css
+/public/js
+/src/views/index.pug
+/views
+
+
+pug:
+/src/views/index.pug:
+html
+    head
+        title MyApp
+    body
+        h1 Library
+        p
+            h3 Books
+
+
+app.js:
+app.set('views', './src/views'); // where to find the templating  files
+app.set('view engine', 'pug');
+
+app.get('/', function(req,res) {
+      // res.sendFile(path.join(__dirname, 'views/index.html)); // raw HTML file
+      res.render('index')); // index.pug file
+});
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+ejs:
+<html> 
+    <body> 
+        <h1>
+            Welcome to <%=title%>
+        </h1>
+        <ul>
+            <%for(var i = 0; list.length; ++i) { %>
+                <li> <%=list[i] %> </li>
+            <%}%>
+        </ul>
+    </body>
+</html>
+
+
+app.js:
+app.set('views', './src/views'); // where to find the templating  files
+app.set('view engine', 'ejs');
+
+app.get('/', function(req,res) {
+
+       res.render('index', { list: ['a', 'b'], title: 'Library' });; // index.ejs file
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$44
+REACT.js: A Javascript library for building user interface.
+    Virtual browser (virtural DOM)
+    Declarative language (model UI and state)
+    JSX declarative syntax is used instead of HTML syntax for working with Virtual DOM
+    Immutable Probs. Mutable State.
+
+Common Errors:
+https://jscomplete.com/learn/react-beyond-basics/react-cfp
+
+why react:
+https://jscomplete.com/learn/why-react
+
+React Development Environment:
+https://jscomplete.com/learn/1rd-reactful
+
+Source Codes:
+https://jscomplete.com/playground/rgs1.1
+
+
+//mount node
+document.getElementById('mountnode').innerHTML = 'Hello'
+
+
+// Program 1: Hello world
+// Hello component
+function Hello() {          // NOT hELLO - Always starts with caps
+          // HTML element
+	return <div>Hello React!</div>; // JSX
+  // return React.createElement('div', null, 'Hello World'); // under the hood
+  
+}
+
+ReactDOM.render(
+  <Hello />,  // JSX
+  // React.createElement(Hello, null), // under the hood
+  document.getElementById('mountNode'),
+);
+
+// Program 2: Button with Counter
+
+// Button component
+function Button() {
+  
+ const [counter, setCounter] = useState(0);  // array destruction
+  /*
+    userState - HOOK
+    [a, b] = useState(initialStateValue);
+    a : state OBJECT (getter)
+    b :  update FUNTION (setter)
+    
+    const [currStateValue. functionToSetNewStateValue] = useState(initialStateValue)
+  */
+  
+  // HTML <button> element
+	// return <button onClick = { () => console.log(Math.random()) }>Hello React !! - {counter}</button>; // JSX
+  
+  return <button onClick = { () => setCounter(counter + 1) }>Hello React !! - {counter}</button>; // JSX  
+}
+
+ReactDOM.render(
+  <Button />,  // JSX
+  // React.createElement(Hello, null), // under the hood
+  document.getElementById('mountNode'),
+);
+
+// Program 3: Parent To child Communication
+
+// Button component
+function Button(props) {    
+return (                               // NOT {  and NOT handleClick()
+    <button onClick = { props.onClickSomeFunction }> 
+      Hello React !!
+    </button> // JSX  
+  );
+}
+
+// Dispaly component
+function Display(props) {
+  return (
+    <div> {props.message} </div>
+  );
+}
+
+// App component - parent 
+function App() {
+  const [counter, setCounter] = useState(0);  // array destruction
+   const handleClick = () => setCounter(counter + 1); 
+  return (
+      // Method 2 - childrens
+  <div>   
+      <!-- passing function reference from Parent to Child -->
+    <Button onClickSomeFunction = {handleClick} /> 
+      <!-- passing value/msg from Parent to Child -->
+    <Display message = {counter} />
+  </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  // Method 1
+ //  [<Button />, <Display />],  
+  
+    // Method 2
+  // <div>
+  //   <Button />
+  //   <Display />
+  // </div>,
+  
+      // Method 2
+  // <React.Fragment>
+  //   <Button />
+  //   <Display />
+  // </React.Fragment>,
+  
+      // Method 3
+  // <>
+  //   <Button />
+  //   <Display />
+  // </>,
+  
+  // React.createElement(Hello, null), // under the hood
+  document.getElementById('mountNode'),
+);
+
+
+// Program 4: Passing function and arguments to child component.
+
+function Button(props) {
+	return (
+  	<button onClick={() => props.onClickFunction(props.increment)}>
+      +{props.increment}
+    </button>
+  );
+}
+
+function Display(props) {
+	return (
+  	<div>{props.message}</div>
+  );
+}
+
+function App() {
+	const [counter, setCounter] = useState(0);
+  const incrementCounter = (offsetValue) => setCounter(counter+ offsetValue);
+	return (
+    <div>
+      <Button onClickFunction={incrementCounter} increment={1} />
+      <Button onClickFunction={incrementCounter} increment={5} />
+      <Button onClickFunction={incrementCounter} increment={10} />
+      <Button onClickFunction={incrementCounter} increment={100} />
+      <Display message={counter}/>
+    </div>  
+  );
+}
+
+ReactDOM.render(
+  <App />, 
+  document.getElementById('mountNode'),
+);
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+ 

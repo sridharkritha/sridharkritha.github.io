@@ -1,0 +1,21 @@
+To import Book data into your mongoDB database. 
+Make sure MongoDB is running then run below command in MongoDB CLI.
+                '     mongo bookAPI < booksJson.js      ' 
+
+
+Response msg:
+connecting to: mongodb://127.0.0.1:27017/bookAPI?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("e0263ae7-11cd-44c7-925d-b0a24bd65e35") }
+
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 8,           <========== Data inserted to DB by a json file.
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+bye
+
