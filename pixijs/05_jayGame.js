@@ -171,8 +171,10 @@ window.addEventListener('load', function () {
 			//////////////////////////////////////// Bullet - Yellow
 			bulletYellow = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletYellow.png"].texture); // texture NOT textures
 			//Change the sprite's position
-			bulletYellow.x = 447;
-			bulletYellow.y = 379;
+			var bulletLeftX = app.screen.width / 2 - 43;
+			var bulletY = app.screen.height / 2 + 170;
+			bulletYellow.x = bulletLeftX// 447;
+			bulletYellow.y = bulletY; // 379;
 			//Change the sprite's size
 			bulletYellow.width = 17; //80;
 			bulletYellow.height = 33; //120;
@@ -192,8 +194,9 @@ window.addEventListener('load', function () {
 			//////////////////////////////////////// Bullet - Yellow -2
 			bulletYellow2 = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletYellow.png"].texture); // texture NOT textures
 			//Change the sprite's position
-			bulletYellow2.x = 530;
-			bulletYellow2.y = 379;
+			var bulletRightX = app.screen.width / 2 + 40;
+			bulletYellow2.x = bulletRightX;
+			bulletYellow2.y = bulletY;
 			//Change the sprite's size
 			bulletYellow2.width = 17; //80;
 			bulletYellow2.height = 33; //120;
@@ -230,7 +233,7 @@ window.addEventListener('load', function () {
 			* so you can change its position, its anchor, mask it, etc
 			*/
 			anim.x = app.screen.width / 2;
-			anim.y = app.screen.height - 150; // app.screen.height / 2;
+			anim.y = app.screen.height / 2 + 200;
 			anim.anchor.set(0.5);
 			anim.animationSpeed = 0.5;
 			anim.play();
@@ -244,19 +247,14 @@ window.addEventListener('load', function () {
 
 			// Animate the rotation
 			app.ticker.add(() => {
-				//anim.rotation += 0.01;
-				//    xOffsetJet = (xOffsetJet + 1) %  app.screen.width;
-				//    anim.x = xOffsetJet;
-
-
 				bulletYoffset = bulletYellow.y - 10;
-				bulletYellow.y = bulletYoffset < -20 ? 379: bulletYoffset;
+				bulletYellow.y = bulletYoffset < -20 ? bulletY: bulletYoffset;
 				bulletYellow2.y = bulletYellow.y;
 
 				if(bulletYellow.y < -10)
 				{
-					bulletYellow.x  = 447 - (app.screen.width / 2 - anim.x);
-					bulletYellow2.x = 530 - (app.screen.width / 2 - anim.x);
+					bulletYellow.x  = bulletLeftX -  (app.screen.width / 2 - anim.x);
+					bulletYellow2.x = bulletRightX - (app.screen.width / 2 - anim.x);
 				}
 
 
