@@ -6,6 +6,9 @@
 // http://127.0.0.1:8080/00_index.html
 
 let app = null;
+let ufo = null;
+
+var alienBullets = { leftBullet: 0, rightBullet: 0 };
 let bulletYellow = null; // bulletYellow.x = 447; bulletYellow.y = 370;
                          // bulletYellow.x = 530; bulletYellow.y = 370; 
 window.addEventListener('load', function () {
@@ -148,10 +151,10 @@ window.addEventListener('load', function () {
 
 		function onAssetsLoaded() {
 			//////////////////////////////////////// UFO
-			let ufo = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
+			ufo = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
 			//Change the sprite's position
-			ufo.x = 96;
-			ufo.y = 96;
+			ufo.x = app.screen.width / 2 - 60;
+			ufo.y = app.screen.height / 2 - 400;
 			//Change the sprite's size
 			ufo.width = 80;
 			ufo.height = 120;
@@ -212,6 +215,48 @@ window.addEventListener('load', function () {
 			// "stage" is a Pixi Container object. 
 			// "stage" object is the root container for all the visible things in your scene. 
 			app.stage.addChild(bulletYellow2); // Add the bulletYellow2 to the stage.
+	
+			//////////////////////////////////////// Bullet - Green -1
+			alienBullets = { leftBullet: 0, rightBullet: 0 };
+			alienBullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
+			//Change the sprite's position
+			var alienBulletY = app.screen.height / 2 - 350;
+			alienBullets.leftBullet.x = bulletLeftX;
+			alienBullets.leftBullet.y = alienBulletY;
+			//Change the sprite's size
+			alienBullets.leftBullet.width = 17; //80;
+			alienBullets.leftBullet.height = 33; //120;
+			//scale to doubled the size
+			alienBullets.leftBullet.scale.x = 1; // 0.5;
+			alienBullets.leftBullet.scale.y = 1; // 0.5;
+			// Rotation
+			alienBullets.leftBullet.pivot.set(bulletYellow2.width / 2, bulletYellow2.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+			
+			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
+			// "stage" is a Pixi Container object. 
+			// "stage" object is the root container for all the visible things in your scene. 
+			app.stage.addChild(alienBullets.leftBullet); // Add the bulletYellow2 to the stage.
+			//////////////////////////////////////// Bullet - Green -2
+			alienBullets = { leftBullet: 0, rightBullet: 0 };
+			alienBullets.rightBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
+			//Change the sprite's position
+			var alienBulletY = app.screen.height / 2 - 350;
+			alienBullets.rightBullet.x = bulletRightX;
+			alienBullets.rightBullet.y = alienBulletY;
+			//Change the sprite's size
+			alienBullets.rightBullet.width = 17; //80;
+			alienBullets.rightBullet.height = 33; //120;
+			//scale to doubled the size
+			alienBullets.rightBullet.scale.x = 1; // 0.5;
+			alienBullets.rightBullet.scale.y = 1; // 0.5;
+			// Rotation
+			alienBullets.rightBullet.pivot.set(bulletYellow2.width / 2, bulletYellow2.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+			
+			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
+			// "stage" is a Pixi Container object. 
+			// "stage" object is the root container for all the visible things in your scene. 
+			app.stage.addChild(alienBullets.rightBullet); // Add the bulletYellow2 to the stage.
+
 
 			///////////////////////////////////////// JET
 			// create an array of textures from an image path
@@ -247,8 +292,8 @@ window.addEventListener('load', function () {
 
 			// Animate the rotation
 			app.ticker.add(() => {
-				bulletYoffset = bulletYellow.y - 10;
-				bulletYellow.y = bulletYoffset < -20 ? bulletY: bulletYoffset;
+				bulletYoffset = bulletYellow.y - 15;
+				bulletYellow.y = bulletYoffset < -25 ? bulletY: bulletYoffset;
 				bulletYellow2.y = bulletYellow.y;
 
 				if(bulletYellow.y < -10)
