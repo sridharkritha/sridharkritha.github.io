@@ -176,7 +176,7 @@ window.addEventListener('load', function () {
 			//Change the sprite's position
 			var bulletLeftX = app.screen.width / 2 - 43;
 			var bulletY = app.screen.height / 2 + 170;
-			bulletYellow.x = bulletLeftX// 447;
+			bulletYellow.x = bulletLeftX;// 447;
 			bulletYellow.y = bulletY; // 379;
 			//Change the sprite's size
 			bulletYellow.width = 17; //80;
@@ -237,10 +237,8 @@ window.addEventListener('load', function () {
 			// "stage" object is the root container for all the visible things in your scene. 
 			app.stage.addChild(alienBullets.leftBullet); // Add the bulletYellow2 to the stage.
 			//////////////////////////////////////// Bullet - Green -2
-			alienBullets = { leftBullet: 0, rightBullet: 0 };
 			alienBullets.rightBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
 			//Change the sprite's position
-			var alienBulletY = app.screen.height / 2 - 350;
 			alienBullets.rightBullet.x = bulletRightX;
 			alienBullets.rightBullet.y = alienBulletY;
 			//Change the sprite's size
@@ -289,19 +287,29 @@ window.addEventListener('load', function () {
 			var xInitJet = app.screen.width / 2; // 489.5  479.5
 
 			var bulletYoffset = 0;
+			var alienBulletY_offset = 0;
 
 			// Animate the rotation
 			app.ticker.add(() => {
+				// Jet Bullet
 				bulletYoffset = bulletYellow.y - 15;
 				bulletYellow.y = bulletYoffset < -25 ? bulletY: bulletYoffset;
 				bulletYellow2.y = bulletYellow.y;
-
 				if(bulletYellow.y < -10)
 				{
 					bulletYellow.x  = bulletLeftX -  (app.screen.width / 2 - anim.x);
 					bulletYellow2.x = bulletRightX - (app.screen.width / 2 - anim.x);
 				}
 
+				// Alien Bullet
+				alienBulletY_offset = alienBullets.leftBullet.y + 15;
+				alienBullets.leftBullet.y = alienBulletY_offset < app.screen.height + 25 ? alienBulletY_offset : alienBulletY;
+				alienBullets.rightBullet.y = alienBullets.leftBullet.y;
+				// if(alienBullets.leftBullet.y < app.screen.height + 10)
+				// {
+				// 	bulletYellow.x  = bulletLeftX -  (app.screen.width / 2 - anim.x);
+				// 	bulletYellow2.x = bulletRightX - (app.screen.width / 2 - anim.x);
+				// }
 
 				// console.log(bulletYellow.y);
 				// console.log(anim.x);
