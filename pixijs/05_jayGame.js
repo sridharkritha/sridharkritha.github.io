@@ -8,7 +8,7 @@
 let app = null;
 let ufo = null;
 
-var alienBullets = { leftBullet: 0, rightBullet: 0 };
+var alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
 let bulletYellow = null; // bulletYellow.x = 447; bulletYellow.y = 370;
                          // bulletYellow.x = 530; bulletYellow.y = 370; 
 window.addEventListener('load', function () {
@@ -145,7 +145,9 @@ window.addEventListener('load', function () {
 			// .add('./assets/jayAssets/fighter.json')
 			// .add('./assets/jayAssets/ufo.jpg')
 			.add(["./assets/jayAssets/ufo.png", "./assets/jayAssets/fighter.json",
-				  "./assets/jayAssets/bulletYellow.png","./assets/jayAssets/bulletGreen.png"])
+				  "./assets/jayAssets/bulletYellow.png","./assets/jayAssets/bulletGreen.png",
+				  "./assets/jayAssets/mc.json"
+				 ])
 			// .add(["./assets/ufo.png"])
 			.load(onAssetsLoaded);
 
@@ -217,7 +219,7 @@ window.addEventListener('load', function () {
 			app.stage.addChild(bulletYellow2); // Add the bulletYellow2 to the stage.
 	
 			//////////////////////////////////////// Bullet - Green -1
-			alienBullets = { leftBullet: 0, rightBullet: 0 };
+			alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
 			alienBullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
 			//Change the sprite's position
 			var alienBulletY = app.screen.height / 2 - 350;
@@ -265,7 +267,7 @@ window.addEventListener('load', function () {
 				const val = i < 10 ? `0${i}` : i;
 
 				// magically works since the spritesheet was loaded with the pixi loader
-				frames.push(PIXI.Texture.from(`rollSequence00${val}.png`));
+				frames.push(PIXI.Texture.from(`rollSequence00${val}.png`)); // JET
 			}
 
 			// create an AnimatedSprite (brings back memories from the days of Flash, right ?)
@@ -282,6 +284,56 @@ window.addEventListener('load', function () {
 			anim.play();
 
 			app.stage.addChild(anim);
+
+			////////////////////////////////// Explosion ///////////////////////////////////////////////////////////////
+			// create an array to store the textures
+			const explosionTextures = [];
+			for (i = 0; i < 26; i++) {
+				const texture = PIXI.Texture.from(`Explosion_Sequence_A ${i + 1}.png`);
+				explosionTextures.push(texture);
+			}
+
+			// for (i = 0; i < 50; i++)
+			for (i = 0; i < 1; i++) 
+			{
+				// create an explosion AnimatedSprite
+					const explosion = new PIXI.AnimatedSprite(explosionTextures);
+			
+					// explosion.x = Math.random() * app.screen.width;
+					// explosion.y = Math.random() * app.screen.height;
+					explosion.x = app.screen.width / 2;
+					explosion.y = app.screen.height / 2 - 400;
+
+					explosion.anchor.set(0.5);
+					explosion.rotation = Math.random() * Math.PI;
+					explosion.scale.set(0.75 + Math.random() * 0.5);
+					// explosion.gotoAndPlay(Math.random() * 27);
+					//explosion.gotoAndPlay(1);
+					// explosion.play(); // ----
+					// explosion.loop = false;
+					// setTimeout(()=> explosion.destory(), 1000);
+					// explosion.destory();
+					// setTimeout(function() { explosion.stop(); }.bind(this) , 1000); // -----
+					explosion.alpha = 0; // hide
+					app.stage.addChild(explosion);
+
+					setTimeout(function() {
+						explosion.alpha = 1; // show
+						explosion.play();
+						setTimeout(function() { 
+							explosion.stop(); 
+							explosion.alpha = 0; // hide
+							ufo.alpha = 0;       // hide
+							alienBullets.life = 0;
+							alienBullets.leftBullet.alpha = 0;
+							alienBullets.rightBullet.alpha = 0;
+						}.bind(this) , 1000);
+					}.bind(this), 2000);
+
+					// explosion.play();
+					// setTimeout(function() { explosion.stop(); }.bind(this) , 1000);
+				}
+			//////////////////////////////////////////////////////////////////////////////////////////////////////
 
 			var xOffsetJet = 0;
 			var xInitJet = app.screen.width / 2; // 489.5  479.5
@@ -302,18 +354,12 @@ window.addEventListener('load', function () {
 				}
 
 				// Alien Bullet
-				alienBulletY_offset = alienBullets.leftBullet.y + 15;
-				alienBullets.leftBullet.y = alienBulletY_offset < app.screen.height + 25 ? alienBulletY_offset : alienBulletY;
-				alienBullets.rightBullet.y = alienBullets.leftBullet.y;
-				// if(alienBullets.leftBullet.y < app.screen.height + 10)
-				// {
-				// 	bulletYellow.x  = bulletLeftX -  (app.screen.width / 2 - anim.x);
-				// 	bulletYellow2.x = bulletRightX - (app.screen.width / 2 - anim.x);
-				// }
-
-				// console.log(bulletYellow.y);
-				// console.log(anim.x);
-				
+				if(alienBullets.life)
+				{
+					alienBulletY_offset = alienBullets.leftBullet.y + 15;
+					alienBullets.leftBullet.y = alienBulletY_offset < app.screen.height + 25 ? alienBulletY_offset : alienBulletY;
+					alienBullets.rightBullet.y = alienBullets.leftBullet.y;
+				}
 			});
 
 			// keyboard control - start
