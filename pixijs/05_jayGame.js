@@ -156,7 +156,7 @@ window.addEventListener('load', function () {
 			ufo = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
 			//Change the sprite's position
 			ufo.x = app.screen.width / 2 - 60;
-			ufo.y = app.screen.height / 2 - 400;
+			ufo.y = app.screen.height / 2 - 300;
 			//Change the sprite's size
 			ufo.width = 80;
 			ufo.height = 120;
@@ -257,6 +257,15 @@ window.addEventListener('load', function () {
 			// "stage" object is the root container for all the visible things in your scene. 
 			app.stage.addChild(alienBullets.rightBullet); // Add the bulletYellow2 to the stage.
 
+			///////////////////////////////////// alien rectangle
+			// Rectangle
+			const graphics = new PIXI.Graphics();
+			graphics.lineStyle(2, 0xFFFFFF, 1);
+			//graphics.beginFill();
+			graphics.drawRect(ufo.x - 12, ufo.y -20, ufo.width, ufo.height);
+			graphics.endFill();
+			app.stage.addChild(graphics);
+
 
 			///////////////////////////////////////// JET
 			// create an array of textures from an image path
@@ -284,6 +293,15 @@ window.addEventListener('load', function () {
 			anim.play();
 
 			app.stage.addChild(anim);
+
+			///////////////////////////////////// jet rectangle
+			// Rectangle
+			const graphicsRect = new PIXI.Graphics();
+			graphicsRect.lineStyle(2, 0xFFFFFF, 1);
+			//graphicsRect.beginFill();
+			graphicsRect.drawRect(anim.x - 78, anim.y -30, ufo.width +0, ufo.height+50);
+			graphicsRect.endFill();
+			app.stage.addChild(graphicsRect);
 
 			////////////////////////////////// Explosion ///////////////////////////////////////////////////////////////
 			// create an array to store the textures
@@ -323,7 +341,7 @@ window.addEventListener('load', function () {
 						setTimeout(function() { 
 							explosion.stop(); 
 							explosion.alpha = 0; // hide
-							ufo.alpha = 0;       // hide
+							// ufo.alpha = 0;       // hide
 							alienBullets.life = 0;
 							alienBullets.leftBullet.alpha = 0;
 							alienBullets.rightBullet.alpha = 0;
