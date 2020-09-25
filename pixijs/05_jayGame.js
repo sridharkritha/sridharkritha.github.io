@@ -7,6 +7,8 @@
 
 let app = null;
 let ufo = null;
+let graphicsJetRect = null;
+const keyDisplacement = 10;
 
 var alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
 let bulletYellow = null; // bulletYellow.x = 447; bulletYellow.y = 370;
@@ -259,12 +261,12 @@ window.addEventListener('load', function () {
 
 			///////////////////////////////////// alien rectangle
 			// Rectangle
-			const graphics = new PIXI.Graphics();
-			graphics.lineStyle(2, 0xFFFFFF, 1);
-			//graphics.beginFill();
-			graphics.drawRect(ufo.x - 12, ufo.y -20, ufo.width, ufo.height);
-			graphics.endFill();
-			app.stage.addChild(graphics);
+			const graphicsAlienRect = new PIXI.Graphics();
+			graphicsAlienRect.lineStyle(2, 0xFFFFFF, 1);
+			//graphicsAlienRect.beginFill();
+			graphicsAlienRect.drawRect(ufo.x - 12, ufo.y -20, ufo.width, ufo.height);
+			graphicsAlienRect.endFill();
+			app.stage.addChild(graphicsAlienRect);
 
 
 			///////////////////////////////////////// JET
@@ -294,14 +296,14 @@ window.addEventListener('load', function () {
 
 			app.stage.addChild(anim);
 
-			///////////////////////////////////// jet rectangle
+			///////////////////////////////////// rectangle - jet 
 			// Rectangle
-			const graphicsRect = new PIXI.Graphics();
-			graphicsRect.lineStyle(2, 0xFFFFFF, 1);
-			//graphicsRect.beginFill();
-			graphicsRect.drawRect(anim.x - 78, anim.y -30, ufo.width +0, ufo.height+50);
-			graphicsRect.endFill();
-			app.stage.addChild(graphicsRect);
+			graphicsJetRect = new PIXI.Graphics();
+			graphicsJetRect.lineStyle(2, 0xFFFFFF, 1);
+			//graphicsJetRect.beginFill();
+			graphicsJetRect.drawRect(anim.x - 78, anim.y -30, ufo.width +0, ufo.height+50);
+			graphicsJetRect.endFill();
+			app.stage.addChild(graphicsJetRect);
 
 			////////////////////////////////// Explosion ///////////////////////////////////////////////////////////////
 			// create an array to store the textures
@@ -391,8 +393,17 @@ window.addEventListener('load', function () {
 			left.press = () => {
 				//Change the cat's velocity when the key is pressed
 				// xOffsetJet = (xInitJet + xOffsetJet - 10) %  app.screen.width;
-				xInitJet = xInitJet - 10;
-				xInitJet = xInitJet < 100 ? 100 : xInitJet;
+				xInitJet -= keyDisplacement;
+				if(xInitJet < 100)
+				{
+					xInitJet = 100;
+				}
+				else
+				{
+					graphicsJetRect.position.x -= keyDisplacement;
+				}
+				
+				// xInitJet = xInitJet < 100 ? 100 : xInitJet;
 				anim.x = xInitJet;
 
 				// xOffsetJet = (xInitJet + xOffsetJet - 10) %  app.screen.width;
@@ -414,10 +425,17 @@ window.addEventListener('load', function () {
 
 			//Right
 			right.press = () => {
-				// xOffsetJet = (xInitJet + xOffsetJet + 10) %  app.screen.width;
-				// anim.x = xOffsetJet + 100  > app.screen.width ? app.screen.width - 100 : xOffsetJet;
-				xInitJet = xInitJet + 10;
-				xInitJet = xInitJet > app.screen.width - 100 ? app.screen.width - 100 : xInitJet;
+				xInitJet = xInitJet + keyDisplacement;
+				if(xInitJet > app.screen.width - 100)
+				{
+					xInitJet = app.screen.width - 100;
+				}
+				else
+				{
+					graphicsJetRect.position.x += keyDisplacement;
+				}
+
+				// xInitJet = xInitJet > app.screen.width - 100 ? app.screen.width - 100 : xInitJet;
 				anim.x = xInitJet;
 				// console.log(anim.x);
 			};
