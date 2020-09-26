@@ -9,6 +9,7 @@ let app = null;
 let ufo = null;
 let graphicsJetRect = null;
 const keyDisplacement = 10;
+const bulletDisplacement = 15;
 
 var alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
 let bulletYellow = null; // bulletYellow.x = 447; bulletYellow.y = 370;
@@ -156,6 +157,7 @@ window.addEventListener('load', function () {
 		function onAssetsLoaded() {
 			//////////////////////////////////////// UFO
 			ufo = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
+			ufo.lifeCount = 5;
 			//Change the sprite's position
 			ufo.x = app.screen.width / 2 - 60;
 			ufo.y = app.screen.height / 2 - 300;
@@ -313,16 +315,18 @@ window.addEventListener('load', function () {
 				explosionTextures.push(texture);
 			}
 
+			// create an explosion AnimatedSprite
+			const explosion = new PIXI.AnimatedSprite(explosionTextures);
 			// for (i = 0; i < 50; i++)
 			for (i = 0; i < 1; i++) 
 			{
-				// create an explosion AnimatedSprite
-					const explosion = new PIXI.AnimatedSprite(explosionTextures);
-			
-					// explosion.x = Math.random() * app.screen.width;
-					// explosion.y = Math.random() * app.screen.height;
-					explosion.x = app.screen.width / 2;
-					explosion.y = app.screen.height / 2 - 400;
+				// // create an explosion AnimatedSprite
+				// 	const explosion = new PIXI.AnimatedSprite(explosionTextures);
+
+					// explosion.x = app.screen.width / 2;
+					// explosion.y = app.screen.height / 2 - 400;
+					explosion.x = ufo.x + 60;
+					explosion.y = ufo.y + 20;
 
 					explosion.anchor.set(0.5);
 					explosion.rotation = Math.random() * Math.PI;
@@ -336,7 +340,7 @@ window.addEventListener('load', function () {
 					// setTimeout(function() { explosion.stop(); }.bind(this) , 1000); // -----
 					explosion.alpha = 0; // hide
 					app.stage.addChild(explosion);
-
+/*
 					setTimeout(function() {
 						explosion.alpha = 1; // show
 						explosion.play();
@@ -349,6 +353,7 @@ window.addEventListener('load', function () {
 							alienBullets.rightBullet.alpha = 0;
 						}.bind(this) , 1000);
 					}.bind(this), 2000);
+*/
 
 					// explosion.play();
 					// setTimeout(function() { explosion.stop(); }.bind(this) , 1000);
@@ -364,7 +369,7 @@ window.addEventListener('load', function () {
 			// Animate the rotation
 			app.ticker.add(() => {
 				// Jet Bullet
-				bulletYoffset = bulletYellow.y - 15;
+				bulletYoffset = bulletYellow.y - bulletDisplacement;
 				bulletYellow.y = bulletYoffset < -25 ? bulletY: bulletYoffset;
 				bulletYellow2.y = bulletYellow.y;
 				if(bulletYellow.y < -10)
@@ -372,6 +377,45 @@ window.addEventListener('load', function () {
 					bulletYellow.x  = bulletLeftX -  (app.screen.width / 2 - anim.x);
 					bulletYellow2.x = bulletRightX - (app.screen.width / 2 - anim.x);
 				}
+
+				// Check the JET bullets hit the alien
+				var hit = false;
+				if(ufo.lifeCount)
+				{
+					if((bulletYellow.y < ufo.y - 20 + ufo.height) && (bulletYellow.y > ufo.y - 20 + ufo.height - bulletDisplacement) )
+					{
+						if((bulletYellow.x > ufo.x - 12) && bulletYellow.x < (ufo.x - 12 + ufo.width))
+						{
+							hit = true;
+							--ufo.lifeCount;
+							if(!ufo.lifeCount)
+							{
+								// explosion.play(); // ----
+								// setTimeout(function() { explosion.stop(); }.bind(this) , 1000); // -----
+
+								// setTimeout(function() {
+									explosion.alpha = 1; // show
+									explosion.play();
+									setTimeout(function() { 
+										explosion.stop(); 
+										explosion.alpha = 0; // hide
+										ufo.alpha = 0;       // hide
+										alienBullets.life = 0;
+										alienBullets.leftBullet.alpha = 0;
+										alienBullets.rightBullet.alpha = 0;
+										graphicsAlienRect.alpha = 0;
+									}.bind(this) , 1000);
+								// }.bind(this), 2000);
+							}
+						}
+					}
+				}
+
+
+				// graphicsAlienRect.position.x > bulletYellow.x;
+				// graphicsAlienRect.drawRect(ufo.x - 12, ufo.y -20, ufo.width, ufo.height);
+
+
 
 				// Alien Bullet
 				if(alienBullets.life)
