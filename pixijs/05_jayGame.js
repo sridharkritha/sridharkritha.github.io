@@ -177,53 +177,54 @@ window.addEventListener('load', function () {
 			// "stage" object is the root container for all the visible things in your scene. 
 			app.stage.addChild(ufo); // Add the ufo to the stage.
 
-			//////////////////////////////////////// Bullet - Yellow
-			bulletYellow = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletYellow.png"].texture); // texture NOT textures
+			//////////////////////////////////////// Jet Bullet - Yellow
+			jetBullets = { leftBullet: null, rightBullet: null, life: 1 };
+			jetBullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletYellow.png"].texture); // texture NOT textures
 			//Change the sprite's position
 			var bulletLeftX = app.screen.width / 2 - 43;
 			var bulletY = app.screen.height / 2 + 170;
-			bulletYellow.x = bulletLeftX;// 447;
-			bulletYellow.y = bulletY; // 379;
+			jetBullets.leftBullet.x = bulletLeftX;// 447;
+			jetBullets.leftBullet.y = bulletY; // 379;
 			//Change the sprite's size
-			bulletYellow.width = 17; //80;
-			bulletYellow.height = 33; //120;
+			jetBullets.leftBullet.width = 17; //80;
+			jetBullets.leftBullet.height = 33; //120;
 			//scale to doubled the size
-			bulletYellow.scale.x = 1; // 0.5;
-			bulletYellow.scale.y = 1; // 0.5;
+			jetBullets.leftBullet.scale.x = 1; // 0.5;
+			jetBullets.leftBullet.scale.y = 1; // 0.5;
 			// Rotation
-			// bulletYellow.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
-			bulletYellow.pivot.set(bulletYellow.width / 2, bulletYellow.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
-			// bulletYellow.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
+			// jetBullets.leftBullet.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
+			jetBullets.leftBullet.pivot.set(jetBullets.leftBullet.width / 2, jetBullets.leftBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+			// jetBullets.leftBullet.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
 
 			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
 			// "stage" is a Pixi Container object. 
 			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(bulletYellow); // Add the bulletYellow to the stage.
+			app.stage.addChild(jetBullets.leftBullet); // Add the jetBullets.leftBullet to the stage.
 
 			//////////////////////////////////////// Bullet - Yellow -2
-			bulletYellow2 = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletYellow.png"].texture); // texture NOT textures
+			jetBullets.rightBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletYellow.png"].texture); // texture NOT textures
 			//Change the sprite's position
 			var bulletRightX = app.screen.width / 2 + 40;
-			bulletYellow2.x = bulletRightX;
-			bulletYellow2.y = bulletY;
+			jetBullets.rightBullet.x = bulletRightX;
+			jetBullets.rightBullet.y = bulletY;
 			//Change the sprite's size
-			bulletYellow2.width = 17; //80;
-			bulletYellow2.height = 33; //120;
+			jetBullets.rightBullet.width = 17; //80;
+			jetBullets.rightBullet.height = 33; //120;
 			//scale to doubled the size
-			bulletYellow2.scale.x = 1; // 0.5;
-			bulletYellow2.scale.y = 1; // 0.5;
+			jetBullets.rightBullet.scale.x = 1; // 0.5;
+			jetBullets.rightBullet.scale.y = 1; // 0.5;
 			// Rotation
-			// bulletYellow2.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
-			bulletYellow2.pivot.set(bulletYellow2.width / 2, bulletYellow2.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
-			// bulletYellow2.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
+			// jetBullets.rightBullet.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
+			jetBullets.rightBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+			// jetBullets.rightBullet.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
 
 			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
 			// "stage" is a Pixi Container object. 
 			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(bulletYellow2); // Add the bulletYellow2 to the stage.
+			app.stage.addChild(jetBullets.rightBullet); // Add the jetBullets.rightBullet to the stage.
 	
 			//////////////////////////////////////// Bullet - Green -1
-			alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
+			alienBullets = { leftBullet: null, rightBullet: null, life: 1 };
 			alienBullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
 			//Change the sprite's position
 			var alienBulletY = app.screen.height / 2 - 350;
@@ -236,12 +237,12 @@ window.addEventListener('load', function () {
 			alienBullets.leftBullet.scale.x = 1; // 0.5;
 			alienBullets.leftBullet.scale.y = 1; // 0.5;
 			// Rotation
-			alienBullets.leftBullet.pivot.set(bulletYellow2.width / 2, bulletYellow2.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+			alienBullets.leftBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
 			
 			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
 			// "stage" is a Pixi Container object. 
 			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(alienBullets.leftBullet); // Add the bulletYellow2 to the stage.
+			app.stage.addChild(alienBullets.leftBullet); // Add the jetBullets.rightBullet to the stage.
 			//////////////////////////////////////// Bullet - Green -2
 			alienBullets.rightBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
 			//Change the sprite's position
@@ -254,12 +255,12 @@ window.addEventListener('load', function () {
 			alienBullets.rightBullet.scale.x = 1; // 0.5;
 			alienBullets.rightBullet.scale.y = 1; // 0.5;
 			// Rotation
-			alienBullets.rightBullet.pivot.set(bulletYellow2.width / 2, bulletYellow2.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+			alienBullets.rightBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
 			
 			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
 			// "stage" is a Pixi Container object. 
 			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(alienBullets.rightBullet); // Add the bulletYellow2 to the stage.
+			app.stage.addChild(alienBullets.rightBullet); // Add the jetBullets.rightBullet to the stage.
 
 			///////////////////////////////////// alien rectangle
 			// Rectangle
@@ -284,26 +285,27 @@ window.addEventListener('load', function () {
 			}
 
 			// create an AnimatedSprite (brings back memories from the days of Flash, right ?)
-			const anim = new PIXI.AnimatedSprite(frames);
+			const jetMachine = new PIXI.AnimatedSprite(frames);
 
 			/*
 			* An AnimatedSprite inherits all the properties of a PIXI sprite
 			* so you can change its position, its anchor, mask it, etc
 			*/
-			anim.x = app.screen.width / 2;
-			anim.y = app.screen.height / 2 + 200;
-			anim.anchor.set(0.5);
-			anim.animationSpeed = 0.5;
-			anim.play();
+			jetMachine.lifeCount = 5;
+			jetMachine.x = app.screen.width / 2;
+			jetMachine.y = app.screen.height / 2 + 200;
+			jetMachine.anchor.set(0.5);
+			jetMachine.animationSpeed = 0.5;
+			jetMachine.play();
 
-			app.stage.addChild(anim);
+			app.stage.addChild(jetMachine);
 
 			///////////////////////////////////// rectangle - jet 
 			// Rectangle
 			graphicsJetRect = new PIXI.Graphics();
 			graphicsJetRect.lineStyle(2, 0xFFFFFF, 1);
 			//graphicsJetRect.beginFill();
-			graphicsJetRect.drawRect(anim.x - 78, anim.y -30, ufo.width +0, ufo.height+50);
+			graphicsJetRect.drawRect(jetMachine.x - 78, jetMachine.y -30, ufo.width +0, ufo.height+50);
 			graphicsJetRect.endFill();
 			app.stage.addChild(graphicsJetRect);
 
@@ -322,45 +324,18 @@ window.addEventListener('load', function () {
 			{
 				// // create an explosion AnimatedSprite
 				// 	const explosion = new PIXI.AnimatedSprite(explosionTextures);
-
-					// explosion.x = app.screen.width / 2;
-					// explosion.y = app.screen.height / 2 - 400;
 					explosion.x = ufo.x + 60;
 					explosion.y = ufo.y + 20;
 
 					explosion.anchor.set(0.5);
 					explosion.rotation = Math.random() * Math.PI;
 					explosion.scale.set(0.75 + Math.random() * 0.5);
-					// explosion.gotoAndPlay(Math.random() * 27);
-					//explosion.gotoAndPlay(1);
-					// explosion.play(); // ----
-					// explosion.loop = false;
-					// setTimeout(()=> explosion.destory(), 1000);
-					// explosion.destory();
-					// setTimeout(function() { explosion.stop(); }.bind(this) , 1000); // -----
+
 					explosion.alpha = 0; // hide
 					app.stage.addChild(explosion);
-/*
-					setTimeout(function() {
-						explosion.alpha = 1; // show
-						explosion.play();
-						setTimeout(function() { 
-							explosion.stop(); 
-							explosion.alpha = 0; // hide
-							// ufo.alpha = 0;       // hide
-							alienBullets.life = 0;
-							alienBullets.leftBullet.alpha = 0;
-							alienBullets.rightBullet.alpha = 0;
-						}.bind(this) , 1000);
-					}.bind(this), 2000);
-*/
-
-					// explosion.play();
-					// setTimeout(function() { explosion.stop(); }.bind(this) , 1000);
 				}
 			//////////////////////////////////////////////////////////////////////////////////////////////////////
 
-			var xOffsetJet = 0;
 			var xInitJet = app.screen.width / 2; // 489.5  479.5
 
 			var bulletYoffset = 0;
@@ -368,32 +343,17 @@ window.addEventListener('load', function () {
 
 			// Animate the rotation
 			app.ticker.add(() => {
-				// Jet Bullet
-				bulletYoffset = bulletYellow.y - bulletDisplacement;
-				bulletYellow.y = bulletYoffset < -25 ? bulletY: bulletYoffset;
-				bulletYellow2.y = bulletYellow.y;
-				if(bulletYellow.y < -10)
-				{
-					bulletYellow.x  = bulletLeftX -  (app.screen.width / 2 - anim.x);
-					bulletYellow2.x = bulletRightX - (app.screen.width / 2 - anim.x);
-				}
-
-				// Check the JET bullets hit the alien
-				var hit = false;
+				// /*
+				// Check the Alien life
 				if(ufo.lifeCount)
 				{
-					if((bulletYellow.y < ufo.y - 20 + ufo.height) && (bulletYellow.y > ufo.y - 20 + ufo.height - bulletDisplacement) )
+					if((jetBullets.leftBullet.y < ufo.y - 20 + ufo.height) && (jetBullets.leftBullet.y > ufo.y - 20 + ufo.height - bulletDisplacement) )
 					{
-						if((bulletYellow.x > ufo.x - 12) && bulletYellow.x < (ufo.x - 12 + ufo.width))
+						if((jetBullets.leftBullet.x > ufo.x - 12) && jetBullets.leftBullet.x < (ufo.x - 12 + ufo.width))
 						{
-							hit = true;
 							--ufo.lifeCount;
 							if(!ufo.lifeCount)
 							{
-								// explosion.play(); // ----
-								// setTimeout(function() { explosion.stop(); }.bind(this) , 1000); // -----
-
-								// setTimeout(function() {
 									explosion.alpha = 1; // show
 									explosion.play();
 									setTimeout(function() { 
@@ -405,17 +365,47 @@ window.addEventListener('load', function () {
 										alienBullets.rightBullet.alpha = 0;
 										graphicsAlienRect.alpha = 0;
 									}.bind(this) , 1000);
-								// }.bind(this), 2000);
+							}
+						}
+					}
+				}
+				// */
+
+				// Check the JET life
+				if(jetMachine.lifeCount)
+				{
+					if((alienBullets.rightBullet.y < jetMachine.y - 20 + jetMachine.height) && (alienBullets.rightBullet.y > jetMachine.y - 20 + jetMachine.height - bulletDisplacement) )
+					{
+						if((alienBullets.rightBullet.x > jetMachine.x - 12) && alienBullets.rightBullet.x < (jetMachine.x - 12 + jetMachine.width))
+						{
+							--jetMachine.lifeCount;
+							if(!jetMachine.lifeCount)
+							{
+									explosion.alpha = 1; // show
+									explosion.play();
+									setTimeout(function() { 
+										explosion.stop(); 
+										explosion.alpha = 0; // hide
+										jetMachine.alpha = 0;       // hide
+										jetBullets.life = 0;
+										jetBullets.leftBullet.alpha = 0;
+										jetBullets.rightBullet.alpha = 0;
+										graphicsJetRect.alpha = 0;
+									}.bind(this) , 1000);
 							}
 						}
 					}
 				}
 
-
-				// graphicsAlienRect.position.x > bulletYellow.x;
-				// graphicsAlienRect.drawRect(ufo.x - 12, ufo.y -20, ufo.width, ufo.height);
-
-
+				// Jet Bullet
+				bulletYoffset = jetBullets.leftBullet.y - bulletDisplacement;
+				jetBullets.leftBullet.y = bulletYoffset < -25 ? bulletY: bulletYoffset;
+				jetBullets.rightBullet.y = jetBullets.leftBullet.y;
+				if(jetBullets.leftBullet.y < -10)
+				{
+					jetBullets.leftBullet.x  = bulletLeftX -  (app.screen.width / 2 - jetMachine.x);
+					jetBullets.rightBullet.x = bulletRightX - (app.screen.width / 2 - jetMachine.x);
+				}
 
 				// Alien Bullet
 				if(alienBullets.life)
@@ -446,13 +436,7 @@ window.addEventListener('load', function () {
 				{
 					graphicsJetRect.position.x -= keyDisplacement;
 				}
-				
-				// xInitJet = xInitJet < 100 ? 100 : xInitJet;
-				anim.x = xInitJet;
-
-				// xOffsetJet = (xInitJet + xOffsetJet - 10) %  app.screen.width;
-				// anim.x = xOffsetJet < 100 ? 100 : xOffsetJet;
-				// console.log(anim.x);
+				jetMachine.x = xInitJet;
 			};
 
 			/*
@@ -478,10 +462,7 @@ window.addEventListener('load', function () {
 				{
 					graphicsJetRect.position.x += keyDisplacement;
 				}
-
-				// xInitJet = xInitJet > app.screen.width - 100 ? app.screen.width - 100 : xInitJet;
-				anim.x = xInitJet;
-				// console.log(anim.x);
+				jetMachine.x = xInitJet;
 			};
 			// right.release = () => {
 			// if (!left.isDown && cat.vy === 0) {
