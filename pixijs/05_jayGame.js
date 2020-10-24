@@ -6,7 +6,8 @@
 // http://127.0.0.1:8080/00_index.html
 
 let app = null;
-let ufo = null;
+let nAliens = 16;
+let ufo = [];
 let graphicsJetRect = null;
 const keyDisplacement = 10;
 const bulletDisplacement = 15;
@@ -100,7 +101,7 @@ window.addEventListener('load', function () {
 			}
 		});
 
-		/////////////////////////////Star war Background  - end   //////////////////////////////////////
+		///////////////////////////// Star war Background  - end //////////////////////////////////////
 		function keyboard(value) {
 			let key = {};
 			key.value = value;
@@ -156,26 +157,31 @@ window.addEventListener('load', function () {
 
 		function onAssetsLoaded() {
 			//////////////////////////////////////// UFO
-			ufo = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
-			ufo.lifeCount = 5;
-			//Change the sprite's position
-			ufo.x = app.screen.width / 2 - 60;
-			ufo.y = app.screen.height / 2 - 300;
-			//Change the sprite's size
-			ufo.width = 80;
-			ufo.height = 120;
-			//scale to doubled the size
-			ufo.scale.x = 0.5;
-			ufo.scale.y = 0.5;
-			// Rotation
-			// ufo.rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
-			ufo.pivot.set(64 / 2, 64 / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
-			// ufo.rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
+			var nextRow = nAliens / 2;
+			for(let ai = 0; ai < nAliens; ++ai)
+			{
+				ufo[ai] = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
+				ufo[ai].lifeCount = 5;
+				//Change the sprite's position
+				ufo[ai].x = app.screen.width / 2 - 60  +  (ai < nextRow ? (170 * ai - 650) : (170 * (ai - nextRow) - 650));
+				ufo[ai].y = app.screen.height / 2 - 300 + (ai < nextRow ? 0 : 120);
+				//Change the sprite's size
+				ufo[ai].width = 80;
+				ufo[ai].height = 120;
+				//scale to doubled the size
+				ufo[ai].scale.x = 0.5;
+				ufo[ai].scale.y = 0.5;
+				// Rotation
+				// ufo[ai].rotation = 0.5; // Rotate clockwise and the Pivot at (0,0) top left 
+				ufo[ai].pivot.set(64 / 2, 64 / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+				// ufo[ai].rotation = 0.5; // PRotate clockwise and the Pivot at (32,32) center of an image
+	
+				// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
+				// "stage" is a Pixi Container object. 
+				// "stage" object is the root container for all the visible things in your scene. 
+				app.stage.addChild(ufo[ai]); // Add the ufo to the stage.
+			}
 
-			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
-			// "stage" is a Pixi Container object. 
-			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(ufo); // Add the ufo to the stage.
 
 			//////////////////////////////////////// Jet Bullet - Yellow
 			jetBullets = { leftBullet: null, rightBullet: null, life: 1 };
@@ -264,13 +270,16 @@ window.addEventListener('load', function () {
 
 			///////////////////////////////////// alien rectangle
 			// Rectangle
-			const graphicsAlienRect = new PIXI.Graphics();
-			graphicsAlienRect.lineStyle(2, 0xFFFFFF, 1);
-			//graphicsAlienRect.beginFill();
-			graphicsAlienRect.drawRect(ufo.x - 12, ufo.y -20, ufo.width, ufo.height);
-			graphicsAlienRect.endFill();
-			app.stage.addChild(graphicsAlienRect);
-
+			var graphicsAlienRect = null;
+			for(let ai = 0; ai < nAliens; ++ai)
+			{
+				graphicsAlienRect = new PIXI.Graphics();
+				graphicsAlienRect.lineStyle(2, 0xFFFFFF, 1);
+				//graphicsAlienRect.beginFill();
+				graphicsAlienRect.drawRect(ufo[ai].x - 12, ufo[ai].y -20, ufo[ai].width, ufo[ai].height);
+				graphicsAlienRect.endFill();
+				app.stage.addChild(graphicsAlienRect);
+			}
 
 			///////////////////////////////////////// JET
 			// create an array of textures from an image path
@@ -305,7 +314,7 @@ window.addEventListener('load', function () {
 			graphicsJetRect = new PIXI.Graphics();
 			graphicsJetRect.lineStyle(2, 0xFFFFFF, 1);
 			//graphicsJetRect.beginFill();
-			graphicsJetRect.drawRect(jetMachine.x - 78, jetMachine.y -30, ufo.width +0, ufo.height+50);
+			graphicsJetRect.drawRect(jetMachine.x - 78, jetMachine.y -30, ufo[0].width +0, ufo[0].height+50);
 			graphicsJetRect.endFill();
 			app.stage.addChild(graphicsJetRect);
 
@@ -324,8 +333,8 @@ window.addEventListener('load', function () {
 			{
 				// // create an explosion AnimatedSprite
 				// 	const explosion = new PIXI.AnimatedSprite(explosionTextures);
-					explosion.x = ufo.x + 60;
-					explosion.y = ufo.y + 20;
+					explosion.x = ufo[0].x + 60;
+					explosion.y = ufo[0].y + 20;
 
 					explosion.anchor.set(0.5);
 					explosion.rotation = Math.random() * Math.PI;
@@ -343,23 +352,23 @@ window.addEventListener('load', function () {
 
 			// Animate the rotation
 			app.ticker.add(() => {
-				// /*
+			// /*
 				// Check the Alien life
-				if(ufo.lifeCount)
+				if(ufo[0].lifeCount)
 				{
-					if((jetBullets.leftBullet.y < ufo.y - 20 + ufo.height) && (jetBullets.leftBullet.y > ufo.y - 20 + ufo.height - bulletDisplacement) )
+					if((jetBullets.leftBullet.y < ufo[0].y - 20 + ufo[0].height) && (jetBullets.leftBullet.y > ufo[0].y - 20 + ufo[0].height - bulletDisplacement) )
 					{
-						if((jetBullets.leftBullet.x > ufo.x - 12) && jetBullets.leftBullet.x < (ufo.x - 12 + ufo.width))
+						if((jetBullets.leftBullet.x > ufo[0].x - 12) && jetBullets.leftBullet.x < (ufo[0].x - 12 + ufo[0].width))
 						{
-							--ufo.lifeCount;
-							if(!ufo.lifeCount)
+							--ufo[0].lifeCount;
+							if(!ufo[0].lifeCount)
 							{
 									explosion.alpha = 1; // show
 									explosion.play();
 									setTimeout(function() { 
 										explosion.stop(); 
 										explosion.alpha = 0; // hide
-										ufo.alpha = 0;       // hide
+										ufo[0].alpha = 0;       // hide
 										alienBullets.life = 0;
 										alienBullets.leftBullet.alpha = 0;
 										alienBullets.rightBullet.alpha = 0;
