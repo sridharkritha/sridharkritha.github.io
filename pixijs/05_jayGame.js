@@ -11,8 +11,9 @@ let ufo = [];
 let graphicsJetRect = null;
 const keyDisplacement = 10;
 const bulletDisplacement = 15;
+var bulletTimeoutFlag = true;
 
-var alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
+// var alienBullets = { leftBullet: 0, rightBullet: 0, life: 1 };
 let bulletYellow = null; // bulletYellow.x = 447; bulletYellow.y = 370;
                          // bulletYellow.x = 530; bulletYellow.y = 370; 
 window.addEventListener('load', function () {
@@ -158,15 +159,17 @@ window.addEventListener('load', function () {
 		function onAssetsLoaded() {
 			//////////////////////////////////////// UFO
 			var nextRow = nAliens / 2;
+			var ufoWidth = 80;
+			var offset = app.screen.width / 2 - (ufoWidth + ufoWidth / 2);
 			for(let ai = 0; ai < nAliens; ++ai)
 			{
 				ufo[ai] = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
 				ufo[ai].lifeCount = 5;
-				//Change the sprite's position
-				ufo[ai].x = app.screen.width / 2 - 60  +  (ai < nextRow ? (170 * ai - 650) : (170 * (ai - nextRow) - 650));
+				// Change the sprite's position
+				ufo[ai].x = app.screen.width / 2 - 60  +  (ai < nextRow ? (170 * ai - offset) : (170 * (ai - nextRow) - offset));
 				ufo[ai].y = app.screen.height / 2 - 300 + (ai < nextRow ? 0 : 120);
 				//Change the sprite's size
-				ufo[ai].width = 80;
+				ufo[ai].width = ufoWidth;
 				ufo[ai].height = 120;
 				//scale to doubled the size
 				ufo[ai].scale.x = 0.5;
@@ -230,49 +233,52 @@ window.addEventListener('load', function () {
 			app.stage.addChild(jetBullets.rightBullet); // Add the jetBullets.rightBullet to the stage.
 	
 			//////////////////////////////////////// Bullet - Green -1
-			alienBullets = { leftBullet: null, rightBullet: null, life: 1 };
-			alienBullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
-			//Change the sprite's position
-			var alienBulletY = app.screen.height / 2 - 350;
-			alienBullets.leftBullet.x = bulletLeftX;
-			alienBullets.leftBullet.y = alienBulletY;
-			//Change the sprite's size
-			alienBullets.leftBullet.width = 17; //80;
-			alienBullets.leftBullet.height = 33; //120;
-			//scale to doubled the size
-			alienBullets.leftBullet.scale.x = 1; // 0.5;
-			alienBullets.leftBullet.scale.y = 1; // 0.5;
-			// Rotation
-			alienBullets.leftBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
-			
-			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
-			// "stage" is a Pixi Container object. 
-			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(alienBullets.leftBullet); // Add the jetBullets.rightBullet to the stage.
-			//////////////////////////////////////// Bullet - Green -2
-			alienBullets.rightBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
-			//Change the sprite's position
-			alienBullets.rightBullet.x = bulletRightX;
-			alienBullets.rightBullet.y = alienBulletY;
-			//Change the sprite's size
-			alienBullets.rightBullet.width = 17; //80;
-			alienBullets.rightBullet.height = 33; //120;
-			//scale to doubled the size
-			alienBullets.rightBullet.scale.x = 1; // 0.5;
-			alienBullets.rightBullet.scale.y = 1; // 0.5;
-			// Rotation
-			alienBullets.rightBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
-			
-			// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
-			// "stage" is a Pixi Container object. 
-			// "stage" object is the root container for all the visible things in your scene. 
-			app.stage.addChild(alienBullets.rightBullet); // Add the jetBullets.rightBullet to the stage.
+			var graphicsAlienRect = null;
+			var alienBullets = [];
+			for(let ai = 0; ai < nAliens; ++ai)
+			{
+				var bullets = { leftBullet: null, rightBullet: null, life: 0 };
+				bullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
+				//Change the sprite's position   ufo[ai].x - 12, ufo[ai].y -20, ufo[ai].width, ufo[ai].height
+				var alienBulletY = ufo[ai].y + 100;
+				bullets.leftBullet.x = ufo[ai].x;
+				bullets.leftBullet.y = ufo[ai].y + 50;
+				//Change the sprite's size
+				bullets.leftBullet.width = 17; //80;
+				bullets.leftBullet.height = 33; //120;
+				//scale to doubled the size
+				bullets.leftBullet.scale.x = 1; // 0.5;
+				bullets.leftBullet.scale.y = 1; // 0.5;
+				// Rotation
+				bullets.leftBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+				
+				// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
+				// "stage" is a Pixi Container object. 
+				// "stage" object is the root container for all the visible things in your scene. 
+				app.stage.addChild(bullets.leftBullet); // Add the jetBullets.rightBullet to the stage.
+				//////////////////////////////////////// Bullet - Green -2
+				bullets.rightBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
+				//Change the sprite's position
+				bullets.rightBullet.x = ufo[ai].x + ufo[ai].width - 25;
+				bullets.rightBullet.y = ufo[ai].y + 50;
+				//Change the sprite's size
+				bullets.rightBullet.width = 17; //80;
+				bullets.rightBullet.height = 33; //120;
+				//scale to doubled the size
+				bullets.rightBullet.scale.x = 1; // 0.5;
+				bullets.rightBullet.scale.y = 1; // 0.5;
+				// Rotation
+				bullets.rightBullet.pivot.set(jetBullets.rightBullet.width / 2, jetBullets.rightBullet.height / 2); // Pivot point moved to (64/2, 64/2)  center of an image of 64x64
+				
+				// Anything you want to be made visible in the renderer that has to be added to a special Pixi object called the "stage".
+				// "stage" is a Pixi Container object. 
+				// "stage" object is the root container for all the visible things in your scene. 
+				app.stage.addChild(bullets.rightBullet); // Add the jetBullets.rightBullet to the stage.
+
+				alienBullets.push(bullets);
 
 			///////////////////////////////////// alien rectangle
 			// Rectangle
-			var graphicsAlienRect = null;
-			for(let ai = 0; ai < nAliens; ++ai)
-			{
 				graphicsAlienRect = new PIXI.Graphics();
 				graphicsAlienRect.lineStyle(2, 0xFFFFFF, 1);
 				//graphicsAlienRect.beginFill();
@@ -369,9 +375,9 @@ window.addEventListener('load', function () {
 										explosion.stop(); 
 										explosion.alpha = 0; // hide
 										ufo[0].alpha = 0;       // hide
-										alienBullets.life = 0;
-										alienBullets.leftBullet.alpha = 0;
-										alienBullets.rightBullet.alpha = 0;
+										alienBullets[0].life = 0;
+										alienBullets[0].leftBullet.alpha = 0;
+										alienBullets[0].rightBullet.alpha = 0;
 										graphicsAlienRect.alpha = 0;
 									}.bind(this) , 1000);
 							}
@@ -383,9 +389,9 @@ window.addEventListener('load', function () {
 				// Check the JET life
 				if(jetMachine.lifeCount)
 				{
-					if((alienBullets.rightBullet.y < jetMachine.y - 20 + jetMachine.height) && (alienBullets.rightBullet.y > jetMachine.y - 20 + jetMachine.height - bulletDisplacement) )
+					if((alienBullets[0].rightBullet.y < jetMachine.y - 20 + jetMachine.height) && (alienBullets[0].rightBullet.y > jetMachine.y - 20 + jetMachine.height - bulletDisplacement) )
 					{
-						if((alienBullets.rightBullet.x > jetMachine.x - 12) && alienBullets.rightBullet.x < (jetMachine.x - 12 + jetMachine.width))
+						if((alienBullets[0].rightBullet.x > jetMachine.x - 12) && alienBullets[0].rightBullet.x < (jetMachine.x - 12 + jetMachine.width))
 						{
 							--jetMachine.lifeCount;
 							if(!jetMachine.lifeCount)
@@ -416,12 +422,26 @@ window.addEventListener('load', function () {
 					jetBullets.rightBullet.x = bulletRightX - (app.screen.width / 2 - jetMachine.x);
 				}
 
-				// Alien Bullet
-				if(alienBullets.life)
+				if(bulletTimeoutFlag)
 				{
-					alienBulletY_offset = alienBullets.leftBullet.y + 15;
-					alienBullets.leftBullet.y = alienBulletY_offset < app.screen.height + 25 ? alienBulletY_offset : alienBulletY;
-					alienBullets.rightBullet.y = alienBullets.leftBullet.y;
+					bulletTimeoutFlag = false;
+					var timeoutRange =  1000 + Math.floor(Math.random() * 1000);
+					setTimeout(function() {
+						bulletTimeoutFlag = true;
+						var i = Math.floor(Math.random() * nAliens);
+						if(!alienBullets[i].life) alienBullets[i].life = 1;
+					}.bind(this), 1000);
+				}
+
+				for(let ai = 0; ai < nAliens; ++ai)
+				{
+					// Alien Bullet
+					if(alienBullets[ai].life)
+					{
+						alienBulletY_offset = alienBullets[ai].leftBullet.y + 15;
+						alienBullets[ai].leftBullet.y = alienBulletY_offset < app.screen.height + 25 ? alienBulletY_offset : alienBulletY;
+						alienBullets[ai].rightBullet.y = alienBullets[ai].leftBullet.y;
+					}
 				}
 			});
 
