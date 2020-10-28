@@ -429,8 +429,13 @@ window.addEventListener('load', function () {
 					setTimeout(function() {
 						bulletTimeoutFlag = true;
 						var i = Math.floor(Math.random() * nAliens);
-						if(!alienBullets[i].life) alienBullets[i].life = 1;
-					}.bind(this), 1000);
+						if(!alienBullets[i].life) 
+						{
+							alienBullets[i].life = 1;
+							alienBullets[i].leftBullet.alpha = 1;
+							alienBullets[i].rightBullet.alpha = 1;
+						}
+					}.bind(this), 240);
 				}
 
 				for(let ai = 0; ai < nAliens; ++ai)
@@ -441,6 +446,12 @@ window.addEventListener('load', function () {
 						alienBulletY_offset = alienBullets[ai].leftBullet.y + 15;
 						alienBullets[ai].leftBullet.y = alienBulletY_offset < app.screen.height + 25 ? alienBulletY_offset : alienBulletY;
 						alienBullets[ai].rightBullet.y = alienBullets[ai].leftBullet.y;
+
+						if(alienBullets[ai].leftBullet.y === alienBulletY) {
+							alienBullets[ai].life = 0;
+							alienBullets[ai].leftBullet.alpha = 0;
+							alienBullets[ai].rightBullet.alpha = 0;
+						} 
 					}
 				}
 			});
@@ -466,19 +477,7 @@ window.addEventListener('load', function () {
 					graphicsJetRect.position.x -= keyDisplacement;
 				}
 				jetMachine.x = xInitJet;
-			};
-
-			/*
-			//Left arrow key `release` method
-			left.release = () => {
-			//If the left arrow has been released, and the right arrow isn't down,
-			//and the cat isn't moving vertically:
-			//Stop the cat
-			if (!right.isDown && cat.vy === 0) {
-			cat.vx = 0;
-			}
-			};
-			*/
+			}; 
 
 			//Right
 			right.press = () => {
@@ -493,36 +492,7 @@ window.addEventListener('load', function () {
 				}
 				jetMachine.x = xInitJet;
 			};
-			// right.release = () => {
-			// if (!left.isDown && cat.vy === 0) {
-			// cat.vx = 0;
-			// }
-			// };
-
-			//Up
-			// up.press = () => {
-			// cat.vy = -5;
-			// cat.vx = 0;
-			// };
-			// up.release = () => {
-			// if (!down.isDown && cat.vx === 0) {
-			// cat.vy = 0;
-			// }
-			// };
-
-			//Down
-			// down.press = () => {
-			// cat.vy = 5;
-			// cat.vx = 0;
-			// };
-			// down.release = () => {
-			// if (!up.isDown && cat.vx === 0) {
-			// cat.vy = 0;
-			// }
-			// };
-
 			// keyboard control - end
-
 		}
 	}
 }, false);
