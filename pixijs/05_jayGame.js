@@ -358,7 +358,7 @@ window.addEventListener('load', function () {
 
 			// Animate the rotation
 			app.ticker.add(() => {
-			// /*
+			/*
 				// Check the Alien life
 				if(ufo[0].lifeCount)
 				{
@@ -384,7 +384,7 @@ window.addEventListener('load', function () {
 						}
 					}
 				}
-				// */
+			*/
 
 				// Check the JET life
 				if(jetMachine.lifeCount)
@@ -429,7 +429,7 @@ window.addEventListener('load', function () {
 					setTimeout(function() {
 						bulletTimeoutFlag = true;
 						var i = Math.floor(Math.random() * nAliens);
-						if(!alienBullets[i].life) 
+						if(!alienBullets[i].life && ufo[ai].lifeCount) 
 						{
 							alienBullets[i].life = 1;
 							alienBullets[i].leftBullet.alpha = 1;
@@ -440,6 +440,32 @@ window.addEventListener('load', function () {
 
 				for(let ai = 0; ai < nAliens; ++ai)
 				{
+					// Check the Alien life
+					if(ufo[ai].lifeCount)
+					{
+						if((jetBullets.leftBullet.y < ufo[ai].y - 20 + ufo[ai].height) && (jetBullets.leftBullet.y > ufo[ai].y - 20 + ufo[ai].height - bulletDisplacement) )
+						{
+							if((jetBullets.leftBullet.x > ufo[ai].x - 12) && jetBullets.leftBullet.x < (ufo[ai].x - 12 + ufo[ai].width))
+							{
+								--ufo[ai].lifeCount;
+								if(!ufo[ai].lifeCount)
+								{
+										explosion.alpha = 1; // show
+										explosion.play();
+										setTimeout(function() { 
+											explosion.stop(); 
+											explosion.alpha = 0; // hide
+											ufo[ai].alpha = 0;       // hide
+											alienBullets[ai].life = 0;
+											alienBullets[ai].leftBullet.alpha = 0;
+											alienBullets[ai].rightBullet.alpha = 0;
+											graphicsAlienRect.alpha = 0;
+										}.bind(this) , 1000);
+								}
+							}
+						}
+					}
+
 					// Alien Bullet
 					if(alienBullets[ai].life)
 					{
