@@ -1,5 +1,6 @@
 // NOTE: File access(images) are allowed through web server so run local HTTP server.
 // http-server -c-1
+// http-server -p 8089 -c-1
 // If HTTP server is NOT installed then install by
 // npm install -g http-server 
 // run the example
@@ -8,6 +9,7 @@
 let app = null;
 let nAliens = 16;
 let ufo = [];
+let explosion = [];
 let graphicsJetRect = null;
 const keyDisplacement = 10;
 const bulletDisplacement = 15;
@@ -164,7 +166,7 @@ window.addEventListener('load', function () {
 			for(let ai = 0; ai < nAliens; ++ai)
 			{
 				ufo[ai] = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/ufo.png"].texture); // texture NOT textures
-				ufo[ai].lifeCount = 5;
+				ufo[ai].lifeCount = ai < nextRow ? 10 : 5;
 				// Change the sprite's position
 				ufo[ai].x = app.screen.width / 2 - 60  +  (ai < nextRow ? (170 * ai - offset) : (170 * (ai - nextRow) - offset));
 				ufo[ai].y = app.screen.height / 2 - 300 + (ai < nextRow ? 0 : 120);
@@ -285,6 +287,7 @@ window.addEventListener('load', function () {
 				graphicsAlienRect.drawRect(ufo[ai].x - 12, ufo[ai].y -20, ufo[ai].width, ufo[ai].height);
 				graphicsAlienRect.endFill();
 				app.stage.addChild(graphicsAlienRect);
+				graphicsAlienRect.alpha = 0;// don't show
 			}
 
 			///////////////////////////////////////// JET
@@ -323,6 +326,7 @@ window.addEventListener('load', function () {
 			graphicsJetRect.drawRect(jetMachine.x - 78, jetMachine.y -30, ufo[0].width +0, ufo[0].height+50);
 			graphicsJetRect.endFill();
 			app.stage.addChild(graphicsJetRect);
+			graphicsJetRect.alpha = 0; // don't show the jet rectangle
 
 			////////////////////////////////// Explosion ///////////////////////////////////////////////////////////////
 			// create an array to store the textures
@@ -333,21 +337,21 @@ window.addEventListener('load', function () {
 			}
 
 			// create an explosion AnimatedSprite
-			const explosion = new PIXI.AnimatedSprite(explosionTextures);
-			// for (i = 0; i < 50; i++)
-			for (i = 0; i < 1; i++) 
+			for(let ai = 0; ai < nAliens; ++ai)
+			// for (i = 0; i < 1; i++) 
 			{
 				// // create an explosion AnimatedSprite
 				// 	const explosion = new PIXI.AnimatedSprite(explosionTextures);
-					explosion.x = ufo[0].x + 60;
-					explosion.y = ufo[0].y + 20;
+					explosion[ai] = new PIXI.AnimatedSprite(explosionTextures);
+					explosion[ai].x = ufo[ai].x + 60;
+					explosion[ai].y = ufo[ai].y + 20;
 
-					explosion.anchor.set(0.5);
-					explosion.rotation = Math.random() * Math.PI;
-					explosion.scale.set(0.75 + Math.random() * 0.5);
+					explosion[ai].anchor.set(0.5);
+					explosion[ai].rotation = Math.random() * Math.PI;
+					explosion[ai].scale.set(0.75 + Math.random() * 0.5);
 
-					explosion.alpha = 0; // hide
-					app.stage.addChild(explosion);
+					explosion[ai].alpha = 0; // hide
+					app.stage.addChild(explosion[ai]);
 				}
 			//////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -450,11 +454,11 @@ window.addEventListener('load', function () {
 								--ufo[ai].lifeCount;
 								if(!ufo[ai].lifeCount)
 								{
-										explosion.alpha = 1; // show
-										explosion.play();
+										explosion[ai].alpha = 1; // show
+										explosion[ai].play();
 										setTimeout(function() { 
-											explosion.stop(); 
-											explosion.alpha = 0; // hide
+											explosion[ai].stop(); 
+											explosion[ai].alpha = 0; // hide
 											ufo[ai].alpha = 0;       // hide
 											alienBullets[ai].life = 0;
 											alienBullets[ai].leftBullet.alpha = 0;
