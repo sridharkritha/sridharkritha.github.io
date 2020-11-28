@@ -239,7 +239,7 @@ window.addEventListener('load', function () {
 			var alienBullets = [];
 			for(let ai = 0; ai < nAliens; ++ai)
 			{
-				var bullets = { leftBullet: null, rightBullet: null, life: 0 };
+				var bullets = { leftBullet: null, rightBullet: null, life: 1 };
 				bullets.leftBullet = new PIXI.Sprite(PIXI.Loader.shared.resources["./assets/jayAssets/bulletGreen.png"].texture); // texture NOT textures
 				//Change the sprite's position   ufo[ai].x - 12, ufo[ai].y -20, ufo[ai].width, ufo[ai].height
 				var alienBulletY = ufo[ai].y + 100;
@@ -362,7 +362,8 @@ window.addEventListener('load', function () {
 
 			// Animate the rotation
 			app.ticker.add(() => {
-			/*
+
+				/*
 				// Check the Alien life
 				if(ufo[0].lifeCount)
 				{
@@ -388,7 +389,8 @@ window.addEventListener('load', function () {
 						}
 					}
 				}
-			*/
+				*/
+
 
 				// Check the JET life
 				if(jetMachine.lifeCount)
@@ -415,8 +417,8 @@ window.addEventListener('load', function () {
 						}
 					}
 				}
-
-				// Jet Bullet
+				
+				// Jet Bullet - displacement
 				bulletYoffset = jetBullets.leftBullet.y - bulletDisplacement;
 				jetBullets.leftBullet.y = bulletYoffset < -25 ? bulletY: bulletYoffset;
 				jetBullets.rightBullet.y = jetBullets.leftBullet.y;
@@ -426,6 +428,7 @@ window.addEventListener('load', function () {
 					jetBullets.rightBullet.x = bulletRightX - (app.screen.width / 2 - jetMachine.x);
 				}
 
+
 				if(bulletTimeoutFlag)
 				{
 					bulletTimeoutFlag = false;
@@ -433,14 +436,19 @@ window.addEventListener('load', function () {
 					setTimeout(function() {
 						bulletTimeoutFlag = true;
 						var i = Math.floor(Math.random() * nAliens);
-						if(!alienBullets[i].life && ufo[ai].lifeCount) 
+						for(let ai = 0; ai < nAliens; ++ai)
 						{
-							alienBullets[i].life = 1;
-							alienBullets[i].leftBullet.alpha = 1;
-							alienBullets[i].rightBullet.alpha = 1;
+							if(!alienBullets[i].life && ufo[ai].lifeCount) 
+							{
+								alienBullets[i].life = 1;
+								alienBullets[i].leftBullet.alpha = 1;
+								alienBullets[i].rightBullet.alpha = 1;
+							}
 						}
 					}.bind(this), 240);
 				}
+
+
 
 				for(let ai = 0; ai < nAliens; ++ai)
 				{
