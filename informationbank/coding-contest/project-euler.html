@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/coding-contest/project-euler by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 09:58:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/coding-contest","deleted":false,"title":"Coding Contest","dir":"ltr"},{"path":"/site/sridharkritha/coding-contest/project-euler","deleted":false,"title":"Project Euler - 1 to 5","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://551334928-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/coding-contest/project-euler\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","../_/rsrc/1624520311000/system/app/css/editor.css","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":"/coding-contest","parentWuid":"wuid:gx:68d76564d6ae9730","siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Project Euler - 1 to 5","locale":"en","wuid":"wuid:gx:bc7593f2d7392d","revision":11,"path":"/coding-contest/project-euler","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"project-euler","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Project Euler - 1 to 5 - sridharkritha" />
+<meta itemprop="name" content="Project Euler - 1 to 5 - sridharkritha" />
+<meta property="og:title" content="Project Euler - 1 to 5 - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Project Euler - 1 to 5 - sridharkritha</title>
+<meta itemprop="image" content="http://projecteuler.net/images/symbol_times.gif" />
+<meta property="og:image" content="http://projecteuler.net/images/symbol_times.gif" />
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+<A href="../coding-contest.html" dir="ltr">Coding Contest</A>‎ &gt; ‎
+  </div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Project Euler - 1 to 5</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header sites-layout-empty-tile"><div dir="ltr"><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar"><div dir="ltr"><div><div><div><div><br /></div><b>Solutions Pages</b><br /><br /></div><a href="project-euler/project-euler-5-10.html">Solution 6 to 10</a><br /><br /></div><a href="project-euler/project-euler---11-to-15.html">Solution 11 to 15</a><br /><br /><a href="project-euler/solution-16---20.html">Solution 16 to 20</a><br /><br /><br /><br /><br /><br /><br /></div><a href="project-euler/project-euler-65-to-70.html">Solution 65 to 70</a><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr"><b>1. Multiples of 3 and 5:</b><div>
+<p>If we list all the natural numbers below 10 that are multiples of 3 
+or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+<p>Find the sum of all the multiples of 3 or 5 below 1000.</p><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span><span style="color:#a31515">&lt;</span><span style="color:royalblue">iostream</span><span style="color:#a31515">&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>(){
+    <span style="color:blue">int</span> j =0;
+    cout&lt;&lt;<span style="color:#a31515">"Multiples of 3 and 5\n"</span>;
+    <span style="color:blue">for</span>(<span style="color:blue">int</span> i=1;i&lt;1000;i++) {
+        <span style="color:blue">if</span>((0==i%3)||(0==i%5)) {
+            j = j+ i;
+        }
+    }
+    cout&lt;&lt;j;
+    <span style="color:blue">return</span> 0;
+}</pre><h2><a name="TOC-2.-Even-Fibonacci-numbers:"></a>2. Even Fibonacci numbers:</h2><p>Each new term in the Fibonacci sequence is generated by adding the 
+previous two terms. By starting with 1 and 2, the first 10 terms will 
+be:   <br /></p>
+<p style="text-align:center">1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...</p>
+<p>By considering the terms in the Fibonacci sequence whose values do 
+not exceed four million, find the sum of the even-valued terms.</p><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span><span style="color:#a31515">&lt;</span><span style="color:royalblue">iostream</span><span style="color:#a31515">&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>(){
+    <span style="color:blue">long</span> <span style="color:blue">long</span> a = 1, b =2, f = 0, total = 2;
+    cout&lt;&lt;<span style="color:#a31515">"Even Fibonacci numbers\n"</span>;
+    <span style="color:blue">while</span>(1) {
+        f = a + b;
+        <span style="color:blue">if</span>(f &gt; 4000000)
+            <span style="color:blue">break</span>;
+        <span style="color:blue">if</span>(0== f%2)
+            total += f;
+        a = b;
+        b = f;
+    }
+    cout&lt;&lt;total;
+    <span style="color:blue">return</span> 0;
+}</pre><h2><a name="TOC-3.-Largest-prime-factor---SK-rating---3-Star-"></a>3. Largest prime factor  - (SK rating - 3 Star)<br /></h2><div style="width:200px;margin-bottom:10px"><h3><a name="TOC-Problem-3"></a>Problem 3</h3></div>
+<p>The prime factors of 13195 are 5, 7, 13 and 29.</p>
+<p>What is the largest prime factor of the number 600851475143 ?</p><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;iostream&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:blue">long</span> <span style="color:blue">long</span> n = <span style="color:navy">sqrt</span>((<span style="color:blue">double</span>)600851475143); <span style="color:green">// Note: Square root</span>
+	<span style="color:blue">long</span> <span style="color:blue">long</span> a = 600851475143L;      <span style="color:green">//</span> <span style="color:green">Note: L is appended at the end</span>
+ 
+	<span style="color:blue">if</span>(n%2 == 0) <span style="color:green">// Check Even or Odd</span>
+		n = n +1; <span style="color:green">// If even change in to Odd</span>
+ 
+	<span style="color:blue">while</span> (1) {
+ 
+		<span style="color:blue">if</span>(<span style="color:navy">Miller</span>(n,5)) {
+			<span style="color:blue">if</span>( 0 == <span style="color:navy">mulmod</span>(a,1,n)) {
+				cout &lt;&lt; n;   <span style="color:green">// Ans: 6857</span>
+				<span style="color:blue">break</span>;
+				}
+			<span style="color:blue">else</span>
+				n = n - 2; <span style="color:green">// Skip the even numbers</span>
+			}
+		<span style="color:blue">else</span>
+			n = n - 2;
+		}
+}</pre><h2><a name="TOC-4.-Largest-palindrome-product---SK-rating---3-Star-"></a>4. Largest palindrome product - (SK rating - 3 Star)</h2><div style="width:200px;margin-bottom:10px"><h3><a name="TOC-Problem-4"></a>Problem 4</h3></div>
+<div>
+<p>A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 <img alt="×" border="0" height="9" src="../../../../projecteuler.net/images/symbol_times.gif" style="vertical-align:middle" width="9" /> 99.</p>
+<p>Find the largest palindrome made from the product of two 3-digit numbers.</p><table><tbody><tr><td><div style="text-align:right">Answer:</div></td><td style="text-align:left">
+<b>906609<br /><br /></b></td></tr></tbody></table><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;</span><span style="color:royalblue">iostream</span><span style="color:#a31515">&gt;</span>
+<span style="color:blue">#include</span> <span style="color:#a31515">&lt;sstream&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:green">// Integer to String</span>
+<span style="color:blue">template</span>&lt;<span style="color:blue">class</span> T&gt;
+<span style="color:royalblue">string</span> <span style="color:navy">toString</span>(T n){<span style="color:royalblue">ostringstream</span> ost;ost&lt;&lt;n;ost.<span style="color:navy">flush</span>();<span style="color:blue">return</span> ost.str();}
+ 
+<span style="color:blue">bool</span> <span style="color:navy">isPalindrome</span>(<span style="color:blue">long</span> <span style="color:blue">long</span> p) {
+	std::<span style="color:royalblue">string</span> str = <span style="color:navy">toString</span>(p);
+	<span style="color:blue">int</span> len = str.length();
+	<span style="color:blue">for</span>(<span style="color:blue">int</span> i=0; i&lt;str.length()/2; ++i) <span style="color:green">// Half of the length comparisons is good enough</span>
+		{
+		<span style="color:blue">if</span>(str[i] == str[len -1]) {
+			len = len -1;
+			}
+		<span style="color:blue">else</span>
+			<span style="color:blue">return</span> <span style="color:blue">false</span>;
+		}
+	<span style="color:blue">return</span> <span style="color:blue">true</span>;
+}
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:blue">int</span> a = 100, b= 999, i,j;
+	<span style="color:blue">long</span> <span style="color:blue">long</span> c =0, big = 0;
+	<span style="color:blue">bool</span> pal = <span style="color:blue">false</span>;
+ 
+	<span style="color:blue">for</span>( i = b; i &gt; 99; --i) {
+		<span style="color:blue">for</span>( j = b; j &gt; 99; --j) {
+			c = i *j ;
+			pal = <span style="color:navy">isPalindrome</span>(c);
+			<span style="color:blue">if</span>(<span style="color:blue">true</span> == pal) {
+				<span style="color:blue">if</span>(big &lt; c)
+					big = c; <span style="color:green">// largest palindrome number				</span>
+				}
+			}
+		}
+ 
+	cout&lt;&lt; big &lt;&lt; <span style="color:navy">endl</span> ;			
+	<span style="color:blue">return</span> 0;
+}</pre>
+</div>
+<table><tbody><tr><td><b>Lesson Learned:</b><br /><br />1. Number of digits in a product m digit number multiplied by n digit number is <br />           m - digit number X n -digit number  = maximum (m+n) digit number<br />2. Every even digit palindrome number should be divisible by 11.   <br /><pre>   3223 = 3000+200+20+3 = 3003+220 = 11*273+11*20
+      = 11*293<br /><br />Proof: 
+      
+consider the palindrome that looks like abba.
+ 
+abba = 1000*a + 100*b + 10*b + a
+ 
+abba = 1001*a + 110*b = 11 * (7*13*a + 2*5*b)
+ 
+So abba is a multiple of 11.<br /></pre><h2><a name="TOC-5.-Smallest-multiple"></a>5. Smallest multiple</h2><div style="width:200px;margin-bottom:10px"><h3><a name="TOC-Problem-5"></a>Problem 5</h3></div>
+<div>
+<p>2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.</p>
+<p>What is the smallest positive number that is <dfn title="divisible with no remainder">evenly divisible</dfn> by all of the numbers from 1 to 20?</p></div><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;</span><span style="color:royalblue">iostream</span><span style="color:#a31515">&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:blue">long</span> <span style="color:blue">long</span> a = 2520;	
+ 
+		<span style="color:blue">for</span>(<span style="color:blue">int</span> i=1; i&lt;=20; ++i) {
+ 
+				<span style="color:blue">if</span> (0 != a % i) {					
+					i = 1;
+					a++;
+					} 				
+			}
+ 
+		cout&lt;&lt;a;	
+	<span style="color:blue">return</span> 0;
+}</pre>
+<table><tbody><tr><td><div style="text-align:right">Answer:</div></td>
+<td style="text-align:left">
+<b>232792560</b></td></tr></tbody></table><pre><br /><br /></pre></td>
+<td style="text-align:left"><br /></td></tr></tbody></table> 
+
+<br /></div></div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages" class="sites-canvas-bottom-panel-wrapper" style="">
+<div class="sites-subpages">
+            Subpages <span id="subpages-total-number">(4):</span>
+<span>
+<a href="project-euler/project-euler---11-to-15.html" dir="ltr">Project Euler - 11 to 15</a>
+</span>
+<span>
+<a href="project-euler/project-euler-5-10.html" dir="ltr">Project Euler 6-10</a>
+</span>
+<span>
+<a href="project-euler/project-euler-65-to-70.html" dir="ltr">Project Euler 65 to 70</a>
+</span>
+<span>
+<a href="project-euler/solution-16---20.html" dir="ltr">Project Euler Solution 16 - 20</a>
+</span>
+</div>
+</div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="../../../../accounts.google.com/ServiceLogin1c8b.html?continue=https://sites.google.com/site/sridharkritha/coding-contest/project-euler&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="../../../../accounts.google.com/ServiceLogin33de.html">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXsyO8Rt87TTHQ1KkSdlmryUB8qLjK_KGHNzHdlP0j_oDMm_6Ds74Ht67x1SVywZK77ETSNs4zAHYLePCFb4gjysy0VuHRC1ojLW0GOOn0WPoOZQ9I6jAnVwOXnMDeiY0tu5TYt-/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('../_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/coding-contest/project-euler by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:00:20 GMT -->
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/linkedlist-1 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:31:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/linkedlist-1","deleted":false,"title":"LinkedList","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://363614308-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/linkedlist-1\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","_/rsrc/1624520311000/system/app/css/editor.css","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":null,"parentWuid":null,"siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"LinkedList","locale":"en","wuid":"wuid:gx:5739770f54de2de7","revision":10,"path":"/linkedlist-1","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"linkedlist-1","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="LinkedList - sridharkritha" />
+<meta itemprop="name" content="LinkedList - sridharkritha" />
+<meta property="og:title" content="LinkedList - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>LinkedList - sridharkritha</title>
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">LinkedList</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header sites-layout-empty-tile"><div dir="ltr"><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar sites-layout-empty-tile"><div dir="ltr"><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr">
+<pre><span>// Linked list implementation skeleton</span>
+<span>#include </span><span>&lt;stdlib.h&gt;</span>
+<span>#include </span><span>&lt;string.h&gt;</span>
+<span>#include </span><span>"linkedlist.h"</span>
+
+<span>typedef</span> <span>struct</span> LINKED_LIST_S {
+        <span>int</span> data;
+        <span>struct</span> LINKED_LIST_S *next;
+}LINKED_LIST_S;
+LINKED_LIST_S *head, *tail;
+
+<span>// Function to create a linked list and return an opaque handle to it</span>
+LINKED_LIST_T linkedListCreate()
+{
+        <span>// Allocate heap memory for the node</span>
+        LINKED_LIST_S *node = (LINKED_LIST_S*)malloc(<span>sizeof</span>(*node)); <span>// *node = for Size of the structure content</span>
+        <span>if</span>(node!=<span>NULL</span>)
+        {
+                <span>// Clear the allocated memory</span>
+                memset(node,<span>0</span>,<span>sizeof</span>(*node));
+                <span>return</span> node;
+        }
+
+        <span>return</span> <span>NULL</span>;
+}
+
+
+<span>// Function to destroy a linked list</span>
+<span>// If fn is not NULL then it will call fn for each item in the list</span>
+<span>void</span> linkedListDestroy(LINKED_LIST_T list, DestroyFunction fn)
+{
+        <span>if</span>((list != <span>NULL</span>)&amp;&amp; (fn !=<span>NULL</span>))
+        {
+                <span>// Destroy the node using the user destroy function</span>
+                <span>for</span>(LINKED_LIST_T node=head; node!=<span>NULL</span>; node=node-&gt;next)
+                        fn(node);
+        }
+}
+
+<span>// Function to check if a list is empty</span>
+<span>// returns 0 - False, there are items in the list</span>
+<span>// !0 - True</span>
+<span>int</span> linkedListIsEmpty(LINKED_LIST_T list)
+{
+        <span>// If head and tail are same then list is empty</span>
+        <span>if</span>(head != tail)
+                <span>return</span> <span>0</span>;
+        <span>return</span> <span>1</span>;
+}
+
+<span>// Append an item to the list. This will add the item to the end of the list</span>
+<span>// Item must be non-null</span>
+<span>//</span>
+<span>// Returns: 0 - Success</span>
+<span>// !0 - Failed</span>
+<span>int</span> linkedListAppend(LINKED_LIST_T list, <span>void</span> *item)
+{
+        <span>//list = linkedListCreate();</span>
+
+        <span>if</span>(list!= <span>NULL</span>)
+        {
+                <span>if</span>(head == <span>NULL</span>)
+                { <span>// If it is the first node</span>
+                        list-&gt;data = (<span>int</span>)item;
+                        list-&gt;next = <span>NULL</span>;
+                        head = tail = list;
+                        <span>return</span> <span>0</span>;
+                }
+                LINKED_LIST_T temp = <span>NULL</span>;
+                temp = linkedListCreate();
+                temp-&gt;data = (<span>int</span>)item;
+                temp-&gt;next = <span>NULL</span>;
+
+
+                <span>// if it is not a first node then consider as tail node</span>
+                <span>// and change the tail pointer</span>
+                tail-&gt;next = temp;
+                tail = tail-&gt;next; <span>// Move to tail pointer</span>
+                <span>return</span> <span>0</span>;
+        }
+
+        <span>return</span> -<span>1</span>;
+
+}
+
+<span>// Insert an item into the list. This will insert the item in front of the</span>
+<span>// Current item in the list. Item must be non-null</span>
+<span>// Returns: 0 - Success</span>
+<span>// !0 - Failed</span>
+<span>int</span> linkedListInsert(LINKED_LIST_T list, <span>void</span> *item)
+{
+        <span>if</span>(list!= <span>NULL</span>)
+        {
+                list-&gt;data = (<span>int</span>)item;
+                list-&gt;next = <span>NULL</span>;
+
+                <span>if</span>(head == <span>NULL</span>)
+                {
+                        <span>// if it is a first node then both head/tail points to it</span>
+                        head = tail = list;
+                        <span>return</span> <span>0</span>;
+                }
+                <span>// if it is not a first node then make this node as a head node</span>
+                list-&gt;next = head;
+                head = list; <span>// Move the head ptr to first loc</span>
+
+                <span>return</span> <span>0</span>;
+        }
+
+        <span>return</span> -<span>1</span>;
+}
+
+<span>// Remove the current item from the list</span>
+<span>// Returns:</span>
+<span>// NULL - the list is empty</span>
+<span>// item - The removed item</span>
+<span>void</span> * linkedListRemove(LINKED_LIST_T list)
+{
+        <span>int</span> revodeData =<span>0</span>;
+        <span>if</span>(list!=<span>NULL</span>)
+        {
+                revodeData = list-&gt;data;
+
+                LINKED_LIST_T prevNode = head;
+                LINKED_LIST_T temp = head;
+                <span>// Find the prev node of the list to be removed</span>
+                <span>for</span>(temp=head; temp!=list; temp=temp-&gt;next)
+                {
+                        prevNode = temp;
+                }
+                <span>// get the next node addr before deleting the Node</span>
+                <span>// for assigning into prevNode next</span>
+                prevNode-&gt;next = temp-&gt;next ;
+                <span>// Reset the tail pointer to head pos before deleting the node</span>
+                <span>if</span>(prevNode== head)
+                        tail = head;
+                free(temp);
+                list = <span>NULL</span>;
+                <span>return</span> (<span>void</span>*)revodeData;
+
+        }
+        <span>return</span> <span>NULL</span>;
+}
+
+<span>// Get the current item in the list</span>
+<span>// Returns:</span>
+<span>// NULL - The list is empty</span>
+<span>// item - The current item</span>
+<span>void</span> * linkedListCurrent(LINKED_LIST_T list)
+{
+        <span>// Return the data if the list is not NULL</span>
+        <span>if</span>(list!=<span>NULL</span>)
+                <span>return</span> (<span>void</span>*)list-&gt;data;
+        <span>return</span> <span>NULL</span>;
+}
+
+<span>// Get the first/last item from the list and set as current</span>
+<span>//</span>
+<span>void</span> * linkedListGetFirst(LINKED_LIST_T list)
+{
+        <span>if</span>(list!=<span>NULL</span>)
+        {
+                <span>// Retrun the first ele (head) if the list is not empty</span>
+                <span>return</span> (<span>void</span>*)head-&gt;data;
+        }
+
+        <span>return</span> <span>NULL</span>;
+
+}
+
+<span>void</span> * linkedListGetLast(LINKED_LIST_T list)
+{
+        <span>if</span>(list!=<span>NULL</span>)
+        {
+                <span>// Retrun the last ele (tail) if the list is not empty</span>
+                <span>return</span> (<span>void</span>*)tail-&gt;data;
+        }
+        <span>return</span> <span>NULL</span>;
+}
+
+<span>// Get the next / previous item from the list and set as</span>
+<span>// current</span>
+<span>void</span> * linkedListGetNext(LINKED_LIST_T list)
+{
+        <span>//int nextEle =0;</span>
+        <span>if</span>(list!=<span>NULL</span>)
+        {
+                <span>// Move to next node and return the value if it is not NULL</span>
+                <span>//nextEle = list-&gt;data;</span>
+                list = list-&gt;next;
+                <span>if</span>(list!=<span>NULL</span>)
+                        <span>return</span> (<span>void</span>*)list-&gt;data;
+        }
+        <span>return</span> <span>NULL</span>;
+}
+
+<span>void</span> * linkedListGetPrev(LINKED_LIST_T list)
+{
+        <span>int</span> prevData=<span>0</span>;
+        <span>if</span>(list!=<span>NULL</span>)
+        {
+                <span>// Find the prev node of the given node and return the data</span>
+                <span>for</span>( LINKED_LIST_T temp =head; temp!=list; temp=temp-&gt;next )
+                        prevData = temp-&gt;data;
+
+                <span>return</span> (<span>void</span>*)prevData;
+        }
+        <span>return</span> <span>NULL</span>;
+}
+
+<span>// Sort the linked list</span>
+<span>// fn is a function used to compare two list items</span>
+<span>// usr_info is a value passed to every call of fn</span>
+<span>int</span> linkedListSort(LINKED_LIST_T list, CompareFunction fn, <span>void</span> *usr_info)
+{
+        <span>int</span> lenList =<span>0</span>;
+        <span>int</span> x =<span>0</span>;
+        <span>// Finding the length of the list</span>
+        <span>for</span>(LINKED_LIST_T temp=head; temp!=<span>NULL</span>; temp=temp-&gt;next)
+        {
+                lenList = lenList+<span>1</span>;
+        }
+        <span>// Sorting the linked list w.r.t to comp.fun fn and usr_info</span>
+        <span>for</span> (<span>int</span> p = <span>0</span>; p &lt; lenList - <span>1</span>; p++) {
+                <span>for</span>(<span>int</span> i = <span>0</span>; i &lt; lenList - <span>1</span>; i++)
+                {
+                        LINKED_LIST_T nextEle= list-&gt;next;
+                        <span>if</span>(nextEle !=<span>NULL</span>)
+                        {
+                                <span>// Call the user defined compare function</span>
+                                <span>if</span>(fn((<span>void</span>*)list-&gt;data,(<span>void</span>*)nextEle-&gt;data,usr_info))
+                                {
+                                        <span>// Swap the data</span>
+                                        x = list-&gt;data;
+                                        list-&gt;data = nextEle-&gt;data;
+                                        nextEle-&gt;data = x;
+                                }
+                        }
+                }
+        }
+
+        <span>return</span> <span>1</span>;
+}
+
+
+</pre>
+</div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/site/sridharkritha/linkedlist-1&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPHwsg8Yc1NluYuKMMeDkgEqs6kaJ-P0r7llWRm2zZ1DlFNnINlK4m39Ix9z_wcpCKxG1hvG-wRkOnMAtQ3gve4lWsN8gA/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/linkedlist-1 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:31:42 GMT -->
+</html>

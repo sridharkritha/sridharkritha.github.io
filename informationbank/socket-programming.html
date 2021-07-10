@@ -1,0 +1,716 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/socket-programming by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:01:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/socket-programming","deleted":false,"title":"Socket Programming","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://1440861110-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/socket-programming\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","_/rsrc/1624520311000/system/app/css/editor.css","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":null,"parentWuid":null,"siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Socket Programming","locale":"en","wuid":"wuid:gx:74ae9140a6352960","revision":6,"path":"/socket-programming","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"socket-programming","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Socket Programming - sridharkritha" />
+<meta itemprop="name" content="Socket Programming - sridharkritha" />
+<meta property="og:title" content="Socket Programming - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Socket Programming - sridharkritha</title>
+<meta itemprop="image" content="http://imgs.g4estatic.com/c-socket/socketprogramminginc.jpg" />
+<meta property="og:image" content="http://imgs.g4estatic.com/c-socket/socketprogramminginc.jpg" />
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Socket Programming</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header sites-layout-empty-tile"><div dir="ltr"><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar"><div dir="ltr"><a href="socketpresentation.html">Introduction</a><br /><br /><a href="serversocket-c.html">Server Socket</a><br /><br /><a href="clientsocket-c.html">Client Socket</a><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr">Today we will discuss about Sockets programming paradigm, elements of 
+Sockets applications, and the Sockets API. The Sockets API allows to 
+develop applications that communicate over a network. The network can be
+ a local private network or the public Internet. An important item about
+ Sockets programming is that it's neither operating system specific nor 
+language specific. Sockets applications can be written in the Ruby 
+scripting language on a GNU/Linux host or in C on an embedded 
+controller. This freedom and flexibility are the reasons that the BSD4.4
+ Sockets API is so popular.<br />
+<br />
+<h3><a name="layered"></a>Layered Model of Networking</h3><br />
+<br />
+Sockets programming uses the layered model of packet communication as 
+shown in the figure below. At the top is the application layer, which is
+ where the applications exist (those that utilize Sockets for 
+communication). Below is the application layer defines the Sockets 
+layer. This isn't actually a layer, but it is shown to illustrate where 
+the API is located. The Sockets layer sits on top of the transport 
+layer. The transport layer provides the transport protocols. Next is the
+ network layer, which provides among other things routing over the 
+Internet. This layer is occupied by the Internet Protocol, or IP. 
+Finally, is the physical layer driver, which provides the means to 
+introduce packets onto the physical network.<br />
+<br />
+<img alt="" border="0" src="../../../imgs.g4estatic.com/c-socket/socketprogramminginc.jpg" /><br />
+<br />
+<h3><a name="API"></a>Sockets API Summary</h3><br />
+<br />
+The networking API for C provides a mixed set of functions for the 
+development of client and server applications. Some functions are used 
+by only server-side sockets, whereas others are used solely by 
+client-side sockets (most are available to both).<br />
+<br />
+<b>Creating and Destroying Sockets</b><br />
+<br />
+The first step of any Sockets-based application is to create a socket.The socket function provides the following prototype:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">int socket( int domain, int type, int protocol );</pre>
+</div>The socket object is represented as a simple integer and is 
+returned by the socket function. Three parameters must be passed to 
+define the type of socket to be created. Right now, you are interested 
+primarily in stream (TCP) and datagram (UDP) sockets, but many other 
+types of sockets can be created. In addition to stream and datagram, a 
+raw socket is also illustrated by the following code snippets:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:66px;text-align:left;overflow:auto">myStreamSocket = socket( AF_INET, SOCK_STREAM, 0 );
+myDgramSocket = socket( AF_INET, SOCK_DGRAM, 0 );
+myRawSocket = socket( AF_INET, SOCK_RAW, IPPROTO_RAW );</pre>
+</div>The AF_INET symbolic constant indicates that we are using the IPv4
+ Internet protocol. After this, the second parameter (type) defines the 
+semantics of communication. For stream communication (using TCP), you 
+use the SOCK_STREAM type, and for datagram communication (using UDP), 
+you specify SOCK_DGRAM. The third parameter can define a particular 
+protocol to use, but only the types exist for stream and datagram, so 
+this third parameter is left as zero in those cases.<br />
+<br />
+When we've finished with a socket, we must close it. The close prototype is defined as follows:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">int close( sock );</pre>
+</div>After close is called, no further data can be received through the
+ socket. Any data queued for transmission is given some amount of time 
+to be sent before the connection physically closes.<br />
+<br />
+<b>Socket Addresses</b><br />
+<br />
+For socket communication over the Internet (domain AF_INET), we use the sock-addr_in structure for naming purposes.<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:194px;text-align:left;overflow:auto">struct sockaddr_in 
+{
+    int16_t sin_family;
+    uint16_t sin_port;
+    struct in_addr sin_addr;
+    char sin_zero[8];
+};
+struct in_addr  
+{
+    uint32_t s_addr;
+};</pre>
+</div>For Internet communication, we use AF_INET solely for sin_family. 
+Field sin_port defines your specified port number in network byte order.
+ Therefore, we must use htons to load the port and ntohs to read it from
+ this structure. Field sin_addr is, through s_addr, a 32-bit field that 
+represents an IPv4 Internet address.IPv4 addresses are 4-byte addresses.
+ Often the sin_addr is set to INADDR_ANY, which is the wildcard. When 
+you're accepting connections (server socket), this wildcard accepts 
+connections from any available interface on the host. For client 
+sockets, this is commonly left blank. For a client, sin_addr is set to 
+the IP address of a local interface, this restricts outgoing connections
+ to that interface.<br />
+<br />
+Now let us take look at a quick example of addressing for both a client 
+and a server. First, in this example we create the socket address (later
+ to be bound to your server socket) that permits incoming connections on
+ any interface and port 48000.<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">int servsock;
+struct sockaddr_in servaddr;
+servsock = socket( AF_INET, SOCK_STREAM, 0);
+memset( &amp;servaddr, 0, sizeof(servaddr) );
+servaddr.sin_family = AF_INET;
+servaddr.sin_port = htons( 48000 );
+servaddr.sin_addr.s_addr = inet_addr( INADDR_ANY );</pre>
+</div>Next, we create a socket address that permits a client socket to connect to your previously created server socket.<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">int clisock;
+struct sockaddr_in servaddr;
+clisock = socket(AF_INET, SOCK_STREAM, 0);
+memset(&amp;servaddr, 0, sizeof(servaddr));
+servaddr.sin_family = AF_INET;
+servaddr.sin_port = htons(48000);
+servaddr.sin_addr.s_addr = inet_addr("192.168.1.1");</pre>
+</div>Note the similarities between these two code segments. The 
+difference,is that the server uses the address to bind to itself as an 
+advertisement. The client uses this information to define to whom it 
+wants to connect.<br />
+<br />
+<h3><a name="primitives"></a>Socket Primitives</h3><br />
+<br />
+Now I will look at a number of other important server-side socket control primitives.<br />
+<br />
+<b>bind</b><br />
+<br />
+The bind function provides a local naming capability to a socket. This 
+can be used to name either client or server sockets, but it is used most
+ often in the server case. <br />
+<br />
+The bind function is provided by the following prototype:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">int bind( int sock, struct sockaddr *addr, int addrLen );</pre>
+</div>The socket to be named is provided by the sock argument, and the 
+address structure previously defined is defined by addr. Note that the 
+structure here differs from the address structure discussed previously. 
+The bind function can be used with a variety of different protocols, but
+ when we are using a socket created with AF_INET, we must use the 
+sockaddr_in. Therefore, as shown in the following example, we cast our 
+sockaddr_in structure as sockaddr.<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">  err = bind( servsock, (struct sockaddr *)&amp;servaddr,sizeof(servaddr));</pre>
+</div>Using the address structure created in the server example in the 
+previous address section, we bind the name defined by servaddr to our 
+server socket servsock.<br />
+<br />
+Recall that a client application can also call bind to name the client 
+socket. This isn't used often, because the Sockets API dynamically 
+assigns a port to us.<br />
+<br />
+<b>listen</b> <br />
+<br />
+Before a server socket can accept incoming client connections, it must 
+call the listen function to declare this willingness. The listen 
+function is provided by the following function prototype:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">int listen( int sock, int backlog );</pre>
+</div>The sock argument represents the previously created server socket,
+ and the backlog argument represents the number of outstanding client 
+connections that might be queued. Within GNU/Linux, the backlog 
+parameter (post 2.2 kernel version) represents the number of established
+ connections pending on accept for the application layer protocol. Other
+ operating systems might treat this differently.<br />
+<br />
+<b>accept</b><br />
+<br />
+The accept call is the final call made by servers to accept incoming 
+client connections. Before accept can be called, the server socket must 
+be created, a name must be bound to it, and listen must be called. The 
+accept function returns a socket descriptor for a client connection and 
+is provided by the following function prototype:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">int accept( int sock, struct sockaddr *addr, int *addrLen );</pre>
+</div>In practice, two examples of accept are commonly seen. The first 
+represents the case in which we need to know who connected to us. This 
+requires the creation of an address structure that is not initialized.<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:82px;text-align:left;overflow:auto">struct sockaddr_in cliaddr;
+int cliLen;
+cliLen = sizeof( struct sockaddr_in );
+clisock = accept( servsock, (struct sockaddr *)cliaddr, &amp;cliLen );</pre>
+</div>The call to accept blocks until a client connection is available. 
+Upon return, the clisock return value contains the value of the new 
+client socket, and cliaddr represents the address for the client peer 
+(host address and port number).<br />
+<br />
+The alternate example is commonly found when the server application 
+isn't interested in the client information. This one typically appears 
+as follows:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">cliSock = accept( servsock, (struct sockaddr *)NULL, NULL );</pre>
+</div>In this case, NULL is passed for the address structure and length. The accept function then ignores these parameters.<br />
+<br />
+<b>connect</b><br />
+<br />
+The connect function is used by <b>client Sockets</b> applications to connect 
+to a server. Clients must have created a socket and then defined an 
+address structure containing the host and port number to which they want
+ to connect. The connect function is provided by the following function 
+prototype:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">int connect( int sock, (struct sockaddr *)servaddr, int addrLen );</pre>
+</div>The sock argument represents the client socket, created previously
+ with the Sockets API function. The servaddr structure is the server 
+peer to which you want to connect . Finally, we must pass in the length 
+of your servaddr structure so that connect knows we are passing in a 
+sockaddr_in structure. <br />
+<br />
+The following code shows a complete example of connect:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:146px;text-align:left;overflow:auto">int clisock;
+struct sockaddr_in servaddr;
+clisock = socket( AF_INET, SOCK_STREAM, 0);
+memset( &amp;servaddr, 0, sizeof(servaddr) );
+servaddr.sin_family = AF_INET;
+servaddr.sin_port = htons( 48000 );
+servaddr.sin_addr.s_addr = inet_addr( "192.168.1.1" );
+connect( clisock, (struct sockaddr_in *)&amp;servaddr, sizeof(servaddr) );</pre>
+</div>The connect function blocks until either an error occurs or the 
+three-way handshake with the server finishes. Any error is returned by 
+the connect function.<br />
+<br />
+<h3><a name="I/O"></a>Sockets I/O</h3><br />
+<br />
+A variety of API functions exist to read data from a socket or write 
+data to a socket. Two of the API functions (recv, send) are used 
+exclusively by sockets that are connected (such as stream sockets), 
+whereas an alternative pair (recvfrom, sendto) is used exclusively by 
+sockets that are unconnected (such as datagram sockets).<br />
+<br />
+<b>Connected Socket Functions</b><br />
+<br />
+The send and recv functions are used to send a message to the peer 
+socket endpoint and to receive a message from the peer socket endpoint. 
+These functions have the following prototypes:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:50px;text-align:left;overflow:auto">int send( int sock, const void *msg, int len, unsigned int flags );
+int recv( int sock, void *buf, int len, unsigned int flags );</pre>
+</div>The send function takes as its first argument the socket 
+descriptor from which to send the msg. The msg is defined as a (const 
+void *) because the object referenced by msg is not altered by the send 
+function. The number of bytes to be sent in msg is contained by the len 
+argument. Finally, a flags argument can alter the behavior of the send 
+call. An example of sending a string through a previously created stream
+ socket is shown as follows:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:50px;text-align:left;overflow:auto">    strcpy( buf, "Hello\n");
+    send( sock, (void *)buf, strlen(buf), 0);</pre>
+</div>In this example, our character array is initialized by the strcpy 
+function. This buffer is then sent through sock to the peer endpoint, 
+with a length defined by the string length function, strlen. To see 
+flags use let us take a look at one side effect of the send call. When 
+send is called, it can block until all of the data contained within buf 
+has been placed on the socket's send queue. If not enough space is 
+available to do this, the send function blocks until space is available.
+ If we want to avoid this blocking behavior and instead want the send 
+call to simply return if sufficient space is available, we can set the 
+MSG_DONTWAIT flag, such as follows:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">    send( sock, (void *)buf, strlen(buf), MSG_DONTWAIT);</pre>
+</div>The return value from send represents either an error (less than 
+0) or the number of bytes that were queued to be sent. Completion of the
+ send function does not imply that the data was actually transmitted to 
+the host, only that it is queued on the socket's send queue waiting to 
+be transferred.<br />
+The recv function mirrors the send function in terms of an argument 
+list. Instead of sending the data pointed to be msg, the recv function 
+fills the buf argument with the bytes read from the socket. We must 
+define the size of the buffer so that the network protocol stack doesn't
+ overwrite the buffer, which is defined by the len argument. Finally, we
+ can alter the behavior of the read call using the flags argument. The 
+value returned by the recv function is the number of bytes now contained
+ in the msg buffer, or -1 on error. An example of the recv function is 
+as follows:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:82px;text-align:left;overflow:auto">#define MAX_BUFFER_SIZE        50
+char buffer[MAX_BUFFER_SIZE+1];
+...
+numBytes = recv( sock, buffer, MAX_BUFFER_SIZE, 0);</pre>
+</div>At completion of this example, numBytes contains the number of bytes that are contained within the buffer argument.<br />
+We can peek at the data that's available to read by using the MSG_PEEK 
+flag. This performs a read, but it doesn't consume the data at the 
+socket. This requires another recv to actually consume the available 
+data. An example of this type of read is illustrated as follows:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:34px;text-align:left;overflow:auto">   numBytes = recv( sock, buffer, MAX_BUFFER_SIZE, MSG_PEEK);</pre>
+</div>This call requires an extra copy (the first to peek at the data, 
+and the second to actually read and consume it). More often than not, 
+this behavior is handled instead at the application layer by actually 
+reading the data and then determining what action to take.<br />
+<br />
+<b>Unconnected Socket Functions</b><br />
+<br />
+The sendto and recvfrom functions are used to send a message to the peer
+ socket endpoint and receive a message from the peer socket endpoint. 
+These functions have the following prototypes:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:50px;text-align:left;overflow:auto">int sendto( int sock, const void *msg, int len,unsigned int flags,const struct sockaddr *to, int tolen );
+int recvfrom( int sock, void *buf, int len,unsigned int flags,struct sockaddr *from, int *fromlen );</pre>
+</div>The sendto function is used by an unconnected socket to send a 
+datagram to a destination defined by an initialized address structure. 
+The sendto function is similar to the previously discussed send 
+function, except that the recipient is defined by the to structure. An 
+example of the sendto function is shown in the following code:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:162px;text-align:left;overflow:auto">    struct sockaddr_in destaddr;
+    int sock;
+    char *buf;
+    ...
+    memset( &amp;destaddr, 0, sizeof(destaddr) );
+    destaddr.sin_family = AF_INET;
+    destaddr.sin_port = htons(581);
+    destaddr.sin_addr.s_addr = inet_addr("192.168.1.1");
+    sendto( sock, buf, strlen(buf), 0,(struct sockaddr *)&amp;destaddr, sizeof(destaddr) );</pre>
+</div>In this example, the datagram (contained with buf) is sent to an 
+application on host 192.168.1.1, port number 581. The destaddr structure
+ defines the intended recipient for the datagram.<br />
+As with the send function, the number of characters queued for transmission is returned, or -1 if an error occurs.<br />
+<br />
+The recvfrom function provides the ability for an unconnected socket to 
+receive datagrams. The recvfrom function is again similar to the recv 
+function, but an address structure and length are provided. The address 
+structure is used to return the sender of the datagram to the function 
+caller. This information can be used with the sendto function to return a
+ response datagram to the original sender.<br />
+<br />
+An example of the recvfrom function is shown in the following code:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">    #define MAX_LEN 100
+    struct sockaddr_in fromaddr;
+    int sock, len, fromlen;
+    char buf[MAX_LEN+1];
+    ...
+    fromlen = sizeof(fromaddr);
+    len = recvfrom( sock, buf, MAX_LEN, 0,(struct sockaddr *)&amp;fromaddr, &amp;fromlen );</pre>
+</div>This blocking call returns when either an error occurs 
+(represented by a -1 return) or a datagram is received (return value of 0
+ or greater). The datagram is contained within buf and has a length of 
+len. The fromaddr contains the datagram sender, specifically the host 
+address and port number of the originating application.<br />
+<br />
+<b>Socket Options</b><br />
+<br />
+Socket options permit an application to change some of the modifiable 
+behaviors of sockets and the functions that manipulate them. For 
+example, an application can modify the sizes of the send or receive 
+socket buffers or the size of the maximum segment used by the TCP layer 
+for a given socket.<br />
+<br />
+The functions for setting or retrieving options for a given socket are provided by the following function prototypes:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:50px;text-align:left;overflow:auto">int getsockopt( int sock, int level, int optname,void *optval, socklen_t *optlen );
+int setsockopt( int sock, int level, int optname,const void *optval, socklen_t optlen );</pre>
+</div>First, we define the socket of interest using the sock argument. 
+Next, we must define the level of the socket option that is being 
+applied. <br />
+<br />
+The level argument can be :<ul><li>SOL_SOCKET for socket-layer options,</li><li>IPPROTO_IP for IP layer options, and</li><li>IPPROTO_TCP for TCP layer options.</li></ul>The specific option within the level is applied using the optname argument. Arguments <b>optval and optlen</b>
+ define the specifics of the value of the option. optval is used to get 
+or set the option value, and optlen defines the length of the option. 
+This slightly complicated structure is used because structures can be 
+used to define options.<br />
+<br />
+Now let us take a look at an example for both setting and retrieving an 
+option. In the first example, we retrieve the size of the send buffer 
+for a socket.<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:98px;text-align:left;overflow:auto">    int sock, size, len;
+    ...
+    getsockopt( sock, SOL_SOCKET, SO_SNDBUF, (void *)&amp;size,
+    (socklen_t *)&amp;len );
+    printf( "Send buffer size is &amp;d\n", size );</pre>
+</div>Now let us take a look at a slightly more complicated example. In 
+this case, we're going to set the [b]Socket linger option[b]. Socket 
+linger allows you to change the behavior of a stream socket when the 
+socket is closed and data is remaining to be sent. After close is 
+called, any data remaining attempts to be sent for some amount of time. 
+If after some duration the data cannot be sent, then the data to be sent
+ is abandoned. The time after the close when the data is removed from 
+the send queue is defined as the linger time. This can be set using a 
+special structure called linger, as shown in the following example:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">    struct linger ling;
+    int sock;
+    ...
+    ling.l_onoff = 1; /* Enable */
+    ling.l_linger = 10; /* 10 seconds */
+    setsockopt( sock, SOL_SOCKET, SO_LINGER,(void *)&amp;ling, sizeof(struct linger) );</pre>
+</div>After this call is performed, the socket waits 10 seconds after the socket close before aborting the send.<br />
+<br />
+<b>Other Miscellaneous Functions</b><br />
+<br />
+Now it's time to look at a few miscellaneous functions from the Sockets 
+API and the capabilities they provide. The three function prototypes 
+discussed in this section are shown in the following code:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:66px;text-align:left;overflow:auto">    struct hostent *gethostbyname( const char *name );
+    int getsockname( int sock, struct sockaddr *name, socklen_t*namelen );
+    int getpeername( int sock, struct sockaddr *name, socklen_t*namelen );</pre>
+</div>Function gethostbyname provides the means to resolve a host and 
+domain name (otherwise known as a fully qualified domain name, or FQDN) 
+to an IP address. For example, the FQDN of <a href="http://www.microsoft.com/" rel="nofollow" target="_blank">www.microsoft.com</a>
+ might resolve to the IP address 64.4.31.252. Converting an FQDN to an 
+IP address is important because all of the Sockets API functions work 
+with number IP addresses (32-bit addresses) rather than FQDNs.<br />
+<br />
+An example of the gethostbyname function is shown below:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">    struct hostent *hptr;
+    hptr = gethostbyname( "www.microsoft.com");
+    if (hptr == NULL) // can't resolve...
+    else 
+     {
+       printf("Binary address is %x\n", hptr-&gt; h_addr_list[0]);
+     }</pre>
+</div>Function gethostbyname returns a pointer to a structure that 
+represents the numeric IP address for the FQDN 
+(hptr-&gt;h_addr_list[0]). Otherwise, gethostbyname returns a NULL, 
+which means that the FQDN could not be resolved by the local resolver. 
+This call blocks while the local resolver communicates with the 
+configured DNS servers.<br />
+<br />
+Function getsockname permits an application to retrieve information 
+about the local socket endpoint. This function, for example, can 
+identify the dynamically assigned ephemeral port number for the local 
+socket. <br />
+<br />
+An example of its use is shown in the following code:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">    int sock;
+    struct sockaddr localaddr;
+    int laddrlen;
+    // Socket for sock created and connected.
+    ...
+    getsockname( sock, (struct sockaddr_in *)&amp;localaddr, &amp;laddrlen );
+    printf( "local port is %d\n", ntohs(localaddr.sin_port) );</pre>
+</div>The reciprocal function of getsockname is getpeername. This 
+permits you to gather addressing information about the connected peer 
+socket. An example, similar to the getsockname example, is shown in the 
+following code:<br />
+<br />
+<div style="margin:20px;margin-top:5px">
+<div style="margin-bottom:2px">Code:</div>
+<pre dir="ltr" style="margin:0px;padding:6px;border:1px inset;width:640px;height:130px;text-align:left;overflow:auto">    int sock;
+    struct sockaddr remaddr;
+    int raddrlen;
+    // Socket for sock created and connected.
+    ...
+    getpeername( sock, (struct sockaddr_in *)&amp;remaddr, &amp;raddrlen );
+    printf( "remote port is %d\n", ntohs(remaddr.sin_port) );</pre>
+</div>In both examples, the address can also be extracted using the sin_addr field of the sockaddr structure.
+		
+</div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/site/sridharkritha/socket-programming&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPH4Oyd87bWGKu7r_vwezEnYe5nfCsJYwoFxUbcak77YNpqXoOaifqosj6-t3xUBXvSJGNR99023riPVVFixaG75EPUTaN/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/socket-programming by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:01:36 GMT -->
+</html>
