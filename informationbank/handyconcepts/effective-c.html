@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/handyconcepts/effective-c by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 09:42:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/handyconcepts","deleted":false,"title":"handyconcepts","dir":"ltr"},{"path":"/site/sridharkritha/handyconcepts/effective-c","deleted":false,"title":"Effective C++","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://1333998591-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/handyconcepts/effective-c\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","../_/rsrc/1624520311000/system/app/css/editor.css","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":"/handyconcepts","parentWuid":"wuid:gx:72194d815a068d6a","siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Effective C++","locale":"en","wuid":"wuid:gx:1c577e7c7266ed3a","revision":10,"path":"/handyconcepts/effective-c","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"effective-c","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Effective C++ - sridharkritha" />
+<meta itemprop="name" content="Effective C++ - sridharkritha" />
+<meta property="og:title" content="Effective C++ - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Effective C++ - sridharkritha</title>
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+<A href="../handyconcepts.html" dir="ltr">handyconcepts</A>‎ &gt; ‎
+  </div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Effective C++</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header sites-layout-empty-tile"><div dir="ltr"><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar sites-layout-empty-tile"><div dir="ltr"><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr"><b>I. Use initalization list instead of assigment in constructor :</b><br /><br /><div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">NamedPtr</span> {</div><div>        <span style="color:#f92672">const</span> string<span style="color:#f92672">&amp; </span>name;</div><div>        <span style="color:rgb(102,217,239);font-style:italic">int</span><span style="color:rgb(249,38,114)">*</span> <span style="color:rgb(249,38,114)">const</span> ptr;</div><div>        <span style="color:#66d9ef;font-style:italic">int</span><span style="color:#f92672">* </span>p;</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">NamedPtr</span>(<span style="color:#f92672">const</span> string<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> iName</span>, <span style="color:#66d9ef;font-style:italic">int</span><span style="color:#f92672">* </span><span style="color:#fd971f;font-style:italic">iptr</span>);</div><div>    };</div><br /><div>    <span style="color:rgb(166,226,46)">NamedPtr</span>::<span style="color:#a6e22e">NamedPtr</span>(<span style="color:#f92672">const</span> string<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> iName</span>, <span style="color:#66d9ef;font-style:italic">int</span><span style="color:#f92672">* </span><span style="color:#fd971f;font-style:italic">iptr</span>) : <span style="color:#a6e22e">name</span>(iName), <span style="color:#a6e22e">prt</span>(iptr), <span style="color:#a6e22e">p</span>(iptr) <span style="color:#75715e">// Efficent initalization</span></div><div>    {</div><div>        name <span style="color:#f92672">=</span> iName; <span style="color:#75715e">// Error</span></div><div>        ptr <span style="color:#f92672">=</span> iptr;   <span style="color:#75715e">// Error</span></div><div>        p <span style="color:#f92672">=</span> iptr      <span style="color:#75715e">// No Error</span></div><div>    }</div></div><br />* <b>Const</b> and <b>Reference</b> data members of a class <b>cannot </b>be <b>assigned </b>it <b>only </b>be <b>initialized</b>.<br />* If the data member of a class uses the assignment operator in a constructor then it internally calls the default constructor of the base class(string class<b> default constructor</b>) and <b>overloaded assignment function</b> [ string class operator=  function] - totally <b>two </b>function calls.<br />* If it uses the initialization list then it calls only <b>one </b>string <b>copy constructor</b> of initialization. <br /><br /><b>When to use assignment rather than initialization ?</b><br />If a class has more number of <b>non- const and non-reference data members</b> then go for assignment. Because organizing and maintaining an initialization list is a bit complex than using an assignment inside the constructor. But where ever is possible try to use an initialization list. <br /><br /><b>2. Inline function Usage:</b><br />
+
+If a method defined outside of the class using scope operator in the<b> 
+header file</b> then the method definition should accompany by <b>inline 
+</b>keyword for reducing the function calling overhead in the header file.<br /><br /><div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#75715e">// myHeader.h</span></div><div>    class A {</div><div>        <span style="color:#66d9ef;font-style:italic">int</span> a;</div><div>        <span style="color:#a6e22e">A</span>();</div><div>    };</div><br /><div>    <span style="color:#f92672">inline</span> <span style="color:rgb(166,226,46)">A</span>::<span style="color:#a6e22e">A</span>() { };</div></div><br />************************************************************************************************************************************************************<br />
+<div>
+<p align="center" style="text-align:center"><b><span style="font-family:Times New Roman">C++ idioms</span></b></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman">Now
+that you've learned C++, how do we use it well. </span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt">A
+highly recommended book:</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Scott Meyers <i>Effective C++: 50 Specific Ways to Improve your Programs and Designs</i>,</span></p><p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">Second Edition, Addison-Wesley,
+1997.</span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">  </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">(Also </span><i style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">More Effective C++: 35 New Ways....</i><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">)</span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman">Scott
+Meyers discusses 50 "items"--good principles, heuristics or idioms,
+with good explanations.</span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">1.<span>  </span>Use <b>const
+</b>and <b>inline </b>instead of <b>#define :</b></font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#f92672">#define</span> <span style="color:#a6e22e">RATIO</span> <span style="color:#ae81ff">1.653</span>          <span style="color:#75715e">/* C macro */</span></div><div>    <span style="color:#f92672">const</span> <span style="color:#66d9ef;font-style:italic">float</span> RATIO <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.653</span>;   <span style="color:#75715e">// Why is a C++ const better?</span></div><div>    <span style="color:#75715e">// Better compiler error messages, easier symbolic debugging and obeys scope rules</span></div><br /><div>    <span style="color:#f92672">#define</span> <span style="color:#a6e22e">max</span>(<span style="color:#fd971f;font-style:italic">a,b</span>)  ((a)<span style="color:#f92672">&gt;</span>(b)<span style="color:#f92672">?</span>(a)<span style="color:#f92672">:</span>(b))  <span style="color:#75715e">/* A parameterized C macro */</span></div><div>    <span style="color:#66d9ef;font-style:italic">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Let's see what can go wrong in a parameterized C macro</span></div><div>    <span style="color:#a6e22e">max</span>(a<span style="color:#f92672">++</span>,b);       <span style="color:#75715e">// a is incremented twice--why? (in condition and result)</span></div><div>    <span style="color:#a6e22e">max</span>(a<span style="color:#f92672">++</span>,b<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>)     <span style="color:#75715e">// b is incremented just once</span></div><div>    <span style="color:#a6e22e">max</span>(a,<span style="color:#e6db74">"hello"</span>)    <span style="color:#75715e">// compares ints and ptrs (no type checking)</span></div><br /><div>    <span style="color:#f92672">inline</span> <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#a6e22e">max</span>(<span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">a</span>, <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">b</span>) { <span style="color:#f92672">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a <span style="color:#f92672">:</span> b; }  <span style="color:#75715e">// both efficient and type safe</span></div><br /><div>    <span style="color:#75715e">// Use a template to generate a family of type safe functions:</span></div><div>    <span style="color:#66d9ef;font-style:italic">template</span>&lt;<span style="color:#66d9ef;font-style:italic">class </span><span style="color:rgb(166,226,46)">T</span>&gt; <span style="color:#f92672">inline</span> T<span style="color:#f92672">&amp;</span> <span style="color:#a6e22e">max</span>(T<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> a</span>, T<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> b</span>)  { <span style="color:#f92672">return</span> a <span style="color:#f92672">&gt;</span> b <span style="color:#f92672">?</span> a <span style="color:#f92672">:</span> b; }</div><div>    <span style="color:#75715e">// then let the compiler instantiate the template with various types:</span></div><div>    <span style="color:#a6e22e">max</span>(a<span style="color:#f92672">++</span>,b);     <span style="color:#75715e">// compiler generates max with int arguments -- and a is incremented once</span></div><div>    <span style="color:#a6e22e">max</span>(RATIO,b);   <span style="color:#75715e">// compiler generates max with float arguments</span></div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman">In
+item 1, Meyers used to have a forward reference to item 32.<span>  </span>Indeed, his book reads like hypertext!</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman">But
+now item 32 has been rewritten (due to changes in C++) and folded into item 1</span></p>
+<p style="text-align:justify"><s><span style="font-family:Times New Roman"><font color="#0000ff" size="3">32.<span>  </span>Use <b>enum</b>s
+for integral class constants</font></span></s></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Suppose you would like to encapsulate a
+const within a class</span></p>
+<div style="background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div style="color:rgb(248,248,242)">    class X {</div><div style="color:rgb(248,248,242)">        <span style="color:#f92672">static</span> <span style="color:#f92672">const</span> <i style="color:rgb(102,217,239)">int </i>BUFSIZE <span style="color:rgb(249,38,114)">= </span><span style="color:rgb(174,129,255)">100</span>;  <span style="color:rgb(117,113,94)">// error with older compilers, but now acceptable</span></div><div style="color:rgb(248,248,242)">        <span style="color:#66d9ef;font-style:italic">char</span> buffer[BUFSIZE];</div><div style="color:rgb(248,248,242)">    };</div><font color="#f8f8f2"><br /></font><div style="color:rgb(248,248,242)">    <span style="color:#75715e">//couldn't initialize static members at the point of its declaration, but you could do this:</span></div><div><font color="#f8f8f2">    </font><span style="color:rgb(249,38,114)">const</span><font color="#f8f8f2"> </font><font color="#66d9ef"><i>int </i></font><span style="color:rgb(166,226,46)">X</span><font color="#f8f8f2">::BUFSIZE</font><span style="color:rgb(249,38,114)">=</span><span style="color:rgb(174,129,255)">100</span><font color="#f8f8f2">;        </font><span style="color:rgb(117,113,94)">//goes in class implementation file</span></div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">//<i>BTW,
+why did Meyers want to define this a <b>static
+const</b> instead of just <b>const</b>?</i></span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Another solution is to use an enum, which
+can be given a value at the point of declaration:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">enum</span> { BUFSIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span> } ;</div><div>    <span style="color:#66d9ef;font-style:italic">char</span> buffer[BUFSIZE];</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman"><b>enum hack</b> should not be necessary for
+compilers implemented since 1995</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">33. Use inlining judiciously<span>  </span><i>--why?<span> 
+</span></i></font></span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">excessive inlines can cause code bloat,
+also hard to debug (<i>why?</i>)</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Meyers recommend you limit inlining to
+truly trivial functions (<b>set </b>and <b>get </b>functions)</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Even empty constructors can involve lots
+of hidden code inserted by the compiler (pp. 140-1)</span></p>
+</div><div><p align="center" style="text-align:center"><b><span style="font-family:Times New Roman">Constructors and
+Destructors</span></b></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">12. Prefer initialization to assignment in constructors</font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">NamedData</span> {</div><div>        string name;</div><div>        <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#f92672">*</span>data;</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">NamedData</span>(<span style="color:#f92672">const</span> string<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> initName</span>, <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#f92672">*</span><span style="color:#fd971f;font-style:italic">dataPtr</span>);</div><div>    };</div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span><b>Two ways </b>to implement this constructor, one
+using the <b>assignment </b>and another using <b>initalization</b></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:rgb(166,226,46)">NamedData</span>::<span style="color:#a6e22e">NamedData</span>(<span style="color:#f92672">const</span> string<span style="color:#f92672">&amp;</span> initName,<span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#f92672">*</span>dataPtr) { </div><div>        name <span style="color:#f92672">=</span> initName; </div><div>        data <span style="color:#f92672">=</span> dataPtr; </div><div>    }</div><br /><div>    <span style="color:#75715e">//  or using member initialization:</span></div><div>    <span style="color:rgb(166,226,46)">NamedData</span>::<span style="color:#a6e22e">NamedData</span>(<span style="color:#f92672">const</span> string<span style="color:#f92672">&amp;</span> initName,<span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#f92672">*</span>dataPtr) : <span style="color:#a6e22e">name</span>(initName),<span style="color:#a6e22e">data</span>(dataPtr) { }</div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>But initialization is often more efficient: </span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Because initialization always runs <b>before
+</b>the body of a constructor</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">If there's <b>no</b> member <b>initialization</b>, then
+the <b>default constructor </b>runs for that member </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">therefore, the </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">assignment </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">version runs
+default string constructor for name, </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">then runs string operator= for the name in
+the constructor body</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">The member <b>initialization </b>version just
+runs the <b>copy string constructor</b> for name</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Sometimes member initialization is a must.<span>  </span>E.g., suppose we make a member
+const:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#f92672">const</span> string name;       <span style="color:#75715e">// this object name should never change</span></div><div>    <span style="color:#66d9ef;font-style:italic">void</span><span style="color:#f92672">*</span> <span style="color:#f92672">const</span> data;        <span style="color:#75715e">// this data should never change</span></div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman"><b>const members can only be initialized,
+never assigned</b></span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman">BTW,
+you <b>should </b>use initialization syntax to initialize the base class part of a
+<b>derived class:</b></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    class Point {</div><div>        <span style="color:#66d9ef;font-style:italic">int</span> xcoord, ycoord;</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>            <span style="color:#a6e22e">Point</span>(<span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">x</span>,<span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">y</span>) { xcoord <span style="color:#f92672">=</span> x; ycoord <span style="color:#f92672">=</span> x;}</div><div>    };</div><br /><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Fruit</span> {</div><div>        Point center;                        <span style="color:rgb(117,113,94)">// composition</span></div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">Fruit</span>(<span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">x</span>, <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">y</span>) : <span style="color:#a6e22e">center</span>(x,y) {} <span style="color:#75715e">// initialize member using constructor</span></div><div>    };</div><br /><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Apple</span> {</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">Apple</span>(<span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">x</span>, <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">y</span>) : <span style="color:#a6e22e">Fruit</span>(x,y) {} <span style="color:#75715e">// initialize base part using constructor</span></div><div>        <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#a6e22e">main</span>() {</div><div>        Point <span style="color:#a6e22e">p</span>(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">200</span>);</div><div>        Fruit <span style="color:#a6e22e">f</span>(<span style="color:#ae81ff">200</span>,<span style="color:#ae81ff">300</span>);</div><div>    }</div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman">If
+you don</span><font face="WP TypographicSymbols">'</font><span style="font-family:Times New Roman">t use initialization syntax, the compiler
+will complain about<b> missing default constructors </b></span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">because it must have a constructor to
+allocate space for the member Point. </span></p><p style="text-align:justify"><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">Using initialization syntax explicitly
+prevents any need for default constructors here</b></p>
+</div>
+<div><p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">13. Declare and initialize members in the same order:</font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Array</span> {</div><div>        <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#f92672">*</span>data;</div><div>        <span style="color:#66d9ef;font-style:italic">unsigned</span> size;</div><div>        <span style="color:#66d9ef;font-style:italic">int</span> lb,up;</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span> </div><div>        <span style="color:#a6e22e">Array</span>(<span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#fd971f;font-style:italic">lwb</span>,<span style="color:rgb(102,217,239);font-style:italic">int</span> <span style="color:rgb(253,151,31);font-style:italic">upb</span>) : <span style="color:rgb(166,226,46)">size</span>(upb <span style="color:rgb(249,38,114)">-</span> lwb<span style="color:rgb(249,38,114)">+</span><span style="color:rgb(174,129,255)">1</span>),<span style="color:rgb(166,226,46)">lb</span>(lwb),<span style="color:rgb(166,226,46)">ub</span>(upb),<span style="color:rgb(166,226,46)">data</span>(<span style="color:rgb(249,38,114)">new</span> <span style="color:rgb(102,217,239);font-style:italic">int</span>[size]) { }</div><div>    };</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Guess what: amount of memory allocated by
+<b>new</b> is <b>undefined!</b></span></p>
+<p style="text-align:justify;text-indent:72.0pt"><span style="font-family:Times New Roman">C++ <b>initializes </b>members in the order that
+they appear. </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">Since <b>data </b>appears before <b>size</b>, its
+initialization runs first, before size has a value</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Why?<span> 
+</span>So that <b>destructors </b>don't need to keep track of initialization order. </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">Uniform order makes it easier for the compiler to generate consistent destructors.</span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">14. Make destructors in base classes virtual :</font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Target</span> {</div><div>        <span style="color:#f92672">static</span> <span style="color:#66d9ef;font-style:italic">int</span> numTargets;  <span style="color:#75715e">// object counter</span></div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">Target</span>()  { numTargets<span style="color:#f92672">++</span>; }</div><div>        <span style="color:#a6e22e">~Target</span>() { numTargets<span style="color:#f92672">--</span>; }</div><div>    };</div><br /><div>    <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:rgb(166,226,46)">Target</span>::numTargets <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// define &amp; initialize class static outside the class</span></div><br /><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Tank</span>: <span style="color:#66d9ef;font-style:italic">public</span> <span style="color:rgb(166,226,46)">Target</span> {</div><div>        <span style="color:#f92672">static</span> <span style="color:#66d9ef;font-style:italic">int</span> numTanks;</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">Tank</span>()  { numTanks<span style="color:#f92672">++</span>; }</div><div>        <span style="color:#a6e22e">~Tank</span>() { numTanks<span style="color:#f92672">--</span>; }</div><div>    };</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">In our application, we dynamically create
+and get rid of a Tank using new &amp; delete:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    Target <span style="color:#f92672">*</span>t <span style="color:#f92672">=</span> <span style="color:#f92672">new</span> Tank;</div><div>    <span style="color:#f92672">delete</span> t;</div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Looks reliable, and compiles OK, <i>but <b>what is not quite right? </b></i></span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">numTanks is <b>wrong </b>-- because we never
+called Tank's destructor (since t is ptr to Target)</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span><i>How
+do we fix this problem? </i><span> </span>Make the destructor of Target <b>virtual</b>. </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">Now it will dynamically bind the </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">delete t</b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt"> to </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">~Tank</b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt"> (decrementing numTanks), </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">then call destructors <b>up</b> the inheritance
+graph (decrementing numTargets)</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Moral: if a <b>base </b>class has any other
+<b>virtual functions, </b>better make the <b>destructor virtual, </b>too. </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">However: virtual destructors do add the overhead of vtbl (memory and indirection)</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Another caveat: even classes with <b>no</b>
+virtual function may still <b>need </b>a virtual destructor, </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">if they <b>serve as base classes</b> to other
+classes.</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Hence: </span><span style="font-family:WP TypographicSymbols">A m</span><span style="font-family:Times New Roman">ake
+destructors in base classes virtual</span><span style="font-family:WP TypographicSymbols">@</span></p>
+</div>
+<div><p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">15. Have operator= return a reference to <b>*this</b></font></span></p><p style="text-align:justify"><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">Chained or cascaded assignments works for
+<b>built in types:</b></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre">    int x, <span style="color:rgb(166,226,46)">y</span>, <span style="color:rgb(166,226,46)">z</span>; x <span style="color:#f92672">=</span> y <span style="color:#f92672">=</span> z <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;</div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">So it should work for <b>user-defined types,</b>
+too:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    String a, b, c; a <span style="color:#f92672">=</span> b <span style="color:#f92672">=</span> c <span style="color:#f92672">=</span> <span style="color:#e6db74">"hi"</span>;</div><br /><div>    String<span style="color:#f92672">&amp;</span> <span style="color:rgb(166,226,46)">String</span>::<span style="color:#f92672">operator</span>=(<span style="color:#f92672">const</span> String<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> rhs</span>) {</div><div>        ...</div><div>        <span style="color:#f92672">return</span> <span style="color:#f92672">*</span><span style="color:#fd971f">this</span>; <span style="color:#75715e">//return reference to left-hand object</span></div><div>    }</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Now operator= will cascade:
+<b>x.operator=(y.operator=(z.operator=("hi")));</b></span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">17. Check for assignment to <b>self</b> in operator=</font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">String</span> {</div><div>        <span style="color:#66d9ef;font-style:italic">char</span><span style="color:#f92672">*</span> data;</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">String</span>(<span style="color:#f92672">const</span> <span style="color:#66d9ef;font-style:italic">char</span><span style="color:#f92672">*</span><span style="color:#fd971f;font-style:italic"> value</span>);</div><div>        String<span style="color:#f92672">&amp;</span> <span style="color:rgb(166,226,46)">string</span>::<span style="color:#f92672">operator</span>=(<span style="color:#f92672">const</span> String<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> rhs</span>)</div><div>        {</div><div>            <span style="color:#f92672">delete []</span> data;  <span style="color:#75715e">//delete old memory</span></div><div>            data <span style="color:#f92672">=</span> <span style="color:#f92672">new</span> <span style="color:#66d9ef;font-style:italic">char</span>[<span style="color:#a6e22e">strlen</span>(rhs.data) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>];</div><div>            <span style="color:#a6e22e">strcpy</span>(data,rhs.data);</div><div>            <span style="color:#f92672">return</span> <span style="color:#f92672">*</span><span style="color:#fd971f">this</span>;</div><div>        }</div><div>    };</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman"><br /></span></p><div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div><span style="color:rgb(166,226,46)">    String </span>a = "Hello";</div><div>    a = a; <span style="color:rgb(117,113,94)">// crash</span></div></div><p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">*this</span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">                            </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">rhs</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">data ---&gt; Hello&lt;-------data</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">delete get rids of Hello--for both *this
+and rhs! And strlen in next line is undefined</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Therefore, first test for assignment to self:</span></p>
+<div style="color:rgb(212,212,212);background-color:rgb(30,30,30);font-family:Consolas,Courier New,monospace;font-size:16px;line-height:22px;white-space:pre">    <span style="color:#c586c0">if</span> (<span style="color:#569cd6">this</span> == &amp;rhs) <span style="color:#c586c0">return</span> *<span style="color:#569cd6">this</span>;<span style="color:#6a9955">  // check for assignment to self</span></div>
+<p style="text-align:justify"><b><span style="font-family:Times New Roman"><span>  </span></span></b><span style="font-family:Times New Roman"><span>  </span>Another<b>
+</b>possibility might be tested for the same value, rather than the address:</span></p>
+<div style="color:rgb(212,212,212);background-color:rgb(30,30,30);font-family:Consolas,Courier New,monospace;font-size:16px;line-height:22px;white-space:pre">    <span style="color:#c586c0">if</span> (<span style="color:#569cd6">this</span> == rhs) <span style="color:#c586c0">return</span> *<span style="color:#569cd6">this</span>;<span style="color:#6a9955">  // check for assignment to self</span></div>
+<p style="text-align:justify;text-indent:36.0pt"><i><span style="font-family:Times New Roman">What
+operator must be overloaded before this test will work?</span></i></p>
+<p style="text-align:justify;text-indent:36.0pt"><i><span style="font-family:Times New Roman">Which
+version is more efficient?</span></i></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">After all, identity may not mean either a
+value or a machine address </span><span style="font-family:WP TypographicSymbols">C </span><span style="font-family:Times New Roman">persistent objects?</span></p></div>
+<div>
+<p align="center" style="text-align:center"><b><span style="font-family:Times New Roman">Member function design</span></b></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">22
+Prefer <b>pass-by-const-reference</b> to <b>pass-by-value</b></font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    Point <span style="color:#a6e22e">foo</span>(Point p) { </div><div>        <span style="color:#f92672">return</span> p;</div><div>    }</div><br /><div>    { </div><div>        Point a; </div><div>        <span style="color:#a6e22e">foo</span>(a);</div><div>    }</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Looks innocent enough, but consider what
+happens behind the scenes:</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">1) <b>copy constructor</b> for Point is called
+to copy <b>a </b>into <b>p</b> (pass by value makes a copy)</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">2) <b>copy constructor</b> for Point is called
+again to initialize <b>object returned</b> by <b>foo()</b></span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">3) <b>destructor</b> runs for p just before
+<b>exiting foo()</b></span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">4) finally, destructor runs for object
+returned by foo() before exiting <b>calling </b>block</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><i><span style="font-family:Times New Roman">What do you think?<span>  </span>Pretty wasteful? </span></i><span style="text-indent:36pt;background-color:transparent;font-size:10pt;font-family:Times New Roman">It gets worse if an object contains any
+data members that are class objects, </span><span style="background-color:transparent;font-size:10pt;font-family:Times New Roman;text-indent:72pt">or inherits from another class </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">constructors &amp; destructors for the
+member or base class objects must also run!</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Avoid this expensive cost by passing by
+<b>const reference:</b></span></p>
+<div style="color:rgb(212,212,212);background-color:rgb(30,30,30);font-family:Consolas,Courier New,monospace;font-size:16px;line-height:22px;white-space:pre">    <span style="color:#569cd6">const</span> <span style="color:#4ec9b0">Point</span><span style="color:#569cd6">&amp;</span> <span style="color:#dcdcaa">foo</span>(<span style="color:#569cd6">const</span> <span style="color:#4ec9b0">Point</span><span style="color:#569cd6">&amp;</span> <span style="color:#9cdcfe">p</span>) { <span style="color:#c586c0">return</span> <span style="color:#9cdcfe">p</span>; }</div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Now, now <b>constructors </b>or <b>destructors </b>are
+called on function <b>entry </b>or <b>exit</b></span></p>
+<p style="text-align:justify"><font color="#0000ff" size="3"><span style="font-family:Times New Roman">23. But: Don</span><font face="WP TypographicSymbols">'</font><span style="font-family:Times New Roman">t try to return a reference when you must
+return an object (by value)</span></font></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#f92672">inline</span> <span style="color:#f92672">const</span> Rational<span style="color:#f92672">&amp;</span> <span style="color:#f92672">operator</span>*(<span style="color:#f92672">const</span> Rational<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> lhs</span>,<span style="color:#f92672">const</span> Rational<span style="color:#f92672">&amp;</span><span style="color:#fd971f;font-style:italic"> rhs</span>) { </div><div>        <span style="color:#f92672">return</span> <span style="color:#a6e22e">Rational</span>(lhs.n <span style="color:#f92672">*</span> rhs.n, lhs.d <span style="color:#f92672">*</span> rhs.d); </div><div>    }</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Looks efficient: inline and all const
+reference!. </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">But look closer: it creates a </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">local
+object</b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">, then tries to </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">return a reference </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">to it!</span></p><p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">What happens to this local object once
+the function is over?</span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">  </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">(See item 31!). S</span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">ince the operator really </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">needs </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">to
+return </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">a new object, </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">let it return it </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">by value.</b></p></div>
+<div>
+<p align="center" style="text-align:center"><b><span style="font-family:Times New Roman">New features of Standard
+C++</span></b></p>
+<p><span style="font-family:Times New Roman"><b><font color="#0000ff" size="3">28. Partition the
+global namespace</font></b></span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Times New Roman">Biggest
+problem with global scope is that there</span><font face="WP TypographicSymbols">'</font><span style="font-family:Times New Roman">s <b>only one </b>of them!<span>  </span><i>Why?</i><span>  </span>I.e.:</span></p>
+<div style="color:rgb(212,212,212);background-color:rgb(30,30,30);font-family:Consolas,Courier New,monospace;font-size:16px;line-height:22px;white-space:pre"><div>    <span style="color:#569cd6">const</span> <span style="color:#569cd6">double</span> <span style="color:#9cdcfe">LIB_VERSION</span> = <span style="color:#b5cea8">1.204</span>;<span style="color:#6a9955">  // from lib1.h</span></div><div>    <span style="color:#569cd6">const</span> <span style="color:#569cd6">double</span> <span style="color:#9cdcfe">LIB_VERSION</span> = <span style="color:#b5cea8">3</span>;<span style="color:#6a9955">      // from lib2.h</span></div></div>
+<p style="text-indent:36.0pt"><i><span style="font-family:Times New Roman">What happens if a program
+tries to include both header files?. </span></i><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">To
+avoid this problem, the standards committee invented the notion of <b>namespaces</b></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#75715e">// (similar to packages in Ada):</span></div><div>    <span style="color:#66d9ef;font-style:italic">namespace</span> <span style="color:rgb(166,226,46)">sdm</span> {    <span style="color:#75715e">// namespace is a new scope mechanism</span></div><div>        <span style="color:#f92672">const</span> <span style="color:#66d9ef;font-style:italic">double</span> LIB_VERSION <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0</span>;</div><div>        <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Handle</span> {...};</div><div>    }</div></div>
+<p style="text-indent:36.0pt"><span style="font-family:Times New Roman">Clients
+can access symbols in a namespace in <b>3</b> ways:</span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Times New Roman">1)
+importing <b>all </b>the symbols in a namespace in a scope: </span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    { </div><div>        <span style="color:#f92672">using</span> <span style="color:#66d9ef;font-style:italic">namespace</span> <span style="color:rgb(166,226,46)">sdm</span>;  <span style="color:#75715e">//make all names in sdm visible</span></div><div>        cout <span style="color:#f92672">&lt;&lt;</span> LIB_VERSION;</div><div>    }</div></div>
+<p style="text-indent:36.0pt"><span style="font-family:Times New Roman">2)
+importing <b>individual </b>symbols into a scope:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    { </div><div>        <span style="color:rgb(166,226,46)">sdm</span>::LIB_VERSION;               <span style="color:#75715e">//make just LIB_VERSION visible</span></div><div>        cout <span style="color:#f92672">&lt;&lt;</span> LIB_VERSION;</div><div>    }</div></div>
+<p style="text-indent:36.0pt"><span style="font-family:Times New Roman">3)
+explicitly qualifying a symbol:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre">    { cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:rgb(166,226,46)">sdm</span>::LIB_VERSION; }</div>
+<p style="text-indent:36.0pt"><span style="text-indent:36pt;background-color:transparent;font-size:10pt;font-family:Times New Roman">Standard
+C++ uses a namespace called </span><span style="text-indent:36pt;background-color:transparent;font-size:10pt;font-family:Courier New">std</span><span style="text-indent:36pt;background-color:transparent;font-size:10pt;font-family:Times New Roman">, i.e., </span><span style="text-indent:36pt;background-color:transparent;font-size:10pt;font-family:Courier New">std::bad_alloc</span></p><p style="text-indent:36.0pt"><i style="text-indent:72pt;background-color:transparent;font-size:10pt"><span style="font-family:Times New Roman">Why is </span></i><i style="text-indent:72pt;background-color:transparent;font-size:10pt"><span style="font-family:Courier New">std</span></i><i style="text-indent:72pt;background-color:transparent;font-size:10pt"><span style="font-family:Times New Roman"> namespace a good thing?</span></i><span style="text-indent:72pt;background-color:transparent;font-size:10pt;font-family:Times New Roman"> Avoids cluttering up global namespace!</span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Courier New">#include<b>&lt;iostream.h&gt;</b></span><span style="font-family:Times New Roman"> includes names like </span><span style="font-family:Courier New">cout</span><span style="font-family:Times New Roman">, </span><span style="font-family:Courier New">cin</span><span style="font-family:Times New Roman">, </span><span style="font-family:Courier New">endl</span><span style="font-family:Times New Roman"> in
+<b>global namespace</b></span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Courier New">#include<b>&lt;iostream&gt;</b></span><span style="font-family:Times New Roman">      includes
+these names </span><b><span style="font-family:Courier New">std</span><span style="font-family:Times New Roman">
+namespace</span></b><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p><span style="font-family:Times New Roman"><font color="#0000ff" size="3">5. Use explicit
+casts of C++ rather than older C-style casts:</font></span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Times New Roman">type
+casts are a necessary evil in a language that supports type checking</span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Courier New">(type) expression</span><span style="font-family:Times New Roman"> casts of C obscure many different uses
+of casts in C++:</span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Courier New"><b>const_cast&lt;type&gt;(expression)</b></span><span style="font-family:Times New Roman"> casts away constness of objects</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    unsigned int String::length() const { </div><div>        String<span style="color:#f92672">*</span> <span style="color:#f92672">const</span> local <span style="color:#f92672">=</span> <span style="color:#f92672">const_cast&lt;</span>String<span style="color:#f92672">*</span> <span style="color:#f92672">const&gt;</span>(<span style="color:#fd971f">this</span>);</div><div>        <span style="color:#f92672">if</span> (<span style="color:#f92672">!</span>local-&gt;valid) </div><div>        { </div><div>            local-&gt;len <span style="color:#f92672">=</span> <span style="color:#a6e22e">strlen</span>(data); </div><div>            local-&gt;valid <span style="color:#f92672">=</span> <span style="color:#ae81ff">true</span>; </div><div>        }</div><div>        <span style="color:#f92672">return</span> local-&gt;len;</div><div>    }</div></div>
+<p style="text-indent:36.0pt"><span style="font-family:Courier New"><b>dynamic_cast&lt;type&gt;(expression)</b></span><span style="font-family:Times New Roman"><b> </b>performs </span><font face="WP TypographicSymbols">a<b> </b></font><span style="font-family:Times New Roman"><b>safe
+downcasting </b></span><span style="font-family:Times New Roman">(see item #39)</span></p><p style="text-indent:36.0pt"><span style="text-indent:48px;font-family:Courier New"><b>static_cast&lt;type&gt;(expression)</b></span><span style="text-indent:48px;font-family:Times New Roman"> is catch-all, <b>compile-time cast, </b>closest to C-style</span></p>
+<p style="text-indent:36.0pt"><span style="font-family:Courier New"><b>reinterpret_cast&lt;type&gt;(expression)</b></span><span style="font-family:Times New Roman"> gives implementation-dependent results</span></p></div>
+<div>
+<p align="center" style="text-align:center"><b><span style="font-family:Times New Roman">Memory management items</span></b></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">3. Use <b>new </b>and <b>delete </b>instead of <b>malloc </b>and
+<b>free</b></font></span></p><p style="text-indent:0px;text-align:justify"><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent"><font color="#0000ff" size="3"><b>   </b></font></span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt"><b>new </b>and <b>delete know </b>about constructors
+and destructors, whereas <b>malloc </b>and <b>delete - </b>don't</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Consider <b>2 ways</b> to get space for an array
+of String objects:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">String</span> {</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#a6e22e">String</span>(<span style="color:#f92672">const</span> <span style="color:#66d9ef;font-style:italic">char</span> <span style="color:#f92672">*</span><span style="color:#fd971f;font-style:italic">value</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>);</div><div>        <span style="color:#a6e22e">~String</span>();</div><div>    };</div><br /><div>    String <span style="color:#f92672">*</span>stringA1 <span style="color:#f92672">=</span> (String<span style="color:#f92672">*</span>) <span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">10 </span><span style="color:#f92672">* sizeof</span>(String));</div><div>    <span style="color:#75715e">// or in modern C++: </span></div><div>    String <span style="color:#f92672">*</span>stringA1 <span style="color:#f92672">=</span> <span style="color:#f92672">static_cast&lt;</span>String<span style="color:#f92672">*&gt;</span>(<span style="color:#a6e22e">malloc</span>(<span style="color:#ae81ff">10 </span><span style="color:#f92672">* sizeof</span>(String)));</div><div>    String <span style="color:#f92672">*</span>stringA2 <span style="color:#f92672">=</span> <span style="color:#f92672">new</span> String[<span style="color:#ae81ff">10</span>];</div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>malloc version creates memory for 10
+Strings, but <b>doesn't</b> invoke String constructor </span><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">--so the memory you've allocated is
+pretty <b>useless!</b></span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>then let's see what happens when we try to
+deallocate this array:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#a6e22e">free</span>(stringA1);     <span style="color:#75715e">// releases memory used by array, but not any strings</span></div><div>    <span style="color:#f92672">delete []</span> stringA2; <span style="color:#75715e">// invokes String destructor for each object in array</span></div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Therefore, stick with new and delete!</span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">5. Use the same form in corresponding calls to <b>new </b>and <b>delete</b></font></span></p><p style="text-align:justify"><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">suppose we had tried the following:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#f92672">delete</span> stringA2;    <span style="color:#75715e">// What do you think would happen?  -- invokes a single destructor</span></div><div>    <span style="color:#f92672">delete []</span> stringA2; <span style="color:#75715e">// invokes a destructor for each string in stringA2, then for stringA2</span></div></div>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span>    </span>Therefore, if you see new [], then use
+delete []</span><span style="font-family:Times New Roman;background-color:transparent;font-size:10pt"> </span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">6. Be prepared for out-of-memory conditions (when you invoke <b>new</b>)</font></span></p><p style="text-align:justify"><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">Older compilers </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">if </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">new</b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt"> cannot allocate requested memory, new </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">returns 0</b></p><p style="text-align:justify"><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">Newer compilers </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">(and standard) </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">throw </b><span style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">an
+exception: </span><b style="font-family:Times New Roman;text-indent:36pt;background-color:transparent;font-size:10pt">std::bad_alloc, </b><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">either way, you should check for this
+return value or exception, but it's a hassle!</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><span> </span><span>           </span>C++
+gives you another approach: an <b>error-handling</b> function, <b>set_new_handler</b></span></p>
+<p style="text-align:justify;text-indent:72.0pt"><span style="font-family:Times New Roman">declared in &lt;new.h&gt;: <i>was</i> extern void (*set_new_handler (void
+(*) () )) ();</span></p>
+<p style="text-align:justify;text-indent:72.0pt"><span style="font-family:Times New Roman">but now: typedef void (*new_handler)();</span></p>
+<p style="text-align:justify;text-indent:144.0pt"><span style="font-family:Times New Roman">new_hander set_new_handler(new_handler p)
+throw();</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">--takes an argument and returns a result,
+both of which are pointers to functions</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">--both functions take no arguments and<b>
+return nothing</b> (void) (<b>but</b> now <b>throws exception</b>)</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#a6e22e">noMoreMemory</span>() { cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">"Out of memory!</span><span style="color:#e6db74">"</span>; <span style="color:#a6e22e">abort</span>(); }</div><br /><div>    <span style="color:#a6e22e">main</span>() { </div><div>        <span style="color:#a6e22e">set_new_handler</span>(noMoreMemory);      <span style="color:#75715e">// pass function to set_new_handler, which does it</span></div><div>        <span style="color:#66d9ef;font-style:italic">int</span> <span style="color:#f92672">*</span>veryBig <span style="color:#f92672">=</span> <span style="color:#f92672">new</span> <span style="color:#66d9ef;font-style:italic">int</span>[<span style="color:#ae81ff">1000000000</span>]; <span style="color:#75715e">// will probably run noMoreMemory</span></div><div>    }</div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">--improves on a core dump, and doesn't
+require tests all over the place.</span></p></div>
+<p align="center" style="text-align:center"><b><span style="font-family:Times New Roman">Design idioms</span></b></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">35. Public inheritance models "is-a" (gen/spec)</font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div><span style="color:#66d9ef;font-style:italic"><span>    </span>class</span> <span style="color:rgb(166,226,46)">Bird</span> {</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#f92672">virtual</span> <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#a6e22e">fly</span>();         <span style="color:#75715e">// birds can fly, albeit in different ways</span></div><div>    };</div><br /><div><span style="color:#66d9ef;font-style:italic"><span>    </span>class</span> <span style="color:rgb(166,226,46)">Penguin</span>: <span style="color:#66d9ef;font-style:italic">public</span> <span style="color:rgb(166,226,46)">Bird</span> { }; <span style="color:#75715e">// Penguins are Birds...but Penguins don't fly!</span></div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">One solution: insert distinuguishing
+classes in the hierarchy:</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div><span style="color:#66d9ef;font-style:italic"><span>    </span>class</span> <span style="color:rgb(166,226,46)">Bird</span> { };  <span style="color:#75715e">// no fly function here</span></div><br /><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">FlyingBird</span>: <span style="color:#66d9ef;font-style:italic">public</span> <span style="color:rgb(166,226,46)">Bird</span> {</div><div>        <span style="color:#f92672">virtual</span> <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#a6e22e">fly</span>();</div><div>    };</div><br /><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">NonFlyingBird</span>: <span style="color:#66d9ef;font-style:italic">public</span> <span style="color:rgb(166,226,46)">Bird</span> { }; <span style="color:#75715e">// no fly() here either</span></div></div>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">Another solution (similar to smalltalk or
+Objective-C):</span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div><span style="color:#66d9ef;font-style:italic"><span>    </span>class</span> <span style="color:rgb(166,226,46)">Penguin</span>: <span style="color:#66d9ef;font-style:italic">public</span> <span style="color:rgb(166,226,46)">Bird</span> {</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span></div><div>        <span style="color:#f92672">virtual</span> <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#a6e22e">fly</span>() { <span style="color:#a6e22e">error</span>(<span style="color:#e6db74">"Penguins don't fly!"</span>);</div><div>    }; </div></div><p style="text-align:justify;text-indent:72.0pt"><br /></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">37. Never <b>redefine </b>an inherited non-virtual function</font></span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="text-indent:48px;font-family:Times New Roman">if a derived class needs to redefine a non-virtual function, </span><span style="font-size:10pt;background-color:transparent;text-indent:72pt;font-family:Times New Roman">then maybe it</span><font face="WP TypographicSymbols" style="font-size:10pt;background-color:transparent;text-indent:72pt"> i</font><span style="font-size:10pt;background-color:transparent;text-indent:72pt;font-family:Times New Roman">s not really an is-a relation (public derived class)?</span></p><p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">a <b>pure </b>virtual function establishes a
+function <b>interface </b>only</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">a simple virtual function with defines an
+interface <b>plus </b>a default implementation</span></p>
+<p style="text-align:justify;text-indent:36.0pt"><span style="font-family:Times New Roman">a non-virtual function establishes an
+invariant over specialization for that class </span><span style="font-family:Times New Roman;text-indent:72pt;background-color:transparent;font-size:10pt">i.e., both an interface and an
+implementation for that class and all derived classes.</span></p>
+<p style="text-align:justify"><span style="font-family:Times New Roman"><font color="#0000ff" size="3">39
+Avoid casts down the inheritance hierarchy</font></span></p>
+<div style="color:rgb(248,248,242);background-color:rgb(39,40,34);font-family:Consolas,Courier New,monospace;font-size:15px;line-height:20px;white-space:pre"><div>    class BankAccount { };</div><br /><div>    <span style="color:#66d9ef;font-style:italic">class</span> <span style="color:rgb(166,226,46)">Savings</span> {</div><div>    <span style="color:#66d9ef;font-style:italic">public:</span> </div><div>        <span style="color:#66d9ef;font-style:italic">void</span> <span style="color:#a6e22e">addInterest</span>();</div><div>    };</div><br /><div>    list<span style="color:#f92672">&lt;</span>BankAccount<span style="color:#f92672">*&gt;</span> allAccounts;</div><br /><div>    <span style="color:#75715e">// Suppose you want to credit all the accounts in allAccounts, so you try:</span></div><div>    <span style="color:#f92672">for</span> (list<span style="color:#f92672">&lt;</span>BankAccount<span style="color:#f92672">*&gt;</span>::iterator p <span style="color:#f92672">=</span> allAccounts.<span style="color:#a6e22e">begin</span>(); p <span style="color:#f92672">!=</span> allAccounts.end; <span style="color:#f92672">++</span>p)   (<span style="color:#f92672">*</span>p)-&gt;<span style="color:#a6e22e">addInterest</span>(); </div><br /><div>    <span style="color:#75715e">// Compiler will complain about addInterest(), since list doesn't contain BankAccount, not Savings</span></div><div>    <span style="color:#75715e">// You could try to force the issue with a cast, or a fancy new dynamic_cast:</span></div><div>    <span style="color:#f92672">if</span> (Savings <span style="color:#f92672">*</span>psa <span style="color:#f92672">=</span> <span style="color:#f92672">dynamic_cast&lt;</span>Savings<span style="color:#f92672">*&gt;</span>(<span style="color:#f92672">*</span>p)) <span style="color:#75715e">// is BankAccount a Savings or null?</span></div><div>        psa-&gt;<span style="color:#a6e22e">addInterest</span>();</div><br /></div>
+<p style="text-align:justify;text-indent:36.0pt"><br /></p>
+<br /></div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-attachments">
+<div class="sites-attachments-row"><div class="sites-attachments-icon" style="left:0px;"><span aria-label="Attachments" title="Attachments"><div class="sites-translucent sites-symbol" aria-hidden="true">Č</div></span></div><div id="sites-attachments-update-div" class="sites-attachments-inner-div" style="display:none;"><span class="sites-attachments-update-icon"><img src="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/spinner.gif" /></span><div class="sites-attachments-update-text">Updating...</div></div></div><div class="sites-attachments-separator"></div>
+<div id="attachment-wuid:gx:793b1ebfce02b320"><div class="sites-attachments-row"><div class="sites-attachments-icon sites-attachments-icon-accessible" style="left:5px"><span class="sites-symbol sites-color-adobe-pdf" aria-label="Adobe PDF" title="Adobe PDF">Ċ</span></div><div class="sites-attachments-inner-div"><div class="sites-attachments-name"><a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=ZGVmYXVsdGRvbWFpbnxzcmlkaGFya3JpdGhhfGd4Ojc5M2IxZWJmY2UwMmIzMjA" target="_blank" rel="noopener noreferrer">CPPIdiomsByExample_Nov2008.pdf</a> <div class="sites-translucent">(724k)</div></div><div class="sites-attachments-author">Sridhar Krishnan, <div class="sites-translucent">Aug 19, 2013, 9:21 AM</div></div></div><div class="sites-attachments-version sites-attachments-version-accessible"><a href="https://sites.google.com/site/sridharkritha/system/app/pages/admin/revisions?wuid=wuid:gx:793b1ebfce02b320">v.1</a></div><div id="attachment-download-wuid:gx:793b1ebfce02b320" class="sites-attachments-icon sites-attachments-icon-accessible" style="right:0px"><a href="https://86e9e8bf-a-62cb3a1a-s-sites.googlegroups.com/site/sridharkritha/handyconcepts/effective-c/CPPIdiomsByExample_Nov2008.pdf?attachauth=ANoY7coXPtC7Gr7sTdV4EYQ6Q5hQTQcxhRcRLdhKL8KvjmXVDBsu8KPZ5GdAgtYQJsyIC-j38CQoxc5SATCjRYlHlN4xFlEgPJrh-nj141cL2ZnIO3pvtqWYCHRl0566sGglb9-nDCngRjXjdmK3iXSUhIWEB68q8ZwzS95R3FfP122f780TjnwLxXa7QOW09yiNNF7hWry6osFExFBUura_WM5PL6TlLmMnUrU5pRh1N5N27ME1M-edjRWn-lpEv_iEO7CuCLzansX2Y2lPByiC_HnQGpLguw%3D%3D&amp;attredirects=0&amp;d=1" aria-label="Download CPPIdiomsByExample_Nov2008.pdf" title="Download" role="button" target="_blank" rel="noopener noreferrer"><span class="sites-symbol" aria-hidden="true">ď</span></a></div></div><div class="sites-attachments-separator"></div></div>
+<div style="height: 10px"></div>
+</div>
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/site/sridharkritha/handyconcepts/effective-c&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPH68HwdfNbAT6YuupV87o7tJPoj3iRjLBxbnVjTGmFaVtAGaCjMGvNeRYp5yFFjoJgiizHlx5Geu0Sr1Uk_fmkAt3JNd3/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('../_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/handyconcepts/effective-c by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 09:42:31 GMT -->
+</html>

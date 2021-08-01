@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/coding-contest/project-euler/project-euler-5-10 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 11:27:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/coding-contest","deleted":false,"title":"Coding Contest","dir":"ltr"},{"path":"/site/sridharkritha/coding-contest/project-euler","deleted":false,"title":"Project Euler - 1 to 5","dir":"ltr"},{"path":"/site/sridharkritha/coding-contest/project-euler/project-euler-5-10","deleted":false,"title":"Project Euler 6-10","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://1041179547-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/coding-contest/project-euler/project-euler-5-10\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","../../_/rsrc/1624520311000/system/app/css/editor.css","../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":"/coding-contest/project-euler","parentWuid":"wuid:gx:bc7593f2d7392d","siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Project Euler 6-10","locale":"en","wuid":"wuid:gx:1391eb3ca2e0aa75","revision":7,"path":"/coding-contest/project-euler/project-euler-5-10","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"project-euler-5-10","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Project Euler 6-10 - sridharkritha" />
+<meta itemprop="name" content="Project Euler 6-10 - sridharkritha" />
+<meta property="og:title" content="Project Euler 6-10 - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="../../_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="../../_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Project Euler 6-10 - sridharkritha</title>
+<meta itemprop="image" content="http://projecteuler.net/images/symbol_minus.gif" />
+<meta property="og:image" content="http://projecteuler.net/images/symbol_minus.gif" />
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+<A href="../../coding-contest.html" dir="ltr">Coding Contest</A>‎ &gt; ‎<A href="../project-euler.html" dir="ltr">Project Euler - 1 to 5</A>‎ &gt; ‎
+  </div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Project Euler 6-10</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header sites-layout-empty-tile"><div dir="ltr"><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar sites-layout-empty-tile"><div dir="ltr"><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr"><h2><a name="TOC-6.-Sum-square-difference"></a>6. Sum square difference</h2><div style="width:200px;margin-bottom:10px"><h3><a name="TOC-Problem-6"></a>Problem 6</h3></div>
+<div>
+<p>The sum of the squares of the first ten natural numbers is,   1<sup>2</sup> + 2<sup>2</sup> + ... + 10<sup>2</sup> = 385</p>
+<p>The square of the sum of the first ten natural numbers is,  (1 + 2 + ... + 10)<sup>2</sup> = 55<sup>2</sup> = 3025</p>
+<p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 <img alt="−" border="0" height="3" src="../../../../../projecteuler.net/images/symbol_minus.html" style="vertical-align:middle" width="9" /> 385 = 2640.</p>
+<p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.<br /></p></div><table><tbody><tr><td><div style="text-align:right">Answer:</div></td><td style="text-align:left">
+<b>25164150<br /></b></td></tr></tbody></table><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;</span><span style="color:royalblue">iostream</span><span style="color:#a31515">&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+ 
+	<span style="color:blue">long</span> <span style="color:blue">long</span> sum =0, square =0, diff;
+	<span style="color:blue">int</span> n =100;
+ 
+	<span style="color:green">//  Sum of n natural numbers = 1+2+3....+n</span>
+	sum = n* (n+1) /2 ; 
+	<span style="color:green">// Sum of the squares of n natural numbers = 1^2 + 2^2 + 3^2....+ n^2</span>
+	square =   sum * (2*n + 1) / 3; <span style="color:green">// (or) n*(n+1)*(2*n+1)/6; Note: sum/3 * (2*n + 1) is Wrong </span>
+ 
+	diff = (sum * sum ) - square;	
+	cout&lt;&lt;diff;	
+	<span style="color:blue">return</span> 0;
+}</pre>
+<table><tbody><tr><td><br /></td>
+<td style="text-align:left"><h2><a name="TOC-7.-10001st-prime"></a>7. 10001st prime</h2><div style="width:200px;margin-bottom:10px"><h3><a name="TOC-Problem-7"></a>Problem 7</h3></div>
+<div>
+<p>By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.</p>
+<p>What is the 10 001st prime number?</p><table><tbody><tr><td><div style="text-align:right">Answer:</div></td><td style="text-align:left">
+<b>104743<br /><br /></b><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:navy">Sieve_GeneratePrimes</span>();
+	cout&lt;&lt; primes[10000] &lt;&lt; <span style="color:#a31515">" "</span>;   <span style="color:green">// 10001 - 1</span>
+	<span style="color:blue">return</span> 0;
+}
+</pre><br /></td></tr></tbody></table><h2><a name="TOC-8.-Largest-product-in-a-series"></a>8. Largest product in a series</h2><p>Find the greatest product of five consecutive digits in the 1000-digit number.</p>
+
+73167176531330624919225119674426574742355349194934<br />
+96983520312774506326239578318016984801869478851843<br />
+85861560789112949495459501737958331952853208805511<br />
+12540698747158523863050715693290963295227443043557<br />
+66896648950445244523161731856403098711121722383113<br />
+62229893423380308135336276614282806444486645238749<br />
+30358907296290491560440772390713810515859307960866<br />
+70172427121883998797908792274921901699720888093776<br />
+65727333001053367881220235421809751254540594752243<br />
+52584907711670556013604839586446706324415722155397<br />
+53697817977846174064955149290862569321978468622482<br />
+83972241375657056057490261407972968652414535100474<br />
+82166370484403199890008895243450658541227588666881<br />
+16427171479924442928230863465674813919123162824586<br />
+17866458359124566529476545682848912883142607690042<br />
+24219022671055626321111109370544217506941658960408<br />
+07198403850962455444362981230987879927244284909188<br />
+84580156166097919133875499200524063689912560717606<br />
+05886116467109405077541002256983155200055935729725<br />
+71636269561882670428252483600823257530420752963450<br /><br />Answer:
+				
+<b>40824</b><br /><br />Hint: Example:<br />12345678  =&gt; 1x 2x3x4x5<br />                         2x3x4x5x6<br />                         .........so on<br /><br /><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span><span style="color:#a31515">&lt;</span><span style="color:royalblue">iostream</span><span style="color:#a31515">&gt;</span>
+<span style="color:blue">#include</span><span style="color:#a31515">&lt;string&gt;</span>
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+ 
+	<span style="color:blue">long</span> <span style="color:blue">long</span> maxMul =0, Mul = 1;
+	<span style="color:blue">int</span> nDigits=5, num =0;
+	<span style="color:green">// Note: Multi-line string literals are not permitted in std::string within single quotes.</span>
+	<span style="color:green">// Method 1: Need to use separate quotes for different lines [Recommended method, this also supports</span>
+	<span style="color:green">//                                                            space intentions]</span>
+	<span style="color:green">// Method 2: Single quotes with extra / can hide newline '/n' but next line should start from </span>
+	<span style="color:green">//           1st column(i.e., it doesn't support space intentions )</span>
+	std::string numString =
+		<span style="color:#a31515">"73167176531330624919225119674426574742355349194934"</span>
+		<span style="color:#a31515">"96983520312774506326239578318016984801869478851843"</span>
+		<span style="color:#a31515">"85861560789112949495459501737958331952853208805511"</span>
+		<span style="color:#a31515">"12540698747158523863050715693290963295227443043557"</span>
+		<span style="color:#a31515">"66896648950445244523161731856403098711121722383113"</span>
+		<span style="color:#a31515">"62229893423380308135336276614282806444486645238749"</span>
+		<span style="color:#a31515">"30358907296290491560440772390713810515859307960866"</span>
+		<span style="color:#a31515">"70172427121883998797908792274921901699720888093776"</span>
+		<span style="color:#a31515">"65727333001053367881220235421809751254540594752243"</span>
+		<span style="color:#a31515">"52584907711670556013604839586446706324415722155397"</span>
+		<span style="color:#a31515">"53697817977846174064955149290862569321978468622482"</span>
+		<span style="color:#a31515">"83972241375657056057490261407972968652414535100474"</span>
+		<span style="color:#a31515">"82166370484403199890008895243450658541227588666881"</span>
+		<span style="color:#a31515">"16427171479924442928230863465674813919123162824586"</span>
+		<span style="color:#a31515">"17866458359124566529476545682848912883142607690042"</span>
+		<span style="color:#a31515">"24219022671055626321111109370544217506941658960408"</span>
+		<span style="color:#a31515">"07198403850962455444362981230987879927244284909188"</span>
+		<span style="color:#a31515">"84580156166097919133875499200524063689912560717606"</span>
+		<span style="color:#a31515">"05886116467109405077541002256983155200055935729725"</span>
+		<span style="color:#a31515">"71636269561882670428252483600823257530420752963450"</span>;
+ 
+	<span style="color:blue">for</span>(<span style="color:blue">int</span> i= 0, j=0;i&lt; numString.size();++i) {
+		num = numString[i]-<span style="color:#a31515">'0'</span>; <span style="color:green">// Char to Int</span>
+		<span style="color:green">// If the number set has Zero then do reset</span>
+		<span style="color:blue">if</span>(0 == num) {
+			Mul = 1; <span style="color:green">// Reset</span>
+			nDigits=5;
+			j = i+1;
+			<span style="color:blue">continue</span>;
+			}
+		Mul *= num;
+		<span style="color:blue">int</span> firstNo = numString[j]-<span style="color:#a31515">'0'</span>;
+		<span style="color:blue">if</span>( 0 == --nDigits) {
+			nDigits = 1;
+			<span style="color:blue">if</span>(maxMul &lt; Mul ) {
+				maxMul = Mul;
+				}
+			Mul = Mul / firstNo; <span style="color:green">// For reducing number of multiplication</span>
+			++j;
+			}
+		}
+	std::cout&lt;&lt;maxMul; <span style="color:green">// Ans: 40824</span>
+	<span style="color:blue">return</span> 0;
+	}
+ 
+</pre><br /><h2><a name="TOC-9.-Special-Pythagorean-triplet"></a>9. Special Pythagorean triplet</h2>
+<div>
+<p>A Pythagorean triplet is a set of three natural numbers, <var>a</var> <img alt="&lt;" border="0" height="10" src="../../../../../projecteuler.net/images/symbol_lt.html" style="vertical-align:middle" width="10" /> <var>b</var> <img alt="&lt;" border="0" height="10" src="../../../../../projecteuler.net/images/symbol_lt.html" style="vertical-align:middle" width="10" /> <var>c</var>, for which,</p>
+<div style="text-align:center"> <var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
+<p>For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.</p>
+<p>There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000.<br />Find the product <var>abc</var>.</p>
+</div><br />
+<table><tbody><tr><td><div style="text-align:right">Answer:</div></td>
+<td style="text-align:left">
+<b>31875000<br />BRUTE FORCE SOLUTION</b></td></tr></tbody></table></div><table><tbody><tr><td><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;iostream&gt;</span>
+<span style="color:blue">#define</span> <span style="color:#790058">S</span>(x) x*x
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:blue">for</span>(<span style="color:blue">int</span> c=0;c&lt;1000;++c)
+		<span style="color:blue">for</span>(<span style="color:blue">int</span> b=1;b&lt;1000;++b)
+			<span style="color:blue">for</span>(<span style="color:blue">int</span> a=1;a&lt;1000;++a) {
+				  <span style="color:blue">if</span>( c == (1000 - a - b)) {
+					  <span style="color:blue">if</span>(<span style="color:#790058">S</span>(c) == (<span style="color:#790058">S</span>(a) + <span style="color:#790058">S</span>(b) )){
+						  cout&lt;&lt;a*b*c;
+							}
+						}
+				}	
+	<span style="color:blue">return</span> 0;
+}</pre>Efficient Solution: 1<br /><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;iostream&gt;</span>
+<span style="color:blue">#define</span> <span style="color:#790058">S</span>(x) x*x
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:blue">int</span> c = 0;
+	<span style="color:blue">for</span>(<span style="color:blue">int</span> a=1;a&lt;(1000/3);++a) {
+		<span style="color:green">//  a &lt; b; so b is at-least a+1 </span>
+		<span style="color:green">// If a &lt; b &lt; c and a + b + c = 1000 then 'a' can't be greater/equals than 1000/3 and </span>
+		<span style="color:green">// 'b' can't be greater/equals than 1000/2. </span>
+		<span style="color:blue">for</span>(<span style="color:blue">int</span> b=a+1;b&lt;(1000/2);++b) {			
+			c = (1000 - a - b);
+			<span style="color:blue">if</span>(<span style="color:#790058">S</span>(c) == (<span style="color:#790058">S</span>(a) + <span style="color:#790058">S</span>(b) ))
+				std::cout&lt;&lt;a*b*c;
+			}
+		}		
+	<span style="color:blue">return</span> 0;
+}</pre>Efficient Solution: 2<br /><b>Euclid's formula:</b><br />A <b>Pythagorean triple</b> consists of three positive integer<a href="../../../../../en.wikipedia.org/wiki/Integer.html" title="Integer" rel="nofollow"></a> <i>a</i>, <i>b</i>, and <i>c</i>, such that <span><i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup></span>. Such a triple is commonly written <span>(<i>a</i>, <i>b</i>, <i>c</i>)</span>, and a well-known example is <span>(3, 4, 5)</span>. If <span>(<i>a</i>, <i>b</i>, <i>c</i>)</span> is a Pythagorean triple, then so is (<i>ka</i>, <i>kb</i>, <i>kc</i>) for any positive integer <i>k</i>. A <b>primitive Pythagorean triple</b> is one in which <i>a</i>, <i>b</i> and <i>c</i> are <a href="../../../../../en.wikipedia.org/wiki/Coprime.html" title="Coprime" rel="nofollow">coprime</a>.<br /> Pythagorean triples : <span><i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> = <i>c</i><sup>2</sup></span> can also expressed as <dl><dd><img alt=" a = k\cdot(m^2 - n^2)   ,\ \, b = k\cdot(2mn) ,\ \, c = k\cdot(m^2 + n^2)" src="../../../../../upload.wikimedia.org/math/b/3/5/b358c1248fba395e5766928b01b36d80.png" /></dd></dl>
+<p>where <i>m</i>, <i>n</i>, and <i>k</i> are positive integers with <span><i>m</i> &gt; <i>n</i></span>, <span><i>m</i> − <i>n</i></span> odd, and with <i>m</i> and <i>n</i> co-prime i.e., gcd(m,n) = 1.</p><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">for</span> (n = 2; n &lt; 1000; n++)
+        {
+          <span style="color:blue">for</span> (m = n + 1; m &lt; 1000; m++)
+            {
+              sum = 0;
+              a = (m*m - n*n);
+              b = (2*m*n);
+              c = (m*m + n*n);
+              sum = a + b + c;
+              <span style="color:blue">if</span>(1000 % sum == 0)
+                {
+                  <span style="color:blue">int</span> k = 1000 / sum;
+                  a *= k;
+                  b *= k;
+                  c *= k;
+                  <span style="color:blue">goto</span> done;
+                }
+            }
+        }
+     done:
+      product = a * b * c;</pre><p><br /></p><h2><a name="TOC-10.-Summation-of-primes"></a>10. Summation of primes</h2><div style="width:200px;margin-bottom:10px"></div>
+<div>
+<p>The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.</p>
+<p>Find the sum of all the primes below two million.</p>
+</div><br />
+<table><tbody><tr><td><div style="text-align:right">Answer:</div></td>
+<td style="text-align:left">
+<b>142913828922</b></td></tr></tbody></table><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;iostream&gt;</span>
+<span style="color:blue">using</span> <span style="color:blue">namespace</span> std;
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:blue">int</span> count = 0, maxPrime = 2000000; <span style="color:green">// 2 Million</span>
+	<span style="color:blue">long</span> <span style="color:blue">long</span> sum =0;
+	<span style="color:navy">Sieve_GeneratePrimes</span>();
+	<span style="color:blue">while</span>(<span style="color:blue">true</span>) {
+		<span style="color:blue">if</span>(maxPrime &gt; primes[count]){
+			sum += primes[count];
+			++count;
+			}
+		<span style="color:blue">else</span>
+			<span style="color:blue">break</span>;
+		}
+	cout&lt;&lt;sum;
+	<span style="color:blue">return</span> 0;
+}</pre></td>
+<td style="text-align:left"><br /></td></tr></tbody></table></td></tr></tbody></table></div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="../../../../../accounts.google.com/ServiceLogin6bfc.html?continue=https://sites.google.com/site/sridharkritha/coding-contest/project-euler/project-euler-5-10&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../../system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../../system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="../../../../../accounts.google.com/ServiceLogin33de.html">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPH4JMCaOH8ldsn9lbByf5IsyuDnVbNVGcjVSjjrLPykORgfO1QnMRM_itXNRB28tpiK4aXTBJ4lSLLrOcu_5X5yk3C75P/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('../../_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/coding-contest/project-euler/project-euler-5-10 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 11:27:21 GMT -->
+</html>

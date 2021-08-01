@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/handyconcepts/event-handler/generic-callback by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:31:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/handyconcepts","deleted":false,"title":"handyconcepts","dir":"ltr"},{"path":"/site/sridharkritha/handyconcepts/event-handler","deleted":false,"title":"Event Handler","dir":"ltr"},{"path":"/site/sridharkritha/handyconcepts/event-handler/generic-callback","deleted":false,"title":"Generic Callback / Event Handler","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://1781506476-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/handyconcepts/event-handler/generic-callback\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","../../_/rsrc/1624520311000/system/app/css/editor.css","../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":"/handyconcepts/event-handler","parentWuid":"wuid:gx:38358f6aaa801c2c","siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Generic Callback / Event Handler","locale":"en","wuid":"wuid:gx:17f4f0d350441411","revision":12,"path":"/handyconcepts/event-handler/generic-callback","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"generic-callback","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Generic Callback / Event Handler - sridharkritha" />
+<meta itemprop="name" content="Generic Callback / Event Handler - sridharkritha" />
+<meta property="og:title" content="Generic Callback / Event Handler - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="../../_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="../../_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Generic Callback / Event Handler - sridharkritha</title>
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+<A href="../../handyconcepts.html" dir="ltr">handyconcepts</A>‎ &gt; ‎<A href="../event-handler.html" dir="ltr">Event Handler</A>‎ &gt; ‎
+  </div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Generic Callback / Event Handler</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header"><div dir="ltr">Ref: http://www.gotw.ca/gotw/083.htm <br />https://sites.google.com/site/kjellhedstrom2/active_object   - Active Object Pattern ( Action Pattern )<br />https://github.com/bilash/threadpool/blob/master/threadpool.cpp<br />http://stackoverflow.com/questions/923922/event-task-queue-multithreading-c<br /><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar sites-layout-empty-tile"><div dir="ltr"><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr"><div><div><div><br /><h1 style="font-family:Arial,Helvetica,Sans-Serif;font-size:18px;font-weight:bold;color:#ff6600;margin-left:10px;margin-top:10px"><a name="TOC-Designing-a-Generic-Callback-Dispatcher"></a>Designing a Generic Callback Dispatcher</h1>
+<div style="padding:10px">In many applications, you need a
+ generic class that invokes callback functions regardless of their class
+ type. For example, an even-driven system that needs to call a member 
+function of a GUI component without knowing its actual type. You can 
+create a generic callback class template to streamline this task. Such a
+ template takes the class whose member function is to be called as its 
+first parameter. The second template parameter is a pointer to that 
+class's member function. The trick is that you base the second parameter
+ on the first one, as follows:
+<pre><code> 
+template &lt; class T, void (T::*F)() &gt; class callback {/**/};
+</code></pre> <p>
+The implementation of the template is relatively simple: it has a 
+reference to T, which is the class whose member function is to be 
+called, a constructor and a member function called execute(), which 
+invokes the callback member function:
+</p><pre><code> 
+template &lt; class T, void (T::*F)() &gt;
+class callback
+{
+public:
+ callback(T&amp; t) : object(t) {} // assign actual object to T
+ void execute() {(object.*F)();}// launch callback function
+private:
+ T&amp; object;
+};
+</code></pre> <p>
+Remember that in order to call a member function through a pointer to 
+member, you must have a reference or pointer to the actual object. This 
+is why the template has a T&amp; as a data member. Now suppose we want 
+to use the callback template to execute a callback member function of 
+class A:
+</p><pre><code> 
+class A
+{
+public:
+ void f();
+};
+</code></pre> <p>
+Here's how you instantiate the template: a template argument must be a 
+constant expression. Therefore, you can't use a variable as the address 
+of the member function. Instead, use the &amp; operator to take the 
+function's address. Finally, pass the object whose member function you 
+want to be called as the argument for the template object:
+</p><pre><code> 
+int main()
+{
+ A a; // first, create an object
+ callback &lt; A, &amp;A::f &gt; c(a); // instantiate template 
+ c.execute(); // call callback member function
+}
+</code></pre> <p>
+You can use the callback class template with any class type, as long as the member function called has the same signature. <br /></p><p><br /></p><p><br /></p><p><b>Modified Version by Herb Sutter:</b></p><p><b>Complete Explanation: GotW 83<br /></b></p><p><b>http://www.gotw.ca/gotw/083.htm</b><br /></p></div><b>Method 1: Generic Callback function <span style="color:rgb(255,0,0)">no parameter</span>:</b><br /></div><div><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">class</span> <span style="color:teal">CallbackBase</span>
+{
+<span style="color:blue">public</span>:
+  <span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() <span style="color:blue">const</span> { };
+  <span style="color:blue">virtual</span> ~<span style="color:teal">CallbackBase</span>() = 0;
+};
+ 
+<span style="color:teal">CallbackBase</span>::~<span style="color:teal">CallbackBase</span>() { }
+ 
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T&gt;
+<span style="color:blue">class</span> <span style="color:navy">Callback</span> : <span style="color:blue">public</span> <span style="color:teal">CallbackBase</span>
+{
+<span style="color:blue">public</span>:
+  <span style="color:blue">typedef</span> <span style="color:blue">void</span> (T::*<span style="color:royalblue">F</span>)();
+ 
+  <span style="color:navy">Callback</span>( T&amp; t, <span style="color:royalblue">F</span> f ) : t_(&amp;t), f_(f) { }
+  <span style="color:blue">void</span> <span style="color:blue">operator</span>()() <span style="color:blue">const</span> { (t_-&gt;*f_)(); }    <span style="color:green">// simply call =&gt; object();</span>
+ 
+<span style="color:blue">private</span>:
+  T* t_;
+  <span style="color:royalblue">F</span>  f_;
+};
+ 
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T&gt;
+<span style="color:navy">Callback</span>&lt;T&gt; <span style="color:navy">make_callback</span>( T&amp; t, <span style="color:blue">void</span> (T::*f) () )
+{
+  <span style="color:blue">return</span> <span style="color:navy">Callback</span>&lt;T&gt;( t, f );
+} <br /></pre><font face="Arial, Arial, Helvetica"><font face="Courier New"><br /></font></font></div><font face="Arial, Arial, Helvetica"><font face="Courier New">main.cpp:<br /></font></font><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">class</span> <span style="color:teal">Widget</span> {
+<span style="color:blue">public</span>:
+	<span style="color:blue">void</span> <span style="color:navy">funOne</span>(<span style="color:blue">void</span>) 	{ std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funOne\n"</span>; }
+	<span style="color:blue">void</span> <span style="color:navy">funTwo</span>(<span style="color:blue">void</span>) 	{ std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funTwo\n"</span>; }
+	<span style="color:blue">void</span> <span style="color:navy">funThree</span>(<span style="color:blue">void</span>)     { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funThree\n"</span>; }
+};<span style="color:blue"><br /><br />int</span> <span style="color:navy">main</span>() {
+ 
+	<span style="color:teal">Widget</span> w;
+	std::deque&lt; <span style="color:navy">Callback</span>  &lt; <span style="color:teal">Widget</span> &gt; &gt; l;	
+        l.push_back( <span style="color:navy">make_callback</span>( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funTwo</span> ) );
+	l.push_back( <span style="color:navy">make_callback</span>( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funOne</span> ) );
+	l.push_back( <span style="color:navy">make_callback</span>( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funThree</span> ) );
+	
+	<span style="color:blue">for</span>(<span style="color:blue">int</span> i=0;i&lt;3;++i) {
+		<span style="color:navy">Callback</span>&lt; <span style="color:teal">Widget</span> &gt; task = l.front();
+		task();   <span style="color:green">               // simply call =&gt; object();</span>
+		l.pop_front();
+	}
+	<span style="color:blue">return</span> 0;
+}<br /><br /><br /></pre><b>Method 2: Generic Callback function with <span style="color:rgb(255,0,0)">single parameter ( pass by value ):</span></b><br /><br /><pre style="font-family:Consolas;font-size:15;color:black;background:white"><br /><span style="color:green"><span style="color:blue">class</span> CallbackBase
+{
+<span style="color:blue">public</span>:
+  <span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() <span style="color:blue">const</span> { };
+  <span style="color:blue">virtual</span> ~CallbackBase() = 0;
+};
+ 
+CallbackBase::~CallbackBase() { }<br /><br />// Generic Callback with Single value type Parameter</span>
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:blue">class</span> <span style="color:navy">Callback</span>: <span style="color:blue">public</span> CallbackBase {
+<span style="color:blue">private</span>:
+	<span style="color:blue">typedef</span> <span style="color:blue">void</span> (T::*<span style="color:royalblue">Func</span>)(Param);
+
+	T* object;
+	<span style="color:royalblue">Func</span> func;
+	Param param;
+
+<span style="color:blue">public</span>:
+	<span style="color:navy">Callback</span>(T&amp; obj_, <span style="color:royalblue">Func</span> f_, Param p_  )
+		: object(&amp;obj_), func(f_), param(p_) { }
+
+	<span style="color:blue">virtual</span> ~<span style="color:navy">Callback</span>() {}
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() { (object-&gt;*func)(param); }
+};
+ 
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:navy">Callback</span>&lt;T, Param&gt; <span style="color:navy">make_callback</span>( T&amp; t, <span style="color:blue">void</span> (T::*f)(Param), Param p_ )
+{
+	<span style="color:blue">return</span> <span style="color:navy">Callback</span>&lt;T, Param&gt;( t, f, p_ );
+}</pre><br /><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">class</span> <span style="color:teal">Widget</span> {
+<span style="color:blue">public</span>:	
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:navy">funFour</span>(<span style="color:blue">int</span> x) { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funFour:"</span>&lt;&lt;x; }
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:navy">funFive</span>(<span style="color:blue">int</span> y) { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funFive:"</span>&lt;&lt;y; }
+	
+};<span style="color:blue"><br /><br />int</span> <span style="color:navy">main</span>() {
+	<span style="color:teal">Widget</span> w;
+	std::<span style="color:teal">deque</span>&lt; <span style="color:navy">Callback</span>  &lt; <span style="color:teal">Widget</span>,<span style="color:blue">int</span> &gt; &gt; Q_v;	
+        Q_v.push_back(<span style="color:navy">Callback</span>  &lt; <span style="color:teal">Widget</span>,<span style="color:blue">int</span> &gt;( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funFour</span>,5) );
+	<span style="color:green">//Q_v.push_back( make_callback( w, &amp;Widget::funFour,5 ) );</span>
+	<span style="color:navy">Callback</span>&lt; <span style="color:teal">Widget</span>, <span style="color:blue">int</span>  &gt; task = Q_v.front();
+		task();
+	retur 0;
+}</pre><b>Method 3: Generic Callback function with <span style="color:rgb(255,0,0)">single parameter ( pass by pointer and reference ):</span></b><br /><br /><pre style="font-family:Consolas;font-size:15;color:black;background:white"><br /><span style="color:green"><span style="color:blue">class</span> CallbackBase
+{
+<span style="color:blue">public</span>:
+  <span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() <span style="color:blue">const</span> { };
+  <span style="color:blue">virtual</span> ~CallbackBase() = 0;
+};
+ 
+CallbackBase::~CallbackBase() { }<br /><br /></span><br /><span style="color:green"><span style="color:green">//////////////////////////////////////////////////////////////////////////////////////////////////</span> <br />// Generic Callback with Single Pointer type Parameter</span>
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:blue">class</span> <span style="color:navy">Callback</span>: <span style="color:blue">public</span> CallbackBase {
+<span style="color:blue">private</span>:
+	<span style="color:blue">typedef</span> <span style="color:blue">void</span> (T::*<span style="color:royalblue">Func</span>)(Param*);
+
+	T* object;
+	<span style="color:royalblue">Func</span> func;
+	Param* param;
+
+<span style="color:blue">public</span>:
+	<span style="color:navy">Callback</span>(T&amp; obj_, <span style="color:royalblue">Func</span> f_, Param* p_  )
+		: object(&amp;obj_), func(f_), param(p_) { }
+
+	<span style="color:blue">virtual</span> ~<span style="color:navy">Callback</span>() {}
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() { (object-&gt;*func)(param); }
+};
+ 
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:navy">Callback</span>&lt;T, Param&gt; <span style="color:navy">make_callback</span>( T&amp; t, <span style="color:blue">void</span> (T::*f)(Param*), Param* p_ )
+{
+	<span style="color:blue">return</span> <span style="color:navy">Callback</span>&lt;T, Param&gt;( t, f, p_ );
+}
+<br /><span style="color:green">//////////////////////////////////////////////////////////////////////////////////////////////////</span> 
+<span style="color:green">// Generic Callback with Single Reference type Parameter</span>
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:blue">class</span> <span style="color:navy">Callback</span>&lt;T, Param&amp;&gt;: <span style="color:blue">public</span> CallbackBase {   <span style="color:green">// Extra param &lt;T, Param&amp;&gt; for avoiding name conflict</span>
+<span style="color:blue">private</span>:
+	<span style="color:blue">typedef</span> <span style="color:blue">void</span> (T::*<span style="color:royalblue">Func</span>)(Param&amp;);
+
+	T* object;
+	<span style="color:royalblue">Func</span> func;
+	Param&amp; param;
+
+<span style="color:blue">public</span>:
+	<span style="color:navy">Callback</span>(T&amp; obj_, <span style="color:royalblue">Func</span> f_, Param&amp; p_  )
+		: object(&amp;obj_), func(f_), param(p_) { }
+
+	<span style="color:blue">virtual</span> ~<span style="color:navy">Callback</span>() {}
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() { (object-&gt;*func)(param); }
+};
+ 
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:navy">Callback</span>&lt;T, Param&gt; <span style="color:navy">make_callback</span>( T&amp; t, <span style="color:blue">void</span> (T::*f)(Param&amp;), Param&amp; p_ )
+{
+	<span style="color:blue">return</span> <span style="color:navy">Callback</span>&lt;T, Param&gt;( t, f, p_ );
+}</pre><br /><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">class</span> <span style="color:teal">Widget</span> {
+<span style="color:blue">public</span>:	
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:navy">funSix</span>(<span style="color:blue">int</span>* z) { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funSix:"</span>&lt;&lt;*z; }
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:navy">funSeven</span>(<span style="color:blue">int</span>&amp; r) { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funSeven:"</span>&lt;&lt;r; }
+};<span style="color:blue"><br /><br />int</span> main() {
+ 
+	<span style="color:teal">Widget</span> w;
+	<span style="color:green">// Passing Pointer variable to function pointer</span>
+	<span style="color:blue">int</span>* val = <span style="color:blue">new</span> <span style="color:blue">int</span>(9);
+	std::<span style="color:teal">deque</span>&lt; <span style="color:navy">Callback</span>  &lt; <span style="color:teal">Widget</span>,<span style="color:blue">int</span> &gt; &gt; Q_p;	
+    <span style="color:green">    //Q_p.push_back(Callback  &lt; Widget,int &gt;( w, &amp;Widget::funSix, val) );</span>
+	Q_p.push_back( <span style="color:navy">make_callback</span>( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funSix</span>,val ) );
+	<span style="color:navy">Callback</span>&lt; <span style="color:teal">Widget</span>, <span style="color:blue">int</span>  &gt; task_byPtr = Q_p.front();
+		task_byPtr();
+	
+        <span style="color:green">// Passing Reference Variable to function pointer</span>
+	<span style="color:blue">int</span> value = 32;
+	<span style="color:blue">int</span> &amp;refValue = value;
+	std::<span style="color:teal">deque</span>&lt; <span style="color:navy">Callback</span>  &lt; <span style="color:teal">Widget</span>,<span style="color:blue">int</span>&amp; &gt; &gt; Q_r;	
+        Q_r.push_back(<span style="color:navy">Callback</span>  &lt; <span style="color:teal">Widget</span>,<span style="color:blue">int</span>&amp; &gt;( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funSeven</span>, refValue) );
+	<span style="color:green">//Q_r.push_back( make_callback( w, &amp;Widget::funSeven,refValue ) );</span>
+	<span style="color:navy">Callback</span>&lt; <span style="color:teal">Widget</span>, <span style="color:blue">int</span>&amp;  &gt; task_byRef = Q_r.front();
+		task_byRef(); 
+ 
+	<span style="color:blue">return</span> 0;
+}</pre></div><div>TODO: Try to resolve the conflict if you combine pass by value with pas by pointer/reference header file.<br /><font size="3"><b><br /></b></font></div><div><font size="3"><b>Event Queue /  Task Manger<br /></b></font><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">#include</span> <span style="color:#a31515">&lt;</span><span style="color:teal">deque</span><span style="color:#a31515">&gt;</span>
+ 
+<span style="color:blue">class</span> CallbackBase
+{
+<span style="color:blue">public</span>:
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() <span style="color:blue">const</span> { };
+	<span style="color:blue">virtual</span> ~CallbackBase() = 0;
+};
+CallbackBase::~CallbackBase() { }
+ 
+<span style="color:green">// Generic Callback with Single Pointer type Parameter</span>
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:blue">class</span> <span style="color:navy">Callback</span>: <span style="color:blue">public</span> CallbackBase {
+<span style="color:blue">private</span>:
+	<span style="color:blue">typedef</span> <span style="color:blue">void</span> (T::*<span style="color:royalblue">Func</span>)(Param*);
+	T* object;
+	<span style="color:royalblue">Func</span> func;
+	Param* param;
+ 
+<span style="color:blue">public</span>:
+	<span style="color:navy">Callback</span>(T&amp; obj_, <span style="color:royalblue">Func</span> f_, Param* p_ )
+		: object(&amp;obj_), func(f_), param(p_) { }
+ 
+	<span style="color:blue">virtual</span> ~<span style="color:navy">Callback</span>() {}
+	<span style="color:blue">virtual</span> <span style="color:blue">void</span> <span style="color:blue">operator</span>()() { (object-&gt;*func)(param); }
+};
+ 
+<span style="color:green">// Task Manager / Event Queue</span>
+<span style="color:blue">template</span>&lt;<span style="color:blue">typename</span> T, <span style="color:blue">typename</span> Param&gt;
+<span style="color:blue">class</span> <span style="color:navy">TaskQ</span>{
+<span style="color:blue">public</span>:
+	<span style="color:navy">TaskQ</span>() {}
+	<span style="color:blue">virtual</span> ~<span style="color:navy">TaskQ</span>() {}
+	std::<span style="color:teal">deque</span>&lt; <span style="color:navy">Callback</span> &lt; T,Param &gt; &gt; Q_p;
+	<span style="color:blue">void</span> <span style="color:navy">addTask</span>(T&amp; t, <span style="color:blue">void</span> (T::*f)(Param*), Param* p_) {
+		Q_p.push_back( <span style="color:navy">Callback</span>&lt;T, Param&gt;( t, f, p_ ));
+	}
+	<span style="color:blue">void</span> <span style="color:navy">executeTask</span>() {
+		<span style="color:blue">if</span>(0 != <span style="color:navy">numTask</span>()) {
+		   Q_p.front()();
+		   Q_p.pop_front();<br />                  }<br />        }
+	<span style="color:blue">int</span> <span style="color:navy">numTask</span>() {
+		<span style="color:blue">return</span> Q_p.size();
+	}
+};
+</pre><pre style="font-family:Consolas;font-size:15;color:black;background:white"><span style="color:blue">class</span> <span style="color:teal">Widget</span> {
+<span style="color:blue">public</span>:
+	<span style="color:blue">void</span> <span style="color:navy">funSix</span>(<span style="color:blue">int</span>* z) { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funSix:"</span>&lt;&lt;*z; }
+	<span style="color:blue">void</span> <span style="color:navy">funEight</span>(<span style="color:blue">int</span>* p) { std::cout&lt;&lt;<span style="color:#a31515">"I'm in Widget::funEight:"</span>&lt;&lt;*p; }
+};
+ 
+<span style="color:blue">int</span> <span style="color:navy">main</span>() {
+	<span style="color:teal">Widget</span> w;
+	<span style="color:green">// Passing Pointer variable to function pointer</span>
+	<span style="color:blue">int</span>* val = <span style="color:blue">new</span> <span style="color:blue">int</span>(9);
+	<span style="color:blue">int</span>* tem = <span style="color:blue">new</span> <span style="color:blue">int</span>(8);
+	<span style="color:navy">TaskQ</span>&lt; <span style="color:teal">Widget</span>,<span style="color:blue">int</span> &gt; tt;
+	std::cout&lt;&lt;tt.<span style="color:navy">numTask</span>()&lt;&lt;std::<span style="color:navy">endl</span>;
+	tt.addTask( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funSix</span>,val );
+	tt.addTask( w, &amp;<span style="color:teal">Widget</span>::<span style="color:navy">funEight</span>,tem );
+	std::cout&lt;&lt;tt.<span style="color:navy">numTask</span>()&lt;&lt;std::<span style="color:navy">endl</span>;
+	tt.executeTask();
+	tt.executeTask();
+	std::cout&lt;&lt;tt.<span style="color:navy">numTask</span>()&lt;&lt;std::<span style="color:navy">endl</span>;
+	<span style="color:blue">return</span> 0;
+}</pre><br /><br /></div><div><br /></div><div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>kljdklsjf;lsdk;flksd;fk<br /><br /></div>dsfjlsdjfsdjf<br /><br /><br /><div><div><br /></div></div></div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/site/sridharkritha/handyconcepts/event-handler/generic-callback&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../../system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../../system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPH9RmhtHvEUjGgLUsC30uHNCw7F7ebiivYIGf0SLAUVCt2JXWNDGCXBnWR4Py3y8WQVz-W70i3ch7wynDEVX9xs7cyXf3/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('../../_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/handyconcepts/event-handler/generic-callback by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:31:42 GMT -->
+</html>

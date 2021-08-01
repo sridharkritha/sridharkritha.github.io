@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/sql-queries-0 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:01:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/sql-queries-0","deleted":false,"title":"Sql Queries 0","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://380729090-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/sql-queries-0\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","_/rsrc/1624520311000/system/app/css/editor.css","../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":null,"parentWuid":null,"siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Sql Queries 0","locale":"en","wuid":"wuid:gx:6f81a71d1f105efe","revision":13,"path":"/sql-queries-0","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"sql-queries-0","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Sql Queries 0 - sridharkritha" />
+<meta itemprop="name" content="Sql Queries 0 - sridharkritha" />
+<meta property="og:title" content="Sql Queries 0 - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Sql Queries 0 - sridharkritha</title>
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Sql Queries 0</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header"><div dir="ltr">http://sql-plsql.blogspot.co.uk/2007/03/sql-introduction.html<br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar sites-layout-empty-tile"><div dir="ltr"><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr"><b>SQL TOP:</b><br />This clause is used to specify the first N no.of records or X percentage of records to be returned by the query. Usually this query is accompanied with "ORDER BY" clause.<br /><br />Employee:<br />--------------<br />EmpName  Salary Age<br />Rajesh    7000  34<br />Siva      4000  27<br />Ajay      8000  39<br />Kumar     3000  23<br /><br /><b>SELECT TOP 2 EmpName, Salary FROM Employee ORDER BY Salary DESC;</b><br />EmpName  Salary Age<br />Rajesh    7000  34<br />Siva      4000  27<br /><b><br />SELECT TOP 25 PERCENT EmpName, Salary FROM Employee ORDER BY Salary DESC;</b><br />EmpName  Salary Age<br />Rajesh    7000  34<br /><br /><pre style="margin-top:0px"><span>Finding </span><span>3rd Highest Salary:
+</span><b><span>SELECT</span> min(Salary) <span>FROM</span> Employee WHERE Salary IN (SELECT DISTINCT TOP <span>3</span> Salary FROM Employee ORDER BY Salary DESC);</b></pre>-------------------------------------------------------------------------------------------------<br /><h3><a name="TOC-Deleting-duplicate-rows-from-a-table"></a>Deleting duplicate rows from a table</h3>
+
+A table with a primary key doesn’t contain duplicates. But if due to 
+some reason, the keys have to be disabled or when importing data from 
+other sources, 
+
+duplicates come up in the table data, it is often needed to get rid of 
+such duplicates. <br />
+
+This can be achieved in tow ways :- <br />
+(a)	Using a temporary table. <br />
+(b)	Without using a temporary table. <br />
+<h3><a name="TOC-a-Using-a-temporary-or-staging-table"></a>(a) Using a temporary or staging table</h3>
+
+Let the table employee_test1 contain some duplicate data like:-
+
+<pre style="margin-top:0px">CREATE TABLE Employee_Test1
+(
+Emp_ID INT,
+Emp_name Varchar(<span>100</span>),
+Emp_Sal Decimal (<span>10</span>,<span>2</span>)
+)
+
+INSERT INTO Employee_Test1 VALUES (<span>1</span>,<span>'</span><span>Anees'</span>,<span>1000</span>);
+INSERT INTO Employee_Test1 VALUES (<span>2</span>,<span>'</span><span>Rick'</span>,<span>1200</span>);
+INSERT INTO Employee_Test1 VALUES (<span>3</span>,<span>'</span><span>John'</span>,<span>1100</span>);
+INSERT INTO Employee_Test1 VALUES (<span>4</span>,<span>'</span><span>Stephen'</span>,<span>1300</span>);
+INSERT INTO Employee_Test1 VALUES (<span>5</span>,<span>'</span><span>Maria'</span>,<span>1400</span>);
+INSERT INTO Employee_Test1 VALUES (<span>6</span>,<span>'</span><span>Tim'</span>,<span>1150</span>);
+INSERT INTO Employee_Test1 VALUES (<span>6</span>,<span>'</span><span>Tim'</span>,<span>1150</span>);
+</pre>
+<b>Step 1:</b> Create a temporary table from the main table as:-
+
+<pre style="margin-top:0px"><span>select</span> <span>top</span> 0* <span>into</span> employee_test1_temp <span>from</span> employee_test1
+</pre>
+<b>Step2 :</b> Insert the result of the GROUP BY query into the temporary table as:-
+
+<pre style="margin-top:0px">insert into employee_test1_temp
+select Emp_ID,Emp_name,Emp_Sal
+from employee_test1
+group by Emp_ID,Emp_name,Emp_Sal
+</pre>
+<b>Step3:</b> Truncate the original table as:-
+
+<pre style="margin-top:0px">truncate table employee_test1
+</pre>
+<b>Step4:</b> Fill the original table with the rows of the temporary table as:-
+
+<pre style="margin-top:0px"><span>insert</span> <span>into</span> employee_test1
+<span>select</span> * <span>from</span> employee_test1_temp
+</pre>
+
+Now, the duplicate rows from the main table have been removed. 
+
+<pre style="margin-top:0px"><span>select</span> * <span>from</span> employee_test1<br /></pre><h3><a name="TOC-b-Without-using-a-temporary-table"></a>(b) Without using a temporary table</h3> 
+
+;with T as
+<br />  (
+	select * , row_number() over (partition by Emp_ID order by Emp_ID) as rank
+	from employee_test1
+)
+
+<span><br />  delete</span>
+from T
+where rank &gt; <span>1</span>;<br /><br /> The result is as:-
+
+<br />Emp_ID	Emp_name   Emp_Sal
+<span><br />1</span> <span>    </span><span>    </span><span>    </span>Anees	   <span><span>    </span><span>    </span>1000</span>
+<br /><span>2</span> <span>    </span><span>    </span><span>    </span>Rick	   <span><span>    </span><span>    </span><span>   </span>1200</span>
+<span><br />3</span> <span>    </span><span>    </span><span>    </span>John	   <span><span>    </span><span>    </span><span>   </span>1100</span>
+<span><br />4</span> <span>    </span><span>    </span><span>    </span>Stephen	   <span><span>    </span><span> </span>1300</span>
+<span><br />5</span> <span>    </span><span>    </span><span>    </span>Maria	<span>    </span><span>    </span> <span>1400</span>
+<span><br />6</span> <span>    </span><span>    </span><span>    </span>Tim	   <span><span>    </span><span>    </span><span>    </span>1150</span> <br />----------------------------------------------------------------------------------------------------------------------------<br /><br /><b>What is RDBMS?</b><br />Relational Data Base Management Systems (RDBMS) are database management systems that maintain data records and indices in tables. Relationships may be created and maintained across and among the data and tables. In a relational database, relationships between data items are expressed by means of tables. Interdependencies among these tables are expressed by data values rather than by pointers. This allows a high degree of data independence. An RDBMS has the capability to recombine the data items from different files, providing powerful tools for data usage.<b><br />What is normalization?</b><br />Database normalization is a data design and organization process applied to data structures based on rules that help build relational databases. In relational database design, the process of organizing data to minimize redundancy. Normalization usually involves dividing a database into two or more tables and defining relationships between the tables. The objective is to isolate data so that additions, deletions, and modifications of a field can be made in just one table and then propagated through the rest of the database via the defined relationships.<br /><b>What are different normalization forms?</b><br /><b>1NF: </b>Atomicity - Eliminate Repeating Groups<br />Make a separate table for each set of related attributes, and give each table a primary key. Each field contains at most one value from its attribute domain.<br /><b>2NF:</b> Eliminate Redundant Data<br />If an attribute depends on only part of a multi-valued key, remove it to a separate table.<br /><b>3NF:</b> Eliminate Columns Not Dependent On Key<br />If attributes do not contribute to a description of the key, remove them to a separate table. All attributes must be directly dependent on the primary key<br /><b>BCNF: Boyce-Codd Normal Form</b> If there are non-trivial dependencies between candidate key attributes, separate them out into distinct<br />tables.<br /><br /><b>What are the properties of the Relational tables?</b><br />Relational tables have six properties:<br />    •    Values are atomic.<br />    •    Column values are of the same kind.<br />    •    Each row is unique.<br />    •    The sequence of columns is insignificant.<br />    •    The sequence of rows is insignificant.<br />    •    Each column must have a unique name.<br /><b><br />What is De-normalization?</b><br />De-normalization is the process of attempting to optimize the performance of a database by adding redundant data. It is sometimes necessary because current DBMSs implement the relational model poorly. A true relational DBMS would allow for a fully normalized database at the logical level, while providing physical storage of data that is tuned for high performance. De-normalization is a technique to move from higher to lower normal forms of database modeling in order to speed up database access.<br /><br /><b>Can we rewrite subqueries into simple select statements or with joins?</b><br />Subqueries can often be re-written to use a standard outer join, resulting in faster performance. As we may know, an outer join uses the plus sign (+) operator to tell the database to return all non-matching rows with NULL values. Hence we combine the outer join with a NULL test in the WHERE clause to reproduce the result set without using a sub-query.<br /><br /><b>How to know which index a table is using?</b><br />SELECT table_name,index_name FROM user_constraints<br /><br /><b>What does the ON DELETE CASCADE and </b>ON <b>UPDATE CASCADE</b> <b>option do?</b><br /><b>ON DELETE CASCADE</b>: Specifies that if an attempt is made to delete a row with a key referenced by foreign keys in existing rows in other tables, all rows containing those foreign keys are also deleted. If cascading referential actions have also been defined on the target tables, the specified cascading actions are also taken for the rows deleted from those tables.<br /><b>ON UPDATE CASCADE</b>: Specifies that if an attempt is made to update a key value in a row, where the key value is referenced by foreign keys in existing rows in other tables, all of the foreign key values are also updated to the new value specified for the key. If cascading referential actions have also been defined on the target tables, the specified cascading actions are also taken for the key values updated in those tables.<br /><br /><b>What does the ON DELETE NO ACTION and</b> <b>ON UPDATE NO ACTION do?</b><br /><b>ON DELETE NO ACTION</b><br />Specifies that if an attempt is made to delete a row with a key referenced by foreign keys in existing rows in other tables, an error is raised and the DELETE is rolled back.<br /><b>ON UPDATE NO ACTION</b><br />Specifies that if an attempt is made to update a key value in a row whose key is referenced by foreign keys in existing rows in other tables, an error is raised and the UPDATE is rolled back.<br /><br /><ol><li><b>What is the difference between a "where" clause and a "having" clause?</b>
+ - "Where" clause specifies the criteria which individual records met to be selected by query. It can be used without the GROUP BY class(HAVING clause cannot be used without the GROUP BY clause). HAVING clause spefifies a search condition for a group or aggregate function. WHERE clause selects rows before grouping and the HAVING clause selects rows after grouping. WHERE clause cannot contain aggregate function.</li><li><b>What are the tradeoffs with having indexes</b>? - 1. 
+Faster selects, slower updates. 2. Extra storage space to store indexes.
+ Updates are slower because in addition to updating the table you have 
+to update the index. </li><li><b>What is a "join"? </b>- ‘join’ used to connect two or more tables logically with or without common field. </li><li><b>What is "normalization"? "Denormalization"? Why do you sometimes want to denormalize?</b>
+ - Normalizing data means eliminating redundant information from a table
+ and organizing the data so that future changes to the table are easier.
+ Denormalization means allowing redundancy in a table. The main benefit 
+of denormalization is improved performance with simplified data 
+retrieval and manipulation. This is done by reduction in the number of 
+joins needed for data processing. </li><li><b>What is denormalization and when would you go for it?</b><br />Denormalization is the reverse process of normalization. It's the controlled introduction of redundancy in to the database design. It helps to improve the query performance by reducing number of joins operations.<br /></li><li><b>What types of index data structures can you have? </b>-
+ An index helps to faster search values in tables. The three most 
+commonly used index-types are: - B-Tree: builds a tree of possible 
+values with a list of row IDs that have the leaf value. Needs a lot of 
+space and is the default index type for most databases. - Bitmap: string
+ of bits for each possible value of the column. Each bit string has one 
+bit for each row. Needs only few space and is very fast.(however, domain
+ of value cannot be large, e.g. SEX(m,f); degree(BS,MS,PHD) - Hash: A 
+hashing algorithm is used to assign a set of characters to represent a 
+text string such as a composite of keys or partial keys, and compresses 
+the underlying data. Takes longer to build and is supported by 
+relatively few databases. </li><li><b>CREATE INDEX myIndex ON myTable(myColumn)</b><br />What type of Index will get created after executing the above statement?<br />Non-clustered index. Important thing to note: By default a<b> clustered index</b> gets created on the <b>primary key</b>, unless specified otherwise.</li><li><b>Whar is an index? What are the types of indexes? How many clustered indexes can be created on a table? Can I create a separate index on each column of a table. what are the advantages and disadvantages of this approach?</b><br />Indexes in SQL Server are similar to the indexes in books. They help<br />SQL Server retrieve the data quicker.<br /><br />Indexes are of two types. Clustered indexes and non-clustered indexes. When you craete a clustered index on a table, all the rows in the<br />table are stored in the order of the clustered index key. So, there can be only one clustered index per table. Non-clustered indexes have<br />their own storage separate from the table data storage. Non-clustered indexes are stored as B-tree structures (so do clustered indexes),<br />with the leaf level nodes having the index key and it's row locater. The row located could be the RID or the Clustered index key, depending<br />up on the absence or presence of clustered index on the table.<br /><br />If you create an index on each column of a table, it improves the query performance, as the query optimizer can choose from all the<br />existing indexes to come up with an efficient execution plan. At the same t ime, data modification operations (such as INSERT, UPDATE,<br />DELETE) will become slow, as every time data changes in the table, all the indexes need to be updated. Another disadvantage is that, indexes need disk space, the more indexes you have, more disk space is used.</li><li><b>What is Index?</b><br />An index is a physical structure containing pointers to the data. Indices are created in an existing table to locate rows more quickly and efficiently. It is possible to create an index on one or more columns of a table, and each index is given a name. The users cannot see the indexes, they are just used to speed up queries. Effective indexes are one of the best ways to improve performance in a database<br />application. A table scan happens when there is no index available to help a query. In a table scan SQL Server examines every row in the table to satisfy the query results. Table scans are sometimes unavoidable, but on large tables, scans have a terrific impact on performance.<br />Clustered indexes define the physical sorting of a database table’s rows in the storage media. For this reason, each database table may have only one clustered index. Non-clustered indexes are created outside of the database table and contain a sorted list of references<br />to the table itself. <br /></li><li><b>What is the difference between clustered and a non-clustered index?</b><br />A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages. A nonclustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on disk. The leaf node of a nonclustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.</li><li><b>What are the different index configurations a table can have?</b><br />A table can have one of the following index configurations:<br />      No indexes<br />      A clustered index<br />      A clustered index and many nonclustered indexes<br />      A nonclustered index<br />      Many nonclustered indexes</li><li><b>What is cursors?</b><br />Cursor is a database object used by applications to manipulate data in a set on a row-by-row basis, instead of the typical SQL commands that operate on all the rows in the set at one time. In order to work with a cursor we need to perform some steps in the following order:<br />      Declare cursor<br />      Open cursor<br />      Fetch row from the cursor<br />      Process fetched row<br />      Close cursor<br />      Deallocate cursor</li><li><b>What is the use of DBCC commands?</b><br />DBCC stands for database consistency checker. We use these commands to check the consistency of the databases, i.e., maintenance, validation task and status checks.                                                                                                                                                                        E.g. DBCC CHECKDB - Ensures that tables in the db and the indexes are correctly linked.<br />DBCC CHECKALLOC - To check that all pages in a db are correctly allocated.<br />DBCC CHECKFILEGROUP - Checks all tables file group for any damage.<br /></li><li><b>What's the difference between a primary key and a unique key?</b><br />Both primary key and unique enforce uniqueness of the column on which they are defined. But by<br />default primary key creates a clustered index on the column, where are unique creates a nonclustered<br />index by default. Another major difference is that, primary key doesn't allow NULLs, but unique key<br />allows one NULL only.</li><li><b>How to implement one-to-one, one-to-many and many-to-many relationships while designing tables?</b><br /><b>One-to-One </b>relationship can be implemented as a single table and rarely as two tables with primary and foreign key relationships.<br /><b>One-to-Many </b>relationships are implemented by splitting the data into two tables with primary key and foreign key relationships.<br /><b>Many-to-Many</b> relationships are implemented using a junction table with the keys from both the tables forming the composite primary key of the junction table.<br /></li><li><b>What is Stored Procedure?</b><br />A stored procedure is a named group of SQL statements that have been previously created and stored in the server database. Stored procedures accept input parameters so that a single procedure can be used over the network by several clients using different input data. And when the procedure is modified, all clients automatically get the new version. Stored procedures reduce network traffic and improve performance. Stored procedures can be used to help ensure the integrity of the database. e.g. sp_helpdb, sp_renamedb, sp_depends etc.<br /></li><li><b>What is Trigger?</b><br />A trigger is a SQL procedure that initiates an action when an event (INSERT, DELETE or UPDATE) occurs. Triggers are stored in and managed by the DBMS.Triggers are used to maintain the referential integrity of data by changing the data in a systematic fashion. A trigger cannot be called or executed; the DBMS automatically fires the trigger as a result of a data modification to the associated table. Triggers can be viewed as similar to stored procedures in that both consist of procedural logic that is stored at the database level. Stored procedures, however, are not event-drive and are not attached to a specific table as triggers are. Stored procedures are explicitly executed by invoking a CALL to the procedure while triggers are implicitly executed. In addition, triggers can also execute stored procedures. Nested Trigger: A trigger can also contain INSERT, UPDATE and DELETE logic within itself, so when the trigger is fired because of data modification it can also cause another data modification, thereby firing another trigger. A trigger that contains data modification logic within itself is called a nested trigger.<br /></li><li><b>What is View?</b><br />A simple view can be thought of as a subset of a table. It can be used for retrieving data, as well as updating or deleting rows. Rows updated or deleted in the view are updated or deleted in the table the view was created with. It should also be noted that as data in the original table changes, so does data in the view, as views are the way to look at part of the original table. The results of using a view are<br />not permanently stored in the database. The data accessed through a view is actually constructed using standard T-SQL select command and can come from one to many different base tables or even other views.<br /></li><li><b>What is a "trigger"? </b>- Triggers are stored 
+procedures created in order to enforce integrity rules in a database. A 
+trigger is executed every time a data-modification operation occurs 
+(i.e., insert, update or delete). Triggers are executed automatically on
+ occurance of one of the data-modification operations. A trigger is a 
+database object directly associated with a particular table. It fires 
+whenever a specific statement/type of statement is issued against that 
+table. The types of statements are insert,update,delete and query 
+statements. Basically, trigger is a set of SQL statements A trigger is a
+ solution to the restrictions of a constraint. For instance: 1.A 
+database column cannot carry PSEUDO columns as criteria where a trigger 
+can. 2. A database constraint cannot refer old and new values for a row 
+where a trigger can. </li><li><b>What are triggers? How many triggers you can have on a table? How to invoke a trigger on demand?</b><br />Triggers are special kind of stored procedures that get executed automatically when an INSERT, UPDATE or DELETE operation takes place<br />on a table. In SQL Server 6.5 you could define only 3 triggers per table, one for INSERT, one for UPDATE and one for DELETE. From SQL Server 7.0 onwards, this restriction is gone, and you could create multiple triggers per each action. But in 7.0 there's no way to control the<br />order in which the triggers fire. In SQL Server 2000 you could specify which trigger fires first or fires last using sp_settriggerorder<br />Triggers can't be invoked on demand. They get triggered only when an associated action (INSERT, UPDATE, DELETE) happens on the table on which they are defined. Triggers are generally used to implement business rules, auditing. Triggers can also be used to extend the referential integrity checks, but wherever possible, use constraints for this purpose, instead of triggers, as constraints are much faster.<br />Till SQL Server 7.0, triggers fire only after the data modification operation happens. So in a way, they are called post triggers. But in<br />SQL Server 2000 you could create pre triggers also. Search SQL Server 2000 books online for INSTEAD OF triggers.<br /></li><li><b>Why can a "group by" or "order by" clause be expensive to process</b>?
+ - Processing of "group by" or "order by" clause often requires creation
+ of Temporary tables to process the results of the query. Which 
+depending of the result set can be very expensive. </li><li><b>What is "index covering" of a query</b>? - Index covering means that "Data can be found only using indexes, without touching the tables" </li><li><b>What is a SQL view</b>? - An output of a query can be 
+stored as a view. View acts like small table which meets our criterion. 
+View is a precomplied SQL query which is used to select data from one or
+ more tables. A view is like a table but it doesn’t physically take any 
+space. View is a good way to present data in a particular format if you 
+use that query quite often. View can also be used to restrict users from
+ accessing the tables directly. </li><li><b>What is difference between DELETE &amp; TRUNCATE commands?</b><br />Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. Truncate will actually remove all the rows from a table and there will be no data in the table after we run the truncate command.<br /><b>TRUNCATE</b><br />TRUNCATE is faster and uses fewer system and transaction log resources than DELETE.<br />TRUNCATE removes the data by deallocating the data pages used to store the table’s data, and only the page deallocations are recorded in the transaction log.<br />TRUNCATE removes all rows from a table, but the table structure and its columns, constraints, indexes and so on remain. The counter used by an identity for new rows is reset to the seed for the column.<br />You cannot use TRUNCATE TABLE on a table referenced by a FOREIGN KEY constraint. Because TRUNCATE TABLE is not logged, it cannot activate a trigger.<br />TRUNCATE can not be Rolled back.<br />TRUNCATE is DDL Command.<br />TRUNCATE Resets identity of the table.                                                                                                                                                         <b>DELETE</b><br />DELETE removes rows one at a time and records an entry in the transaction log for each deleted row. If you want to retain the identity counter, use DELETE instead. If you want to remove table definition and its data, use the DROP TABLE statement.<br />DELETE Can be used with or without a WHERE clause<br />DELETE Activates Triggers.<br />DELETE Can be Rolled back.<br />DELETE is DML Command.<br />DELETE does not reset identity of the table.</li><li><b>Difference between Function and Stored Procedure?</b><br />UDF can be used in the SQL statements anywhere in the WHERE/HAVING/SELECT section where as Stored procedures cannot be.<br />UDFs that return tables can be treated as another rowset. This can be used in JOINs with other tables. Inline UDF's can be though of as views that take parameters and can be used in JOINs and other Rowset operations.<br /></li><li><b>When is the use of UPDATE_STATISTICS command?</b><br />This command is basically used when a large processing of data has occurred. If a large amount of deletions any modification or Bulk Copy into the tables has occurred, it has to update the indexes to take these changes into account. UPDATE_STATISTICS updates the indexes on these tables accordingly.<br /></li><li><b>What is the difference between UNION and UNION ALL in SQL? </b><br />UNION is an SQL keyword used to merge the results of two or more tables using a Select statement, containing the same fields, with removed duplicate values. UNION ALL does the same, however it persists duplicate values.</li><li><b>What is the difference between IN and BETWEEN, that are used inside a WHERE clause?</b><br />The BETWEEN clause is used to fetch a range of values, whereas the IN clause fetches data from a list of specified values.<br /></li><li> <b>Explain the use of the ‘LIKE’ keyword used in the WHERE clause? Explain wildcard characters in SQL.</b><br /> LIKE is used for partial string matches. The symbol ‘%’ ( for a string of any character ) and ‘_’ (for any single character ) are the two wild card characters used in SQL.</li><li><b>Select empid, firstname, lastname from t_employee where lastname like ‘%gats%’</b><br />This might search all employees with last name containing the character sequence 'gats' like Gates, Gatsby, Gatsburg, Sogatsky, etc.<br />% is used to represent remaining all characters in the name. This query fetches all records contains gats in the e middle of the string.</li><li><b>What is the difference between a HAVING CLAUSE and a WHERE CLAUSE?</b><br />Specifies a search condition for a group or an aggregate. HAVING can be used only with the SELECT statement. HAVING is typically used in a GROUP BY clause. When GROUP BY is not used, HAVING behaves like a WHERE clause. Having Clause is basically used only with the GROUP BY function in a query. WHERE Clause is applied to each row before they are part of the GROUP BY function in a query.<br /></li><li><b>What is sub-query? Explain properties of sub-query.</b><br />Sub-queries are often referred to as sub-selects, as they allow a SELECT statement to be executed arbitrarily within the body of another SQL statement. A sub-query is executed by enclosing it in a set of parentheses. Sub-queries are generally used to return a single row as an atomic value, though they may be used to compare values against multiple rows with the IN keyword. A subquery is a SELECT statement that is nested within another T-SQL statement. A subquery SELECT statement if executed independently of the T-SQL statement, in which it is nested, will return a result set. Meaning a subquery SELECT statement can standalone and is not depended on the statement in which it is nested. A subquery SELECT statement can return any number of values, and can be found in, the column list of a SELECT statement, a FROM, GROUP BY, HAVING, and/or ORDER BY clauses of a T-SQL statement. A Subquery can also be used as a parameter to a function call. Basically a subquery can be used anywhere an expression can be used.<br /></li><li><b>Properties of Sub-Query</b><br />A subquery must be enclosed in the parenthesis.<br />A subquery must be put in the right hand of the comparison operator, and<br />A subquery cannot contain a ORDER-BY clause.<br />A query can contain more than one sub-queries.</li><li><b>What are types of sub-queries?</b><br />Single-row subquery, where the subquery returns only one row.<br />Multiple-row subquery, where the subquery returns multiple rows,.and<br />Multiple column subquery, where the subquery returns multiple columns.</li><li><b>Explain the use of the by GROUP BY and the HAVING clause.</b><br />The GROUP BY partitions the selected rows on the distinct values of the column on which the group by has been done. In tandem, the HAVING selects groups which match the criteria specified.</li><li><b>Which TCP/IP port does SQL Server run on? How can it be changed?</b><br />SQL Server runs on port 1433. It can be changed from the Network Utility TCP/IP properties –&gt; Port number.both on client and the server.<br /><br /></li><li>In a table t_employee, the department column is nullable. Write a query to fetch employees which are not assigned a department yet. Select empid, firstname, lastname from t_employee where department is null;</li><li><b>What are the large objects supported by oracle and db2? What are the large objects supported in MS SQL?</b>                      In Oracle and DB2 BLOB , CLOB ( Binary Large Objects, Character Large Objects) are used.<br />In MS SQL - the data types are image and varbinary.</li><li><b>Whats the capacity of the image data type in MS SQL?</b><br />Variable-length binary data with a maximum length of 2^31 - 1 (2,147,483,647) bytes.</li><li> <b>Whats the capacity of varbinary data type in MS SQL?</b><br /> Variable-length binary data with a maximum length of 8,000 bytes.</li><li><b>What's the maximum size of a row?</b><br />8060 bytes. Don't be surprised with questions like 'what is the maximum number of columns per table'.</li><li><b>What are the steps you will take to improve performance of a poor performing query?</b><br />
+This is a very open ended question and there could be a lot of reasons behind the poor performance of a query. But some general issues that you could talk about would be: No indexes, table scans, missing or out of date statistics, blocking, excess recompilations of stored<br />
+procedures, procedures and triggers without SET NOCOUNT ON, poorly written query with unnecessarily complicated joins, too much<br />
+normalization, excess usage of cursors and temporary tables.</li><li style="color:rgb(255,0,0)"><b>The SELECT INTO Statement is most often used to create backup copies of tables or for archiving records.</b><br />SELECT column_name(s) INTO newtable [IN externaldatabase] FROM source<br />SELECT column_name(s) INTO newtable [IN externaldatabase] FROM source WHERE column_name operator value</li><li><b>What is the use of CASCADE CONSTRAINTS?</b><br />When this clause is used with the DROP command, a parent table can be dropped even when a child table exists.</li><li><b>What is ON DELETE CASCADE?</b><br />When ON DELETE CASCADE is specified Oracle maintains referential integrity by automatically removing dependent foreign key values if a referenced primary or unique key value is removed.</li><li><b>What is the use of the DROP option in the ALTER TABLE command?</b><br />It is used to drop constraints specified on the table.</li><li><b>What is difference between TRUNCATE &amp; DELETE</b><br />TRUNCATE commits after deleting entire table i.e., cannot be rolled back. Database triggers do not fire on TRUNCATE<br />DELETE allows the filtered deletion. Deleted records can be rolled back or committed. Database triggers fire on DELETE.</li><li><b>What is the sub-query?<br /></b>Sub-query is a query whose return values are used in filtering conditions of the main query.</li><li><b>Explain UNION, MINUS, UNION ALL and INTERSECT?</b><br />INTERSECT - returns all distinct rows selected by both queries.<br />MINUS - returns all distinct rows selected by the first query but not by the second.                             <br />UNION - returns all distinct rows selected by either query<br />UNION ALL - returns all rows selected by either query, including all duplicates.</li><li><b>What is ROWID?</b><br />ROWID is a pseudo column attached to each row of a table. It is 18 characters long, blockno, rownumber are the components of ROWID.</li><li>What is the fastest way of accessing a row in a table?<br />Using ROWID.</li><li>How many LONG columns are allowed in a table? Is it possible to use LONG columns in WHERE clause or ORDER BY?<br />Only one LONG column is allowed. It is not possible to use LONG column in WHERE or ORDER BY clause.</li><li style="color:rgb(255,0,0)">Can a view be updated/inserted/deleted? If Yes - under what conditions?<br />A View can be updated/deleted/inserted if it has only one base table if the view is based on columns from one or more tables then insert, update and delete is not possible.</li><li>SQL is not case sensitive</li><li>SQL uses single quotes around text values (most database systems will also accept double quotes).</li><li><b>Note:</b>
+ Notice the <b>WHERE</b> clause in the <b>UPDATE</b> syntax. The WHERE clause 
+specifies which record or records that should be updated. If you omit 
+the WHERE clause, all records will be updated!<br /><b>Note:</b> Notice the <b>
+WHERE</b> clause in the <b>DELETE</b> syntax. The WHERE clause specifies which 
+record or records that should be deleted. If you omit the WHERE clause, 
+all records will be deleted!</li><li><b>TOP Clause</b> - Not all database systems support the TOP clause. The TOP clause is used to specify the number of records to return.<br /><b>MySQL:</b><br />SELECT * FROM Persons<span style="color:rgb(255,0,0)"> LIMIT 5; </span><br /><b>Oracle:</b><br />SELECT * FROM Persons WHERE ROWNUM &lt;=5;<br /><b>Other DB:</b><br />SELECT TOP 2 * FROM Persons;</li><li><b>UNION Operator</b><br />The UNION operator is used to combine the result-set of two or more SELECT statements. Notice
+ that each SELECT statement within the UNION must have the same number 
+of columns. The columns must also have similar data types. Also, the 
+columns in each SELECT statement must be in the same order.<br />Note: The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL.<br />PS:
+ The column names in the result-set of a UNION are always equal to the 
+column names in the first SELECT statement in the UNION.<br /><br />SELECT E_Name FROM Employees_Norway<br />UNION<br />SELECT E_Name FROM Employees_USA</li><li><b>SELECT INTO </b>Statement<br />The SELECT INTO statement selects data from one table and inserts it into a different table.<br />The SELECT INTO statement is most often used to create backup copies of tables.<br />SQL SELECT INTO Example: Make a Backup Copy - Now we want to make an exact copy of the data in our "Persons" table.<br /><br />SELECT * INTO Persons_Backup FROM Persons<br /><br />We can also use the <b>IN clause</b> to copy the table into another database:<br />SELECT * INTO Persons_Backup IN 'Backup.mdb' FROM Persons<br /><br />We can also copy only a few fields into the new table:<br />SELECT LastName,FirstName INTO Persons_Backup FROM Persons<br /><br />Selecting data from more than one table is also possible. The following example creates a "Persons_Order_Backup" table contains data from the two tables "Persons" and "Orders":<br />SELECT Persons.LastName,Orders.OrderNo INTO Persons_Order_Backup FROM Persons INNER JOIN Orders ON Persons.P_Id=Orders.P_Id</li><li><span style="color:rgb(255,0,0)">Note that you can have many </span><b style="color:rgb(255,0,0)">UNIQUE constraints </b><span style="color:rgb(255,0,0)">per table, but only one PRIMARY KEY constraint per table. To allow naming of a UNIQUE constraint, and for defining a UNIQUE constraint on multiple columns, use the following SQL syntax:</span><br /><b>MySQL / SQL Server / Oracle / MS Access:</b><br />CREATE TABLE Persons<br />(<br />P_Id int NOT NULL,<br />LastName varchar(255) NOT NULL,<br />FirstName varchar(255),<br />Address varchar(255),<br />City varchar(255),<br />CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)<br />)<br /><br /><b>SQL UNIQUE Constraint on ALTER TABLE:</b> To allow naming of a UNIQUE constraint, and for defining a UNIQUE constraint on multiple columns, use the following SQL syntax:<br /><br /><b>MySQL / SQL Server / Oracle / MS Access:</b><br />ALTER TABLE Persons ADD CONSTRAINT uc_PersonID UNIQUE (P_Id,LastName)<br /><b><br />To DROP a UNIQUE Constraint</b>: SQL Server / Oracle / MS Access:<br />ALTER TABLE Persons DROP CONSTRAINT uc_PersonID</li><li><b>PRIMARY KEY </b>Constraint on CREATE TABLE:<br /><b>MySQL / SQL Server / Oracle / MS Access:</b><br />CREATE TABLE Persons<br />(<br />P_Id int NOT NULL,<br />LastName varchar(255) NOT NULL,<br />FirstName varchar(255),<br />Address varchar(255),<br />City varchar(255),<br />CONSTRAINT pk_PersonID PRIMARY KEY (P_Id,LastName)<br />)<br /><br />Note:
+ In the example above there is only ONE PRIMARY KEY (pk_PersonID). 
+However, the value of the pk_PersonID is made up of two columns (P_Id 
+and LastName).</li><li><b>FOREIGN KEY Constraint</b>  A FOREIGN KEY in one table points to a PRIMARY KEY in another table.<br /><b>MySQL / SQL Server / Oracle / MS Access:</b><br />CREATE TABLE Orders<br />(<br />O_Id int NOT NULL,<br />OrderNo int NOT NULL,<br />P_Id int,<br />PRIMARY KEY (O_Id),<br />CONSTRAINT fk_PerOrders FOREIGN KEY (P_Id)<br />REFERENCES Persons(P_Id)<br />)<br /><br />The "P_Id" column in the "Persons" table is the PRIMARY KEY in the "Persons" table.<br />The "P_Id" column in the "Orders" table is a FOREIGN KEY in the "Orders" table.</li><li><b>DEFAULT Constraint</b> on CREATE TABLE <br />The following SQL creates a DEFAULT constraint on the "City" column when the "Persons" table is created:<br /><br />My SQL / SQL Server / Oracle / MS Access:<br />CREATE TABLE Persons<br />(<br />P_Id int NOT NULL,<br />LastName varchar(255) NOT NULL,<br />FirstName varchar(255),<br />Address varchar(255),<br />City varchar(255) DEFAULT 'Sandnes'<br />)<br /><br /><b>MySQL:</b><br />ALTER TABLE Persons ALTER City SET DEFAULT 'SANDNES'<br /><b>Oracle:</b><br />ALTER TABLE Persons MODIFY City DEFAULT 'SANDNES'<br /><b>MySQL:</b><br />ALTER TABLE Persons ALTER City DROP DEFAULT<b><br />SQL Server / Oracle / MS Access:</b><br />ALTER TABLE Persons ALTER COLUMN City DROP DEFAULT                                                                                                                                        <br /></li><li><b style="color:rgb(255,0,0)">I</b><b style="color:rgb(255,0,0)">ndexes</b><span style="color:rgb(255,0,0)"> An index can be created in a table to find data more quickly and efficiently. The users cannot see the indexes, they are just used to speed up searches/queries. Note:
+ Updating a table with indexes takes more time than updating a table 
+without (because the indexes also need an update). So you should only 
+create indexes on columns (and tables) that will be frequently searched 
+against.</span><br style="color:rgb(255,0,0)" /><br style="color:rgb(255,0,0)" /><span style="color:rgb(255,0,0)">CREATE INDEX PIndex ON Persons (LastName)</span><br style="color:rgb(255,0,0)" /><br style="color:rgb(255,0,0)" /><b style="color:rgb(255,0,0)">DROP INDEX Syntax for DB2/Oracle:</b><br style="color:rgb(255,0,0)" /><span style="color:rgb(255,0,0)">DROP INDEX index_name</span><br style="color:rgb(255,0,0)" /><b style="color:rgb(255,0,0)">DROP INDEX Syntax for MySQL:</b><br style="color:rgb(255,0,0)" /><span style="color:rgb(255,0,0)">ALTER TABLE table_name DROP INDEX index_name</span><br /><br /></li><li><b>CREATE VIEW: </b>In SQL, a view is a virtual table based on the result-set of an SQL statement. A
+ view contains rows and columns, just like a real table. The fields in a
+ view are fields from one or more real tables in the database. You
+ can add SQL functions, WHERE, and JOIN statements to a view and present
+ the data as if the data were coming from one single table.<br /><br />Another
+ view in the Northwind database calculates the total sale for each 
+category in 1997. Note that this view selects its data from another view
+ called "Product Sales for 1997":                                                                                                                                                       CREATE VIEW [Category Sales For 1997] AS SELECT DISTINCT CategoryName,Sum(ProductSales) AS CategorySales<br />FROM [Product Sales for 1997] GROUP BY CategoryName<br /><br />We can query the view above as follows:<br />SELECT * FROM [Category Sales For 1997]<br /><br />To find the customers that have an OrderPrice value higher than the average OrderPrice value.<br />SELECT Customer FROM Orders WHERE OrderPrice&gt;(SELECT AVG(OrderPrice) FROM Orders)<br /><br />SQL Updating a View<br />we want to add the "Category" column to the "Current Product List" view. We will update the view with the following SQL:<br />CREATE VIEW [Current Product List] AS SELECT ProductID,ProductName,Category FROM Products WHERE Discontinued=No</li><li><b>Aggregate Functions: </b>sum(), count(), group by, having, max().<br /></li><li>Find the first value of the "OrderPrice" column.<br />SELECT FIRST(OrderPrice) AS FirstOrderPrice FROM Orders<br /><br />Note Tip: Workaround if FIRST() function is not supported:<br />SELECT OrderPrice FROM Orders ORDER BY O_Id LIMIT 1</li><li><b>GROUP BY Statement</b>: The GROUP BY statement is used in conjunction with the aggregate functions to group the result-set by one or more columns.<br />SELECT Customer,OrderDate,SUM(OrderPrice) FROM Orders GROUP BY Customer,OrderDate</li><li><b>HAVING Clause</b>: The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.<br />SELECT column_name, <b>aggregate_function</b>(column_name) FROM table_name <b>WHERE </b>column_name operator value<br /><b>GROUP BY</b> column_name <b>HAVING</b> <b>aggregate_function</b>(column_name) operator value <br /><br />To find if the customers "Hansen" or "Jensen" have a total order of more than 1500.<br /><br />SELECT Customer,SUM(OrderPrice) FROM Orders WHERE Customer='Hansen' OR Customer='Jensen' GROUP BY Customer<br />HAVING SUM(OrderPrice)&gt;1500<br /><br /></li><li><b>What are ACID Rules of transaction in a database? Atomicity, Consistency, Isolation, Durability
+</b></li></ol>
+<p>
+The ACID rules of transaction in any database assure the reliability of <a href="http://www.dotnetuncle.com/SQL/ACID-rules-in-SQL.aspx#" style="text-decoration:underline!important;font-family:inherit!important;font-weight:inherit!important;font-size:inherit!important" rel="nofollow"><font color="blue" style="color:blue!important;font-family:inherit!important;font-weight:inherit!important;font-size:inherit!important"><span style="color:blue!important;font-family:inherit!important;font-weight:inherit!important;font-size:inherit!important">data</span></font></a> in all transactions in the database.<br />
+<br />
+<b>Atomicity</b> - this rule states that either the complete transaction takes place, or none. Even if
+a part of a transaction <a href="http://www.dotnetuncle.com/SQL/ACID-rules-in-SQL.aspx#" style="text-decoration:underline!important;font-family:inherit!important;font-weight:inherit!important;font-size:inherit!important" rel="nofollow"><font color="blue" style="color:blue!important;font-family:inherit!important;font-weight:inherit!important;font-size:inherit!important"><span style="color:blue!important;font-family:inherit!important;font-weight:inherit!important;font-size:inherit!important">fails</span></font></a> to work, the complete transaction will fail.<br /><br />
+<b>Consistency</b> - this rule ensures that the database is stable, before and after the transaction, even
+if a transaction fails.<br /><br />
+<b>Isolation</b> - this rule states that when a process is going on in a transaction, the data remains in isolation
+of other entities in the database.<br /><br />
+<b>Durability</b> - this rule states that when a transaction completes successfully, it remains in stable 
+state and is persisted in the database. <br /></p><p><br /></p><p><b>What is the difference between a Table, View and Synonym in SQL?</b><br /><br />A Table is a repository of data, where in the table itself is a physical entity. The table resides physically in the database.<br /><br />A View is not a part of the database's physical representation. It is precompiled, so that data retrieval behaves faster, and also provide a secure accessibility mechanism.<br /><br />Say there is a scenario where Salary is not to be shown to a group of users, a View may be created to display allowable information:<br /><br />Create view EMP_SOME_DETAILS as (Select Emp_Id, Name, Skillset, DOB<br />From T_EMPLOYEE);<br /><br />The advantages of using a view are as follows:<br />- It may access data from a table, multiple tables, view, multiple views, or a combination of these<br />- A view connects to the data of its base table(s).<br />- Provides a secure mechanism of data accessibility<br /><br />Synonym is alternate name assigned to a table, view, sequence or program unit.<br />- It may be used to shadow the original name and owner of the actual entity<br />- Extends the reach of tables, by allowing public access to the synonym </p><p><br /></p><p><br /></p></div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/site/sridharkritha/sql-queries-0&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPH8kGs8cL5qE_syTGFgy3tJDNlPCrgVE_liw9_Yu6Zskmf4Phvka9FHNGenhCyno3wEd4_znO0B_1YSdnjRMFhTIgHqg2/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/sql-queries-0 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 10:01:37 GMT -->
+</html>

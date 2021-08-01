@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" itemscope="" itemtype="../../../../schema.org/WebPage.html">
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/handyconcepts/large-scale-c by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 09:42:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { /*
+
+Copyright The Closure Library Authors.
+SPDX-License-Identifier: Apache-2.0
+*/
+(function(){function e(g){this.t={};this.tick=function(h,k,f){this.t[h]=[void 0!=f?f:(new Date).getTime(),k];if(void 0==f)try{window.console.timeStamp("CSI/"+h)}catch(m){}};this.getStartTickTime=function(){return this.t.start[0]};this.tick("start",null,g)}var a;if(window.performance)var d=(a=window.performance.timing)&&a.responseStart;var l=0<d?new e(d):new e;window.jstiming={Timer:e,load:l};if(a){var b=a.navigationStart;0<b&&d>=b&&(window.jstiming.srt=d-b)}if(a){var c=window.jstiming.load;0<b&&d>=
+b&&(c.tick("_wtsrt",void 0,b),c.tick("wtsrt_","_wtsrt",d),c.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),c&&0<b&&(c.tick("_tbnd",void 0,window.chrome.csi().startE),c.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,c&&0<b&&(c.tick("_tbnd",void 0,window.external.startE),c.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(g){}})(); })()
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="../../../../www.google.com/images/icons/product/sites-16.ico" />
+<link rel="apple-touch-icon" href="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { function d(a){return document.getElementById(a)}window.byId=d;function g(a){return a.replace(/^\s+|\s+$/g,"")}window.trim=g;var h=[],k=0;window.JOT_addListener=function(a,b,c){var f=new String(k++);a={eventName:a,handler:b,compId:c,key:f};h.push(a);return f};window.JOT_removeListenerByKey=function(a){for(var b=0;b<h.length;b++)if(h[b].key==a){h.splice(b,1);break}};window.JOT_removeAllListenersForName=function(a){for(var b=0;b<h.length;b++)h[b].eventName==a&&h.splice(b,1)};
+window.JOT_postEvent=function(a,b,c){var f={eventName:a,eventSrc:b||{},payload:c||{}};if(window.JOT_fullyLoaded)for(b=h.length,c=0;c<b&&c<h.length;c++){var e=h[c];e&&e.eventName==a&&(f.listenerCompId=e.compId||"",(e="function"==typeof e.handler?e.handler:window[e.handler])&&e(f))}else window.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:c})};window.JOT_delayedEvents=[];window.JOT_fullyLoaded=!1;
+window.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/6E4;if(1440<=a||0>a)return null;var c=0;60<=a&&(a/=60,c=2);2<=a&&c++;return b?window.JOT_siteRelTimeStrs[c].replace("__duration__",Math.floor(a)):window.JOT_userRelTimeStrs[c].replace("__duration__",Math.floor(a))}; })()
+</script>
+<script>
+
+  
+
+  var breadcrumbs = [{"path":"/site/sridharkritha/handyconcepts","deleted":false,"title":"handyconcepts","dir":"ltr"},{"path":"/site/sridharkritha/handyconcepts/large-scale-c","deleted":false,"title":"Large Scale C++ Software Design","dir":"ltr"}];
+  var JOT_clearDotPath = '../../../../ssl.gstatic.com/sites/p/a71eef/system/app/images/cleardot.gif';
+
+  
+  var JOT_userRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+  
+  
+
+  
+
+  var webspace = {"gvizGstaticVersion":"current","enableAnalytics":false,"pageSharingId":"jotspot_page","codeembeds":{"outerIframeSrc":"https://www.gstatic.com/jotspot/embeds/code/0f08d42392f2000e7e3f3daf5b427a43/outer_iframe.html","innerIframeSrc":"https://1698666126-jotspot-embeds.googleusercontent.com/code/8d87fa64604b2a11fae2ed06104c58d3/inner_iframe.html"},"enableUniversalAnalytics":false,"sharingPolicy":"OPENED","siteTitle":"sridharkritha","experiments":{"enableSubpagesGadgetInTakeout":true,"DisableSiteEditingFeature__disable_site_editing":true,"disableDomainEditing":false},"jot2atari":{"eligibility":"INELIGIBLE"},"onepickUrl":"https://docs.google.com/picker","adsensePublisherId":null,"features":{"moreMobileStyleImprovements":null,"subscriptionDataMigrationInProgress":null,"plusBadge":false},"configProperties":{"disableSiteEditing":null},"isPublic":true,"newSitesBaseUrl":"https://sites.google.com","isConsumer":true,"serverFlags":{"jot2AtariLearnMoreUrl":"https://support.google.com/sites/answer/7035197"},"domainAnalyticsAccountId":"","plusPageId":"","signInUrl":"https://accounts.google.com/AccountChooser?continue\u003dhttps://sites.google.com/site/sridharkritha/handyconcepts/large-scale-c\u0026service\u003djotspot","analyticsAccountId":"","scottyUrl":"/_/upload","homePath":"/","siteNoticeUrlEnabled":null,"plusPageUrl":"","adsensePromoClickedOrSiteIneligible":true,"csiReportUri":"https://gg.google.com/csi","sharingId":"jotspot","termsUrl":"//www.google.com/intl/en/policies/terms/","gvizVersion":1,"editorResources":{"sitelayout":["https://ssl.gstatic.com/sites/p/a71eef/system/app/css/sitelayouteditor.css"],"text":["https://ssl.gstatic.com/sites/p/a71eef/system/js/codemirror.js","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codemirror_css.css","../../../../ssl.gstatic.com/sites/p/a71eef/system/js/trog_edit__en.js","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/trogedit.css","../_/rsrc/1624520311000/system/app/css/editor.css","../../../../ssl.gstatic.com/sites/p/a71eef/system/app/css/codeeditor.css","/site/sridharkritha/_/rsrc/1624520311000/system/app/css/camelot/editor-jfk.css"]},"sharingUrlPrefix":"/_/sharing","isAdsenseEnabled":true,"domain":"defaultdomain","baseUri":"/site/sridharkritha","name":"sridharkritha","siteTemplateId":false,"siteNoticeRevision":null,"siteNoticeUrlAddress":null,"siteNoticeMessage":null,"page":{"isRtlLocale":false,"canDeleteWebspace":null,"isPageDraft":null,"parentPath":"/handyconcepts","parentWuid":"wuid:gx:72194d815a068d6a","siteLocale":"en","timeZone":"America/Los_Angeles","type":"text","title":"Large Scale C++ Software Design","locale":"en","wuid":"wuid:gx:13f9ef043379f891","revision":2,"path":"/handyconcepts/large-scale-c","isSiteRtlLocale":false,"pageInheritsPermissions":null,"name":"large-scale-c","canChangePath":true,"state":"","properties":{},"bidiEnabled":false,"currentTemplate":{"path":"/system/app/pagetemplates/text","title":"Web Page"}},"canPublishScriptToAnyone":true,"user":{"keyboardShortcuts":true,"sessionIndex":"","guest_":true,"displayNameOrEmail":"guest","userName":"guest","uid":"","renderMobile":false,"domain":"","namespace":"","hasWriteAccess":false,"namespaceUser":false,"primaryEmail":"guest","hasAdminAccess":false},"gadgets":{"baseUri":"/site/sridharkritha/system/app/pages/gadgets"}};
+  webspace.page.breadcrumbs = breadcrumbs;
+
+  
+  var JOT_siteRelTimeStrs = ["a minute ago","__duration__ minutes ago","an hour ago","__duration__ hours ago"];
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="title" content="Large Scale C++ Software Design - sridharkritha" />
+<meta itemprop="name" content="Large Scale C++ Software Design - sridharkritha" />
+<meta property="og:title" content="Large Scale C++ Software Design - sridharkritha" />
+<meta name="description" content="Information Bank - Computer Science" />
+<meta itemprop="description" content="Information Bank - Computer Science" />
+<meta id="meta-tag-description" property="og:description" content="Information Bank - Computer Science" />
+<style type="text/css">
+</style>
+<link rel="stylesheet" type="text/css" href="../../../../ssl.gstatic.com/sites/p/a71eef/system/app/themes/ember/standard-css-ember-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1624520311000/system/app/css/overlaydd2a.css?cb=ember150goog-ws-noside" />
+<link rel="stylesheet" type="text/css" href="../_/rsrc/1624520311000/system/app/css/camelot/allthemes-view.css" />
+<!--[if IE]>
+          <link rel="stylesheet" type="text/css" href="/site/sridharkritha/system/app/css/camelot/allthemes%2die.css" />
+        <![endif]-->
+<title>Large Scale C++ Software Design - sridharkritha</title>
+<meta itemprop="image" content="http://www.cs.unc.edu/%7Estotts/COMP204/lakos/pix/gradBlueLR.gif" />
+<meta property="og:image" content="http://www.cs.unc.edu/%7Estotts/COMP204/lakos/pix/gradBlueLR.gif" />
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en            ">
+<div id="sites-page-toolbar" class="sites-header-divider">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-status" class="sites-status" style="display:none;"><div id="sites-notice" class="sites-notice" role="status" aria-live="assertive"> </div></div>
+</div>
+<div id="sites-chrome-everything-scrollbar">
+<div id="sites-chrome-everything" class="">
+<div id="sites-chrome-page-wrapper" style="direction: ltr">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper" style="">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0" style="">
+<tr class="sites-header-primary-row" id="sites-chrome-userheader">
+<td id="sites-header-title" class="" role="banner"><div class="sites-header-cell-buffer-wrapper"><h2></h2></div></td><td class="sites-layout-searchbox  "></td>
+</tr>
+<tr class="sites-header-secondary-row" id="sites-chrome-horizontal-nav">
+<td colspan="2" id="sites-chrome-header-horizontal-nav-container" role="navigation">
+</td>
+</tr>
+</table>
+</div>
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0" cellpadding="{scmCellpadding}" border="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left" style="display: none; width: 150px">
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas" role="main">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+<A href="../handyconcepts.html" dir="ltr">handyconcepts</A>‎ &gt; ‎
+  </div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr" tabindex="-1" style="outline: none">Large Scale C++ Software Design</span>
+</h3>
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-layout-name-left-sidebar-hf sites-layout-vbox"><div class="sites-layout-tile sites-tile-name-header sites-layout-empty-tile"><div dir="ltr"><br /></div></div><table cellspacing="0" class="sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1 sites-canvas-sidebar sites-layout-empty-tile"><div dir="ltr"><br /></div></td><td class="sites-layout-tile sites-tile-name-content-2"><div dir="ltr"><h1><a name="TOC-Large-Scale-C-Software-Design"></a>Large-Scale C++ Software Design</h1>
+<img align="middle" src="../../../../www.cs.unc.edu/_stotts/COMP204/lakos/pix/gradBlueLR.gif" />
+<br />
+<i>taken from "Large-Scale C++ Software Design" by John Lakos,
+c.1996, Addison-Wesley</i>
+<br /> <br /> <br />
+
+There is a distinction between <i>logical</i> design and
+<i>physical</i> design.
+<p>
+
+Logical design is what you have learned all along... ADT
+composition, inheritance hierarchies, etc...
+</p><p>
+
+Physical design is how all the logical components are arranged
+in files and modules for compilation and linking. <br /></p><h1><a name="TOC-Major-Physical-Design-Rules"></a>Major Physical Design Rules</h1>
+<img align="middle" src="../../../../www.cs.unc.edu/_stotts/COMP204/lakos/pix/gradBlueLR.gif" />
+<br />
+<br />
+<ol><li> Keep class data private
+
+</li><li> Avoid data with external linkage at file scope
+
+</li><li>
+Avoid free functions (except operator functions) at file scope in
+<b>.h</b> files;
+<br /> avoid free functions with external linkage (<i>including</i>
+operator functions) in <b>.c</b> files.
+
+</li><li>
+Avoid enumerations, typedefs, and constants at file scope in <b>.h</b> files.
+
+</li><li>
+Avoid using preprocessor macros in header files except as include guards.
+
+</li><li>
+Only classes, structures, unions, and free operator functions should
+be <i>declared</i> at files scope in a <b>.h</b> file;
+<br /> only classes, structures, unions, and inline (member or free
+operator) functions should be <i>defined</i> at file scope in a
+<b>.h</b> file.
+
+</li><li>
+Place a unique and predictable (internal) include guard around the contents
+of each header file.
+
+<hr />
+</li><li>
+Logical entities declared within a component should not be defined
+outside that component.
+
+</li><li>
+The <b>.c</b> file of every component should include its own <b>.h</b>
+file as the first substantive line of code.
+
+</li><li>
+Avoid definitions with external linkage in the .c file of a component
+that are not declared explicitly in the corresponding .h file.
+
+</li><li>
+Avoid accessing a definition with external linkage in another 
+component via a local declaration;
+<br /> instead, include the .h file for that component.
+
+</li><li>
+Prepend every global identifier with its package prefix.
+
+</li><li>
+Prepend every source file name with its package prefix.
+
+</li><li>
+Avoid cyclic dependencies among packages.
+
+</li><li>
+Only the .c file that defines <i>main</i> is authorized to redefine global
+<i>new</i> and <i>delete</i>.
+
+</li><li>
+Provide a mechanism for freeing any dynamic memory allocated to static 
+constructs within a component.
+
+</li></ol><p>
+</p><h1><a name="TOC-Minor-Physical-Design-Rules"></a>Minor Physical Design Rules</h1>
+<img align="middle" src="../../../../www.cs.unc.edu/_stotts/COMP204/lakos/pix/gradBlueLR.gif" />
+<br />
+<br />
+<ol><li>
+Place a redundant (external) include guard around each preprocessor 
+include directive in every header file.
+
+</li><li>
+Use a consistent method (such as a d_ prefix) to highlight
+class data members.
+
+</li><li>
+Use a consistent method (such as uppercase first letter) to
+distinguish type names.
+
+</li><li>
+Use a consistent method (such as all uppercase with underscore)
+to identify immutable values such as enumerators, const data,
+and preprocessor constants.
+
+</li><li>
+The root names of the .c file and the .h file that comprise a component
+should match exactly.
+
+</li><li>
+Never pass a user-defined type (i.e., class, struct, or union)
+to a function by value.
+
+</li><li>
+Never attempt to delete an object passed by reference.
+
+</li><li>
+In every class that declares or is declared from a class that declares
+a virtual function, explicitly declare the destructor as the first
+virtual function in the class and define it out of line.
+
+</li><li>
+Avoid depending on the order in which data members are defined
+in an object during initialization.
+
+</li><li>
+When implementing memory management for a general, parameterized 
+container template, be careful <i>not</i> to use the assignment 
+operator of the contained type when the target
+of the assignment is uninitialized memory.
+
+</li></ol>
+<h1><a name="TOC-Guidelines-for-Physical-Design"></a>Guidelines for Physical Design</h1>
+<img align="middle" src="../../../../www.cs.unc.edu/_stotts/COMP204/lakos/pix/gradBlueLR.gif" />
+<br />
+<br />
+<ol><li>
+Document the interfaces so that they are usable by others;
+have at least one other developer review each interface.
+
+</li><li>
+Explicitly state conditions under which behavior is undefined.
+
+</li><li>
+Be consistent about indentifier names; use either uppercase or
+underscore but not both to delimit words in identfiers.
+
+</li><li>
+Be consistent about names used in the same way;
+in particular adopt consistent method
+names and operators for recurring design patterns such as iteration.
+
+</li><li>
+Clients should include header files providing required type definitions
+directly; except for non-private inheritance, avoid relying on one header
+file to include another.
+
+</li><li>
+A component x should include y.h only if x makes direct substantive
+use of a class or free operator function defined in y.
+
+</li><li>
+Avoid granting (long-distance) friendship to a logical entity
+defined in another component.
+
+</li><li>
+Avoid cyclic physical dependencies among components.
+
+</li><li>
+In general, avoid granting any one component license that, if also
+taken by other components, would adversely impact the system as a whole.
+
+</li><li>
+Prefer modules to non-local static instances of objects, especially when:
+<ul><li>Direct access to the construct is needed outside a translation unit.
+</li><li>The construct may not be needed during start-up or immediately
+    thereafter and the time to initialize the construct itself 
+    is significant.
+</li></ul>
+</li><li>
+The semantics of an overloaded operator should be natural, obvious,
+and intuitive to clients.
+
+</li><li>
+The syntactic properties of overloaded operators for user-defined types
+should mirror the properties already defined for the fundamental types.
+
+</li><li>
+Avoid hiding a base-class function in a derived class.
+
+</li><li>
+Every object in a system should be const-correct.
+
+</li><li>
+Think twice (at least) before casting away const.
+
+</li><li>
+For functions that return an error status, an integral value of 0
+should always mean success.
+
+</li><li>
+Functions that answer a yes-or-no question should be worded appropriately
+(e.g., isValid) and return an int value of either 0 ("no")
+or 1 ("yes"). 
+
+</li><li>
+Avoid declaring results returned by value from functions as const.
+
+</li><li>
+Avoid default arguments that require the construction of an
+unnamed temporary object.
+
+</li><li>
+Be consistent about returning values through arguments (e.g., avoid
+declaring non-const reference parameters).
+
+</li><li>
+Avoid storing the address of any argument to a function in a
+location that will persist after the function terminates;
+pass the address of the argument instead.
+
+</li><li>
+Whenever a parameter passes its argument by reference or pointer to
+a function that neither modifies that argument nor stores its 
+writeable address, that parameter should be declared const.
+
+</li><li>
+Avoid declaring parameters passed by value to a function as const.
+
+</li><li>
+Consider placing parameters (except perhaps those with default 
+arguments) that enable modifiable access before parameters
+that pass arguments by value, const reference, or const pointer.
+
+</li><li>
+Avoid granting friendship to individual functions.
+
+</li><li>
+Avoid declaring a function inline whose body produces object code that is 
+larger than the object code produced by the equivalent non-inline function 
+<i>call</i> itself.
+
+</li><li>
+Avoid declaring a function inline that your compiler will not generate inline.
+
+</li><li>
+Avoid using short in the interface; use int instead.
+
+</li><li>
+Avoid using unsigned in the interface; use int instead.
+
+</li><li>
+Avoid using long in the interface; assert(sizeof(int) &gt;= 4) and
+use either int or a user-defined large-integer type instead.
+
+</li><li>
+Consider using double exclusively for floating-point types used in the
+interface unless there is a compelling reason to use float or long double.
+
+</li><li>
+Consider avoiding "cast" operators, especially to fundamental integral
+types; instead make the conversion explicit. 
+
+</li><li>
+Explicitly declare (either public or private) the constructor and
+assignment operator for any class defined in a header file,
+even when the default implementations are adequate.
+
+</li><li>
+In classes that do not otherwise declare virtual functions, explicitly 
+declare the destructor as non-virtual and define it appropriately
+(either inline or out-of-line).
+
+</li><li>
+Use short instead of int in the implementation as an optimization
+only when it is known to be safe to do so.
+
+</li><li>
+Consider not using unsigned even in the implementation.
+
+</li><li>
+When designing a function, component, package, or entire system,
+use the simplest techniques that are effective.
+
+</li><li>
+Avoid allowing programmatic access to <i>physical</i> values.
+
+</li><li>
+The result of calling a const member function should not alter
+any programmatically accessible value in the object. 
+
+</li><li>
+Prefer object-specific over class-specific memory management.
+
+</li><li>
+Use a non-const pointer data member to hold managed objects.
+
+</li><li>
+Consider providing a way to switch between block allocations and
+individual allocations of dynamic memory.
+
+</li><li>
+When implementing memory management for a completely general,
+parameterized container that manages the memory for its contained
+objects, assume that the parameterized type defines a copy
+constructor and a destructor -- nothing more.
+
+</li><li>
+Where possible, implement templates on top of a factored reusable
+void * pointer type using inline functions to reestablish type safety.
+
+</li></ol>
+<p><br /></p></div></td></tr></tbody></table><div class="sites-layout-tile sites-tile-name-footer sites-layout-empty-tile"><div dir="ltr"><br /></div></div></div>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-subpages"> </div>
+<div id="sites-attachments-container">
+</div>
+<a xmlns="http://www.w3.org/1999/xhtml" name="page-comments"></a>
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_page-comments"><div class="sites-comment-docos-wrapper"><div class="sites-comment-docos"><div class="sites-comment-docos-background"></div><div class="sites-comment-docos-header"><div class="sites-comment-docos-header-title">Comments</div></div><div id="sites-comment-docos-pane" class="sites-comment-docos-pane"></div></div></div></div>
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+</div>
+</div>
+</div>
+</div> 
+</div> 
+<div id="sites-chrome-adminfooter-container">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-adminfooter" role="navigation"><p><a class="sites-system-link" href="https://accounts.google.com/ServiceLogin?continue=https://sites.google.com/site/sridharkritha/handyconcepts/large-scale-c&amp;service=jotspot">Sign in</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/recentChanges.html">Recent Site Activity</a><span aria-hidden="true">|</span><a class="sites-system-link" href="../system/app/pages/reportAbuse.html" target="_blank">Report Abuse</a><span aria-hidden="true">|</span><a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print Page</a><span aria-hidden="true">|</span><span class="sites-system-link">Powered By</span> <b class="powered-by"><a href="http://sites.google.com/site">Google Sites</a></b></p></div>
+</div>
+</div> 
+</div> 
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" src="../../../../ssl.gstatic.com/sites/p/a71eef/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+      gsites.HoverPopupMenu.createSiteDropdownMenus('sites-header-nav-dropdown', false);
+    </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+              new sites.CommentPane('//docs.google.com/comments/d/AAHRpnXtASf_M2E6cjJ9Hgufts3RfM7MwuhM--x9xhZTQT2CPH99PZYdaWvlB7edFTUHm2YdGX6eGlNbSZvm6n7eI_uzdQOx2xfBztX3NDmeKPyM6LbkpSSFc1dJMCOl4WGPlVUa2yOwG/api/js?anon=true',
+                  false, false);
+            </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000, 1128902400000, 1130657000000, 1143333000000, 1143806400000, 1145000000000, 1146380000000, 1152489600000, 1159800000000, 1159500000000, 1162095000000, 1162075000000, 1162105500000]);
+    gsites.Xhr.send('../_/tz.html', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {
+                      if (false) {
+                        JOT_setMobilePreview();
+                      }
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type + ",user_page";
+                      window.jstiming.report(loadTimer, {}, '../../../../gg.google.com/csi.gif');
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false,
+            false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    var maestroRunner = new gsites.pages.view.SitesMaestroRunner(
+        webspace, "en");
+    maestroRunner.initListeners();
+    maestroRunner.installEditRender();
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+  //]]>
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    JOT_postEvent('decorateGvizCharts');
+  </script>
+<script type="text/javascript">
+          JOT_setupPostRenderingManager();
+        </script>
+<script type="text/javascript">
+          JOT_postEvent('renderPlus', null, 'sites-chrome-main');
+        </script>
+<script type="text/javascript">
+          sites.codeembed.init();
+        </script>
+<div id="server-timer-div" style="display:none"> </div>
+<script type="text/javascript">
+          window.jstiming.load.tick('render');
+          JOT_postEvent('usercontentrendered', this);
+        </script>
+</body>
+
+<!-- Mirrored from sites.google.com/site/sridharkritha/handyconcepts/large-scale-c by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 09 Jul 2021 09:42:51 GMT -->
+</html>
