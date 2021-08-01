@@ -48,4 +48,14 @@ window.addEventListener('load', function () {
 		document.body.appendChild(ansElmt);
 		addClickEvent(new HideShowButton(ansElmt, 'Show Solution'));
 	}
+
+	// text area auto sizing
+	let textareaAutoSize = document.querySelector('textarea');
+	textareaAutoSize.onkeydown = function () {
+		var el = this;
+		setTimeout(function(){
+		  el.style.cssText = 'height:auto; padding:0';
+		  el.style.cssText = 'height:' + el.scrollHeight + 'px';
+		},0);
+	};
 });
