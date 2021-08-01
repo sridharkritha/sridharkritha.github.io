@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
 		let txtAreaElmt = document.createElement("TEXTAREA");
 		txtAreaElmt.classList = "textAreaAutoSizing";
 		txtAreaElmt.placeholder = "Code here.... !!!";
-		txtAreaElmt.spellcheck = "false";
+		txtAreaElmt.spellcheck = false;
 		txtAreaElmt.onkeydown = txtAreaOnkeydown;
 		document.body.appendChild(txtAreaElmt);
 		// Solution
