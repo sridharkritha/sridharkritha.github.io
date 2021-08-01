@@ -1,0 +1,18 @@
+#codeDIV {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: lightblue;
+    margin-top: 20px;
+  }
+
+  .textAreaAutoSizing {
+    overflow:hidden;
+    padding:10px;
+    width:98%;
+    font-size:18px;
+    margin:0px 10px 10px 0px;
+    display:block;
+    border-radius:10px;
+    border:3px solid #556677;
+}
