@@ -7,6 +7,7 @@ window.addEventListener('load', function () {
 	var utterThis = null;
 	var isRandomMode = false;
 	var index = 0;
+	let lastWordRead = null;
 
 	getWord = function() {
 		var word;
@@ -22,6 +23,7 @@ window.addEventListener('load', function () {
 			word = wordList[index];
 			index = index + 1;
 		}
+		lastWordRead = word;
 		return word;
 	};
 
@@ -92,10 +94,15 @@ window.addEventListener('load', function () {
 	};
 
 	// Text Area
-	document.getElementById('txtArea').onkeypress = function (event) {
+	document.getElementById('txtAreaInput').onkeypress = function (event) {
 		// Enter key code is 13
 		if (event.keyCode == 13 && !event.shiftKey) {
 			running = false;
+			document.getElementById('txtAreaOutput').value += document.getElementById('txtAreaInput').value;
+			document.getElementById('txtAreaOutput').value +='\n';
+			document.getElementById('txtAreaInput').value = '';
+			document.getElementById('txtAreaInput').selectionStart = 0;
+			document.getElementById('txtAreaInput').selectionEnd = 0;
 			startSpeaking();
 		}
 	};
