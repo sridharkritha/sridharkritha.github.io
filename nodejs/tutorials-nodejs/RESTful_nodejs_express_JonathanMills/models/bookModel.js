@@ -11,4 +11,5 @@
                                         read: {type: Boolean, default: false}
                                     }
                                 );
+    // converts schema => model
     module.exports = mongoose.model('Book', bookModel);

@@ -1,0 +1,5 @@
+npm init
+npm install socket.io socket.io-client express --save
+
+teminal 1:	node server.js
+teminal 2:	node client.js
