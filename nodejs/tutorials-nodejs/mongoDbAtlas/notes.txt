@@ -1,0 +1,33 @@
+https://www.youtube.com/watch?v=fbYExfeFsI0&list=PLs6v2qXhOYxn02wymtvXtrfLWswfWbAWO&index=3&t=916s
+https://github.com/mongodb-developer/nodejs-quickstart
+
+node -v
+npm install mongodb 
+npm list mongodb
+
+Mongodb:
+cluster => Has collection of databases.
+collection => group of document(S) => table
+document => row in a table
+Each document => has unique '_id'
+
+connection string:
+mongodb+srv://sridharkritha:<password>@cluster0.02kdt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+username:sridharkritha
+pwd: 2244
+ip address: 192.168.0.24
+90.207.94.235
+0.0.0.0/0
+================================================================================
+
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://sridharkritha:<password>@cluster0.02kdt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+================================================================================

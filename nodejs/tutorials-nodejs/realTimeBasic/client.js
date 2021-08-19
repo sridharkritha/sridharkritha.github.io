@@ -16,9 +16,11 @@ let socket = io("http://localhost:3000"); // internally emits "connection" event
 // socket.on => listener. socket.emit => sends event.
 // Add listener for the event "myEvent" but NOT execute the callback
 // Callback will be executed only after if you get the "myEvent"
-socket.on("myEvent", (data) => {
-   console.log("Message: ", data); // gets executed only after the "myEvent" arrives.
-});
+// socket.on("myEvent", (data) => {
+//    console.log("Message: ", data); // gets executed only after the "myEvent" arrives.
+// });
+
+socket.emit('myEvent', JSON.stringify({ "name": "raj", "age": "12"}));
 
 
 }); // needed only for the Method 1.

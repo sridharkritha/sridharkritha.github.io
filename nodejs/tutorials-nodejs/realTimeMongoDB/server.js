@@ -3,7 +3,7 @@ const app = express();
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer);
 //const mongoose = require('mongoose');
-const port = 3456;
+const port = 3000;
 
 // Listen for a client connection 
 io.on("connection", (socket) => {
