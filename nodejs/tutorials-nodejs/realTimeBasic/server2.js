@@ -1,9 +1,13 @@
-	// const express = require("express");
-	// const app = express();
-	// const httpServer = require("http").createServer(app);
-	// const io = require("socket.io")(httpServer);
-
+	const express = require("express");
+	const app = express();
+	const httpServer = require("http").createServer(app);
+	const io = require("socket.io")(httpServer);
 	const { MongoClient } = require('mongodb');
+	const port = 3000;
+
+	const dataBaseName = 'racecardDB';
+	const collectionName = 'horserace';
+	let client = null; // mongodb client
 
 	async function main() {
 		/**
@@ -19,22 +23,22 @@
 		 * pass option { useUnifiedTopology: true } to the MongoClient constructor.
 		 * const client =  new MongoClient(uri, {useUnifiedTopology: true})
 		 */
-		const client = new MongoClient(uri, { useUnifiedTopology: true });
+		client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 		try {
 			// Connect to the MongoDB cluster
 			await client.connect();
 
-			let dataBaseName = 'racecardDB';
-			let collectionName = 'horserace';
 
-			// Add some documents inside the collection
+
+			// 1. Add some documents inside the collection
 			// await createMultipleDocuments(client, dataBaseName, collectionName);
 
-			// Delete all documents inside the collection
+			// 2. Delete ALL documents inside the collection
 			// await dropAllDocuments(client, dataBaseName, collectionName);
 
-
+			// 3. Update any single document with the new value ({ wins: 99 }) - only if the document has {name: "Sridhar"} entry.
+			// await updateListingByName(client, dataBaseName, collectionName, {name: "Sridhar"}, { wins: 99 });
 
 			/**
 			 * An aggregation pipeline that matches on new listings in the country of Australia and the Sydney market
@@ -50,11 +54,11 @@
 			];
 
 			// Monitor new listings using EventEmitter's on() function.
-			await monitorListingsUsingEventEmitter(client, dataBaseName, collectionName, 30000, pipeline);
+			// await monitorListingsUsingEventEmitter(client, dataBaseName, collectionName, 30000, pipeline);
 
 		} finally {
 			// Close the connection to the MongoDB cluster
-			await client.close();
+			// await client.close(); // why we need to close it ??
 		}
 	}
 
@@ -90,7 +94,20 @@
 		// console.log(result);
 	}
 
+	/**
+	 * Update an Airbnb listing with the given name
+	 * Note: If more than one listing has the same name, only the first listing the database finds will be updated.
+	 * @param {MongoClient} client A MongoClient that is connected to a cluster with the sample_airbnb database
+	 * @param {string} nameOfListing The name of the listing you want to update
+	 * @param {object} updatedListing An object containing all of the properties to be updated for the given listing
+	 */
+	async function updateListingByName(client, dataBaseName, collectionName, findObject, updateObject) {
+		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#updateOne for the updateOne() docs
+		const result = await client.db(dataBaseName).collection(collectionName).updateOne(findObject, { $set: updateObject });
 
+		console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+		console.log(`${result.modifiedCount} document(s) was/were updated.`);
+	}
 
 	/**
 	 * Monitor listings in the listingsAndReviews collections for changes
@@ -136,9 +153,27 @@
 
 
 
+////////////////////////////////////////////////////////////////////////////////
 
+	io.on('connection', (socket) => {
+		console.log('user connected');
+		socket.on('myEvent', async (data) => {      // note: async
+			console.log('user joined room');
+			console.log(data);
+			// socket.join(data.myID);
+			try {
+				// await updateListingByName(client, dataBaseName, collectionName, {name: "Sridhar"}, { wins: 12799 });
+				await updateListingByName(client, dataBaseName, collectionName, JSON.parse(data).findObject, JSON.parse(data).updateObject);
+			} catch (e) {
+				console.error(e);
+			}
+		});
+	});
 
-
+	// Listen the HTTP Server 
+	httpServer.listen(port, () => {
+		console.log("Server Is Running Port: " + port);
+	});
 
 
 

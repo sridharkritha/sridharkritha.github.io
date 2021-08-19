@@ -4,7 +4,7 @@
 // https://www.youtube.com/watch?v=hPMLuHH4ZAc
 
 const { MongoClient } = require('mongodb');
-const stream = require('stream');
+const stream = require('stream'); // only for Option 3
 
 async function main() {
     /**
@@ -73,8 +73,8 @@ function closeChangeStream(timeInMs = 60000, changeStream) {
             changeStream.close();
             resolve();
         }, timeInMs);
-    })
-};
+    });
+}
 
 /**
  * Monitor listings in the listingsAndReviews collections for changes
