@@ -10,6 +10,21 @@
 	let client = null; // mongodb client
 	let DB = null;     // database
 	let COLL = null;   // collection
+	/**
+	 * An aggregation pipeline that matches on new listings in the country of Australia and the Sydney market
+	 */
+	const pipeline = [
+		{
+			'$match': {
+			// 'operationType': 'insert',
+			// 'fullDocument.location.country': 'India',
+			// 'fullDocument.location.city': 'Chennai'
+
+			'operationType': 'update'
+
+			}
+		}
+	];
 
 	async function main() {
 		/**
@@ -68,18 +83,7 @@
 			// 3. Update any single document with the new value ({ wins: 99 }) - only if the document has {name: "Sridhar"} entry.
 			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, {name: "Sridhar"}, { wins: 99 });
 
-			/**
-			 * An aggregation pipeline that matches on new listings in the country of Australia and the Sydney market
-			 */
-			const pipeline = [
-			{
-				'$match': {
-				'operationType': 'insert',       // 'update',
-				'fullDocument.location.country': 'India',
-				'fullDocument.location.city': 'Chennai'
-				}
-			}
-			];
+
 
 			// Monitor new listings using EventEmitter's on() function.
 			// await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000, pipeline);
@@ -166,7 +170,8 @@
 		const collection = client.db(dataBaseName).collection(collectionName);
 
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#watch for the watch() docs
-		const changeStream = collection.watch(pipeline);
+		// const changeStream = collection.watch(pipeline);
+		const changeStream = collection.watch();
 
 		// ChangeStream inherits from the Node Built-in Class EventEmitter (https://nodejs.org/dist/latest-v12.x/docs/api/events.html#events_class_eventemitter).
 		// We can use EventEmitter's on() to add a listener function that will be called whenever a change occurs in the change stream.
@@ -206,8 +211,9 @@
 	io.on('connection', async (socket) => {
 		console.log('Server: A new client connected to me');
 		await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
+		await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000, pipeline);
 
-		socket.on('myEvent', async (data) => {      // note: async
+		socket.on('mySubmitEvent', async (data) => {      // note: async
 			console.log('user joined room');
 			console.log(data);
 			// socket.join(data.myID);

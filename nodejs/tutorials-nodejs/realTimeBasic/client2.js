@@ -26,66 +26,42 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 	   console.log("Message: ", data); // gets executed only after the "myEvent" arrives.
 
 		const db = JSON.parse(data);
-		let elem;
-
-		// db.forEach((result, i) => {
-		// 	console.log(`${i + 1}. names: ${result.name}`);
-		// 	console.log(`   wins: ${result.wins}`);
-		// });
-
-		// for(let i = 0, n = db.length; i < n; ++i) {
-
-		// 	elem = document.createElement("div");
-		// 	elem.textContent = db.name;
-		// 	document.body.appendChild(elem);
-
-		// 	elem = document.createElement("div");
-		// 	elem.textContent = db.wins;
-		// 	document.body.appendChild(elem);
-		// }
-
+		let divElem, spanElem, elem;
 		for (var i in db) {
 			if (db.hasOwnProperty(i)) {
 				// console.log(db[i]);
+				// row
+				divElem = document.createElement("div");
+
 				for (var j in db[i]) {
 					if (db[i].hasOwnProperty(j)) {
 						if(j == 'name') {
-							elem = document.createElement("div");
-							elem.textContent = db[i][j];
-							document.body.appendChild(elem);
+							spanElem = document.createElement("span");
+							spanElem.textContent = db[i][j];
+							divElem.appendChild(spanElem);
 						}
 						else if(j == 'wins') {
-							elem = document.createElement("div");
-							elem.textContent = db[i][j];
-							document.body.appendChild(elem);
+							spanElem = document.createElement("span");
+							spanElem.textContent = db[i][j];
+							divElem.appendChild(spanElem);
 						}
 						// console.log(db[i][j]);
 					}
 				}
+				document.body.appendChild(divElem);
 			}
 		}
 
-		// for (var k in db) {
-		// 	let m = Number(k);
-		// 	if (db.hasOwnProperty(m)) {
-		// 		db[m].forEach((result, i) => {
-		// 			console.log(`${i + 1}. names: ${result.name}`);
-		// 			console.log(`   wins: ${result.wins}`);
-		// 		});
-		// 	}
-		// }
+		elem = document.createElement("input");
+		elem.setAttribute("id","oddId");
+		document.body.appendChild(elem);
 
-
-		// db.forEach((result, i) => {
-		// 	console.log(`${i + 1}. names: ${result.name}`);
-		// 	console.log(`   wins: ${result.wins}`);
-		// });
-
-
-
-
-
-
+		elem = document.createElement("button");
+		elem.setAttribute("id","buttonId");
+		elem.textContent = "Bet";
+		elem.style.cssText = 'width:50px; height:22px';
+		elem.addEventListener('click', submitCallback);
+		document.body.appendChild(elem);
 
 	});
 
@@ -100,8 +76,21 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 										}));
 	*/
 
-/*
+
 // GUI
+function submitCallback() {
+	// console.log(document.getElementById('nameId').firstChild.textContent);
+	// console.log(document.getElementById('winsId').firstChild.textContent);
+	// console.log(Number(document.getElementById('oddId').value) + 12.1);
+	let newValue = Number(document.getElementById('oddId').value);
+
+	socket.emit('mySubmitEvent', JSON.stringify({
+		"findObject": { },
+		"updateObject": { "wins": newValue }
+	}));
+
+}
+/*
 let elem = document.createElement("span");
 elem.setAttribute("id","nameId");
 document.body.appendChild(elem);
