@@ -5,9 +5,11 @@
 	const { MongoClient } = require('mongodb');
 	const port = 3000;
 
-	const dataBaseName = 'racecardDB';
-	const collectionName = 'horserace';
+	const MONGO_DATABASE_NAME = 'racecardDB';
+	const MONGO_COLLECTION_NAME = 'horserace';
 	let client = null; // mongodb client
+	let DB = null;     // database
+	let COLL = null;   // collection
 
 	async function main() {
 		/**
@@ -27,35 +29,60 @@
 
 		try {
 			// Connect to the MongoDB cluster
-			await client.connect();
+			// await client.connect();
 
+			// await connectToCluster(client);
+			client.connect(async (err) => {
+			if (err) {
+				console.log("Cluster connection error");
+				return console.error(err);
+			}
+			console.log("Cluster connection is successfully");
 
+			DB = client.db(MONGO_DATABASE_NAME);
+			if(!DB) {
+				console.log(`Database - ${MONGO_DATABASE_NAME} - connection error`);
+				return console.error(DB);
+			}
+			console.log(`Database - ${MONGO_DATABASE_NAME} - connected successfully`);
+
+			COLL = client.db(MONGO_COLLECTION_NAME);
+			if(!COLL) {
+				console.log(`Collection - ${MONGO_COLLECTION_NAME} - connection error`);
+				return console.error(COLL);
+			}
+			console.log(`Collection - ${MONGO_COLLECTION_NAME} - connected successfully`);
+
+			// const result = await client.db(MONGO_DATABASE_NAME).collection(MONGO_COLLECTION_NAME).find( { }, {_id: 0, names: 1, wins: 1 } );
+			// console.log(result);
+
+			// await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
+			});
 
 			// 1. Add some documents inside the collection
-			// await createMultipleDocuments(client, dataBaseName, collectionName);
+			// await createMultipleDocuments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
 
 			// 2. Delete ALL documents inside the collection
-			// await dropAllDocuments(client, dataBaseName, collectionName);
+			// await dropAllDocuments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
 
 			// 3. Update any single document with the new value ({ wins: 99 }) - only if the document has {name: "Sridhar"} entry.
-			// await updateListingByName(client, dataBaseName, collectionName, {name: "Sridhar"}, { wins: 99 });
+			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, {name: "Sridhar"}, { wins: 99 });
 
 			/**
 			 * An aggregation pipeline that matches on new listings in the country of Australia and the Sydney market
 			 */
 			const pipeline = [
-				{
-					'$match': {
-						'operationType': 'insert',       // 'update',
-						'fullDocument.location.country': 'India',
-						'fullDocument.location.city': 'Chennai'
-					}
+			{
+				'$match': {
+				'operationType': 'insert',       // 'update',
+				'fullDocument.location.country': 'India',
+				'fullDocument.location.city': 'Chennai'
 				}
+			}
 			];
 
 			// Monitor new listings using EventEmitter's on() function.
-			// await monitorListingsUsingEventEmitter(client, dataBaseName, collectionName, 30000, pipeline);
-
+			// await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000, pipeline);
 		} finally {
 			// Close the connection to the MongoDB cluster
 			// await client.close(); // why we need to close it ??
@@ -64,6 +91,26 @@
 
 	main().catch(console.error);
 
+	async function returnAllDouments(client, dataBaseName, collectionName) {
+		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#find for the find() docs
+		const cursor = await client.db(dataBaseName).collection(collectionName).find({ }, {_id: 1, name: 1, wins: 1 });
+
+		// Store the results in an array
+		const results = await cursor.toArray();
+
+		io.emit('myEvent', JSON.stringify({ ...results }));
+
+		// Print the results
+		if (results.length > 0) {
+			console.log(`Documents found inside the collection - ${collectionName} :`);
+			results.forEach((result, i) => {
+				console.log(`${i + 1}. names: ${result.name}`);
+				console.log(`   wins: ${result.wins}`);
+			});
+		} else {
+			console.log("NO document found in the database");
+		}
+	}
 
 	/**
 	 * Create multiple documents inside the collection inside the database inside the cluster
@@ -74,7 +121,7 @@
 		let raceCard =  [	{ name: "Jay",		wins: 5, location: { city: "Chennai", country: "India"} },
 							{ name: "Sridhar",	wins: 9, location: { city: "London",  country: "UK"}},
 							{ name: "Sumitha",	wins: 7, location: { city: "Didcot",  country: "America"}}
-					];
+		];
 
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#insertMany for the insertMany() docs
 		const result = await client.db(dataBaseName).collection(collectionName).insertMany(raceCard);
@@ -84,7 +131,6 @@
 	}
 
 	async function dropAllDocuments(client, dataBaseName, collectionName) {
-
 		// Delete collection including all its documents
 		let result = await client.db(dataBaseName).collection(collectionName).drop();
 		// console.log("drop =>" + result);
@@ -148,22 +194,26 @@
 		});
 	}
 
+	////////////////////////////////////////////////////////////////////////////////
 
+	io.on('myEventClientReady', async (data) => {
+		console.log("Server: Recieved 'myEventClientReady' even from client");
+		if(JSON.parse(data).isClientReady) {
+			await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
+		}
+	});
 
+	io.on('connection', async (socket) => {
+		console.log('Server: A new client connected to me');
+		await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
 
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-	io.on('connection', (socket) => {
-		console.log('user connected');
 		socket.on('myEvent', async (data) => {      // note: async
 			console.log('user joined room');
 			console.log(data);
 			// socket.join(data.myID);
 			try {
-				// await updateListingByName(client, dataBaseName, collectionName, {name: "Sridhar"}, { wins: 12799 });
-				await updateListingByName(client, dataBaseName, collectionName, JSON.parse(data).findObject, JSON.parse(data).updateObject);
+				// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, {name: "Sridhar"}, { wins: 12799 });
+				await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, JSON.parse(data).findObject, JSON.parse(data).updateObject);
 			} catch (e) {
 				console.error(e);
 			}
@@ -172,7 +222,7 @@
 
 	// Listen the HTTP Server 
 	httpServer.listen(port, () => {
-		console.log("Server Is Running Port: " + port);
+		console.log("Server is running on the port: " + port);
 	});
 
 
