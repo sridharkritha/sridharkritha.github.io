@@ -170,8 +170,8 @@
 		const collection = client.db(dataBaseName).collection(collectionName);
 
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#watch for the watch() docs
-		// const changeStream = collection.watch(pipeline);
-		const changeStream = collection.watch();
+		const changeStream = collection.watch(pipeline);
+
 
 		// ChangeStream inherits from the Node Built-in Class EventEmitter (https://nodejs.org/dist/latest-v12.x/docs/api/events.html#events_class_eventemitter).
 		// We can use EventEmitter's on() to add a listener function that will be called whenever a change occurs in the change stream.
@@ -201,17 +201,18 @@
 
 	////////////////////////////////////////////////////////////////////////////////
 
-	io.on('myEventClientReady', async (data) => {
-		console.log("Server: Recieved 'myEventClientReady' even from client");
-		if(JSON.parse(data).isClientReady) {
-			await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
-		}
-	});
+	// io.on('myEventClientReady', async (data) => {
+	// 	console.log("Server: Recieved 'myEventClientReady' even from client");
+	// 	if(JSON.parse(data).isClientReady) {
+	// 		await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
+	// 	}
+	// });
 
 	io.on('connection', async (socket) => {
 		console.log('Server: A new client connected to me');
 		await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
-		await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000, pipeline);
+		// await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000, pipeline);
+		// await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000);
 
 		socket.on('mySubmitEvent', async (data) => {      // note: async
 			console.log('user joined room');
