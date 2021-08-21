@@ -3,7 +3,7 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 
 	// Method 1: Using HTML - Load "client.html" (do NOT run "node client.js")
 	// It uses 'io' from the distributed version of socket.io from "client-dist/socket.io.js"
-	const socket = io("http://localhost:3000", { transports : ['websocket'] }); // internally emits "connection" event
+	const socket = io("http://localhost:3000", { autoConnect:false, transports : ['websocket'] }); // internally emits "connection" event
 
 /*	
 	// // Method 2: Without using HTML - directly run "node client.js"
@@ -14,9 +14,13 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 	
 */
 
+	socket.on("connect", async () => {
+		// console.log('myEventClientReady - event is sent');
+		socket.emit('myEventClientReady', JSON.stringify({ isClientReady: true }));
+	});
+	socket.connect(); // neeed bcos 'autoConnect:false'
 
-	// console.log('myEventClientReady - event is sent');
-	socket.emit('myEventClientReady', JSON.stringify({ isClientReady: true }));
+
 
 	// socket.on => listener. socket.emit => sends event.
 	// Add listener for the event "myEvent" but NOT execute the callback

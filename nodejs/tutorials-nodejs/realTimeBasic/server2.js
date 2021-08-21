@@ -1,3 +1,4 @@
+	// https://www.youtube.com/watch?v=UUA0YaBdqYk
 	const express = require("express");
 	const app = express();
 	const httpServer = require("http").createServer(app);
@@ -93,11 +94,12 @@
 		}
 	}
 
-	main().catch(console.error);
+	// main().catch(console.error);
 
 	async function returnAllDouments(client, dataBaseName, collectionName) {
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#find for the find() docs
-		const cursor = await client.db(dataBaseName).collection(collectionName).find({ }, {_id: 1, name: 1, wins: 1 });
+		// const cursor = await client.db(dataBaseName).collection(collectionName).find({ }, {_id: 1, name: 1, wins: 1 });
+		const cursor = await COLL.find({ }, {_id: 1, name: 1, wins: 1 });
 
 		// Store the results in an array
 		const results = await cursor.toArray();
@@ -181,7 +183,7 @@
 		});
 
 		// Wait the given amount of time and then close the change stream
-		await closeChangeStream(timeInMs, changeStream);
+		// await closeChangeStream(timeInMs, changeStream);
 	}
 
 	/**
@@ -212,7 +214,7 @@
 		console.log('Server: A new client connected to me');
 		await returnAllDouments(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME);
 		// await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000, pipeline);
-		// await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000);
+		await monitorListingsUsingEventEmitter(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 30000);
 
 		socket.on('mySubmitEvent', async (data) => {      // note: async
 			console.log('user joined room');
@@ -228,9 +230,52 @@
 	});
 
 	// Listen the HTTP Server 
-	httpServer.listen(port, () => {
-		console.log("Server is running on the port: " + port);
+	// httpServer.listen(port, () => {
+	// 	console.log("Server is running on the port: " + port);
+	// });
+
+	httpServer.listen(port, async () => {
+		console.log("Server is running on the port: " + httpServer.address().port);
+
+		/**
+		 * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
+		 * See https://docs.mongodb.com/drivers/node/ for more details
+		 */
+		const uri = "mongodb+srv://sridharkritha:2244@cluster0.02kdt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+		/**
+		 * The Mongo Client you will use to interact with your database
+		 * See https://mongodb.github.io/node-mongodb-native/3.6/api/MongoClient.html for more details
+		 * In case: '[MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated...'
+		 * pass option { useUnifiedTopology: true } to the MongoClient constructor.
+		 * const client =  new MongoClient(uri, {useUnifiedTopology: true})
+		 */
+		client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+		try {
+				await client.connect();
+				console.log("Cluster connection is successfully");
+
+
+				DB = client.db(MONGO_DATABASE_NAME);
+				if(!DB) {
+					console.log(`Database - ${MONGO_DATABASE_NAME} - connection error`);
+					return console.error(DB);
+				}
+				console.log(`Database - ${MONGO_DATABASE_NAME} - connected successfully`);
+
+				COLL = DB.collection(MONGO_COLLECTION_NAME);
+				if(!COLL) {
+					console.log(`Collection - ${MONGO_COLLECTION_NAME} - connection error`);
+					return console.error(COLL);
+				}
+				console.log(`Collection - ${MONGO_COLLECTION_NAME} - connected successfully`);
+		} catch(e) {
+			console.error(e);
+		}
+		
 	});
+
 
 
 
