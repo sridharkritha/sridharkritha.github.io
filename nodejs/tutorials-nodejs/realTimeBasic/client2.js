@@ -20,6 +20,10 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 	});
 	socket.connect(); // neeed bcos 'autoConnect:false'
 
+	socket.on("myEventChangeHappened", (data) => { 
+		document.getElementById('winsId').textContent = JSON.parse(data).wins;
+	});
+
 
 
 	// socket.on => listener. socket.emit => sends event.
@@ -46,6 +50,7 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 						}
 						else if(j == 'wins') {
 							spanElem = document.createElement("span");
+							spanElem.setAttribute("id","winsId");
 							spanElem.textContent = db[i][j];
 							divElem.appendChild(spanElem);
 						}

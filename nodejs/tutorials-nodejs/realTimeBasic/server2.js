@@ -178,8 +178,13 @@
 		// ChangeStream inherits from the Node Built-in Class EventEmitter (https://nodejs.org/dist/latest-v12.x/docs/api/events.html#events_class_eventemitter).
 		// We can use EventEmitter's on() to add a listener function that will be called whenever a change occurs in the change stream.
 		// See https://nodejs.org/dist/latest-v12.x/docs/api/events.html#events_emitter_on_eventname_listener for the on() docs.
-		changeStream.on('change', (next) => {
-			console.log(next);
+		changeStream.on('change', (changedData) => {
+			console.log(changedData);
+			if(changedData.operationType === 'update') {
+				const updatedFieldsObject = changedData.updateDescription.updatedFields;
+				io.emit('myEventChangeHappened', JSON.stringify(updatedFieldsObject));
+			} else if(change.operationType === 'insert') { 
+			} else if(change.operationType === 'delete') { }
 		});
 
 		// Wait the given amount of time and then close the change stream
