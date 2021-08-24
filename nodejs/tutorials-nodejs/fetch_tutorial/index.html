@@ -7,7 +7,107 @@
 	// 										'https://reqres.in/api/users'
 
 
+	/*
+	// https://www.youtube.com/watch?v=vn3tm0quoqE
+	// Convert a Normal function into Async function:
 
+	// Normal function
+	const getName = () => {
+		return "sridhar";
+	}
+
+	console.log(getName());
+
+
+	// Convert the above function which returns promise
+	const getName = () => {
+		return Promise.resolve("sridhar");
+	}
+
+	getName().then(console.log);
+
+
+	// Above function can be written by a simple form using async:
+	const getName = async () => {
+		return "sridhar";
+	}
+
+	getName().then(console.log);
+
+
+	/*
+	// setTimeout
+	console.log(1);
+	console.log(2);
+	setTimeout(()=> console.log('callback fired'), 1000); // internally it is async function
+	console.log(3);
+	console.log(4);
+	// 1 2 3 4 callback fired
+
+	// async & await
+	console.log(1);
+	console.log(2);
+	// const wrapper = async () => { console.log('callback fired'); }; // wrong
+	const wrapper = async () => { return 'callback fired'; }; // correct
+	wrapper().then(data => console.log(data));
+	console.log(3);
+	console.log(4);
+	// 1 2 3 4 callback fired
+
+	// micro task Vs macro task
+	console.log(1);
+	console.log(2);
+	// macro task(setTimeout/setInterval) - executed on NEXT 'eventLoop'
+	setTimeout(()=> console.log('setTimeout - callback fired'), 0); // internally it is async function
+	// micro task(promise) - executed BEFORE the next 'eventLoop'
+	const wrapper = async () => { return 'Promise 1: callback fired'; }; // correct
+	wrapper().then(data => console.log(data));
+	Promise.resolve().then( _ => console.log('Promise 2: callback fired'));
+	console.log(3);
+	console.log(4);
+	// // 1 2 3 4 Promise 1 Promise 2 setTimeout - callback fired
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	const slowCodeOne = () => {
+		console.log('Start: Looping');
+		let i = 0;
+		while( i < 1e9 ) ++i;
+		console.log('End: Billion loops done');
+	}
+
+	console.log(1);
+	slowCodeOne();
+	console.log(2);
+	// 1, StartLoop, EndLoop, 2     <= 2 is blocked
+
+	const slowCodeTwo = () => {
+		return new Promise((resolve, reject) => {
+			console.log('Start: Looping'); // below code still runs synchronous (NOT async)
+			let i = 0;
+			while( i < 1e9 ) ++i;
+			resolve('End: Billion loops done'); // resolve NOT return
+		})
+	}
+
+	console.log(1);
+	slowCodeTwo().then(console.log);
+	console.log(2);
+	// 1, StartLoop, EndLoop, 2     <= 2 is blocked
+
+	const slowCodeThree = () => {
+		return Promise.resolve().then( _ => {  // NOTE: 'new' not needed
+			console.log('Start: Looping'); // below code runs Asynchronously
+			let i = 0;
+			while( i < 1e9 ) ++i;
+			return 'End: Billion loops done'; // return NOT resolve
+		});
+	};
+
+	console.log(1);
+	slowCodeThree().then(console.log);
+	console.log(2);
+	// 1, 2, StartLoop, EndLoop   <= 2 is blocked
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Promise - old style #1
 	const myPromise = new Promise((resolve, reject) => {
 		let x = 3 + 4;
@@ -119,25 +219,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	// setTimeout
-	console.log(1);
-	console.log(2);
-	setTimeout(()=> console.log('callback fired'), 1000); // internally it is async function
-	console.log(3);
-	console.log(4);
-	// 1 2 3 4 callback fired
-
-	// async & await
-	console.log(1);
-	console.log(2);
-	// const wrapper = async () => { console.log('callback fired'); }; // wrong
-	const wrapper = async () => { return 'callback fired'; }; // correct
-	wrapper().then(data => console.log(data));
-	console.log(3);
-	console.log(4);
-	// 1 2 3 4 callback fired
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 	// Fetch Api (Alternative for xmlHttpRequest() -  Gives a request from browser to server for fetching the info/file)
 	// It is defined all the browsers (Web Workers)
 	// It returns promise
@@ -205,7 +286,7 @@
 	.then(res => res.json())        // send the json data promise to below '.then'
 	.then(data => console.log(data));
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+*/
 
 
 	</script>
