@@ -3,13 +3,290 @@
 	// https://www.youtube.com/watch?v=drK6mdA9d_M
 	// https://www.youtube.com/watch?v=cuEtnrL9-H0
 
+	//  For playing with API endpoints:		'https://jsonplaceholder.typicode.com'
+	// 										'https://reqres.in/api/users'
 
+
+	/*
+	// https://www.youtube.com/watch?v=vn3tm0quoqE
+	// Convert a Normal function into Async function:
+
+	// Normal function
+	const getName = () => {
+		return "sridhar";
+	}
+
+	console.log(getName());
+
+
+	// Convert the above function which returns promise
+	const getName = () => {
+		return Promise.resolve("sridhar");
+	}
+
+	getName().then(console.log);
+
+
+	// Above function can be written by a simple form using async:
+	const getName = async () => {
+		return "sridhar";
+	}
+
+	getName().then(console.log);
+
+
+	/*
+	// setTimeout
+	console.log(1);
+	console.log(2);
+	setTimeout(()=> console.log('callback fired'), 1000); // internally it is async function
+	console.log(3);
+	console.log(4);
+	// 1 2 3 4 callback fired
+
+	// async & await
+	console.log(1);
+	console.log(2);
+	// const wrapper = async () => { console.log('callback fired'); }; // wrong
+	const wrapper = async () => { return 'callback fired'; }; // correct
+	wrapper().then(data => console.log(data));
+	console.log(3);
+	console.log(4);
+	// 1 2 3 4 callback fired
+
+	// micro task Vs macro task
+	console.log(1);
+	console.log(2);
+	// macro task(setTimeout/setInterval) - executed on NEXT 'eventLoop'
+	setTimeout(()=> console.log('setTimeout - callback fired'), 0); // internally it is async function
+	// micro task(promise) - executed BEFORE the next 'eventLoop'
+	const wrapper = async () => { return 'Promise 1: callback fired'; }; // correct
+	wrapper().then(data => console.log(data));
+	Promise.resolve().then( _ => console.log('Promise 2: callback fired'));
+	console.log(3);
+	console.log(4);
+	// // 1 2 3 4 Promise 1 Promise 2 setTimeout - callback fired
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	const slowCodeOne = () => {
+		console.log('Start: Looping');
+		let i = 0;
+		while( i < 1e9 ) ++i;
+		console.log('End: Billion loops done');
+	}
+
+	console.log(1);
+	slowCodeOne();
+	console.log(2);
+	// 1, StartLoop, EndLoop, 2     <= 2 is blocked
+
+	const slowCodeTwo = () => {
+		return new Promise((resolve, reject) => {
+			console.log('Start: Looping'); // below code still runs synchronous (NOT async)
+			let i = 0;
+			while( i < 1e9 ) ++i;
+			resolve('End: Billion loops done'); // resolve NOT return
+		})
+	}
+
+	console.log(1);
+	slowCodeTwo().then(console.log);
+	console.log(2);
+	// 1, StartLoop, EndLoop, 2     <= 2 is blocked
+
+	const slowCodeThree = () => {
+		return Promise.resolve().then( _ => {  // NOTE: 'new' not needed
+			console.log('Start: Looping'); // below code runs Asynchronously
+			let i = 0;
+			while( i < 1e9 ) ++i;
+			return 'End: Billion loops done'; // return NOT resolve
+		});
+	};
+
+	console.log(1);
+	slowCodeThree().then(console.log);
+	console.log(2);
+	// 1, 2, StartLoop, EndLoop   <= 2 is blocked
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Promise - old style #1
+	const myPromise = new Promise((resolve, reject) => {
+		let x = 3 + 4;
+		if(x === 7) resolve("Addition Success");
+		else reject("Addition Failed")
+	});
+
+	myPromise.then(msg => console.log(msg))
+			 .catch(msg => console.log(msg));
+
+	// Promise - old style #2
+	const myPromise = () => {
+		return new Promise((resolve, reject) => {
+			// network related task comes here or anything which takes some time to proceed
+			let x = 3 + 14;
+			if(x === 7) resolve("Addition Success");
+			else reject("Addition Failed")
+		});
+	};
+	myPromise().then(msg => console.log(msg), err => console.log(err));
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Old Way - Promise Chaining: (#3 files reading) Read one file fully and then go for the next file
+	fetch('dataOne.json')
+	.then(res => {
+		console.log('resolved - Read the dataOne.json file but hidden inside body');
+		return res.json(); // .json() also return promise so handle by '.then'
+	})
+	.then(data => {  // this '.then' for above 'return res.json'
+		console.log('resolved - dataOne.json is now visible');
+		console.log(data);
+		return fetch('dataTwo.json'); // return MUST - go for the next file
+	})
+	.then(res => { // this '.then' for above 'return fetch('dataTwo.json')'
+		console.log('resolved - Read the dataTwo.json file but hidden inside body');
+		return res.json(); // also return promise
+	})
+	.then(data => { // this '.then' for above 'return res.json'
+		console.log('resolved - dataTwo.json is now visible');
+		console.log(data);
+		return fetch('dataThree.json'); // return MUST
+	})
+	.then(res => { // this '.then' for above 'return fetch('dataThree.json')'
+		console.log('resolved - Read the dataThree.json file but hidden inside body');
+		return res.json(); // also return promise
+	})
+	.then(data => { // this '.then' for above 'return res.json'
+		console.log('resolved - dataThree.json is now visible');
+		console.log(data);
+	})
+	.catch(err => console.log('rejected: ' + err));
+
+	// New way - Promise Chaining.
+	const wrapper = async () => {
+		const responseOne =  await fetch('dataOne.json');
+		const dataOne = await responseOne.json();
+		console.log(dataOne);
+
+		const responseTwo =  await fetch('dataTwo.json');
+		const dataTwo = await responseTwo.json();
+		console.log(dataTwo);
+
+		const responseThree =  await fetch('dataThree.json');
+		const dataThree = await responseThree.json();
+		console.log(dataThree);
+	}
+
+	wrapper().then(msg => console.log("resolve: " + msg))
+				.catch(err => console.log("rejected: " + err));
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Promise Chaining
+	function phaseOne(location) {
+		return new Promise((resolve, reject) => {
+			if(location === 'chennai') resolve('Correct Location');
+			else reject('Nomad');
+		});
+	}
+
+	function phaseTwo(response) {
+		return new Promise((resolve, reject) => {
+			if(response == 'Nomad') reject(response + " - Buy a house soon");
+			else resolve('chennai is the ' + response);
+		});
+	}
+
+	// Old Way - then/catch
+	phaseOne('chennai').then(msg => { return phaseTwo(msg) }) // return MUST bcos for chaining (sending promise to next line)
+					   .then(data => console.log('Success: ' + data))
+					   .catch(err => console.log('Error: '   + err));
+
+	// New New: async 	wrapper + try/catch (for rejection)
+	const wrapper = async (arg) => {
+		try {
+			const resOneObj = await phaseOne(arg);
+			const resTwoObj = await phaseTwo(resOneObj);
+			console.log('Success: ' + resTwoObj);
+		} catch(err) {
+			console.log('Error: '   + err);
+		}
+	}
+
+	wrapper('chennai6');
+
+	// Input: chennai 
+	// output: Success: chennai is the Correct Location
+	// input: madurai
+	// output: Error: Nomad
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Fetch Api (Alternative for xmlHttpRequest() -  Gives a request from browser to server for fetching the info/file)
+	// It is defined all the browsers (Web Workers)
+	// It returns promise
+	// Basic Structure
+	fetch('./data.json')					// return promise so it needs 'then' and 'catch'
+	.then(res  => { console.log(res); })	// executes only if resolved otherwise go to next line
+	.catch(err => { console.log(err); });	// executes if rejected
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Example 1: Access the local file - "data.json" using FETCH api
+	// Note: In fetch api, promise rejection ONLY happens if the problem related to fetch api itself (network error / access error etc).
+	// The promise resolves even the file is not found. So you need to check the 'status' check inside the resolved instead of reject block.
+	fetch('./dataOne.json')	// return promise so it needs 'then' and 'catch'
+	.then((res)  => {       // executes if resolved otherwise go to next line
+		if(res.status != 200) {
+			throw new Error('cannot fetch the data'); // automatically it became 'reject' promise and function exits
+		}
+		console.log(res);           // data is hidden inside the 'body' property
+		// console.log(res.json()); // data is available but .json() return promise so return it to another 'then'
+		return res.json();          // return promise / chaining
+	})
+	.then((data) => { console.log(data); })     // 'then' for 'res.json()' promise. {name: "sridhar", age: 39}
+	.catch((err) => { console.log(err); });	 	// executes if rejected
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Note: Promise can be handled by 2 methods: 1. then/catch/final     2. async /await
 	// async & await
 	// async function ALWAYS return Promise
 	const getTodos = async () => {	}
 	cosole.log(getTodos()); // returns Promise (even for the empty function)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	// Example 1a: Access the local file - "data.json" using FETCH api ( and async/await )
+	const wrapper = async () => {
+		const res = await fetch('./data.json'); // next line statements ONLY executed after it is resolved.
+		// console.log(res); // res is a response object NOT a promise
+		// console.log(res.json()); // .json() here returns Promise NOT a data inside the response object
+		const data = await res.json(); // comment above before running this statement
+		// console.log(data); // {name: "sridhar", age: 39}
+		return data;
+	};
 
+	// wrong way 
+	// const test = wrapper();
+	// console.log(test); // Promise - NOT a data even though wrapper() returns data but wrapper() is an async function
+
+	// correct way
+	wrapper()
+	.then(data => console.log(data)) // {name: "sridhar", age: 39}
+	.catch(err => console.log(err));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Example 2: Access the data from remote server('https://reqres.in/api/users')
+	fetch('https://reqres.in/api/users')
+	.then(res => res.json())        // send the json data promise to below '.then'
+	.then(data => console.log(data));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	// Example 3: Create a new user on the remote server('https://reqres.in/api/users') by post request
+	fetch('https://reqres.in/api/users', {
+		method:		'POST',      // HTTP Methods
+		headers:	{'Content-Type': 'application/json' }, // format of data to be send to the server
+		body:		JSON.stringify({ someName: 'sridhar'}) // data to be sent
+	})
+	.then(res => res.json())        // send the json data promise to below '.then'
+	.then(data => console.log(data));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
 
 	</script>
