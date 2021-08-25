@@ -7,7 +7,7 @@
 	// 										'https://reqres.in/api/users'
 
 
-	/*
+
 	// https://www.youtube.com/watch?v=vn3tm0quoqE
 	// Convert a Normal function into Async function:
 
@@ -22,9 +22,10 @@
 	// Convert the above function which returns promise
 	const getName = () => {
 		return Promise.resolve("sridhar");
+		// return Promise.reject("sridhar");
 	}
 
-	getName().then(console.log);
+	getName().then(console.log).catch(console.log);
 
 
 	// Above function can be written by a simple form using async:
@@ -32,10 +33,10 @@
 		return "sridhar";
 	}
 
-	getName().then(console.log);
+	getName().then(console.log).catch(console.log);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	/*
 	// setTimeout
 	console.log(1);
 	console.log(2);
@@ -108,6 +109,7 @@
 	console.log(2);
 	// 1, 2, StartLoop, EndLoop   <= 2 is blocked
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	// Promise - old style #1
 	const myPromise = new Promise((resolve, reject) => {
 		let x = 3 + 4;
@@ -116,7 +118,7 @@
 	});
 
 	myPromise.then(msg => console.log(msg))
-			 .catch(msg => console.log(msg));
+		    .catch(msg => console.log(msg));
 
 	// Promise - old style #2
 	const myPromise = () => {
@@ -128,6 +130,22 @@
 		});
 	};
 	myPromise().then(msg => console.log(msg), err => console.log(err));
+
+
+	// Promise - New style
+	const myPromise = async () => {
+		try {
+			// await function here - network related task comes here or anything which takes some time to proceed
+			let x = 3 + 14;
+			if(x === 7) return("Addition Success");
+			else throw 'Addition Failed'; // generates an exception
+
+		} catch(err) {
+			throw new Error(err);
+		}
+	};
+	myPromise().then(msg => console.log(msg), err => console.log(err));
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	// Old Way - Promise Chaining: (#3 files reading) Read one file fully and then go for the next file
