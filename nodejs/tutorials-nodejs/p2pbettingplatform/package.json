@@ -1,0 +1,11 @@
+{
+  "name": "p2pbettingplatform",
+  "version": "1.0.0",
+  "description": "Peer to Peer Betting Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sridhar Krishnan",
+  "license": "ISC"
+}
