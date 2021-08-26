@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	direction: ltr;
+	width: 100%;
+	/* color: #323229; */
+	/* background-color: #bfbfbf; */
+	line-height: 1.25;
+	/* font-family: "Lucida Grande","Lucida Sans Unicode",sans-serif; */
+	/* font-family: Verdana, Arial, Helvetica, sans-serif; */
+    font-family: roboto condensed,HelveticaNeue,helvetica neue,Helvetica,Arial,lucida grande,sans-serif;
+	/* font-size: 140%; */
+	font-size: 4vh;
+}
+
+div {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+
+/********************* Grid over another Grid (start) *************************/
+.wrapperRandomPick {
+    display: grid;
+}
+
+/* Placing 'selectorBoxId' grid over 'shuffleItemContainerId' */
+.shuffleItemsContainer, .pickerBox {
+    grid-area: 1/1;
+}
+
+/* Moving cell over the grid */
+#pickerBoxOneId {
+    /* grid-area: 1/3; */
+    grid-area: 1/1;
+    border: 5px solid blue;
+}
+
+#pickerBoxTwoId {
+    /* grid-area: 1/3; */
+    grid-area: 1/1;
+    border: 5px solid green;
+}
+
+
+#pickerBoxThreeId {
+    /* grid-area: 1/3; */
+    grid-area: 1/1;
+    border: 5px solid black;
+}
+/********************* Grid over another Grid (end) ***************************/
+
+.sliderOverBox {
+    border: 1px solid blue;
+    position: absolute;
+    z-index: 1;
+
+    /* transition: all 5s ease-in-out; */
+
+}
+
+/* .sliderOverBox:hover */
+/* .sliderOverBox:active
+{
+  transform: translate(50em,0);
+} */
+
+
+
+#sportsEventContainer {
+    display: none;
+}
+
+#betSlipContainer {
+    display: display;
+}
+
+#gameSimulatorContainer {
+    display: none;
+}
+
+.selectorBox {
+    display: grid;
+    grid-gap: .15rem;
+    grid-template-columns: 1fr 5fr;
+}
+
+.gridROw {
+    display: grid;
+    grid-gap: .15rem;
+}
+
+/* Grid Column Layout and Grid Size */
+.gridColumnLayout {
+    display: grid;
+    grid-gap: .15rem;
+
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fill,minmax(16rem,1fr)); */
+}
+
+.gridColumnLayout_2 {
+    grid-template-columns: 1fr 1fr;
+}
+.gridColumnLayout_3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.gridColumnLayout_5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+.gridColumnLayout_6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.size_1_9 {
+    grid-template-columns: 1fr 9fr;
+}
+
+.size_4_6 {
+    grid-template-columns: 4fr 6fr;
+}
+
+
+
+
+
+
+
+
+.odd, .player {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.totalAmt, .playerDesc {
+    font-size: 2vh;
+    opacity: .54;
+}
+
+.halfOpaque {
+    opacity: .54;
+}
+
+.odd, .totalAmt {
+    text-align: center;
+}
+
+.gridCenterVH {
+    display: grid;
+    /* vertical align*/
+    align-items: center;  
+    /* horizontal align */
+    justify-content: center;
+    text-align: center;
+}
+
+.cellSize {
+    /* width: 65px; */
+    /* width: 76px;
+    height:36; */
+}
+
+
+.backMainBgColor {
+    background-color: #8dd2f0;
+    /* width: 65px; */
+}
+
+.backOthersBgColor {
+    background-color: #e9f6fc;
+    /* width: 65px; */
+}
+
+.backMainFontColor {
+    color:#00b2ff;
+    font-weight: bold;
+}
+
+
+
+.layMainBgColor {
+    background-color: #feafb2;
+    /* width: 65px; */
+}
+
+.layOthersBgColor {
+    background-color: #fce3e4;
+    /* width: 65px; */
+}
+
+
+
+
+
+

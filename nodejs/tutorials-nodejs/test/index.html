@@ -1,0 +1,94 @@
+<script>
+	const foo = async () => {
+		return 'hello'; //  automatically 'hello' wrapped inside the promise
+	};
+
+	const str = foo();
+	console.log(str); // Promise(<fullfilled>) <== working way of accessing the string
+
+	foo().then(console.log); // hello
+		// or
+	(async() => {
+		const str = await foo();
+		console.log(str); // hello
+	})();
+
+
+	const foo = async () => {
+		setTimeout(() => { return 'hello'; }, 1000); //  'hello' is NOT wrapped inside the promise
+	};
+
+	foo().then(console.log); // undefined
+
+
+	const foo = async () => {
+		return new Promise(resolve => setTimeout(resolve('hello'), 1000)); // works - explicitly 
+		// wrapping hello inside the promise
+	};
+
+	foo().then(console.log); // hello
+
+
+	/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+	const foo = async () => {
+		// return 'hello'; // automatically 'hello' wrapped inside the promise
+		// setTimeout(() => { return 'hello'; }, 1000); //  'hello' is NOT wrapped inside the promise
+		return new Promise(resolve => setTimeout(resolve('hello'), 1000)); // works - explicitly wrap hello inside promise
+	};
+
+	// const str = foo();
+	// console.log(str); // Promise(<fullfilled>) <== working way of accessing the string
+
+	foo().then(console.log); // hello
+
+	// (async() => {
+	// 	const str = await foo();
+	// 	console.log(str); // hello
+	// })();
+
+
+
+
+
+
+
+
+	function networkDelay() {
+		setTimeout(() => { return 'hello'; }, 1000);
+	}
+
+	let str = networkDelay(); // undefined bcos str runs before setTimeout
+	console.log(str);         // undefined
+
+
+	function networkDelay() {
+		return new Promise(resolve => setTimeout(resolve('hello'), 1000));
+	}
+
+	networkDelay().then(console.log); // hello
+
+	let networkDelay = async () => {
+		// setTimeout(() => { return 'hello'; }, 1000); // NOT working
+		// setTimeout(() => new Promise(resolve => resolve('hello')), 1000); // NOT working
+		// setTimeout(() => new Promise(resolve => { return resolve('hello') } ), 1000); // NOT working
+		return new Promise(resolve => setTimeout(resolve('hello'), 1000)); // works
+	}
+
+	networkDelay().then(console.log);
+
+	////////////// or /////////////////
+
+	(async () => {
+		let str = await networkDelay();
+		console.log(str)
+	})();
+
+
+
+
+
+</script>

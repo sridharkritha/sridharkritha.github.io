@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/matchbook/style.css">
+	<script src="js/matchbook/script.js"></script>
+
+	<title>Test - Web</title>
+</head>
+
+<!-- 
+	Grid row & cols:
+	https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/ 
+-->
+
+<body>
+	<h1>Horse Race - Race Card</h1>
+
+<!-- game simulator -->
+<div id="gameSimulatorContainer">
+
+<div class="wrapperRandomPick">
+	<div id="shuffleItemsContainerId" class="shuffleItemsContainer gridColumnLayout gridColumnLayout_6 gridCenterVH">
+		<div>a</div>
+		<div>b</div>
+		<div>c</div>
+		<div>d</div>
+		<div>e</div>
+		<div id="shuffleLastItemId">f</div>
+	</div>
+
+	<div class="pickerBox gridColumnLayout gridColumnLayout_6 gridCenterVH">
+		<div id="pickerBoxOneId" class="overItem">&nbsp;</div>
+		<div id="pickerBoxTwoId" class="overItem">&nbsp;</div>
+		<div id="pickerBoxThreeId" class="overItem">&nbsp;</div>
+	</div>
+
+
+</div>
+
+	<!-- <div id="slideOverBoxId" class="sliderOverBox"></div>
+	<div id="shuffleItemContainerId" class="gridColumnLayout gridColumnLayout_6 gridCenterVH">
+		<div id="shuffleItemId">1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+	</div> -->
+
+</div>
+
+<!-- Bet Slip -->
+<div id="betSlipContainer">
+	<div>
+		<div class="gridColumnLayout gridColumnLayout_2">
+			<div>13:00</div>
+			<div>Wolverhampton</div>
+		</div>
+
+		<div class="gridColumnLayout gridColumnLayout_2">
+			<div>Win</div>
+			<div class="halfOpaque">8 She's A Deva</div>
+		</div>
+
+		<div class="gridColumnLayout gridColumnLayout_5 gridCenterVH">
+
+			<div class="gridColumnLayout gridColumnLayout_3">
+				<div class="gridCenterVH backMainBgColor">-</div>
+				<div class="backOthersBgColor">
+					<div class="backMainFontColor">BACK</div>
+					<div> 4.3</div>
+				</div>
+				<div class="gridCenterVH backMainBgColor">+</div>
+			</div>
+			<div class="backOthersBgColor">
+				<div class="backMainFontColor">STAKE</div>
+				<div> 4.3</div>
+			</div>
+			<div class="backOthersBgColor">
+				<div class="backMainFontColor">PROFIT</div>
+				<div> 4.3</div>
+			</div>
+			<!-- 
+				https://graphemica.com/ 
+				https://www.w3schools.com/charsets/ref_utf_symbols.asp
+			-->
+			<!-- html symbol - Tick -->
+			<div>&#10004;</div>
+			<!-- html symbol - binbasket -->
+			<div>&#128465;</div>	
+		</div>
+	</div>
+
+</div>
+
+ <!-- Event/Sports Container	 -->
+<div id="sportsEventContainer" class="gridROw">
+	<!-- 1st row -->
+	<div class="gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer">
+		<div class="gridColumnLayout gridColumnLayout_2 size_1_9 gameContainer">
+			<div><img alt="silk" class="" src="assets/matchbook/blackSilk.png"></div>
+			<div>
+				<div class="player">3 On The River</div>
+				<div class="playerDesc">J:Harrison Shaw T:B Hasalam</div>
+			</div>
+		</div>
+		<div class="gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize">
+			<div class="backBetLowContainer backOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="backBetMidContainer backOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="backBetHighContainer backMainBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+
+
+			<div class="layBetLowContainer layMainBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="layBetMidContainer layOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="layBetHighContainer layOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- 2nd row -->
+	<div class="gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer">
+		<div class="gridColumnLayout gridColumnLayout_2 size_1_9 gameContainer">
+			<div><img alt="silk" class="" src="assets/matchbook/pinkSilk.png"></div>
+			<div>
+				<div class="player">2 Soldier On Parade</div>
+				<div class="playerDesc">J:Mollie Phillips T:J L Spearing</div>
+			</div>
+		</div>
+		<div class="gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize">
+			<div class="backBetLowContainer backOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="backBetMidContainer backOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="backBetHighContainer backMainBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+
+
+			<div class="layBetLowContainer layMainBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="layBetMidContainer layOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="layBetHighContainer layOthersBgColor">
+				<div class="odd">2.92</div>
+				<div class="totalAmt">£144</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+</body>
+
+</html>
