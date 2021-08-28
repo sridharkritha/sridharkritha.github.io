@@ -3,6 +3,31 @@ window.addEventListener('load', function () {
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
+////////////////////////////////////////////////////////////////////////////////
+// stack addition and subtraction
+const backValue = document.getElementById('backValueId'); 
+
+let subtractBack = document.getElementById('subtractBackId');
+subtractBack.addEventListener('click', function () {
+	const value = Number(backValue.value);
+	if(value > 0.2) {
+		document.getElementById('backValueId').value = (value - 0.2).toFixed(2);
+	}
+	else document.getElementById('backValueId').value = (0).toFixed(2);
+});
+
+let additionBack = document.getElementById('additionBackId');
+additionBack.addEventListener('click', function () {
+	const value = Number(backValue.value);
+	if(value) {
+		document.getElementById('backValueId').value = (value+ 0.2).toFixed(2);
+	}
+	else document.getElementById('backValueId').value = (0.2).toFixed(2);
+});
+
+
+
+////////////////////////////////////////////////////////////////////////////////
 
 	let winnerPredictor = function(range, pickerBoxesId) {
 		if(range > 1 && range > pickerBoxesId.length) {
