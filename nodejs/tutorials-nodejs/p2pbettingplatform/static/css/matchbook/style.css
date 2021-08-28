@@ -22,7 +22,10 @@ div {
     padding: 10px;
 }
 
-
+/* label or other text is not selectable by a click or double click  */
+.unselectable {
+    user-select: none;
+}
 /********************* Grid over another Grid (start) *************************/
 .wrapperRandomPick {
     display: grid;
