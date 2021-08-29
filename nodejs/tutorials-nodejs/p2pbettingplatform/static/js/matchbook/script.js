@@ -10,8 +10,8 @@ const backValue = document.getElementById('backValueId');
 let subtractBack = document.getElementById('subtractBackId');
 subtractBack.addEventListener('click', function () {
 	const value = Number(backValue.value);
-	if(value > 0.2) {
-		document.getElementById('backValueId').value = (value - 0.2).toFixed(2);
+	if(value > 0.5) {
+		document.getElementById('backValueId').value = (value - 0.5).toFixed(2);
 	}
 	else document.getElementById('backValueId').value = (0).toFixed(2);
 });
@@ -20,9 +20,9 @@ let additionBack = document.getElementById('additionBackId');
 additionBack.addEventListener('click', function () {
 	const value = Number(backValue.value);
 	if(value) {
-		document.getElementById('backValueId').value = (value+ 0.2).toFixed(2);
+		document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
 	}
-	else document.getElementById('backValueId').value = (0.2).toFixed(2);
+	else document.getElementById('backValueId').value = (0.5).toFixed(2);
 });
 
 

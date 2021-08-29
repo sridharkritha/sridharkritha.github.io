@@ -22,10 +22,6 @@ div {
     padding: 10px;
 }
 
-/* label or other text is not selectable by a click or double click  */
-.unselectable {
-    user-select: none;
-}
 /********************* Grid over another Grid (start) *************************/
 .wrapperRandomPick {
     display: grid;
@@ -127,13 +123,6 @@ div {
     grid-template-columns: 4fr 6fr;
 }
 
-
-
-
-
-
-
-
 .odd, .player {
     font-size: 3vh;
     font-weight: bold;
@@ -167,10 +156,50 @@ div {
     height:36; */
 }
 
+/****************************** Bet Slip (start) ******************************/
+
+/* label or other text is not selectable by a click or double click  */
+.unselectable {
+    user-select: none;
+}
+
+input#backValueId {
+    text-align: center;
+}
+
+
+
+.tickButtonBackground {
+    background-color: white;
+    color: #0eb588;
+    transition: 0.3s;
+}
+
+.tickButtonBackground:hover { 
+    background-color: #0eb588;
+    color: white;
+}
+
+.binButtonBackground {
+    background-color: white;
+    color: #c51a1b;
+    transition: 0.3s;
+}
+
+.binButtonBackground:hover { 
+    background-color: #c51a1b;
+    color: white;
+}
+
 
 .backMainBgColor {
     background-color: #8dd2f0;
     /* width: 65px; */
+    transition: 0.3s;
+}
+
+.backMainBgColor:hover { 
+    background-color: #00b3ff;
 }
 
 .backOthersBgColor {
@@ -183,8 +212,6 @@ div {
     font-weight: bold;
 }
 
-
-
 .layMainBgColor {
     background-color: #feafb2;
     /* width: 65px; */
@@ -194,6 +221,8 @@ div {
     background-color: #fce3e4;
     /* width: 65px; */
 }
+
+/****************************** Bet Slip (end) ********************************/
 
 
 
