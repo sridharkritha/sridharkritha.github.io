@@ -4,6 +4,7 @@ function randomIntFromInterval(min, max) { // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 ////////////////////////////////////////////////////////////////////////////////
+
 // stack addition and subtraction
 const backValue = document.getElementById('backValueId'); 
 
@@ -25,7 +26,22 @@ additionBack.addEventListener('click', function () {
 	else document.getElementById('backValueId').value = (0.5).toFixed(2);
 });
 
+// Place a bet
 
+let placeBetButton = document.getElementById('placeBetButtonId');
+placeBetButton.addEventListener('click', function () {
+	const value = Number(backValue.value);
+	if(value) {
+		document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
+	}
+	else console.error("Invalid bet amount");
+});
+
+// Delete the bet slip
+let deleteBetButton = document.getElementById('deleteBetButtonId');
+deleteBetButton.addEventListener('click', function () {
+	document.getElementById('betSlipContainer').style.display = 'none';
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 
