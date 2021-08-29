@@ -167,6 +167,17 @@ input#backValueId {
     text-align: center;
 }
 
+/* remove the default up/down button for the 'number' type input filed */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 
 
 .tickButtonBackground {
