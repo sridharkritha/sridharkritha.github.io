@@ -42,10 +42,23 @@ deleteBetButton.addEventListener('click', function () {
 	document.getElementById('betSlipContainer').style.display = 'none';
 });
 
+//////////////////////////// Dynamic bet slip construction /////////////////////
+let betSlipSheet = {};
+function populateBetSlipSheet() {
+
+}
+
+
 ///////////////////////////// Odd range selection //////////////////////////////
 let oddSelected = document.getElementById('oddSelected_111');
 oddSelected.addEventListener('click', function () {
 	document.getElementById('betSlipContainer').style.display = 'block';
+
+	// document.getElementById("oddSelected_111").parentNode.parentNode.parentNode.children[0].innerHTML
+
+	// document.getElementById("oddSelected_111").parentNode.parentNode.children[0].children[1].children[0].innerHTML
+	// document.getElementById("oddSelected_111").parentNode.previousSibling.previousSibling.children[1].children[0].innerHTML;
+
 });
 
 ////////////////////////////////////////////////////////////////////////////////
