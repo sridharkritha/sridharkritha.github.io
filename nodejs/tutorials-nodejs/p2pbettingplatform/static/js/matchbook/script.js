@@ -27,7 +27,6 @@ additionBack.addEventListener('click', function () {
 });
 
 // Place a bet
-
 let placeBetButton = document.getElementById('placeBetButtonId');
 placeBetButton.addEventListener('click', function () {
 	const value = Number(backValue.value);
@@ -41,6 +40,12 @@ placeBetButton.addEventListener('click', function () {
 let deleteBetButton = document.getElementById('deleteBetButtonId');
 deleteBetButton.addEventListener('click', function () {
 	document.getElementById('betSlipContainer').style.display = 'none';
+});
+
+///////////////////////////// Odd range selection //////////////////////////////
+let oddSelected = document.getElementById('oddSelected_111');
+oddSelected.addEventListener('click', function () {
+	document.getElementById('betSlipContainer').style.display = 'block';
 });
 
 ////////////////////////////////////////////////////////////////////////////////

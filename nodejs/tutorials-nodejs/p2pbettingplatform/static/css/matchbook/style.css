@@ -22,6 +22,21 @@ div {
     padding: 10px;
 }
 
+/**************************** components (start) ******************************/
+
+#sportsEventContainer {
+    display: block;
+}
+
+#betSlipContainer {
+    display: none;
+}
+
+#gameSimulatorContainer {
+    display: none;
+}
+/**************************** components (end) ******************************/
+
 /********************* Grid over another Grid (start) *************************/
 .wrapperRandomPick {
     display: grid;
@@ -68,19 +83,6 @@ div {
   transform: translate(50em,0);
 } */
 
-
-
-#sportsEventContainer {
-    display: none;
-}
-
-#betSlipContainer {
-    display: display;
-}
-
-#gameSimulatorContainer {
-    display: none;
-}
 
 .selectorBox {
     display: grid;
