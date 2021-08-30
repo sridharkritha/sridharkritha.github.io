@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
 // Utility Functions
 function randomIntFromInterval(min, max) { // min and max included 
-  return Math.floor(Math.random() * (max - min + 1) + min)
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 ////////////////////////////////////////////////////////////////////////////////
 
