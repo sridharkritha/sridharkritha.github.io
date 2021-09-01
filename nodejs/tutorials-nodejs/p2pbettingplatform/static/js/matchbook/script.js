@@ -42,7 +42,146 @@ deleteBetButton.addEventListener('click', function () {
 	document.getElementById('betSlipContainer').style.display = 'none';
 });
 
-//////////////////////////// Dynamic bet slip construction /////////////////////
+//////////////////////////// Read json by fetch api ////////////////////////////
+fetch('sportsDB.json')	// return promise so it needs 'then' and 'catch'
+.then((res)  => {        // executes if resolved otherwise go to next line
+	if(res.status != 200) {
+		throw new Error('cannot fetch the data'); // automatically it became 'reject' promise and function exits
+	}
+	console.log(res);           // data is hidden inside the 'body' property
+	// console.log(res.json()); // data is available but .json() return promise so return it to another 'then'
+	return res.json();          // return promise / chaining
+})
+.then((data) => { 
+	console.log(data);
+	processInputData(data);
+}) // 'then' for 'res.json()' promise.
+.catch((err) => { 
+	console.log(err); // executes if rejected
+});
+
+//////////////////////////// Dynamically construct - Race Card /////////////////
+function processInputData(data) {
+	const gameName = 'horseRace';
+	const region = 'uk';
+	const raceName = 'Cartmel';
+	const date = '2021-09-20';
+	const time = '12:00';
+
+	const ref = data[gameName][region][raceName][date][time];
+	const matchType = ref.matchType;
+	const runLength = ref.runLength;
+	const players = ref.players;
+
+
+	let raceCardContainer = document.getElementById('sportsEventContainer');
+
+
+	let elem = document.createElement("div");
+	elem.innerHTML = time + '&nbsp' + raceName;
+	raceCardContainer.appendChild(elem);
+
+	elem = document.createElement("div");
+	elem.innerHTML = matchType + '&nbsp' + '|' + '&nbsp' + runLength;
+	raceCardContainer.appendChild(elem);
+
+	for(let i = 0, n = 1 /*players.length*/; i < n; ++i) {
+		// 1st row
+		let elem1 = document.createElement("div");
+		elem1.classList = "gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer";
+		raceCardContainer.appendChild(elem1);
+		let elem2 = document.createElement("div");
+		elem2.classList = "gridColumnLayout gridColumnLayout_2 size_1_9 gameContainer";
+		elem1.appendChild(elem2);
+		// silk
+		let elem3 = document.createElement("div");
+		elem2.appendChild(elem3);
+		let elem4 = document.createElement("img");
+		elem4.src = players[i].silk;
+		elem3.appendChild(elem4);
+		// Horse Name
+		elem3 = document.createElement("div");
+		elem2.appendChild(elem3);
+		elem4 = document.createElement("div");
+		elem4.classList = "player";
+		elem.innerHTML = players[i].horseName;
+		elem3.appendChild(elem4);
+		// Jockey and Trainer Name
+		elem4 = document.createElement("div");
+		elem4.classList = "playerDesc";
+		elem.innerHTML = players[i].jockeyName + '&nbsp' + players[i].trainerName;
+		elem3.appendChild(elem4);
+
+
+	
+	
+	
+		// elem.setAttribute("id","myId");
+		// elem.setAttribute("class","myStyleClass");
+		// elem.classList = "classA classB";
+	}
+
+
+
+
+
+	/*
+	<div>13:30 Ripon</div>
+	<div>Flat | 1m 1f 170y</div>
+	<!-- 1st row -->
+	<div class="gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer">           // elem1
+		<div class="gridColumnLayout gridColumnLayout_2 size_1_9 gameContainer">         // elem2
+			<div><img alt="silk" class="" src="assets/matchbook/blackSilk.png"></div>   // elem3
+			<div>
+				<div class="player">3 On The River</div>
+				<div class="playerDesc">J:Harrison Shaw T:B Hasalam</div>
+			</div>
+		</div>
+		<div class="gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize">
+			<div id="oddSelected_111" class="backBetLowContainer backOthersBgColor">
+				<div class="odd">1.11</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div id="oddSelected_122" class="backBetMidContainer backOthersBgColor">
+				<div class="odd">1.22</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="backBetHighContainer backMainBgColor">
+				<div class="odd">1.33</div>
+				<div class="totalAmt">£144</div>
+			</div>
+
+
+			<div class="layBetLowContainer layMainBgColor">
+				<div class="odd">1.44</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="layBetMidContainer layOthersBgColor">
+				<div class="odd">1.55</div>
+				<div class="totalAmt">£144</div>
+			</div>
+			<div class="layBetHighContainer layOthersBgColor">
+				<div class="odd">1.66</div>
+				<div class="totalAmt">£144</div>
+			</div>
+		</div>
+	</div>
+	*/
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+//////////////////////////// Dynamically construct - Bet slip //////////////////
 let betSlipSheet = {};
 function populateBetSlipSheet() {
 
