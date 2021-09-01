@@ -85,7 +85,7 @@ function processInputData(data) {
 	elem.innerHTML = matchType + '&nbsp' + '|' + '&nbsp' + runLength;
 	raceCardContainer.appendChild(elem);
 
-	for(let i = 0, n = 1 /*players.length*/; i < n; ++i) {
+	for(let i = 0, n = 2 /*players.length*/; i < n; ++i) {
 		// 1st row
 		let elem1 = document.createElement("div");
 		elem1.classList = "gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer";
@@ -104,12 +104,12 @@ function processInputData(data) {
 		elem2.appendChild(elem3);
 		elem4 = document.createElement("div");
 		elem4.classList = "player";
-		elem.innerHTML = players[i].horseName;
+		elem4.innerHTML = players[i].horseName;
 		elem3.appendChild(elem4);
 		// Jockey and Trainer Name
 		elem4 = document.createElement("div");
 		elem4.classList = "playerDesc";
-		elem.innerHTML = players[i].jockeyName + '&nbsp' + players[i].trainerName;
+		elem4.innerHTML = players[i].jockeyName + '&nbsp' + players[i].trainerName;
 		elem3.appendChild(elem4);
 
 

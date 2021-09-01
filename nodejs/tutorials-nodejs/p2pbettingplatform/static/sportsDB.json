@@ -16,6 +16,7 @@
 										"horseName": "6 Bollin May",
 										"jockeyName": "D Allan",
 										"trainerName": "T D Easterby",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [2.8,3.05,3.1],
 										"layOdds": [4.2,4.6,4.9]
 								},
@@ -23,6 +24,7 @@
 										"horseName": "8 Waxwing",
 										"jockeyName": "Joanna Mason",
 										"trainerName": "A Murphy",
+										"silk": "assets\/matchbook\/brownSilk.png",
 										"backOdds": [4.1,4.5,4.8],
 										"layOdds": [5.3,5.4,5.7]
 								}
@@ -36,6 +38,7 @@
 										"horseName": "1 Man Of The Night",
 										"jockeyName": "Jack Mitchell",
 										"trainerName": "D O' Meara",
+										"silk": "assets\/matchbook\/pinkSilk.png",
 										"backOdds": [3.8,3.95,4.1],
 										"layOdds": [5.3,5.6,5.9]
 								},
@@ -43,6 +46,7 @@
 										"horseName": "2 Dream With Me",
 										"jockeyName": "B A Curtis",
 										"trainerName": "M Johnston",
+										"silk": "assets\/matchbook\/redSilk.png",
 										"backOdds": [7.1,7.5,7.8],
 										"layOdds": [9.3,9.4,9.7]
 								}
@@ -62,13 +66,15 @@
 										"horseName": "11 French Company",
 										"jockeyName": "D Allan",
 										"trainerName": "T D Easterby",
+										"silk": "assets\/matchbook\/pinkSilk.png",
 										"backOdds": [2.8,3.05,3.1],
 										"layOdds": [4.2,4.6,4.9]
 								},
 								{
-										"horseName": "11 Rock Ya Boy Ya",
+										"horseName": "5 Rock Ya Boy Ya",
 										"jockeyName": "Joanna Mason",
 										"trainerName": "A Murphy",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [4.1,4.5,4.8],
 										"layOdds": [5.3,5.4,5.7]
 								}
@@ -82,6 +88,7 @@
 										"horseName": "1 Air Show",
 										"jockeyName": "Jack Mitchell",
 										"trainerName": "D O' Meara",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [3.8,3.95,4.1],
 										"layOdds": [5.3,5.6,5.9]
 								},
@@ -89,6 +96,7 @@
 										"horseName": "2 Triggered",
 										"jockeyName": "B A Curtis",
 										"trainerName": "M Johnston",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [7.1,7.5,7.8],
 										"layOdds": [9.3,9.4,9.7]
 								}
@@ -111,6 +119,7 @@
 										"horseName": "3. Dawn Tapper",
 										"jockeyName": "D Allan",
 										"trainerName": "T D Easterby",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [2.8,3.05,3.1],
 										"layOdds": [4.2,4.6,4.9]
 								},
@@ -118,6 +127,7 @@
 										"horseName": "6. Calvados",
 										"jockeyName": "Joanna Mason",
 										"trainerName": "A Murphy",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [4.1,4.5,4.8],
 										"layOdds": [5.3,5.4,5.7]
 								}
@@ -131,6 +141,7 @@
 										"horseName": "7 Classical Memories",
 										"jockeyName": "Jack Mitchell",
 										"trainerName": "D O' Meara",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [3.8,3.95,4.1],
 										"layOdds": [5.3,5.6,5.9]
 								},
@@ -138,6 +149,7 @@
 										"horseName": "4 Too Bright",
 										"jockeyName": "B A Curtis",
 										"trainerName": "M Johnston",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [7.1,7.5,7.8],
 										"layOdds": [9.3,9.4,9.7]
 								}
@@ -159,6 +171,7 @@
 										"horseName": "1 Artistic Work",
 										"jockeyName": "D Allan",
 										"trainerName": "T D Easterby",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [2.8,3.05,3.1],
 										"layOdds": [4.2,4.6,4.9]
 								},
@@ -166,6 +179,7 @@
 										"horseName": "6 See The Love",
 										"jockeyName": "Joanna Mason",
 										"trainerName": "A Murphy",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [4.1,4.5,4.8],
 										"layOdds": [5.3,5.4,5.7]
 								}
@@ -179,6 +193,7 @@
 										"horseName": "3 Baryshnikov",
 										"jockeyName": "Jack Mitchell",
 										"trainerName": "D O' Meara",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [3.8,3.95,4.1],
 										"layOdds": [5.3,5.6,5.9]
 								},
@@ -186,6 +201,7 @@
 										"horseName": "6 Myristica",
 										"jockeyName": "B A Curtis",
 										"trainerName": "M Johnston",
+										"silk": "assets\/matchbook\/blackSilk.png",
 										"backOdds": [7.1,7.5,7.8],
 										"layOdds": [9.3,9.4,9.7]
 								}
