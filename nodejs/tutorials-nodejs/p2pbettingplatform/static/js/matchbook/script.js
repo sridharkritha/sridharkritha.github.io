@@ -109,11 +109,113 @@ function processInputData(data) {
 		// Jockey and Trainer Name
 		elem4 = document.createElement("div");
 		elem4.classList = "playerDesc";
-		elem4.innerHTML = players[i].jockeyName + '&nbsp' + players[i].trainerName;
+		elem4.innerHTML = 'J:' + players[i].jockeyName + '&nbsp' + 'T:'+ players[i].trainerName;
 		elem3.appendChild(elem4);
 
 
-	
+
+		
+
+		// odd range - back
+		elem2 = document.createElement("div");
+		elem2.classList = "gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize";
+		elem1.appendChild(elem2);
+		// 111
+		elem3 = document.createElement("div");
+		elem3.classList = "backBetLowContainer backOthersBgColor";
+		elem3.setAttribute("id","oddSelected_111");
+		elem2.appendChild(elem3);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "odd";
+		elem4.innerHTML = players[i].backOdds[0];
+		elem3.appendChild(elem4);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "totalAmt";
+		elem4.innerHTML = "£ " + players[i].backOdds[0];
+		elem3.appendChild(elem4);
+
+		// 122
+		elem3 = document.createElement("div");
+		elem3.classList = "backBetMidContainer backOthersBgColor";
+		elem3.setAttribute("id","oddSelected_122");
+		elem2.appendChild(elem3);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "odd";
+		elem4.innerHTML = players[i].backOdds[1];
+		elem3.appendChild(elem4);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "totalAmt";
+		elem4.innerHTML = "£ " + players[i].backOdds[1];
+		elem3.appendChild(elem4);
+
+		// 133
+		elem3 = document.createElement("div");
+		elem3.classList = "backBetHighContainer backOthersBgColor";
+		elem3.setAttribute("id","oddSelected_133");
+		elem2.appendChild(elem3);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "odd";
+		elem4.innerHTML = players[i].backOdds[2];
+		elem3.appendChild(elem4);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "totalAmt";
+		elem4.innerHTML = "£ " + players[i].backOdds[2];
+		elem3.appendChild(elem4);
+
+		// odd range - lay
+		// 144
+		elem3 = document.createElement("div");
+		elem3.classList = "layBetLowContainer layMainBgColor";
+		elem3.setAttribute("id","oddSelected_144");
+		elem2.appendChild(elem3);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "odd";
+		elem4.innerHTML = players[i].layOdds[0];
+		elem3.appendChild(elem4);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "totalAmt";
+		elem4.innerHTML = "£ " + players[i].layOdds[0];
+		elem3.appendChild(elem4);
+
+		// 155
+		elem3 = document.createElement("div");
+		elem3.classList = "layBetMidContainer layMainBgColor";
+		elem3.setAttribute("id","oddSelected_155");
+		elem2.appendChild(elem3);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "odd";
+		elem4.innerHTML = players[i].layOdds[1];
+		elem3.appendChild(elem4);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "totalAmt";
+		elem4.innerHTML = "£ " + players[i].layOdds[1];
+		elem3.appendChild(elem4);
+
+		// 166
+		elem3 = document.createElement("div");
+		elem3.classList = "layBetHighContainer layMainBgColor";
+		elem3.setAttribute("id","oddSelected_166");
+		elem2.appendChild(elem3);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "odd";
+		elem4.innerHTML = players[i].layOdds[2];
+		elem3.appendChild(elem4);
+
+		elem4 = document.createElement("div");
+		elem4.classList = "totalAmt";
+		elem4.innerHTML = "£ " + players[i].layOdds[2];
+		elem3.appendChild(elem4);	
 	
 	
 		// elem.setAttribute("id","myId");
