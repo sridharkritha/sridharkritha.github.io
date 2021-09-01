@@ -140,7 +140,7 @@ function processInputData(data) {
 		// 111
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetLowContainer backOthersBgColor";
-		elem3.setAttribute("id","oddSelected_111");
+		elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -172,7 +172,7 @@ function processInputData(data) {
 
 		// 133
 		elem3 = document.createElement("div");
-		elem3.classList = "backBetHighContainer backOthersBgColor";
+		elem3.classList = "backBetHighContainer backMainBgColor";
 		elem3.setAttribute("id","oddSelected_133");
 		elem2.appendChild(elem3);
 
@@ -205,7 +205,7 @@ function processInputData(data) {
 
 		// 155
 		elem3 = document.createElement("div");
-		elem3.classList = "layBetMidContainer layMainBgColor";
+		elem3.classList = "layBetMidContainer layOthersBgColor";
 		elem3.setAttribute("id","oddSelected_155");
 		elem2.appendChild(elem3);
 
@@ -221,7 +221,7 @@ function processInputData(data) {
 
 		// 166
 		elem3 = document.createElement("div");
-		elem3.classList = "layBetHighContainer layMainBgColor";
+		elem3.classList = "layBetHighContainer layOthersBgColor";
 		elem3.setAttribute("id","oddSelected_166");
 		elem2.appendChild(elem3);
 
@@ -240,6 +240,20 @@ function processInputData(data) {
 		// elem.setAttribute("class","myStyleClass");
 		// elem.classList = "classA classB";
 	}
+
+
+
+
+	// bet slip container
+	let oddSelectedXXX = document.getElementById('oddSelected_xxx');
+		oddSelectedXXX.addEventListener('click', function () {
+		document.getElementById('betSlipContainer').style.display = 'block';
+
+		// document.getElementById("oddSelected_111").parentNode.parentNode.parentNode.children[0].innerHTML
+
+		// document.getElementById("oddSelected_111").parentNode.parentNode.children[0].children[1].children[0].innerHTML
+		// document.getElementById("oddSelected_111").parentNode.previousSibling.previousSibling.children[1].children[0].innerHTML;
+	});
 
 
 
