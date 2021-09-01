@@ -3,6 +3,23 @@ window.addEventListener('load', function () {
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+/////////////////////////////////// TEST ///////////////////////////////////////
+ 
+ function test() {
+	// let parElem = document.createElement("div");
+	// parElem.innerText = "parent";
+	// let child_1_Elem = document.createElement("div");
+	// child_1_Elem.innerText = "child 1";
+	// let child_2_Elem = document.createElement("div");
+	// child_2_Elem.innerText = "child 2";
+	// parElem.append(child_1_Elem,child_2_Elem );
+	// document.body.appendChild(parElem);
+}
+
+test();
+ 
+
 ////////////////////////////////////////////////////////////////////////////////
 
 // stack addition and subtraction
@@ -129,12 +146,13 @@ function processInputData(data) {
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
 		elem4.innerHTML = players[i].backOdds[0];
-		elem3.appendChild(elem4);
+		// elem3.appendChild(elem4);
 
-		elem4 = document.createElement("div");
-		elem4.classList = "totalAmt";
-		elem4.innerHTML = "£ " + players[i].backOdds[0];
-		elem3.appendChild(elem4);
+		elem5 = document.createElement("div");
+		elem5.classList = "totalAmt";
+		elem5.innerHTML = "£ " + players[i].backOdds[0];
+		// elem3.appendChild(elem5);
+		elem3.append(elem4,elem5);
 
 		// 122
 		elem3 = document.createElement("div");
