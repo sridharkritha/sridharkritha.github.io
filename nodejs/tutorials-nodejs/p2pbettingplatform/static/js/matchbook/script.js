@@ -129,10 +129,6 @@ function processInputData(data) {
 		elem4.innerHTML = 'J:' + players[i].jockeyName + '&nbsp' + 'T:'+ players[i].trainerName;
 		elem3.appendChild(elem4);
 
-
-
-		
-
 		// odd range - back
 		elem2 = document.createElement("div");
 		elem2.classList = "gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize";
@@ -234,86 +230,14 @@ function processInputData(data) {
 		elem4.classList = "totalAmt";
 		elem4.innerHTML = "£ " + players[i].layOdds[2];
 		elem3.appendChild(elem4);	
-	
-	
-		// elem.setAttribute("id","myId");
-		// elem.setAttribute("class","myStyleClass");
-		// elem.classList = "classA classB";
 	}
-
-
-
 
 	// bet slip container
 	let oddSelectedXXX = document.getElementById('oddSelected_xxx');
 		oddSelectedXXX.addEventListener('click', function () {
 		document.getElementById('betSlipContainer').style.display = 'block';
-
-		// document.getElementById("oddSelected_111").parentNode.parentNode.parentNode.children[0].innerHTML
-
-		// document.getElementById("oddSelected_111").parentNode.parentNode.children[0].children[1].children[0].innerHTML
-		// document.getElementById("oddSelected_111").parentNode.previousSibling.previousSibling.children[1].children[0].innerHTML;
 	});
-
-
-
-
-
-	/*
-	<div>13:30 Ripon</div>
-	<div>Flat | 1m 1f 170y</div>
-	<!-- 1st row -->
-	<div class="gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer">           // elem1
-		<div class="gridColumnLayout gridColumnLayout_2 size_1_9 gameContainer">         // elem2
-			<div><img alt="silk" class="" src="assets/matchbook/blackSilk.png"></div>   // elem3
-			<div>
-				<div class="player">3 On The River</div>
-				<div class="playerDesc">J:Harrison Shaw T:B Hasalam</div>
-			</div>
-		</div>
-		<div class="gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize">
-			<div id="oddSelected_111" class="backBetLowContainer backOthersBgColor">
-				<div class="odd">1.11</div>
-				<div class="totalAmt">£144</div>
-			</div>
-			<div id="oddSelected_122" class="backBetMidContainer backOthersBgColor">
-				<div class="odd">1.22</div>
-				<div class="totalAmt">£144</div>
-			</div>
-			<div class="backBetHighContainer backMainBgColor">
-				<div class="odd">1.33</div>
-				<div class="totalAmt">£144</div>
-			</div>
-
-
-			<div class="layBetLowContainer layMainBgColor">
-				<div class="odd">1.44</div>
-				<div class="totalAmt">£144</div>
-			</div>
-			<div class="layBetMidContainer layOthersBgColor">
-				<div class="odd">1.55</div>
-				<div class="totalAmt">£144</div>
-			</div>
-			<div class="layBetHighContainer layOthersBgColor">
-				<div class="odd">1.66</div>
-				<div class="totalAmt">£144</div>
-			</div>
-		</div>
-	</div>
-	*/
-
-
-
-
-
 }
-
-
-
-
-
-
-
 
 //////////////////////////// Dynamically construct - Bet slip //////////////////
 let betSlipSheet = {};
@@ -326,12 +250,6 @@ function populateBetSlipSheet() {
 let oddSelected = document.getElementById('oddSelected_111');
 oddSelected.addEventListener('click', function () {
 	document.getElementById('betSlipContainer').style.display = 'block';
-
-	// document.getElementById("oddSelected_111").parentNode.parentNode.parentNode.children[0].innerHTML
-
-	// document.getElementById("oddSelected_111").parentNode.parentNode.children[0].children[1].children[0].innerHTML
-	// document.getElementById("oddSelected_111").parentNode.previousSibling.previousSibling.children[1].children[0].innerHTML;
-
 });
 
 ////////////////////////////////////////////////////////////////////////////////
