@@ -5,6 +5,29 @@ function randomIntFromInterval(min, max) { // min and max included
 }
 
 /////////////////////////////////// TEST ///////////////////////////////////////
+// https://stackoverflow.com/questions/494143/creating-a-new-dom-element-from-an-html-string-using-built-in-dom-methods-or-pro/35385518#35385518
+// https://stackoverflow.com/questions/3103962/converting-html-string-into-dom-elements?noredirect=1&lq=1
+
+// https://stackoverflow.com/questions/23030080/get-text-of-nested-childnodes-javascript
+
+// if (parg.hasChildNodes()) {
+// 	let children = parg.childNodes;
+
+
+
+/**
+ * @param {String} HTML representing a single element
+ * @return {Element}
+ */
+ function htmlToElement(html) {
+	var template = document.createElement('template');
+	html = html.trim(); // Never return a text node of whitespace as the result
+	template.innerHTML = html;
+
+	var a = template.content.firstChild;
+	var b = template.content.childNodes;
+	return template.content;
+ }
  
  function test() {
 	// let parElem = document.createElement("div");
@@ -15,6 +38,37 @@ function randomIntFromInterval(min, max) { // min and max included
 	// child_2_Elem.innerText = "child 2";
 	// parElem.append(child_1_Elem,child_2_Elem );
 	// document.body.appendChild(parElem);
+
+
+	let htmlString = `
+	<div id="grantID" class="grantClass11"> I'm grandDad - krishnan
+	<div id="parentID" class="parentClass13  parentClass23 parentClass33"> I'm son - sridhar
+		<div id="sonID" class="sonClass12  sonClass22"> I'm Jay
+			<div>&nbsp;toys&#10004;</div>
+			<div id="yId">youtube</div>
+			<div class="sClass">school</div>
+		</div>
+	</div>
+	<div id="siblingParentId" class="siblingparentClass12 siblingparentClass22" disabled> I'm son - muthu
+		<input type="number" id="myInputId" placeholder="12.34">
+		<div>
+			<img alt="silk" class="mySilkClass11" src="assets/matchbook/pinkSilk.png">
+		</div>
+	</div>
+ </div>
+	`;
+ 
+ var result = htmlToElement(htmlString);
+ console.log(result.childNodes);
+
+ // browsing through childNodes of childNodes
+ for(let i = 0, m = result.childNodes.length; i < m; ++i) {
+	for(let j = 0, n = result.childNodes[i].childNodes.length; j < n; ++j) {
+		 console.log(result.childNodes[i].childNodes[j].childNodes);
+	}
+}
+
+
 }
 
 test();
