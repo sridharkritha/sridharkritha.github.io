@@ -21,6 +21,19 @@ function test() {
 }
 // test();
 ////////////////////////////////// TEST (end) //////////////////////////////////////////////////////////////////////////
+// A quick script you can paste into your console to report any duplicates.
+// Alternate solution: http://validator.w3.org/
+/*
+var allElements = document.getElementsByTagName("*"), allIds = {}, dupIDs = [];
+for (var i = 0, n = allElements.length; i < n; ++i) {
+  var el = allElements[i];
+  if (el.id) {
+  	if (allIds[el.id] !== undefined) dupIDs.push(el.id);
+  	allIds[el.id] = el.name || el.id;
+    }
+  }
+if (dupIDs.length) { console.error("Duplicate ID's:", dupIDs);} else { console.log("No Duplicates Detected"); }
+*/
 
 
 ///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (start) /////////////////////////////////////////////////

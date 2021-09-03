@@ -12,8 +12,9 @@
 </head>
 
 <!-- 
-	Grid row & cols:
-	https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/ 
+Validate HTML: https://validator.w3.org/#validate_by_input
+
+Grid row & cols: https://www.joomlashack.com/blog/tutorials/center-and-align-items-in-css-grid/ 
 -->
 
 <body>
@@ -78,46 +79,45 @@
 
 <!-- Bet Slip -->
 <div id="betSlipContainer" class="unselectable">
-	<div>
-		<div class="gridColumnLayout gridColumnLayout_2">
-			<div>13:00</div>
-			<div>Wolverhampton</div>
-		</div>
 
-		<div class="gridColumnLayout gridColumnLayout_2">
-			<div>Win</div>
-			<div class="halfOpaque">8 She's A Deva</div>
-		</div>
+	<div id="timeVenueId" class="gridColumnLayout gridColumnLayout_2">
+		<div id="timeId">13:00</div>
+		<div id="venueId">Wolverhampton</div>
+	</div>
 
-		<div class="gridColumnLayout gridColumnLayout_5 gridCenterVH">
+	<div id="outcomePlayerId" class="gridColumnLayout gridColumnLayout_2">
+		<div id="outcomeId">Win</div>
+		<div id="playerId" class="halfOpaque">8 She's A Deva</div>
+	</div>
 
-			<div class="gridColumnLayout gridColumnLayout_3">
-				<div id="subtractBackId" class="gridCenterVH backMainBgColor">-</div>
-				<div class="backOthersBgColor">
-					<div class="backMainFontColor" disabled>BACK</div>
-					<div> 
-						<input type="number" id="backValueId" placeholder="4.3">
-					</div>
+	<div id="backStakeProfitBetBinId" class="gridColumnLayout gridColumnLayout_5 gridCenterVH">
+
+		<div id="backPlusMinusId" class="gridColumnLayout gridColumnLayout_3">
+			<div id="subtractBackId" class="gridCenterVH backMainBgColor">-</div>
+			<div id="backOthersBgColorId" class="backOthersBgColor">
+				<div id="backMainFontColorId" class="backMainFontColor">BACK</div>
+				<div id="backValueContainerId"> 
+					<input id="backValueId" type="number" placeholder="4.3">
 				</div>
-				<div id="additionBackId" class="gridCenterVH backMainBgColor">+</div>
 			</div>
-			<div class="backOthersBgColor">
-				<div class="backMainFontColor">STAKE</div>
-				<div> 4.3</div>
-			</div>
-			<div class="backOthersBgColor">
-				<div class="backMainFontColor">PROFIT</div>
-				<div> 4.3</div>
-			</div>
-			<!-- 
-				https://graphemica.com/ 
-				https://www.w3schools.com/charsets/ref_utf_symbols.asp
-			-->
-			<!-- html symbol - Tick -->
-			<div id="placeBetButtonId" class="tickButtonBackground">&#10004;</div>
-			<!-- html symbol - binbasket -->
-			<div id="deleteBetButtonId" class="binButtonBackground">&#128465;</div>	
+			<div id="additionBackId" class="gridCenterVH backMainBgColor">+</div>
 		</div>
+		<div id="stakeBackOthersBgColor" class="backOthersBgColor">
+			<div id="stakeId" class="backMainFontColor">STAKE</div>
+			<div id="stakeValueId"> 4.3</div>
+		</div>
+		<div id="profitBackOthersBgColorId" class="backOthersBgColor">
+			<div id="profitBackMainFontColorId" class="backMainFontColor">PROFIT</div>
+			<div id="profitValueBackMainFontColorId"> 4.3</div>
+		</div>
+		<!-- 
+			https://graphemica.com/ 
+			https://www.w3schools.com/charsets/ref_utf_symbols.asp
+		-->
+		<!-- html symbol - Tick -->
+		<div id="placeBetButtonId" class="tickButtonBackground">&#10004;</div>
+		<!-- html symbol - binbasket -->
+		<div id="deleteBetButtonId" class="binButtonBackground">&#128465;</div>	
 	</div>
 </div>
 
