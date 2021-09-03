@@ -102,22 +102,58 @@ nodeType: 3
 nodeValue: "\n\t\t\t"
 */
 
-function createDomElement(propObj) {
+var getId = (function () {
+	var incrementingId = 0;
+	return function(element) {
+	  if (!element.id) {
+	    element.id = "id_" + incrementingId++;
+	    // Possibly add a check if this ID really is unique
+	  }
+	  return element.id;
+	};
+}());
+
+
+let htmlGenStr = `\n let elemRef = null;`;
+const filterProp = ['nodeName', 'nodeType', 'nodeValue'];
+let autoIdIndex = 0;
+
+function createDomElement(node, parentNode) {
+	let str = '';
+	const propObj = extractNodeAttributes(node);
 	let elemRef = null;
+
+	// str = `\n elemRef = null;`;
+
 
 	if(propObj.nodeName) {
 		if(propObj.nodeType === 3) { // '#text' - node
-			elemRef = document.createTextNode(propObj.nodeValue);
+			elemRef = document.createTextNode(propObj.nodeValue.trim());
+			htmlGenStr += `\n elemRef = document.createTextNode("${propObj.nodeValue.trim()}");`
 		}
 		else {
 			elemRef = document.createElement(propObj.nodeName);
+			htmlGenStr += `\n elemRef = document.createElement("${propObj.nodeName}");`
+
+			// Generate id if it is NOT exist.
+			if(!propObj.id) {
+				propObj.id = 'myParentId'+'#'+ parentNode.id + '#myId' + autoIdIndex++;
+				elemRef.id = propObj.id;
+				node.id = propObj.id;
+			}
+
+
 			for (let key in propObj) {
-				if (propObj.hasOwnProperty(key)) {
+				if (propObj.hasOwnProperty(key) && !filterProp.includes(key)) {
 					elemRef.setAttribute(key,propObj[key]);
-					// elem2.appendChild(elemRef);
+					htmlGenStr += `\n elemRef.setAttribute("${key}","${propObj[key]}");`;
 				}
 			}
+
 		}
+
+		// parentNode.appendChild(elemRef);
+		htmlGenStr += `\n document.getElementById("${parentNode.id}").appendChild(elemRef); \n`;
 	}
 	return elemRef;
 }
@@ -126,7 +162,7 @@ function cloneAttributes(target, source) {
 	[...source.attributes].forEach( attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) })
 }
 
-function extractNodeInfo(node) {
+function extractNodeAttributes(node) {
     let propObj = {};
 
     if(node.attributes) {
@@ -141,10 +177,12 @@ function extractNodeInfo(node) {
 	propObj.nodeName =  node.nodeName; // "DIV"
 	propObj.nodeType =  node.nodeType; // 1
 	propObj.nodeValue =  node.nodeValue; // "DIV"
-	propObj.parentElement =  node.parentElement; // "div#htmlStringWrapper
+	// propObj.parentElement =  node.parentElement; // "div#htmlStringWrapper
+
+	return propObj;
 
 
-    
+
 
     
 // nodeName: "DIV"
@@ -155,17 +193,18 @@ function extractNodeInfo(node) {
 // parentElement: div#htmlStringWrapper
 
 
-	createDomElement(propObj);
+	// createDomElement(propObj);
 }
 
 let lookupTable = {};
 function domTree (node) {
+	let newElem = null;
 	for (var i = 0; i < node.childNodes.length; i++) {
 	  var child = node.childNodes[i];
 	  if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
 		console.log(child);
 		lookupTable[child.parentElement] = child.parentElement;
-		extractNodeInfo(child);
+		newElem = createDomElement(child, child.parentNode );
 	  }
 
 	  domTree(child);
