@@ -84,8 +84,8 @@ function createDomElement(node, parentNode) {
 function domTreeTraversal(node) {
 	for(let i = 0; i < node.childNodes.length; i++) {
 		let child = node.childNodes[i];
-		// skip the empty text nodes
-		if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
+		// skip the empty text nodes(nodeType = 3) and comments (nodeType = 8)
+		if(child.nodeType != 8 && (child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim()))) {
 			console.log(child);
 			createDomElement(child, child.parentNode );
 		}
@@ -95,87 +95,168 @@ function domTreeTraversal(node) {
 }
 
 
-domTreeTraversal(document.getElementById('htmlStringWrapper'));
+// domTreeTraversal(document.getElementById('htmlStringWrapper'));
+domTreeTraversal(document.getElementById('betSlipContainer'));
+
 console.log(htmlGenStr);
 
 ///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (start) /////////////////////////////////////////////////
 
 function domTreeTest() {
-	let elemRef = null;
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","grantID");
-	elemRef.setAttribute("class","grantClass11");
-	document.getElementById("htmlStringWrapper1").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("I'm grandDad - krishnan");
-	document.getElementById("grantID").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","parentID");
-	elemRef.setAttribute("class","parentClass13  parentClass23 parentClass33");
-	document.getElementById("grantID").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("I'm son - sridhar");
-	document.getElementById("parentID").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","sonID");
-	elemRef.setAttribute("class","sonClass12  sonClass22");
-	document.getElementById("parentID").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("I'm Jay");
-	document.getElementById("sonID").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","myParentId_sonID_myId_0");
-	document.getElementById("sonID").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("toys✔");
-	document.getElementById("myParentId_sonID_myId_0").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","yId");
-	document.getElementById("sonID").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("youtube");
-	document.getElementById("yId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("class","sClass");
-	elemRef.setAttribute("id","myParentId_sonID_myId_1");
-	document.getElementById("sonID").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("school");
-	document.getElementById("myParentId_sonID_myId_1").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","siblingParentId");
-	elemRef.setAttribute("class","siblingparentClass12 siblingparentClass22");
-	elemRef.setAttribute("disabled","");
-	document.getElementById("grantID").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("I'm son - muthu");
-	document.getElementById("siblingParentId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("INPUT");
-	elemRef.setAttribute("type","number");
-	elemRef.setAttribute("id","myInputId");
-	elemRef.setAttribute("placeholder","12.34");
-	document.getElementById("siblingParentId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","myParentId_siblingParentId_myId_2");
-	document.getElementById("siblingParentId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("IMG");
-	elemRef.setAttribute("alt","silk");
-	elemRef.setAttribute("class","mySilkClass11");
-	elemRef.setAttribute("src","assets/matchbook/pinkSilk.png");
-	elemRef.setAttribute("id","myParentId_myParentId_siblingParentId_myId_2_myId_3");
-	document.getElementById("myParentId_siblingParentId_myId_2").appendChild(elemRef); 
-    
+
+ let elemRef = null; 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_betSlipContainer_myId_0");
+ document.getElementById("betSlipContainer").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+ elemRef.setAttribute("id","myParentId_myParentId_betSlipContainer_myId_0_myId_1");
+ document.getElementById("myParentId_betSlipContainer_myId_0").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_2");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_1").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("13:00");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_2").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_3");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_1").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("Wolverhampton");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_3").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+ elemRef.setAttribute("id","myParentId_myParentId_betSlipContainer_myId_0_myId_4");
+ document.getElementById("myParentId_betSlipContainer_myId_0").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_5");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_4").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("Win");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_5").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","halfOpaque");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_6");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_4").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("8 She's A Deva");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_6").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
+ elemRef.setAttribute("id","myParentId_myParentId_betSlipContainer_myId_0_myId_7");
+ document.getElementById("myParentId_betSlipContainer_myId_0").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","subtractBackId");
+ elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("-");
+ document.getElementById("subtractBackId").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","backOthersBgColor");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","backMainFontColor");
+ elemRef.setAttribute("disabled","");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_10");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("BACK");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_10").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_11");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9").appendChild(elemRef); 
+
+ elemRef = document.createElement("INPUT");
+ elemRef.setAttribute("type","number");
+ elemRef.setAttribute("id","backValueId");
+ elemRef.setAttribute("placeholder","4.3");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_11").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","additionBackId");
+ elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("+");
+ document.getElementById("additionBackId").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","backOthersBgColor");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","backMainFontColor");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_13");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("STAKE");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_13").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_14");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("4.3");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_14").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","backOthersBgColor");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","backMainFontColor");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_16");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("PROFIT");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_16").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_17");
+ document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("4.3");
+ document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_17").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","placeBetButtonId");
+ elemRef.setAttribute("class","tickButtonBackground");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("✔");
+ document.getElementById("placeBetButtonId").appendChild(elemRef); 
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","deleteBetButtonId");
+ elemRef.setAttribute("class","binButtonBackground");
+ document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
+
+ elemRef = document.createTextNode("🗑");
+ document.getElementById("deleteBetButtonId").appendChild(elemRef); 
+
 }
-domTreeTest();
+// domTreeTest();
  
 
 ////////////////////////////////////////////////////////////////////////////////
