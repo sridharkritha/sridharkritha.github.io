@@ -10,138 +10,62 @@ function randomIntFromInterval(min, max) { // min and max included
 
 // https://stackoverflow.com/questions/23030080/get-text-of-nested-childnodes-javascript
 
-// if (parg.hasChildNodes()) {
-// 	let children = parg.childNodes;
 
 
 
-/**
- * @param {String} HTML representing a single element
- * @return {Element}
- */
- function htmlToElement(html) {
-	var template = document.createElement('template');
-	html = html.trim(); // Never return a text node of whitespace as the result
-	template.innerHTML = html;
 
-	var a = template.content.firstChild;
-	var b = template.content.childNodes;
-	return template.content;
- }
+/////////////////////////////////// TEST (start) ///////////////////////////////////////////////////////////////////////
  
- function test() {
-	// let parElem = document.createElement("div");
-	// parElem.innerText = "parent";
-	// let child_1_Elem = document.createElement("div");
-	// child_1_Elem.innerText = "child 1";
-	// let child_2_Elem = document.createElement("div");
-	// child_2_Elem.innerText = "child 2";
-	// parElem.append(child_1_Elem,child_2_Elem );
-	// document.body.appendChild(parElem);
+function test() {
 
-
-	let htmlString = `
-	<div id="grantID" class="grantClass11"> I'm grandDad - krishnan
-	<div id="parentID" class="parentClass13  parentClass23 parentClass33"> I'm son - sridhar
-		<div id="sonID" class="sonClass12  sonClass22"> I'm Jay
-			<div>&nbsp;toys&#10004;</div>
-			<div id="yId">youtube</div>
-			<div class="sClass">school</div>
-		</div>
-	</div>
-	<div id="siblingParentId" class="siblingparentClass12 siblingparentClass22" disabled> I'm son - muthu
-		<input type="number" id="myInputId" placeholder="12.34">
-		<div>
-			<img alt="silk" class="mySilkClass11" src="assets/matchbook/pinkSilk.png">
-		</div>
-	</div>
- 	</div>
-	`;
- 
-	var result = htmlToElement(htmlString);
-	console.log(result.childNodes);
-
-	// browsing through childNodes of childNodes
-	for(let i = 0, m = result.childNodes.length; i < m; ++i) {
-		for(let j = 0, n = result.childNodes[i].childNodes.length; j < n; ++j) {
-			console.log(result.childNodes[i].childNodes[j].childNodes);
-		}
-	}
 }
 // test();
-/*
-child.localName +'#'+ child.id + '.'+child.className
-k.replace(/\s+/g,'.');
+////////////////////////////////// TEST (end) //////////////////////////////////////////////////////////////////////////
 
 
-childNodes[0].parentElement <= id
+///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (start) /////////////////////////////////////////////////
 
-
-className: "parentClass13  parentClass23 parentClass33"
-id: "parentID"
-
-
-nodeName: "DIV"
-nodeType: 1
-nodeValue: null
-
-localName: "div"
-nodeName: "DIV"
-
-
-
-
-nodeName: "#text"
-nodeType: 3
-nodeValue: " I'm son - sridhar\n\t\t\t"
-
-
-
-nodeName: "#text"
-nodeType: 3
-nodeValue: "\n\t\t\t"
-*/
-
-var getId = (function () {
-	var incrementingId = 0;
-	return function(element) {
-	  if (!element.id) {
-	    element.id = "id_" + incrementingId++;
-	    // Possibly add a check if this ID really is unique
-	  }
-	  return element.id;
-	};
-}());
-
-
-let htmlGenStr = `\n let elemRef = null;`;
+let htmlGenStr = `\n let elemRef = null; \n`; // final output
 const filterProp = ['nodeName', 'nodeType', 'nodeValue'];
 let autoIdIndex = 0;
 
+
+function extractNodeAttributes(node) {
+	let propObj = {};
+
+	// copy the node attributes to propObj
+	if(node.attributes) {
+		[...node.attributes].forEach( attr => { 
+									propObj[attr.nodeName] = attr.nodeValue;
+		});
+	}
+
+	propObj.nodeName =  node.nodeName;   // "DIV"
+	propObj.nodeType =  node.nodeType;   // 1
+	propObj.nodeValue =  node.nodeValue; // "DIV"
+
+	return propObj;
+}
+
 function createDomElement(node, parentNode) {
-	let str = '';
 	const propObj = extractNodeAttributes(node);
 	let elemRef = null;
-
-	// str = `\n elemRef = null;`;
-
 
 	if(propObj.nodeName) {
 		if(propObj.nodeType === 3) { // '#text' - node
 			elemRef = document.createTextNode(propObj.nodeValue.trim());
-			htmlGenStr += `\n elemRef = document.createTextNode("${propObj.nodeValue.trim()}");`
+			htmlGenStr += `\n elemRef = document.createTextNode("${propObj.nodeValue.trim()}");`;
 		}
 		else {
 			elemRef = document.createElement(propObj.nodeName);
-			htmlGenStr += `\n elemRef = document.createElement("${propObj.nodeName}");`
+			htmlGenStr += `\n elemRef = document.createElement("${propObj.nodeName}");`;
 
 			// Generate id if it is NOT exist.
 			if(!propObj.id) {
-				propObj.id = 'myParentId'+'#'+ parentNode.id + '#myId' + autoIdIndex++;
+				propObj.id = 'myParentId_'+ parentNode.id + '_myId_' + autoIdIndex++;
 				elemRef.id = propObj.id;
 				node.id = propObj.id;
 			}
-
 
 			for (let key in propObj) {
 				if (propObj.hasOwnProperty(key) && !filterProp.includes(key)) {
@@ -155,111 +79,103 @@ function createDomElement(node, parentNode) {
 		// parentNode.appendChild(elemRef);
 		htmlGenStr += `\n document.getElementById("${parentNode.id}").appendChild(elemRef); \n`;
 	}
-	return elemRef;
 }
 
-function cloneAttributes(target, source) {
-	[...source.attributes].forEach( attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) })
+function domTreeTraversal(node) {
+	for(let i = 0; i < node.childNodes.length; i++) {
+		let child = node.childNodes[i];
+		// skip the empty text nodes
+		if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
+			console.log(child);
+			createDomElement(child, child.parentNode );
+		}
+
+		domTreeTraversal(child); // recursive call - tree traversal
+	}
 }
 
-function extractNodeAttributes(node) {
-    let propObj = {};
 
-    if(node.attributes) {
-    	    [...node.attributes].forEach( attr => { 
-		propObj[attr.nodeName] = attr.nodeValue;
-	    // target.setAttribute(attr.nodeName ,attr.nodeValue) 
-		// 	    id: "grantID"
-		// class: "grantClass11"
-	});
-    }
+domTreeTraversal(document.getElementById('htmlStringWrapper'));
+console.log(htmlGenStr);
 
-	propObj.nodeName =  node.nodeName; // "DIV"
-	propObj.nodeType =  node.nodeType; // 1
-	propObj.nodeValue =  node.nodeValue; // "DIV"
-	// propObj.parentElement =  node.parentElement; // "div#htmlStringWrapper
+///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (start) /////////////////////////////////////////////////
 
-	return propObj;
-
-
-
-
+function domTreeTest() {
+	let elemRef = null;
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","grantID");
+	elemRef.setAttribute("class","grantClass11");
+	document.getElementById("htmlStringWrapper1").appendChild(elemRef); 
     
-// nodeName: "DIV"
-// nodeType: 1
-// nodeValue: null
-// id: "grantID"
-// className: "grantClass11"
-// parentElement: div#htmlStringWrapper
-
-
-	// createDomElement(propObj);
+	elemRef = document.createTextNode("I'm grandDad - krishnan");
+	document.getElementById("grantID").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","parentID");
+	elemRef.setAttribute("class","parentClass13  parentClass23 parentClass33");
+	document.getElementById("grantID").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("I'm son - sridhar");
+	document.getElementById("parentID").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","sonID");
+	elemRef.setAttribute("class","sonClass12  sonClass22");
+	document.getElementById("parentID").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("I'm Jay");
+	document.getElementById("sonID").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","myParentId_sonID_myId_0");
+	document.getElementById("sonID").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("toys✔");
+	document.getElementById("myParentId_sonID_myId_0").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","yId");
+	document.getElementById("sonID").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("youtube");
+	document.getElementById("yId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("class","sClass");
+	elemRef.setAttribute("id","myParentId_sonID_myId_1");
+	document.getElementById("sonID").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("school");
+	document.getElementById("myParentId_sonID_myId_1").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","siblingParentId");
+	elemRef.setAttribute("class","siblingparentClass12 siblingparentClass22");
+	elemRef.setAttribute("disabled","");
+	document.getElementById("grantID").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("I'm son - muthu");
+	document.getElementById("siblingParentId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("INPUT");
+	elemRef.setAttribute("type","number");
+	elemRef.setAttribute("id","myInputId");
+	elemRef.setAttribute("placeholder","12.34");
+	document.getElementById("siblingParentId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","myParentId_siblingParentId_myId_2");
+	document.getElementById("siblingParentId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("IMG");
+	elemRef.setAttribute("alt","silk");
+	elemRef.setAttribute("class","mySilkClass11");
+	elemRef.setAttribute("src","assets/matchbook/pinkSilk.png");
+	elemRef.setAttribute("id","myParentId_myParentId_siblingParentId_myId_2_myId_3");
+	document.getElementById("myParentId_siblingParentId_myId_2").appendChild(elemRef); 
+    
 }
-
-let lookupTable = {};
-function domTree (node) {
-	let newElem = null;
-	for (var i = 0; i < node.childNodes.length; i++) {
-	  var child = node.childNodes[i];
-	  if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
-		console.log(child);
-		lookupTable[child.parentElement] = child.parentElement;
-		newElem = createDomElement(child, child.parentNode );
-	  }
-
-	  domTree(child);
-	}
- }
-
-function allDescendants (node) {
-	for (var i = 0; i < node.childNodes.length; i++) {
-	  var child = node.childNodes[i];
-	  if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
-		console.log(child);
-	  }
-
-	  allDescendants(child);
-	}
- }
-
-function GetChildNodes (container) {
-	function recursor(container){
-		   for (var i = 0; i < container.childNodes.length; i++) {
-			  var child = container.childNodes[i];
-			  console.log(child)
-			  recursor(child);
-			//   if(child.nodeType !== 3&&child.childNodes){
-			// 	 recursor(child);
-			//   }else{
-			// 	 var str=child.nodeValue;
-			// 	 if(str.indexOf('bbb')>-1){child.nodeValue='some other text'};
-			// 	 }
-		    }
-	}
-	recursor(container);
- }
-
-
-function getText(node) {
-	function recursor(n) {
-	    var i, a = [];
-	    if (n.nodeType !== 3) {
-		   if (n.childNodes)
-			   for (i = 0; i < n.childNodes.length; ++i)
-				  a = a.concat(recursor(n.childNodes[i]));
-	    } else
-		   a.push(n.data);
-	    return a;
-	}
-	return recursor(node);
- }
- // then
-//  console.log(getText(document.getElementById('grantID')));
-//  console.log(GetChildNodes(document.getElementById('grantID')));
-// GetChildNodes(document.getElementById('htmlStringWrapper'));
-// allDescendants(document.getElementById('htmlStringWrapper'));
-domTree(document.getElementById('htmlStringWrapper'));
-
+domTreeTest();
  
 
 ////////////////////////////////////////////////////////////////////////////////
