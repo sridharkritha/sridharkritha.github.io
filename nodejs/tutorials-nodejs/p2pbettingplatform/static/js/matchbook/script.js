@@ -42,7 +42,7 @@ function extractNodeAttributes(node) {
 
 	propObj.nodeName =  node.nodeName;   // "DIV"
 	propObj.nodeType =  node.nodeType;   // 1
-	propObj.nodeValue =  node.nodeValue; // "DIV"
+	propObj.nodeValue =  node.nodeValue; // ""
 
 	return propObj;
 }
@@ -100,7 +100,7 @@ domTreeTraversal(document.getElementById('betSlipContainer'));
 
 console.log(htmlGenStr);
 
-///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (start) /////////////////////////////////////////////////
+///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (end) /////////////////////////////////////////////////
 
 function domTreeTest() {
 
