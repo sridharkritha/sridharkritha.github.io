@@ -55,23 +55,172 @@ function randomIntFromInterval(min, max) { // min and max included
 			<img alt="silk" class="mySilkClass11" src="assets/matchbook/pinkSilk.png">
 		</div>
 	</div>
- </div>
+ 	</div>
 	`;
  
- var result = htmlToElement(htmlString);
- console.log(result.childNodes);
+	var result = htmlToElement(htmlString);
+	console.log(result.childNodes);
 
- // browsing through childNodes of childNodes
- for(let i = 0, m = result.childNodes.length; i < m; ++i) {
-	for(let j = 0, n = result.childNodes[i].childNodes.length; j < n; ++j) {
-		 console.log(result.childNodes[i].childNodes[j].childNodes);
+	// browsing through childNodes of childNodes
+	for(let i = 0, m = result.childNodes.length; i < m; ++i) {
+		for(let j = 0, n = result.childNodes[i].childNodes.length; j < n; ++j) {
+			console.log(result.childNodes[i].childNodes[j].childNodes);
+		}
 	}
 }
+// test();
+/*
+child.localName +'#'+ child.id + '.'+child.className
+k.replace(/\s+/g,'.');
 
 
+childNodes[0].parentElement <= id
+
+
+className: "parentClass13  parentClass23 parentClass33"
+id: "parentID"
+
+
+nodeName: "DIV"
+nodeType: 1
+nodeValue: null
+
+localName: "div"
+nodeName: "DIV"
+
+
+
+
+nodeName: "#text"
+nodeType: 3
+nodeValue: " I'm son - sridhar\n\t\t\t"
+
+
+
+nodeName: "#text"
+nodeType: 3
+nodeValue: "\n\t\t\t"
+*/
+
+function createDomElement(propObj) {
+	let elemRef = null;
+
+	if(propObj.nodeName) {
+		if(propObj.nodeType === 3) { // '#text' - node
+			elemRef = document.createTextNode(propObj.nodeValue);
+		}
+		else {
+			elemRef = document.createElement(propObj.nodeName);
+			for (let key in propObj) {
+				if (propObj.hasOwnProperty(key)) {
+					elemRef.setAttribute(key,propObj[key]);
+					// elem2.appendChild(elemRef);
+				}
+			}
+		}
+	}
+	return elemRef;
 }
 
-test();
+function cloneAttributes(target, source) {
+	[...source.attributes].forEach( attr => { target.setAttribute(attr.nodeName ,attr.nodeValue) })
+}
+
+function extractNodeInfo(node) {
+    let propObj = {};
+
+    if(node.attributes) {
+    	    [...node.attributes].forEach( attr => { 
+		propObj[attr.nodeName] = attr.nodeValue;
+	    // target.setAttribute(attr.nodeName ,attr.nodeValue) 
+		// 	    id: "grantID"
+		// class: "grantClass11"
+	});
+    }
+
+	propObj.nodeName =  node.nodeName; // "DIV"
+	propObj.nodeType =  node.nodeType; // 1
+	propObj.nodeValue =  node.nodeValue; // "DIV"
+	propObj.parentElement =  node.parentElement; // "div#htmlStringWrapper
+
+
+    
+
+    
+// nodeName: "DIV"
+// nodeType: 1
+// nodeValue: null
+// id: "grantID"
+// className: "grantClass11"
+// parentElement: div#htmlStringWrapper
+
+
+	createDomElement(propObj);
+}
+
+let lookupTable = {};
+function domTree (node) {
+	for (var i = 0; i < node.childNodes.length; i++) {
+	  var child = node.childNodes[i];
+	  if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
+		console.log(child);
+		lookupTable[child.parentElement] = child.parentElement;
+		extractNodeInfo(child);
+	  }
+
+	  domTree(child);
+	}
+ }
+
+function allDescendants (node) {
+	for (var i = 0; i < node.childNodes.length; i++) {
+	  var child = node.childNodes[i];
+	  if(child.nodeType != 3 || (child.nodeType === 3 && child.nodeValue.trim())) {
+		console.log(child);
+	  }
+
+	  allDescendants(child);
+	}
+ }
+
+function GetChildNodes (container) {
+	function recursor(container){
+		   for (var i = 0; i < container.childNodes.length; i++) {
+			  var child = container.childNodes[i];
+			  console.log(child)
+			  recursor(child);
+			//   if(child.nodeType !== 3&&child.childNodes){
+			// 	 recursor(child);
+			//   }else{
+			// 	 var str=child.nodeValue;
+			// 	 if(str.indexOf('bbb')>-1){child.nodeValue='some other text'};
+			// 	 }
+		    }
+	}
+	recursor(container);
+ }
+
+
+function getText(node) {
+	function recursor(n) {
+	    var i, a = [];
+	    if (n.nodeType !== 3) {
+		   if (n.childNodes)
+			   for (i = 0; i < n.childNodes.length; ++i)
+				  a = a.concat(recursor(n.childNodes[i]));
+	    } else
+		   a.push(n.data);
+	    return a;
+	}
+	return recursor(node);
+ }
+ // then
+//  console.log(getText(document.getElementById('grantID')));
+//  console.log(GetChildNodes(document.getElementById('grantID')));
+// GetChildNodes(document.getElementById('htmlStringWrapper'));
+// allDescendants(document.getElementById('htmlStringWrapper'));
+domTree(document.getElementById('htmlStringWrapper'));
+
  
 
 ////////////////////////////////////////////////////////////////////////////////
