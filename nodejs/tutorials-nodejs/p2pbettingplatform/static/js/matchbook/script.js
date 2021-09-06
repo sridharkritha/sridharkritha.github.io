@@ -38,7 +38,7 @@ if (dupIDs.length) { console.error("Duplicate ID's:", dupIDs);} else { console.l
 
 ///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (start) /////////////////////////////////////////////////
 
-let htmlGenStr = `\n let elemRef = null; \n`; // final output
+let htmlGenStr = `\n let elemRef = null;\n`; // final output
 const filterProp = ['nodeName', 'nodeType', 'nodeValue'];
 let autoIdIndex = 0;
 
@@ -90,7 +90,7 @@ function createDomElement(node, parentNode) {
 		}
 
 		// parentNode.appendChild(elemRef);
-		htmlGenStr += `\n document.getElementById("${parentNode.id}").appendChild(elemRef); \n`;
+		htmlGenStr += `\n document.getElementById("${parentNode.id}").appendChild(elemRef);\n`;
 	}
 }
 
@@ -110,208 +110,160 @@ function domTreeTraversal(node) {
 
 // domTreeTraversal(document.getElementById('htmlStringWrapper'));
 domTreeTraversal(document.getElementById('betSlipContainer'));
-
 console.log(htmlGenStr);
 
 ///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (end) /////////////////////////////////////////////////
 
 function domTreeTest() {
-
- let elemRef = null; 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_betSlipContainer_myId_0");
- document.getElementById("betSlipContainer").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
- elemRef.setAttribute("id","myParentId_myParentId_betSlipContainer_myId_0_myId_1");
- document.getElementById("myParentId_betSlipContainer_myId_0").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_2");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_1").appendChild(elemRef); 
-
- elemRef = document.createTextNode("13:00");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_2").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_3");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_1").appendChild(elemRef); 
-
- elemRef = document.createTextNode("Wolverhampton");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_1_myId_3").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
- elemRef.setAttribute("id","myParentId_myParentId_betSlipContainer_myId_0_myId_4");
- document.getElementById("myParentId_betSlipContainer_myId_0").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_5");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_4").appendChild(elemRef); 
-
- elemRef = document.createTextNode("Win");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_5").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","halfOpaque");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_6");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_4").appendChild(elemRef); 
-
- elemRef = document.createTextNode("8 She's A Deva");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_4_myId_6").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
- elemRef.setAttribute("id","myParentId_myParentId_betSlipContainer_myId_0_myId_7");
- document.getElementById("myParentId_betSlipContainer_myId_0").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","subtractBackId");
- elemRef.setAttribute("class","gridCenterVH backMainBgColor");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8").appendChild(elemRef); 
-
- elemRef = document.createTextNode("-");
- document.getElementById("subtractBackId").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","backOthersBgColor");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","backMainFontColor");
- elemRef.setAttribute("disabled","");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_10");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9").appendChild(elemRef); 
-
- elemRef = document.createTextNode("BACK");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_10").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_11");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9").appendChild(elemRef); 
-
- elemRef = document.createElement("INPUT");
- elemRef.setAttribute("type","number");
- elemRef.setAttribute("id","backValueId");
- elemRef.setAttribute("placeholder","4.3");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8_myId_9_myId_11").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","additionBackId");
- elemRef.setAttribute("class","gridCenterVH backMainBgColor");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_8").appendChild(elemRef); 
-
- elemRef = document.createTextNode("+");
- document.getElementById("additionBackId").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","backOthersBgColor");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","backMainFontColor");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_13");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12").appendChild(elemRef); 
-
- elemRef = document.createTextNode("STAKE");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_13").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_14");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12").appendChild(elemRef); 
-
- elemRef = document.createTextNode("4.3");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_12_myId_14").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","backOthersBgColor");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("class","backMainFontColor");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_16");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15").appendChild(elemRef); 
-
- elemRef = document.createTextNode("PROFIT");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_16").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_17");
- document.getElementById("myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15").appendChild(elemRef); 
-
- elemRef = document.createTextNode("4.3");
- document.getElementById("myParentId_myParentId_myParentId_myParentId_betSlipContainer_myId_0_myId_7_myId_15_myId_17").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","placeBetButtonId");
- elemRef.setAttribute("class","tickButtonBackground");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
-
- elemRef = document.createTextNode("✔");
- document.getElementById("placeBetButtonId").appendChild(elemRef); 
-
- elemRef = document.createElement("DIV");
- elemRef.setAttribute("id","deleteBetButtonId");
- elemRef.setAttribute("class","binButtonBackground");
- document.getElementById("myParentId_myParentId_betSlipContainer_myId_0_myId_7").appendChild(elemRef); 
-
- elemRef = document.createTextNode("🗑");
- document.getElementById("deleteBetButtonId").appendChild(elemRef); 
-
+	let elemRef = null; 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","timeVenueId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+	document.getElementById("betSlipContainer").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","timeId");
+	document.getElementById("timeVenueId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("13:00");
+	document.getElementById("timeId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","venueId");
+	document.getElementById("timeVenueId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("Wolverhampton");
+	document.getElementById("venueId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","outcomePlayerId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+	document.getElementById("betSlipContainer").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","outcomeId");
+	document.getElementById("outcomePlayerId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("Win");
+	document.getElementById("outcomeId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","playerId");
+	elemRef.setAttribute("class","halfOpaque");
+	document.getElementById("outcomePlayerId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("8 She's A Deva");
+	document.getElementById("playerId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backStakeProfitBetBinId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
+	document.getElementById("betSlipContainer").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backPlusMinusId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","subtractBackId");
+	elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+	document.getElementById("backPlusMinusId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("-");
+	document.getElementById("subtractBackId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backOthersBgColorId");
+	elemRef.setAttribute("class","backOthersBgColor");
+	document.getElementById("backPlusMinusId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backMainFontColorId");
+	elemRef.setAttribute("class","backMainFontColor");
+	document.getElementById("backOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("BACK");
+	document.getElementById("backMainFontColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backValueContainerId");
+	document.getElementById("backOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("INPUT");
+	elemRef.setAttribute("id","backValueId");
+	elemRef.setAttribute("type","number");
+	elemRef.setAttribute("placeholder","4.3");
+	document.getElementById("backValueContainerId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","additionBackId");
+	elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+	document.getElementById("backPlusMinusId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("+");
+	document.getElementById("additionBackId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","stakeBackOthersBgColor");
+	elemRef.setAttribute("class","backOthersBgColor");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","stakeId");
+	elemRef.setAttribute("class","backMainFontColor");
+	document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("STAKE");
+	document.getElementById("stakeId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","stakeValueId");
+	document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("4.3");
+	document.getElementById("stakeValueId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","profitBackOthersBgColorId");
+	elemRef.setAttribute("class","backOthersBgColor");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","profitBackMainFontColorId");
+	elemRef.setAttribute("class","backMainFontColor");
+	document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("PROFIT");
+	document.getElementById("profitBackMainFontColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","profitValueBackMainFontColorId");
+	document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("4.3");
+	document.getElementById("profitValueBackMainFontColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","placeBetButtonId");
+	elemRef.setAttribute("class","tickButtonBackground");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("✔");
+	document.getElementById("placeBetButtonId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","deleteBetButtonId");
+	elemRef.setAttribute("class","binButtonBackground");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("🗑");
+	document.getElementById("deleteBetButtonId").appendChild(elemRef);
 }
 // domTreeTest();
- 
 
-////////////////////////////////////////////////////////////////////////////////
-
-// stack addition and subtraction
-const backValue = document.getElementById('backValueId'); 
-
-let subtractBack = document.getElementById('subtractBackId');
-subtractBack.addEventListener('click', function () {
-	const value = Number(backValue.value);
-	if(value > 0.5) {
-		document.getElementById('backValueId').value = (value - 0.5).toFixed(2);
-	}
-	else document.getElementById('backValueId').value = (0).toFixed(2);
-});
-
-let additionBack = document.getElementById('additionBackId');
-additionBack.addEventListener('click', function () {
-	const value = Number(backValue.value);
-	if(value) {
-		document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
-	}
-	else document.getElementById('backValueId').value = (0.5).toFixed(2);
-});
-
-// Place a bet
-let placeBetButton = document.getElementById('placeBetButtonId');
-placeBetButton.addEventListener('click', function () {
-	const value = Number(backValue.value);
-	if(value) {
-		document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
-	}
-	else console.error("Invalid bet amount");
-});
-
-// Delete the bet slip
-let deleteBetButton = document.getElementById('deleteBetButtonId');
-deleteBetButton.addEventListener('click', function () {
-	document.getElementById('betSlipContainer').style.display = 'none';
-});
-
-//////////////////////////// Read json by fetch api ////////////////////////////
+//////////////////////////// Read json by fetch api (start) ////////////////////
 fetch('sportsDB.json')	// return promise so it needs 'then' and 'catch'
 .then((res)  => {        // executes if resolved otherwise go to next line
 	if(res.status != 200) {
@@ -328,8 +280,9 @@ fetch('sportsDB.json')	// return promise so it needs 'then' and 'catch'
 .catch((err) => { 
 	console.log(err); // executes if rejected
 });
+//////////////////////////// Read json by fetch api (end) //////////////////////
 
-//////////////////////////// Dynamically construct - Race Card /////////////////
+////////////////////// Dynamically construct - Race Card (start) ///////////////
 function processInputData(data) {
 	const gameName = 'horseRace';
 	const region = 'uk';
@@ -490,13 +443,202 @@ function processInputData(data) {
 		document.getElementById('betSlipContainer').style.display = 'block';
 	});
 }
+////////////////////// Dynamically construct - Race Card (end) ///////////////
 
-//////////////////////////// Dynamically construct - Bet slip //////////////////
+
+/////////////// Dynamically construct - Bet slip (start) ///////////////////////
 let betSlipSheet = {};
-function populateBetSlipSheet() {
 
+function constructBetSlip() {
+	let elemRef = null; 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","timeVenueId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+	document.getElementById("betSlipContainer").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","timeId");
+	document.getElementById("timeVenueId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("13:00");
+	document.getElementById("timeId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","venueId");
+	document.getElementById("timeVenueId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("Wolverhampton");
+	document.getElementById("venueId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","outcomePlayerId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+	document.getElementById("betSlipContainer").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","outcomeId");
+	document.getElementById("outcomePlayerId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("Win");
+	document.getElementById("outcomeId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","playerId");
+	elemRef.setAttribute("class","halfOpaque");
+	document.getElementById("outcomePlayerId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("8 She's A Deva");
+	document.getElementById("playerId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backStakeProfitBetBinId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
+	document.getElementById("betSlipContainer").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backPlusMinusId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","subtractBackId");
+	elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+	document.getElementById("backPlusMinusId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("-");
+	document.getElementById("subtractBackId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backOthersBgColorId");
+	elemRef.setAttribute("class","backOthersBgColor");
+	document.getElementById("backPlusMinusId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backMainFontColorId");
+	elemRef.setAttribute("class","backMainFontColor");
+	document.getElementById("backOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("BACK");
+	document.getElementById("backMainFontColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","backValueContainerId");
+	document.getElementById("backOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("INPUT");
+	elemRef.setAttribute("id","backValueId");
+	elemRef.setAttribute("type","number");
+	elemRef.setAttribute("placeholder","4.3");
+	document.getElementById("backValueContainerId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","additionBackId");
+	elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+	document.getElementById("backPlusMinusId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("+");
+	document.getElementById("additionBackId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","stakeBackOthersBgColor");
+	elemRef.setAttribute("class","backOthersBgColor");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","stakeId");
+	elemRef.setAttribute("class","backMainFontColor");
+	document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("STAKE");
+	document.getElementById("stakeId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","stakeValueId");
+	document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("4.3");
+	document.getElementById("stakeValueId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","profitBackOthersBgColorId");
+	elemRef.setAttribute("class","backOthersBgColor");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","profitBackMainFontColorId");
+	elemRef.setAttribute("class","backMainFontColor");
+	document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("PROFIT");
+	document.getElementById("profitBackMainFontColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","profitValueBackMainFontColorId");
+	document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("4.3");
+	document.getElementById("profitValueBackMainFontColorId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","placeBetButtonId");
+	elemRef.setAttribute("class","tickButtonBackground");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("✔");
+	document.getElementById("placeBetButtonId").appendChild(elemRef); 
+    
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id","deleteBetButtonId");
+	elemRef.setAttribute("class","binButtonBackground");
+	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+    
+	elemRef = document.createTextNode("🗑");
+	document.getElementById("deleteBetButtonId").appendChild(elemRef);
 }
 
+constructBetSlip();
+///////////////// Dynamically construct - Bet slip  (end) //////////////////////
+
+
+////////////////// stack addition and subtraction (start) //////////////////////
+
+const backValue = document.getElementById('backValueId'); 
+
+let subtractBack = document.getElementById('subtractBackId');
+subtractBack.addEventListener('click', function () {
+	const value = Number(backValue.value);
+	if(value > 0.5) {
+		document.getElementById('backValueId').value = (value - 0.5).toFixed(2);
+	}
+	else document.getElementById('backValueId').value = (0).toFixed(2);
+});
+
+let additionBack = document.getElementById('additionBackId');
+additionBack.addEventListener('click', function () {
+	const value = Number(backValue.value);
+	if(value) {
+		document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
+	}
+	else document.getElementById('backValueId').value = (0.5).toFixed(2);
+});
+
+// Place a bet
+let placeBetButton = document.getElementById('placeBetButtonId');
+placeBetButton.addEventListener('click', function () {
+	const value = Number(backValue.value);
+	if(value) {
+		document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
+	}
+	else console.error("Invalid bet amount");
+});
+
+// Delete the bet slip
+let deleteBetButton = document.getElementById('deleteBetButtonId');
+deleteBetButton.addEventListener('click', function () {
+	document.getElementById('betSlipContainer').style.display = 'none';
+});
+////////////////// stack addition and subtraction (end) ////////////////////////
 
 ///////////////////////////// Odd range selection //////////////////////////////
 let oddSelected = document.getElementById('oddSelected_111');
