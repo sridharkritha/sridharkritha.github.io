@@ -263,6 +263,8 @@ function domTreeTest() {
 }
 // domTreeTest();
 
+/*
+// Read local json file (browser side)
 //////////////////////////// Read json by fetch api (start) ////////////////////
 fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
 .then((res)  => {        // executes if resolved otherwise go to next line
@@ -273,14 +275,62 @@ fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
 	// console.log(res.json()); // data is available but .json() return promise so return it to another 'then'
 	return res.json();          // return promise / chaining
 })
-.then((data) => { 
-	console.log(data);
-	processInputData(data);
+.then((db) => { 
+	console.log(db);
+	processInputData(db);
 }) // 'then' for 'res.json()' promise.
 .catch((err) => { 
 	console.log(err); // executes if rejected
 });
 //////////////////////////// Read json by fetch api (end) //////////////////////
+*/
+
+//////////////////////////// Client to Server communication (start) //////////////////////
+// Method 1: Using HTML - Load "client.html" (do NOT run "node client.js")
+// It uses 'io' from the distributed version of socket.io from "client-dist/socket.io.js"
+const socket = io("http://localhost:3000", { autoConnect:false, transports : ['websocket'] }); // internally emits "connection" event
+
+/*	
+// // Method 2: Without using HTML - directly run "node client.js"
+// // It uses 'io' from the "socket.io-client" which is installed by "npm install socket.io-client --save"
+// const io = require("socket.io-client");
+// // First Connect to the Server on the Specific URL (HOST:PORT)
+// let socket = io("http://localhost:3000"); // internally emits "connection" event
+
+*/
+
+socket.on("connect", async () => {
+	// console.log('myEventClientReady - event is sent');
+	socket.emit('myEventClientReady', JSON.stringify({ isClientReady: true }));
+});
+socket.connect(); // need bcos 'autoConnect:false'
+
+// socket.on("myEventChangeHappened", (data) => { 
+// 	document.getElementById('winsId').textContent = JSON.parse(data).wins;
+// });
+
+
+
+// socket.on => listener; socket.emit => sends event.
+// Add listener for the event "myEvent" but NOT execute the callback
+// Callback will be executed only after if you get the "myEvent"
+// console.log('myEvent - addListener is ready for the server');
+socket.on("myEvent", (data) => {
+	console.log("Message: ", data); // gets executed only after the "myEvent" arrives.
+
+	const db = JSON.parse(data); // Read the json file from server.js from mongodb
+	console.log(db);
+	processInputData(db[0]);
+});
+
+
+
+
+
+//////////////////////////// Client to Server communication (end) //////////////////////
+
+
+
 
 ////////////////////// Dynamically construct - Race Card (start) ///////////////
 function processInputData(data) {

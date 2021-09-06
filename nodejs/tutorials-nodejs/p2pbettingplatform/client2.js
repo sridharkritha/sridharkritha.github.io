@@ -26,7 +26,7 @@ window.addEventListener('load', function () { // needed only for the Method 1.
 
 
 
-	// socket.on => listener. socket.emit => sends event.
+	// socket.on => listener; socket.emit => sends event.
 	// Add listener for the event "myEvent" but NOT execute the callback
 	// Callback will be executed only after if you get the "myEvent"
 	// console.log('myEvent - addListener is ready for the server');

@@ -100,7 +100,8 @@
 	async function returnAllDouments(client, dataBaseName, collectionName) {
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#find for the find() docs
 		// const cursor = await client.db(dataBaseName).collection(collectionName).find({ }, {_id: 1, name: 1, wins: 1 });
-		const cursor = await COLL.find({ }, {_id: 1, name: 1, wins: 1 });
+		// const cursor = await COLL.find({ }, {_id: 1, name: 1, wins: 1 });
+		const cursor = await COLL.find({ }, {});
 
 		// Store the results in an array
 		const results = await cursor.toArray();
