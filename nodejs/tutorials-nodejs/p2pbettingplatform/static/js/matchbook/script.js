@@ -264,7 +264,7 @@ function domTreeTest() {
 // domTreeTest();
 
 //////////////////////////// Read json by fetch api (start) ////////////////////
-fetch('sportsDB.json')	// return promise so it needs 'then' and 'catch'
+fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
 .then((res)  => {        // executes if resolved otherwise go to next line
 	if(res.status != 200) {
 		throw new Error('cannot fetch the data'); // automatically it became 'reject' promise and function exits
