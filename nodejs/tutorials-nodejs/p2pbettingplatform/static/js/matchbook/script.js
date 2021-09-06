@@ -342,6 +342,8 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetLowContainer backOthersBgColor";
 		elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
+		elem3.setAttribute("data-sridhar","krishnan"); //   oddSelected_111
+		elem3.setAttribute("krishnan","samikannu");
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -437,12 +439,34 @@ function processInputData(data) {
 		elem3.appendChild(elem4);	
 	}
 
+	// // bet slip container
+	// let oddSelectedXXX = document.getElementById('oddSelected_xxx');
+	// 	oddSelectedXXX.addEventListener('click', function () {
+	// 	document.getElementById('betSlipContainer').style.display = 'block';
+	// });
+
 	// bet slip container
 	let oddSelectedXXX = document.getElementById('oddSelected_xxx');
-		oddSelectedXXX.addEventListener('click', function () {
-		document.getElementById('betSlipContainer').style.display = 'block';
-	});
+	oddSelectedXXX.addEventListener('click', myFunction); // works
+	// oddSelectedXXX.removeEventListener('click', myFunction); // works
 }
+
+
+// passing attributes from HTML -> JS by data-
+// https://stackoverflow.com/questions/51617527/parameter-passing-in-javascript-onclick-this-id-versus-other-attributes
+
+// default 'e' is send by the function
+function myFunction(e) {
+	console.log(this);
+	console.log(e.currentTarget); // element you clicked
+	console.log(this.dataset.sridhar);
+	console.log(this.getAttribute('krishnan'));
+	// do something with e, param1 and param2
+	// console.log(e, param1, param2);
+	document.getElementById('betSlipContainer').style.display = 'block';
+}
+
+    
 ////////////////////// Dynamically construct - Race Card (end) ///////////////
 
 
@@ -641,10 +665,10 @@ deleteBetButton.addEventListener('click', function () {
 ////////////////// stack addition and subtraction (end) ////////////////////////
 
 ///////////////////////////// Odd range selection //////////////////////////////
-let oddSelected = document.getElementById('oddSelected_111');
-oddSelected.addEventListener('click', function () {
-	document.getElementById('betSlipContainer').style.display = 'block';
-});
+// let oddSelected = document.getElementById('oddSelected_111');
+// oddSelected.addEventListener('click', function () {
+// 	document.getElementById('betSlipContainer').style.display = 'block';
+// });
 
 ////////////////////////////////////////////////////////////////////////////////
 
