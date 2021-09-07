@@ -797,7 +797,7 @@ function addOdd(e) {
 
 	const value = Number(oddValue.value);
 
-	if(value >= 0.5) {
+	if(value) {
 		document.getElementById(oddId).value = (value+ 0.5).toFixed(2);
 	}
 	else document.getElementById(oddId).value = (0.5).toFixed(2);
