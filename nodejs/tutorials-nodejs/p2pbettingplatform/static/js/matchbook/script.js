@@ -360,6 +360,7 @@ function processInputData(data) {
 
 	for(let i = 0, n = 2 /*players.length*/; i < n; ++i) {
 		let playerinfo = { };
+		let idString = null;
 
 		// 1st row
 		let elem1 = document.createElement("div");
@@ -397,7 +398,8 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetLowContainer backOthersBgColor";
 		// elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
-		elem3.setAttribute("id", eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName); //   oddSelected_111
+		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'back'+'_'+players[i].backOdds[0];
+		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].backOdds[0];
 		playerinfo["betType"] = "back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
@@ -516,10 +518,6 @@ function processInputData(data) {
 }
 
 
-// passing attributes from HTML -> JS by data-
-// https://stackoverflow.com/questions/51617527/parameter-passing-in-javascript-onclick-this-id-versus-other-attributes
-
-// default 'e' is send by the function
 function myFunction(e) {
 	console.log(this);
 	console.log(e.currentTarget); // element you clicked
@@ -534,166 +532,217 @@ function myFunction(e) {
 	document.getElementById('betSlipContainer').style.display = 'block';
 }
 
+
+
     
 ////////////////////// Dynamically construct - Race Card (end) ///////////////
 
 
 /////////////// Dynamically construct - Bet slip (start) ///////////////////////
+
 let betSlipSheet = {};
 
-function constructBetSlip() {
-	let elemRef = null; 
 
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","timeVenueId");
-	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-	document.getElementById("betSlipContainer").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","timeId");
-	document.getElementById("timeVenueId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("13:00");
-	document.getElementById("timeId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","venueId");
-	document.getElementById("timeVenueId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("Wolverhampton");
-	document.getElementById("venueId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","outcomePlayerId");
-	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-	document.getElementById("betSlipContainer").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","outcomeId");
-	document.getElementById("outcomePlayerId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("Win");
-	document.getElementById("outcomeId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","playerId");
-	elemRef.setAttribute("class","halfOpaque");
-	document.getElementById("outcomePlayerId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("8 She's A Deva");
-	document.getElementById("playerId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","backStakeProfitBetBinId");
-	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
-	document.getElementById("betSlipContainer").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","backPlusMinusId");
-	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
-	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","subtractBackId");
-	elemRef.setAttribute("class","gridCenterVH backMainBgColor");
-	document.getElementById("backPlusMinusId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("-");
-	document.getElementById("subtractBackId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","backOthersBgColorId");
-	elemRef.setAttribute("class","backOthersBgColor");
-	document.getElementById("backPlusMinusId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","backMainFontColorId");
-	elemRef.setAttribute("class","backMainFontColor");
-	document.getElementById("backOthersBgColorId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("BACK");
-	document.getElementById("backMainFontColorId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","backValueContainerId");
-	document.getElementById("backOthersBgColorId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("INPUT");
-	elemRef.setAttribute("id","backValueId");
-	elemRef.setAttribute("type","number");
-	elemRef.setAttribute("placeholder","4.3");
-	document.getElementById("backValueContainerId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","additionBackId");
-	elemRef.setAttribute("class","gridCenterVH backMainBgColor");
-	document.getElementById("backPlusMinusId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("+");
-	document.getElementById("additionBackId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","stakeBackOthersBgColor");
-	elemRef.setAttribute("class","backOthersBgColor");
-	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","stakeId");
-	elemRef.setAttribute("class","backMainFontColor");
-	document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("STAKE");
-	document.getElementById("stakeId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","stakeValueId");
-	document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("4.3");
-	document.getElementById("stakeValueId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","profitBackOthersBgColorId");
-	elemRef.setAttribute("class","backOthersBgColor");
-	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","profitBackMainFontColorId");
-	elemRef.setAttribute("class","backMainFontColor");
-	document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("PROFIT");
-	document.getElementById("profitBackMainFontColorId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","profitValueBackMainFontColorId");
-	document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("4.3");
-	document.getElementById("profitValueBackMainFontColorId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","placeBetButtonId");
-	elemRef.setAttribute("class","tickButtonBackground");
-	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("✔");
-	document.getElementById("placeBetButtonId").appendChild(elemRef); 
-    
-	elemRef = document.createElement("DIV");
-	elemRef.setAttribute("id","deleteBetButtonId");
-	elemRef.setAttribute("class","binButtonBackground");
-	document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
-    
-	elemRef = document.createTextNode("🗑");
-	document.getElementById("deleteBetButtonId").appendChild(elemRef);
+
+// passing attributes from HTML -> JS by data-
+// https://stackoverflow.com/questions/51617527/parameter-passing-in-javascript-onclick-this-id-versus-other-attributes
+
+// default 'e' is send by the function
+function addToBetSlip(e) {
+
+	if(!betSlipSheet[this.id]) {
+		betSlipSheet[this.id] = { };
+		betSlipSheet[this.id].eventinfo = JSON.parse(this.dataset.eventinfo);
+		betSlipSheet[this.id].playerinfo = JSON.parse(this.dataset.playerinfo);
+		constructBetSlip(betSlipSheet);
+	}
+
+
+
+
+	console.log(this);
+	console.log(e.currentTarget); // element you clicked
+	console.log(this.dataset.sridhar);
+	console.log(this.getAttribute('krishnan'));
+
+	console.log(JSON.parse(this.dataset.eventinfo));
+	console.log(JSON.parse(this.dataset.playerinfo));
+
+	// do something with e, param1 and param2
+	// console.log(e, param1, param2);
+	document.getElementById('betSlipContainer').style.display = 'block';
 }
 
-constructBetSlip();
+
+
+
+function constructBetSlip(betSlipSheet) {
+	let elemRef = null; 
+
+
+	for (let key in betSlipSheet) {
+		if (betSlipSheet.hasOwnProperty(key)) {
+
+			// betSlipSheet[key].eventinfo = this.dataset.eventinfo;
+			// betSlipSheet[key].playerinfo = this.dataset.playerinfo;
+
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","timeVenueId");
+			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+			document.getElementById("betSlipContainer").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","timeId");
+			document.getElementById("timeVenueId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode(betSlipSheet[key].eventinfo.time); // ("13:00");
+			document.getElementById("timeId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","venueId");
+			document.getElementById("timeVenueId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode(betSlipSheet[key].eventinfo.raceName); //("Wolverhampton");
+			document.getElementById("venueId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","outcomePlayerId");
+			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+			document.getElementById("betSlipContainer").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","outcomeId");
+			document.getElementById("outcomePlayerId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); // ("Win");
+			document.getElementById("outcomeId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","playerId");
+			elemRef.setAttribute("class","halfOpaque");
+			document.getElementById("outcomePlayerId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.horseName); // ("8 She's A Deva");
+			document.getElementById("playerId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","backStakeProfitBetBinId");
+			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
+			document.getElementById("betSlipContainer").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","backPlusMinusId");
+			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
+			document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","subtractBackId");
+			elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			document.getElementById("backPlusMinusId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("-");
+			document.getElementById("subtractBackId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","backOthersBgColorId");
+			elemRef.setAttribute("class","backOthersBgColor");
+			document.getElementById("backPlusMinusId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","backMainFontColorId");
+			elemRef.setAttribute("class","backMainFontColor");
+			document.getElementById("backOthersBgColorId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); //("BACK");
+			document.getElementById("backMainFontColorId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","backValueContainerId");
+			document.getElementById("backOthersBgColorId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("INPUT");
+			elemRef.setAttribute("id", key+"inputValue");   // "backValueId");
+			elemRef.setAttribute("type","number");
+			elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
+			// elemRef.setAttribute("placeholder","4.3");
+			document.getElementById("backValueContainerId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","additionBackId");
+			elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			document.getElementById("backPlusMinusId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("+");
+			document.getElementById("additionBackId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","stakeBackOthersBgColor");
+			elemRef.setAttribute("class","backOthersBgColor");
+			document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","stakeId");
+			elemRef.setAttribute("class","backMainFontColor");
+			document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("STAKE");
+			document.getElementById("stakeId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","stakeValueId");
+			document.getElementById("stakeBackOthersBgColor").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("4.3");
+			document.getElementById("stakeValueId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","profitBackOthersBgColorId");
+			elemRef.setAttribute("class","backOthersBgColor");
+			document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","profitBackMainFontColorId");
+			elemRef.setAttribute("class","backMainFontColor");
+			document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("PROFIT");
+			document.getElementById("profitBackMainFontColorId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","profitValueBackMainFontColorId");
+			document.getElementById("profitBackOthersBgColorId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("4.3");
+			document.getElementById("profitValueBackMainFontColorId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","placeBetButtonId");
+			elemRef.setAttribute("class","tickButtonBackground");
+			document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("✔");
+			document.getElementById("placeBetButtonId").appendChild(elemRef); 
+		
+			elemRef = document.createElement("DIV");
+			elemRef.setAttribute("id","deleteBetButtonId");
+			elemRef.setAttribute("class","binButtonBackground");
+			document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
+		
+			elemRef = document.createTextNode("🗑");
+			document.getElementById("deleteBetButtonId").appendChild(elemRef);
+		}
+	 }
+	 
+
+	
+}
+
+// constructBetSlip();
 ///////////////// Dynamically construct - Bet slip  (end) //////////////////////
 
 
 ////////////////// stack addition and subtraction (start) //////////////////////
+/*
 
 const backValue = document.getElementById('backValueId'); 
 
@@ -730,6 +779,8 @@ let deleteBetButton = document.getElementById('deleteBetButtonId');
 deleteBetButton.addEventListener('click', function () {
 	document.getElementById('betSlipContainer').style.display = 'none';
 });
+
+*/
 ////////////////// stack addition and subtraction (end) ////////////////////////
 
 ///////////////////////////// Odd range selection //////////////////////////////
