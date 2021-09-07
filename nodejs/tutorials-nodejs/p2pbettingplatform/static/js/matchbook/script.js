@@ -382,7 +382,6 @@ function processInputData(data) {
 		elem4.classList = "player";
 		playerinfo["horseName"] = players[i].horseName;
 		elem4.innerHTML = players[i].horseName;
-
 		elem3.appendChild(elem4);
 		// Jockey and Trainer Name
 		elem4 = document.createElement("div");
@@ -405,11 +404,6 @@ function processInputData(data) {
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 		elem3.addEventListener('click', addToBetSlip); // works
-
-
-
-
-
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -426,7 +420,14 @@ function processInputData(data) {
 		// 122
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetMidContainer backOthersBgColor";
-		elem3.setAttribute("id","oddSelected_122");
+		//elem3.setAttribute("id","oddSelected_122");
+		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'back'+'_'+players[i].backOdds[0];
+		elem3.setAttribute("id", idString); //   oddSelected_111
+		playerinfo["odd"] = players[i].backOdds[1];
+		playerinfo["betType"] = "back";
+		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
+		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
+		elem3.addEventListener('click', addToBetSlip); // works
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -442,7 +443,14 @@ function processInputData(data) {
 		// 133
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetHighContainer backMainBgColor";
-		elem3.setAttribute("id","oddSelected_133");
+		//elem3.setAttribute("id","oddSelected_133");
+		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'back'+'_'+players[i].backOdds[0];
+		elem3.setAttribute("id", idString); //   oddSelected_111
+		playerinfo["odd"] = players[i].backOdds[2];
+		playerinfo["betType"] = "back";
+		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
+		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
+		elem3.addEventListener('click', addToBetSlip); // works
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -459,7 +467,14 @@ function processInputData(data) {
 		// 144
 		elem3 = document.createElement("div");
 		elem3.classList = "layBetLowContainer layMainBgColor";
-		elem3.setAttribute("id","oddSelected_144");
+		// elem3.setAttribute("id","oddSelected_144");
+		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'lay'+'_'+players[i].layOdds[0];
+		elem3.setAttribute("id", idString); //   oddSelected_111
+		playerinfo["odd"] = players[i].layOdds[0];
+		playerinfo["betType"] = "lay";
+		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
+		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
+		elem3.addEventListener('click', addToBetSlip); // works
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -475,7 +490,14 @@ function processInputData(data) {
 		// 155
 		elem3 = document.createElement("div");
 		elem3.classList = "layBetMidContainer layOthersBgColor";
-		elem3.setAttribute("id","oddSelected_155");
+		//elem3.setAttribute("id","oddSelected_155");
+		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'lay'+'_'+players[i].layOdds[1];
+		elem3.setAttribute("id", idString); //   oddSelected_111
+		playerinfo["odd"] = players[i].layOdds[1];
+		playerinfo["betType"] = "lay";
+		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
+		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
+		elem3.addEventListener('click', addToBetSlip); // works
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -491,7 +513,14 @@ function processInputData(data) {
 		// 166
 		elem3 = document.createElement("div");
 		elem3.classList = "layBetHighContainer layOthersBgColor";
-		elem3.setAttribute("id","oddSelected_166");
+		//elem3.setAttribute("id","oddSelected_166");
+		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'lay'+'_'+players[i].layOdds[2];
+		elem3.setAttribute("id", idString); //   oddSelected_111
+		playerinfo["odd"] = players[i].layOdds[2];
+		playerinfo["betType"] = "lay";
+		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
+		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
+		elem3.addEventListener('click', addToBetSlip); // works
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -583,13 +612,15 @@ function constructBetSlip(betSlipSheet) {
 	for (let key in betSlipSheet) {
 		if (betSlipSheet.hasOwnProperty(key)) {
 
-			// betSlipSheet[key].eventinfo = this.dataset.eventinfo;
-			// betSlipSheet[key].playerinfo = this.dataset.playerinfo;
-
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id","timeVenueId");
 			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-			document.getElementById("betSlipContainer").appendChild(elemRef); 
+			if(document.getElementById("betSlipContainer").lastElementChild) {
+				document.getElementById("betSlipContainer").lastElementChild.appendChild(elemRef); 
+			}
+			else {
+				document.getElementById("betSlipContainer").appendChild(elemRef); 
+			}
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id","timeId");
@@ -636,12 +667,13 @@ function constructBetSlip(betSlipSheet) {
 			document.getElementById("backStakeProfitBetBinId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id","subtractBackId");
+			elemRef.setAttribute("id", key+"_subtractBackId");
 			elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			elemRef.addEventListener('click', subtractOdd);
 			document.getElementById("backPlusMinusId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("-");
-			document.getElementById("subtractBackId").appendChild(elemRef); 
+			document.getElementById( key+"_subtractBackId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id","backOthersBgColorId");
@@ -661,19 +693,20 @@ function constructBetSlip(betSlipSheet) {
 			document.getElementById("backOthersBgColorId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("INPUT");
-			elemRef.setAttribute("id", key+"inputValue");   // "backValueId");
+			elemRef.setAttribute("id", key+"_oddValueId");   // "backValueId");
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
 			// elemRef.setAttribute("placeholder","4.3");
 			document.getElementById("backValueContainerId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id","additionBackId");
+			elemRef.setAttribute("id", key+"_additionBackId");
 			elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			elemRef.addEventListener('click', addOdd);
 			document.getElementById("backPlusMinusId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("+");
-			document.getElementById("additionBackId").appendChild(elemRef); 
+			document.getElementById(key+"_additionBackId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id","stakeBackOthersBgColor");
@@ -732,8 +765,6 @@ function constructBetSlip(betSlipSheet) {
 			document.getElementById("deleteBetButtonId").appendChild(elemRef);
 		}
 	 }
-	 
-
 	
 }
 
@@ -742,6 +773,39 @@ function constructBetSlip(betSlipSheet) {
 
 
 ////////////////// stack addition and subtraction (start) //////////////////////
+
+
+function subtractOdd(e) {
+
+	const oddId = this.id.replace('_subtractBackId','_oddValueId'); // src, dst
+
+	const oddValue = document.getElementById(oddId); 
+
+	const value = Number(oddValue.value);
+
+	if(value > 0.5) {
+		document.getElementById(oddId).value = (value - 0.5).toFixed(2);
+	}
+	else document.getElementById(oddId).value = (0).toFixed(2);
+}
+
+function addOdd(e) {
+
+	const oddId = this.id.replace('_additionBackId','_oddValueId'); // src, dst
+
+	const oddValue = document.getElementById(oddId); 
+
+	const value = Number(oddValue.value);
+
+	if(value >= 0.5) {
+		document.getElementById(oddId).value = (value+ 0.5).toFixed(2);
+	}
+	else document.getElementById(oddId).value = (0.5).toFixed(2);
+}
+
+
+
+
 /*
 
 const backValue = document.getElementById('backValueId'); 
