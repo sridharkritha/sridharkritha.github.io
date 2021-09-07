@@ -263,7 +263,7 @@ function domTreeTest() {
 }
 // domTreeTest();
 
-/*
+
 // Read local json file (browser side)
 //////////////////////////// Read json by fetch api (start) ////////////////////
 fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
@@ -283,7 +283,7 @@ fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
 	console.log(err); // executes if rejected
 });
 //////////////////////////// Read json by fetch api (end) //////////////////////
-*/
+
 
 //////////////////////////// Client to Server communication (start) //////////////////////
 // Method 1: Using HTML - Load "client.html" (do NOT run "node client.js")
@@ -323,10 +323,6 @@ socket.on("myEvent", (data) => {
 	processInputData(db[0]);
 });
 
-
-
-
-
 //////////////////////////// Client to Server communication (end) //////////////////////
 
 
@@ -345,6 +341,11 @@ function processInputData(data) {
 	const runLength = ref.runLength;
 	const players = ref.players;
 
+	let eventinfo = {	'raceName': raceName,
+					'time': time,
+				 };
+	
+
 
 	let raceCardContainer = document.getElementById('sportsEventContainer');
 
@@ -358,6 +359,8 @@ function processInputData(data) {
 	raceCardContainer.appendChild(elem);
 
 	for(let i = 0, n = 2 /*players.length*/; i < n; ++i) {
+		let playerinfo = { };
+
 		// 1st row
 		let elem1 = document.createElement("div");
 		elem1.classList = "gridColumnLayout gridColumnLayout_2 size_4_6 gameBetContainer";
@@ -376,7 +379,9 @@ function processInputData(data) {
 		elem2.appendChild(elem3);
 		elem4 = document.createElement("div");
 		elem4.classList = "player";
+		playerinfo["horseName"] = players[i].horseName;
 		elem4.innerHTML = players[i].horseName;
+
 		elem3.appendChild(elem4);
 		// Jockey and Trainer Name
 		elem4 = document.createElement("div");
@@ -391,9 +396,18 @@ function processInputData(data) {
 		// 111
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetLowContainer backOthersBgColor";
-		elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
-		elem3.setAttribute("data-sridhar","krishnan"); //   oddSelected_111
-		elem3.setAttribute("krishnan","samikannu");
+		// elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
+		elem3.setAttribute("id", eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName); //   oddSelected_111
+		playerinfo["odd"] = players[i].backOdds[0];
+		playerinfo["betType"] = "back";
+		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
+		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
+		elem3.addEventListener('click', addToBetSlip); // works
+
+
+
+
+
 		elem2.appendChild(elem3);
 
 		elem4 = document.createElement("div");
@@ -511,6 +525,10 @@ function myFunction(e) {
 	console.log(e.currentTarget); // element you clicked
 	console.log(this.dataset.sridhar);
 	console.log(this.getAttribute('krishnan'));
+
+	console.log(JSON.parse(this.dataset.eventinfo));
+	console.log(JSON.parse(this.dataset.playerinfo));
+
 	// do something with e, param1 and param2
 	// console.log(e, param1, param2);
 	document.getElementById('betSlipContainer').style.display = 'block';
