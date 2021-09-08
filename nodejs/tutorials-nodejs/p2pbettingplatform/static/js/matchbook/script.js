@@ -607,17 +607,21 @@ function addToBetSlip(e) {
 
 function constructBetSlip(betSlipSheet, key) {
 	let elemRef = null; 
+	let parentElemRef = null;
 
 
 	// for (let key in betSlipSheet) 
 	{
 		//if (betSlipSheet.hasOwnProperty(key)) 
 		{
+			parentElemRef = document.createElement("DIV");
+			betSlipSheet[key].parentElemRef = parentElemRef;
+			document.getElementById("betSlipContainer").appendChild(parentElemRef); 
 
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_timeVenueId"); 
 			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-			document.getElementById("betSlipContainer").appendChild(elemRef); 
+			parentElemRef.appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_timeId");
@@ -636,7 +640,7 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_outcomePlayerId");
 			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-			document.getElementById("betSlipContainer").appendChild(elemRef); 
+			parentElemRef.appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_outcomeId");
@@ -656,7 +660,7 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id", key+"_backStakeProfitBetBinId");
 			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
-			document.getElementById("betSlipContainer").appendChild(elemRef); 
+			parentElemRef.appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_backPlusMinusId");
@@ -800,6 +804,7 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_deleteBetButtonId");
 			elemRef.setAttribute("class","binButtonBackground");
+			elemRef.addEventListener('click', deleteBetSlip);			
 			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("🗑");
@@ -815,7 +820,7 @@ function constructBetSlip(betSlipSheet, key) {
 
 ////////////////// stack addition and subtraction (start) //////////////////////
 
-
+// Decrement the odd
 function subtractOdd(e) {
 
 	const oddId = this.id.replace('_subtractBackId','_oddValueId'); // src, dst
@@ -830,6 +835,7 @@ function subtractOdd(e) {
 	else document.getElementById(oddId).value = (0).toFixed(2);
 }
 
+// Increment the odd
 function addOdd(e) {
 
 	const oddId = this.id.replace('_additionBackId','_oddValueId'); // src, dst
@@ -844,7 +850,15 @@ function addOdd(e) {
 	else document.getElementById(oddId).value = (0.5).toFixed(2);
 }
 
+// Delete the bet slip
+function deleteBetSlip(e) {
 
+	const key = this.id.replace('_deleteBetButtonId',''); // src, dst
+
+	betSlipSheet[key].parentElemRef.remove(); // remove element from DOM
+
+	delete betSlipSheet[key]; // remove the prop from the object
+}
 
 
 /*
