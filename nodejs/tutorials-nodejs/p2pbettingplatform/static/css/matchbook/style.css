@@ -217,8 +217,13 @@ input[type=number] {
     cursor: pointer;
 }
 
-.backOthersBgColor {
+.backOthersBgColor,.backOthersBgColorHover {
     background-color: #e9f6fc;
+}
+
+.backOthersBgColorHover:hover { 
+    background-color: #00b3ff;
+    cursor: pointer;
 }
 
 .backMainFontColor {
@@ -237,8 +242,13 @@ input[type=number] {
     cursor: pointer;
 }
 
-.layOthersBgColor {
+.layOthersBgColor,.layOthersBgColorHover {
     background-color: #fce3e4;
+}
+
+.layOthersBgColorHover:hover { 
+    background-color: #FF7A7F;
+    cursor: pointer;
 }
 
 .layMainFontColor {
