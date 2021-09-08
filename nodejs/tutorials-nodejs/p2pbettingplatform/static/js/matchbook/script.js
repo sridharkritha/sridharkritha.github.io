@@ -665,7 +665,12 @@ function constructBetSlip(betSlipSheet, key) {
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id", key+"_subtractBackId");
-			elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			}
+			else {
+				elemRef.setAttribute("class","gridCenterVH layMainBgColor");
+			}
 			elemRef.addEventListener('click', subtractOdd);
 			document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
 		
@@ -674,12 +679,23 @@ function constructBetSlip(betSlipSheet, key) {
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_backOthersBgColorId");
-			elemRef.setAttribute("class","backOthersBgColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","backOthersBgColor");
+			}
+			else {
+				elemRef.setAttribute("class","layOthersBgColor");
+			}
+
 			document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_backMainFontColorId");
-			elemRef.setAttribute("class","backMainFontColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","backMainFontColor");
+			}
+			else {
+				elemRef.setAttribute("class","layMainFontColor");
+			}
 			document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); //("BACK");
@@ -698,7 +714,12 @@ function constructBetSlip(betSlipSheet, key) {
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id", key+"_additionBackId");
-			elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+			}
+			else {
+				elemRef.setAttribute("class","gridCenterVH layMainBgColor");
+			}
 			elemRef.addEventListener('click', addOdd);
 			document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
 		
@@ -707,12 +728,24 @@ function constructBetSlip(betSlipSheet, key) {
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_stakeBackOthersBgColor");
-			elemRef.setAttribute("class","backOthersBgColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","backOthersBgColor");
+			}
+			else {
+				elemRef.setAttribute("class","layOthersBgColor");
+			}
+
 			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_stakeId");
-			elemRef.setAttribute("class","backMainFontColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","backMainFontColor");
+			}
+			else {
+				elemRef.setAttribute("class","layMainFontColor");
+			}
+
 			document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("STAKE");
@@ -727,12 +760,23 @@ function constructBetSlip(betSlipSheet, key) {
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_profitBackOthersBgColorId");
-			elemRef.setAttribute("class","backOthersBgColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","backOthersBgColor");
+			}
+			else {
+				elemRef.setAttribute("class","layOthersBgColor");
+			}
+
 			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_profitBackMainFontColorId");
-			elemRef.setAttribute("class","backMainFontColor");
+			if(betSlipSheet[key].playerinfo.betType === "Back") {
+				elemRef.setAttribute("class","backMainFontColor");
+			}
+			else {
+				elemRef.setAttribute("class","layMainFontColor");
+			}
 			document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("PROFIT");

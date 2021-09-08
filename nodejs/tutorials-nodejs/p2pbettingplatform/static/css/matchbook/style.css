@@ -204,10 +204,9 @@ input[type=number] {
     color: white;
 }
 
-
+/* Back */
 .backMainBgColor {
     background-color: #8dd2f0;
-    /* width: 65px; */
     transition: 0.3s;
 }
 
@@ -217,7 +216,6 @@ input[type=number] {
 
 .backOthersBgColor {
     background-color: #e9f6fc;
-    /* width: 65px; */
 }
 
 .backMainFontColor {
@@ -225,14 +223,23 @@ input[type=number] {
     font-weight: bold;
 }
 
+/* Lay */
+
 .layMainBgColor {
     background-color: #feafb2;
-    /* width: 65px; */
+}
+
+.layMainBgColor:hover { 
+    background-color: #FF7A7F;
 }
 
 .layOthersBgColor {
     background-color: #fce3e4;
-    /* width: 65px; */
+}
+
+.layMainFontColor {
+    color:#FF7A7F;
+    font-weight: bold;
 }
 
 /****************************** Bet Slip (end) ********************************/
