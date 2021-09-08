@@ -191,6 +191,7 @@ input[type=number] {
 .tickButtonBackground:hover { 
     background-color: #0eb588;
     color: white;
+    cursor: pointer;
 }
 
 .binButtonBackground {
@@ -202,6 +203,7 @@ input[type=number] {
 .binButtonBackground:hover { 
     background-color: #c51a1b;
     color: white;
+    cursor: pointer;
 }
 
 /* Back */
@@ -212,6 +214,7 @@ input[type=number] {
 
 .backMainBgColor:hover { 
     background-color: #00b3ff;
+    cursor: pointer;
 }
 
 .backOthersBgColor {
@@ -231,6 +234,7 @@ input[type=number] {
 
 .layMainBgColor:hover { 
     background-color: #FF7A7F;
+    cursor: pointer;
 }
 
 .layOthersBgColor {
