@@ -39,7 +39,7 @@ app.post('/api/register', async (req, res) => {
 	if (plainTextPassword.length < 5) {
 		return res.json({
 			status: 'error',
-			error: 'Password too small. Should be atleast 6 characters'
+			error: 'Password too small. Should be at-least 6 characters'
 		});
 	}
 
@@ -73,14 +73,13 @@ app.post('/api/login', async (req, res) => {
 
 	if (await bcrypt.compare(password, user.password)) {
 		// the username, password combination is successful
-
-		const token = jwt.sign(
-			{
-				id: user._id,
-				username: user.username
-			},
-			JWT_SECRET
-		);
+		// generate jwt token
+		const token = jwt.sign(	{
+								id: user._id,
+								username: user.username
+							},
+							JWT_SECRET
+						);
 
 		return res.json({ status: 'ok', data: token }); // send the token to client
 	}
