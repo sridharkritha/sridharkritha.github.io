@@ -3,15 +3,140 @@
 	const app = express();
 	const httpServer = require("http").createServer(app);
 	const io = require("socket.io")(httpServer);
+	const path = require('path');
 	const fs = require('fs');
 	const { MongoClient } = require('mongodb');
 	const port = 3000;
 
+
+	app.use('/', express.static(path.join(__dirname, 'static')));
+	app.use(express.json());// app.use(bodyParser.json());
+/*
+	/////////////////////////// login(start) ///////////////////////////////////////////////////////////
+
+	// const bodyParser = require('body-parser');
+	const mongoose = require('mongoose');
+	const User = require('./model/user');
+	const bcrypt = require('bcryptjs');
+	const jwt = require('jsonwebtoken');
+
+	const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
+	// const uri = "mongodb+srv://sridharkritha:2244@cluster0.02kdt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+	// mongodb://localhost:27017/login-app-db
+
+	mongoose.connect('mongodb+srv://sridharkritha:2244@cluster0.02kdt.mongodb.net/p2pbettingplatformdb?retryWrites=true&w=majority', {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true
+	});
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	app.post('/api/register', async (req, res) => {
+		const { username, password: plainTextPassword } = req.body;
+
+		if (!username || typeof username !== 'string') {
+			return res.json({ status: 'error', error: 'Invalid username' });
+		}
+
+		if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+			return res.json({ status: 'error', error: 'Invalid password' });
+		}
+
+		if (plainTextPassword.length < 5) {
+			return res.json({
+				status: 'error',
+				error: 'Password too small. Should be at-least 6 characters'
+			});
+		}
+
+		const password = await bcrypt.hash(plainTextPassword, 10); // passes = 10
+
+		try {
+			const response = await User.create({
+				username,
+				password
+			});
+			console.log('User created successfully: ', response);
+		} catch (error) {
+			if (error.code === 11000) {
+				// duplicate key
+				return res.json({ status: 'error', error: 'Username already in use' });
+			}
+			throw error;
+		}
+
+		res.json({ status: 'ok' });
+	});
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	app.post('/api/login', async (req, res) => {
+		const { username, password } = req.body;
+		const user = await User.findOne({ username }).lean();
+
+		if (!user) {
+			return res.json({ status: 'error', error: 'Invalid username/password' });
+		}
+
+		if (await bcrypt.compare(password, user.password)) {
+			// the username, password combination is successful
+			// generate jwt token
+			const token = jwt.sign(	{
+									id: user._id,
+									username: user.username
+								},
+								JWT_SECRET
+							);
+
+			return res.json({ status: 'ok', data: token }); // send the token to client
+		}
+
+		res.json({ status: 'error', error: 'Invalid username/password' });
+	});
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	app.post('/api/change-password', async (req, res) => {
+		const { token, newpassword: plainTextPassword } = req.body;
+
+		if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+			return res.json({ status: 'error', error: 'Invalid password' });
+		}
+
+		if (plainTextPassword.length < 5) {
+			return res.json({
+				status: 'error',
+				error: 'Password too small. Should be atleast 6 characters'
+			});
+		}
+
+		try {
+			const user = jwt.verify(token, JWT_SECRET); // is token tampered ?
+
+			const _id = user.id;
+
+			const password = await bcrypt.hash(plainTextPassword, 10);
+
+			await User.updateOne(
+				{ _id },
+				{
+					$set: { password }
+				}
+			);
+			res.json({ status: 'ok' });
+		} catch (error) {
+			console.log(error);
+			res.json({ status: 'error', error: ';))' });
+		}
+	});
+*/
+	/////////////////////////// login(end) /////////////////////////////////////////////////////////////
+	
 	const MONGO_DATABASE_NAME = 'p2pbettingplatformdb';
 	const MONGO_COLLECTION_NAME = 'sportscollection';
 	let client = null; // mongodb client
 	let DB = null;     // database
 	let COLL = null;   // collection
+	
 	/**
 	 * An aggregation pipeline that matches on new listings in the country of Australia and the Sydney market
 	 */
@@ -255,10 +380,7 @@
 		});
 	});
 
-	// Listen the HTTP Server 
-	// httpServer.listen(port, () => {
-	// 	console.log("Server is running on the port: " + port);
-	// });
+
 
 	httpServer.listen(port, async () => {
 		console.log("Server is running on the port: " + httpServer.address().port);
@@ -306,101 +428,3 @@
 		
 	});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-	const mongoose = require('mongoose');
-	// const createDeleteAPI = require('./routes/createDeleteAPI');
-	const port = 3000;
-
-
-	// const router = express.Router();
-
-	// CREATE
-	// router.post('/new', (req, res) => {
-	//   Task.create({
-	//     task: JSON.stringify({ "name": "raj", "age": "12"}), // req.body.task,
-	//   }, (err, task) => {
-	//     if (err) {
-	//       console.log('CREATE Error: ' + err);
-	//       res.status(500).send('Error');
-	//     } else {
-	//       res.status(200).json(task);
-	//     }
-	//   });
-	// });
-
-
-	// collections
-	const Users = require('./UserModel');
-	const db = mongoose.connection;
-
-	// database connection
-
-	mongoose.connect('mongodb://localhost:27119/sriDB?replicaSet=rs',{useNewUrlParser:true},
-		function(err){
-			if(err){
-				console.log('Database connection error: ' + err);
-				throw err;
-			}
-			console.log('Database connected');
-
-			const myCollection = db.collection('sriCollection');
-			const myChangeStream = myCollection.watch();
-
-
-
-			myChangeStream.on('change', (change) => {
-				console.log(change);
-				
-				if(change.operationType === 'insert') {
-				const task = change.fullDocument;
-				socket.emit('myEvent', JSON.stringify({ "name": "raj", "age": "12"}));
-				} else if(change.operationType === 'delete') {
-					socket.emit('myEvent', JSON.stringify({ "name": "raj", "age": "12"}));
-				}
-			});
-
-			myCollection.insert( { "name": "jay", "age": "7"} );
-
-
-			
-			// io.on('connection',(socket)=>{
-			//     console.log('user connected');
-			//     socket.on('myEvent',(data)=>{      // data will look like => {myID: "123123"}
-			//         console.log('user joined room');
-			//         console.log(data);
-			//         socket.join(data.myID);
-			//     });
-			// });
-
-			// Users.watch().on('change',(change)=>{
-			//     console.log('Something has changed');
-			//     io.to(change.fullDocument._id).emit('changes',change.fullDocument);
-			// });
-
-	});
-
-
-
-
-
-	// Listen the HTTP Server 
-	httpServer.listen(port, () => {
-		console.log("Server Is Running Port: " + port);
-	});
-
-	*/

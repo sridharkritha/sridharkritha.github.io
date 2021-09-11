@@ -124,7 +124,7 @@ function domTreeTest() {
 }
 // domTreeTest();
 
-
+/*
 // Read local json file (browser side)
 //////////////////////////// Read json by fetch api (start) ////////////////////
 fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
@@ -144,7 +144,7 @@ fetch('../db/sportsDB.json')	// return promise so it needs 'then' and 'catch'
 	console.log(err); // executes if rejected
 });
 //////////////////////////// Read json by fetch api (end) //////////////////////
-
+*/
 
 //////////////////////////// Client to Server communication (start) //////////////////////
 // Method 1: Using HTML - Load "client.html" (do NOT run "node client.js")
@@ -402,25 +402,25 @@ function processInputData(data) {
 	// });
 
 	// bet slip container
-	let oddSelectedXXX = document.getElementById('oddSelected_xxx');
-	oddSelectedXXX.addEventListener('click', myFunction); // works
+	// let oddSelectedXXX = document.getElementById('oddSelected_xxx');
+	// oddSelectedXXX.addEventListener('click', myFunction); // works
 	// oddSelectedXXX.removeEventListener('click', myFunction); // works
 }
 
 
-function myFunction(e) {
-	console.log(this);
-	console.log(e.currentTarget); // element you clicked
-	console.log(this.dataset.sridhar);
-	console.log(this.getAttribute('krishnan'));
+// function myFunction(e) {
+// 	console.log(this);
+// 	console.log(e.currentTarget); // element you clicked
+// 	console.log(this.dataset.sridhar);
+// 	console.log(this.getAttribute('krishnan'));
 
-	console.log(JSON.parse(this.dataset.eventinfo));
-	console.log(JSON.parse(this.dataset.playerinfo));
+// 	console.log(JSON.parse(this.dataset.eventinfo));
+// 	console.log(JSON.parse(this.dataset.playerinfo));
 
-	// do something with e, param1 and param2
-	// console.log(e, param1, param2);
-	document.getElementById('betSlipContainer').style.display = 'block';
-}
+// 	// do something with e, param1 and param2
+// 	// console.log(e, param1, param2);
+// 	document.getElementById('betSlipContainer').style.display = 'block';
+// }
 
 
 
