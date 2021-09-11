@@ -11,7 +11,7 @@
 
 	app.use('/', express.static(path.join(__dirname, 'static')));
 	app.use(express.json());// app.use(bodyParser.json());
-/*
+
 	/////////////////////////// login(start) ///////////////////////////////////////////////////////////
 
 	// const bodyParser = require('body-parser');
@@ -128,7 +128,7 @@
 			res.json({ status: 'error', error: ';))' });
 		}
 	});
-*/
+
 	/////////////////////////// login(end) /////////////////////////////////////////////////////////////
 	
 	const MONGO_DATABASE_NAME = 'p2pbettingplatformdb';

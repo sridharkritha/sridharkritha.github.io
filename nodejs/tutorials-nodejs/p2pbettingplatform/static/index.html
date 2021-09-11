@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/matchbook/style.css">
 	<script src="js/matchbook/clienthackathon.js"></script>
 
-	<title>Test - Web</title>
+	<title>PBP - A Peer Betting Platform</title>
 </head>
 
 <!-- 
@@ -22,18 +22,47 @@ Grid row & cols: https://www.joomlashack.com/blog/tutorials/center-and-align-ite
 <body>
 
 <!-- login(start) -->
-
-<!-- <h1>Registration</h1>
-		<form id="reg-form">
+		<div id="regLoginId">
 			<input type="text" autocomplete="off" id="username" placeholder="Username" />
 			<input type="password" autocomplete="off" id="password" placeholder="Password" />
-			<input type="submit" value="Submit Form" />
-		</form>
+			<input type="submit" id="logInId" value="Log in" />
+			<input type="submit" id="joinNowId" value="Join Now!" />
+		</div>
 
 		<script>
-			const form = document.getElementById('reg-form')
-			form.addEventListener('submit', registerUser)
+			let elemRef = document.getElementById("logInId");
+			elemRef.addEventListener('click', loginUser);
+			elemRef = document.getElementById("joinNowId");
+			elemRef.addEventListener('click', registerUser);
 
+			// log in
+			async function loginUser(event) {
+				event.preventDefault()
+				const username = document.getElementById('username').value
+				const password = document.getElementById('password').value
+
+				const result = await fetch('/api/login', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						username,
+						password
+					})
+				}).then((res) => res.json())
+
+				if (result.status === 'ok') {
+					// everything went fine
+					console.log('Got the token: ', result.data)
+					localStorage.setItem('token', result.data); // store in cookie
+					alert('Success')
+				} else {
+					alert(result.error)
+				}
+			}
+
+			// new user registration
 			async function registerUser(event) {
 				event.preventDefault()
 				const username = document.getElementById('username').value
@@ -58,7 +87,7 @@ Grid row & cols: https://www.joomlashack.com/blog/tutorials/center-and-align-ite
 					alert(result.error)
 				}
 			}
-		</script> -->
+		</script>
 
 <!-- login(end) -->
 

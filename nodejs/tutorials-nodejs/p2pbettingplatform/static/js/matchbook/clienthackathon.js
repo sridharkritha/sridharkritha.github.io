@@ -209,7 +209,7 @@ function processInputData(data) {
 
 
 	let raceCardContainer = document.getElementById('sportsEventContainer');
-
+	raceCardContainer.textContent = ''; // reset at start
 
 	let elem = document.createElement("div");
 	elem.innerHTML = time + '&nbsp' + raceName;
