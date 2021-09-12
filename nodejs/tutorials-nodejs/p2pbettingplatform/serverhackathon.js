@@ -1,12 +1,15 @@
 	// https://www.youtube.com/watch?v=UUA0YaBdqYk
 	const express = require("express");
 	const app = express();
-	const httpServer = require("http").createServer(app);
+	const port = 3000;
+	// const httpServer = app.listen(port); // reuse the express 'http' server
+	const httpServer = require("http").createServer(app); // explicitly create a 'http' server
 	const io = require("socket.io")(httpServer);
 	const path = require('path');
 	const fs = require('fs');
 	const { MongoClient } = require('mongodb');
-	const port = 3000;
+
+	///////////////////////////////////////////////////////////////////////////
 
 
 	app.use('/', express.static(path.join(__dirname, 'static')));
