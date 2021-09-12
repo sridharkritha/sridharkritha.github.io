@@ -20,17 +20,25 @@
 	const bcrypt = require('bcryptjs');
 	const jwt = require('jsonwebtoken');
 
-	const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
+	const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk';
 	// const uri = "mongodb+srv://sridharkritha:2244@cluster0.02kdt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 	// mongodb://localhost:27017/login-app-db
 
-	mongoose.connect('mongodb+srv://sridharkritha:2244@cluster0.02kdt.mongodb.net/p2pbettingplatformdb?retryWrites=true&w=majority', {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useCreateIndex: true
-	});
+	// https://mongoosejs.com/docs/connections.html
 
+	(async () => {
+		try {
+			await mongoose.connect('mongodb+srv://sridharkritha:2244@cluster0.02kdt.mongodb.net/p2pbettingplatformdb?retryWrites=true&w=majority', {
+				useNewUrlParser: true,
+				useUnifiedTopology: true,
+				useCreateIndex: true
+			});
+			console.log("UserAccount DB connection : Success");
+		} catch (error) {
+			console.log("UserAccount DB connection error :", error);
+		}
 
+	})();
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	app.post('/api/register', async (req, res) => {
 		const { username, password: plainTextPassword } = req.body;
