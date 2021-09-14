@@ -638,14 +638,18 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef.setAttribute("id",key+"_profitBackMainFontColorId");
 			if(betSlipSheet[key].playerinfo.betType === "Back") {
 				elemRef.setAttribute("class","backMainFontColor");
+				document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
+		
+				elemRef = document.createTextNode("PROFIT");
+				document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef);
 			}
 			else {
 				elemRef.setAttribute("class","layMainFontColor");
-			}
-			document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
+				document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
 		
-			elemRef = document.createTextNode("PROFIT");
-			document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef); 
+				elemRef = document.createTextNode("LIABILITY");
+				document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef);
+			} 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_profitValueBackMainFontColorId");

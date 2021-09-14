@@ -17,7 +17,7 @@
 
 	/////////////////////////// login(start) ///////////////////////////////////////////////////////////
 
-	// const bodyParser = require('body-parser');
+
 	const mongoose = require('mongoose');
 	const User = require('./model/user');
 	const bcrypt = require('bcryptjs');
