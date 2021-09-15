@@ -29,6 +29,43 @@ div {
 }
 /*********************** registration / login (end) *************************/
 
+.betSlipInputbox {
+
+/* border-radius: 2px; */
+
+height: 100%;
+
+outline: 0;
+
+width: 100%;
+
+margin: 0;
+
+/* padding: 15px 5px 0 0; */
+
+border: 0;
+
+text-align: center;
+
+background-color: inherit;
+
+/* color: #43444a; */
+
+font-size: 38px;
+
+font-weight: bolder;
+
+/* -webkit-appearance: textfield; */
+
+/* -moz-appearance: textfield; */
+
+/* appearance: textfield; */
+
+letter-spacing: 1px;
+
+/* padding: 15px 23px 0 0; */
+}
+
 /**************************** components (start) ******************************/
 
 #sportsEventContainer {

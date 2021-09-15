@@ -569,15 +569,17 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_backValueContainerId");
 			document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
-		
+		/////////////////////////////////////////////////////////////////////////////////////////
 			elemRef = document.createElement("INPUT");
 			elemRef.setAttribute("id", key+"_oddValueId");   // "backValueId");
+			elemRef.setAttribute("class","betSlipInputbox");
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
-			// elemRef.setAttribute("placeholder","min = 1.01");
+			elemRef.setAttribute("placeholder","min = 1.01");
 			elemRef.addEventListener('input', onInputValueUpdated);
 			elemRef.addEventListener('focusout', onInputFocusoutMinOddCorrection);
 			document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
+		////////////////////////////////////////////////////////////////////////////////////
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id", key+"_additionBackId");
@@ -623,21 +625,15 @@ function constructBetSlip(betSlipSheet, key) {
 			document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef);
 
 			////////////////////////////////////////////////////////////////////////
-
 			// Stake input
 			elemRef = document.createElement("INPUT");
 			elemRef.setAttribute("id", key+"_stakeValueId");   // "backValueId");
+			elemRef.setAttribute("class","betSlipInputbox");
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value","");
 			elemRef.setAttribute("placeholder","0.0");
 			elemRef.addEventListener('input', onInputValueUpdated);
 			document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
-
-
-
-			// elemRef = document.createTextNode("4.3");
-			// document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
-
 			///////////////////////////////////////////////////////////////////////
 		
 			elemRef = document.createElement("DIV");
@@ -673,18 +669,15 @@ function constructBetSlip(betSlipSheet, key) {
 			document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
 
 			////////////////////////////////////////////////////////////////////////////////////////////
-
 			// Profit / Liability input
 			elemRef = document.createElement("INPUT");
 			elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "backValueId");
+			elemRef.setAttribute("class","betSlipInputbox");
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value","");
 			elemRef.setAttribute("placeholder","0.0");
 			elemRef.addEventListener('input', onInputValueUpdated);
 			document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef); 
-
-			// elemRef = document.createTextNode("4.3");
-			// document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef);
 			//////////////////////////////////////////////////////////////////////////////////////////// 
 		
 			elemRef = document.createElement("DIV");
