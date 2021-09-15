@@ -766,6 +766,7 @@ function deleteBetSlip(e) {
 	delete betSlipSheet[key]; // remove the prop from the object
 }
 
+// Calculate and auto fill the input fields
 function fillInputFields(elementId, numValue) {
 
 	numValue = Number(numValue);
