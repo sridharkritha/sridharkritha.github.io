@@ -574,8 +574,9 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef.setAttribute("id", key+"_oddValueId");   // "backValueId");
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
-			// elemRef.setAttribute("placeholder","4.3");
+			// elemRef.setAttribute("placeholder","min = 1.01");
 			elemRef.addEventListener('input', onInputValueUpdated);
+			elemRef.addEventListener('focusout', onInputFocusoutMinOddCorrection);
 			document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
@@ -770,59 +771,70 @@ function fillInputFields(elementId, numValue) {
 	numValue = Number(numValue);
 
 	if (typeof numValue === 'number') {
-		//it's a number
+		let backLay = 0;
+		let stake = 0;
+		let profitLiability = 0;
+		let lastWord = null;
 
 		// Extract the last word by '_'
 		// '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId' =>  stakeValueId
 		lastWord = elementId.split("_").splice(-1)[0];
-		if(lastWord === 'oddValueId') {
-			key = elementId.replace('oddValueId','stakeValueId'); // src, dst
-			document.getElementById(key).value = numValue;
 
-			key = elementId.replace('oddValueId','profitLiabilityValueId'); // src, dst
-			document.getElementById(key).value = numValue;
+		// '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId' =>  12:00_Cartmel_11 French Company_backMid_2.8
+		// var test = elementId.split(/.*_/g);
+		let withoutLastWord = elementId.substr(0, elementId.lastIndexOf('_'));
+
+		const oddValueId    = withoutLastWord + '_oddValueId';
+		const stakeValueId  = withoutLastWord + '_stakeValueId';
+		const profitLiabilityValueId = withoutLastWord + '_profitLiabilityValueId';
+
+		backLay = Number(document.getElementById(oddValueId).value);
+		stake   = Number(document.getElementById(stakeValueId).value);
+		profitLiability = Number(document.getElementById(profitLiabilityValueId).value);
+
+		// Minimum odd
+		if(!backLay || backLay < 1.01) {
+			backLay = 1.01;
+			// document.getElementById(oddValueId).value = backLay;
+		}
+
+
+		if(lastWord === 'oddValueId') {
+			profitLiability = stake * (numValue - 1);
+			document.getElementById(profitLiabilityValueId).value = profitLiability.toFixed(2);
 		}
 		else if(lastWord === 'stakeValueId') {
-			key = elementId.replace('stakeValueId','oddValueId'); // src, dst
-			document.getElementById(key).value = numValue;
-
-			key = elementId.replace('stakeValueId','profitLiabilityValueId'); // src, dst
-			document.getElementById(key).value = numValue;
+			profitLiability = numValue * (backLay - 1);
+			document.getElementById(profitLiabilityValueId).value = profitLiability.toFixed(2);
 		}
 		else if(lastWord === 'profitLiabilityValueId') {
-			key = elementId.replace('profitLiabilityValueId','oddValueId'); // src, dst
-			document.getElementById(key).value = numValue;
-
-			key = elementId.replace('profitLiabilityValueId','stakeValueId'); // src, dst
-			document.getElementById(key).value = numValue;
+			stake = numValue / (backLay - 1);
+			document.getElementById(stakeValueId).value = stake.toFixed(2);
 		}
 	}
 }
 
 
 function onInputValueUpdated(e) {
-	let stake = 0;
-	let profitLiability = 0;
-	let backLay = 0;
-	let lastWord = null;
-	let key = null;
 
 	const numValue = Number(e.target.value);
 
 	fillInputFields(this.id, numValue);
-
-
-	// id = '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId'
-	// const key = this.id.replace('_deleteBetButtonId',''); // src, dst
-
-	// betSlipSheet[key].parentElemRef.remove(); // remove element from DOM
-
-	// delete betSlipSheet[key]; // remove the prop from the object
 }
 
 
+function onInputFocusoutMinOddCorrection(e) {
 
+	let backLay = Number(e.target.value);
 
+	// Minimum odd
+	if(!backLay || backLay < 1.01) {
+		backLay = 1.01;
+		document.getElementById(this.id).value = backLay;
+	}
+
+	fillInputFields(this.id, backLay);
+}
 
 
 /*
