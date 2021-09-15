@@ -575,6 +575,7 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
 			// elemRef.setAttribute("placeholder","4.3");
+			elemRef.addEventListener('input', onInputValueUpdated);
 			document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
@@ -617,11 +618,26 @@ function constructBetSlip(betSlipSheet, key) {
 			document.getElementById(key+"_stakeId").appendChild(elemRef); 
 		
 			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_stakeValueId");
-			document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("4.3");
-			document.getElementById(key+"_stakeValueId").appendChild(elemRef); 
+			elemRef.setAttribute("id",key+"_stakeValueContainerId");
+			document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef);
+
+			////////////////////////////////////////////////////////////////////////
+
+			// Stake input
+			elemRef = document.createElement("INPUT");
+			elemRef.setAttribute("id", key+"_stakeValueId");   // "backValueId");
+			elemRef.setAttribute("type","number");
+			elemRef.setAttribute("value","");
+			elemRef.setAttribute("placeholder","0.0");
+			elemRef.addEventListener('input', onInputValueUpdated);
+			document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
+
+
+
+			// elemRef = document.createTextNode("4.3");
+			// document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
+
+			///////////////////////////////////////////////////////////////////////
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_profitBackOthersBgColorId");
@@ -654,9 +670,21 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_profitValueBackMainFontColorId");
 			document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("4.3");
+
+			////////////////////////////////////////////////////////////////////////////////////////////
+
+			// Profit / Liability input
+			elemRef = document.createElement("INPUT");
+			elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "backValueId");
+			elemRef.setAttribute("type","number");
+			elemRef.setAttribute("value","");
+			elemRef.setAttribute("placeholder","0.0");
+			elemRef.addEventListener('input', onInputValueUpdated);
 			document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef); 
+
+			// elemRef = document.createTextNode("4.3");
+			// document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef);
+			//////////////////////////////////////////////////////////////////////////////////////////// 
 		
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_placeBetButtonId");
@@ -692,12 +720,18 @@ function subtractOdd(e) {
 
 	const oddValue = document.getElementById(oddId); 
 
-	const value = Number(oddValue.value);
+	let value = Number(oddValue.value);
 
 	if(value > 0.5) {
-		document.getElementById(oddId).value = (value - 0.5).toFixed(2);
+		value =  (value - 0.5).toFixed(2);
+		document.getElementById(oddId).value = value;
 	}
-	else document.getElementById(oddId).value = (0).toFixed(2);
+	else {
+		value = (0).toFixed(2);
+		document.getElementById(oddId).value = value;
+	}
+
+	fillInputFields(oddId, value);
 }
 
 // Increment the odd
@@ -707,12 +741,18 @@ function addOdd(e) {
 
 	const oddValue = document.getElementById(oddId); 
 
-	const value = Number(oddValue.value);
+	let value = Number(oddValue.value);
 
 	if(value) {
-		document.getElementById(oddId).value = (value+ 0.5).toFixed(2);
+		value = (value+ 0.5).toFixed(2);
+		document.getElementById(oddId).value = value;
 	}
-	else document.getElementById(oddId).value = (0.5).toFixed(2);
+	else {
+		value = (0.5).toFixed(2);
+		document.getElementById(oddId).value = (0.5).toFixed(2);
+	}
+
+	fillInputFields(oddId, value);
 }
 
 // Delete the bet slip
@@ -724,6 +764,65 @@ function deleteBetSlip(e) {
 
 	delete betSlipSheet[key]; // remove the prop from the object
 }
+
+function fillInputFields(elementId, numValue) {
+
+	numValue = Number(numValue);
+
+	if (typeof numValue === 'number') {
+		//it's a number
+
+		// Extract the last word by '_'
+		// '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId' =>  stakeValueId
+		lastWord = elementId.split("_").splice(-1)[0];
+		if(lastWord === 'oddValueId') {
+			key = elementId.replace('oddValueId','stakeValueId'); // src, dst
+			document.getElementById(key).value = numValue;
+
+			key = elementId.replace('oddValueId','profitLiabilityValueId'); // src, dst
+			document.getElementById(key).value = numValue;
+		}
+		else if(lastWord === 'stakeValueId') {
+			key = elementId.replace('stakeValueId','oddValueId'); // src, dst
+			document.getElementById(key).value = numValue;
+
+			key = elementId.replace('stakeValueId','profitLiabilityValueId'); // src, dst
+			document.getElementById(key).value = numValue;
+		}
+		else if(lastWord === 'profitLiabilityValueId') {
+			key = elementId.replace('profitLiabilityValueId','oddValueId'); // src, dst
+			document.getElementById(key).value = numValue;
+
+			key = elementId.replace('profitLiabilityValueId','stakeValueId'); // src, dst
+			document.getElementById(key).value = numValue;
+		}
+	}
+}
+
+
+function onInputValueUpdated(e) {
+	let stake = 0;
+	let profitLiability = 0;
+	let backLay = 0;
+	let lastWord = null;
+	let key = null;
+
+	const numValue = Number(e.target.value);
+
+	fillInputFields(this.id, numValue);
+
+
+	// id = '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId'
+	// const key = this.id.replace('_deleteBetButtonId',''); // src, dst
+
+	// betSlipSheet[key].parentElemRef.remove(); // remove element from DOM
+
+	// delete betSlipSheet[key]; // remove the prop from the object
+}
+
+
+
+
 
 
 /*
