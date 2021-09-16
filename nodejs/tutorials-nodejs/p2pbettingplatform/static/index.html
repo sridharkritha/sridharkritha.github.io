@@ -8,6 +8,7 @@
 	<script src="client-dist/socket.io.js"></script>
 
 	<link rel="stylesheet" href="css/matchbook/style.css">
+	<script src="js/matchbook/loginhackathon.js"></script>
 	<script src="js/matchbook/clienthackathon.js"></script>
 
 	<title>PBP - A Peer Betting Platform</title>
@@ -22,14 +23,18 @@ Grid row & cols: https://www.joomlashack.com/blog/tutorials/center-and-align-ite
 <body>
 
 <!-- login(start) -->
-		<div id="regLoginId">
-			<input type="text" autocomplete="off" id="username" placeholder="Username" />
-			<input type="password" autocomplete="off" id="password" placeholder="Password" />
-			<input type="submit" id="logInId" value="Log in" />
-			<input type="submit" id="joinNowId" value="Join Now!" />
+		<div id="regLoginWrapperId">
+			<span id="welcomeUserName"></span>
+			<div id="regLoginFieldsId">
+				<input type="text" autocomplete="off" id="username" placeholder="Username" />
+				<input type="password" autocomplete="off" id="password" placeholder="Password" />
+				<input type="submit" id="logInId" value="Log in" />
+				<input type="submit" id="joinNowId" value="Join Now!" />
+			</div>
 		</div>
 
 		<script>
+			/*
 			let elemRef = document.getElementById("logInId");
 			elemRef.addEventListener('click', loginUser);
 			elemRef = document.getElementById("joinNowId");
@@ -87,6 +92,7 @@ Grid row & cols: https://www.joomlashack.com/blog/tutorials/center-and-align-ite
 					alert(result.error)
 				}
 			}
+			*/
 		</script>
 
 <!-- login(end) -->
