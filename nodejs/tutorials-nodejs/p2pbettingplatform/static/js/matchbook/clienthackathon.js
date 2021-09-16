@@ -718,11 +718,12 @@ function subtractOdd(e) {
 
 	if(value > 0.5) {
 		value =  (value - 0.5).toFixed(2);
+		if(value < 1.01) value = 1.01;
 		document.getElementById(oddId).value = value;
 	}
 	else {
-		value = (0).toFixed(2);
-		document.getElementById(oddId).value = value;
+		// value = (0).toFixed(2);
+		document.getElementById(oddId).value = 1.01; // min lay/back odd
 	}
 
 	fillInputFields(oddId, value);
