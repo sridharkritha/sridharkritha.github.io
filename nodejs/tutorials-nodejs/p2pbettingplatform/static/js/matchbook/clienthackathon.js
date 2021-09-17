@@ -475,6 +475,12 @@ function constructBetSlip(betSlipSheet, key) {
 	{
 		//if (betSlipSheet.hasOwnProperty(key)) 
 		{
+			// betInfo.eventinfo = betSlipSheet[key].eventinfo;
+			// betInfo.playerinfo = betSlipSheet[key].playerinfo;
+			// betInfo.all = betSlipSheet[key];
+
+
+			// key = "12:00_Cartmel_11 French Company_backHigh_2.8"
 			parentElemRef = document.createElement("DIV");
 			betSlipSheet[key].parentElemRef = parentElemRef;
 			document.getElementById("betSlipContainer").appendChild(parentElemRef); 
@@ -627,7 +633,7 @@ function constructBetSlip(betSlipSheet, key) {
 			////////////////////////////////////////////////////////////////////////
 			// Stake input
 			elemRef = document.createElement("INPUT");
-			elemRef.setAttribute("id", key+"_stakeValueId");   // "backValueId");
+			elemRef.setAttribute("id", key+"_stakeValueId");
 			elemRef.setAttribute("class","betSlipInputbox");
 			elemRef.setAttribute("type","number");
 			elemRef.setAttribute("value","");
@@ -683,6 +689,9 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_placeBetButtonId");
 			elemRef.setAttribute("class","tickButtonBackground");
+			// store the bet info
+			elemRef.setAttribute("data-betInfo", JSON.stringify(betSlipSheet[key]));
+			elemRef.addEventListener('click', placeBet);
 			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("✔");
@@ -691,7 +700,7 @@ function constructBetSlip(betSlipSheet, key) {
 			elemRef = document.createElement("DIV");
 			elemRef.setAttribute("id",key+"_deleteBetButtonId");
 			elemRef.setAttribute("class","binButtonBackground");
-			elemRef.addEventListener('click', deleteBetSlip);			
+			elemRef.addEventListener('click', deleteBetSlip);
 			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 		
 			elemRef = document.createTextNode("🗑");
@@ -716,17 +725,20 @@ function subtractOdd(e) {
 
 	let value = Number(oddValue.value);
 
-	if(value > 0.5) {
-		value =  (value - 0.5).toFixed(2);
-		if(value < 1.01) value = 1.01;
-		document.getElementById(oddId).value = value;
+	if(typeof value == 'number') {
+		if(value > 0.5) {
+			value =  (value - 0.5).toFixed(2);
+			if(value < 1.01) value = 1.01;
+			document.getElementById(oddId).value = value;
+		}
+		else {
+			// value = (0).toFixed(2);
+			document.getElementById(oddId).value = 1.01; // min lay/back odd
+		}
+	
+		fillInputFields(oddId, value);
 	}
-	else {
-		// value = (0).toFixed(2);
-		document.getElementById(oddId).value = 1.01; // min lay/back odd
-	}
-
-	fillInputFields(oddId, value);
+	else console.error("Invalid number: ", value);
 }
 
 // Increment the odd
@@ -738,17 +750,40 @@ function addOdd(e) {
 
 	let value = Number(oddValue.value);
 
-	if(value) {
-		value = (value+ 0.5).toFixed(2);
-		document.getElementById(oddId).value = value;
+	if(typeof value == 'number') {
+		if(value) {
+			value = (value+ 0.5).toFixed(2);
+			document.getElementById(oddId).value = value;
+		}
+		else {
+			value = (0.5).toFixed(2);
+			document.getElementById(oddId).value = (0.5).toFixed(2);
+		}
+	
+		fillInputFields(oddId, value);
 	}
-	else {
-		value = (0.5).toFixed(2);
-		document.getElementById(oddId).value = (0.5).toFixed(2);
-	}
-
-	fillInputFields(oddId, value);
+	else console.error("Invalid number: ", value);
 }
+
+// Place a bet
+function placeBet(e) {
+
+	// elemRef.setAttribute("id", key+"_stakeValueId");
+	// elemRef.setAttribute("id",key+"_placeBetButtonId");
+
+	const stakeValueId = this.id.replace('_placeBetButtonId','_stakeValueId'); // src, dst
+
+	const value = Number(document.getElementById(stakeValueId).value);
+
+	if(typeof value == 'number' && value > 0) {
+
+		console.log(JSON.parse(this.dataset.betinfo));
+
+		// document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
+	}
+	else console.error("Invalid bet amount: ", value);
+}
+
 
 // Delete the bet slip
 function deleteBetSlip(e) {
@@ -807,28 +842,33 @@ function fillInputFields(elementId, numValue) {
 			document.getElementById(stakeValueId).value = stake.toFixed(2);
 		}
 	}
+	else console.error("Invalid number: ", numValue);
 }
 
 
 function onInputValueUpdated(e) {
 
 	const numValue = Number(e.target.value);
-
-	fillInputFields(this.id, numValue);
+	if (typeof numValue === 'number') {
+		fillInputFields(this.id, numValue);
+	}
+	else console.error("Invalid number: ", numValue);
 }
 
 
 function onInputFocusoutMinOddCorrection(e) {
 
 	let backLay = Number(e.target.value);
+	if (typeof backLay === 'number') {
+			// Minimum odd
+		if(!backLay || backLay < 1.01) {
+			backLay = 1.01;
+			document.getElementById(this.id).value = backLay;
+		}
 
-	// Minimum odd
-	if(!backLay || backLay < 1.01) {
-		backLay = 1.01;
-		document.getElementById(this.id).value = backLay;
+		fillInputFields(this.id, backLay);
 	}
-
-	fillInputFields(this.id, backLay);
+	else console.error("Invalid number: ", backLay);
 }
 
 
