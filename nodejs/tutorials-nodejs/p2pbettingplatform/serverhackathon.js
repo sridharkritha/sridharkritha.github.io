@@ -140,6 +140,62 @@
 		}
 	});
 
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	app.post('/api/placeBet', async (req, res) => {
+		const { token, betinfo, oddvalue } = req.body;
+
+		// if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+		// 	return res.json({ status: 'error', error: 'Invalid password' });
+		// }
+
+		// if (plainTextPassword.length < 5) {
+		// 	return res.json({
+		// 		status: 'error',
+		// 		error: 'Password too small. Should be atleast 6 characters'
+		// 	});
+		// }
+
+		try {
+			const user = jwt.verify(token, JWT_SECRET); // is token tampered ?
+
+			const _id = user.id;
+
+			console.log("betAfter: ", betinfo);
+
+
+			// array update
+			// {
+			// 	'links':[ {
+			// 			 "text" : "XYZ1",
+			// 			 "url" : "www.xyz.com1"
+			// 		    } ]
+			//     }
+
+			
+			// db.users.update ({_id: '123'}, { '$set': {"friends.0.emails.0.email" : '2222'} });
+
+			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, {name: "Sridhar"}, { wins: 12799 });
+			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, JSON.parse(data).findObject, JSON.parse(data).updateObject);
+			await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
+				{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
+				{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
+	
+
+			// const password = await bcrypt.hash(plainTextPassword, 10);
+
+			// await User.updateOne(
+			// 	{ _id },
+			// 	{
+			// 		$set: { password }
+			// 	}
+			// );
+			res.json({ status: 'ok' });
+		} catch (error) {
+			console.log(error);
+			res.json({ status: 'error', error: ';))' });
+		}
+	});
+
 	/////////////////////////// login(end) /////////////////////////////////////////////////////////////
 	
 	const MONGO_DATABASE_NAME = 'p2pbettingplatformdb';

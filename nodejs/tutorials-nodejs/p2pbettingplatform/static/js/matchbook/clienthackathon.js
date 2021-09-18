@@ -202,11 +202,16 @@ function processInputData(data) {
 	const runLength = ref.runLength;
 	const players = ref.players;
 
-	let eventinfo = {	'raceName': raceName,
-					'time': time,
-				 };
-	
+	 // {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"},
+	 // {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
 
+	let eventinfo = {	
+					'gameName':gameName,
+					'region':region,
+					'raceName': raceName,
+					'date':date,
+					'time': time
+				 };
 
 	let raceCardContainer = document.getElementById('sportsEventContainer');
 	raceCardContainer.textContent = ''; // reset at start
@@ -220,7 +225,7 @@ function processInputData(data) {
 	raceCardContainer.appendChild(elem);
 
 	for(let i = 0, n = 2 /*players.length*/; i < n; ++i) {
-		let playerinfo = { };
+		let playerinfo = { 'playerIndexString': 'players.' + i };
 		let idString = null;
 
 		// 1st row
@@ -261,6 +266,7 @@ function processInputData(data) {
 		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backLow'+'_'+players[i].backOdds[0];
 		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].backOdds[0];
+		playerinfo["oddIndexString"] = 'backOdds.0';
 		playerinfo["betType"] = "Back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -285,6 +291,7 @@ function processInputData(data) {
 		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backMid'+'_'+players[i].backOdds[0];
 		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].backOdds[1];
+		playerinfo["oddIndexString"] = 'backOdds.1';
 		playerinfo["betType"] = "Back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -308,6 +315,7 @@ function processInputData(data) {
 		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backHigh'+'_'+players[i].backOdds[0];
 		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].backOdds[2];
+		playerinfo["oddIndexString"] = 'backOdds.2';
 		playerinfo["betType"] = "Back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -332,6 +340,7 @@ function processInputData(data) {
 		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layLow'+'_'+players[i].layOdds[0];
 		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].layOdds[0];
+		playerinfo["oddIndexString"] = 'layOdds.0';
 		playerinfo["betType"] = "Lay";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -355,6 +364,7 @@ function processInputData(data) {
 		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layMid'+'_'+players[i].layOdds[1];
 		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].layOdds[1];
+		playerinfo["oddIndexString"] = 'layOdds.1';
 		playerinfo["betType"] = "Lay";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -378,6 +388,7 @@ function processInputData(data) {
 		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layHigh'+'_'+players[i].layOdds[2];
 		elem3.setAttribute("id", idString); //   oddSelected_111
 		playerinfo["odd"] = players[i].layOdds[2];
+		playerinfo["oddIndexString"] = 'layOdds.2';
 		playerinfo["betType"] = "Lay";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -777,9 +788,34 @@ function placeBet(e) {
 
 	if(typeof value == 'number' && value > 0) {
 
+		const betinfo = JSON.parse(this.dataset.betinfo);
+
 		console.log(JSON.parse(this.dataset.betinfo));
 
-		// document.getElementById('backValueId').value = (value+ 0.5).toFixed(2);
+		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
+		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
+		let betStr = betinfo.eventinfo.gameName+'.'+ betinfo.eventinfo.region+'.'
+					+ betinfo.eventinfo.raceName+'.'+ betinfo.eventinfo.date+'.'
+					+ betinfo.eventinfo.time+'.'+ betinfo.playerinfo.playerIndexString;
+
+		(async() => {
+			const str = await fetch('/api/placeBet', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json'},
+				body: JSON.stringify({
+					betinfo: this.dataset.betinfo,
+					oddvalue: value,
+					token: localStorage.getItem('token')
+				})
+			}).then((res) => res.json());
+
+			if (res.status === 'ok') {
+				// everything went fine
+				alert('Success');
+			} else {
+				alert(res.error);
+			}
+		})();
 	}
 	else console.error("Invalid bet amount: ", value);
 }

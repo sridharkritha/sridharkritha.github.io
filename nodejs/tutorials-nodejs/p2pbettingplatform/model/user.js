@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema(
 	{ collection: 'useraccountcollection' }
 );
 
+// Compile model from schema
 const model = mongoose.model('UserSchema', UserSchema);
 
 module.exports = model;
