@@ -794,18 +794,20 @@ function placeBet(e) {
 
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
-		let betStr = betinfo.eventinfo.gameName+'.'+ betinfo.eventinfo.region+'.'
+		let betstr = betinfo.eventinfo.gameName+'.'+ betinfo.eventinfo.region+'.'
 					+ betinfo.eventinfo.raceName+'.'+ betinfo.eventinfo.date+'.'
-					+ betinfo.eventinfo.time+'.'+ betinfo.playerinfo.playerIndexString;
+					+ betinfo.eventinfo.time+'.'+ betinfo.playerinfo.playerIndexString+'.'
+					+ betinfo.playerinfo.oddIndexString;
+		//let res = null;
 
 		(async() => {
-			const str = await fetch('/api/placeBet', {
+			const res = await fetch('/api/placeBet', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json'},
 				body: JSON.stringify({
-					betinfo: this.dataset.betinfo,
-					oddvalue: value,
-					token: localStorage.getItem('token')
+					token: localStorage.getItem('token'),
+					betstr: betstr, // this.dataset.betinfo,
+					oddvalue: value
 				})
 			}).then((res) => res.json());
 

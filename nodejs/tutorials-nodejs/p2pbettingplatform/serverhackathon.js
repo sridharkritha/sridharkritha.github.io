@@ -142,7 +142,7 @@
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	app.post('/api/placeBet', async (req, res) => {
-		const { token, betinfo, oddvalue } = req.body;
+		const { token, betstr, oddvalue } = req.body;
 
 		// if (!plainTextPassword || typeof plainTextPassword !== 'string') {
 		// 	return res.json({ status: 'error', error: 'Invalid password' });
@@ -160,7 +160,7 @@
 
 			const _id = user.id;
 
-			console.log("betAfter: ", betinfo);
+			console.log("betAfter: ", betstr);
 
 
 			// array update
@@ -176,9 +176,16 @@
 
 			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, {name: "Sridhar"}, { wins: 12799 });
 			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, JSON.parse(data).findObject, JSON.parse(data).updateObject);
-			await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
-				{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
-				{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
+			
+			let changeObj = {};
+			changeObj[betstr] = oddvalue; // need temp object. Direct object assingment NOT works => { betstr : oddvalue }
+			const res = await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
+									{}, changeObj);
+
+			// working
+			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
+			// 	{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
+			// 	{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
 	
 
 			// const password = await bcrypt.hash(plainTextPassword, 10);
@@ -192,7 +199,7 @@
 			res.json({ status: 'ok' });
 		} catch (error) {
 			console.log(error);
-			res.json({ status: 'error', error: ';))' });
+			res.json({ status: 'error', error });
 		}
 	});
 
