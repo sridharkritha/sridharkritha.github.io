@@ -166,9 +166,17 @@ socket.on("connect", async () => {
 });
 socket.connect(); // need bcos 'autoConnect:false'
 
-// socket.on("myEventChangeHappened", (data) => { 
-// 	document.getElementById('winsId').textContent = JSON.parse(data).wins;
-// });
+
+// "{"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}"
+socket.on("myEventChangeHappened", (data) => { 
+	const changedObject = JSON.parse(data);
+	let key = Object.keys(changedObject)[0];
+	let value = changedObject[key];
+
+	document.getElementById(key + '_odd').innerHTML = value;
+
+	// document.getElementById('winsId').textContent = JSON.parse(data).wins;
+});
 
 
 
@@ -205,7 +213,7 @@ function processInputData(data) {
 	 // {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"},
 	 // {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
 
-	let eventinfo = {	
+	let eventinfo = {
 					'gameName':gameName,
 					'region':region,
 					'raceName': raceName,
@@ -224,9 +232,18 @@ function processInputData(data) {
 	elem.innerHTML = matchType + '&nbsp' + '|' + '&nbsp' + runLength;
 	raceCardContainer.appendChild(elem);
 
+	// final Output = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7
+
+	// "horseRace.uk.Cartmel.2021-09-20.12:00.players."
+	let preStr = eventinfo.gameName          +'.'+ eventinfo.region +'.'
+					+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
+					+ eventinfo.time     +'.'+ 'players'        +'.';
+
 	for(let i = 0, n = 2 /*players.length*/; i < n; ++i) {
 		let playerinfo = { 'playerIndexString': 'players.' + i };
-		let idString = null;
+
+		// "horseRace.uk.Cartmel.2021-09-20.12:00.players.0."
+		let idString = preStr + i + '.';
 
 		// 1st row
 		let elem1 = document.createElement("div");
@@ -262,11 +279,29 @@ function processInputData(data) {
 		// 111
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetLowContainer backOthersBgColorHover";
-		// elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
-		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backLow'+'_'+players[i].backOdds[0];
-		elem3.setAttribute("id", idString); //   oddSelected_111
-		playerinfo["odd"] = players[i].backOdds[0];
+
+		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
+		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
+		// "{"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}"
+
+		// let betstr = eventinfo.gameName     +'.'+ eventinfo.region +'.'
+		// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
+		// 			+ eventinfo.time     +'.'+ 'players'        +'.'
+		// 			+ i                  +'.'+ playerinfo["oddIndexString"];
+
 		playerinfo["oddIndexString"] = 'backOdds.0';
+
+		// elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
+		// "{"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}"
+		// idString = "12:00_Cartmel_11 French Company_backLow_2"
+		// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backLow'+'_'+players[i].backOdds[0];
+
+		// idString =  eventinfo.gameName     +'.'+ eventinfo.region +'.'
+		// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
+		// 			+ eventinfo.time     +'.'+ 'players'        +'.'
+		// 			+ i                  +'.'+ playerinfo["oddIndexString"];
+		elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+		playerinfo["odd"] = players[i].backOdds[0];
 		playerinfo["betType"] = "Back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -275,6 +310,7 @@ function processInputData(data) {
 
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
+		elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "_odd");
 		elem4.innerHTML = players[i].backOdds[0];
 		// elem3.appendChild(elem4);
 
@@ -288,10 +324,14 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetMidContainer backOthersBgColorHover";
 		//elem3.setAttribute("id","oddSelected_122");
-		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backMid'+'_'+players[i].backOdds[0];
-		elem3.setAttribute("id", idString); //   oddSelected_111
-		playerinfo["odd"] = players[i].backOdds[1];
 		playerinfo["oddIndexString"] = 'backOdds.1';
+		// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backMid'+'_'+players[i].backOdds[0];
+		// idString =  eventinfo.gameName      +'.'+ eventinfo.region +'.'
+		// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
+		// 			+ eventinfo.time     +'.'+ 'players'        +'.'
+		// 			+ i                  +'.'+ playerinfo["oddIndexString"];
+		elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+		playerinfo["odd"] = players[i].backOdds[1];
 		playerinfo["betType"] = "Back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -300,6 +340,7 @@ function processInputData(data) {
 
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
+		elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "_odd");
 		elem4.innerHTML = players[i].backOdds[1];
 		elem3.appendChild(elem4);
 
@@ -312,10 +353,10 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "backBetHighContainer backMainBgColor";
 		//elem3.setAttribute("id","oddSelected_133");
-		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backHigh'+'_'+players[i].backOdds[0];
-		elem3.setAttribute("id", idString); //   oddSelected_111
-		playerinfo["odd"] = players[i].backOdds[2];
+		// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backHigh'+'_'+players[i].backOdds[0];
 		playerinfo["oddIndexString"] = 'backOdds.2';
+		elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+		playerinfo["odd"] = players[i].backOdds[2];
 		playerinfo["betType"] = "Back";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -324,6 +365,7 @@ function processInputData(data) {
 
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
+		elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "_odd");
 		elem4.innerHTML = players[i].backOdds[2];
 		elem3.appendChild(elem4);
 
@@ -337,10 +379,10 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "layBetLowContainer layMainBgColor";
 		// elem3.setAttribute("id","oddSelected_144");
-		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layLow'+'_'+players[i].layOdds[0];
-		elem3.setAttribute("id", idString); //   oddSelected_111
-		playerinfo["odd"] = players[i].layOdds[0];
+		// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layLow'+'_'+players[i].layOdds[0];
 		playerinfo["oddIndexString"] = 'layOdds.0';
+		elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+		playerinfo["odd"] = players[i].layOdds[0];
 		playerinfo["betType"] = "Lay";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -349,6 +391,7 @@ function processInputData(data) {
 
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
+		elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "_odd");
 		elem4.innerHTML = players[i].layOdds[0];
 		elem3.appendChild(elem4);
 
@@ -361,10 +404,10 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "layBetMidContainer layOthersBgColorHover";
 		//elem3.setAttribute("id","oddSelected_155");
-		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layMid'+'_'+players[i].layOdds[1];
-		elem3.setAttribute("id", idString); //   oddSelected_111
-		playerinfo["odd"] = players[i].layOdds[1];
 		playerinfo["oddIndexString"] = 'layOdds.1';
+		// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layMid'+'_'+players[i].layOdds[1];
+		elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+		playerinfo["odd"] = players[i].layOdds[1];
 		playerinfo["betType"] = "Lay";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -373,6 +416,7 @@ function processInputData(data) {
 
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
+		elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "_odd");
 		elem4.innerHTML = players[i].layOdds[1];
 		elem3.appendChild(elem4);
 
@@ -385,10 +429,10 @@ function processInputData(data) {
 		elem3 = document.createElement("div");
 		elem3.classList = "layBetHighContainer layOthersBgColorHover";
 		//elem3.setAttribute("id","oddSelected_166");
-		idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layHigh'+'_'+players[i].layOdds[2];
-		elem3.setAttribute("id", idString); //   oddSelected_111
-		playerinfo["odd"] = players[i].layOdds[2];
 		playerinfo["oddIndexString"] = 'layOdds.2';
+		// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layHigh'+'_'+players[i].layOdds[2];
+		elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+		playerinfo["odd"] = players[i].layOdds[2];
 		playerinfo["betType"] = "Lay";
 		elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 		elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
@@ -397,6 +441,7 @@ function processInputData(data) {
 
 		elem4 = document.createElement("div");
 		elem4.classList = "odd";
+		elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "_odd");
 		elem4.innerHTML = players[i].layOdds[2];
 		elem3.appendChild(elem4);
 
@@ -443,8 +488,6 @@ function processInputData(data) {
 
 let betSlipSheet = {};
 
-
-
 // passing attributes from HTML -> JS by data-
 // https://stackoverflow.com/questions/51617527/parameter-passing-in-javascript-onclick-this-id-versus-other-attributes
 
@@ -453,13 +496,10 @@ function addToBetSlip(e) {
 
 	if(!betSlipSheet[this.id]) {
 		betSlipSheet[this.id] = { };
-		betSlipSheet[this.id].eventinfo = JSON.parse(this.dataset.eventinfo);
+		betSlipSheet[this.id].eventinfo  = JSON.parse(this.dataset.eventinfo);
 		betSlipSheet[this.id].playerinfo = JSON.parse(this.dataset.playerinfo);
 		constructBetSlip(betSlipSheet, this.id);
 	}
-
-
-
 
 	console.log(this);
 	console.log(e.currentTarget); // element you clicked
@@ -475,250 +515,240 @@ function addToBetSlip(e) {
 }
 
 
-
-
 function constructBetSlip(betSlipSheet, key) {
 	let elemRef = null; 
 	let parentElemRef = null;
 
-
-	// for (let key in betSlipSheet) 
-	{
-		//if (betSlipSheet.hasOwnProperty(key)) 
-		{
-			// betInfo.eventinfo = betSlipSheet[key].eventinfo;
-			// betInfo.playerinfo = betSlipSheet[key].playerinfo;
-			// betInfo.all = betSlipSheet[key];
+	// betInfo.eventinfo = betSlipSheet[key].eventinfo;
+	// betInfo.playerinfo = betSlipSheet[key].playerinfo;
+	// betInfo.all = betSlipSheet[key];
 
 
-			// key = "12:00_Cartmel_11 French Company_backHigh_2.8"
-			parentElemRef = document.createElement("DIV");
-			betSlipSheet[key].parentElemRef = parentElemRef;
-			document.getElementById("betSlipContainer").appendChild(parentElemRef); 
+	// key = "12:00_Cartmel_11 French Company_backHigh_2.8"
+	parentElemRef = document.createElement("DIV");
+	betSlipSheet[key].parentElemRef = parentElemRef;
+	document.getElementById("betSlipContainer").appendChild(parentElemRef); 
 
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_timeVenueId"); 
-			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-			parentElemRef.appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_timeId");
-			document.getElementById(key+"_timeVenueId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode(betSlipSheet[key].eventinfo.time); // ("13:00");
-			document.getElementById(key+"_timeId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_venueId");
-			document.getElementById(key+"_timeVenueId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode(betSlipSheet[key].eventinfo.raceName); //("Wolverhampton");
-			document.getElementById(key+"_venueId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_outcomePlayerId");
-			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-			parentElemRef.appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_outcomeId");
-			document.getElementById(key+"_outcomePlayerId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); // ("Win");
-			document.getElementById(key+"_outcomeId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_playerId");
-			elemRef.setAttribute("class","halfOpaque");
-			document.getElementById(key+"_outcomePlayerId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.horseName); // ("8 She's A Deva");
-			document.getElementById(key+"_playerId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id", key+"_backStakeProfitBetBinId");
-			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
-			parentElemRef.appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_backPlusMinusId");
-			elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
-			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id", key+"_subtractBackId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","gridCenterVH backMainBgColor");
-			}
-			else {
-				elemRef.setAttribute("class","gridCenterVH layMainBgColor");
-			}
-			elemRef.addEventListener('click', subtractOdd);
-			document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("-");
-			document.getElementById( key+"_subtractBackId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_backOthersBgColorId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","backOthersBgColor");
-			}
-			else {
-				elemRef.setAttribute("class","layOthersBgColor");
-			}
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_timeVenueId"); 
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+	parentElemRef.appendChild(elemRef); 
 
-			document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_backMainFontColorId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","backMainFontColor");
-			}
-			else {
-				elemRef.setAttribute("class","layMainFontColor");
-			}
-			document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); //("BACK");
-			document.getElementById(key+"_backMainFontColorId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_backValueContainerId");
-			document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
-		/////////////////////////////////////////////////////////////////////////////////////////
-			elemRef = document.createElement("INPUT");
-			elemRef.setAttribute("id", key+"_oddValueId");   // "backValueId");
-			elemRef.setAttribute("class","betSlipInputbox");
-			elemRef.setAttribute("type","number");
-			elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
-			elemRef.setAttribute("placeholder","min = 1.01");
-			elemRef.addEventListener('input', onInputValueUpdated);
-			elemRef.addEventListener('focusout', onInputFocusoutMinOddCorrection);
-			document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
-		////////////////////////////////////////////////////////////////////////////////////
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id", key+"_additionBackId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","gridCenterVH backMainBgColor");
-			}
-			else {
-				elemRef.setAttribute("class","gridCenterVH layMainBgColor");
-			}
-			elemRef.addEventListener('click', addOdd);
-			document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("+");
-			document.getElementById(key+"_additionBackId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_stakeBackOthersBgColor");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","backOthersBgColor");
-			}
-			else {
-				elemRef.setAttribute("class","layOthersBgColor");
-			}
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_timeId");
+	document.getElementById(key+"_timeVenueId").appendChild(elemRef); 
 
-			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_stakeId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","backMainFontColor");
-			}
-			else {
-				elemRef.setAttribute("class","layMainFontColor");
-			}
+	elemRef = document.createTextNode(betSlipSheet[key].eventinfo.time); // ("13:00");
+	document.getElementById(key+"_timeId").appendChild(elemRef); 
 
-			document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("STAKE");
-			document.getElementById(key+"_stakeId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_stakeValueContainerId");
-			document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef);
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_venueId");
+	document.getElementById(key+"_timeVenueId").appendChild(elemRef); 
 
-			////////////////////////////////////////////////////////////////////////
-			// Stake input
-			elemRef = document.createElement("INPUT");
-			elemRef.setAttribute("id", key+"_stakeValueId");
-			elemRef.setAttribute("class","betSlipInputbox");
-			elemRef.setAttribute("type","number");
-			elemRef.setAttribute("value","");
-			elemRef.setAttribute("placeholder","0.0");
-			elemRef.addEventListener('input', onInputValueUpdated);
-			document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
-			///////////////////////////////////////////////////////////////////////
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_profitBackOthersBgColorId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","backOthersBgColor");
-			}
-			else {
-				elemRef.setAttribute("class","layOthersBgColor");
-			}
+	elemRef = document.createTextNode(betSlipSheet[key].eventinfo.raceName); //("Wolverhampton");
+	document.getElementById(key+"_venueId").appendChild(elemRef); 
 
-			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_profitBackMainFontColorId");
-			if(betSlipSheet[key].playerinfo.betType === "Back") {
-				elemRef.setAttribute("class","backMainFontColor");
-				document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
-		
-				elemRef = document.createTextNode("PROFIT");
-				document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef);
-			}
-			else {
-				elemRef.setAttribute("class","layMainFontColor");
-				document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
-		
-				elemRef = document.createTextNode("LIABILITY");
-				document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef);
-			} 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_profitValueBackMainFontColorId");
-			document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_outcomePlayerId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
+	parentElemRef.appendChild(elemRef); 
 
-			////////////////////////////////////////////////////////////////////////////////////////////
-			// Profit / Liability input
-			elemRef = document.createElement("INPUT");
-			elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "backValueId");
-			elemRef.setAttribute("class","betSlipInputbox");
-			elemRef.setAttribute("type","number");
-			elemRef.setAttribute("value","");
-			elemRef.setAttribute("placeholder","0.0");
-			elemRef.addEventListener('input', onInputValueUpdated);
-			document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef); 
-			//////////////////////////////////////////////////////////////////////////////////////////// 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_placeBetButtonId");
-			elemRef.setAttribute("class","tickButtonBackground");
-			// store the bet info
-			elemRef.setAttribute("data-betInfo", JSON.stringify(betSlipSheet[key]));
-			elemRef.addEventListener('click', placeBet);
-			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("✔");
-			document.getElementById(key+"_placeBetButtonId").appendChild(elemRef); 
-		
-			elemRef = document.createElement("DIV");
-			elemRef.setAttribute("id",key+"_deleteBetButtonId");
-			elemRef.setAttribute("class","binButtonBackground");
-			elemRef.addEventListener('click', deleteBetSlip);
-			document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
-		
-			elemRef = document.createTextNode("🗑");
-			document.getElementById(key+"_deleteBetButtonId").appendChild(elemRef);
-		}
-	 }
-	
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_outcomeId");
+	document.getElementById(key+"_outcomePlayerId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); // ("Win");
+	document.getElementById(key+"_outcomeId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_playerId");
+	elemRef.setAttribute("class","halfOpaque");
+	document.getElementById(key+"_outcomePlayerId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode(betSlipSheet[key].playerinfo.horseName); // ("8 She's A Deva");
+	document.getElementById(key+"_playerId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id", key+"_backStakeProfitBetBinId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_5 gridCenterVH");
+	parentElemRef.appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_backPlusMinusId");
+	elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_3");
+	document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id", key+"_subtractBackId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+	}
+	else {
+		elemRef.setAttribute("class","gridCenterVH layMainBgColor");
+	}
+	elemRef.addEventListener('click', subtractOdd);
+	document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode("-");
+	document.getElementById( key+"_subtractBackId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_backOthersBgColorId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","backOthersBgColor");
+	}
+	else {
+		elemRef.setAttribute("class","layOthersBgColor");
+	}
+
+	document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_backMainFontColorId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","backMainFontColor");
+	}
+	else {
+		elemRef.setAttribute("class","layMainFontColor");
+	}
+	document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); //("BACK");
+	document.getElementById(key+"_backMainFontColorId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_backValueContainerId");
+	document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
+/////////////////////////////////////////////////////////////////////////////////////////
+	elemRef = document.createElement("INPUT");
+	elemRef.setAttribute("id", key+"_oddValueId");   // "backValueId");
+	elemRef.setAttribute("class","betSlipInputbox");
+	elemRef.setAttribute("type","number");
+	elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
+	elemRef.setAttribute("placeholder","min = 1.01");
+	elemRef.addEventListener('input', onInputValueUpdated);
+	elemRef.addEventListener('focusout', onInputFocusoutMinOddCorrection);
+	document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
+////////////////////////////////////////////////////////////////////////////////////
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id", key+"_additionBackId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","gridCenterVH backMainBgColor");
+	}
+	else {
+		elemRef.setAttribute("class","gridCenterVH layMainBgColor");
+	}
+	elemRef.addEventListener('click', addOdd);
+	document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode("+");
+	document.getElementById(key+"_additionBackId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_stakeBackOthersBgColor");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","backOthersBgColor");
+	}
+	else {
+		elemRef.setAttribute("class","layOthersBgColor");
+	}
+
+	document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_stakeId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","backMainFontColor");
+	}
+	else {
+		elemRef.setAttribute("class","layMainFontColor");
+	}
+
+	document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef); 
+
+	elemRef = document.createTextNode("STAKE");
+	document.getElementById(key+"_stakeId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_stakeValueContainerId");
+	document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef);
+
+	////////////////////////////////////////////////////////////////////////
+	// Stake input
+	elemRef = document.createElement("INPUT");
+	elemRef.setAttribute("id", key+"_stakeValueId");
+	elemRef.setAttribute("class","betSlipInputbox");
+	elemRef.setAttribute("type","number");
+	elemRef.setAttribute("value","");
+	elemRef.setAttribute("placeholder","0.0");
+	elemRef.addEventListener('input', onInputValueUpdated);
+	document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
+	///////////////////////////////////////////////////////////////////////
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_profitBackOthersBgColorId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","backOthersBgColor");
+	}
+	else {
+		elemRef.setAttribute("class","layOthersBgColor");
+	}
+
+	document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_profitBackMainFontColorId");
+	if(betSlipSheet[key].playerinfo.betType === "Back") {
+		elemRef.setAttribute("class","backMainFontColor");
+		document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
+
+		elemRef = document.createTextNode("PROFIT");
+		document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef);
+	}
+	else {
+		elemRef.setAttribute("class","layMainFontColor");
+		document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
+
+		elemRef = document.createTextNode("LIABILITY");
+		document.getElementById(key+"_profitBackMainFontColorId").appendChild(elemRef);
+	} 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_profitValueBackMainFontColorId");
+	document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
+
+	////////////////////////////////////////////////////////////////////////////////////////////
+	// Profit / Liability input
+	elemRef = document.createElement("INPUT");
+	elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "backValueId");
+	elemRef.setAttribute("class","betSlipInputbox");
+	elemRef.setAttribute("type","number");
+	elemRef.setAttribute("value","");
+	elemRef.setAttribute("placeholder","0.0");
+	elemRef.addEventListener('input', onInputValueUpdated);
+	document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef); 
+	//////////////////////////////////////////////////////////////////////////////////////////// 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_placeBetButtonId");
+	elemRef.setAttribute("class","tickButtonBackground");
+	// store the bet info
+	elemRef.setAttribute("data-betInfo", JSON.stringify(betSlipSheet[key]));
+	elemRef.addEventListener('click', placeBet);
+	document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode("✔");
+	document.getElementById(key+"_placeBetButtonId").appendChild(elemRef); 
+
+	elemRef = document.createElement("DIV");
+	elemRef.setAttribute("id",key+"_deleteBetButtonId");
+	elemRef.setAttribute("class","binButtonBackground");
+	elemRef.addEventListener('click', deleteBetSlip);
+	document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
+
+	elemRef = document.createTextNode("🗑");
+	document.getElementById(key+"_deleteBetButtonId").appendChild(elemRef);
 }
 
 // constructBetSlip();
@@ -796,11 +826,13 @@ function placeBet(e) {
 
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
-		let betstr = betinfo.eventinfo.gameName+'.'+ betinfo.eventinfo.region+'.'
-					+ betinfo.eventinfo.raceName+'.'+ betinfo.eventinfo.date+'.'
-					+ betinfo.eventinfo.time+'.'+ betinfo.playerinfo.playerIndexString+'.'
-					+ betinfo.playerinfo.oddIndexString;
-		//let res = null;
+// 		let betstr = betinfo.eventinfo.gameName+'.'+ betinfo.eventinfo.region+'.'
+// 					+ betinfo.eventinfo.raceName+'.'+ betinfo.eventinfo.date+'.'
+// 					+ betinfo.eventinfo.time+'.'+ betinfo.playerinfo.playerIndexString+'.'
+// 					+ betinfo.playerinfo.oddIndexString;
+
+
+		const betstr = this.id.replace('_placeBetButtonId',''); // src, dst
 
 		(async() => {
 			const res = await fetch('/api/placeBet', {
