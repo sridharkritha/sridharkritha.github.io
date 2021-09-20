@@ -776,6 +776,8 @@ function addOdd(e) {
 	else console.error("Invalid number: ", value);
 }
 
+//  updatedFields: horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1: 9
+
 // Place a bet
 function placeBet(e) {
 

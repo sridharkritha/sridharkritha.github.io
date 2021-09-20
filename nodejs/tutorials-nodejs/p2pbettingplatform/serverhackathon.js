@@ -144,17 +144,6 @@
 	app.post('/api/placeBet', async (req, res) => {
 		const { token, betstr, oddvalue } = req.body;
 
-		// if (!plainTextPassword || typeof plainTextPassword !== 'string') {
-		// 	return res.json({ status: 'error', error: 'Invalid password' });
-		// }
-
-		// if (plainTextPassword.length < 5) {
-		// 	return res.json({
-		// 		status: 'error',
-		// 		error: 'Password too small. Should be atleast 6 characters'
-		// 	});
-		// }
-
 		try {
 			const user = jwt.verify(token, JWT_SECRET); // is token tampered ?
 
@@ -179,23 +168,16 @@
 			
 			let changeObj = {};
 			changeObj[betstr] = oddvalue; // need temp object. Direct object assingment NOT works => { betstr : oddvalue }
-			const res = await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
+			const result = await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
 									{}, changeObj);
+
+			console.log("Placed bet sucessfully: ", result);
 
 			// working
 			// await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
 			// 	{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
 			// 	{'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
-	
 
-			// const password = await bcrypt.hash(plainTextPassword, 10);
-
-			// await User.updateOne(
-			// 	{ _id },
-			// 	{
-			// 		$set: { password }
-			// 	}
-			// );
 			res.json({ status: 'ok' });
 		} catch (error) {
 			console.log(error);
@@ -300,22 +282,24 @@
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#find for the find() docs
 		// const cursor = await client.db(dataBaseName).collection(collectionName).find({ }, {_id: 1, name: 1, wins: 1 });
 		// const cursor = await COLL.find({ }, {_id: 1, name: 1, wins: 1 });
-		const cursor = await COLL.find({ }, {});
+		if(COLL) {
+			const cursor = await COLL.find({ }, {});
 
-		// Store the results in an array
-		const results = await cursor.toArray();
+			// Store the results in an array
+			const results = await cursor.toArray();
 
-		io.emit('myEvent', JSON.stringify({ ...results }));
+			io.emit('myEvent', JSON.stringify({ ...results }));
 
-		// Print the results
-		if (results.length > 0) {
-			console.log(`Documents found inside the collection - ${collectionName} :`);
-			results.forEach((result, i) => {
-				console.log(`${i + 1}. names: ${result.name}`);
-				console.log(`   wins: ${result.wins}`);
-			});
-		} else {
-			console.log("NO document found in the database");
+			// Print the results
+			if (results.length > 0) {
+				console.log(`Documents found inside the collection - ${collectionName} :`);
+				results.forEach((result, i) => {
+					console.log(`${i + 1}. : ${JSON.stringify(result)}`);
+					// console.log(`   wins: ${result.wins}`);
+				});
+			} else {
+				console.log("NO document found in the database");
+			}
 		}
 	}
 
