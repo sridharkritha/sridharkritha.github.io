@@ -821,40 +821,6 @@ window.addEventListener('load', function () {
 		else console.error("Invalid bet amount: ", value);
 	}
 
-	function test_betRequest() {
-		let betOdd = 1;
-		let betstr = 'horseRace.uk.Cartmel.2021-09-20.12:00.players.'; // 0.backOdds.1
-		let nPlayers = 2;
-		let betType = ['backOdds', 'layOdds'];
-		let oddRange  = 3;
-
-		let player = 0;
-		let betTypeIdx = 0;
-		let oddRangeIdx = 0;
-		setInterval(() => {
-			let str = betstr + player + '.' + betType[betTypeIdx] + '.' + oddRangeIdx;
-			if(betTypeIdx == 1 && oddRangeIdx == 2) {
-				player = ++player % nPlayers;
-				betTypeIdx = 0;
-				oddRangeIdx = 0;
-			}
-			else if(oddRangeIdx == 2) {
-				oddRangeIdx = 0;
-				betTypeIdx = ++betTypeIdx % 2;
-			} 
-			else {
-				++oddRangeIdx;
-			}
-
-			sendBetRequest(str, ++betOdd);
-		}, 500);
-	}
-
-	setTimeout(() => {
-		test_betRequest();
-	}, 5000);
-
-
 	// Delete the bet slip
 	function deleteBetSlip(e) {
 
@@ -941,6 +907,42 @@ window.addEventListener('load', function () {
 		else console.error("Invalid number: ", backLay);
 	}
 	////////////////// stack addition and subtraction (end) ////////////////////////
+
+	//////////////// TEST bet request(start)////////////////////////////////////////////////////////////////////////////
+	function test_betRequest() {
+		let betOdd = 1;
+		let betstr = 'horseRace.uk.Cartmel.2021-09-20.12:00.players.'; // 0.backOdds.1
+		let nPlayers = 2;
+		let betType = ['backOdds', 'layOdds'];
+		let oddRange  = 3;
+
+		let player = 0;
+		let betTypeIdx = 0;
+		let oddRangeIdx = 0;
+		setInterval(() => {
+			let str = betstr + player + '.' + betType[betTypeIdx] + '.' + oddRangeIdx;
+			if(betTypeIdx == 1 && oddRangeIdx == 2) {
+				player = ++player % nPlayers;
+				betTypeIdx = 0;
+				oddRangeIdx = 0;
+			}
+			else if(oddRangeIdx == 2) {
+				oddRangeIdx = 0;
+				betTypeIdx = ++betTypeIdx % 2;
+			} 
+			else {
+				++oddRangeIdx;
+			}
+
+			sendBetRequest(str, ++betOdd);
+		}, 1);
+	}
+
+	// setTimeout(() => {
+	// 	test_betRequest();
+	// }, 5000);
+
+	//////////////// TEST bet request(end)//////////////////////////////////////////////////////////////////////////
 
 	//////////////////// win predictor (start ) ////////////////////////////////////
 
