@@ -29,6 +29,12 @@ div {
 }
 /*********************** registration / login (end) *************************/
 
+.winLossValue {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .betSlipInputbox {
 
 /* border-radius: 2px; */

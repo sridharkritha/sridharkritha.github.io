@@ -269,6 +269,11 @@ window.addEventListener('load', function () {
 			elem4.classList = "playerDesc";
 			elem4.innerHTML = 'J:' + players[i].jockeyName + '&nbsp' + 'T:'+ players[i].trainerName;
 			elem3.appendChild(elem4);
+			// display potential win/loss
+			elem4 = document.createElement("div");
+			elem4.setAttribute("class","winLossValue");
+			elem4.setAttribute("id", idString + "winLossValueId");
+			elem3.appendChild(elem4);
 
 			// odd range - back
 			elem2 = document.createElement("div");
@@ -793,7 +798,7 @@ window.addEventListener('load', function () {
 		else console.error("Invalid bet amount: ", value);
 	}
 
-	// Send the bet request to server
+	// Send a bet request to the server
 	function sendBetRequest(betstr, value) {
 		if(typeof value == 'number' && value > 0) {
 			// betstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2
@@ -843,16 +848,23 @@ window.addEventListener('load', function () {
 			let lastWord = null;
 
 			// Extract the last word by '_'
-			// '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId' =>  stakeValueId
+			// "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0_stakeValueId" => stakeValueId
 			lastWord = elementId.split("_").splice(-1)[0];
 
-			// '12:00_Cartmel_11 French Company_backMid_2.8_stakeValueId' =>  12:00_Cartmel_11 French Company_backMid_2.8
+			// "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0_stakeValueId" =>  "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0"
 			// var test = elementId.split(/.*_/g);
 			let withoutLastWord = elementId.substr(0, elementId.lastIndexOf('_'));
 
 			const oddValueId    = withoutLastWord + '_oddValueId';
 			const stakeValueId  = withoutLastWord + '_stakeValueId';
 			const profitLiabilityValueId = withoutLastWord + '_profitLiabilityValueId';
+			
+			// remove last 2 words (backOdds.0)
+			// "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0 => 'horseRace.uk.Cartmel.2021-09-20.12:00.players.0'
+			const withoutLast2Words = withoutLastWord.split('.').slice(0, -2).join('.');
+			const winLossValueId = withoutLast2Words + '.winLossValueId';
+
+			const isBackBet = withoutLastWord.split('.').splice(-2)[0] === 'backOdds' ? true : false;
 
 			backLay = Number(document.getElementById(oddValueId).value);
 			stake   = Number(document.getElementById(stakeValueId).value);
@@ -868,14 +880,42 @@ window.addEventListener('load', function () {
 			if(lastWord === 'oddValueId') {
 				profitLiability = stake * (numValue - 1);
 				document.getElementById(profitLiabilityValueId).value = profitLiability.toFixed(2);
+				if(isBackBet)
+				{
+					document.getElementById(winLossValueId).style.color = 'green';
+					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
+				}
+				else {
+					document.getElementById(winLossValueId).style.color = 'red';
+					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
+				}
 			}
 			else if(lastWord === 'stakeValueId') {
 				profitLiability = numValue * (backLay - 1);
 				document.getElementById(profitLiabilityValueId).value = profitLiability.toFixed(2);
+
+				if(isBackBet)
+				{
+					document.getElementById(winLossValueId).style.color = 'green';
+					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
+				}
+				else {
+					document.getElementById(winLossValueId).style.color = 'red';
+					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
+				}
 			}
 			else if(lastWord === 'profitLiabilityValueId') {
 				stake = numValue / (backLay - 1);
 				document.getElementById(stakeValueId).value = stake.toFixed(2);
+				if(isBackBet)
+				{
+					document.getElementById(winLossValueId).style.color = 'green';
+					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
+				}
+				else {
+					document.getElementById(winLossValueId).style.color = 'red';
+					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
+				}
 			}
 		}
 		else console.error("Invalid number: ", numValue);
@@ -912,9 +952,8 @@ window.addEventListener('load', function () {
 	function test_betRequest() {
 		let betOdd = 1;
 		let betstr = 'horseRace.uk.Cartmel.2021-09-20.12:00.players.'; // 0.backOdds.1
-		let nPlayers = 2;
+		let nPlayers = 2; 	
 		let betType = ['backOdds', 'layOdds'];
-		let oddRange  = 3;
 
 		let player = 0;
 		let betTypeIdx = 0;
