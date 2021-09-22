@@ -206,6 +206,7 @@ window.addEventListener('load', function () {
 		const matchType = ref.matchType;
 		const runLength = ref.runLength;
 		const players = ref.players;
+		const playerCount = players.length;
 
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"},
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
@@ -215,7 +216,8 @@ window.addEventListener('load', function () {
 						'region':region,
 						'raceName': raceName,
 						'date':date,
-						'time': time
+						'time': time,
+						'playerCount': playerCount
 					};
 
 		let raceCardContainer = document.getElementById('sportsEventContainer');
@@ -236,7 +238,7 @@ window.addEventListener('load', function () {
 						+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
 						+ eventinfo.time     +'.'+ 'players'        +'.';
 
-		for(let i = 0, n = 2 /*players.length*/; i < n; ++i) {
+		for(let i = 0; i < playerCount; ++i) {
 			let playerinfo = { 'playerIndexString': 'players.' + i };
 
 			// "horseRace.uk.Cartmel.2021-09-20.12:00.players.0."
@@ -471,7 +473,7 @@ window.addEventListener('load', function () {
 			betSlipSheet[this.id] = { };
 			betSlipSheet[this.id].eventinfo  = JSON.parse(this.dataset.eventinfo);
 			betSlipSheet[this.id].playerinfo = JSON.parse(this.dataset.playerinfo);
-			constructBetSlip(betSlipSheet, this.id);
+			constructBetSlip(betSlipSheet, this.id, betSlipSheet[this.id].eventinfo.playerCount);
 		}
 
 		console.log(this);
@@ -488,7 +490,7 @@ window.addEventListener('load', function () {
 	}
 
 	// Construct the bet slip
-	function constructBetSlip(betSlipSheet, key) {
+	function constructBetSlip(betSlipSheet, key, playerCount) {
 		let elemRef = null; 
 		let parentElemRef = null;
 
@@ -554,6 +556,8 @@ window.addEventListener('load', function () {
 		else {
 			elemRef.setAttribute("class","gridCenterVH layMainBgColor");
 		}
+
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('click', subtractOdd);
 		document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
 
@@ -594,6 +598,7 @@ window.addEventListener('load', function () {
 		elemRef.setAttribute("type","number");
 		elemRef.setAttribute("value",betSlipSheet[key].playerinfo.odd);
 		elemRef.setAttribute("placeholder","min = 1.01");
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('input', onInputValueUpdated);
 		elemRef.addEventListener('focusout', onInputFocusoutMinOddCorrection);
 		document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
@@ -607,6 +612,7 @@ window.addEventListener('load', function () {
 		else {
 			elemRef.setAttribute("class","gridCenterVH layMainBgColor");
 		}
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('click', addOdd);
 		document.getElementById(key+"_backPlusMinusId").appendChild(elemRef); 
 
@@ -650,6 +656,7 @@ window.addEventListener('load', function () {
 		elemRef.setAttribute("type","number");
 		elemRef.setAttribute("value","");
 		elemRef.setAttribute("placeholder","0.0");
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('input', onInputValueUpdated);
 		document.getElementById(key+"_stakeValueContainerId").appendChild(elemRef); 
 		///////////////////////////////////////////////////////////////////////
@@ -694,6 +701,7 @@ window.addEventListener('load', function () {
 		elemRef.setAttribute("type","number");
 		elemRef.setAttribute("value","");
 		elemRef.setAttribute("placeholder","0.0");
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('input', onInputValueUpdated);
 		document.getElementById(key+"_profitValueBackMainFontColorId").appendChild(elemRef); 
 		//////////////////////////////////////////////////////////////////////////////////////////// 
@@ -703,6 +711,7 @@ window.addEventListener('load', function () {
 		elemRef.setAttribute("class","tickButtonBackground");
 		// store the bet info
 		elemRef.setAttribute("data-betInfo", JSON.stringify(betSlipSheet[key]));
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('click', placeBet);
 		document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 
@@ -712,6 +721,7 @@ window.addEventListener('load', function () {
 		elemRef = document.createElement("DIV");
 		elemRef.setAttribute("id",key+"_deleteBetButtonId");
 		elemRef.setAttribute("class","binButtonBackground");
+		elemRef.setAttribute("data-playercount", playerCount);
 		elemRef.addEventListener('click', deleteBetSlip);
 		document.getElementById(key+"_backStakeProfitBetBinId").appendChild(elemRef); 
 
@@ -745,7 +755,7 @@ window.addEventListener('load', function () {
 				document.getElementById(oddId).value = 1.01; // min lay/back odd
 			}
 		
-			fillInputFields(oddId, value);
+			fillInputFields(oddId, value, Number(e.currentTarget.dataset.playercount));
 		}
 		else console.error("Invalid number: ", value);
 	}
@@ -769,7 +779,7 @@ window.addEventListener('load', function () {
 				document.getElementById(oddId).value = (0.5).toFixed(2);
 			}
 		
-			fillInputFields(oddId, value);
+			fillInputFields(oddId, value, Number(e.currentTarget.dataset.playercount));
 		}
 		else console.error("Invalid number: ", value);
 	}
@@ -836,8 +846,29 @@ window.addEventListener('load', function () {
 		delete betSlipSheet[key]; // remove the prop from the object
 	}
 
+
+	function populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability) {
+		// withoutLast2Words = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0"
+		const playerIndex = Number(withoutLast2Words.split(".").splice(-1)[0]); // 0
+		const preStr = withoutLast2Words.split('.').slice(0, -1).join('.'); // "horseRace.uk.Cartmel.2021-09-20.12:00.players"
+		let key = null;
+
+		for(let i = 0; i < playercount; ++i) {
+			key = preStr + '.' + i + '.winLossValueId';
+			if(isBackBet && playerIndex === i)
+			{
+				document.getElementById(key).style.color = 'green';
+				document.getElementById(key).innerHTML = '= + £'+ profitLiability;
+			}
+			else {
+				document.getElementById(key).style.color = 'red';
+				document.getElementById(key).innerHTML = '= - £'+ stake;
+			}
+		}
+	}
+
 	// Calculate and auto fill the input fields
-	function fillInputFields(elementId, numValue) {
+	function fillInputFields(elementId, numValue, playercount) {
 
 		numValue = Number(numValue);
 
@@ -868,7 +899,7 @@ window.addEventListener('load', function () {
 
 			backLay = Number(document.getElementById(oddValueId).value);
 			stake   = Number(document.getElementById(stakeValueId).value);
-			profitLiability = Number(document.getElementById(profitLiabilityValueId).value);
+			profitLiability = Number(document.getElementById(profitLiabilityValueId).value).toFixed(2);
 
 			// Minimum odd
 			if(!backLay || backLay < 1.01) {
@@ -878,44 +909,52 @@ window.addEventListener('load', function () {
 
 
 			if(lastWord === 'oddValueId') {
-				profitLiability = stake * (numValue - 1);
-				document.getElementById(profitLiabilityValueId).value = profitLiability.toFixed(2);
-				if(isBackBet)
-				{
-					document.getElementById(winLossValueId).style.color = 'green';
-					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
-				}
-				else {
-					document.getElementById(winLossValueId).style.color = 'red';
-					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
-				}
+				profitLiability = stake * (numValue - 1).toFixed(2);
+				document.getElementById(profitLiabilityValueId).value = profitLiability;
+				
+				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
+
+// 				if(isBackBet)
+// 				{
+// 					document.getElementById(winLossValueId).style.color = 'green';
+// 					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
+// 				}
+// 				else {
+// 					document.getElementById(winLossValueId).style.color = 'red';
+// 					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
+// 				}
 			}
 			else if(lastWord === 'stakeValueId') {
-				profitLiability = numValue * (backLay - 1);
-				document.getElementById(profitLiabilityValueId).value = profitLiability.toFixed(2);
+				profitLiability = numValue * (backLay - 1).toFixed(2);
+				document.getElementById(profitLiabilityValueId).value = profitLiability;
 
-				if(isBackBet)
-				{
-					document.getElementById(winLossValueId).style.color = 'green';
-					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
-				}
-				else {
-					document.getElementById(winLossValueId).style.color = 'red';
-					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
-				}
+				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
+
+// 				if(isBackBet)
+// 				{
+// 					document.getElementById(winLossValueId).style.color = 'green';
+// 					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
+// 				}
+// 				else {
+// 					document.getElementById(winLossValueId).style.color = 'red';
+// 					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
+// 				}
 			}
 			else if(lastWord === 'profitLiabilityValueId') {
 				stake = numValue / (backLay - 1);
 				document.getElementById(stakeValueId).value = stake.toFixed(2);
-				if(isBackBet)
-				{
-					document.getElementById(winLossValueId).style.color = 'green';
-					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
-				}
-				else {
-					document.getElementById(winLossValueId).style.color = 'red';
-					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
-				}
+				
+				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
+
+// 				if(isBackBet)
+// 				{
+// 					document.getElementById(winLossValueId).style.color = 'green';
+// 					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
+// 				}
+// 				else {
+// 					document.getElementById(winLossValueId).style.color = 'red';
+// 					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
+// 				}
 			}
 		}
 		else console.error("Invalid number: ", numValue);
@@ -926,7 +965,7 @@ window.addEventListener('load', function () {
 
 		const numValue = Number(e.target.value);
 		if (typeof numValue === 'number') {
-			fillInputFields(this.id, numValue);
+			fillInputFields(this.id, numValue, Number(e.currentTarget.dataset.playercount));
 		}
 		else console.error("Invalid number: ", numValue);
 	}
@@ -942,7 +981,7 @@ window.addEventListener('load', function () {
 				document.getElementById(this.id).value = backLay;
 			}
 
-			fillInputFields(this.id, backLay);
+			fillInputFields(this.id, backLay, Number(e.currentTarget.dataset.playercount));
 		}
 		else console.error("Invalid number: ", backLay);
 	}
