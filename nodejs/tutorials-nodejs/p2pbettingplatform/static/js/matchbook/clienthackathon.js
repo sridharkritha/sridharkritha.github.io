@@ -10,10 +10,6 @@ window.addEventListener('load', function () {
 
 	// https://stackoverflow.com/questions/23030080/get-text-of-nested-childnodes-javascript
 
-
-
-
-
 	/////////////////////////////////// TEST (start) ///////////////////////////////////////////////////////////////////////
 	
 	function test() {
@@ -195,6 +191,7 @@ window.addEventListener('load', function () {
 
 
 	////////////////////// Dynamically construct - Race Card (start) ///////////
+
 	function processInputData(data) {
 		const gameName = 'horseRace';
 		const region = 'uk';
@@ -289,7 +286,7 @@ window.addEventListener('load', function () {
 			// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
 			// "{"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}"
 
-			// let betstr = eventinfo.gameName     +'.'+ eventinfo.region +'.'
+			// let betstr = eventinfo.gameName +'.'+ eventinfo.region +'.'
 			// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
 			// 			+ eventinfo.time     +'.'+ 'players'        +'.'
 			// 			+ i                  +'.'+ playerinfo["oddIndexString"];
@@ -461,19 +458,27 @@ window.addEventListener('load', function () {
 
 	/////////////// Dynamically construct - Bet slip (start) ///////////////////////////////////////////////////////////
 
-	let betSlipSheet = {};
+	let g_BetSlipSheet = {};
+	let g_WinLossByPlayers = []; // global variable for displaying win / loss by player 
 
 	// passing attributes from HTML -> JS by data-
 	// https://stackoverflow.com/questions/51617527/parameter-passing-in-javascript-onclick-this-id-versus-other-attributes
 
+
+
 	// default 'e' is send by the function
 	function addToBetSlip(e) {
 
-		if(!betSlipSheet[this.id]) {
-			betSlipSheet[this.id] = { };
-			betSlipSheet[this.id].eventinfo  = JSON.parse(this.dataset.eventinfo);
-			betSlipSheet[this.id].playerinfo = JSON.parse(this.dataset.playerinfo);
-			constructBetSlip(betSlipSheet, this.id, betSlipSheet[this.id].eventinfo.playerCount);
+		if(!g_BetSlipSheet[this.id]) {
+			g_BetSlipSheet[this.id] = { };
+			g_BetSlipSheet[this.id].eventinfo  = JSON.parse(this.dataset.eventinfo);
+			g_BetSlipSheet[this.id].playerinfo = JSON.parse(this.dataset.playerinfo);
+			constructBetSlip(g_BetSlipSheet, this.id, g_BetSlipSheet[this.id].eventinfo.playerCount);
+
+			// Initialize g_WinLossByPlayers array
+			if(!g_WinLossByPlayers.length) {
+				for(let i = 0, n = g_BetSlipSheet[this.id].eventinfo.playerCount; i < n; ++i) g_WinLossByPlayers[i] = 0;
+			}
 		}
 
 		console.log(this);
@@ -841,9 +846,23 @@ window.addEventListener('load', function () {
 
 		const key = this.id.replace('_deleteBetButtonId',''); // src, dst
 
-		betSlipSheet[key].parentElemRef.remove(); // remove element from DOM
+		g_BetSlipSheet[key].parentElemRef.remove(); // remove element from DOM
 
-		delete betSlipSheet[key]; // remove the prop from the object
+		delete g_BetSlipSheet[key]; // remove the prop from the object
+	}
+
+	function winLossElementColor(elementId, amount) {
+		const elemRef = document.getElementById(elementId);
+
+		if(amount < 0)
+		{
+			elemRef.style.color = 'red';
+			elemRef.innerHTML = '= - £' + (-amount);		
+		}
+		else {
+			elemRef.style.color = 'green';
+			elemRef.innerHTML = '= + £'+ amount;
+		}
 	}
 
 
@@ -855,14 +874,22 @@ window.addEventListener('load', function () {
 
 		for(let i = 0; i < playercount; ++i) {
 			key = preStr + '.' + i + '.winLossValueId';
-			if(isBackBet && playerIndex === i)
-			{
-				document.getElementById(key).style.color = 'green';
-				document.getElementById(key).innerHTML = '= + £'+ profitLiability;
+
+			if(isBackBet && playerIndex === i) {
+				g_WinLossByPlayers[i] += profitLiability;
+				winLossElementColor(key, g_WinLossByPlayers[i]);
+			}
+			else if(!isBackBet && playerIndex === i) {
+				g_WinLossByPlayers[i] -= profitLiability;
+				winLossElementColor(key, g_WinLossByPlayers[i]);
+			}
+			else if(!isBackBet) {
+				g_WinLossByPlayers[i] += stake;
+				winLossElementColor(key, g_WinLossByPlayers[i]);
 			}
 			else {
-				document.getElementById(key).style.color = 'red';
-				document.getElementById(key).innerHTML = '= - £'+ stake;
+				g_WinLossByPlayers[i] -= stake;
+				winLossElementColor(key, g_WinLossByPlayers[i]);
 			}
 		}
 	}
@@ -913,48 +940,18 @@ window.addEventListener('load', function () {
 				document.getElementById(profitLiabilityValueId).value = profitLiability;
 				
 				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
-
-// 				if(isBackBet)
-// 				{
-// 					document.getElementById(winLossValueId).style.color = 'green';
-// 					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
-// 				}
-// 				else {
-// 					document.getElementById(winLossValueId).style.color = 'red';
-// 					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
-// 				}
 			}
 			else if(lastWord === 'stakeValueId') {
 				profitLiability = numValue * (backLay - 1).toFixed(2);
 				document.getElementById(profitLiabilityValueId).value = profitLiability;
 
 				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
-
-// 				if(isBackBet)
-// 				{
-// 					document.getElementById(winLossValueId).style.color = 'green';
-// 					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
-// 				}
-// 				else {
-// 					document.getElementById(winLossValueId).style.color = 'red';
-// 					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
-// 				}
 			}
 			else if(lastWord === 'profitLiabilityValueId') {
 				stake = numValue / (backLay - 1);
 				document.getElementById(stakeValueId).value = stake.toFixed(2);
 				
 				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
-
-// 				if(isBackBet)
-// 				{
-// 					document.getElementById(winLossValueId).style.color = 'green';
-// 					document.getElementById(winLossValueId).innerHTML = '= + £'+ profitLiability.toFixed(2);
-// 				}
-// 				else {
-// 					document.getElementById(winLossValueId).style.color = 'red';
-// 					document.getElementById(winLossValueId).innerHTML = '= - £'+ profitLiability.toFixed(2);
-// 				}
 			}
 		}
 		else console.error("Invalid number: ", numValue);
@@ -1286,12 +1283,10 @@ window.addEventListener('load', function () {
 	let slideOverBox = document.getElementById('pickerBoxOneId');
 		slideOverBox.addEventListener('click', function () {
 			// leftRightAlternateMove(this);
-		// translate(this, 900);
-		// translate(this, 2000);
+			// translate(this, 900);
+			// translate(this, 2000);
 			// translationAnimation(this,0, 600);
 			translationAnimation(this, 'shuffleItemsContainerId', 3); // this => 'slideOverBox'
-
-			
 		});
 
 });
