@@ -194,7 +194,7 @@ window.addEventListener('load', function () {
 RaceCard:
 ---------
 
-g_CurrentDisplayedMatch = "horseRace.uk.Cartmel.2021-09-20.12:00"
+g_CurrentDisplayedMatch.idString = "horseRace.uk.Cartmel.2021-09-20.12:00"
 idString = 	    "horseRace.uk.Cartmel.2021-09-20.12:00.players.0."
 winLossValueId= "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId"
 backOdd = 	    "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1"
@@ -216,7 +216,7 @@ deleteBet =   "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1_delete
 
 
 
-let g_CurrentDisplayedMatch = null;
+let g_CurrentDisplayedMatch = {};
 let g_BetSlipSheet = {};
 let g_WinLossByPlayers = []; // global variable for displaying win / loss by player 
 
@@ -263,14 +263,15 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		// final Output = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7
 
 		// "horseRace.uk.Cartmel.2021-09-20.12:00.players."
-		g_CurrentDisplayedMatch =  eventinfo.gameName +'.'+ eventinfo.region +'.'
-					+ eventinfo.raceName +'.'+ eventinfo.date +'.'+ eventinfo.time;
+		g_CurrentDisplayedMatch.idString =  eventinfo.gameName +'.'+ eventinfo.region +'.'
+											+ eventinfo.raceName +'.'+ eventinfo.date +'.'+ eventinfo.time;
+		g_CurrentDisplayedMatch.playerCount = playerCount;
 
 		for(let i = 0; i < playerCount; ++i) {
 			let playerinfo = { 'playerIndexString': 'players.' + i };
 
 			// "horseRace.uk.Cartmel.2021-09-20.12:00.players.0."
-			let idString = g_CurrentDisplayedMatch + '.' + 'players' + '.' + i + '.';
+			let idString = g_CurrentDisplayedMatch.idString + '.' + 'players' + '.' + i + '.';
 
 			// 1st row
 			let elem1 = document.createElement("div");
@@ -303,6 +304,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 			elem4 = document.createElement("div");
 			elem4.setAttribute("class","winLossValue");
 			elem4.setAttribute("id", idString + "winLossValueId");
+			elem4.innerHTML = "<br>";
 			elem3.appendChild(elem4);
 
 			// odd range - back
@@ -875,86 +877,47 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1_deleteBetButtonId"
 		const key = this.id.replace('_deleteBetButtonId',''); // src, dst
 
-		const stakeValue = Number(document.getElementById(key +'_stakeValueId').value);
-		const profitLiabilityValue = Number(document.getElementById(key +'_profitLiabilityValueId').value);
-		// key = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1"
-		const last3Words = key.split(".").splice(-3); // ['0', backOdds', '1']
-
-		const playerIndex = Number(last3Words[0]);
-
-		const isBackBet = last3Words[1] === 'backOdds' ? true : false;
-
-        const withoutLast3Words = key.split('.').slice(0, -3).join('.');
-
-        let winLossId = null;
-
-		// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId
-
-		for(let i = 0, n = g_WinLossByPlayers.length; i < n; ++i) {
-			if(isBackBet && playerIndex === i) {
-				g_WinLossByPlayers[i] -= profitLiabilityValue;
-				winLossId = withoutLast3Words + '.' + i + '.winLossValueId';
-				winLossElementColor(winLossId, g_WinLossByPlayers[i]);
-			}
-			else if(!isBackBet && playerIndex === i) {
-				g_WinLossByPlayers[i] += profitLiabilityValue;
-				winLossId = withoutLast3Words + '.' + i + '.winLossValueId';
-				winLossElementColor(winLossId, g_WinLossByPlayers[i]);
-			}
-			else if(!isBackBet) {
-				g_WinLossByPlayers[i] -= stakeValue;
-				winLossId = withoutLast3Words + '.' + i + '.winLossValueId';
-				winLossElementColor(winLossId, g_WinLossByPlayers[i]);
-			}
-			else {
-				g_WinLossByPlayers[i] += stakeValue;
-				winLossId = withoutLast3Words + '.' + i + '.winLossValueId';
-				winLossElementColor(winLossId, g_WinLossByPlayers[i]);
-			}
-}
-
-
 		g_BetSlipSheet[key].parentElemRef.remove(); // remove element from DOM
 
 		delete g_BetSlipSheet[key]; // remove the prop from the object
+
+		updateProfitLossDisplay(); // display profit and loss for each players
 	}
 
-
-	let playerProfitLoss = [];
-
-	function updateProfitLossDisplay(elementId, playerCount) {
+	// Update the profit and loss for each players 
+	function updateProfitLossDisplay() {
 		let stakeValue = 0;
 		let profitLiabilityValue = 0;
 		let loss = 0;
+		const playerCount = g_CurrentDisplayedMatch.playerCount;
 
 		// if(!playerProfitLoss.length)  
-		playerProfitLoss = [...Array(playerCount).fill(0)];
+		let playerProfitLoss = [...Array(playerCount).fill(0)];
 		for(let i = 0; i < playerCount; ++i) {
 			// explore the full bet slip
 			Object.keys(g_BetSlipSheet).forEach((key) => {
-				if(g_CurrentDisplayedMatch && g_CurrentDisplayedMatch === g_BetSlipSheet[key].eventinfo.evtStr) {
+				if(g_CurrentDisplayedMatch.idString && g_CurrentDisplayedMatch.idString === g_BetSlipSheet[key].eventinfo.evtStr) {
 					if("players."+i  === g_BetSlipSheet[key].playerinfo.playerIndexString) // "players.0"
 					{
-					   stakeValue = Number(document.getElementById(key +'_stakeValueId').value);
-			           profitLiabilityValue = Number(document.getElementById(key +'_profitLiabilityValueId').value);
+						stakeValue = Number(document.getElementById(key +'_stakeValueId').value);
+						profitLiabilityValue = Number(document.getElementById(key +'_profitLiabilityValueId').value);
 
-                       if(stakeValue && profitLiabilityValue) {
+						if(stakeValue && profitLiabilityValue) {
 							if(g_BetSlipSheet[key].playerinfo.betType === "Back") {
-							playerProfitLoss[i] += profitLiabilityValue;
-							loss -= stakeValue;
+								playerProfitLoss[i] += profitLiabilityValue;
+								loss -= stakeValue;
+							}
+							else {
+								playerProfitLoss[i] -= profitLiabilityValue;
+								loss += stakeValue;
+							}
 						}
-						else {
-                            playerProfitLoss[i] -= profitLiabilityValue;
-                            loss += stakeValue;
-						}
-                       }
 					}
 					else {
-						 // playerProfitLoss[i] = loss;
-
-						 stakeValue = Number(document.getElementById(key +'_stakeValueId').value);			           
-						 if(g_BetSlipSheet[key].playerinfo.betType === "Lay")  stakeValue = -stakeValue;
-						 playerProfitLoss[i] -= stakeValue;
+						// playerProfitLoss[i] = loss;
+						stakeValue = Number(document.getElementById(key +'_stakeValueId').value);
+						if(g_BetSlipSheet[key].playerinfo.betType === "Lay")  stakeValue = -stakeValue;
+						playerProfitLoss[i] -= stakeValue;
 					}
 				}
 			});
@@ -962,126 +925,14 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 
 		let winLossId = null;
 
-        for(let i = 0; i < playerCount; ++i) {
-        	// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId 
-        	winLossId = g_CurrentDisplayedMatch + '.players.' + i + '.winLossValueId';
-            winLossElementColor(winLossId,  playerProfitLoss[i]);
-        }
-
-	}
-
-
-
-
-
-
-
-
-/*
-
-function updateProfitLossDisplay(elementId, playercount) {
-	// ["horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0"]
-	// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1_deleteBetButtonId"
-	// const key = this.id.replace('_deleteBetButtonId',''); // src, dst
-
-	let stake_lay_total  = 0;
-	let stake_back_total = 0;
-	let profit_total     = 0;
-	let liability_total  = 0;
-
-	let playerCount = playercount; // 0;
-
-	let playerOdds = [...Array(playerCount).fill({})];
-
-	// explore the full bet slip
-	Object.keys(g_BetSlipSheet).forEach((key) => {
-
-		if(g_CurrentDisplayedMatch && g_CurrentDisplayedMatch === g_BetSlipSheet[key].eventinfo.evtStr) {
-			const oddValue = Number(document.getElementById(key +'_oddValueId').value);
-			const stakeValue = Number(document.getElementById(key +'_stakeValueId').value);
-			const profitLiabilityValue = Number(document.getElementById(key +'_profitLiabilityValueId').value);
-
-			if(oddValue >= 1.01 && (stakeValue > 0 || profitLiabilityValue > 0)) {
-
-				playerCount = g_BetSlipSheet[key].eventinfo.playerCount;
-
-				playerOdds[0] = 'hai';
-				playerOdds[1] = 'sri';
-
-				if(g_BetSlipSheet[key].playerinfo.betType === "Lay") {
-					stake_lay_total += stakeValue;
-					liability_total += profitLiabilityValue;
-				}
-				else {
-					stake_back_total += stakeValue;
-					profit_total += profitLiabilityValue;
-				}
-			}
+		for(let i = 0; i < playerCount; ++i) {
+			// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId 
+			winLossId = g_CurrentDisplayedMatch.idString + '.players.' + i + '.winLossValueId';
+			winLossElementColor(winLossId,  playerProfitLoss[i]);
 		}
-	});
-
-	const finalProfit = stake_lay_total  + profit_total;
-	const finalLoss   = stake_back_total + liability_total;
-	const stakeTotal = stake_lay_total + stake_back_total;
-
-	let amount = 0;
-	let isFound = false;
-
-	// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId
-
-	// explore the full active race card
-	let hasBetSlipEntry = [...Array(playerCount).fill(false)];
-
-	for(let i = 0; i < playerCount; ++i) {
- 		isFound = false;
-		 
-		Object.keys(g_BetSlipSheet).forEach((key) => {
-			if(g_CurrentDisplayedMatch && g_CurrentDisplayedMatch === g_BetSlipSheet[key].eventinfo.evtStr) {
-				// key = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1"
-				var last3Words = key.split(".").splice(-3); // ['0', backOdds', '1']
-
-				if(i === Number(last3Words[0])) {
-
-					isFound = true;
-					hasBetSlipEntry[i] = true;
-
-					// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId 
-					var withoutLast3Words = key.split('.').slice(0, -3).join('.');
-					winLossId = withoutLast3Words + '.' + i + '.winLossValueId';
-
-					var stakeValue = Number(document.getElementById(key +'_stakeValueId').value);
-					var profitLiabilityValue = Number(document.getElementById(key +'_profitLiabilityValueId').value);
-
-					amount =  finalProfit; // profitLiabilityValue + stakeValue - stakeTotal;
-					amount = profitLiabilityValue - (stakeTotal - stakeValue);
-
-					winLossElementColor(winLossId, amount);
-				}
-			}
-		});
 	}
 
-
-	for(let i = 0; i < playerCount; ++i) {
-		if(!hasBetSlipEntry[i]) {
-				var withoutLast2Words = elementId.split('.').slice(0, -3).join('.');
-				// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId 
-				// 				var withoutLast3Words = key.split('.').slice(0, -3).join('.');
-				winLossId = withoutLast2Words + '.' + i + '.winLossValueId';
-
-				// amount =  profitLiabilityValue + stakeValue - stakeTotal;
-				amount = - stakeTotal;
-
-				winLossElementColor(winLossId, amount);
-		} 
-	}
-}
-
-*/
-
-////////////////////////////////////////////////////////////////////////////
-
-
+	// Colored win/loss display
 	function winLossElementColor(elementId, amount) {
 		const elemRef = document.getElementById(elementId);
 		amount = amount.toFixed(2);
@@ -1094,36 +945,6 @@ function updateProfitLossDisplay(elementId, playercount) {
 		else {
 			elemRef.style.color = 'green';
 			elemRef.innerHTML = '= + £'+ amount;
-		}
-	}
-
-
-	function populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stakeValue, profitLiabilityValue) {
-		return ;
-		// withoutLast2Words = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0"
-		const playerIndex = Number(withoutLast2Words.split(".").splice(-1)[0]); // 0
-		const preStr = withoutLast2Words.split('.').slice(0, -1).join('.'); // "horseRace.uk.Cartmel.2021-09-20.12:00.players"
-		let key = null;
-
-		for(let i = 0; i < playercount; ++i) {
-			key = preStr + '.' + i + '.winLossValueId';
-
-			if(isBackBet && playerIndex === i) {
-				g_WinLossByPlayers[i] += profitLiabilityValue;
-				winLossElementColor(key, g_WinLossByPlayers[i]);
-			}
-			else if(!isBackBet && playerIndex === i) {
-				g_WinLossByPlayers[i] -= profitLiabilityValue;
-				winLossElementColor(key, g_WinLossByPlayers[i]);
-			}
-			else if(!isBackBet) {
-				g_WinLossByPlayers[i] += stakeValue;
-				winLossElementColor(key, g_WinLossByPlayers[i]);
-			}
-			else {
-				g_WinLossByPlayers[i] -= stakeValue;
-				winLossElementColor(key, g_WinLossByPlayers[i]);
-			}
 		}
 	}
 
@@ -1171,23 +992,17 @@ function updateProfitLossDisplay(elementId, playercount) {
 			if(lastWord === 'oddValueId') {
 				profitLiability = stake * (numValue - 1).toFixed(2);
 				document.getElementById(profitLiabilityValueId).value = profitLiability;
-				
-				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
 			}
 			else if(lastWord === 'stakeValueId') {
 				profitLiability = numValue * (backLay - 1).toFixed(2);
 				document.getElementById(profitLiabilityValueId).value = profitLiability;
-
-				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
 			}
 			else if(lastWord === 'profitLiabilityValueId') {
 				stake = numValue / (backLay - 1);
 				document.getElementById(stakeValueId).value = stake.toFixed(2);
-				
-				populatePlayersWinLoss(withoutLast2Words, isBackBet, playercount, stake, profitLiability);
 			}
 
-			updateProfitLossDisplay(elementId, playercount); // display profit and loss for each players
+			updateProfitLossDisplay(); // display profit and loss for each players
 		}
 		else console.error("Invalid number: ", numValue);
 	}
