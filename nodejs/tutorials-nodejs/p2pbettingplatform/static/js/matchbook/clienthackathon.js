@@ -223,6 +223,8 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 
 	////////////////////// Dynamically construct - Race Card (start) ///////////
 
+	// data <-- server <-- db
+
 	function processInputData(data) {
 		const gameName = 'horseRace';
 		const region = 'uk';
@@ -238,6 +240,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"},
 		// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
+		// {"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}
 
 		let eventinfo = {
 						'gameName':gameName,
@@ -260,9 +263,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		elem.innerHTML = matchType + '&nbsp' + '|' + '&nbsp' + runLength;
 		raceCardContainer.appendChild(elem);
 
-		// final Output = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7
-
-		// "horseRace.uk.Cartmel.2021-09-20.12:00.players."
+		// idString = "horseRace.uk.Cartmel.2021-09-20.12:00"
 		g_CurrentDisplayedMatch.idString =  eventinfo.gameName +'.'+ eventinfo.region +'.'
 											+ eventinfo.raceName +'.'+ eventinfo.date +'.'+ eventinfo.time;
 		g_CurrentDisplayedMatch.playerCount = playerCount;
@@ -306,180 +307,152 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 			elem4.setAttribute("id", idString + "winLossValueId");
 			elem4.innerHTML = "<br>";
 			elem3.appendChild(elem4);
-
 			// odd range - back
 			elem2 = document.createElement("div");
 			elem2.classList = "gridColumnLayout gridColumnLayout_6 backLayBetContainer cellSize";
 			elem1.appendChild(elem2);
-			// 111
+			// backOdds.0
 			elem3 = document.createElement("div");
 			elem3.classList = "backBetLowContainer backOthersBgColorHover";
-
-			// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
-			// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
-			// "{"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}"
-
-			// let betstr = eventinfo.gameName +'.'+ eventinfo.region +'.'
-			// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
-			// 			+ eventinfo.time     +'.'+ 'players'        +'.'
-			// 			+ i                  +'.'+ playerinfo["oddIndexString"];
-
 			playerinfo["oddIndexString"] = 'backOdds.0';
-
-			// elem3.setAttribute("id","oddSelected_xxx"); //   oddSelected_111
-			// "{"horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1":7}"
-			// idString = "12:00_Cartmel_11 French Company_backLow_2"
-			// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backLow'+'_'+players[i].backOdds[0];
-
-			// idString =  eventinfo.gameName     +'.'+ eventinfo.region +'.'
-			// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
-			// 			+ eventinfo.time     +'.'+ 'players'        +'.'
-			// 			+ i                  +'.'+ playerinfo["oddIndexString"];
-			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0"
+			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); 
 			playerinfo["odd"] = players[i].backOdds[0];
 			playerinfo["betType"] = "Back";
 			elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-
+            // available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].backOdds[0];
 			// elem3.appendChild(elem4);
-
+            // available money
 			elem5 = document.createElement("div");
 			elem5.classList = "totalAmt";
 			elem5.innerHTML = "£ " + players[i].backOdds[0];
 			// elem3.appendChild(elem5);
 			elem3.append(elem4,elem5);
 
-			// 122
+			// backOdds.1
 			elem3 = document.createElement("div");
 			elem3.classList = "backBetMidContainer backOthersBgColorHover";
 			//elem3.setAttribute("id","oddSelected_122");
 			playerinfo["oddIndexString"] = 'backOdds.1';
-			// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backMid'+'_'+players[i].backOdds[0];
-			// idString =  eventinfo.gameName      +'.'+ eventinfo.region +'.'
-			// 			+ eventinfo.raceName +'.'+ eventinfo.date   +'.'
-			// 			+ eventinfo.time     +'.'+ 'players'        +'.'
-			// 			+ i                  +'.'+ playerinfo["oddIndexString"];
-			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+            // id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1"
+			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]);
 			playerinfo["odd"] = players[i].backOdds[1];
 			playerinfo["betType"] = "Back";
 			elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-
+            // available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].backOdds[1];
 			elem3.appendChild(elem4);
-
+            // available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].backOdds[1];
 			elem3.appendChild(elem4);
 
-			// 133
+			// backOdds.2
 			elem3 = document.createElement("div");
 			elem3.classList = "backBetHighContainer backMainBgColor";
-			//elem3.setAttribute("id","oddSelected_133");
-			// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'backHigh'+'_'+players[i].backOdds[0];
-			playerinfo["oddIndexString"] = 'backOdds.2';
-			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+            playerinfo["oddIndexString"] = 'backOdds.2';
+			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2"
+			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]);
 			playerinfo["odd"] = players[i].backOdds[2];
 			playerinfo["betType"] = "Back";
 			elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-
+            // available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].backOdds[2];
 			elem3.appendChild(elem4);
-
+            // available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].backOdds[2];
 			elem3.appendChild(elem4);
 
 			// odd range - lay
-			// 144
+			// layOdds.0
 			elem3 = document.createElement("div");
 			elem3.classList = "layBetLowContainer layMainBgColor";
-			// elem3.setAttribute("id","oddSelected_144");
-			// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layLow'+'_'+players[i].layOdds[0];
-			playerinfo["oddIndexString"] = 'layOdds.0';
-			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+            playerinfo["oddIndexString"] = 'layOdds.0';
+			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.0"
+			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); 
 			playerinfo["odd"] = players[i].layOdds[0];
 			playerinfo["betType"] = "Lay";
 			elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-
+            // available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].layOdds[0];
 			elem3.appendChild(elem4);
-
+            // available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].layOdds[0];
 			elem3.appendChild(elem4);
 
-			// 155
+			// layOdds.1
 			elem3 = document.createElement("div");
 			elem3.classList = "layBetMidContainer layOthersBgColorHover";
-			//elem3.setAttribute("id","oddSelected_155");
 			playerinfo["oddIndexString"] = 'layOdds.1';
-			// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layMid'+'_'+players[i].layOdds[1];
-			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.1"
+			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); 
 			playerinfo["odd"] = players[i].layOdds[1];
 			playerinfo["betType"] = "Lay";
 			elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-
+            // available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].layOdds[1];
 			elem3.appendChild(elem4);
-
+            // available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].layOdds[1];
 			elem3.appendChild(elem4);
 
-			// 166
+			// layOdds.2
 			elem3 = document.createElement("div");
 			elem3.classList = "layBetHighContainer layOthersBgColorHover";
-			//elem3.setAttribute("id","oddSelected_166");
 			playerinfo["oddIndexString"] = 'layOdds.2';
-			// idString = eventinfo.time+'_'+eventinfo.raceName+'_'+playerinfo.horseName+'_'+'layHigh'+'_'+players[i].layOdds[2];
-			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); //   oddSelected_111
+			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.2"
+			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); 
 			playerinfo["odd"] = players[i].layOdds[2];
 			playerinfo["betType"] = "Lay";
 			elem3.setAttribute("data-eventinfo",  JSON.stringify(eventinfo));
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-
+            // available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].layOdds[2];
 			elem3.appendChild(elem4);
-
+            // available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].layOdds[2];
@@ -513,9 +486,6 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 
 		console.log(this);
 		console.log(e.currentTarget); // element you clicked
-		console.log(this.dataset.sridhar);
-		console.log(this.getAttribute('krishnan'));
-
 		console.log(JSON.parse(this.dataset.eventinfo));
 		console.log(JSON.parse(this.dataset.playerinfo));
 
@@ -529,7 +499,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		let elemRef = null; 
 		let parentElemRef = null;
 
-		// key = "12:00_Cartmel_11 French Company_backHigh_2.8"
+		// key = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0"
 		parentElemRef = document.createElement("DIV");
 		betSlipSheet[key].parentElemRef = parentElemRef;
 		document.getElementById("betSlipContainer").appendChild(parentElemRef); 
@@ -543,14 +513,14 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		elemRef.setAttribute("id",key+"_timeId");
 		document.getElementById(key+"_timeVenueId").appendChild(elemRef); 
 
-		elemRef = document.createTextNode(betSlipSheet[key].eventinfo.time); // ("13:00");
+		elemRef = document.createTextNode(betSlipSheet[key].eventinfo.time); // ("12:00");
 		document.getElementById(key+"_timeId").appendChild(elemRef); 
 
 		elemRef = document.createElement("DIV");
 		elemRef.setAttribute("id",key+"_venueId");
 		document.getElementById(key+"_timeVenueId").appendChild(elemRef); 
 
-		elemRef = document.createTextNode(betSlipSheet[key].eventinfo.raceName); //("Wolverhampton");
+		elemRef = document.createTextNode(betSlipSheet[key].eventinfo.raceName); //("Cartmel");
 		document.getElementById(key+"_venueId").appendChild(elemRef); 
 
 		elemRef = document.createElement("DIV");
@@ -562,7 +532,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		elemRef.setAttribute("id",key+"_outcomeId");
 		document.getElementById(key+"_outcomePlayerId").appendChild(elemRef); 
 
-		elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); // ("Win");
+		elemRef = document.createTextNode(betSlipSheet[key].playerinfo.betType); // ("Back");
 		document.getElementById(key+"_outcomeId").appendChild(elemRef); 
 
 		elemRef = document.createElement("DIV");
@@ -570,7 +540,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		elemRef.setAttribute("class","halfOpaque");
 		document.getElementById(key+"_outcomePlayerId").appendChild(elemRef); 
 
-		elemRef = document.createTextNode(betSlipSheet[key].playerinfo.horseName); // ("8 She's A Deva");
+		elemRef = document.createTextNode(betSlipSheet[key].playerinfo.horseName); // ("11 French Company");
 		document.getElementById(key+"_playerId").appendChild(elemRef); 
 
 		elemRef = document.createElement("DIV");
@@ -731,7 +701,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		////////////////////////////////////////////////////////////////////////////////////////////
 		// Profit / Liability input
 		elemRef = document.createElement("INPUT");
-		elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "backValueId");
+		elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "_profitLiabilityValueId"
 		elemRef.setAttribute("class","betSlipInputbox");
 		elemRef.setAttribute("type","number");
 		elemRef.setAttribute("value","");
@@ -797,7 +767,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 
 	// Increment the odd
 	function addOdd(e) {
-
+        // id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0_additionBackId"
 		const oddId = this.id.replace('_additionBackId','_oddValueId'); // src, dst
 
 		const oddValue = document.getElementById(oddId); 
@@ -891,11 +861,11 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		let loss = 0;
 		const playerCount = g_CurrentDisplayedMatch.playerCount;
 
-		// if(!playerProfitLoss.length)  
 		let playerProfitLoss = [...Array(playerCount).fill(0)];
 		for(let i = 0; i < playerCount; ++i) {
 			// explore the full bet slip
 			Object.keys(g_BetSlipSheet).forEach((key) => {
+				// key = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0"
 				if(g_CurrentDisplayedMatch.idString && g_CurrentDisplayedMatch.idString === g_BetSlipSheet[key].eventinfo.evtStr) {
 					if("players."+i  === g_BetSlipSheet[key].playerinfo.playerIndexString) // "players.0"
 					{
@@ -926,7 +896,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		let winLossId = null;
 
 		for(let i = 0; i < playerCount; ++i) {
-			// horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId 
+			// finalStr => horseRace.uk.Cartmel.2021-09-20.12:00.players.0.winLossValueId 
 			winLossId = g_CurrentDisplayedMatch.idString + '.players.' + i + '.winLossValueId';
 			winLossElementColor(winLossId,  playerProfitLoss[i]);
 		}
@@ -937,7 +907,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 		const elemRef = document.getElementById(elementId);
 		amount = amount.toFixed(2);
 
-		if(amount < 0)
+		if(Number(amount) < 0)
 		{
 			elemRef.style.color = 'red';
 			elemRef.innerHTML = '= - £' + (-amount);		
@@ -985,7 +955,6 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 			// Minimum odd
 			if(!backLay || backLay < 1.01) {
 				backLay = 1.01;
-				// document.getElementById(oddValueId).value = backLay;
 			}
 
 
@@ -1008,6 +977,7 @@ let g_WinLossByPlayers = []; // global variable for displaying win / loss by pla
 	}
 
 
+    // Read the input box value
 	function onInputValueUpdated(e) {
 
 		const numValue = Number(e.target.value);
