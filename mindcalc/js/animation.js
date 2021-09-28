@@ -65,6 +65,7 @@ window.addEventListener('load', function () {
 		TWO_DIGITS_SQR: 'TWO_DIGITS_SQR',
 		THREE_TWO_DIGITS_ADD: 'THREE_TWO_DIGITS_ADD',
 		THREE_SPL_TWO_DIGITS_ADD: 'THREE_SPL_TWO_DIGITS_ADD', // 3 digits multiple of 10 x 2 digits
+		VALUE_RANGE_MULT: 'VALUE_RANGE_MULT',
 		VAR_LEN_MULT: 'VAR_LEN_MULT',
 		VAR_LEN_ADD: 'VAR_LEN_ADD',
 		TWO_DIGITS_SPL: 'TWO_DIGITS_SPL',
@@ -127,6 +128,7 @@ window.addEventListener('load', function () {
 		var str;
 		var ary;
 		var swap;
+		let minLeft = 0, maxLeft = 0, minRight = 0, maxRight = 0;
 
 		switch (userOption) {
 			case USER_OPTION.FAQ_MEMORY_BANK:
@@ -203,6 +205,26 @@ window.addEventListener('load', function () {
 			case USER_OPTION.TWO_DIGITS_SPL:
 				// Persistent Data (even after refresh)
 				persistLastSetting = 'TWO_DIGITS_SQR' + ',' + 2 + ',' + 2; // 2,2 ;
+				break;
+
+			case USER_OPTION.VALUE_RANGE_MULT:
+				minLeft  = Number(document.getElementById("minLeft").value);
+				maxLeft  = Number(document.getElementById("maxLeft").value);
+				minRight = Number(document.getElementById("minRight").value);
+				maxRight = Number(document.getElementById("maxRight").value);
+
+				if(minLeft && maxLeft && minRight && maxRight) {
+					num1 = randomRange(minLeft,maxLeft);
+					num2 = randomRange(minRight,maxRight);
+				}
+				else {
+					// 0 9
+					// 10 99
+					// 100 999
+					// 1000 9999
+					num1 = randomRange(Math.pow(10, 2), Math.pow(10, 2) - 1);
+					num2 = randomRange(Math.pow(10, 2), Math.pow(10, 2) - 1);
+				}
 				break;
 
 			case USER_OPTION.VAR_LEN_MULT:
@@ -297,7 +319,7 @@ window.addEventListener('load', function () {
 			isQuestionSpeechComplete = false;
 			isAnswerSpeechComplete = false;
 			// Event listener for speech completion
-			questionToSpeech.addEventListener('boundary', function(event) { 
+			questionToSpeech.addEventListener(/*'boundary'*/ 'end', function(event) { 
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				isQuestionSpeechComplete = true;
 			}.bind(this));
@@ -325,12 +347,16 @@ window.addEventListener('load', function () {
 		// window.speechSynthesis.cancel();
 		// if(isAudioOff)
 		{
-			answerToSpeech = new SpeechSynthesisUtterance(expAns.toString());
+			let answerToSpeech = new SpeechSynthesisUtterance(expAns.toString());
 			isQuestionSpeechComplete = false;
 			isAnswerSpeechComplete = false;
+
+
+			window.speechSynthesis.speak(answerToSpeech);
+
 			// Event listener for speech completion
-			// answerToSpeech.addEventListener('boundary', function(event) { 
-				answerToSpeech.onboundary = function(event) {
+			answerToSpeech.addEventListener(/*'boundary'*/ 'end', function(event) { 
+			// answerToSpeech.onboundary = function(event) {
 				console.log(event.name + ' boundary reached after ' + event.elapsedTime + ' milliseconds.');
 				clearTimeout(answerToSpeechDelayTimeout);
 				answerToSpeechDelayTimeout = setTimeout(function() {
@@ -344,10 +370,8 @@ window.addEventListener('load', function () {
 						quest();
 					}.bind(this), 1000);
 				}
-			}
-			// .bind(this));
-
-			window.speechSynthesis.speak(answerToSpeech);
+			// };
+			}.bind(this));
 		}
 	}
 
@@ -638,7 +662,11 @@ window.addEventListener('load', function () {
 					digit_num1 = digit_num2 = 2;
 					userOption = 'TWO_DIGITS_MULT';
 				}
-			} else if (userOption == 'VAR_LEN_ADD') {
+			}
+			else if (userOption == 'VALUE_RANGE_MULT') {
+				// userOption = userOption;
+			}
+			else if (userOption == 'VAR_LEN_ADD') {
 				// Get the User setting values
 				str_digit_num1 = document.getElementById("digitFirst_add").value;
 				str_digit_num2 = document.getElementById("digitSecond_add").value;
@@ -682,7 +710,7 @@ window.addEventListener('load', function () {
 	////////////////////////////////////////////////////////////////////////////////////////////
 	// Utility Functions    
 	function randomRange(min, max) {
-		return ~~(Math.random() * (max - min + 1)) + min
+		return ~~(Math.random() * (max - min + 1)) + min; // includes min and max values
 	}
 
 	function getRandomColor() {

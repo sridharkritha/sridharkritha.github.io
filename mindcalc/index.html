@@ -95,7 +95,20 @@
 		<span class="btnProp">&nbsp; 3 digits (x10) + 2 digits</span>
 		<br>
 		<br>
+
 		<br>
+		<div class="boxOutline">
+			<br>
+			<input type="radio" class="radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="VALUE_RANGE_MULT">&nbsp;&nbsp;
+			<input type="number" placeholder="min" class="radioInput rangeInput" id="minLeft">&nbsp;
+			<input type="number" placeholder="max" class="radioInput rangeInput" id="maxLeft">&nbsp; 
+			<span class="btnProp"> X </span>&nbsp; 
+			<input type="number" placeholder="min" class="radioInput rangeInput" id="minRight">&nbsp;
+			<input type="number" placeholder="max" class="radioInput rangeInput" id="maxRight">
+			<br>
+		</div>
+		<br>
+	
 		<div>
 			<input type="radio" class="radioProp rightMargin" name="modeRadio" onclick="userRadioOption(this);" value="VAR_LEN_MULT">&nbsp;&nbsp;
 			<input type="number" class="radioInput" id="digitFirst_mul">
@@ -109,6 +122,13 @@
 			<span class="btnProp">&nbsp; + &nbsp;</span>
 			<input type="number" class="radioInput" id="digitSecond_add">
 		</div>
+		<br>
+
+
+
+
+
+
 		<br>
 
 		<span class="btnProp rightMargin">Auto Timer &nbsp;</span>

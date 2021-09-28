@@ -13,6 +13,11 @@ width:100%;
 background-color: black;
 }
 
+
+.boxOutline {
+    outline-style: double;
+}
+
 /* Centered Horizontally and Vertically */
 .centered {
 position: absolute;
@@ -71,6 +76,10 @@ font-size: 300%;
 font-weight: bold;
 width: 200px;
 height: 70px;
+}
+
+.rangeInput {
+    width: 100px;
 }
 
 #autoTimerInput {        
