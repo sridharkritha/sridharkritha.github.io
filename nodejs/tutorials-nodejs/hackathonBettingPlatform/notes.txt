@@ -1,5 +1,4 @@
-npm init
-npm install socket.io socket.io-client express --save
+npm install
 
-teminal 1:	node server2.js
-teminal 2:	node client2.js
+teminal:	node server.js
+Browser: http://localhost:3000/index.html
