@@ -24,8 +24,6 @@ window.addEventListener('load', function () {
 		let value = changedObject[key];
 
 		document.getElementById(key + '#odd').innerHTML = value;
-
-		// document.getElementById('winsId').textContent = JSON.parse(data).wins;
 	});
 
 	// socket.on => listener; socket.emit => sends event.
@@ -61,13 +59,11 @@ window.addEventListener('load', function () {
 		deleteBet =   "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1_deleteBetButtonId"
 	*/
 
-
 	/////////////////////////////// Global Variables (start)////////////////////////////////////////////////////////////
 	let g_CurrentDisplayedMatch = {};
 	let g_BetSlipSheet = {};
 	let g_WinLossByPlayers = []; // global variable for displaying win / loss by player 
 	/////////////////////////////// Global Variables (end)//////////////////////////////////////////////////////////////
-
 
 	////////////////////// Dynamically construct - Race Card (start) ///////////////////////////////////////////////////
 	// data <-- server <-- db
@@ -169,13 +165,13 @@ window.addEventListener('load', function () {
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-            // available money wrapper
+			// available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].backOdds[0];
 			// elem3.appendChild(elem4);
-            // available money
+			// available money
 			let elem5 = document.createElement("div");
 			elem5.classList = "totalAmt";
 			elem5.innerHTML = "£ " + players[i].backOdds[0];
@@ -187,7 +183,7 @@ window.addEventListener('load', function () {
 			elem3.classList = "backBetMidContainer backOthersBgColorHover";
 			//elem3.setAttribute("id","oddSelected_122");
 			playerinfo["oddIndexString"] = 'backOdds.1';
-            // id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1"
+			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.1"
 			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]);
 			playerinfo["odd"] = players[i].backOdds[1];
 			playerinfo["betType"] = "Back";
@@ -195,13 +191,13 @@ window.addEventListener('load', function () {
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-            // available money wrapper
+			// available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].backOdds[1];
 			elem3.appendChild(elem4);
-            // available money
+			// available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].backOdds[1];
@@ -210,7 +206,7 @@ window.addEventListener('load', function () {
 			// backOdds.2
 			elem3 = document.createElement("div");
 			elem3.classList = "backBetHighContainer backMainBgColor";
-            playerinfo["oddIndexString"] = 'backOdds.2';
+			playerinfo["oddIndexString"] = 'backOdds.2';
 			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2"
 			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]);
 			playerinfo["odd"] = players[i].backOdds[2];
@@ -219,13 +215,13 @@ window.addEventListener('load', function () {
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-            // available money wrapper
+			// available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].backOdds[2];
 			elem3.appendChild(elem4);
-            // available money
+			// available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].backOdds[2];
@@ -235,7 +231,7 @@ window.addEventListener('load', function () {
 			// layOdds.0
 			elem3 = document.createElement("div");
 			elem3.classList = "layBetLowContainer layMainBgColor";
-            playerinfo["oddIndexString"] = 'layOdds.0';
+			playerinfo["oddIndexString"] = 'layOdds.0';
 			// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.0"
 			elem3.setAttribute("id", idString + playerinfo["oddIndexString"]); 
 			playerinfo["odd"] = players[i].layOdds[0];
@@ -244,13 +240,13 @@ window.addEventListener('load', function () {
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-            // available money wrapper
+			// available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].layOdds[0];
 			elem3.appendChild(elem4);
-            // available money
+			// available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].layOdds[0];
@@ -268,13 +264,13 @@ window.addEventListener('load', function () {
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-            // available money wrapper
+			// available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].layOdds[1];
 			elem3.appendChild(elem4);
-            // available money
+			// available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].layOdds[1];
@@ -292,13 +288,13 @@ window.addEventListener('load', function () {
 			elem3.setAttribute("data-playerinfo", JSON.stringify(playerinfo));
 			elem3.addEventListener('click', addToBetSlip); // works
 			elem2.appendChild(elem3);
-            // available money wrapper
+			// available money wrapper
 			elem4 = document.createElement("div");
 			elem4.classList = "odd";
 			elem4.setAttribute("id", idString + playerinfo["oddIndexString"]+ "#odd");
 			elem4.innerHTML = players[i].layOdds[2];
 			elem3.appendChild(elem4);
-            // available money
+			// available money
 			elem4 = document.createElement("div");
 			elem4.classList = "totalAmt";
 			elem4.innerHTML = "£ " + players[i].layOdds[2];
@@ -437,7 +433,7 @@ window.addEventListener('load', function () {
 		elemRef = document.createElement("DIV");
 		elemRef.setAttribute("id",key+"_backValueContainerId");
 		document.getElementById(key+"_backOthersBgColorId").appendChild(elemRef); 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		elemRef = document.createElement("INPUT");
 		elemRef.setAttribute("id", key+"_oddValueId");   // "backValueId");
 		elemRef.setAttribute("class","betSlipInputbox");
@@ -448,7 +444,7 @@ window.addEventListener('load', function () {
 		elemRef.addEventListener('input', onInputValueUpdated);
 		elemRef.addEventListener('focusout', onInputFocusoutMinOddCorrection);
 		document.getElementById(key+"_backValueContainerId").appendChild(elemRef); 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		elemRef = document.createElement("DIV");
 		elemRef.setAttribute("id", key+"_additionBackId");
@@ -493,8 +489,8 @@ window.addEventListener('load', function () {
 		elemRef = document.createElement("DIV");
 		elemRef.setAttribute("id",key+"_stakeValueContainerId");
 		document.getElementById(key+"_stakeBackOthersBgColor").appendChild(elemRef);
-
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		// Stake input
 		elemRef = document.createElement("INPUT");
 		elemRef.setAttribute("id", key+"_stakeValueId");
@@ -538,8 +534,8 @@ window.addEventListener('load', function () {
 		elemRef = document.createElement("DIV");
 		elemRef.setAttribute("id",key+"_profitValueBackMainFontColorId");
 		document.getElementById(key+"_profitBackOthersBgColorId").appendChild(elemRef); 
-
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		// Profit / Liability input
 		elemRef = document.createElement("INPUT");
 		elemRef.setAttribute("id", key+"_profitLiabilityValueId");   // "_profitLiabilityValueId"
@@ -607,7 +603,7 @@ window.addEventListener('load', function () {
 
 	// Increment the odd
 	function addOdd(e) {
-        // id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0_additionBackId"
+		// id = "horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0_additionBackId"
 		const oddId = this.id.replace('_additionBackId','_oddValueId'); // src, dst
 
 		const oddValue = document.getElementById(oddId); 
@@ -817,7 +813,7 @@ window.addEventListener('load', function () {
 	}
 
 
-    // Read the input box value
+	// Read the input box value
 	function onInputValueUpdated(e) {
 
 		const numValue = Number(e.target.value);
