@@ -28,6 +28,7 @@ window.addEventListener('load', function () {
 			alert('Success');
 			document.getElementById("regLoginFieldsId").style.display = 'none';
 			document.getElementById("welcomeUserName").textContent = "Welcome " + username;
+			document.getElementById("userBalanceAmount").textContent = "Balance: " + result.userBalance;
 		} else {
 			alert(result.error);
 		}
@@ -56,6 +57,7 @@ window.addEventListener('load', function () {
 			alert('Success');
 			document.getElementById("regLoginFieldsId").style.display = 'none';
 			document.getElementById("welcomeUserName").textContent = "Welcome " + username;
+			document.getElementById("userBalanceAmount").textContent = "Balance: " + result.userBalance;
 		} else {
 			alert(result.error);
 		}

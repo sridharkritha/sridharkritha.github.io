@@ -54,13 +54,13 @@
 		}
 
 		const password = await bcrypt.hash(plainTextPassword, 10); // passes = 10
-		const balance = 100; // £100 free money for a new customer 
+		const userBalance = 100; // £100 free money for a new customer 
 
 		try {
 			const response = await User.create({
 				username,
 				password,
-				balance
+				userBalance
 			});
 			console.log('User created successfully: ', response);
 		} catch (error) {
@@ -71,7 +71,7 @@
 			throw error;
 		}
 
-		res.json({ status: 'ok' });
+		res.json({ status: 'ok', 'userBalance': userBalance });
 	});
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -93,7 +93,7 @@
 								JWT_SECRET
 							);
 
-			return res.json({ status: 'ok', data: token }); // send the token to client
+			return res.json({ status: 'ok', data: token, 'userBalance': user.userBalance }); // send the token to client
 		}
 
 		res.json({ status: 'error', error: 'Invalid username/password' });
