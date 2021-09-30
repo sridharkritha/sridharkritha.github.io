@@ -133,10 +133,10 @@
 			res.json({ status: 'error', error: ';))' });
 		}
 	});
-
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	app.post('/api/placeBet', async (req, res) => {
-		const { token, betstr, oddvalue } = req.body;
+		const { token, betstr, oddstr, oddvalue, stakevalue, profitliabilityvalue, bettype } = req.body;
 
 		try {
 			const user = jwt.verify(token, JWT_SECRET); // is token tampered ?
@@ -144,13 +144,30 @@
 			const _id = user.id;
 
 			console.log("betAfter: ", betstr);
-			
-			let changeObj = {};
-			changeObj[betstr] = oddvalue; // need temp object. Direct object assingment NOT works => { betstr : oddvalue }
-			const result = await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
-									{}, changeObj);
 
-			console.log("Placed bet sucessfully: ", result);
+			// betstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2
+			let changeObj = {};
+			// changeObj[oddstr] = oddvalue; // need temp object. Direct object assignment do NOT work => { betstr : oddvalue }
+			// const result = await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
+			// 						{}, changeObj);
+
+			changeObj[betstr + '.bets'] =  { 
+								username: user.username, bettype: bettype, profitliabilityvalue: profitliabilityvalue,  
+								oddvalue: oddvalue, stakevalue: stakevalue };
+
+			let result = await updateListingByName(client, MONGO_DATABASE_NAME, MONGO_COLLECTION_NAME, 
+									{}, changeObj, 'push'); // 'push' - add a new element in the existing array.
+
+
+			const betValue = bettype === 'backOdds' ? stakevalue : profitliabilityvalue;
+
+
+			// Subtract the bet amount from the user balance
+			result = await User.updateOne(	{ _id },
+											{$inc: { "userBalance": -betValue }}   // $inc
+										 );
+
+			console.log("Placed bet successfully: ", result);
 
 			res.json({ status: 'ok' });
 		} catch (error) {
@@ -315,9 +332,18 @@
 
 	// Update an listing with the given name
 	// Note: If more than one listing has the same name, only the first listing the database finds will be updated.
-	async function updateListingByName(client, dataBaseName, collectionName, findObject, updateObject) {
+	async function updateListingByName(client, dataBaseName, collectionName, findObject, updateObject, operation) {
+		let obj = null;
+
+		if(operation == 'push') {
+			obj ={ $push: updateObject };
+		}
+		else {
+			obj = { $push: updateObject };
+		}
+
 		// See https://mongodb.github.io/node-mongodb-native/3.6/api/Collection.html#updateOne for the updateOne() docs
-		const result = await client.db(dataBaseName).collection(collectionName).updateOne(findObject, { $set: updateObject });
+		const result = await client.db(dataBaseName).collection(collectionName).updateOne(findObject, obj);
 
 		console.log(`${result.matchedCount} document(s) matched the query criteria.`);
 		console.log(`${result.modifiedCount} document(s) was/were updated.`);

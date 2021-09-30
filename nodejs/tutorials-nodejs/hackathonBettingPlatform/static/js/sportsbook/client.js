@@ -630,38 +630,46 @@ window.addEventListener('load', function () {
 	// Place a bet
 	function placeBet(e) {
 
-		const stakeValueId = this.id.replace('_placeBetButtonId','_stakeValueId'); // src, dst
+		// oddstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2
+		// oddstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.2
+		const oddstr = this.id.replace('_placeBetButtonId',''); // src, dst
+		const betstr = oddstr.split('.').slice(0, -2).join('.'); // horseRace.uk.Cartmel.2021-09-20.12:00.players.0
+		const bettype = oddstr.split('.').splice(-2)[0]; // backOdds (or) layOdds
+        const oddvalue = Number(document.getElementById(oddstr + '_oddValueId').value);
+		const stakevalue = Number(document.getElementById(oddstr + '_stakeValueId').value);
+		const profitliabilityvalue = Number(document.getElementById(oddstr + '_profitLiabilityValueId').value);
 
-		const value = Number(document.getElementById(stakeValueId).value);
-
-		if(typeof value == 'number' && value > 0) {
+		if( typeof stakevalue == 'number' && stakevalue > 0 &&
+		    typeof oddvalue == 'number' && oddvalue > 0 &&
+			typeof profitliabilityvalue == 'number' && profitliabilityvalue > 0 ) {
 
 			// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.horseName': "11 French Company"}, 
 			// {'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds' : [1,2,3]});
 			// console.log(JSON.parse(this.dataset.betinfo));
-
-			// betstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2
-			// betstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.2
-			const betstr = this.id.replace('_placeBetButtonId',''); // src, dst
-
-			sendBetRequest(betstr, value);
+			sendBetRequest(betstr, oddstr, oddvalue, stakevalue, profitliabilityvalue, bettype);
 		}
-		else console.error("Invalid bet amount: ", value);
+		else console.error("Invalid bet amount: ", stakevalue);
 	}
 
 	// Send a bet request to the server
-	function sendBetRequest(betstr, value) {
-		if(typeof value == 'number' && value > 0) {
-			// betstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2
-			// betstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.2
+	function sendBetRequest(betstr, oddstr, oddvalue, stakevalue, profitliabilityvalue, bettype) {
+		if( typeof stakevalue == 'number' && stakevalue > 0 &&
+		    typeof oddvalue == 'number' && oddvalue > 0 &&
+			typeof profitliabilityvalue == 'number' && profitliabilityvalue > 0 ) {
+			// oddstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.2
+			// oddstr = horseRace.uk.Cartmel.2021-09-20.12:00.players.0.layOdds.2
 			(async() => {
 				const res = await fetch('/api/placeBet', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json'},
 					body: JSON.stringify({
 						token: localStorage.getItem('token'),
-						betstr: betstr, // this.dataset.betinfo,
-						oddvalue: value
+						betstr: betstr,
+						oddstr: oddstr,
+						oddvalue: oddvalue,
+						stakevalue: stakevalue,
+						profitliabilityvalue: profitliabilityvalue, 
+						bettype: bettype
 					})
 				}).then((res) => res.json());
 
@@ -746,7 +754,7 @@ window.addEventListener('load', function () {
 		if(Number(amount) < 0)
 		{
 			elemRef.style.color = 'red';
-			elemRef.innerHTML = '= - £' + (-amount);		
+			elemRef.innerHTML = '= - £' + (-amount);
 		}
 		else {
 			elemRef.style.color = 'green';
