@@ -162,14 +162,23 @@
 			const betValue = bettype === 'backOdds' ? stakevalue : profitliabilityvalue;
 
 
+
+			// result = await User.updateOne(	{ _id },
+			// 								{$inc: { "userBalance": -betValue }}   // $inc
+			// 							 );
+
 			// Subtract the bet amount from the user balance
-			result = await User.updateOne(	{ _id },
-											{$inc: { "userBalance": -betValue }}   // $inc
+			// updateOne - NOT return the result but findOneAndUpdate return the result after update
+			result = await User.findOneAndUpdate(	{ _id },
+											{$inc: { "userBalance": -betValue }},   // $inc
+											{returnOriginal: false }
 										 );
+
+			console.log(result._doc.userBalance); // user balance after update
 
 			console.log("Placed bet successfully: ", result);
 
-			res.json({ status: 'ok' });
+			res.json({ status: 'ok', "userBalance": result._doc.userBalance });
 		} catch (error) {
 			console.log(error);
 			res.json({ status: 'error', error });

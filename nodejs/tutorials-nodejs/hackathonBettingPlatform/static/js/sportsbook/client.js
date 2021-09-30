@@ -674,6 +674,7 @@ window.addEventListener('load', function () {
 				}).then((res) => res.json());
 
 				if (res.status === 'ok') {
+					document.getElementById("userBalanceAmount").textContent = "Balance: " + res.userBalance;
 					// everything went fine
 					console.log("Bet Placed Successfully");
 				} else {
