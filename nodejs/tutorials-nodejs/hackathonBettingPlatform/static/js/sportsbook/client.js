@@ -855,38 +855,51 @@ window.addEventListener('load', function () {
 	}
 	////////////////// stack addition and subtraction (end) ////////////////////////////////////////////////////////////
 
-	//////////////// TEST bet request(start)////////////////////////////////////////////////////////////////////////////
+	//////////////// TEST the bet request(start)////////////////////////////////////////////////////////////////////////
 	function test_betRequest() {
 		let betOdd = 1;
-		let betstr = 'horseRace.uk.Cartmel.2021-09-20.12:00.players.'; // 0.backOdds.1
+		let keyStr = 'horseRace.uk.Cartmel.2021-09-20.12:00.players.'; // 0.backOdds.1
 		let nPlayers = g_CurrentDisplayedMatch.playerCount || 0; 	
 		let betType = ['backOdds', 'layOdds'];
+		let stakevalue = 1;
 
 		let player = 0;
 		let betTypeIdx = 0;
 		let oddRangeIdx = 0;
+
+		let betstr = null;
+		let oddstr = null;
+		let betChoice = null;
+		let profitliabilityvalue = 0;
 		setInterval(() => {
-			let str = betstr + player + '.' + betType[betTypeIdx] + '.' + oddRangeIdx;
-			if(betTypeIdx == 1 && oddRangeIdx == 2) {
+			++betOdd;
+			betstr = keyStr + player;
+			oddstr = betstr + '.' + betType[betTypeIdx] + '.' + oddRangeIdx;
+			betChoice = betType[betTypeIdx];
+			profitliabilityvalue = stakevalue * (betOdd - 1).toFixed(2);
+
+
+			if(betTypeIdx == 1 && oddRangeIdx == 2) { // layOdds
 				player = ++player % nPlayers;
 				betTypeIdx = 0;
 				oddRangeIdx = 0;
 			}
-			else if(oddRangeIdx == 2) {
+			else if(oddRangeIdx == 2) { // backOdds
 				oddRangeIdx = 0;
 				betTypeIdx = ++betTypeIdx % 2;
-			} 
+			}
 			else {
 				++oddRangeIdx;
 			}
 
-			sendBetRequest(str, ++betOdd);
+			sendBetRequest(betstr, oddstr, betOdd, stakevalue, profitliabilityvalue, betChoice);
+
 		}, 1);
 	}
 
-	setTimeout(() => {
-		test_betRequest();
-	}, 5000);
+	// setTimeout(() => {
+	// 	test_betRequest();
+	// }, 5000);
 
 	//////////////// TEST bet request(end)//////////////////////////////////////////////////////////////////////////////	
 
