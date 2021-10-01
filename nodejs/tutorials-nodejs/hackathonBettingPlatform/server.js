@@ -178,7 +178,7 @@
 
 			console.log("Placed bet successfully: ", result);
 
-			res.json({ status: 'ok', "userBalance": result._doc.userBalance });
+			res.json({ status: 'ok', "userBalance": result._doc.userBalance - betValue});
 		} catch (error) {
 			console.log(error);
 			res.json({ status: 'error', error });

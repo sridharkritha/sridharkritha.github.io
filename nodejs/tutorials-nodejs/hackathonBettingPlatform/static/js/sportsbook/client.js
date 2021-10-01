@@ -23,7 +23,13 @@ window.addEventListener('load', function () {
 		let key = Object.keys(changedObject)[0];
 		let value = changedObject[key];
 
-		document.getElementById(key + '#odd').innerHTML = value;
+		// 'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.backOdds.0'
+		// 'horseRace.uk.Cartmel.2021-09-20.12:00.players.0.bets.83'
+		let betType = key.split('.').splice(-2)[1]; // [0 , 'backOdds'] 
+
+		if(betType === 'backOdds' || betType === 'layOdds') {
+			document.getElementById(key + '#odd').innerHTML = value;
+		}
 	});
 
 	// socket.on => listener; socket.emit => sends event.
@@ -853,7 +859,7 @@ window.addEventListener('load', function () {
 	function test_betRequest() {
 		let betOdd = 1;
 		let betstr = 'horseRace.uk.Cartmel.2021-09-20.12:00.players.'; // 0.backOdds.1
-		let nPlayers = 2; 	
+		let nPlayers = g_CurrentDisplayedMatch.playerCount || 0; 	
 		let betType = ['backOdds', 'layOdds'];
 
 		let player = 0;
@@ -878,9 +884,9 @@ window.addEventListener('load', function () {
 		}, 1);
 	}
 
-	// setTimeout(() => {
-	// 	test_betRequest();
-	// }, 5000);
+	setTimeout(() => {
+		test_betRequest();
+	}, 5000);
 
 	//////////////// TEST bet request(end)//////////////////////////////////////////////////////////////////////////////	
 
