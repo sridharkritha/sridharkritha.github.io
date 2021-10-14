@@ -28,7 +28,9 @@ window.addEventListener('load', function () {
 		let betType = key.split('.').splice(-2)[1]; // [0 , 'backOdds'] 
 
 		if(betType === 'backOdds' || betType === 'layOdds') {
-			document.getElementById(key + '#odd').innerHTML = value;
+			document.getElementById(key + '.0.#odd').innerHTML = value[0];
+			document.getElementById(key + '.1.#odd').innerHTML = value[1];
+			document.getElementById(key + '.2.#odd').innerHTML = value[2];
 		}
 	});
 

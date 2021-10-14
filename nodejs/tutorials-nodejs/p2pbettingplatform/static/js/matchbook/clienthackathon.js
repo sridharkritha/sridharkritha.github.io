@@ -104,21 +104,102 @@ window.addEventListener('load', function () {
 	}
 
 
-	// domTreeTraversal(document.getElementById('htmlStringWrapper'));
-	domTreeTraversal(document.getElementById('betSlipContainer'));
-	console.log(htmlGenStr);
+	domTreeTraversal(document.getElementById('matchResultSimulator'));
+	// domTreeTraversal(document.getElementById('betSlipContainer'));
+	//console.log(htmlGenStr);
 
 	///////////// CONVERTS: HTML TAGS ==> DOM NODE GENERATING CODE (end) /////////////////////////////////////////////////
 
 	function domTreeTest() {
-		let elemRef = null; 
-	
-		elemRef = document.createElement("DIV");
-		elemRef.setAttribute("id","timeVenueId");
-		elemRef.setAttribute("class","gridColumnLayout gridColumnLayout_2");
-		document.getElementById("betSlipContainer").appendChild(elemRef);
+
+ let elemRef = null;
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","gameSimulatorContainer");
+ document.getElementById("htmlStringWrapper1").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","wrapperRandomPick");
+ elemRef.setAttribute("id","myParentId_gameSimulatorContainer_myId_0");
+ document.getElementById("gameSimulatorContainer").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","shuffleItemsContainerId");
+ elemRef.setAttribute("class","shuffleItemsContainer gridColumnLayout gridCenterVH gridColumnLayout_6");
+ document.getElementById("myParentId_gameSimulatorContainer_myId_0").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_shuffleItemsContainerId_myId_1");
+ document.getElementById("shuffleItemsContainerId").appendChild(elemRef);
+
+ elemRef = document.createElement("IMG");
+ elemRef.setAttribute("src","assets/silk/blackSilk.png");
+ elemRef.setAttribute("alt","Trulli");
+ elemRef.setAttribute("id","myParentId_myParentId_shuffleItemsContainerId_myId_1_myId_2");
+ document.getElementById("myParentId_shuffleItemsContainerId_myId_1").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_shuffleItemsContainerId_myId_3");
+ document.getElementById("shuffleItemsContainerId").appendChild(elemRef);
+
+ elemRef = document.createElement("IMG");
+ elemRef.setAttribute("src","assets/silk/blackSilk.png");
+ elemRef.setAttribute("alt","Trulli");
+ elemRef.setAttribute("id","myParentId_myParentId_shuffleItemsContainerId_myId_3_myId_4");
+ document.getElementById("myParentId_shuffleItemsContainerId_myId_3").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_shuffleItemsContainerId_myId_5");
+ document.getElementById("shuffleItemsContainerId").appendChild(elemRef);
+
+ elemRef = document.createElement("IMG");
+ elemRef.setAttribute("src","assets/silk/blackSilk.png");
+ elemRef.setAttribute("alt","Trulli");
+ elemRef.setAttribute("id","myParentId_myParentId_shuffleItemsContainerId_myId_5_myId_6");
+ document.getElementById("myParentId_shuffleItemsContainerId_myId_5").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_shuffleItemsContainerId_myId_7");
+ document.getElementById("shuffleItemsContainerId").appendChild(elemRef);
+
+ elemRef = document.createElement("IMG");
+ elemRef.setAttribute("src","assets/silk/blackSilk.png");
+ elemRef.setAttribute("alt","Trulli");
+ elemRef.setAttribute("id","myParentId_myParentId_shuffleItemsContainerId_myId_7_myId_8");
+ document.getElementById("myParentId_shuffleItemsContainerId_myId_7").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","myParentId_shuffleItemsContainerId_myId_9");
+ document.getElementById("shuffleItemsContainerId").appendChild(elemRef);
+
+ elemRef = document.createElement("IMG");
+ elemRef.setAttribute("src","assets/silk/blackSilk.png");
+ elemRef.setAttribute("alt","Trulli");
+ elemRef.setAttribute("id","myParentId_myParentId_shuffleItemsContainerId_myId_9_myId_10");
+ document.getElementById("myParentId_shuffleItemsContainerId_myId_9").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","shuffleLastItemId");
+ document.getElementById("shuffleItemsContainerId").appendChild(elemRef);
+
+ elemRef = document.createElement("IMG");
+ elemRef.setAttribute("src","assets/silk/blackSilk.png");
+ elemRef.setAttribute("alt","Trulli");
+ elemRef.setAttribute("id","myParentId_shuffleLastItemId_myId_11");
+ document.getElementById("shuffleLastItemId").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("class","pickerBox gridColumnLayout gridCenterVH gridColumnLayout_6");
+ elemRef.setAttribute("id","myParentId_myParentId_gameSimulatorContainer_myId_0_myId_12");
+ document.getElementById("myParentId_gameSimulatorContainer_myId_0").appendChild(elemRef);
+
+ elemRef = document.createElement("DIV");
+ elemRef.setAttribute("id","pickerBoxOneId");
+ elemRef.setAttribute("class","overItem");
+ document.getElementById("myParentId_myParentId_gameSimulatorContainer_myId_0_myId_12").appendChild(elemRef);
+
 	}
-	// domTreeTest();
+	domTreeTest();
 
 	/*
 	// Read local json file (browser side)
