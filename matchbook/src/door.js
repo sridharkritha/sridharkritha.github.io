@@ -13,7 +13,8 @@ var DOOR = (function() {
 	// should be used for all requests in that period.
 	login: function (callback) {
 		// Asynchronous 'json' file read
-		fs.readFile('./../../../../credential.json', function(err, data) {
+		fs.readFile('../../../../GitHubOutside/myLoginDetails/secret.json', function(err, data) {
+	 // fs.readFile('./../../../../credential.json', function(err, data) {
 			if (err) throw err;
 			var credential = JSON.parse(data);
 			// console.log(credential);

@@ -435,7 +435,6 @@
 						betNow.push(betObj);
 					}
 				}
-				}
 			}
 		}
 		return betNow;
