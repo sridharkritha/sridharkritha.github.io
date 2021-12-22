@@ -69,7 +69,7 @@
 			}
 			var jsonFormat = JSON.parse(body);
 
-			if (Object.keys(jsonFormat[obj]).length) {
+			if (jsonFormat[obj] && Object.keys(jsonFormat[obj]).length) {
 				// not empty
 				db.sportId[closureSave][obj] = {};
 
@@ -225,7 +225,7 @@
 
 			var runnersObj = {};
 
-			if(jsonFormat.markets.length)
+			if(jsonFormat.markets && jsonFormat.markets.length)
 			//if(jsonFormat.markets.length && (jsonFormat.markets[0].name === 'WIN' || jsonFormat.markets[0].name === 'Winner'))
 			{
 				if(jsonFormat.name === "13:05 Turffontein")
