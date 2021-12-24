@@ -21,16 +21,18 @@
 	var sessionStartTime = 0;
 	var sportsList = [];
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	var winConfidencePercentage = 100; // ex: 100  (100% or more)
-	var minProfitOdd = 1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	var winConfidencePercentage = 80; // ex: 100  (100% or more)
+	var minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+	const maxRunnersCount = 8;
 	/*
 	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
+//	var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
+	var sportsInterested = ['Horse Racing'];  
 	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
 	var isLockedForBetting = true; // true
 
@@ -331,7 +333,7 @@
 									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
 		
 									// Build the predictedWinner list
-									if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd))
+									if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd) && luckyRunner.length <= maxRunnersCount)
 									{
 										predictedWinners.push(luckyRunner[0][1]);
 									}
@@ -580,12 +582,12 @@
 			var sports_cbCount = new callbackCount(0, sportsInterested.length);
 			// Calling callback functions inside a loop
 			sportsInterested.forEach(function(sport) {
-			// input  - sports id
-			// output - event id
-			// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
-			// getEvents('24735152712200'); // sportsid
-			// getEvents(db.sportId['Horse Racing'], function(err, data) {
-			getEvents(sport, sports_cbCount, callback_getEvents);
+				// input  - sports id
+				// output - event id
+				// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
+				// getEvents('24735152712200'); // sportsid
+				// getEvents(db.sportId['Horse Racing'], function(err, data) {
+				getEvents(sport, sports_cbCount, callback_getEvents);
 			}); //forEach
 		}
 	};
@@ -698,6 +700,13 @@
 }()); // namespace
 
 /*
+
+Note: 'Sport id' is NOT EQUAL to 'Event id'
+	  Sport id is constant(HorseRace = 24735152712200) but Event id changes every day(24thDec Kempton HorseRace = 1942888205470016)
+	
+
+
+
 
 mb_get_sports
 mb_get_events
