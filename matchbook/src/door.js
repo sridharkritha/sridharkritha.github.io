@@ -27,7 +27,7 @@ var DOOR = (function() {
 						const sessionToken = body['session-token'];
 						const sessionStartTime = body['last-login']; // new Date().getTime();
 
-						UTILS.storeCookie(sessionToken, sessionStartTime);
+						DOOR.storeCookie(sessionToken, sessionStartTime);
 
 						return callback(null, sessionToken, sessionStartTime);
 					}
@@ -85,17 +85,17 @@ var DOOR = (function() {
 					}
 					else {
 						console.log("Last Session is NOT valid because elapsed time is greater than 6 hours");
-						DOOR.login(callback);
+						DOOR.login(callback); // NOT => login(callback);
 					}
 				}
 				else {
-					login(callback);
+					DOOR.login(callback);
 				}
 			}
 			catch(e) {
 				console.error("ERROR: Unable to read the json file");
 				console.log(e);
-				login(callback);
+				DOOR.login(callback);
 			}
 		},
 

@@ -67,7 +67,7 @@ var UTIL = (function() {
 module.exports.getCurrentTimeDate = UTIL.getCurrentTimeDate;
 module.exports.getDefaultOptions = UTIL.getDefaultOptions;
 module.exports.writeJsonFile = UTIL.writeJsonFile;
-module.exports.randomIntFromInterval = UTILS.randomIntFromInterval;
+module.exports.randomIntFromInterval = UTIL.randomIntFromInterval;
 
 
 
