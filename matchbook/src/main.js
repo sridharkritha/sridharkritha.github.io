@@ -33,7 +33,8 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 //	var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
 	var sportsInterested = ['Horse Racing'];  
-	var whichDayEvent = 'today'; // 'today'   or    'tomorrow'
+	// var whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
+	var whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	var isLockedForBetting = true; // true
 
 	if(isLockedForBetting)
@@ -41,7 +42,7 @@
 		winConfidencePercentage = 1; // ex: 100  (100% or more)
 		minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
-		whichDayEvent = 'today'; // 'today'   or    'tomorrow'
+		whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -100,10 +101,16 @@
 								var tomorrow = new Date();
 								currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
 							}
+							else if(new Date(filterDay).getDate() === new Date(dateString).getDate())
+							{
+								// some specific date
+								currentDate = new Date(filterDay);
+							}
 	
 							if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
 								|| dateObject.getFullYear() !== currentDate.getFullYear())
 							{
+								console.log('SKIP: ' + dateObject.getDate() + ' !== ' + currentDate.getDate());
 								continue; // skip
 							}
 						}
