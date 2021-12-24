@@ -4,7 +4,7 @@ var DOOR = (function() {
 	// Private Members
 	return {
 	// Public Members
-	
+
 	// Login
 	// Login to Matchbook and create a new session.
 	// The response includes a session token value. This value should be included with all subsequent requests as either a 
@@ -24,10 +24,12 @@ var DOOR = (function() {
 				{ json: credential}, // username and passwords
 				function (error, response, body) {
 					if (!error && response.statusCode == 200) {
-						sessionToken = body['session-token'];
-						sessionStartTime = new Date().getTime();
+						const sessionToken = body['session-token'];
+						const sessionStartTime = body['last-login']; // new Date().getTime();
 
-						 return callback(null, sessionToken, sessionStartTime);
+						UTILS.storeCookie(sessionToken, sessionStartTime);
+
+						return callback(null, sessionToken, sessionStartTime);
 					}
 					else {
 						console.log(body);
@@ -54,6 +56,64 @@ var DOOR = (function() {
 	
 				//console.log(body);
 			});
+		},
+
+		//////////////////////////////////////// FILE API SETUP ////////////////////////////////////////////////////////////
+		// Read json file by 'fs' module(WITH promise)
+		getLastSession: async function(callback) {
+			const fileFullPath = "../../../../GitHubOutside/myLoginDetails/mySessionToken.json";
+			try{
+				const isFileExist = await fs.promises.stat(fileFullPath).then(() => true).catch(() => false);
+
+				if(isFileExist) {
+					const data = await fs.promises.readFile(fileFullPath, 'utf8');
+					console.log("Read the local json successfully");
+					const jsonObject = JSON.parse(data);
+					console.log(jsonObject);
+
+					// "login.lastLoginTIme": "2021-12-22T06:55:09.000Z"
+					const elapsedTime = new Date() - new Date(jsonObject["login.lastLoginTIme"]); // milli seconds
+
+					// Check is less than 6 hrs
+					if(6*60*60 > elapsedTime / 1000)
+					{
+						console.log("Last Session is still valid because elapsed time is less than 6 hours");
+						const sessionToken = jsonObject["login.sessionToken"];
+						const sessionStartTime = jsonObject["login.lastLoginTIme"];
+
+						return callback(null, sessionToken, sessionStartTime);
+					}
+					else {
+						console.log("Last Session is NOT valid because elapsed time is greater than 6 hours");
+						DOOR.login(callback);
+					}
+				}
+				else {
+					login(callback);
+				}
+			}
+			catch(e) {
+				console.error("ERROR: Unable to read the json file");
+				console.log(e);
+				login(callback);
+			}
+		},
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		storeCookie: async function(sessionToken, lastLoginTIme)
+		{
+			try
+			{
+				let obj = {};
+				obj["login" + '.sessionToken']  = sessionToken;
+				obj["login" + '.lastLoginTIme'] = lastLoginTIme;
+				await fs.promises.writeFile('../../../../GitHubOutside/myLoginDetails/mySessionToken.json', JSON.stringify(obj, null, 4), 'utf8');
+				console.log('Success: A new mySessionToken.json file has been created');
+			}
+			catch(e)
+			{
+				console.error(e);
+			}
 		}
 	};
 })();
@@ -62,3 +122,4 @@ var DOOR = (function() {
 // exports the variables and functions above so that other modules can use them
 module.exports.login = DOOR.login;
 module.exports.logout = DOOR.logout;
+module.exports.getLastSession = DOOR.getLastSession;

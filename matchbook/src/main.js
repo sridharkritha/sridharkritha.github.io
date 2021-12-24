@@ -641,7 +641,7 @@
 				remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
 				setTimeout(function() {
 					// Check for session expire timeout
-					if(currentTime - sessionStartTime > sessionExpireTimeLimit) {
+					if(currentTime - new Date(sessionStartTime).getTime() > sessionExpireTimeLimit) {
 						getNewSession();
 					}
 					else {
@@ -690,7 +690,8 @@
 	};
 
 	getNewSession = function() {
-		DOOR.login(loginCallback); // login
+		DOOR.getLastSession(loginCallback);	
+		// DOOR.login(loginCallback); // login
 	};
 
 	// Entry Function

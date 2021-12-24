@@ -54,6 +54,11 @@ var UTIL = (function() {
 			});
 		},
 
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		randomIntFromInterval: function (min, max) { // min and max included 
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+
 	};
 })();
 
@@ -62,6 +67,7 @@ var UTIL = (function() {
 module.exports.getCurrentTimeDate = UTIL.getCurrentTimeDate;
 module.exports.getDefaultOptions = UTIL.getDefaultOptions;
 module.exports.writeJsonFile = UTIL.writeJsonFile;
+module.exports.randomIntFromInterval = UTILS.randomIntFromInterval;
 
 
 
