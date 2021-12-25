@@ -562,7 +562,7 @@
 		console.log(UTIL.getCurrentTimeDate());
 		g_pastTime = new Date().getTime();
 
-		findSportsIds();
+		// findSportsIds();
 	};
 
 	findSportsIds = function() {
@@ -635,8 +635,7 @@
 			++sports_cbCount.currentCount;
 
 			submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
-		// }
-		
+
 			if(events_cbCount.totalCount && events_cbCount.currentCount === events_cbCount.totalCount &&
 				sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
 			{
@@ -646,6 +645,7 @@
 				g_currentTime = new Date().getTime();
 				remainingTime = g_currentTime - g_pastTime;
 				remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+
 				setTimeout(function() {
 					// Check for session expire timeout
 					if(g_currentTime - new Date(g_sessionStartTime).getTime() > g_sessionExpireTimeLimit) {
@@ -683,7 +683,7 @@
 		}
 	};
 
-	loginCallback = function(err, sessionToken, g_sessionStartTime) {
+	loginCallback = function(err, sessionToken, sessionStartTime) {
 		if(err){
 			g_sessionToken = null;
 			g_sessionStartTime = 0;
@@ -691,7 +691,10 @@
 		}
 		else{
 			g_sessionToken = sessionToken;
-			g_sessionStartTime = g_sessionStartTime;
+			g_sessionStartTime = sessionStartTime;
+
+			findSportsIds(); // run once bcos sports id's are constant
+
 			run();
 		} 
 	};
