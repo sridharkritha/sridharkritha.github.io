@@ -5,9 +5,9 @@
   "main": "src\\server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js",
-    "dev": "nodemon main.js",
-    "debug": "nodemon --inspect-brk main.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "debug": "nodemon --inspect-brk server.js"
   },
   "author": "",
   "license": "ISC",
