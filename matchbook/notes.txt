@@ -29,11 +29,11 @@ ________________________________________________________________________________
 
     Group	                Limit
     --------------------------------------------
-    Account	            300 requests per minute
-    Events	            700 requests per minute
-    Security	        200 requests per minute
-    Navigation	        100 requests per minute
-    Reports	            40 requests per minute
+    Account	            300  requests per minute
+    Events	            700  requests per minute
+    Security	        200  requests per minute
+    Navigation	        100  requests per minute
+    Reports	            40   requests per minute
     Betting Write	    3000 requests per minute
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
