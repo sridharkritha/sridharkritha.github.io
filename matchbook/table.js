@@ -126,7 +126,7 @@
 			// Date string is appended as a query with live data for not to use the cached version 
 			
 			// Method 1: GET - send file ( file.json)
-			var url = 'result.json?' + now.getTime();
+			var url = 'availableMatchEventList.json?' + now.getTime();
 			xhr = getXmlHttpRequestObject();
 			xhr.onreadystatechange = evenHandler;
 			// asynchronous requests
