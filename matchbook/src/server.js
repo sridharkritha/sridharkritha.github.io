@@ -126,7 +126,7 @@
 		// console.log(Object.keys(g_db.eventId));
 		// console.log(body);
 		// ++extraArgs.closureSave.currentCount;
-		return callback(null, extraArgs.closureSave, extraArgs.closureSave);
+		return callback(null, extraArgs.sports_cbCount, extraArgs.closureSave);
 	};
 
 	requestResponse = function(options, obj, destObj, keys, filterDay, closureSave, sports_cbCount, callback) {
