@@ -1,6 +1,6 @@
-var request = require('request');
-var fs = require('fs');
-var DOOR = (function() {
+const request = require('request');
+const fs = require('fs');
+const DOOR = (function() {
 	// Private Members
 	return {
 	// Public Members
@@ -44,7 +44,7 @@ var DOOR = (function() {
 		// Logout
 		// Logout from Matchbook and terminate the current session.
 		logout: function (sessionToken) {
-			var options = UTIL.UTIL.getDefaultOptions();
+			const options = UTIL.UTIL.getDefaultOptions();
 			options.method = 'DELETE';
 			options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
 	

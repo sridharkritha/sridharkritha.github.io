@@ -1,48 +1,47 @@
 (function () {
 	// https://developers.matchbook.com/reference
-	var request = require('request');
-	var fs = require('fs');
+	const request = require('request');
+	const fs = require('fs');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	var UTIL = require('./util');
-	var DOOR = require('./door');
-	var MISC = require('./misc');
+	const UTIL = require('./util');
+	const DOOR = require('./door');
+	const MISC = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	var sri = 0;
-	var sessionToken = null;
-	var db = {};
-	db.sportId = {};
-	var predictedWinners = [];
-	var successfulBets = null; // array
-	var report = [];
-	var pastTime = 0;
-	var currentTime = 0;
-	var betNow = [];
-	var sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
-	var sessionStartTime = 0;
-	var sportsList = [];
+	let sri = 0;
+	let g_sessionToken = null;
+	let g_db = {};
+	g_db.sportId = {};
+	let g_predictedWinners = [];
+	let g_successfulBets = null; // array
+	let g_pastTime = 0;
+	let g_currentTime = 0;
+	let g_betNow = [];
+	const g_sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
+	let g_sessionStartTime = 0;
+	let g_sportsList = [];
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	var winConfidencePercentage = 80; // ex: 100  (100% or more)
-	var minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-	var betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
-	const maxRunnersCount = 8;
+	let g_winConfidencePercentage = 80; // ex: 100  (100% or more)
+	let g_minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	let g_betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+	let g_maxRunnersCount = 8;
+	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	/*
-	var sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
+	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-//	var sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
-	var sportsInterested = ['Horse Racing'];  
-	// var whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
-	var whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
-	var isLockedForBetting = true; // true
+	// let g_sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
+	let g_sportsInterested = ['Horse Racing'];  
 
-	if(isLockedForBetting)
+	const g_isLockedForBetting = true; // true
+
+	if(g_isLockedForBetting)
 	{
-		winConfidencePercentage = 1; // ex: 100  (100% or more)
-		minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-		betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
-		whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
+		g_winConfidencePercentage = 1; // ex: 100  (100% or more)
+		g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+		g_betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
+		g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,10 +53,10 @@
 	};
 
 	isAlreadyBetPlacedEvent = function(eventId) {
-		if(successfulBets && successfulBets.length) {
-			for(var count  = 0; count < successfulBets.length; ++count) {
-				if("event-id" in  successfulBets[count]) {
-					if(successfulBets[count]["event-id"] === eventId) 
+		if(g_successfulBets && g_successfulBets.length) {
+			for(let count  = 0; count < g_successfulBets.length; ++count) {
+				if("event-id" in  g_successfulBets[count]) {
+					if(g_successfulBets[count]["event-id"] === eventId) 
 						return true;
 				}
 			}
@@ -70,25 +69,25 @@
 			if (error) {
 				return callback(error, sports_cbCount, null);
 			}
-			var jsonFormat = JSON.parse(body);
+			const jsonFormat = JSON.parse(body);
 
 			if (jsonFormat[obj] && Object.keys(jsonFormat[obj]).length) {
 				// not empty
-				db.sportId[closureSave][obj] = {};
+				g_db.sportId[closureSave][obj] = {};
 
-				for(var key in jsonFormat[obj])
+				for(let key in jsonFormat[obj])
 				{
 					if( jsonFormat[obj].hasOwnProperty(key))
 					{
 						key = Number(key);
-						var index = keys.indexOf("start");
-						var dateString;
+						const index = keys.indexOf("start");
+						let dateString;
 	
 						if(index !== -1)
 						{
 							dateString = jsonFormat[obj][key][keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
-							var dateObject = new Date(dateString);
-							var currentDate;
+							let dateObject = new Date(dateString);
+							let currentDate;
 							if(filterDay === 'today')
 							{
 								// Thu Feb 28 2019 22:04:39 GMT+0000
@@ -97,8 +96,8 @@
 							else if(filterDay === 'tomorrow')
 							{
 								// Fri Mar 01 2019 00:04:39 GMT+0000
-								var today = new Date();
-								var tomorrow = new Date();
+								let today = new Date();
+								let tomorrow = new Date();
 								currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
 							}
 							else if(new Date(filterDay).getDate() === new Date(dateString).getDate())
@@ -115,19 +114,19 @@
 							}
 						}
 	
-						var name = jsonFormat[obj][key][destObj];
-						db.sportId[closureSave][obj][name] = {};
+						const name = jsonFormat[obj][key][destObj];
+						g_db.sportId[closureSave][obj][name] = {};
 	
-						for(var i = 0; i < keys.length; ++i)
+						for(let i = 0; i < keys.length; ++i)
 						{
-							db.sportId[closureSave][obj][name][keys[i]] = jsonFormat[obj][key][keys[i]];
+							g_db.sportId[closureSave][obj][name][keys[i]] = jsonFormat[obj][key][keys[i]];
 						}
 					}
 				}
 			}
 			
 			//UTIL.writeJsonFile(body,'event.json');
-			// console.log(Object.keys(db.eventId));
+			// console.log(Object.keys(g_db.eventId));
 			// console.log(body);
 			// ++sports_cbCount.currentCount;
 			return callback(null, sports_cbCount, closureSave);
@@ -137,38 +136,38 @@
 	// Get Sports
 	// Get the list of sports supported by Matchbook
 	getSports = function (callback) {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/lookups/sports';
 		options.qs = { offset: '0', 'per-page': '20', order: 'name asc', status: 'active' };
 
 		// Cookie data for maintaining the session
-		options.headers['session-token'] = sessionToken;
+		options.headers['session-token'] = g_sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) {
 				return callback(error,null);
 			} 
 
-			var jsonFormat = JSON.parse(body);
-			var sportsName = null;
-			sportsList = [];
+			const jsonFormat = JSON.parse(body);
+			let sportsName = null;
+			g_sportsList = [];
 
-			for(var sport in jsonFormat['sports'])
+			for(let sport in jsonFormat['sports'])
 			{
-				if( jsonFormat['sports'].hasOwnProperty(sport))
+				if(jsonFormat['sports'].hasOwnProperty(sport))
 				{
 					sport = Number(sport);
-					// db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
+					// g_db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
 					sportsName = jsonFormat['sports'][sport].name;
-					sportsList.push(sportsName);
-					db.sportId[jsonFormat['sports'][sport].name] = {};
-					db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
+					g_sportsList.push(sportsName);
+					g_db.sportId[jsonFormat['sports'][sport].name] = {};
+					g_db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
 				}
 			}
 
-			// UTIL.writeJsonFile(body,'sportsList.json');
+			// UTIL.writeJsonFile(body,'g_sportsList.json');
 			// console.log(body);
-			// console.log(Object.keys(db.sportId));
+			// console.log(Object.keys(g_db.sportId));
 			return callback(null);
 		});
 	};	
@@ -176,8 +175,8 @@
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
 	getEvents = function (sport, sports_cbCount, callback) {
-		var sportId = db.sportId[sport];
-		var options = UTIL.getDefaultOptions();
+		const sportId = g_db.sportId[sport];
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events';
 		options.qs = {
 			'offset': '0',
@@ -201,15 +200,15 @@
 		}
 
 		// Cookie data for maintaining the session
-		options.headers['session-token'] = sessionToken;
+		options.headers['session-token'] = g_sessionToken;
 
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id','start'], whichDayEvent, sport, sports_cbCount, callback);
+		requestResponse(options, 'events', 'name', ['id','start'], g_whichDayEvent, sport, sports_cbCount, callback);
 	};
 
 	// Get Event
 	getEvent = function (event_id, returnFunction) {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.qs = {
 			'exchange-type': 'back-lay',
 			'odds-type': 'DECIMAL',
@@ -224,28 +223,28 @@
 		options.url = 'https://api.matchbook.com/edge/rest/events/'+event_id;
 
 		// Cookie data for maintaining the session
-		options.headers['session-token'] = sessionToken;
+		options.headers['session-token'] = g_sessionToken;
 
 		request(options, function (error, response, body) {
 			if (error) 
 			throw new Error(error);
 
-			var jsonFormat = JSON.parse(body);
+			const jsonFormat = JSON.parse(body);
 
-			var runnersObj = {};
+			const runnersObj = {};
 
 			if(jsonFormat.markets && jsonFormat.markets.length)
 			//if(jsonFormat.markets.length && (jsonFormat.markets[0].name === 'WIN' || jsonFormat.markets[0].name === 'Winner'))
 			{
 				if(jsonFormat.name === "13:05 Turffontein")
 				{
-					var x;
+					let x;
 					x = 10;
 				}
 
-			var runners = jsonFormat.markets[0].runners;
+				let runners = jsonFormat.markets[0].runners;
 
-			for(var runner in runners)
+			for(let runner in runners)
 			{
 				if(runners.hasOwnProperty(runner))
 				{
@@ -254,9 +253,9 @@
 					runnersObj[runners[runner].name] = {};
 					runnersObj[runners[runner].name].runnerId = runners[runner].id;
 
-					var back = [];
-					var lay = [];
-					for(var price in runners[runner]['prices'])
+					const back = [];
+					const lay = [];
+					for(let price in runners[runner]['prices'])
 					{
 						if(runners[runner]['prices'].hasOwnProperty(price))
 						{
@@ -296,26 +295,26 @@
 	// 		},
 
 	luckyMatchFilter = function(jsonObj, objLevelFilter, callback) {
-		predictedWinners = []; 
-		for(var prop in jsonObj) {
+		g_predictedWinners = []; 
+		for(let prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
 				if(prop === objLevelFilter) { // events: { }
-				for(var race in jsonObj[prop]) { 
+				for(let race in jsonObj[prop]) { 
 					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
-						var raceId = jsonObj[prop][race].id;
+						const raceId = jsonObj[prop][race].id;
 
 							// Check if already a successful bet has been placed on that event
 							if(!isAlreadyBetPlacedEvent(raceId))
 							{
-								var startTime = jsonObj[prop][race].start;
-								var raceName = race;
-								var luckyRunner = [];
-								for(var runner in jsonObj[prop][race]) { 
+								const startTime = jsonObj[prop][race].start;
+								const raceName = race;
+								const luckyRunner = [];
+								for(let runner in jsonObj[prop][race]) { 
 									if(jsonObj[prop][race].hasOwnProperty(runner)) {
 										if(typeof jsonObj[prop][race][runner] === "object") {
-											var runnerObj = jsonObj[prop][race][runner];
+											let runnerObj = jsonObj[prop][race][runner];
 											runnerObj.name = runner;
-											var back = jsonObj[prop][race][runner].back;
+											let back = jsonObj[prop][race][runner].back;
 											if(!back) {
 												back = Number.MAX_VALUE;
 											}
@@ -328,21 +327,21 @@
 								if(luckyRunner.length > 1)
 								{
 									// Calculating the win chance by comparing with very next competitor 
-									var winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+									let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
 									luckyRunner[0][1].numberOfRunners = luckyRunner.length;
 									// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
 									luckyRunner[0][1].winPercentage = winPercentage;
 									luckyRunner[0][1].startTime = startTime;
 									luckyRunner[0][1].raceId = raceId;
 									luckyRunner[0][1].raceName = raceName;
-									var profitOdd = luckyRunner[0][1].back - 1;
+									let profitOdd = luckyRunner[0][1].back - 1;
 								
 									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
 		
 									// Build the predictedWinner list
-									if((winPercentage > winConfidencePercentage) && (profitOdd > minProfitOdd) && luckyRunner.length <= maxRunnersCount)
+									if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
 									{
-										predictedWinners.push(luckyRunner[0][1]);
+										g_predictedWinners.push(luckyRunner[0][1]);
 									}
 								}
 							}
@@ -351,12 +350,12 @@
 				}
 			}
 		}
-		betNow = findHotBet(predictedWinners);
-		return callback(null, betNow);
+		g_betNow = findHotBet(g_predictedWinners);
+		return callback(null, g_betNow);
 	};
 
 	findLuckyMatch = function(jsonObj, objLevelFilter, callback) {
-		if(successfulBets) {
+		if(g_successfulBets) {
 			// Read from array
 			luckyMatchFilter(jsonObj, objLevelFilter, callback);
 		}
@@ -370,7 +369,7 @@
 					{
 						// File is not exist, creat a empty file
 						fs.closeSync(fs.openSync('./data/successfulBets.json', 'w'));
-						successfulBets = [] ;
+						g_successfulBets = [] ;
 						luckyMatchFilter(jsonObj, objLevelFilter, callback);
 						console.log("Success: ./data/successfulBets.json - created and saved!");
 					}
@@ -381,10 +380,10 @@
 					fs.readFile('./data/successfulBets.json', function(err, data) {
 						if (err) throw err;
 						if(data && data.length) {
-							successfulBets = JSON.parse(data);
+							g_successfulBets = JSON.parse(data);
 						}
 						else {
-							successfulBets = [] ;
+							g_successfulBets = [] ;
 						}
 						
 						luckyMatchFilter(jsonObj, objLevelFilter, callback);
@@ -394,12 +393,12 @@
 		}
 	};
 
-	findHotBet = function(predictedWinners) {
-		betNow = [];
-		for(var i = 0; i < predictedWinners.length; ++i) {
-			var obj = predictedWinners[i];
-			var startTime = new Date(obj.startTime);
-			var currentTime =  new Date();
+	findHotBet = function(g_predictedWinners) {
+		g_betNow = [];
+		for(let i = 0; i < g_predictedWinners.length; ++i) {
+			let obj = g_predictedWinners[i];
+			let startTime = new Date(obj.startTime);
+			let g_currentTime =  new Date();
 
 			// { 	"runner-id":1052216604020016,
 				// 	"side":"back",
@@ -407,46 +406,46 @@
 				// 	"stake": 0.0
 			// }
 
-			if( startTime.getDate() === currentTime.getDate() && startTime.getMonth() === currentTime.getMonth() && 
-				startTime.getFullYear() === currentTime.getFullYear())
+			if( startTime.getDate() === g_currentTime.getDate() && startTime.getMonth() === g_currentTime.getMonth() && 
+				startTime.getFullYear() === g_currentTime.getFullYear())
 			{
-				// betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
-				if(currentTime.getTime() > (startTime.getTime() - (betMinutesOffset * 60 * 1000)))
+				// g_betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+				if(g_currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
 				{
-					if(!(currentTime.getTime() > startTime.getTime() + 2* 60*1000))
+					if(!(g_currentTime.getTime() > startTime.getTime() + 2* 60*1000))
 					{
-						var betObj = {};
+						let betObj = {};
 
-						var fractionNumber = 0;
-						fractionNumber = predictedWinners[i].back;
-						var numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
-						var numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
-						var roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
-						var roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
+						let fractionNumber = 0;
+						fractionNumber = g_predictedWinners[i].back;
+						let numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
+						let numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
+						let roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
+						let roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
 
 						betObj.odds = roundedOdd; // for reducing the commission charge
-						// betObj.odds = predictedWinners[i].back;
-						betObj['runner-id'] = predictedWinners[i].runnerId;
+						// betObj.odds = g_predictedWinners[i].back;
+						betObj['runner-id'] = g_predictedWinners[i].runnerId;
 					
 						betObj.side = 'back';
 						betObj.stake = 0.1; // 1.0
 
-						if(isLockedForBetting)
+						if(g_isLockedForBetting)
 						{
 							// mock bet
-							betObj['event-id'] = predictedWinners[i].raceId;
+							betObj['event-id'] = g_predictedWinners[i].raceId;
 							betObj['status'] = 'matched';
 							betObj['decimal-odds'] = betObj.odds;
-							betObj['event-name'] =  predictedWinners[i].raceName;
-							betObj['runner-name'] = predictedWinners[i].name;
+							betObj['event-name'] =  g_predictedWinners[i].raceName;
+							betObj['runner-name'] = g_predictedWinners[i].name;
 						}
 
-						betNow.push(betObj);
+						g_betNow.push(betObj);
 					}
 				}
 			}
 		}
-		return betNow;
+		return g_betNow;
 	};
 
 		// Submit Offers
@@ -473,20 +472,20 @@
 
 		// "{"odds-type":"DECIMAL","exchange-type":"back-lay","offers":[{"runner-id":1076420113760015,"odds":1.34482,"side":"back","stake":1}]}"
 
-		var luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
-			luckyBet.offers = betNow; // list of bets
+		let luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
+			luckyBet.offers = g_betNow; // list of bets
 
-		var options = UTIL.getDefaultOptions();
+			let options = UTIL.getDefaultOptions();
 		options.method = 'POST';
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
 		// Cookie data for maintaining the session
-		options.headers['session-token'] = sessionToken;
+		options.headers['session-token'] = g_sessionToken;
 		// options.json = JSON.stringify(luckyBet); // Bet info
 		// options.body = JSON.stringify(luckyBet); // Bet info
 		options.json = luckyBet; // Bet info
 
 		if(luckyBet.offers.length) {
-			if(!isLockedForBetting) {
+			if(!g_isLockedForBetting) {
 				request(options, function (error, response, body) {
 					if (!error && response.statusCode == 200) {
 						//console.log(response);
@@ -496,7 +495,7 @@
 						console.log(response.statusCode + " Error in bet placed");
 
 						if(response.body.offers) {
-							for(var count = 0; count < response.body.offers.length; ++count) {
+							for(let count = 0; count < response.body.offers.length; ++count) {
 								console.log(response.body.offers[count].errors);
 							}
 						}
@@ -509,19 +508,20 @@
 			{
 				// mock bet placed
 				//console.log(response);
-				for(var i = 0; i < betNow.length; ++i) {
-					var lastBetResult = betNow[i];
+				for(let i = 0; i < g_betNow.length; ++i) {
+					let lastBetResult = g_betNow[i];
 
-					var obj = {   "event-id":lastBetResult['event-id'],
-					"status":lastBetResult['status'],
-					"decimal-odds":lastBetResult['decimal-odds'],
-					"event-name":lastBetResult['event-name'],
-					"runner-name":lastBetResult['runner-name'],
-					"time": UTIL.getCurrentTimeDate() };
+					let obj = {		"event-id":lastBetResult['event-id'],
+									"status":lastBetResult['status'],
+									"decimal-odds":lastBetResult['decimal-odds'],
+									"event-name":lastBetResult['event-name'],
+									"runner-name":lastBetResult['runner-name'],
+									"time": UTIL.getCurrentTimeDate() 
+							};
 					console.log(obj);
-					successfulBets.push(obj);
+					g_successfulBets.push(obj);
 					
-					UTIL.writeJsonFile(successfulBets,'./data/mockSuccessfulBets.json');
+					UTIL.writeJsonFile(g_successfulBets,'./data/mockSuccessfulBets.json');
 				}
 			}
 		}
@@ -531,16 +531,16 @@
 		getEvent(eventId, function(obj) {
 					//console.log(obj);
 			
-			db.sportId[sportName].events[event] = obj;  /// ?? events --- null
-			db.sportId[sportName].events[event].id = eventId;
-			db.sportId[sportName].events[event].start = startTime;
+			g_db.sportId[sportName].events[event] = obj;  /// ?? events --- null
+			g_db.sportId[sportName].events[event].id = eventId;
+			g_db.sportId[sportName].events[event].start = startTime;
 
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				UTIL.writeJsonFile(db.sportId[sportName],'./data/result.json');
+				UTIL.writeJsonFile(g_db.sportId[sportName],'./data/result.json');
 
-				findLuckyMatch(db.sportId[sportName], "events", function(err, data) {
+				findLuckyMatch(g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
 							console.log(err);
 							throw new Error(err);
@@ -560,7 +560,7 @@
 	{
 		++sri;
 		console.log(UTIL.getCurrentTimeDate());
-		pastTime = new Date().getTime();
+		g_pastTime = new Date().getTime();
 
 		findSportsIds();
 	};
@@ -578,22 +578,22 @@
 			throw new Error(err);
 		}
 		else{
-			if(sportsInterested.length === 1 && sportsInterested[0].toLowerCase() === 'all') {
-				sportsInterested = sportsList;
+			if(g_sportsInterested.length === 1 && g_sportsInterested[0].toLowerCase() === 'all') {
+				g_sportsInterested = g_sportsList;
 			}
 
 			--sri;
 			console.log(sri);
 
 
-			var sports_cbCount = new callbackCount(0, sportsInterested.length);
+			let sports_cbCount = new callbackCount(0, g_sportsInterested.length);
 			// Calling callback functions inside a loop
-			sportsInterested.forEach(function(sport) {
+			g_sportsInterested.forEach(function(sport) {
 				// input  - sports id
 				// output - event id
 				// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 				// getEvents('24735152712200'); // sportsid
-				// getEvents(db.sportId['Horse Racing'], function(err, data) {
+				// getEvents(g_db.sportId['Horse Racing'], function(err, data) {
 				getEvents(sport, sports_cbCount, callback_getEvents);
 			}); //forEach
 		}
@@ -608,16 +608,16 @@
 			// throw new Error(err);
 		}
 		else{
-			if('events' in db.sportId[sport]) {
+			if('events' in g_db.sportId[sport]) {
 				// 14:00 Newbury, 14:10 Fontwell, 14:20 Ayr, 14:35 Newbury, 14:40 Fairview...... etc
-				var races = Object.keys(db.sportId[sport].events);
-				var events_cbCount = new callbackCount(0, races.length);
+				let races = Object.keys(g_db.sportId[sport].events);
+				let events_cbCount = new callbackCount(0, races.length);
 
 				races.forEach(function(race) {
 					// input  - event id
 					// output - id (player)
 					// https://api.matchbook.com/edge/rest/events/1033210398700016
-					getEventInfo(sport, race, db.sportId[sport].events[race].id, db.sportId[sport].events[race].start, 
+					getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
 									sports_cbCount, events_cbCount, callback_getEventInfo);
 				}); //forEach
 			}
@@ -643,12 +643,12 @@
 				events_cbCount.currentCount = events_cbCount.totalCount = 0;
 				sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
 
-				currentTime = new Date().getTime();
-				remainingTime = currentTime - pastTime;
+				g_currentTime = new Date().getTime();
+				remainingTime = g_currentTime - g_pastTime;
 				remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
 				setTimeout(function() {
 					// Check for session expire timeout
-					if(currentTime - new Date(sessionStartTime).getTime() > sessionExpireTimeLimit) {
+					if(g_currentTime - new Date(g_sessionStartTime).getTime() > g_sessionExpireTimeLimit) {
 						getNewSession();
 					}
 					else {
@@ -665,33 +665,33 @@
 		}
 		else{
 			//console.log(response);
-			for(var i = 0; i < response.body.offers.length; ++i) {
-				var lastBetResult = response.body.offers[i];
+			for(let i = 0; i < response.body.offers.length; ++i) {
+				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-					var obj = {   "event-id":lastBetResult['event-id'],
+					let obj = {   "event-id":lastBetResult['event-id'],
 					"status":lastBetResult['status'],
 					"decimal-odds":lastBetResult['decimal-odds'],
 					"event-name":lastBetResult['event-name'],
 					"runner-name":lastBetResult['runner-name'],
 					"time": UTIL.getCurrentTimeDate() };
 					console.log(obj);
-					successfulBets.push(obj);
+					g_successfulBets.push(obj);
 					
-					UTIL.writeJsonFile(successfulBets,'./data/successfulBets.json');
+					UTIL.writeJsonFile(g_successfulBets,'./data/g_successfulBets.json');
 				}
 			}
 		}
 	};
 
-	loginCallback = function(err, sessionToken, sessionStartTime) {
+	loginCallback = function(err, sessionToken, g_sessionStartTime) {
 		if(err){
-			sessionToken = null;
-			sessionStartTime = 0;
+			g_sessionToken = null;
+			g_sessionStartTime = 0;
 			console.log(err);
 		}
 		else{
-			sessionToken = sessionToken;
-			sessionStartTime = sessionStartTime;
+			g_sessionToken = sessionToken;
+			g_sessionStartTime = g_sessionStartTime;
 			run();
 		} 
 	};

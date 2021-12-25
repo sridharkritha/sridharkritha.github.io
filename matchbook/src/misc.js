@@ -4,11 +4,11 @@
 // Namespace using Module Pattern 
 // https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/
 // https://liangwu.wordpress.com/2016/07/11/module-pattern-variations-and-common-practices/
-var MISC = (function() {
+const MISC = (function() {
 	/////////////////////////////////////////////////////////////////////////////////
 	// Private Members
 	//////////////////////////////////////////////////////////////////////////////////////
-	var pri;
+	let pri;
 
 	return {
 	
@@ -21,7 +21,7 @@ var MISC = (function() {
 	// This API provides the ability to validate a session is still active. A successful response indicates a valid and active
 	// session. A 401 response means that the session has expired.
 	getSession: function () {
-		var options = UTIL.UTIL.getDefaultOptions();
+		const options = UTIL.UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/bpapi/rest/security/session';
 
 		// Cookie data for maintaining the session
@@ -38,7 +38,7 @@ var MISC = (function() {
 	// Get the account information for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
 	getAccount: function () {
-		var options = UTIL.UTIL.getDefaultOptions();
+		const options = UTIL.UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/account';
 
 		// Cookie data for maintaining the session
@@ -55,7 +55,7 @@ var MISC = (function() {
 	// Get the casino wallet balance for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
 	getCasioWalletBalance: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/bpapi/rest/account/balance';
 
 		// Cookie data for maintaining the session
@@ -72,7 +72,7 @@ var MISC = (function() {
 	// Get the new sports balance for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
 	getSportsWalletBalance: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/account/balance';
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = sessionToken;
@@ -94,7 +94,7 @@ var MISC = (function() {
 	// Get Navigation
 	// Get the tree structure used for the navigation of events.
 	getNavigation: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/navigation';
 		options.qs = { offset: '0', 'per-page': '20'};
 
@@ -110,7 +110,7 @@ var MISC = (function() {
 
 	// Get Markets
 	getMarkets: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets';
 		options.qs = {
 			offset: '0',
@@ -136,7 +136,7 @@ var MISC = (function() {
 
 	// Get Market
 	getMarket: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id';
 		options.qs = {
 				'exchange-type': 'back-lay',
@@ -159,7 +159,7 @@ var MISC = (function() {
 
 	// Get Runners
 	getRunners: function (eventId, marketId) {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.qs = {
 			states: 'open,suspended',
 			'include-withdrawn': 'true',
@@ -186,7 +186,7 @@ var MISC = (function() {
 
 	// Get Runner
 	getRunner: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners/:runner_id';
 		options.qs = {
 			'include-prices': 'false',
@@ -209,7 +209,7 @@ var MISC = (function() {
 
 	// Get Prices
 	getPrices: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/events/:event_id/markets/:market_id/runners/:runner_id/prices';
 		options.qs = {
 				'exchange-type': 'back-lay',
@@ -231,7 +231,7 @@ var MISC = (function() {
 
 	// Get Popular Markets
 	getPopularMarkets: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/popular-markets';
 		options.qs = {
 			'exchange-type': 'back-lay',
@@ -254,7 +254,7 @@ var MISC = (function() {
 
 	// Get Popular Sports
 	getPopularSports: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/popular/sports';
 		options.qs = { 'num-sports': '5' };
 
@@ -287,7 +287,7 @@ var MISC = (function() {
 	// Cancel Offers
 	// Cancel some or all of your open offers.
 	cancelOffers: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.method = 'DELETE';
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
 
@@ -304,7 +304,7 @@ var MISC = (function() {
 	// Cancel Offer
 	// Cancel a specific unmatched offer.
 	cancelOffer: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.method = 'DELETE';
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id';
 		
@@ -321,7 +321,7 @@ var MISC = (function() {
 	// Get Offers
 	// Get the current unsettled offers. This can include offers in all statuses.
 	getOffers: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
 		options.qs = { offset: '0', 'per-page': '20', 'include-edits': 'false' };
 
@@ -338,7 +338,7 @@ var MISC = (function() {
 	// Get Offer
 	// Get a single specific unsettled offer.
 	getOffer: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id';
 		options.qs = { offset: '0', 'per-page': '20', 'include-edits': 'false' };
 
@@ -355,7 +355,7 @@ var MISC = (function() {
 	// Get Offer Edits
 	// Get a single specific unsettled offer.
 	getOfferEdits: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits';
 		options.qs = { offset: '0', 'per-page': '20' };
 
@@ -372,7 +372,7 @@ var MISC = (function() {
 	// Get Offer Edit
 	// Get a single specific unsettled offer.
 	getOfferEdit:  function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers/:offer_id/offer-edits/:offer_edit_id';		
 
 		// Cookie data for maintaining the session
@@ -388,7 +388,7 @@ var MISC = (function() {
 	// Get Old Wallet Transactions
 	// Get a list of transactions on the old Matchbook wallet.
 	getOldWalletTransactions: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/bpapi/rest/reports/transactions';
 		options.qs = { offset: '0', 'per-page': '20', categories: 'categories'};
 
@@ -405,7 +405,7 @@ var MISC = (function() {
 	// Get New Wallet Transactions
 	// Get a list of transactions on the New Matchbook wallet.
 	getNewWalletTransactions: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/reports/v1/transactions';
 		options.qs = { offset: '0', 'per-page': '20'};
 
@@ -423,7 +423,7 @@ var MISC = (function() {
 	// Get Current Offers
 	// Get a list of current offers i.e. offers on markets yet to be settled.
 	getCurrentOffers: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/reports/v2/offers/current';
 		options.qs = { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL'};
 
@@ -440,7 +440,7 @@ var MISC = (function() {
 	// Get Current Bets
 	// Get a list of current bets i.e. bets on markets yet to be settled.
 	getCurrentBets: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/reports/v2/bets/current';
 		options.qs = { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL'};
 
@@ -456,7 +456,7 @@ var MISC = (function() {
 
 	// Get Settled Bets
 	getSettledBets: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/reports/v2/bets/settled';
 		options.qs = { offset: '0', 'per-page': '20', 'odds-type': 'DECIMAL'};
 
@@ -473,7 +473,7 @@ var MISC = (function() {
 	// Get Countries
 	// Get the list of countries used for account registration.
 	getCountries: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/bpapi/rest/lookups/countries';
 
 		// Cookie data for maintaining the session
@@ -489,7 +489,7 @@ var MISC = (function() {
 	// Get Regions
 	// Get the list of regions within a Country for account registration.
 	getRegions: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/bpapi/rest/lookups/regions/:country_id';
 
 		// Cookie data for maintaining the session
@@ -505,7 +505,7 @@ var MISC = (function() {
 	// Get Currencies
 	// Get the list of currencies supported by Matchbook.
 	getCurrencies: function () {
-		var options = UTIL.getDefaultOptions();
+		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/bpapi/rest/lookups/currencies';
 
 		// Cookie data for maintaining the session
