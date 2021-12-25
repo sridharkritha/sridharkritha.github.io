@@ -64,72 +64,81 @@
 		return false;
 	};
 
+	populateEventData = function(jsonFormat, callback, extraArgs) {
+
+		// extraArgs = { obj, destObj, keys, filterDay, closureSave, sports_cbCount }
+		
+		if (jsonFormat[extraArgs.obj] && Object.keys(jsonFormat[extraArgs.obj]).length) {
+			// not empty
+			g_db.sportId[extraArgs.closureSave][extraArgs.obj] = {};
+
+			for(let key in jsonFormat[extraArgs.obj])
+			{
+				if( jsonFormat[extraArgs.obj].hasOwnProperty(key))
+				{
+					key = Number(key);
+					const index = extraArgs.keys.indexOf("start");
+					let dateString;
+
+					if(index !== -1)
+					{
+						dateString = jsonFormat[extraArgs.obj][key][extraArgs.keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
+						let dateObject = new Date(dateString);
+						let currentDate = new Date();
+						if(extraArgs.filterDay === 'today')
+						{
+							// Thu Feb 28 2019 22:04:39 GMT+0000
+							currentDate = new Date();
+						}
+						else if(extraArgs.filterDay === 'tomorrow')
+						{
+							// Fri Mar 01 2019 00:04:39 GMT+0000
+							let today = new Date();
+							let tomorrow = new Date();
+							currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
+						}
+						else if(new Date(extraArgs.filterDay).getDate() === new Date(dateString).getDate())
+						{
+							// some specific date
+							currentDate = new Date(extraArgs.filterDay);
+						}
+
+						if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
+							|| dateObject.getFullYear() !== currentDate.getFullYear())
+						{
+							console.log('SKIP: ' + dateObject + ' !== ' + currentDate);
+							continue; // skip
+						}
+					}
+
+					const name = jsonFormat[extraArgs.obj][key][extraArgs.destObj];
+					g_db.sportId[extraArgs.closureSave][extraArgs.obj][name] = {};
+
+					for(let i = 0; i < extraArgs.keys.length; ++i)
+					{
+						g_db.sportId[extraArgs.closureSave][extraArgs.obj][name][extraArgs.keys[i]] = jsonFormat[extraArgs.obj][key][extraArgs.keys[i]];
+					}
+				}
+			}
+		}
+		
+		//UTIL.writeJsonFile(body,'event.json');
+		// console.log(Object.keys(g_db.eventId));
+		// console.log(body);
+		// ++extraArgs.closureSave.currentCount;
+		return callback(null, extraArgs.closureSave, extraArgs.closureSave);
+	};
+
 	requestResponse = function(options, obj, destObj, keys, filterDay, closureSave, sports_cbCount, callback) {
 		request(options, function (error, response, body) {
 			if (error) {
 				return callback(error, sports_cbCount, null);
 			}
-			const jsonFormat = JSON.parse(body);
 
-			if (jsonFormat[obj] && Object.keys(jsonFormat[obj]).length) {
-				// not empty
-				g_db.sportId[closureSave][obj] = {};
+			const jsonData = JSON.parse(body);
 
-				for(let key in jsonFormat[obj])
-				{
-					if( jsonFormat[obj].hasOwnProperty(key))
-					{
-						key = Number(key);
-						const index = keys.indexOf("start");
-						let dateString;
-	
-						if(index !== -1)
-						{
-							dateString = jsonFormat[obj][key][keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
-							let dateObject = new Date(dateString);
-							let currentDate;
-							if(filterDay === 'today')
-							{
-								// Thu Feb 28 2019 22:04:39 GMT+0000
-								currentDate = new Date();
-							}
-							else if(filterDay === 'tomorrow')
-							{
-								// Fri Mar 01 2019 00:04:39 GMT+0000
-								let today = new Date();
-								let tomorrow = new Date();
-								currentDate = new Date(tomorrow.setDate(today.getDate()+1)); // next day
-							}
-							else if(new Date(filterDay).getDate() === new Date(dateString).getDate())
-							{
-								// some specific date
-								currentDate = new Date(filterDay);
-							}
-	
-							if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
-								|| dateObject.getFullYear() !== currentDate.getFullYear())
-							{
-								console.log('SKIP: ' + dateObject.getDate() + ' !== ' + currentDate.getDate());
-								continue; // skip
-							}
-						}
-	
-						const name = jsonFormat[obj][key][destObj];
-						g_db.sportId[closureSave][obj][name] = {};
-	
-						for(let i = 0; i < keys.length; ++i)
-						{
-							g_db.sportId[closureSave][obj][name][keys[i]] = jsonFormat[obj][key][keys[i]];
-						}
-					}
-				}
-			}
-			
-			//UTIL.writeJsonFile(body,'event.json');
-			// console.log(Object.keys(g_db.eventId));
-			// console.log(body);
-			// ++sports_cbCount.currentCount;
-			return callback(null, sports_cbCount, closureSave);
+			morePages(options, jsonData.total, populateEventData, callback, { obj, destObj, keys, filterDay, closureSave, sports_cbCount });
+
 		});
 	};
 
@@ -146,31 +155,51 @@
 		request(options, function (error, response, body) {
 			if (error) {
 				return callback(error,null);
-			} 
-
-			const jsonFormat = JSON.parse(body);
-			let sportsName = null;
-			g_sportsList = [];
-
-			for(let sport in jsonFormat['sports'])
-			{
-				if(jsonFormat['sports'].hasOwnProperty(sport))
-				{
-					sport = Number(sport);
-					// g_db.sportId[jsonFormat['sports'][sport].name] = jsonFormat['sports'][sport].id;
-					sportsName = jsonFormat['sports'][sport].name;
-					g_sportsList.push(sportsName);
-					g_db.sportId[jsonFormat['sports'][sport].name] = {};
-					g_db.sportId[jsonFormat['sports'][sport].name].id = jsonFormat['sports'][sport].id;
-				}
 			}
 
-			// UTIL.writeJsonFile(body,'g_sportsList.json');
-			// console.log(body);
-			// console.log(Object.keys(g_db.sportId));
-			return callback(null);
+			const jsonData = JSON.parse(body);
+
+			morePages(options, jsonData.total, populateSportIds, callback);
 		});
-	};	
+	};
+
+	populateSportIds = function(jsonData, callback) {
+		let sportsName = null;
+		g_sportsList = [];
+
+		for(let sport in jsonData['sports'])
+		{
+			if(jsonData['sports'].hasOwnProperty(sport))
+			{
+				sport = Number(sport);
+				// g_db.sportId[jsonData['sports'][sport].name] = jsonData['sports'][sport].id;
+				sportsName = jsonData['sports'][sport].name;
+				g_sportsList.push(sportsName);
+				g_db.sportId[jsonData['sports'][sport].name] = {};
+				g_db.sportId[jsonData['sports'][sport].name].id = jsonData['sports'][sport].id;
+			}
+		}
+
+		// UTIL.writeJsonFile(body,'g_sportsList.json');
+		// console.log(body);
+		// console.log(Object.keys(g_db.sportId));
+		return callback(null);
+	};
+
+	morePages = function(options, perPage, updateMethod, callback, extraArgs) {
+
+		options.qs['per-page'] = perPage;
+
+		request(options, function (error, response, body) {
+			if (error) {
+				return callback(error,null);
+			}
+
+			const jsonData = JSON.parse(body);
+
+			updateMethod(jsonData, callback, extraArgs);
+		});
+	};
 
 	// Get Events
 	// Get a list of events available on Matchbook ordered by start time.
