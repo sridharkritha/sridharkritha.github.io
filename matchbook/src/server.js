@@ -43,9 +43,7 @@
 		g_betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
 		g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 	callbackCount = function(currentCount , totalCount) {
 		this.currentCount = currentCount || 0;
@@ -186,6 +184,7 @@
 		return callback(null);
 	};
 
+	// Get the full data from all pages (default: 20 pages)
 	morePages = function(options, perPage, updateMethod, callback, extraArgs) {
 
 		options.qs['per-page'] = perPage;
@@ -265,45 +264,39 @@
 			if(jsonFormat.markets && jsonFormat.markets.length)
 			//if(jsonFormat.markets.length && (jsonFormat.markets[0].name === 'WIN' || jsonFormat.markets[0].name === 'Winner'))
 			{
-				if(jsonFormat.name === "13:05 Turffontein")
-				{
-					let x;
-					x = 10;
-				}
-
 				let runners = jsonFormat.markets[0].runners;
 
-			for(let runner in runners)
-			{
-				if(runners.hasOwnProperty(runner))
+				for(let runner in runners)
 				{
-					runner = Number(runner);
-					
-					runnersObj[runners[runner].name] = {};
-					runnersObj[runners[runner].name].runnerId = runners[runner].id;
-
-					const back = [];
-					const lay = [];
-					for(let price in runners[runner]['prices'])
+					if(runners.hasOwnProperty(runner))
 					{
-						if(runners[runner]['prices'].hasOwnProperty(price))
+						runner = Number(runner);
+						
+						runnersObj[runners[runner].name] = {};
+						runnersObj[runners[runner].name].runnerId = runners[runner].id;
+
+						const back = [];
+						const lay = [];
+						for(let price in runners[runner]['prices'])
 						{
-							if(runners[runner]['prices'][price]['side'] === "back")
+							if(runners[runner]['prices'].hasOwnProperty(price))
 							{
-								back.push(Number(runners[runner]['prices'][price].odds));
-							}
-							else if(runners[runner]['prices'][price]['side'] === "lay")
-							{
-								lay.push(Number(runners[runner]['prices'][price].odds));
+								if(runners[runner]['prices'][price]['side'] === "back")
+								{
+									back.push(Number(runners[runner]['prices'][price].odds));
+								}
+								else if(runners[runner]['prices'][price]['side'] === "lay")
+								{
+									lay.push(Number(runners[runner]['prices'][price].odds));
+								}
 							}
 						}
-					}
 
-					runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
-					runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
+						runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
+						runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
+					}
 				}
 			}
-		}
 
 			returnFunction(runnersObj); // return the object from the callback function 
 
