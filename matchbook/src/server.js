@@ -20,11 +20,13 @@
 	let g_sessionStartTime = 0;
 	let g_sportsList = [];
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	let g_winConfidencePercentage = 80; // ex: 100  (100% or more)
+	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
+	let g_winConfidencePercentage = 80; // comparison with nearest competitor ex: 100  (100% or more)
 	let g_minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-	let g_betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+
 	let g_maxRunnersCount = 8;
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
+	const g_BetStakeValue = 0.2; // your REAL MONEY !!!! ( 0.1 = 1p, 1 = £1)
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
@@ -32,16 +34,20 @@
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
-	let g_sportsInterested = ['Horse Racing'];  
+	let g_sportsInterested = ['Horse Racing'];
 
-	const g_isLockedForBetting = true; // true
+
+	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	const g_isLockedForBetting = true; // false => REAL MONEY
+	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 	if(g_isLockedForBetting)
 	{
-		g_winConfidencePercentage = 1; // ex: 100  (100% or more)
-		g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
-		g_betMinutesOffset = 300; // place bet: +1 min before the start time, -5 min after the start time		
-		g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
+		g_betMinutesOffset = 600; //(600 = 10hrs before) place bet: +1 min before the start time, -5 min after the start time
+
+		// g_winConfidencePercentage = 1; // ex: 100  (100% or more)
+		// g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+		// g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -391,23 +397,23 @@
 		}
 		else {
 			// Check if a file is exist or not
-			fs.open('./data/successfulBets.json', 'r', function(err, fd)
+			fs.open('./data/alreadyPlacedBetList.json', 'r', function(err, fd)
 			{
 				if(err)
 				{
 					if(err.code === 'ENOENT')
 					{
 						// File is not exist, creat a empty file
-						fs.closeSync(fs.openSync('./data/successfulBets.json', 'w'));
+						fs.closeSync(fs.openSync('./data/alreadyPlacedBetList.json', 'w'));
 						g_alreadyPlacedBetList = [] ;
 						luckyMatchFilter(jsonObj, objLevelFilter, callback);
-						console.log("Success: ./data/successfulBets.json - created and saved!");
+						console.log("Success: ./data/alreadyPlacedBetList.json - created and saved!");
 					}
 				}
 				else
 				{
 					// File is exist, read from the file (Asynchronous 'json' file read)
-					fs.readFile('./data/successfulBets.json', function(err, data) {
+					fs.readFile('./data/alreadyPlacedBetList.json', function(err, data) {
 						if (err) throw err;
 						if(data && data.length) {
 							g_alreadyPlacedBetList = JSON.parse(data);
@@ -458,7 +464,7 @@
 						betObj['runner-id'] = g_predictedWinners[i].runnerId;
 					
 						betObj.side = 'back';
-						betObj.stake = 0.1; // 1.0
+						betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
 
 						if(g_isLockedForBetting)
 						{
