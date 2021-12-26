@@ -7,6 +7,17 @@ const UTIL = (function() {
 	return {
 		
 		// Public Members
+		getTimeFromDateObj: function(dateObj) {
+			const today = dateObj || new Date();
+			
+			const time = (today.getHours().toString().length < 2 ? '0'+ today.getHours() : today.getHours())
+								+':'+
+						(today.getMinutes().toString().length < 2 ? '0'+ today.getMinutes() : today.getMinutes())
+								+':'+
+						(today.getSeconds().toString().length < 2 ? '0'+ today.getSeconds() : today.getSeconds());		
+			return time;
+		},
+
 		getCurrentTimeDate: function() {
 			const today = new Date();
 			const date = (today.getDate().toString().length < 2 ? '0'+ today.getDate() : today.getDate())
@@ -57,7 +68,24 @@ const UTIL = (function() {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		randomIntFromInterval: function (min, max) { // min and max included 
 			return Math.floor(Math.random() * (max - min + 1) + min);
+		},
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// Convert milliSeconds to hh:mm:ss format
+		milliSecondsToHMS: function(milliSecs) {
+			let secs = Math.floor(milliSecs / 1000);
+			function z(n){return (n<10?'0':'') + n;}
+			var sign = secs < 0? '-':'';
+			secs = Math.abs(secs);
+			return sign + z(secs/3600 |0) + ':' + z((secs%3600) / 60 |0) + ':' + z(secs%60);
 		}
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+
+
 
 	};
 })();
@@ -68,6 +96,12 @@ module.exports.getCurrentTimeDate = UTIL.getCurrentTimeDate;
 module.exports.getDefaultOptions = UTIL.getDefaultOptions;
 module.exports.writeJsonFile = UTIL.writeJsonFile;
 module.exports.randomIntFromInterval = UTIL.randomIntFromInterval;
+module.exports.milliSecondsToHMS = UTIL.milliSecondsToHMS;
+module.exports.getTimeFromDateObj = UTIL.getTimeFromDateObj;
+
+
+
+
 
 
 

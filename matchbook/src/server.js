@@ -7,6 +7,9 @@
 	const DOOR = require('./door');
 	const MISC = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	let betScanRound = 0;
+	const scanStartTime = new Date();
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	let g_sessionToken = null;
 	let g_db = {};
 	g_db.sportId = {};
@@ -115,7 +118,7 @@
 						if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
 							|| dateObject.getFullYear() !== currentDate.getFullYear())
 						{
-							console.log('SKIP: ' + dateObject + ' !== ' + currentDate);
+							// console.log('SKIP: ' + dateObject + ' !== ' + currentDate);
 							continue; // skip
 						}
 					}
@@ -599,10 +602,19 @@
 
 	run = function()
 	{
-		console.log(UTIL.getCurrentTimeDate());
-		g_lastCycleElapsedTime = new Date().getTime();
+		++betScanRound;
 
-		// findSportsIds();
+		let scanCurrentTime = new Date();
+		
+		g_lastCycleElapsedTime = scanCurrentTime.getTime();
+
+		let elapsedTime = UTIL.milliSecondsToHMS(scanCurrentTime - scanStartTime);
+
+		// betScanRound.toString().padStart(4, "0"); // 1 ==> 0001
+
+		console.log(`BetScanRound: ${betScanRound.toString().padStart(4, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
+
+		findSportsIds();
 	};
 
 	findSportsIds = function() {
@@ -729,7 +741,7 @@
 			g_sessionToken = sessionToken;
 			g_sessionStartTime = sessionStartTime;
 
-			findSportsIds(); // run once bcos sports id's are constant
+			// findSportsIds(); // run once bcos sports id's are constant
 
 			run();
 		} 
