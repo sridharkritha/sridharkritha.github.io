@@ -7,16 +7,16 @@
 	const DOOR = require('./door');
 	const MISC = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	let sri = 0;
 	let g_sessionToken = null;
 	let g_db = {};
 	g_db.sportId = {};
 	let g_predictedWinners = [];
 	let g_alreadyPlacedBetList = null; // array
-	let g_pastTime = 0;
+	let g_lastCycleElapsedTime = 0;
 	let g_currentTime = 0;
 	let g_betNow = [];
 	const g_sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
+	const g_betCycleTime = 1000; // 1000 => 1 sec => Every 1 second scan for any new betting opportunity
 	let g_sessionStartTime = 0;
 	let g_sportsList = [];
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
@@ -594,9 +594,8 @@
 
 	run = function()
 	{
-		++sri;
 		console.log(UTIL.getCurrentTimeDate());
-		g_pastTime = new Date().getTime();
+		g_lastCycleElapsedTime = new Date().getTime();
 
 		// findSportsIds();
 	};
@@ -617,10 +616,6 @@
 			if(g_sportsInterested.length === 1 && g_sportsInterested[0].toLowerCase() === 'all') {
 				g_sportsInterested = g_sportsList;
 			}
-
-			--sri;
-			console.log(sri);
-
 
 			let sports_cbCount = new callbackCount(0, g_sportsInterested.length);
 			// Calling callback functions inside a loop
@@ -679,8 +674,8 @@
 				sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
 
 				g_currentTime = new Date().getTime();
-				remainingTime = g_currentTime - g_pastTime;
-				remainingTime = (1000 - remainingTime) > 0 ? 1000 - remainingTime : 0;
+				remainingTime = g_currentTime - g_lastCycleElapsedTime;
+				remainingTime = (g_betCycleTime - remainingTime) > 0 ? g_betCycleTime - remainingTime : 0;
 
 				setTimeout(function() {
 					// Check for session expire timeout
@@ -688,7 +683,7 @@
 						getNewSession();
 					}
 					else {
-						run();
+						run(); // LOOPS
 					}
 				}.bind(this), remainingTime);
 			}
@@ -736,7 +731,7 @@
 	};
 
 	getNewSession = function() {
-		DOOR.getLastSession(loginCallback);	
+		DOOR.getLastSession(loginCallback);
 		// DOOR.login(loginCallback); // login
 	};
 
