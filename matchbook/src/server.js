@@ -610,9 +610,9 @@
 
 		let elapsedTime = UTIL.milliSecondsToHMS(scanCurrentTime - scanStartTime);
 
-		// betScanRound.toString().padStart(4, "0"); // 1 ==> 0001
+		// betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
 
-		console.log(`BetScanRound: ${betScanRound.toString().padStart(4, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
+		console.log(`BetScanRound: ${betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
 
 		findSportsIds();
 	};
