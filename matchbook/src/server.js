@@ -7,6 +7,7 @@
 	const DOOR = require('./door');
 	const MISC = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	const g_betCycleTime = 8000; // 1000 => 1 sec => Every 1 second scan for any new betting opportunity
 	let betScanRound = 0;
 	const scanStartTime = new Date();
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -19,7 +20,6 @@
 	let g_currentTime = 0;
 	let g_betNow = [];
 	const g_sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
-	const g_betCycleTime = 1000; // 1000 => 1 sec => Every 1 second scan for any new betting opportunity
 	let g_sessionStartTime = 0;
 	let g_sportsList = [];
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
@@ -192,7 +192,7 @@
 			}
 		}
 
-		// UTIL.writeJsonFile(body,'g_sportsList.json');
+		UTIL.writeJsonFile(g_db,'./data-Report/availableSports.json', true);
 		// console.log(body);
 		// console.log(Object.keys(g_db.sportId));
 		return callback(null);
@@ -267,9 +267,11 @@
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = g_sessionToken;
 
+		// console.log(options);
+
 		request(options, function (error, response, body) {
 			if (error) 
-			throw new Error(error);
+				throw new Error(error);
 
 			const jsonFormat = JSON.parse(body);
 
@@ -405,23 +407,23 @@
 		}
 		else {
 			// Check if a file is exist or not
-			fs.open('./data/alreadyPlacedBetList.json', 'r', function(err, fd)
+			fs.open('./data-Report/alreadyPlacedBetList.json', 'r', function(err, fd)
 			{
 				if(err)
 				{
 					if(err.code === 'ENOENT')
 					{
 						// File is not exist, creat a empty file
-						fs.closeSync(fs.openSync('./data/alreadyPlacedBetList.json', 'w'));
+						fs.closeSync(fs.openSync('./data-Report/alreadyPlacedBetList.json', 'w'));
 						g_alreadyPlacedBetList = [] ;
 						luckyMatchFilter(jsonObj, objLevelFilter, callback);
-						console.log("Success: ./data/alreadyPlacedBetList.json - created and saved!");
+						console.log("Success: ./data-Report/alreadyPlacedBetList.json - created and saved!");
 					}
 				}
 				else
 				{
 					// File is exist, read from the file (Asynchronous 'json' file read)
-					fs.readFile('./data/alreadyPlacedBetList.json', function(err, data) {
+					fs.readFile('./data-Report/alreadyPlacedBetList.json', function(err, data) {
 						if (err) throw err;
 						if(data && data.length) {
 							g_alreadyPlacedBetList = JSON.parse(data);
@@ -725,7 +727,7 @@
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 					
-					UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/alreadyPlacedBetList.json');
+					UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 				}
 			}
 		}
@@ -744,7 +746,7 @@
 			// findSportsIds(); // run once bcos sports id's are constant
 
 			run();
-		} 
+		}
 	};
 
 	getNewSession = function() {

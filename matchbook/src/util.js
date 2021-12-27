@@ -49,20 +49,31 @@ const UTIL = (function() {
 			};
 		},
 
-		writeJsonFile: function(jsonString, fileName) {
-			const jsonFormat = jsonString;
-	
-			if(typeof jsonString === 'string') {
-				jsonFormat = JSON.parse(jsonString);
+		writeJsonFile: function(jsonString, fileName, isOverwriteNotAllowed) {
+
+			let  isFileExist = false;
+
+			if(isOverwriteNotAllowed) {
+				(async () => { 
+					isFileExist = await fs.promises.stat(fileName	).then(() => true).catch(() => false);
+				})();
 			}
-			
-			const data = JSON.stringify(jsonFormat, null, 2);
-			
-			// Asynchronous file write
-			fs.writeFile(fileName, data, function(err) {
-				if (err) throw err;
-				//console.log('Data written to file');
-			});
+
+			if(!isFileExist) {
+				let jsonFormat = jsonString;
+	
+				if(typeof jsonString === 'string') {
+					jsonFormat = JSON.parse(jsonString);
+				}
+				
+				const data = JSON.stringify(jsonFormat, null, 2);
+				
+				// Asynchronous file write
+				fs.writeFile(fileName, data, function(err) {
+					if (err) throw err;
+					//console.log('Data written to file');
+				});
+			}
 		},
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
