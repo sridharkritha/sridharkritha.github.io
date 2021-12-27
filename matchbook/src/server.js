@@ -37,7 +37,8 @@
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
-	let g_sportsInterested = ['Horse Racing'];
+	// let g_sportsInterested = ['Horse Racing'];
+	let g_sportsInterested = ['Soccer'];
 
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -337,9 +338,9 @@
 		for(let prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
 				if(prop === objLevelFilter) { // events: { }
-				for(let race in jsonObj[prop]) { 
-					if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
-						const raceId = jsonObj[prop][race].id;
+					for(let race in jsonObj[prop]) { 
+						if(jsonObj[prop].hasOwnProperty(race)) { // 15:05 Sandown
+							const raceId = jsonObj[prop][race].id;
 
 							// Check if already a successful bet has been placed on that event
 							if(!isAlreadyBetPlacedEvent(raceId))
@@ -364,27 +365,31 @@
 								luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
 								if(luckyRunner.length > 1)
 								{
-									// Calculating the win chance by comparing with very next competitor 
-									let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
-									luckyRunner[0][1].numberOfRunners = luckyRunner.length;
-									// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
-									luckyRunner[0][1].winPercentage = winPercentage;
-									luckyRunner[0][1].startTime = startTime;
-									luckyRunner[0][1].raceId = raceId;
-									luckyRunner[0][1].raceName = raceName;
-									let profitOdd = luckyRunner[0][1].back - 1;
-								
-									jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
-		
-									// Build the predictedWinner list
-									if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
-									{
-										g_predictedWinners.push(luckyRunner[0][1]);
+									const halfPlayersCount = Math.ceil(luckyRunner.length / 2);
+									// At least half of the players should have some betting before doing win calculation 
+									if(luckyRunner[halfPlayersCount][0] != Number.MAX_VALUE) {
+										// Calculating the win chance by comparing with very next competitor 
+										let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+										luckyRunner[0][1].numberOfRunners = luckyRunner.length;
+										// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
+										luckyRunner[0][1].winPercentage = winPercentage;
+										luckyRunner[0][1].startTime = startTime;
+										luckyRunner[0][1].raceId = raceId;
+										luckyRunner[0][1].raceName = raceName;
+										let profitOdd = luckyRunner[0][1].back - 1;
+									
+										jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+			
+										// Build the predictedWinner list
+										if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
+										{
+											g_predictedWinners.push(luckyRunner[0][1]);
+										}
 									}
 								}
 							}
+						}
 					}
-				}
 				}
 			}
 		}
