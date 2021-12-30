@@ -8,8 +8,14 @@
 	const MISC = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	const g_betCycleTime = 8000; // 1000 => 1 sec => Every 1 second scan for any new betting opportunity
-	let betScanRound = 0;
-	const scanStartTime = new Date();
+	let g_betScanRound = 0;
+	const g_scanStartTime = new Date();
+
+
+	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
+	const g_todayTotalBetAmountLimit = 10; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	let   g_remainingTotalBetAmountLimit = 0; 
+
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	let g_sessionToken = null;
 	let g_db = {};
@@ -29,7 +35,7 @@
 
 	let g_maxRunnersCount = 8;
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
-	const g_BetStakeValue = 0.2; // your REAL MONEY !!!! ( 0.1 = 1p, 1 = £1)
+
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
@@ -38,14 +44,14 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
 	// let g_sportsInterested = ['Horse Racing'];
-	let g_sportsInterested = ['Soccer'];
+	let g_sportsInterested = ['Horse Racing','Soccer'];
 
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -499,7 +505,7 @@
 		return g_betNow;
 	};
 
-		// Submit Offers
+	// Submit Offers
 	// Submit one or more offers i.e. your intention or willingness to have bets with other users.
 	submitOffers = function (callback) {
 		// "16:30 Wincanton": {
@@ -561,14 +567,7 @@
 				//console.log(response);
 				for(let i = 0; i < g_betNow.length; ++i) {
 					let lastBetResult = g_betNow[i];
-
-					let obj = {		"event-id":lastBetResult['event-id'],
-									"status":lastBetResult['status'],
-									"decimal-odds":lastBetResult['decimal-odds'],
-									"event-name":lastBetResult['event-name'],
-									"runner-name":lastBetResult['runner-name'],
-									"time": UTIL.getCurrentTimeDate() 
-							};
+					let obj = populateBetSubmissionData(lastBetResult);
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 					
@@ -577,6 +576,22 @@
 			}
 		}
 	};
+
+
+	populateBetSubmissionData = function(lastBetResult) {
+		let obj = 	{
+			"event-id":lastBetResult['event-id'],
+			"status":lastBetResult['status'],
+			"decimal-odds":lastBetResult['decimal-odds'],
+			"event-name":lastBetResult['event-name'],
+			"runner-name":lastBetResult['runner-name'],
+			"stakeValue": g_BetStakeValue,
+			"time": UTIL.getCurrentTimeDate() 
+		};
+
+		return obj;
+	};
+
 
 	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
@@ -609,17 +624,17 @@
 
 	run = function()
 	{
-		++betScanRound;
+		++g_betScanRound;
 
 		let scanCurrentTime = new Date();
 		
 		g_lastCycleElapsedTime = scanCurrentTime.getTime();
 
-		let elapsedTime = UTIL.milliSecondsToHMS(scanCurrentTime - scanStartTime);
+		let elapsedTime = UTIL.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
 
-		// betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
+		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
 
-		console.log(`BetScanRound: ${betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
+		console.log(`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
 
 		findSportsIds();
 	};
@@ -723,12 +738,7 @@
 			for(let i = 0; i < response.body.offers.length; ++i) {
 				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-					let obj = {   "event-id":lastBetResult['event-id'],
-					"status":lastBetResult['status'],
-					"decimal-odds":lastBetResult['decimal-odds'],
-					"event-name":lastBetResult['event-name'],
-					"runner-name":lastBetResult['runner-name'],
-					"time": UTIL.getCurrentTimeDate() };
+					let obj = populateBetSubmissionData(lastBetResult);
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 					

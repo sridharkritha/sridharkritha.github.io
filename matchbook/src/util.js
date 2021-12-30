@@ -30,7 +30,7 @@ const UTIL = (function() {
 								+':'+
 						(today.getSeconds().toString().length < 2 ? '0'+ today.getSeconds() : today.getSeconds());
 		
-			const timeDate = time + '		' + date;
+			const timeDate = time + '\t' + date;
 		
 			return timeDate;
 		},
