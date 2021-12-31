@@ -51,7 +51,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = false; // false => REAL MONEY
+	const g_isLockedForBetting = true; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -401,11 +401,11 @@
 		}
 
 		// print the predicted winners
-		if(g_predictedWinners.length) {
-			(async () => {
-				await fs.promises.writeFile('./data/predictedWinners.json', JSON.stringify({"winnerList": g_predictedWinners}, null, '\t'), 'utf8');
-			})(); 
-		}
+		// if(g_predictedWinners.length) {
+		// 	(async () => {
+		// 		await fs.promises.writeFile('./data/predictedWinners.json', JSON.stringify({"winnerList": g_predictedWinners}, null, '\t'), 'utf8');
+		// 	})(); 
+		// }
 
 		g_betNow = findHotBet(g_predictedWinners);
 		return callback(null, g_betNow);
@@ -571,8 +571,10 @@
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 					
-					UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
+					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 				}
+				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
+
 			}
 		}
 	};
@@ -586,7 +588,7 @@
 			"event-name":lastBetResult['event-name'],
 			"runner-name":lastBetResult['runner-name'],
 			"stakeValue": g_BetStakeValue,
-			"time": UTIL.getCurrentTimeDate() 
+			"bet-placed-time": UTIL.getCurrentTimeDate() 
 		};
 
 		return obj;
@@ -742,9 +744,12 @@
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 					
-					UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
+					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 				}
 			}
+
+			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
+			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 		}
 	};
 
