@@ -15,6 +15,7 @@
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
 	const g_todayTotalBetAmountLimit = 10; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
+	let   g_userBalance = 0.00;
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	let g_sessionToken = null;
@@ -28,6 +29,7 @@
 	const g_sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
 	let g_sessionStartTime = 0;
 	let g_sportsList = [];
+	const g_sportsIdNameMapping = {};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
 	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
@@ -51,7 +53,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -191,11 +193,16 @@
 			if(jsonData['sports'].hasOwnProperty(sport))
 			{
 				sport = Number(sport);
-				// g_db.sportId[jsonData['sports'][sport].name] = jsonData['sports'][sport].id;
 				sportsName = jsonData['sports'][sport].name;
 				g_sportsList.push(sportsName);
 				g_db.sportId[jsonData['sports'][sport].name] = {};
+
+				// Mappings 
+				// (sports name => sports id )      "Horse Racing" => 24735152712200
 				g_db.sportId[jsonData['sports'][sport].name].id = jsonData['sports'][sport].id;
+
+				// (sports id => sports name )      24735152712200 => "Horse Racing"
+				g_sportsIdNameMapping[jsonData['sports'][sport].id] = jsonData['sports'][sport].name;
 			}
 		}
 
@@ -204,6 +211,42 @@
 		// console.log(Object.keys(g_db.sportId));
 		return callback(null);
 	};
+
+	// Get Sports Name by Sports Id
+	getSportsNameBySportsId = function(sportsId) {
+		return g_sportsIdNameMapping[sportsId];
+	};
+
+	// Get Sports Id by Sports Name
+	getSportsIdBySportsName = function(sportsName) {
+		return g_db.sportId[sportsName].id;
+	};
+
+	// Return Sports Name, Event Start Time, Players List 
+	getEventDetailsByEventId = function(sportsId, eventId) {
+
+		const sportsName = getSportsNameBySportsId(sportsId);
+
+		const eventCollection = g_db["sportId"][sportsName]["events"];
+
+		for (let eventObj in eventCollection) {
+			if (eventCollection.hasOwnProperty(eventObj) && eventCollection[eventObj].id === eventId) {
+				console.log(eventObj);         // key
+				console.log(eventCollection[eventObj]); // value
+				return eventCollection[eventObj];
+			}
+		}
+	};
+
+	// // Return Sports Name, Event Start Time, Players List 
+	// getEventDetailsByEventId = function(sportsName, eventName, eventId) {
+	// 	console.log(g_db["sportId"][sportsName]["events"][eventName]);
+	// 	g_db.sportId = g_db.sportId; // 1948200596520016
+	// 	// g_db.sportId[sportName].events[event] = obj;  /// ?? events --- null
+	// 	// g_db.sportId[sportName].events[event].id = eventId;
+	// 	// g_db.sportId[sportName].events[event].start = startTime;
+
+	// };
 
 	// Get the full data from all pages (default: 20 pages)
 	morePages = function(options, perPage, updateMethod, callback, extraArgs) {
@@ -339,7 +382,7 @@
 	// 		  "lay": 2.44
 	// 		},
 
-	luckyMatchFilter = function(jsonObj, objLevelFilter, callback) {
+	luckyMatchFilter = function(sportName, jsonObj, objLevelFilter, callback) {
 		g_predictedWinners = []; 
 		for(let prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
@@ -389,7 +432,12 @@
 										// Build the predictedWinner list
 										if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
 										{
-											g_predictedWinners.push(luckyRunner[0][1]);
+											let obj = luckyRunner[0][1];
+											obj.otherPlayers = luckyRunner;
+											obj.sportName = sportName;	
+											g_predictedWinners.push(obj);
+											
+											// g_predictedWinners.push(luckyRunner[0][1]);
 										}
 									}
 								}
@@ -411,10 +459,10 @@
 		return callback(null, g_betNow);
 	};
 
-	findLuckyMatch = function(jsonObj, objLevelFilter, callback) {
+	findLuckyMatch = function(sportName, jsonObj, objLevelFilter, callback) {
 		if(g_alreadyPlacedBetList) {
 			// Read from array
-			luckyMatchFilter(jsonObj, objLevelFilter, callback);
+			luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
 		}
 		else {
 			// Check if a file is exist or not
@@ -427,7 +475,7 @@
 						// File is not exist, creat a empty file
 						fs.closeSync(fs.openSync('./data-Report/alreadyPlacedBetList.json', 'w'));
 						g_alreadyPlacedBetList = [] ;
-						luckyMatchFilter(jsonObj, objLevelFilter, callback);
+						luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
 						console.log("Success: ./data-Report/alreadyPlacedBetList.json - created and saved!");
 					}
 				}
@@ -443,7 +491,7 @@
 							g_alreadyPlacedBetList = [] ;
 						}
 						
-						luckyMatchFilter(jsonObj, objLevelFilter, callback);
+						luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
 					});
 				}
 			});
@@ -486,6 +534,10 @@
 					
 						betObj.side = 'back';
 						betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
+						betObj['event-start-time'] = g_predictedWinners[i].startTime;
+						betObj['other-players'] = g_predictedWinners[i].otherPlayers;
+						betObj['sportName'] = g_predictedWinners[i].sportName;
+						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
 
 						if(g_isLockedForBetting)
 						{
@@ -495,9 +547,18 @@
 							betObj['decimal-odds'] = betObj.odds;
 							betObj['event-name'] =  g_predictedWinners[i].raceName;
 							betObj['runner-name'] = g_predictedWinners[i].name;
-						}
 
-						g_betNow.push(betObj);
+							g_betNow.push(betObj);
+						}
+						else if(g_userBalance >= g_BetStakeValue) {
+
+							g_betNow.push(betObj);
+
+							g_userBalance -= g_BetStakeValue;
+						}
+						else if(g_userBalance < g_BetStakeValue) {
+							console.log("User Balance is VERY LOW !!!!");
+						}
 					}
 				}
 			}
@@ -532,7 +593,7 @@
 		let luckyBet = { "odds-type":"DECIMAL", "exchange-type":"back-lay" };
 			luckyBet.offers = g_betNow; // list of bets
 
-			let options = UTIL.getDefaultOptions();
+		let options = UTIL.getDefaultOptions();
 		options.method = 'POST';
 		options.url = 'https://api.matchbook.com/edge/rest/v2/offers';
 		// Cookie data for maintaining the session
@@ -570,11 +631,12 @@
 					let obj = populateBetSubmissionData(lastBetResult);
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
+					// getEventDetailsByEventId(g_betNow[i].sportName, g_betNow[i]['event-name'], g_betNow[i]['event-id']);
+					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 					
 					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 				}
 				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
-
 			}
 		}
 	};
@@ -583,6 +645,7 @@
 	populateBetSubmissionData = function(lastBetResult) {
 		let obj = 	{
 			"event-id":lastBetResult['event-id'],
+			"sport-id":lastBetResult['sport-id'],
 			"status":lastBetResult['status'],
 			"decimal-odds":lastBetResult['decimal-odds'],
 			"event-name":lastBetResult['event-name'],
@@ -606,9 +669,10 @@
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				UTIL.writeJsonFile(g_db.sportId[sportName],'./data/availableMatchEventList.json');
+				UTIL.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_${sportName}.json`);
+				// UTIL.writeJsonFile(g_db.sportId, `./data/availableFullEventList.json`);
 
-				findLuckyMatch(g_db.sportId[sportName], "events", function(err, data) {
+				findLuckyMatch(sportName, g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
 							console.log(err);
 							throw new Error(err);
@@ -737,13 +801,14 @@
 		}
 		else{
 			//console.log(response);
-			for(let i = 0; i < response.body.offers.length; ++i) {
+			const nSubmittedBets = response.body.offers.length;
+			for(let i = 0; i < nSubmittedBets; ++i) {
 				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
 					let obj = populateBetSubmissionData(lastBetResult);
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
-					
+
 					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 				}
 			}
@@ -752,6 +817,27 @@
 			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 		}
 	};
+
+
+	// Get Sports Wallet Balance
+	// Get the new sports balance for the user currently logged in.
+	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
+	getUserBalance = function () {
+		const options = UTIL.getDefaultOptions();
+		options.url = 'https://api.matchbook.com/edge/rest/account/balance';
+		// Cookie data for maintaining the session
+		options.headers['session-token'] = g_sessionToken;
+
+
+		request(options, function (error, response, body) {
+			if (error) throw new Error(error);
+
+			const jsonFormat = JSON.parse(body);
+			console.log(jsonFormat); // jsonFormat.balance
+			g_userBalance = Math.floor(jsonFormat.balance * 100) / 100;
+		});
+	};
+
 
 	loginCallback = function(err, sessionToken, sessionStartTime) {
 		if(err){
@@ -764,6 +850,7 @@
 			g_sessionStartTime = sessionStartTime;
 
 			// findSportsIds(); // run once bcos sports id's are constant
+			getUserBalance();
 
 			run();
 		}

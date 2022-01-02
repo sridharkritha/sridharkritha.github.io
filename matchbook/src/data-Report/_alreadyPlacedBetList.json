@@ -1,0 +1,47 @@
+[
+  {
+    "event-id": 1948200594440016,
+    "status": "matched",
+    "decimal-odds": 2,
+    "event-name": "11:35 Lingfield",
+    "runner-name": "2 Alphonse Le Grande",
+    "stakeValue": 0.2,
+    "bet-placed-time": "07:36:57\t31-12-2021"
+  },
+  {
+    "event-id": 1941732495690016,
+    "status": "open",
+    "decimal-odds": 1.9,
+    "event-name": "Valencia vs Espanyol",
+    "runner-name": "Valencia",
+    "stakeValue": 0.2,
+    "bet-placed-time": "07:37:00\t31-12-2021"
+  },
+  {
+    "event-id": 1948200598790016,
+    "status": "open",
+    "decimal-odds": 2.7,
+    "event-name": "13:50 Lingfield",
+    "runner-name": "7 Follow Your Heart",
+    "stakeValue": 0.2,
+    "bet-placed-time": "12:52:44\t31-12-2021"
+  },
+  {
+    "event-id": 1948200596520016,
+    "status": "open",
+    "decimal-odds": 3.2,
+    "event-name": "12:40 Lingfield",
+    "runner-name": "5 Lihou",
+    "stakeValue": 0.2,
+    "bet-placed-time": "12:52:44\t31-12-2021"
+  },
+  {
+    "event-id": 1948192180610016,
+    "status": "open",
+    "decimal-odds": 2.2,
+    "event-name": "15:40 Uttoxeter",
+    "runner-name": "2 Fancy Your Chances",
+    "stakeValue": 0.2,
+    "bet-placed-time": "12:52:44\t31-12-2021"
+  }
+]
