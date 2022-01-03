@@ -53,7 +53,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = false; // false => REAL MONEY
+	const g_isLockedForBetting = true; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -433,8 +433,9 @@
 										if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
 										{
 											let obj = luckyRunner[0][1];
-											obj.otherPlayers = luckyRunner;
-											obj.sportName = sportName;	
+											// obj.otherPlayers = luckyRunner;
+											obj.sportName = sportName;
+											// obj['sport-id'] = jsonObj.id;
 											g_predictedWinners.push(obj);
 											
 											// g_predictedWinners.push(luckyRunner[0][1]);
@@ -535,18 +536,21 @@
 						betObj.side = 'back';
 						betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
 						betObj['event-start-time'] = g_predictedWinners[i].startTime;
-						betObj['other-players'] = g_predictedWinners[i].otherPlayers;
+						// betObj['other-players'] = g_predictedWinners[i].otherPlayers;
 						betObj['sportName'] = g_predictedWinners[i].sportName;
 						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
 
 						if(g_isLockedForBetting)
 						{
 							// mock bet
-							betObj['event-id'] = g_predictedWinners[i].raceId;
 							betObj['status'] = 'matched';
-							betObj['decimal-odds'] = betObj.odds;
+							betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
+							betObj['event-id'] = g_predictedWinners[i].raceId;
 							betObj['event-name'] =  g_predictedWinners[i].raceName;
+
 							betObj['runner-name'] = g_predictedWinners[i].name;
+							betObj['decimal-odds'] = betObj.odds;
+							betObj['stake'] = g_BetStakeValue;
 
 							g_betNow.push(betObj);
 						}
@@ -628,7 +632,7 @@
 				//console.log(response);
 				for(let i = 0; i < g_betNow.length; ++i) {
 					let lastBetResult = g_betNow[i];
-					let obj = populateBetSubmissionData(lastBetResult);
+					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 					// getEventDetailsByEventId(g_betNow[i].sportName, g_betNow[i]['event-name'], g_betNow[i]['event-id']);
@@ -642,15 +646,19 @@
 	};
 
 
-	populateBetSubmissionData = function(lastBetResult) {
+	populateDataAfterBetSubmit = function(lastBetResult) {
 		let obj = 	{
-			"event-id":lastBetResult['event-id'],
-			"sport-id":lastBetResult['sport-id'],
 			"status":lastBetResult['status'],
-			"decimal-odds":lastBetResult['decimal-odds'],
+			"sport-id":lastBetResult['sport-id'],
+			"event-id":lastBetResult['event-id'],
 			"event-name":lastBetResult['event-name'],
+	
 			"runner-name":lastBetResult['runner-name'],
-			"stakeValue": g_BetStakeValue,
+			"decimal-odds":lastBetResult['decimal-odds'],
+			"stake": lastBetResult['stake'], // g_BetStakeValue,
+
+			// g_db["sportId"][sportsName]["events"][eventName]
+			"event-full-details": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']],
 			"bet-placed-time": UTIL.getCurrentTimeDate() 
 		};
 
@@ -805,7 +813,7 @@
 			for(let i = 0; i < nSubmittedBets; ++i) {
 				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-					let obj = populateBetSubmissionData(lastBetResult);
+					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
 					g_alreadyPlacedBetList.push(obj);
 
