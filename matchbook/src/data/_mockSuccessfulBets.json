@@ -1,47 +1,58 @@
 [
   {
-    "event-id": 1948200594440016,
     "status": "matched",
+    "sport-id": 24735152712200,
+    "event-id": 1950771327400016,
+    "event-name": "17:00 Wolverhampton",
+    "runner-name": "2 Night Glass",
     "decimal-odds": 2,
-    "event-name": "11:35 Lingfield",
-    "runner-name": "2 Alphonse Le Grande",
-    "stakeValue": 0.2,
-    "bet-placed-time": "07:36:57\t31-12-2021"
-  },
-  {
-    "event-id": 1941732495690016,
-    "status": "open",
-    "decimal-odds": 1.9,
-    "event-name": "Valencia vs Espanyol",
-    "runner-name": "Valencia",
-    "stakeValue": 0.2,
-    "bet-placed-time": "07:37:00\t31-12-2021"
-  },
-  {
-    "event-id": 1948200598790016,
-    "status": "open",
-    "decimal-odds": 2.7,
-    "event-name": "13:50 Lingfield",
-    "runner-name": "7 Follow Your Heart",
-    "stakeValue": 0.2,
-    "bet-placed-time": "12:52:44\t31-12-2021"
-  },
-  {
-    "event-id": 1948200596520016,
-    "status": "open",
-    "decimal-odds": 3.2,
-    "event-name": "12:40 Lingfield",
-    "runner-name": "5 Lihou",
-    "stakeValue": 0.2,
-    "bet-placed-time": "12:52:44\t31-12-2021"
-  },
-  {
-    "event-id": 1948192180610016,
-    "status": "open",
-    "decimal-odds": 2.2,
-    "event-name": "15:40 Uttoxeter",
-    "runner-name": "2 Fancy Your Chances",
-    "stakeValue": 0.2,
-    "bet-placed-time": "12:52:44\t31-12-2021"
+    "stake": 0.2,
+    "event-full-details": {
+      "1 Achnamara": {
+        "runnerId": 1950771327730016,
+        "back": 6.2,
+        "lay": 11.5,
+        "name": "1 Achnamara"
+      },
+      "4 State Legend": {
+        "runnerId": 1950771327830016,
+        "back": 4,
+        "lay": 4.9,
+        "name": "4 State Legend"
+      },
+      "2 Night Glass": {
+        "runnerId": 1950771327770016,
+        "back": 1.93,
+        "lay": 2.1,
+        "name": "2 Night Glass",
+        "numberOfRunners": 4,
+        "winPercentage": 107.2538860103627,
+        "startTime": "2022-01-03T17:00:00.000Z",
+        "raceId": 1950771327400016,
+        "raceName": "17:00 Wolverhampton",
+        "sportName": "Horse Racing"
+      },
+      "3 Themoonsaballoon": {
+        "runnerId": 1950771327800016,
+        "back": 5.8,
+        "lay": 9.2,
+        "name": "3 Themoonsaballoon"
+      },
+      "id": 1950771327400016,
+      "start": "2022-01-03T17:00:00.000Z",
+      "luckyWinner": {
+        "runnerId": 1950771327770016,
+        "back": 1.93,
+        "lay": 2.1,
+        "name": "2 Night Glass",
+        "numberOfRunners": 4,
+        "winPercentage": 107.2538860103627,
+        "startTime": "2022-01-03T17:00:00.000Z",
+        "raceId": 1950771327400016,
+        "raceName": "17:00 Wolverhampton",
+        "sportName": "Horse Racing"
+      }
+    },
+    "bet-placed-time": "08:52:11  03-01-2022"
   }
 ]
