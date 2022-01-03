@@ -33,7 +33,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
 	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
-	let g_minProfitOdd = 0.8; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	let g_minProfitOdd = 0.7; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 
 	let g_maxRunnersCount = 8;
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
@@ -650,6 +650,7 @@
 		let obj = 	{
 			"status":lastBetResult['status'],
 			"sport-id":lastBetResult['sport-id'],
+			"sport-name": getSportsNameBySportsId(lastBetResult['sport-id']),
 			"event-id":lastBetResult['event-id'],
 			"event-name":lastBetResult['event-name'],
 	

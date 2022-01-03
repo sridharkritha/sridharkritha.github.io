@@ -8,8 +8,8 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Launch Program",
-			"cwd": "${workspaceFolder}\\src",				// set directory here
-			"program": "${workspaceFolder}\\src\\server.js"	// set start js here
+			"cwd": "${workspaceFolder}\\server",				// set directory here
+			"program": "${workspaceFolder}\\server\\server.js"	// set start js here
 		}
 	]
 }
