@@ -175,11 +175,77 @@ window.addEventListener('load', function() {
 		console.log(g_sportsWiseBetList);
 	};
 
+
+
+
+/*
+	<div class="gridColumnLayout gridColumnLayout_2">
+		<!-- Sports Name(Horse Racing) -->
+		<div id="dbColumn">17:00 Wolverhampton</div>
+		<!-- Description (1m 1f 104y) -->
+		<div id="resultColumn">1m 1f 104y</div>
+	</div>
+
+	<br/>
+
+	<div class="gridColumnLayout gridColumnLayout_2">
+		<!-- Runner Name -->
+		<div id="dbColumn">2 Night Glass </div>
+		<!-- Stake -->
+		<div id="resultColumn">1.85</div>
+	</div>
+*/
+
 	
 
 	createPredictedWinnersTable = function() {
 		convertToSportsWiseBetList(g_betObj);
 
+		let runnersStr = '';
+
+		for (let sport in g_sportsWiseBetList) {
+			if (g_sportsWiseBetList.hasOwnProperty(sport)) {
+
+				runnersStr += ` <br/>
+								<div class="gridColumnLayout gridColumnLayout_2">
+									<!-- Sports Name(Horse Racing) -->
+									<div id="dbColumn">${sport}</div>
+									<!-- Description (1m 1f 104y) -->
+									<div id="resultColumn">1m 1f 104y</div>
+								</div>
+								<br/>`;
+
+				for(let runner = 0, n = g_sportsWiseBetList[sport].length; runner < n; ++runner) {
+					// g_sportsWiseBetList[sport][runner]['runner-name']
+					// g_sportsWiseBetList[sport][runner]['decimal-odds']
+
+					const playersList = g_sportsWiseBetList[sport][runner]['event-full-details'];
+
+					for (let player in playersList) {
+						if (playersList.hasOwnProperty(player)) {
+							runnersStr += `<div class="gridColumnLayout gridColumnLayout_2">
+											<!-- Runner Name -->
+											<div id="dbColumn"> ${playersList[player].name} </div>
+											<!-- Stake -->
+											<div id="resultColumn"> ${playersList[player].back} </div>
+										</div>`;
+						}
+					}
+
+					// <div id="dbColumn"> ${g_sportsWiseBetList[sport][runner]['runner-name']} </div>
+					// <div id="resultColumn"> ${g_sportsWiseBetList[sport][runner]['decimal-odds']} </div>
+
+				}
+
+
+				// console.log(sport);         // key
+				// console.log(g_betObj[sport]); // value
+			}
+		}
+
+		
+
+		document.querySelector('#predictionList').innerHTML = runnersStr;
 	};
 
 	createPredictedWinnersTable();
