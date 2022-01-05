@@ -287,7 +287,7 @@
       "allRunners": {
         "9 Phillapa Sue": {
           "runnerId": 1952502849530116,
-          "back": 1.37,
+          "back": 1.39,
           "lay": 1.48
         },
         "6 Nikolayeva": {
@@ -298,7 +298,7 @@
         "3 Ivy Avenue": {
           "runnerId": 1952502849350116,
           "back": 18,
-          "lay": 32
+          "lay": 36
         },
         "7 Pageant Material": {
           "runnerId": 1952502849480016,
@@ -610,6 +610,11 @@
       "id": 1952505110820016,
       "start": "2022-01-05T13:35:00.000Z",
       "allRunners": {
+        "1 Meishar": {
+          "runnerId": 1952505111740016,
+          "back": 3.55,
+          "lay": 5.3
+        },
         "7 No Speed Limit": {
           "runnerId": 1952505111910116,
           "back": 5.9,
@@ -617,8 +622,8 @@
         },
         "9 Adams Barbour": {
           "runnerId": 1952505111970016,
-          "back": 7.2,
-          "lay": 29
+          "back": 6.6,
+          "lay": 14
         },
         "4 Queens Carriage": {
           "runnerId": 1952505111830116,
@@ -629,11 +634,6 @@
           "runnerId": 1952505111860016,
           "back": 19,
           "lay": 990
-        },
-        "1 Meishar": {
-          "runnerId": 1952505111740016,
-          "back": 3.55,
-          "lay": 5
         },
         "2 Inflection Point": {
           "runnerId": 1952505111770116,
@@ -735,7 +735,7 @@
         "8 Sirop De Menthe": {
           "runnerId": 1952502853440016,
           "back": 12.5,
-          "lay": 20
+          "lay": 18
         },
         "3 Eamon An Cnoic": {
           "runnerId": 1952502853280116,
@@ -744,8 +744,8 @@
         },
         "5 Higgs": {
           "runnerId": 1952502853350016,
-          "back": 0,
-          "lay": 0
+          "back": 19.5,
+          "lay": 36
         },
         "7 Sabbathical": {
           "runnerId": 1952502853410016,
@@ -929,7 +929,7 @@
         "3 Emir Sacree": {
           "runnerId": 1952502854380016,
           "back": 2.6,
-          "lay": 2.94
+          "lay": 2.98
         },
         "6 New Age Dawning": {
           "runnerId": 1952502854470116,
@@ -1263,7 +1263,7 @@
         },
         "8 Cometh The Man": {
           "runnerId": 1952502897710116,
-          "back": 11.5,
+          "back": 11,
           "lay": 19
         },
         "9 Beryl The Peril": {
@@ -1436,7 +1436,7 @@
       "allRunners": {
         "1 Talking About You": {
           "runnerId": 1952502899330016,
-          "back": 6.8,
+          "back": 6,
           "lay": 9.4
         },
         "8 Hooves Like Jagger": {
@@ -1842,7 +1842,7 @@
         },
         "5 Shorts On": {
           "runnerId": 1952503472320116,
-          "back": 12,
+          "back": 13,
           "lay": 26
         },
         "6 Baby Bay": {
@@ -2162,7 +2162,7 @@
         "3 Chateau Peapod": {
           "runnerId": 1952503475910016,
           "back": 9.2,
-          "lay": 23
+          "lay": 22
         },
         "4 Chloellie": {
           "runnerId": 1952503475940016,
@@ -2248,7 +2248,7 @@
         "8 Arsonist": {
           "runnerId": 1952503477890016,
           "back": 20,
-          "lay": 38
+          "lay": 160
         },
         "9 Magicinthemaking": {
           "runnerId": 1952503477910116,
@@ -2380,7 +2380,7 @@
         "1 Keyser Soze": {
           "runnerId": 1952503481110016,
           "back": 12.5,
-          "lay": 19.5
+          "lay": 21
         },
         "3 La Tihaty": {
           "runnerId": 1952503481180016,

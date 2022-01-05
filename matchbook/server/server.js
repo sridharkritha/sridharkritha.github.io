@@ -145,11 +145,7 @@
 				}
 			}
 		}
-		
-		//UTIL.writeJsonFile(body,'event.json');
-		// console.log(Object.keys(g_db.eventId));
-		// console.log(body);
-		// ++extraArgs.closureSave.currentCount;
+
 		return callback(null, extraArgs.sports_cbCount, extraArgs.closureSave);
 	};
 
@@ -210,8 +206,6 @@
 		}
 
 		UTIL.writeJsonFile(g_db,'./data-Report/availableSports.json', true);
-		// console.log(body);
-		// console.log(Object.keys(g_db.sportId));
 		return callback(null);
 	};
 
@@ -240,16 +234,6 @@
 			}
 		}
 	};
-
-	// // Return Sports Name, Event Start Time, Players List 
-	// getEventDetailsByEventId = function(sportsName, eventName, eventId) {
-	// 	console.log(g_db["sportId"][sportsName]["events"][eventName]);
-	// 	g_db.sportId = g_db.sportId; // 1948200596520016
-	// 	// g_db.sportId[sportName].events[event] = obj;  /// ?? events --- null
-	// 	// g_db.sportId[sportName].events[event].id = eventId;
-	// 	// g_db.sportId[sportName].events[event].start = startTime;
-
-	// };
 
 	// Get the full data from all pages (default: 20 pages)
 	morePages = function(options, perPage, updateMethod, callback, extraArgs) {
@@ -368,10 +352,6 @@
 			}
 
 			returnFunction(runnersObj); // return the object from the callback function 
-
-			// UTIL.writeJsonFile(body,'runners.json');
-			//console.log(Object.keys(runnersObj));
-			//console.log(body);
 		});
 	};
 
@@ -437,12 +417,8 @@
 										if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
 										{
 											let obj = luckyRunner[0][1];
-											// obj.otherPlayers = luckyRunner;
 											obj.sportName = sportName;
-											// obj['sport-id'] = jsonObj.id;
 											g_predictedWinners.push(obj);
-											
-											// g_predictedWinners.push(luckyRunner[0][1]);
 										}
 									}
 								}
@@ -452,13 +428,6 @@
 				}
 			}
 		}
-
-		// print the predicted winners
-		// if(g_predictedWinners.length) {
-		// 	(async () => {
-		// 		await fs.promises.writeFile('./data/predictedWinners.json', JSON.stringify({"winnerList": g_predictedWinners}, null, '\t'), 'utf8');
-		// 	})(); 
-		// }
 
 		g_betNow = findHotBets(g_predictedWinners);
 		return callback(null, g_betNow);
@@ -546,7 +515,6 @@
 						betObj.side = 'back';
 						betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
 						betObj['event-start-time'] = g_predictedWinners[i].startTime;
-						// betObj['other-players'] = g_predictedWinners[i].otherPlayers;
 						betObj['sportName'] = g_predictedWinners[i].sportName;
 						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
 
@@ -644,11 +612,8 @@
 					let lastBetResult = g_betNow[i];
 					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
-					// g_alreadyPlacedBetList[lastBetResult.sportName].push(obj);
-					// getEventDetailsByEventId(g_betNow[i].sportName, g_betNow[i]['event-name'], g_betNow[i]['event-id']);
+
 					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
-					
-					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 				}
 				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 			}
@@ -682,7 +647,7 @@
 
 	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
-					//console.log(obj);
+			// console.log(obj);
 			
 			g_db.sportId[sportName].events[event].allRunners = obj;
 			g_db.sportId[sportName].events[event].id = eventId;
@@ -692,7 +657,6 @@
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
 				UTIL.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_${sportName}.json`);
-				// UTIL.writeJsonFile(g_db.sportId, `./data/availableFullEventList.json`);
 
 				findLuckyMatch(sportName, g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
@@ -721,7 +685,6 @@
 		let elapsedTime = UTIL.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
 
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
-
 		console.log(`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
 
 		findSportsIds();
@@ -829,9 +792,6 @@
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
 					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
-					// g_alreadyPlacedBetList.push(obj);
-
-					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 				}
 			}
 
@@ -880,7 +840,6 @@
 
 	getNewSession = function() {
 		DOOR.getLastSession(loginCallback);
-		// DOOR.login(loginCallback); // login
 	};
 
 	// Entry Function
