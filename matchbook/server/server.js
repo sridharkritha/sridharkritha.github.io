@@ -22,7 +22,7 @@
 	let g_db = {};
 	g_db.sportId = {};
 	let g_predictedWinners = [];
-	let g_alreadyPlacedBetList = null; // array
+	let g_alreadyPlacedBetList = {};
 	let g_lastCycleElapsedTime = 0;
 	let g_currentTime = 0;
 	let g_betNow = [];
@@ -74,14 +74,17 @@
 	};
 
 	isAlreadyBetPlacedEvent = function(eventId) {
-		if(g_alreadyPlacedBetList && g_alreadyPlacedBetList.length) {
-			for(let count  = 0; count < g_alreadyPlacedBetList.length; ++count) {
-				if("event-id" in  g_alreadyPlacedBetList[count]) {
-					if(g_alreadyPlacedBetList[count]["event-id"] === eventId) 
-						return true;
+		for (let sport in g_alreadyPlacedBetList) {
+			if (g_alreadyPlacedBetList.hasOwnProperty(sport)) {
+				for(let count  = 0; count < g_alreadyPlacedBetList[sport].length; ++count) {
+					if("event-id" in  g_alreadyPlacedBetList[sport][count]) {
+						if(g_alreadyPlacedBetList[sport][count]["event-id"] === eventId) 
+							return true;
+					}
 				}
 			}
 		}
+
 		return false;
 	};
 
@@ -397,12 +400,13 @@
 								const startTime = jsonObj[prop][race].start;
 								const raceName = race;
 								const luckyRunner = [];
-								for(let runner in jsonObj[prop][race]) { 
-									if(jsonObj[prop][race].hasOwnProperty(runner)) {
-										if(typeof jsonObj[prop][race][runner] === "object") {
-											let runnerObj = jsonObj[prop][race][runner];
+
+								for(let runner in jsonObj[prop][race]["allRunners"]) { 
+									if(jsonObj[prop][race]["allRunners"].hasOwnProperty(runner)) {
+										if(typeof jsonObj[prop][race]["allRunners"][runner] === "object") {
+											let runnerObj = jsonObj[prop][race]["allRunners"][runner];
 											runnerObj.name = runner;
-											let back = jsonObj[prop][race][runner].back;
+											let back = jsonObj[prop][race]["allRunners"][runner].back;
 											if(!back) {
 												back = Number.MAX_VALUE;
 											}
@@ -456,12 +460,18 @@
 		// 	})(); 
 		// }
 
-		g_betNow = findHotBet(g_predictedWinners);
+		g_betNow = findHotBets(g_predictedWinners);
 		return callback(null, g_betNow);
 	};
 
+	// Check the given object is NULL object or NOT.
+	isNullObject = function(obj) {
+		for(let i in obj) return false;
+		return true;
+	};
+
 	findLuckyMatch = function(sportName, jsonObj, objLevelFilter, callback) {
-		if(g_alreadyPlacedBetList) {
+		if(!isNullObject(g_alreadyPlacedBetList)) {
 			// Read from array
 			luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
 		}
@@ -475,7 +485,7 @@
 					{
 						// File is not exist, creat a empty file
 						fs.closeSync(fs.openSync('./data-Report/alreadyPlacedBetList.json', 'w'));
-						g_alreadyPlacedBetList = [] ;
+						g_alreadyPlacedBetList = {} ;
 						luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
 						console.log("Success: ./data-Report/alreadyPlacedBetList.json - created and saved!");
 					}
@@ -489,7 +499,7 @@
 							g_alreadyPlacedBetList = JSON.parse(data);
 						}
 						else {
-							g_alreadyPlacedBetList = [] ;
+							g_alreadyPlacedBetList = {} ;
 						}
 						
 						luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
@@ -499,7 +509,7 @@
 		}
 	};
 
-	findHotBet = function(g_predictedWinners) {
+	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
 		for(let i = 0; i < g_predictedWinners.length; ++i) {
 			let obj = g_predictedWinners[i];
@@ -634,7 +644,7 @@
 					let lastBetResult = g_betNow[i];
 					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
-					g_alreadyPlacedBetList.push(obj);
+					// g_alreadyPlacedBetList[lastBetResult.sportName].push(obj);
 					// getEventDetailsByEventId(g_betNow[i].sportName, g_betNow[i]['event-name'], g_betNow[i]['event-id']);
 					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 					
@@ -663,6 +673,9 @@
 			"bet-placed-time": UTIL.getCurrentTimeDate() 
 		};
 
+		if(!g_alreadyPlacedBetList[obj["sport-name"]]) g_alreadyPlacedBetList[obj["sport-name"]] = [];
+		g_alreadyPlacedBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
+
 		return obj;
 	};
 
@@ -671,7 +684,7 @@
 		getEvent(eventId, function(obj) {
 					//console.log(obj);
 			
-			g_db.sportId[sportName].events[event] = obj;  /// ?? events --- null
+			g_db.sportId[sportName].events[event].allRunners = obj;
 			g_db.sportId[sportName].events[event].id = eventId;
 			g_db.sportId[sportName].events[event].start = startTime;
 
@@ -816,7 +829,7 @@
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
 					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
-					g_alreadyPlacedBetList.push(obj);
+					// g_alreadyPlacedBetList.push(obj);
 
 					// UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 				}

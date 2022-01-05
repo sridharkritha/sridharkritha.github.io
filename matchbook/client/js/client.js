@@ -2,170 +2,186 @@
 window.addEventListener('load', function() {
 
 
-	const g_betObj = 
-	[
-		{
-		  "status": "matched",
-		  "sport-id": 24735152712200,
-		  "sport-name": "Horse Racing",
-		  "event-id": 1950771327400016,
-		  "event-name": "17:00 Wolverhampton",
-		  "runner-name": "2 Night Glass",
-		  "decimal-odds": 1.9,
-		  "stake": 0.2,
-		  "event-full-details": {
-			"2 Night Glass": {
-			  "runnerId": 1950771327770016,
-			  "back": 1.83,
-			  "lay": 1.93,
-			  "name": "2 Night Glass",
-			  "numberOfRunners": 4,
-			  "winPercentage": 145.9016393442623,
-			  "startTime": "2022-01-03T17:00:00.000Z",
-			  "raceId": 1950771327400016,
-			  "raceName": "17:00 Wolverhampton",
-			  "sportName": "Horse Racing"
+	const g_sportsWiseBetList = 
+	{
+		"Soccer": [
+		  {
+			"status": "matched",
+			"sport-id": 15,
+			"sport-name": "Soccer",
+			"event-id": 1949402913700016,
+			"event-name": "FC Cartagena vs Valencia",
+			"runner-name": "Valencia",
+			"decimal-odds": 1.9,
+			"stake": 0.2,
+			"event-full-details": {
+			  "id": 1949402913700016,
+			  "start": "2022-01-05T15:00:00.000Z",
+			  "allRunners": {
+				"FC Cartagena": {
+				  "runnerId": 1949402917630016,
+				  "back": 5,
+				  "lay": 5.4,
+				  "name": "FC Cartagena"
+				},
+				"Valencia": {
+				  "runnerId": 1949402917660116,
+				  "back": 1.82,
+				  "lay": 1.89,
+				  "name": "Valencia",
+				  "numberOfRunners": 3,
+				  "winPercentage": 97.8021978021978,
+				  "startTime": "2022-01-05T15:00:00.000Z",
+				  "raceId": 1949402913700016,
+				  "raceName": "FC Cartagena vs Valencia",
+				  "sportName": "Soccer"
+				},
+				"DRAW (FC /Val)": {
+				  "runnerId": 1949402917700016,
+				  "back": 3.6,
+				  "lay": 3.8,
+				  "name": "DRAW (FC /Val)"
+				}
+			  },
+			  "luckyWinner": {
+				"runnerId": 1949402917660116,
+				"back": 1.82,
+				"lay": 1.89,
+				"name": "Valencia",
+				"numberOfRunners": 3,
+				"winPercentage": 97.8021978021978,
+				"startTime": "2022-01-05T15:00:00.000Z",
+				"raceId": 1949402913700016,
+				"raceName": "FC Cartagena vs Valencia",
+				"sportName": "Soccer"
+			  }
 			},
-			"1 Achnamara": {
-			  "runnerId": 1950771327730016,
-			  "back": 6.2,
-			  "lay": 8.6,
-			  "name": "1 Achnamara"
-			},
-			"4 State Legend": {
-			  "runnerId": 1950771327830016,
-			  "back": 4.5,
-			  "lay": 5.7,
-			  "name": "4 State Legend"
-			},
-			"3 Themoonsaballoon": {
-			  "runnerId": 1950771327800016,
-			  "back": 5.7,
-			  "lay": 7.4,
-			  "name": "3 Themoonsaballoon"
-			},
-			"id": 1950771327400016,
-			"start": "2022-01-03T17:00:00.000Z",
-			"luckyWinner": {
-			  "runnerId": 1950771327770016,
-			  "back": 1.83,
-			  "lay": 1.93,
-			  "name": "2 Night Glass",
-			  "numberOfRunners": 4,
-			  "winPercentage": 145.9016393442623,
-			  "startTime": "2022-01-03T17:00:00.000Z",
-			  "raceId": 1950771327400016,
-			  "raceName": "17:00 Wolverhampton",
-			  "sportName": "Horse Racing"
-			}
+			"bet-placed-time": "08:14:16  05-01-2022"
 		  },
-		  "bet-placed-time": "09:27:07  03-01-2022"
-		},
-		{
-		  "status": "matched",
-		  "sport-id": 15,
-		  "sport-name": "Soccer",
-		  "event-id": 1950234584360016,
-		  "event-name": "Manama Club vs Al-Muharraq",
-		  "runner-name": "Al-Muharraq",
-		  "decimal-odds": 1.8,
-		  "stake": 0.2,
-		  "event-full-details": {
-			"Manama Club": {
-			  "runnerId": 1950234587290016,
-			  "back": 4.2,
-			  "lay": 4.9,
-			  "name": "Manama Club"
+		  {
+			"status": "matched",
+			"sport-id": 15,
+			"sport-name": "Soccer",
+			"event-id": 1949433747610016,
+			"event-name": "Besiktas JK vs Antalyaspor",
+			"runner-name": "Besiktas JK",
+			"decimal-odds": 1.8,
+			"stake": 0.2,
+			"event-full-details": {
+			  "id": 1949433747610016,
+			  "start": "2022-01-05T17:45:00.000Z",
+			  "allRunners": {
+				"Besiktas JK": {
+				  "runnerId": 1949433748770016,
+				  "back": 1.75,
+				  "lay": 2.14,
+				  "name": "Besiktas JK",
+				  "numberOfRunners": 3,
+				  "winPercentage": 91.42857142857143,
+				  "startTime": "2022-01-05T17:45:00.000Z",
+				  "raceId": 1949433747610016,
+				  "raceName": "Besiktas JK vs Antalyaspor",
+				  "sportName": "Soccer"
+				},
+				"Antalyaspor": {
+				  "runnerId": 1949433748810016,
+				  "back": 4.2,
+				  "lay": 4.7,
+				  "name": "Antalyaspor"
+				},
+				"DRAW (Bes/Ant)": {
+				  "runnerId": 1949433748850016,
+				  "back": 3.35,
+				  "lay": 4.6,
+				  "name": "DRAW (Bes/Ant)"
+				}
+			  },
+			  "luckyWinner": {
+				"runnerId": 1949433748770016,
+				"back": 1.75,
+				"lay": 2.14,
+				"name": "Besiktas JK",
+				"numberOfRunners": 3,
+				"winPercentage": 91.42857142857143,
+				"startTime": "2022-01-05T17:45:00.000Z",
+				"raceId": 1949433747610016,
+				"raceName": "Besiktas JK vs Antalyaspor",
+				"sportName": "Soccer"
+			  }
 			},
-			"Al-Muharraq": {
-			  "runnerId": 1950234587320116,
-			  "back": 1.76,
-			  "lay": 2.08,
-			  "name": "Al-Muharraq",
-			  "numberOfRunners": 3,
-			  "winPercentage": 87.49999999999999,
-			  "startTime": "2022-01-03T17:20:00.000Z",
-			  "raceId": 1950234584360016,
-			  "raceName": "Manama Club vs Al-Muharraq",
-			  "sportName": "Soccer"
+			"bet-placed-time": "08:14:17  05-01-2022"
+		  }
+		],
+		"Horse Racing": [
+		  {
+			"status": "matched",
+			"sport-id": 24735152712200,
+			"sport-name": "Horse Racing",
+			"event-id": 1952502854800016,
+			"event-name": "14:55 Ffos Las",
+			"runner-name": "1 Getaweapon",
+			"decimal-odds": 2.2,
+			"stake": 0.2,
+			"event-full-details": {
+			  "id": 1952502854800016,
+			  "start": "2022-01-05T14:55:00.000Z",
+			  "allRunners": {
+				"1 Getaweapon": {
+				  "runnerId": 1952502855210016,
+				  "back": 2.16,
+				  "lay": 2.7,
+				  "name": "1 Getaweapon",
+				  "numberOfRunners": 5,
+				  "winPercentage": 99.07407407407405,
+				  "startTime": "2022-01-05T14:55:00.000Z",
+				  "raceId": 1952502854800016,
+				  "raceName": "14:55 Ffos Las",
+				  "sportName": "Horse Racing"
+				},
+				"3 Fashion's Model": {
+				  "runnerId": 1952502855270016,
+				  "back": 5.5,
+				  "lay": 11,
+				  "name": "3 Fashion's Model"
+				},
+				"5 Gaia Vallis": {
+				  "runnerId": 1952502855330016,
+				  "back": 4.7,
+				  "lay": 0,
+				  "name": "5 Gaia Vallis"
+				},
+				"2 So Socksy": {
+				  "runnerId": 1952502855240016,
+				  "back": 4.3,
+				  "lay": 10,
+				  "name": "2 So Socksy"
+				},
+				"4 Get An Oscar": {
+				  "runnerId": 1952502855300016,
+				  "back": 9,
+				  "lay": 18.5,
+				  "name": "4 Get An Oscar"
+				}
+			  },
+			  "luckyWinner": {
+				"runnerId": 1952502855210016,
+				"back": 2.16,
+				"lay": 2.7,
+				"name": "1 Getaweapon",
+				"numberOfRunners": 5,
+				"winPercentage": 99.07407407407405,
+				"startTime": "2022-01-05T14:55:00.000Z",
+				"raceId": 1952502854800016,
+				"raceName": "14:55 Ffos Las",
+				"sportName": "Horse Racing"
+			  }
 			},
-			"DRAW (Man/Al-)": {
-			  "runnerId": 1950234587360116,
-			  "back": 3.3,
-			  "lay": 4.4,
-			  "name": "DRAW (Man/Al-)"
-			},
-			"id": 1950234584360016,
-			"start": "2022-01-03T17:20:00.000Z",
-			"luckyWinner": {
-			  "runnerId": 1950234587320116,
-			  "back": 1.76,
-			  "lay": 2.08,
-			  "name": "Al-Muharraq",
-			  "numberOfRunners": 3,
-			  "winPercentage": 87.49999999999999,
-			  "startTime": "2022-01-03T17:20:00.000Z",
-			  "raceId": 1950234584360016,
-			  "raceName": "Manama Club vs Al-Muharraq",
-			  "sportName": "Soccer"
-			}
-		  },
-		  "bet-placed-time": "09:27:08  03-01-2022"
-		},
-		{
-		  "status": "matched",
-		  "sport-id": 15,
-		  "sport-name": "Soccer",
-		  "event-id": 1950228839560016,
-		  "event-name": "Vilafranquense vs Casa Pia",
-		  "runner-name": "Casa Pia",
-		  "decimal-odds": 2,
-		  "stake": 0.2,
-		  "event-full-details": {
-			"Vilafranquense": {
-			  "runnerId": 1950228842900016,
-			  "back": 4.5,
-			  "lay": 4.9,
-			  "name": "Vilafranquense"
-			},
-			"Casa Pia": {
-			  "runnerId": 1950228842940016,
-			  "back": 1.91,
-			  "lay": 1.98,
-			  "name": "Casa Pia",
-			  "numberOfRunners": 3,
-			  "winPercentage": 80.62827225130891,
-			  "startTime": "2022-01-03T18:00:00.000Z",
-			  "raceId": 1950228839560016,
-			  "raceName": "Vilafranquense vs Casa Pia",
-			  "sportName": "Soccer"
-			},
-			"DRAW (Vil/Cas)": {
-			  "runnerId": 1950228842970116,
-			  "back": 3.45,
-			  "lay": 3.7,
-			  "name": "DRAW (Vil/Cas)"
-			},
-			"id": 1950228839560016,
-			"start": "2022-01-03T18:00:00.000Z",
-			"luckyWinner": {
-			  "runnerId": 1950228842940016,
-			  "back": 1.91,
-			  "lay": 1.98,
-			  "name": "Casa Pia",
-			  "numberOfRunners": 3,
-			  "winPercentage": 80.62827225130891,
-			  "startTime": "2022-01-03T18:00:00.000Z",
-			  "raceId": 1950228839560016,
-			  "raceName": "Vilafranquense vs Casa Pia",
-			  "sportName": "Soccer"
-			}
-		  },
-		  "bet-placed-time": "09:27:08  03-01-2022"
-		}
-	];
+			"bet-placed-time": "08:15:40  05-01-2022"
+		  }
+		]
+	  };
 
-	const g_sportsWiseBetList = {};
+	// const g_sportsWiseBetList = {};
 
 	convertToSportsWiseBetList = function(betObj) {
 		for(let i = 0, n = betObj.length; i < n; ++i) {
@@ -199,7 +215,7 @@ window.addEventListener('load', function() {
 	
 
 	createPredictedWinnersTable = function() {
-		convertToSportsWiseBetList(g_betObj);
+		// convertToSportsWiseBetList(g_betObj);
 
 		let runnersStr = '';
 
@@ -215,31 +231,29 @@ window.addEventListener('load', function() {
 								</div>
 								<br/>`;
 
-				for(let runner = 0, n = g_sportsWiseBetList[sport].length; runner < n; ++runner) {
-					// g_sportsWiseBetList[sport][runner]['runner-name']
+				for(let eventNo = 0, n = g_sportsWiseBetList[sport].length; eventNo < n; ++eventNo) {
+					// g_sportsWiseBetList[sport][eventNo]['runner-name']
 					// g_sportsWiseBetList[sport][runner]['decimal-odds']
 
-					const playersList = g_sportsWiseBetList[sport][runner]['event-full-details'];
+					const eventFullDetails = g_sportsWiseBetList[sport][eventNo]['event-full-details'];
 
-					for (let player in playersList) {
-						if (playersList.hasOwnProperty(player)) {
+					for (let runner in eventFullDetails.allRunners) {
+						if (eventFullDetails.allRunners.hasOwnProperty(runner)) {
 							runnersStr += `<div class="gridColumnLayout gridColumnLayout_2">
 											<!-- Runner Name -->
-											<div id="dbColumn"> ${playersList[player].name} </div>
+											<div id="dbColumn"> ${eventFullDetails.allRunners[runner].name} </div>
 											<!-- Stake -->
-											<div id="resultColumn"> ${playersList[player].back} </div>
+											<div id="resultColumn"> ${eventFullDetails.allRunners[runner].back} </div>
 										</div>`;
 						}
 					}
 
-					// <div id="dbColumn"> ${g_sportsWiseBetList[sport][runner]['runner-name']} </div>
-					// <div id="resultColumn"> ${g_sportsWiseBetList[sport][runner]['decimal-odds']} </div>
+					runnersStr += `<br/>`;
+
+					// <div id="dbColumn"> ${g_sportsWiseBetList[sport][eventNo]['runner-name']} </div>
+					// <div id="resultColumn"> ${g_sportsWiseBetList[sport][eventNo]['decimal-odds']} </div>
 
 				}
-
-
-				// console.log(sport);         // key
-				// console.log(g_betObj[sport]); // value
 			}
 		}
 
