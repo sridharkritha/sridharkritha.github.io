@@ -2,6 +2,11 @@
 	// https://developers.matchbook.com/reference
 	const request = require('request');
 	const fs = require('fs');
+
+	const express = require("express");
+	const app = express();
+	const httpServer = require("http").createServer(app); // explicitly create a 'http' server instead of using express() server
+	const io = require("socket.io")(httpServer);
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	const UTIL = require('./util');
 	const DOOR = require('./door');
@@ -66,8 +71,39 @@
 		// g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		// g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////// socket.io //////////////////////////////////////////////////////////////////
+	// [Server => Client(S)] Notify all the connected clients
+	function notifyAllUser(event, data) {
+		io.emit(event, data);
+	}
+	
+	// Client request for a new connection
+	io.on('connection', async (socket) => {
+		console.log('Server: A new client with socket-id: ${socket.id} is connected to me !'); // socket.id => can be used as UNIQUE id for finding the client 
 
+		// when client(browser) closed/disconnect from the server
+		socket.on('disconnect', function() {
+			console.log('A Client has closed / disconnected from the Server !');
+		});
+
+		// [Client => Server] Receive data from client to server
+		socket.on('CLIENT_TO_SERVER_EVENT', async (data) => {
+			const obj = JSON.parse(data);
+			console.log(obj);
+
+			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify({ name:'Jay', age: 7 }));
+		});
+	});
+
+	//////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
+	// Server listen at the given port number
+	const PORT = process.env.PORT || 3000;
+	httpServer.listen(PORT, async () => {
+		console.log("Server is running on the port : " + httpServer.address().port);
+	});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	callbackCount = function(currentCount , totalCount) {
 		this.currentCount = currentCount || 0;
 		this.totalCount = totalCount || 0;

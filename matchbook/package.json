@@ -14,5 +14,9 @@
   "devDependencies": {
     "nodemon": "^2.0.15",
     "request": "^2.88.0"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "socket.io": "^4.4.1"
   }
 }
