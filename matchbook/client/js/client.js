@@ -181,85 +181,63 @@ window.addEventListener('load', function() {
 		]
 	  };
 
-	// const g_sportsWiseBetList = {};
 
-	convertToSportsWiseBetList = function(betObj) {
-		for(let i = 0, n = betObj.length; i < n; ++i) {
-			if(!g_sportsWiseBetList[betObj[i]['sport-name']]) g_sportsWiseBetList[betObj[i]['sport-name']] = [];
-			g_sportsWiseBetList[betObj[i]['sport-name']].push(betObj[i]);
-		}
-		console.log(g_sportsWiseBetList);
+	let g_eventCounter = 0;
+	let g_runnersStr = '';
+
+	printRunner = function(runnerName, odd, cssClass) {
+		cssClass = cssClass || '';
+		g_runnersStr += `<div class="gridColumnLayout gridColumnLayout_2">
+					<!-- Runner Name -->
+					<div class="colOne  ${cssClass}"> ${runnerName} </div>
+					<!-- Stake -->
+					<div class="colTwo  ${cssClass}"> ${odd} </div>
+					</div>`;
 	};
 
-
-
-
-/*
-	<div class="gridColumnLayout gridColumnLayout_2">
-		<!-- Sports Name(Horse Racing) -->
-		<div id="dbColumn">17:00 Wolverhampton</div>
-		<!-- Description (1m 1f 104y) -->
-		<div id="resultColumn">1m 1f 104y</div>
-	</div>
-
-	<br/>
-
-	<div class="gridColumnLayout gridColumnLayout_2">
-		<!-- Runner Name -->
-		<div id="dbColumn">2 Night Glass </div>
-		<!-- Stake -->
-		<div id="resultColumn">1.85</div>
-	</div>
-*/
-
-	
-
 	createPredictedWinnersTable = function() {
-		// convertToSportsWiseBetList(g_betObj);
 
-		let runnersStr = '';
 
 		for (let sport in g_sportsWiseBetList) {
 			if (g_sportsWiseBetList.hasOwnProperty(sport)) {
-
-				runnersStr += ` <br/>
+				// Sport Name
+				g_runnersStr += ` <br/>
 								<div class="gridColumnLayout gridColumnLayout_2">
 									<!-- Sports Name(Horse Racing) -->
-									<div id="dbColumn">${sport}</div>
+									<div class="colOne">${sport}</div>
 									<!-- Description (1m 1f 104y) -->
-									<div id="resultColumn">1m 1f 104y</div>
+									<div class="colTwo">1m 1f 104y</div>
 								</div>
 								<br/>`;
 
 				for(let eventNo = 0, n = g_sportsWiseBetList[sport].length; eventNo < n; ++eventNo) {
-					// g_sportsWiseBetList[sport][eventNo]['runner-name']
-					// g_sportsWiseBetList[sport][runner]['decimal-odds']
+					// Event Name
+					const eventName = g_sportsWiseBetList[sport][eventNo]['event-name'];
+					g_runnersStr += ` <br/>
+								<div class="eventName">
+									<!-- Event Name(3.30 Kempton) -->
+									<div class="colOne">(${++g_eventCounter})   ${eventName}</div>
+								</div>
+								<br/>`;
 
 					const eventFullDetails = g_sportsWiseBetList[sport][eventNo]['event-full-details'];
 
+					printRunner(g_sportsWiseBetList[sport][eventNo]['runner-name'], g_sportsWiseBetList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
+
 					for (let runner in eventFullDetails.allRunners) {
+						// Players List
 						if (eventFullDetails.allRunners.hasOwnProperty(runner)) {
-							runnersStr += `<div class="gridColumnLayout gridColumnLayout_2">
-											<!-- Runner Name -->
-											<div id="dbColumn"> ${eventFullDetails.allRunners[runner].name} </div>
-											<!-- Stake -->
-											<div id="resultColumn"> ${eventFullDetails.allRunners[runner].back} </div>
-										</div>`;
+							if(g_sportsWiseBetList[sport][eventNo]['runner-name'] != eventFullDetails.allRunners[runner].name)
+								printRunner(eventFullDetails.allRunners[runner].name, eventFullDetails.allRunners[runner].back);
 						}
 					}
 
-					runnersStr += `<br/>`;
-
-					// <div id="dbColumn"> ${g_sportsWiseBetList[sport][eventNo]['runner-name']} </div>
-					// <div id="resultColumn"> ${g_sportsWiseBetList[sport][eventNo]['decimal-odds']} </div>
-
+					g_runnersStr += `<br/>`;
 				}
 			}
 		}
 
-		
-
-		document.querySelector('#predictionList').innerHTML = runnersStr;
+		document.querySelector('#predictionList').innerHTML = g_runnersStr;
 	};
 
 	createPredictedWinnersTable();

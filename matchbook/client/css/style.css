@@ -14,9 +14,11 @@
 	font-weight: bold;
 }
 
-#dbColumn { background: red;  }
-#queryColumn { background: blue; }
-#resultColumn { background: green; }
+.colOne { background: red;  }
+.queryColumn { background: blue; }
+.colTwo { background: green; }
+
+.cssWinnerClass {background: blue;}
 
 /* Grid Layout */
 .gridColumnLayout {
