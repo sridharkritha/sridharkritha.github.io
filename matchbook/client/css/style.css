@@ -1,3 +1,36 @@
+	/******************************* CSS Reset (start) ****************************************************************/
+	* {
+		box-sizing: border-box;
+	}
+
+	html, body {
+		padding: 10;
+		margin: 10;
+		direction: ltr;
+		width: 99.3%;
+		/* color: #323229; */
+		color: white;
+		/* background-color: rgb(13, 25, 41); */
+		background-color: #f5f1e4;
+		/* background-color: #ffeb3b; */
+		/* background-color: #cddc39; */
+		/* background-color: mintcream; */
+		/* line-height: 1.25; */
+		/* font-family: "Lucida Grande","Lucida Sans Unicode",sans-serif; */
+		/* font-family: Verdana, Arial, Helvetica, sans-serif; */
+		font-family: roboto condensed,HelveticaNeue,helvetica neue,Helvetica,Arial,lucida grande,sans-serif;
+		/* font-size: 140%; */
+		font-size: 16px;
+	}
+
+	#bodyWrapper {
+		/* width: 111px; */
+		border: 9px solid lightseagreen;
+	}
+	/******************************* CSS Reset (end) ******************************************************************/
+
+
+
 #displayElement {
 	font-size: 200%;
 	font-stretch: expanded;
@@ -14,11 +47,19 @@
 	font-weight: bold;
 }
 
-.colOne { background: red;  }
-.queryColumn { background: blue; }
-.colTwo { background: green; }
+.commonClass { padding: 4PX;}
 
-.cssWinnerClass {background: blue;}
+.colOne      { background: #839192 ; }
+.queryColumn { background: #839192 ; }
+.colTwo      { background: #839192 ; }
+
+.cssWinnerClass { background: #145A32;}
+
+.sportsName { background: #212F3D;}
+.eventName  { background: #c70039 ;}
+
+
+
 
 /* Grid Layout */
 .gridColumnLayout {

@@ -189,9 +189,9 @@ window.addEventListener('load', function() {
 		cssClass = cssClass || '';
 		g_runnersStr += `<div class="gridColumnLayout gridColumnLayout_2">
 					<!-- Runner Name -->
-					<div class="colOne  ${cssClass}"> ${runnerName} </div>
+					<div class="commonClass colOne  ${cssClass}"> ${runnerName} </div>
 					<!-- Stake -->
-					<div class="colTwo  ${cssClass}"> ${odd} </div>
+					<div class="commonClass colTwo  ${cssClass}"> ${odd} </div>
 					</div>`;
 	};
 
@@ -201,14 +201,11 @@ window.addEventListener('load', function() {
 		for (let sport in g_sportsWiseBetList) {
 			if (g_sportsWiseBetList.hasOwnProperty(sport)) {
 				// Sport Name
-				g_runnersStr += ` <br/>
-								<div class="gridColumnLayout gridColumnLayout_2">
+				g_runnersStr +=  `  <br/>
+									<div class="sportsName">
 									<!-- Sports Name(Horse Racing) -->
-									<div class="colOne">${sport}</div>
-									<!-- Description (1m 1f 104y) -->
-									<div class="colTwo">1m 1f 104y</div>
-								</div>
-								<br/>`;
+									<div class ="commonClass"><b>${sport.toUpperCase()}</b></div>
+									</div>`;
 
 				for(let eventNo = 0, n = g_sportsWiseBetList[sport].length; eventNo < n; ++eventNo) {
 					// Event Name
@@ -216,7 +213,7 @@ window.addEventListener('load', function() {
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
-									<div class="colOne">(${++g_eventCounter})   ${eventName}</div>
+									<div class ="commonClass">(${++g_eventCounter})   ${eventName}   (${sport.toUpperCase()})</div>
 								</div>
 								<br/>`;
 
