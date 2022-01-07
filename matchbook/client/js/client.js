@@ -235,11 +235,10 @@ window.addEventListener('load', function() {
 		}
 
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
+		document.querySelector('#statistics').innerHTML = `# Total Number of Predictions = ${g_eventCounter}`;
 	};
 
-	// createPredictedWinnersTable(predictedWinnerList);
 	// createPredictedWinnersTable(g_sportsWiseBetList);
-	
 
 
 

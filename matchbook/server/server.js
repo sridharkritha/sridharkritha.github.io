@@ -92,6 +92,7 @@
 			console.log(obj);
 
 			// notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify({ name:'Jay', age: 7 }));
+			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		});
 	});
 
