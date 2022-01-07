@@ -196,7 +196,9 @@ window.addEventListener('load', function() {
 	};
 
 	createPredictedWinnersTable = function(predictedWinnerList) {
-
+		g_eventCounter = 0;
+		g_runnersStr = '';
+		let metaData = '';
 
 		for (let sport in predictedWinnerList) {
 			if (predictedWinnerList.hasOwnProperty(sport)) {
@@ -218,6 +220,8 @@ window.addEventListener('load', function() {
 								<br/>`;
 
 					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
+					metaData = predictedWinnerList[sport][eventNo]['metaData'];
+					
 
 					printRunner(predictedWinnerList[sport][eventNo]['runner-name'], predictedWinnerList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
 
@@ -236,6 +240,7 @@ window.addEventListener('load', function() {
 
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
 		document.querySelector('#statistics').innerHTML = `# Total Number of Predictions = ${g_eventCounter}`;
+		document.querySelector('#statistics').innerHTML += `<br>MetaData = ${JSON.stringify(metaData)}`;
 	};
 
 	// createPredictedWinnersTable(g_sportsWiseBetList);

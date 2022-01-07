@@ -1,154 +1,4 @@
 {
-  "Horse Racing": [
-    {
-      "status": "matched",
-      "sport-id": 24735152712200,
-      "sport-name": "Horse Racing",
-      "event-id": 1954235615520016,
-      "event-name": "13:25 Wetherby",
-      "runner-name": "3 Readysteadybeau",
-      "decimal-odds": 2.2,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1954235615520016,
-        "start": "2022-01-07T13:25:00.000Z",
-        "allRunners": {
-          "3 Readysteadybeau": {
-            "runnerId": 1954235616170016,
-            "back": 2.1,
-            "lay": 2.5,
-            "name": "3 Readysteadybeau",
-            "numberOfRunners": 8,
-            "winPercentage": 147.61904761904762,
-            "startTime": "2022-01-07T13:25:00.000Z",
-            "raceId": 1954235615520016,
-            "raceName": "13:25 Wetherby",
-            "sportName": "Horse Racing"
-          },
-          "5 Guillemot": {
-            "runnerId": 1954235616230016,
-            "back": 7.6,
-            "lay": 10.5,
-            "name": "5 Guillemot"
-          },
-          "7 Dequall": {
-            "runnerId": 1954235616290016,
-            "back": 9.4,
-            "lay": 13.5,
-            "name": "7 Dequall"
-          },
-          "1 Gibberwell": {
-            "runnerId": 1954235616100016,
-            "back": 5.2,
-            "lay": 80,
-            "name": "1 Gibberwell"
-          },
-          "2 To Be Sure": {
-            "runnerId": 1954235616130116,
-            "back": 7,
-            "lay": 95,
-            "name": "2 To Be Sure"
-          },
-          "4 Foillan": {
-            "runnerId": 1954235616200016,
-            "back": 7.2,
-            "lay": 25,
-            "name": "4 Foillan"
-          },
-          "6 My Last Oscar": {
-            "runnerId": 1954235616260016,
-            "back": 6.2,
-            "lay": 9.4,
-            "name": "6 My Last Oscar"
-          },
-          "8 Blazer": {
-            "runnerId": 1954235616310116,
-            "back": 11.5,
-            "lay": 48,
-            "name": "8 Blazer"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1954235616170016,
-          "back": 2.1,
-          "lay": 2.5,
-          "name": "3 Readysteadybeau",
-          "numberOfRunners": 8,
-          "winPercentage": 147.61904761904762,
-          "startTime": "2022-01-07T13:25:00.000Z",
-          "raceId": 1954235615520016,
-          "raceName": "13:25 Wetherby",
-          "sportName": "Horse Racing"
-        }
-      },
-      "bet-placed-time": "07:35:13  07-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 24735152712200,
-      "sport-name": "Horse Racing",
-      "event-id": 1954236214760016,
-      "event-name": "14:15 Lingfield",
-      "runner-name": "1 Tone The Barone",
-      "decimal-odds": 2.1,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1954236214760016,
-        "start": "2022-01-07T14:15:00.000Z",
-        "allRunners": {
-          "1 Tone The Barone": {
-            "runnerId": 1954236215170016,
-            "back": 2.02,
-            "lay": 2.1,
-            "name": "1 Tone The Barone",
-            "numberOfRunners": 5,
-            "winPercentage": 102.97029702970296,
-            "startTime": "2022-01-07T14:15:00.000Z",
-            "raceId": 1954236214760016,
-            "raceName": "14:15 Lingfield",
-            "sportName": "Horse Racing"
-          },
-          "5 Strong Power": {
-            "runnerId": 1954236215290016,
-            "back": 5.1,
-            "lay": 5.9,
-            "name": "5 Strong Power"
-          },
-          "2 Shallow Hal": {
-            "runnerId": 1954236215200016,
-            "back": 8.4,
-            "lay": 11,
-            "name": "2 Shallow Hal"
-          },
-          "3 Marnie James": {
-            "runnerId": 1954236215230016,
-            "back": 4.1,
-            "lay": 10,
-            "name": "3 Marnie James"
-          },
-          "4 Ornate": {
-            "runnerId": 1954236215260016,
-            "back": 10,
-            "lay": 50,
-            "name": "4 Ornate"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1954236215170016,
-          "back": 2.02,
-          "lay": 2.1,
-          "name": "1 Tone The Barone",
-          "numberOfRunners": 5,
-          "winPercentage": 102.97029702970296,
-          "startTime": "2022-01-07T14:15:00.000Z",
-          "raceId": 1954236214760016,
-          "raceName": "14:15 Lingfield",
-          "sportName": "Horse Racing"
-        }
-      },
-      "bet-placed-time": "07:35:13  07-01-2022"
-    }
-  ],
   "Soccer": [
     {
       "status": "matched",
@@ -201,7 +51,15 @@
           "sportName": "Soccer"
         }
       },
-      "bet-placed-time": "07:35:19  07-01-2022"
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 10,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 0.13,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "bet-placed-time": "08:15:32  07-01-2022"
     },
     {
       "status": "matched",
@@ -219,7 +77,7 @@
           "Al-Gharafa SC": {
             "runnerId": 1953710450850016,
             "back": 1.75,
-            "lay": 1.94,
+            "lay": 1.93,
             "name": "Al-Gharafa SC",
             "numberOfRunners": 3,
             "winPercentage": 122.85714285714286,
@@ -230,8 +88,8 @@
           },
           "Al-Ahli": {
             "runnerId": 1953710450890016,
-            "back": 4.2,
-            "lay": 5,
+            "back": 4.4,
+            "lay": 5.2,
             "name": "Al-Ahli"
           },
           "DRAW (Al-/Al-)": {
@@ -244,7 +102,7 @@
         "luckyWinner": {
           "runnerId": 1953710450850016,
           "back": 1.75,
-          "lay": 1.94,
+          "lay": 1.93,
           "name": "Al-Gharafa SC",
           "numberOfRunners": 3,
           "winPercentage": 122.85714285714286,
@@ -254,7 +112,15 @@
           "sportName": "Soccer"
         }
       },
-      "bet-placed-time": "07:35:19  07-01-2022"
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 10,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 0.13,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "bet-placed-time": "08:15:32  07-01-2022"
     },
     {
       "status": "matched",
@@ -263,7 +129,7 @@
       "event-id": 1952839522270016,
       "event-name": "Helmond Sport vs FC Dordrecht",
       "runner-name": "Helmond Sport",
-      "decimal-odds": 1.8,
+      "decimal-odds": 1.9,
       "stake": 0.2,
       "event-full-details": {
         "id": 1952839522270016,
@@ -271,11 +137,11 @@
         "allRunners": {
           "Helmond Sport": {
             "runnerId": 1952839523680016,
-            "back": 1.77,
-            "lay": 2.06,
+            "back": 1.88,
+            "lay": 1.98,
             "name": "Helmond Sport",
             "numberOfRunners": 3,
-            "winPercentage": 103.38983050847457,
+            "winPercentage": 104.78723404255321,
             "startTime": "2022-01-07T17:45:00.000Z",
             "raceId": 1952839522270016,
             "raceName": "Helmond Sport vs FC Dordrecht",
@@ -283,31 +149,205 @@
           },
           "FC Dordrecht": {
             "runnerId": 1952839523720016,
-            "back": 3.6,
-            "lay": 4.7,
+            "back": 3.85,
+            "lay": 4.2,
             "name": "FC Dordrecht"
           },
           "DRAW (Hel/FC )": {
             "runnerId": 1952839523760016,
-            "back": 3.8,
-            "lay": 5.1,
+            "back": 4.1,
+            "lay": 4.5,
             "name": "DRAW (Hel/FC )"
           }
         },
         "luckyWinner": {
           "runnerId": 1952839523680016,
-          "back": 1.77,
-          "lay": 2.06,
+          "back": 1.88,
+          "lay": 1.98,
           "name": "Helmond Sport",
           "numberOfRunners": 3,
-          "winPercentage": 103.38983050847457,
+          "winPercentage": 104.78723404255321,
           "startTime": "2022-01-07T17:45:00.000Z",
           "raceId": 1952839522270016,
           "raceName": "Helmond Sport vs FC Dordrecht",
           "sportName": "Soccer"
         }
       },
-      "bet-placed-time": "07:45:00  07-01-2022"
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 10,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 0.13,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "bet-placed-time": "08:15:32  07-01-2022"
+    }
+  ],
+  "Horse Racing": [
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1954235615520016,
+      "event-name": "13:25 Wetherby",
+      "runner-name": "3 Readysteadybeau",
+      "decimal-odds": 2.3,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1954235615520016,
+        "start": "2022-01-07T13:25:00.000Z",
+        "allRunners": {
+          "3 Readysteadybeau": {
+            "runnerId": 1954235616170016,
+            "back": 2.2,
+            "lay": 2.62,
+            "name": "3 Readysteadybeau",
+            "numberOfRunners": 8,
+            "winPercentage": 172.72727272727272,
+            "startTime": "2022-01-07T13:25:00.000Z",
+            "raceId": 1954235615520016,
+            "raceName": "13:25 Wetherby",
+            "sportName": "Horse Racing"
+          },
+          "5 Guillemot": {
+            "runnerId": 1954235616230016,
+            "back": 7.6,
+            "lay": 10.5,
+            "name": "5 Guillemot"
+          },
+          "2 To Be Sure": {
+            "runnerId": 1954235616130116,
+            "back": 8.2,
+            "lay": 15,
+            "name": "2 To Be Sure"
+          },
+          "7 Dequall": {
+            "runnerId": 1954235616290016,
+            "back": 9.8,
+            "lay": 14,
+            "name": "7 Dequall"
+          },
+          "1 Gibberwell": {
+            "runnerId": 1954235616100016,
+            "back": 16.5,
+            "lay": 75,
+            "name": "1 Gibberwell"
+          },
+          "4 Foillan": {
+            "runnerId": 1954235616200016,
+            "back": 9.4,
+            "lay": 44,
+            "name": "4 Foillan"
+          },
+          "6 My Last Oscar": {
+            "runnerId": 1954235616260016,
+            "back": 6,
+            "lay": 8.4,
+            "name": "6 My Last Oscar"
+          },
+          "8 Blazer": {
+            "runnerId": 1954235616310116,
+            "back": 9.4,
+            "lay": 46,
+            "name": "8 Blazer"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1954235616170016,
+          "back": 2.2,
+          "lay": 2.62,
+          "name": "3 Readysteadybeau",
+          "numberOfRunners": 8,
+          "winPercentage": 172.72727272727272,
+          "startTime": "2022-01-07T13:25:00.000Z",
+          "raceId": 1954235615520016,
+          "raceName": "13:25 Wetherby",
+          "sportName": "Horse Racing"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 10,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 0.13,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "bet-placed-time": "08:15:33  07-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1954236214760016,
+      "event-name": "14:15 Lingfield",
+      "runner-name": "1 Tone The Barone",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1954236214760016,
+        "start": "2022-01-07T14:15:00.000Z",
+        "allRunners": {
+          "1 Tone The Barone": {
+            "runnerId": 1954236215170016,
+            "back": 2,
+            "lay": 2.8,
+            "name": "1 Tone The Barone",
+            "numberOfRunners": 5,
+            "winPercentage": 129.99999999999997,
+            "startTime": "2022-01-07T14:15:00.000Z",
+            "raceId": 1954236214760016,
+            "raceName": "14:15 Lingfield",
+            "sportName": "Horse Racing"
+          },
+          "5 Strong Power": {
+            "runnerId": 1954236215290016,
+            "back": 5,
+            "lay": 6,
+            "name": "5 Strong Power"
+          },
+          "2 Shallow Hal": {
+            "runnerId": 1954236215200016,
+            "back": 8.4,
+            "lay": 11,
+            "name": "2 Shallow Hal"
+          },
+          "3 Marnie James": {
+            "runnerId": 1954236215230016,
+            "back": 4.6,
+            "lay": 12.5,
+            "name": "3 Marnie James"
+          },
+          "4 Ornate": {
+            "runnerId": 1954236215260016,
+            "back": 9,
+            "lay": 13.5,
+            "name": "4 Ornate"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1954236215170016,
+          "back": 2,
+          "lay": 2.8,
+          "name": "1 Tone The Barone",
+          "numberOfRunners": 5,
+          "winPercentage": 129.99999999999997,
+          "startTime": "2022-01-07T14:15:00.000Z",
+          "raceId": 1954236214760016,
+          "raceName": "14:15 Lingfield",
+          "sportName": "Horse Racing"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 10,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 0.13,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "bet-placed-time": "08:15:33  07-01-2022"
     }
   ]
 }

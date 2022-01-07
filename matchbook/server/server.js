@@ -521,6 +521,17 @@
 
 	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
+		// meta data
+		const metaData = {
+			"stakeValue"                   : g_BetStakeValue,
+			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
+			"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
+			"userBalance"                  : g_userBalance,
+			"winConfidencePercentage"      : g_winConfidencePercentage,
+			"minProfitOdd"                 : g_minProfitOdd
+		};
+
+
 		for(let i = 0; i < g_predictedWinners.length; ++i) {
 			let obj = g_predictedWinners[i];
 			let startTime = new Date(obj.startTime);
@@ -558,6 +569,8 @@
 						betObj['event-start-time'] = g_predictedWinners[i].startTime;
 						betObj['sportName'] = g_predictedWinners[i].sportName;
 						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
+						betObj['metaData'] = metaData;
+
 
 						if(g_isLockedForBetting)
 						{
@@ -677,6 +690,8 @@
 
 			// g_db["sportId"][sportsName]["events"][eventName]
 			"event-full-details": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']],
+			"metaData": lastBetResult['metaData'], // g_db["sportId"]["metaData"],
+			
 			"bet-placed-time": UTIL.getCurrentTimeDate() 
 		};
 
