@@ -195,11 +195,11 @@ window.addEventListener('load', function() {
 					</div>`;
 	};
 
-	createPredictedWinnersTable = function() {
+	createPredictedWinnersTable = function(predictedWinnerList) {
 
 
-		for (let sport in g_sportsWiseBetList) {
-			if (g_sportsWiseBetList.hasOwnProperty(sport)) {
+		for (let sport in predictedWinnerList) {
+			if (predictedWinnerList.hasOwnProperty(sport)) {
 				// Sport Name
 				g_runnersStr +=  `  <br/>
 									<div class="sportsName">
@@ -207,9 +207,9 @@ window.addEventListener('load', function() {
 									<div class ="commonClass"><b>${sport.toUpperCase()}</b></div>
 									</div>`;
 
-				for(let eventNo = 0, n = g_sportsWiseBetList[sport].length; eventNo < n; ++eventNo) {
+				for(let eventNo = 0, n = predictedWinnerList[sport].length; eventNo < n; ++eventNo) {
 					// Event Name
-					const eventName = g_sportsWiseBetList[sport][eventNo]['event-name'];
+					const eventName = predictedWinnerList[sport][eventNo]['event-name'];
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
@@ -217,14 +217,14 @@ window.addEventListener('load', function() {
 								</div>
 								<br/>`;
 
-					const eventFullDetails = g_sportsWiseBetList[sport][eventNo]['event-full-details'];
+					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
 
-					printRunner(g_sportsWiseBetList[sport][eventNo]['runner-name'], g_sportsWiseBetList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
+					printRunner(predictedWinnerList[sport][eventNo]['runner-name'], predictedWinnerList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
 
 					for (let runner in eventFullDetails.allRunners) {
 						// Players List
 						if (eventFullDetails.allRunners.hasOwnProperty(runner)) {
-							if(g_sportsWiseBetList[sport][eventNo]['runner-name'] != eventFullDetails.allRunners[runner].name)
+							if(predictedWinnerList[sport][eventNo]['runner-name'] != eventFullDetails.allRunners[runner].name)
 								printRunner(eventFullDetails.allRunners[runner].name, eventFullDetails.allRunners[runner].back);
 						}
 					}
@@ -237,14 +237,16 @@ window.addEventListener('load', function() {
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
 	};
 
-	createPredictedWinnersTable();
+	// createPredictedWinnersTable(predictedWinnerList);
+	// createPredictedWinnersTable(g_sportsWiseBetList);
+	
 
 
 
 
 	
 
-/*
+
 
 
 	//////////// SOCKET.IO /////////////////////////////////////////////////////// 
@@ -261,9 +263,12 @@ window.addEventListener('load', function() {
 
 	// [Client <= Server] Receive data from server to client
 	socket.on("SERVER_TO_CLIENT_EVENT", async (data) => {
-		const obj = JSON.parse(data);
-		console.log(obj);
+		const predictedWinnerList = JSON.parse(data);
+		console.log(predictedWinnerList);
+		createPredictedWinnersTable(predictedWinnerList);
 	});
+
+	/*
 
 	///////////////////// REST API /////////////////////////////////////////////////////////////////////////////////////
 	////////////// Basic HTTP VERBS //////////////////////////////

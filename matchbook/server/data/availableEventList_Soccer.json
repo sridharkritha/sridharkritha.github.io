@@ -1,904 +1,1912 @@
 {
   "id": 15,
   "events": {
-    "Mohammedan Dhaka vs Rahmatganj MFS": {
-      "id": 1954649225550016,
-      "start": "2022-01-06T10:00:00.000Z",
+    "PSS Sleman vs Persiraja Banda Aceh": {
+      "id": 1953393263470016,
+      "start": "2022-01-07T08:15:00.000Z",
       "allRunners": {
-        "Mohammedan Dhaka": {
-          "runnerId": 1954649227370016,
-          "back": 0,
-          "lay": 0
+        "PSS Sleman": {
+          "runnerId": 1953393264450016,
+          "back": 1.39,
+          "lay": 1.57
         },
-        "Rahmatganj MFS": {
-          "runnerId": 1954649227410016,
-          "back": 0,
-          "lay": 0
+        "Persiraja Banda Aceh": {
+          "runnerId": 1953393264490016,
+          "back": 6.2,
+          "lay": 8.6
         },
-        "DRAW (Moh/Rah)": {
-          "runnerId": 1954649227440016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Sampdoria vs Cagliari": {
-      "id": 1941717503320016,
-      "start": "2022-01-06T11:30:00.000Z",
-      "allRunners": {
-        "Sampdoria": {
-          "runnerId": 1941717505430016,
-          "back": 1.91,
-          "lay": 1.92
-        },
-        "Cagliari": {
-          "runnerId": 1941717505460116,
+        "DRAW (PSS/Per)": {
+          "runnerId": 1953393264530016,
           "back": 4.6,
-          "lay": 4.7
-        },
-        "DRAW (Sam/Cag)": {
-          "runnerId": 1941717505500016,
-          "back": 3.8,
-          "lay": 3.85
+          "lay": 6.4
         }
       }
     },
-    "Al Magd SC vs Al-Hammam": {
-      "id": 1952622247090016,
-      "start": "2022-01-06T12:30:00.000Z",
+    "Hapoel Bueine vs SC Haifa Robbie Shapira": {
+      "id": 1953413094450016,
+      "start": "2022-01-07T08:45:00.000Z",
       "allRunners": {
-        "Al Magd SC": {
-          "runnerId": 1952622248280016,
+        "Hapoel Bueine": {
+          "runnerId": 1953413095290016,
+          "back": 1.47,
+          "lay": 1.72
+        },
+        "SC Haifa Robbie Shapira": {
+          "runnerId": 1953413095320116,
+          "back": 5.8,
+          "lay": 8.4
+        },
+        "DRAW (Hap/SC )": {
+          "runnerId": 1953413095360116,
+          "back": 3.85,
+          "lay": 5.3
+        }
+      }
+    },
+    "CS Constantine U21 vs JS Saoura U21": {
+      "id": 1955091315640016,
+      "start": "2022-01-07T09:00:00.000Z",
+      "allRunners": {
+        "CS Constantine U21": {
+          "runnerId": 1955091316350016,
           "back": 0,
           "lay": 0
         },
-        "Al-Hammam": {
-          "runnerId": 1952622248320016,
+        "JS Saoura U21": {
+          "runnerId": 1955091316390016,
           "back": 0,
           "lay": 0
+        },
+        "DRAW (CS /JS )": {
+          "runnerId": 1955091316420116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "MC Alger U21 vs US Biskra U21": {
+      "id": 1955091318800016,
+      "start": "2022-01-07T09:00:00.000Z",
+      "allRunners": {
+        "MC Alger U21": {
+          "runnerId": 1955091319470016,
+          "back": 0,
+          "lay": 0
+        },
+        "US Biskra U21": {
+          "runnerId": 1955091319510016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (MC /US )": {
+          "runnerId": 1955091319540016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "A.S. Nordia Jerusalem vs Shimshon Tel Aviv": {
+      "id": 1953415721790016,
+      "start": "2022-01-07T10:00:00.000Z",
+      "allRunners": {
+        "A.S. Nordia Jerusalem": {
+          "runnerId": 1953415723490116,
+          "back": 0,
+          "lay": 0
+        },
+        "Shimshon Tel Aviv": {
+          "runnerId": 1953415723530016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (A.S/Shi)": {
+          "runnerId": 1953415723570016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Hapoel Bikat Hayarden vs Hapoel Azur": {
+      "id": 1953415706010016,
+      "start": "2022-01-07T10:00:00.000Z",
+      "allRunners": {
+        "Hapoel Bikat Hayarden": {
+          "runnerId": 1953415707690016,
+          "back": 0,
+          "lay": 2.28
+        },
+        "Hapoel Azur": {
+          "runnerId": 1953415707720116,
+          "back": 3.8,
+          "lay": 5.3
+        },
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1953415707770016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Hapoel Iksal Imad vs Ironi Nesher": {
+      "id": 1953501636580016,
+      "start": "2022-01-07T10:00:00.000Z",
+      "allRunners": {
+        "Hapoel Iksal Imad": {
+          "runnerId": 1953501637420116,
+          "back": 0,
+          "lay": 0
+        },
+        "Ironi Nesher": {
+          "runnerId": 1953501637450116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Iro)": {
+          "runnerId": 1953501637480216,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Ironi Tiberias vs Hapoel Ironi Baqa al-Gharbiyye": {
+      "id": 1953413105630016,
+      "start": "2022-01-07T10:00:00.000Z",
+      "allRunners": {
+        "Ironi Tiberias": {
+          "runnerId": 1953413106520016,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Ironi Baqa al-Gharbiyye": {
+          "runnerId": 1953413106550116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Iro/Hap)": {
+          "runnerId": 1953413106590016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Maccabi Shaaraim vs Dimona SC": {
+      "id": 1953415728520016,
+      "start": "2022-01-07T10:30:00.000Z",
+      "allRunners": {
+        "Maccabi Shaaraim": {
+          "runnerId": 1953415730300116,
+          "back": 0,
+          "lay": 0
+        },
+        "Dimona SC": {
+          "runnerId": 1953415730340016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Dim)": {
+          "runnerId": 1953415730380016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Maccabi Herzliya vs Maccabi Kabilio Jaffa": {
+      "id": 1953715612700016,
+      "start": "2022-01-07T10:45:00.000Z",
+      "allRunners": {
+        "Maccabi Herzliya": {
+          "runnerId": 1953715614670016,
+          "back": 0,
+          "lay": 0
+        },
+        "Maccabi Kabilio Jaffa": {
+          "runnerId": 1953715614700016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Mac)": {
+          "runnerId": 1953715614740016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Maccabi Yavne vs Shimshon Kafr Qasim": {
+      "id": 1953715612370016,
+      "start": "2022-01-07T10:45:00.000Z",
+      "allRunners": {
+        "Maccabi Yavne": {
+          "runnerId": 1953715613980316,
+          "back": 0,
+          "lay": 0
+        },
+        "Shimshon Kafr Qasim": {
+          "runnerId": 1953715614010416,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Shi)": {
+          "runnerId": 1953715614040416,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Lusaka Dynamos FC vs Green Buffaloes": {
+      "id": 1953402666960016,
+      "start": "2022-01-07T11:00:00.000Z",
+      "allRunners": {
+        "Lusaka Dynamos FC": {
+          "runnerId": 1953402668830016,
+          "back": 0,
+          "lay": 0
+        },
+        "Green Buffaloes": {
+          "runnerId": 1953402668860016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Lus/Gre)": {
+          "runnerId": 1953402668900016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "FC Holon Yermiyahu vs Hapoel Ashkelon": {
+      "id": 1953715612290016,
+      "start": "2022-01-07T11:10:00.000Z",
+      "allRunners": {
+        "FC Holon Yermiyahu": {
+          "runnerId": 1953715613880416,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Ashkelon": {
+          "runnerId": 1953715613910416,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (FC /Hap)": {
+          "runnerId": 1953715613950016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Hapoel Migdal HaEmek vs MS Tira": {
+      "id": 1953413077320016,
+      "start": "2022-01-07T11:15:00.000Z",
+      "allRunners": {
+        "Hapoel Migdal HaEmek": {
+          "runnerId": 1953413078270116,
+          "back": 0,
+          "lay": 0
+        },
+        "MS Tira": {
+          "runnerId": 1953413078310016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/MS )": {
+          "runnerId": 1953413078340016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Ironi Kuseife vs Hapoel Marmorek": {
+      "id": 1953415715360016,
+      "start": "2022-01-07T11:15:00.000Z",
+      "allRunners": {
+        "Ironi Kuseife": {
+          "runnerId": 1953415717020016,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Marmorek": {
+          "runnerId": 1953415717060016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Iro/Hap)": {
+          "runnerId": 1953415717090016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Express SC vs Bright Stars FC": {
+      "id": 1955323108920016,
+      "start": "2022-01-07T12:00:00.000Z",
+      "allRunners": {
+        "Express SC": {
+          "runnerId": 1955323109800016,
+          "back": 0,
+          "lay": 0
+        },
+        "Bright Stars FC": {
+          "runnerId": 1955323109840016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Exp/Bri)": {
+          "runnerId": 1955323109870016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Gadafi FC vs Wakiso Giants FC": {
+      "id": 1955323112810016,
+      "start": "2022-01-07T12:00:00.000Z",
+      "allRunners": {
+        "Gadafi FC": {
+          "runnerId": 1955323113850116,
+          "back": 0,
+          "lay": 0
+        },
+        "Wakiso Giants FC": {
+          "runnerId": 1955323113890116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Gad/Wak)": {
+          "runnerId": 1955323113930016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Al Baten vs Al-Ettifaq": {
+      "id": 1954488596130016,
+      "start": "2022-01-07T12:20:00.000Z",
+      "allRunners": {
+        "Al Baten": {
+          "runnerId": 1954488599940116,
+          "back": 2.88,
+          "lay": 3.85
+        },
+        "Al-Ettifaq": {
+          "runnerId": 1954488599980016,
+          "back": 2.12,
+          "lay": 2.7
         },
         "DRAW (Al /Al-)": {
-          "runnerId": 1952622248360016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Al Masry Salloum vs Sporting Club": {
-      "id": 1954707472290016,
-      "start": "2022-01-06T12:30:00.000Z",
-      "allRunners": {
-        "Al Masry Salloum": {
-          "runnerId": 1954707473270016,
-          "back": 0,
-          "lay": 0
-        },
-        "Sporting Club": {
-          "runnerId": 1954707473310016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Al /Spo)": {
-          "runnerId": 1954707473350016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Al Olympi vs Abu Qair Semad": {
-      "id": 1952622305890016,
-      "start": "2022-01-06T12:30:00.000Z",
-      "allRunners": {
-        "Al Olympi": {
-          "runnerId": 1952622306810016,
-          "back": 0,
-          "lay": 0
-        },
-        "Abu Qair Semad": {
-          "runnerId": 1952622306850016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Al /Abu)": {
-          "runnerId": 1952622306880116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Al Zarka vs El Mansoura": {
-      "id": 1952622297800016,
-      "start": "2022-01-06T12:30:00.000Z",
-      "allRunners": {
-        "Al Zarka": {
-          "runnerId": 1952622298760016,
-          "back": 0,
-          "lay": 0
-        },
-        "El Mansoura": {
-          "runnerId": 1952622298800016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Al /El )": {
-          "runnerId": 1952622298830116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Baladeyet Al-Mahalla vs Damanhur": {
-      "id": 1952622314010016,
-      "start": "2022-01-06T12:30:00.000Z",
-      "allRunners": {
-        "Baladeyet Al-Mahalla": {
-          "runnerId": 1952622314990116,
-          "back": 0,
-          "lay": 0
-        },
-        "Damanhur": {
-          "runnerId": 1952622315030016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Bal/Dam)": {
-          "runnerId": 1952622315070016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Bnei Eilat vs Hapoel Kfar Shelem": {
-      "id": 1952595483820016,
-      "start": "2022-01-06T12:30:00.000Z",
-      "allRunners": {
-        "Bnei Eilat": {
-          "runnerId": 1952595485580116,
-          "back": 0,
-          "lay": 0
-        },
-        "Hapoel Kfar Shelem": {
-          "runnerId": 1952595485620016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Bne/Hap)": {
-          "runnerId": 1952595485660016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Saif Sporting Club vs Abahani Limited": {
-      "id": 1954649234410016,
-      "start": "2022-01-06T13:00:00.000Z",
-      "allRunners": {
-        "Saif Sporting Club": {
-          "runnerId": 1954649236110116,
-          "back": 0,
-          "lay": 0
-        },
-        "Abahani Limited": {
-          "runnerId": 1954649236150016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Sai/Aba)": {
-          "runnerId": 1954649236180116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Lazio vs Empoli": {
-      "id": 1941717477010016,
-      "start": "2022-01-06T13:30:00.000Z",
-      "allRunners": {
-        "Lazio": {
-          "runnerId": 1941717479130016,
-          "back": 1.67,
-          "lay": 1.68
-        },
-        "Empoli": {
-          "runnerId": 1941717479160016,
-          "back": 5.2,
-          "lay": 5.4
-        },
-        "DRAW (Laz/Emp)": {
-          "runnerId": 1941717479190116,
-          "back": 4.7,
-          "lay": 4.8
-        }
-      }
-    },
-    "PSIS Semarang vs Persija Jakarta": {
-      "id": 1952800292980016,
-      "start": "2022-01-06T13:30:00.000Z",
-      "allRunners": {
-        "PSIS Semarang": {
-          "runnerId": 1952800293880116,
-          "back": 2.8,
-          "lay": 3.55
-        },
-        "Persija Jakarta": {
-          "runnerId": 1952800293930016,
-          "back": 2.32,
-          "lay": 2.86
-        },
-        "DRAW (PSI/Per)": {
-          "runnerId": 1952800293960116,
-          "back": 3.15,
-          "lay": 3.95
-        }
-      }
-    },
-    "Spezia vs Hellas Verona": {
-      "id": 1941717531170016,
-      "start": "2022-01-06T13:30:00.000Z",
-      "allRunners": {
-        "Spezia": {
-          "runnerId": 1941717533370116,
-          "back": 3.15,
-          "lay": 3.2
-        },
-        "Hellas Verona": {
-          "runnerId": 1941717533410016,
-          "back": 2.5,
-          "lay": 2.54
-        },
-        "DRAW (Spe/Hel)": {
-          "runnerId": 1941717533450016,
-          "back": 3.45,
-          "lay": 3.5
-        }
-      }
-    },
-    "CR Belouizdad U21 vs JS Kabylie U21": {
-      "id": 1954541476080016,
-      "start": "2022-01-06T14:00:00.000Z",
-      "allRunners": {
-        "CR Belouizdad U21": {
-          "runnerId": 1954541476920016,
-          "back": 0,
-          "lay": 0
-        },
-        "JS Kabylie U21": {
-          "runnerId": 1954541476960016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (CR /JS )": {
-          "runnerId": 1954541476990116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Jamshedpur FC vs NorthEast United": {
-      "id": 1953669956140016,
-      "start": "2022-01-06T14:00:00.000Z",
-      "allRunners": {
-        "Jamshedpur FC": {
-          "runnerId": 1953669957830016,
-          "back": 1.68,
-          "lay": 1.96
-        },
-        "NorthEast United": {
-          "runnerId": 1953669957870016,
-          "back": 3.95,
-          "lay": 0
-        },
-        "DRAW (Jam/Nor)": {
-          "runnerId": 1953669957900016,
-          "back": 3.95,
-          "lay": 0
-        }
-      }
-    },
-    "MC Oran U21 vs ASO Chlef U21": {
-      "id": 1954541482750016,
-      "start": "2022-01-06T14:00:00.000Z",
-      "allRunners": {
-        "MC Oran U21": {
-          "runnerId": 1954541484110016,
-          "back": 0,
-          "lay": 0
-        },
-        "ASO Chlef U21": {
-          "runnerId": 1954541484140116,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (MC /ASO)": {
-          "runnerId": 1954541484180016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Paradou AC U21 vs RC Arbaa U21": {
-      "id": 1954541469560016,
-      "start": "2022-01-06T14:00:00.000Z",
-      "allRunners": {
-        "Paradou AC U21": {
-          "runnerId": 1954541470400016,
-          "back": 0,
-          "lay": 0
-        },
-        "RC Arbaa U21": {
-          "runnerId": 1954541470440016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Par/RC )": {
-          "runnerId": 1954541470470116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Rwanda vs Guinea": {
-      "id": 1954970808560016,
-      "start": "2022-01-06T14:00:00.000Z",
-      "allRunners": {
-        "Rwanda": {
-          "runnerId": 1954970811420116,
-          "back": 0,
-          "lay": 0
-        },
-        "Guinea": {
-          "runnerId": 1954970811460016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Rwa/Gui)": {
-          "runnerId": 1954970811500016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "União São João U20 vs Taquarussu U20": {
-      "id": 1953012477670016,
-      "start": "2022-01-06T14:00:00.000Z",
-      "allRunners": {
-        "União São João U20": {
-          "runnerId": 1953012479270016,
-          "back": 0,
-          "lay": 0
-        },
-        "Taquarussu U20": {
-          "runnerId": 1953012479310016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Uni/Taq)": {
-          "runnerId": 1953012479340116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Al-Yarmouk vs Al-Arabi Sports Club": {
-      "id": 1953014602080016,
-      "start": "2022-01-06T14:35:00.000Z",
-      "allRunners": {
-        "Al-Yarmouk": {
-          "runnerId": 1953014604710116,
-          "back": 0,
-          "lay": 0
-        },
-        "Al-Arabi Sports Club": {
-          "runnerId": 1953014604750016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Al-/Al-)": {
-          "runnerId": 1953014604790016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Fuenlabrada vs Cádiz": {
-      "id": 1950217972140016,
-      "start": "2022-01-06T15:00:00.000Z",
-      "allRunners": {
-        "Fuenlabrada": {
-          "runnerId": 1950217975960016,
-          "back": 2.4,
-          "lay": 2.54
-        },
-        "Cádiz": {
-          "runnerId": 1950217975990116,
-          "back": 3.5,
-          "lay": 3.8
-        },
-        "DRAW (Fue/Cád)": {
-          "runnerId": 1950217976040116,
-          "back": 3.05,
-          "lay": 3.3
-        }
-      }
-    },
-    "Girona vs Osasuna": {
-      "id": 1950217989770016,
-      "start": "2022-01-06T15:00:00.000Z",
-      "allRunners": {
-        "Girona": {
-          "runnerId": 1950217993330116,
-          "back": 2.78,
-          "lay": 2.96
-        },
-        "Osasuna": {
-          "runnerId": 1950217993370016,
-          "back": 2.84,
-          "lay": 3.05
-        },
-        "DRAW (Gir/Osa)": {
-          "runnerId": 1950217993410016,
+          "runnerId": 1954488600020016,
           "back": 3.1,
-          "lay": 3.3
-        }
-      }
-    },
-    "Sassuolo vs Genoa": {
-      "id": 1941717517210016,
-      "start": "2022-01-06T15:30:00.000Z",
-      "allRunners": {
-        "Sassuolo": {
-          "runnerId": 1941717519330016,
-          "back": 1.83,
-          "lay": 1.84
-        },
-        "Genoa": {
-          "runnerId": 1941717519360016,
-          "back": 4.9,
-          "lay": 5
-        },
-        "DRAW (Sas/Gen)": {
-          "runnerId": 1941717519390116,
-          "back": 4,
-          "lay": 4.1
-        }
-      }
-    },
-    "Comercial FC U20 vs Chapadinha Futebol Clube U20": {
-      "id": 1953012483130016,
-      "start": "2022-01-06T16:00:00.000Z",
-      "allRunners": {
-        "Comercial FC U20": {
-          "runnerId": 1953012484660016,
-          "back": 0,
-          "lay": 0
-        },
-        "Chapadinha Futebol Clube U20": {
-          "runnerId": 1953012484690016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Com/Cha)": {
-          "runnerId": 1953012484720116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Taubaté U20 vs AA Aparecidense U20": {
-      "id": 1953012493020016,
-      "start": "2022-01-06T16:00:00.000Z",
-      "allRunners": {
-        "Taubaté U20": {
-          "runnerId": 1953012494550016,
-          "back": 0,
-          "lay": 0
-        },
-        "AA Aparecidense U20": {
-          "runnerId": 1953012494580116,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Tau/AA )": {
-          "runnerId": 1953012494620016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Uniao Iacanga U20 vs União ABC U20": {
-      "id": 1953012489240016,
-      "start": "2022-01-06T16:00:00.000Z",
-      "allRunners": {
-        "Uniao Iacanga U20": {
-          "runnerId": 1953012490750016,
-          "back": 0,
-          "lay": 0
-        },
-        "União ABC U20": {
-          "runnerId": 1953012490790016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Uni/Uni)": {
-          "runnerId": 1953012490830016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "AE Velo Clube U20 vs Athlético Paranaense U20": {
-      "id": 1953012499320016,
-      "start": "2022-01-06T16:15:00.000Z",
-      "allRunners": {
-        "AE Velo Clube U20": {
-          "runnerId": 1953012500870116,
-          "back": 0,
-          "lay": 0
-        },
-        "Athlético Paranaense U20": {
-          "runnerId": 1953012500910116,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (AE /Ath)": {
-          "runnerId": 1953012500950016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Al-Shabab vs Al-Kuwait": {
-      "id": 1953014591910116,
-      "start": "2022-01-06T16:50:00.000Z",
-      "allRunners": {
-        "Al-Shabab": {
-          "runnerId": 1953014594510016,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Al-Kuwait": {
-          "runnerId": 1953014594590016,
-          "back": 1.35,
-          "lay": 1.48
-        },
-        "DRAW (Al-/Al-)": {
-          "runnerId": 1953014594660016,
-          "back": 5.1,
-          "lay": 6.8
-        }
-      }
-    },
-    "Real Sporting de Gijon vs Villarreal": {
-      "id": 1950217954890016,
-      "start": "2022-01-06T17:00:00.000Z",
-      "allRunners": {
-        "Real Sporting de Gijon": {
-          "runnerId": 1950217958660016,
-          "back": 5.7,
-          "lay": 6.4
-        },
-        "Villarreal": {
-          "runnerId": 1950217958700016,
-          "back": 1.67,
-          "lay": 1.76
-        },
-        "DRAW (Rea/Vil)": {
-          "runnerId": 1950217958730116,
-          "back": 3.9,
           "lay": 4.2
         }
       }
     },
-    "Real Zaragoza vs Sevilla": {
-      "id": 1950218003410016,
-      "start": "2022-01-06T17:00:00.000Z",
+    "Hapoel Kaukab vs Hapoel Bnei Arrara Ara": {
+      "id": 1953501636810016,
+      "start": "2022-01-07T12:30:00.000Z",
       "allRunners": {
-        "Real Zaragoza": {
-          "runnerId": 1950218007040016,
-          "back": 6.6,
-          "lay": 7.4
-        },
-        "Sevilla": {
-          "runnerId": 1950218007070016,
-          "back": 1.69,
-          "lay": 1.73
-        },
-        "DRAW (Rea/Sev)": {
-          "runnerId": 1950218007100116,
-          "back": 3.65,
-          "lay": 3.95
-        }
-      }
-    },
-    "AC Milan vs AS Roma": {
-      "id": 1941717414230016,
-      "start": "2022-01-06T17:30:00.000Z",
-      "allRunners": {
-        "AC Milan": {
-          "runnerId": 1941717416280016,
-          "back": 2.42,
-          "lay": 2.44
-        },
-        "AS Roma": {
-          "runnerId": 1941717416320016,
-          "back": 3.15,
-          "lay": 3.2
-        },
-        "DRAW (AC /AS )": {
-          "runnerId": 1941717416350116,
-          "back": 3.65,
-          "lay": 3.7
-        }
-      }
-    },
-    "Nova Iguaçu FC U20 vs Criciuma EC U20": {
-      "id": 1953012509600016,
-      "start": "2022-01-06T18:15:00.000Z",
-      "allRunners": {
-        "Nova Iguaçu FC U20": {
-          "runnerId": 1953012511220016,
+        "Hapoel Kaukab": {
+          "runnerId": 1953501637610216,
           "back": 0,
           "lay": 0
         },
-        "Criciuma EC U20": {
-          "runnerId": 1953012511250116,
+        "Hapoel Bnei Arrara Ara": {
+          "runnerId": 1953501637640316,
           "back": 0,
-          "lay": 4.8
+          "lay": 0
         },
-        "DRAW (Nov/Cri)": {
-          "runnerId": 1953012511290016,
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1953501637670316,
           "back": 0,
           "lay": 0
         }
       }
     },
-    "Novorizontino U20 vs Santa Cruz FC U20": {
-      "id": 1953012515460016,
-      "start": "2022-01-06T18:15:00.000Z",
+    "Beitar Tel Aviv Bat-Yam vs Hapoel Kfar Saba": {
+      "id": 1953712066160016,
+      "start": "2022-01-07T13:00:00.000Z",
       "allRunners": {
-        "Novorizontino U20": {
-          "runnerId": 1953012517060116,
+        "Beitar Tel Aviv Bat-Yam": {
+          "runnerId": 1953712068720016,
+          "back": 3.8,
+          "lay": 4.7
+        },
+        "Hapoel Kfar Saba": {
+          "runnerId": 1953712068760016,
           "back": 0,
           "lay": 0
         },
-        "Santa Cruz FC U20": {
-          "runnerId": 1953012517090116,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Nov/San)": {
-          "runnerId": 1953012517130116,
-          "back": 0,
+        "DRAW (Bei/Hap)": {
+          "runnerId": 1953712068800016,
+          "back": 2.96,
           "lay": 0
         }
       }
     },
-    "Petrolina Social FC U20 vs Botafogo FR U20": {
-      "id": 1953012522590016,
-      "start": "2022-01-06T18:15:00.000Z",
+    "Hapoel Acre vs Hapoel Ra'anana": {
+      "id": 1953712076680016,
+      "start": "2022-01-07T13:00:00.000Z",
       "allRunners": {
-        "Petrolina Social FC U20": {
-          "runnerId": 1953012524960016,
-          "back": 0,
-          "lay": 0
+        "Hapoel Acre": {
+          "runnerId": 1953712079210116,
+          "back": 2.58,
+          "lay": 2.98
         },
-        "Botafogo FR U20": {
-          "runnerId": 1953012525000016,
-          "back": 0,
-          "lay": 0
+        "Hapoel Ra'anana": {
+          "runnerId": 1953712079240116,
+          "back": 2.92,
+          "lay": 3.5
         },
-        "DRAW (Pet/Bot)": {
-          "runnerId": 1953012525030116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "Atletico Mancha Real vs Athletic Bilbao": {
-      "id": 1950217894270016,
-      "start": "2022-01-06T19:00:00.000Z",
-      "allRunners": {
-        "Atletico Mancha Real": {
-          "runnerId": 1950217898110016,
-          "back": 10,
-          "lay": 14
-        },
-        "Athletic Bilbao": {
-          "runnerId": 1950217898150016,
-          "back": 1.32,
-          "lay": 1.44
-        },
-        "DRAW (Atl/Ath)": {
-          "runnerId": 1950217898190016,
-          "back": 4.8,
-          "lay": 6.2
-        }
-      }
-    },
-    "UD Almería vs Elche CF": {
-      "id": 1950217929480016,
-      "start": "2022-01-06T19:00:00.000Z",
-      "allRunners": {
-        "UD Almería": {
-          "runnerId": 1950217932970016,
-          "back": 2.28,
-          "lay": 2.4
-        },
-        "Elche CF": {
-          "runnerId": 1950217933000116,
-          "back": 3.6,
-          "lay": 4
-        },
-        "DRAW (UD /Elc)": {
-          "runnerId": 1950217933040016,
-          "back": 3.15,
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1953712079280116,
+          "back": 2.84,
           "lay": 3.45
         }
       }
     },
-    "Juventus vs Napoli": {
-      "id": 1941717465100016,
-      "start": "2022-01-06T19:45:00.000Z",
+    "Hapoel Ironi Rishon LeZion vs Bnei Yehuda": {
+      "id": 1953712109120016,
+      "start": "2022-01-07T13:00:00.000Z",
       "allRunners": {
-        "Juventus": {
-          "runnerId": 1941717467200116,
-          "back": 1.74,
-          "lay": 1.75
+        "Hapoel Ironi Rishon LeZion": {
+          "runnerId": 1953712111690016,
+          "back": 0,
+          "lay": 0
         },
-        "Napoli": {
-          "runnerId": 1941717467240016,
+        "Bnei Yehuda": {
+          "runnerId": 1953712111720016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Bne)": {
+          "runnerId": 1953712111750116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Hapoel Ramat Gan vs Agudat Sport Ashdod": {
+      "id": 1953712088200016,
+      "start": "2022-01-07T13:00:00.000Z",
+      "allRunners": {
+        "Hapoel Ramat Gan": {
+          "runnerId": 1953712090620116,
+          "back": 2.36,
+          "lay": 2.78
+        },
+        "Agudat Sport Ashdod": {
+          "runnerId": 1953712090650116,
+          "back": 3.15,
+          "lay": 3.8
+        },
+        "DRAW (Hap/Agu)": {
+          "runnerId": 1953712090690016,
+          "back": 2.86,
+          "lay": 3.45
+        }
+      }
+    },
+    "Maccabi Ahi Nazareth vs Hapoel Umm al-Fahm": {
+      "id": 1953712121560016,
+      "start": "2022-01-07T13:00:00.000Z",
+      "allRunners": {
+        "Maccabi Ahi Nazareth": {
+          "runnerId": 1953712123910116,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Umm al-Fahm": {
+          "runnerId": 1953712123950016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Hap)": {
+          "runnerId": 1953712123980116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Zanaco FC vs Kansanshi": {
+      "id": 1953677093170016,
+      "start": "2022-01-07T13:00:00.000Z",
+      "allRunners": {
+        "Zanaco FC": {
+          "runnerId": 1953677095050116,
+          "back": 0,
+          "lay": 0
+        },
+        "Kansanshi": {
+          "runnerId": 1953677095090016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Zan/Kan)": {
+          "runnerId": 1953677095130016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Al-Sailiya vs Al-Shamal": {
+      "id": 1953710439160016,
+      "start": "2022-01-07T13:15:00.000Z",
+      "allRunners": {
+        "Al-Sailiya": {
+          "runnerId": 1953710440960016,
+          "back": 1.95,
+          "lay": 2.26
+        },
+        "Al-Shamal": {
+          "runnerId": 1953710441000016,
+          "back": 3.35,
+          "lay": 0
+        },
+        "DRAW (Al-/Al-)": {
+          "runnerId": 1953710441040016,
+          "back": 3.45,
+          "lay": 4.5
+        }
+      }
+    },
+    "Persib Bandung vs Persita Tangerang": {
+      "id": 1953590164310016,
+      "start": "2022-01-07T13:30:00.000Z",
+      "allRunners": {
+        "Persib Bandung": {
+          "runnerId": 1953590165200116,
+          "back": 1.34,
+          "lay": 1.49
+        },
+        "Persita Tangerang": {
+          "runnerId": 1953590165240016,
+          "back": 7.2,
+          "lay": 0
+        },
+        "DRAW (Per/Per)": {
+          "runnerId": 1953590165270116,
+          "back": 4.7,
+          "lay": 6.6
+        }
+      }
+    },
+    "CR Belouizdad vs JS Kabylie": {
+      "id": 1953718895640016,
+      "start": "2022-01-07T14:00:00.000Z",
+      "allRunners": {
+        "CR Belouizdad": {
+          "runnerId": 1953718898640116,
+          "back": 1.57,
+          "lay": 1.73
+        },
+        "JS Kabylie": {
+          "runnerId": 1953718898680016,
+          "back": 6.6,
+          "lay": 8.2
+        },
+        "DRAW (CR /JS )": {
+          "runnerId": 1953718898710016,
+          "back": 3.35,
+          "lay": 0
+        }
+      }
+    },
+    "CS Constantine vs JS Saoura": {
+      "id": 1953718881640016,
+      "start": "2022-01-07T14:00:00.000Z",
+      "allRunners": {
+        "CS Constantine": {
+          "runnerId": 1953718884720016,
+          "back": 1.71,
+          "lay": 1.89
+        },
+        "JS Saoura": {
+          "runnerId": 1953718884750116,
           "back": 5.8,
-          "lay": 6
+          "lay": 6.8
         },
-        "DRAW (Juv/Nap)": {
-          "runnerId": 1941717467270016,
-          "back": 3.85,
+        "DRAW (CS /JS )": {
+          "runnerId": 1953718884780116,
+          "back": 3.2,
           "lay": 3.9
         }
       }
     },
-    "Gremio Desportivo Sao-Carlense U20 vs Falcon FC U20": {
-      "id": 1953012527310016,
-      "start": "2022-01-06T20:00:00.000Z",
+    "KAA Gent vs AZ Alkmaar": {
+      "id": 1954477553430016,
+      "start": "2022-01-07T14:00:00.000Z",
       "allRunners": {
-        "Gremio Desportivo Sao-Carlense U20": {
-          "runnerId": 1953012528870016,
-          "back": 0,
+        "KAA Gent": {
+          "runnerId": 1954477554820116,
+          "back": 2.44,
           "lay": 0
         },
-        "Falcon FC U20": {
-          "runnerId": 1953012528900116,
-          "back": 0,
+        "AZ Alkmaar": {
+          "runnerId": 1954477554860016,
+          "back": 2.26,
           "lay": 0
         },
-        "DRAW (Gre/Fal)": {
-          "runnerId": 1953012528940016,
+        "DRAW (KAA/AZ )": {
+          "runnerId": 1954477554900016,
           "back": 0,
           "lay": 0
         }
       }
     },
-    "XV Jau U20 vs Mixto EC U20": {
-      "id": 1953012532910016,
-      "start": "2022-01-06T20:15:00.000Z",
+    "MC Alger vs US Biskra": {
+      "id": 1953718905970016,
+      "start": "2022-01-07T14:00:00.000Z",
       "allRunners": {
-        "XV Jau U20": {
-          "runnerId": 1953012534430016,
+        "MC Alger": {
+          "runnerId": 1953718908960016,
+          "back": 1.43,
+          "lay": 1.6
+        },
+        "US Biskra": {
+          "runnerId": 1953718908990016,
+          "back": 7.6,
+          "lay": 0
+        },
+        "DRAW (MC /US )": {
+          "runnerId": 1953718909020116,
+          "back": 3.95,
+          "lay": 0
+        }
+      }
+    },
+    "NC Magra U21 vs HB Chelghoum Laid U21": {
+      "id": 1955370599820016,
+      "start": "2022-01-07T14:00:00.000Z",
+      "allRunners": {
+        "NC Magra U21": {
+          "runnerId": 1955370600470116,
           "back": 0,
           "lay": 0
         },
-        "Mixto EC U20": {
-          "runnerId": 1953012534460016,
+        "HB Chelghoum Laid U21": {
+          "runnerId": 1955370600510016,
           "back": 0,
           "lay": 0
         },
-        "DRAW (XV /Mix)": {
-          "runnerId": 1953012534490116,
+        "DRAW (NC /HB )": {
+          "runnerId": 1955370600550016,
           "back": 0,
           "lay": 0
         }
       }
     },
-    "Rayo Majadahonda vs Atlético de Madrid": {
-      "id": 1950488170290016,
-      "start": "2022-01-06T20:30:00.000Z",
+    "Olympique de Medea U21 vs NA Hussein Dey U21": {
+      "id": 1955370595050016,
+      "start": "2022-01-07T14:00:00.000Z",
       "allRunners": {
-        "Rayo Majadahonda": {
-          "runnerId": 1950488173980016,
-          "back": 16.5,
-          "lay": 30
-        },
-        "Atlético de Madrid": {
-          "runnerId": 1950488174010116,
-          "back": 1.23,
-          "lay": 1.27
-        },
-        "DRAW (Ray/Atl)": {
-          "runnerId": 1950488174050016,
-          "back": 6.2,
-          "lay": 7.2
-        }
-      }
-    },
-    "Sao Carlos FL U20 vs América-MG U20": {
-      "id": 1953012541000016,
-      "start": "2022-01-06T22:15:00.000Z",
-      "allRunners": {
-        "Sao Carlos FL U20": {
-          "runnerId": 1953012542600116,
+        "Olympique de Medea U21": {
+          "runnerId": 1955370595710016,
           "back": 0,
           "lay": 0
         },
-        "América-MG U20": {
-          "runnerId": 1953012542640016,
+        "NA Hussein Dey U21": {
+          "runnerId": 1955370595910016,
           "back": 0,
           "lay": 0
         },
-        "DRAW (Sao/Amé)": {
-          "runnerId": 1953012542680016,
+        "DRAW (Oly/NA )": {
+          "runnerId": 1955370596030016,
           "back": 0,
           "lay": 0
         }
       }
     },
-    "Castanhal EC U20 vs Grêmio FBPA U20": {
-      "id": 1953012554430016,
-      "start": "2022-01-06T22:30:00.000Z",
+    "Paradou AC vs RC Arbaa": {
+      "id": 1953718938700016,
+      "start": "2022-01-07T14:00:00.000Z",
       "allRunners": {
-        "Castanhal EC U20": {
-          "runnerId": 1953012555960116,
+        "Paradou AC": {
+          "runnerId": 1953718941640016,
           "back": 0,
           "lay": 0
         },
-        "Grêmio FBPA U20": {
-          "runnerId": 1953012556000016,
+        "RC Arbaa": {
+          "runnerId": 1953718941670116,
           "back": 0,
           "lay": 0
         },
-        "DRAW (Cas/Grê)": {
-          "runnerId": 1953012556030116,
+        "DRAW (Par/RC )": {
+          "runnerId": 1953718941710016,
           "back": 0,
           "lay": 0
         }
       }
     },
-    "Ferroviária U20 vs Operario Ferroviario EC U20": {
-      "id": 1953012545740016,
-      "start": "2022-01-06T22:30:00.000Z",
+    "RC Relizane U21 vs ES Sétif U21": {
+      "id": 1955370610160016,
+      "start": "2022-01-07T14:00:00.000Z",
       "allRunners": {
-        "Ferroviária U20": {
-          "runnerId": 1953012547430016,
+        "RC Relizane U21": {
+          "runnerId": 1955370610910016,
           "back": 0,
           "lay": 0
         },
-        "Operario Ferroviario EC U20": {
-          "runnerId": 1953012547460116,
+        "ES Sétif U21": {
+          "runnerId": 1955370610940116,
           "back": 0,
           "lay": 0
         },
-        "DRAW (Fer/Ope)": {
-          "runnerId": 1953012547500116,
+        "DRAW (RC /ES )": {
+          "runnerId": 1955370610980016,
           "back": 0,
           "lay": 0
         }
       }
     },
-    "Club Celaya vs CD Tepatitlan de Morelos": {
-      "id": 1953162823230016,
-      "start": "2022-01-06T23:00:00.000Z",
+    "SC East Bengal vs Mumbai City": {
+      "id": 1954490815720016,
+      "start": "2022-01-07T14:00:00.000Z",
       "allRunners": {
-        "Club Celaya": {
-          "runnerId": 1953162825900016,
+        "SC East Bengal": {
+          "runnerId": 1954490817310116,
           "back": 0,
           "lay": 0
         },
-        "CD Tepatitlan de Morelos": {
-          "runnerId": 1953162825940016,
+        "Mumbai City": {
+          "runnerId": 1954490817350016,
+          "back": 1.46,
+          "lay": 1.65
+        },
+        "DRAW (SC /Mum)": {
+          "runnerId": 1954490817380116,
+          "back": 4.6,
+          "lay": 0
+        }
+      }
+    },
+    "União Suzano AC U20 vs Concordia CA U20": {
+      "id": 1953721044120016,
+      "start": "2022-01-07T14:00:00.000Z",
+      "allRunners": {
+        "União Suzano AC U20": {
+          "runnerId": 1953721046070116,
           "back": 0,
           "lay": 0
         },
-        "DRAW (Clu/CD )": {
-          "runnerId": 1953162825970016,
+        "Concordia CA U20": {
+          "runnerId": 1953721046110016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Uni/Con)": {
+          "runnerId": 1953721046150016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "WA Tlemcen U21 vs USM Alger U21": {
+      "id": 1955370585190016,
+      "start": "2022-01-07T14:00:00.000Z",
+      "allRunners": {
+        "WA Tlemcen U21": {
+          "runnerId": 1955370585870016,
+          "back": 0,
+          "lay": 0
+        },
+        "USM Alger U21": {
+          "runnerId": 1955370585900116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (WA /USM)": {
+          "runnerId": 1955370585930116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Medeama SC vs Berekum Chelsea F.C.": {
+      "id": 1953661880080016,
+      "start": "2022-01-07T15:00:00.000Z",
+      "allRunners": {
+        "Medeama SC": {
+          "runnerId": 1953661881040016,
+          "back": 0,
+          "lay": 0
+        },
+        "Berekum Chelsea F.C.": {
+          "runnerId": 1953661881070116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Med/Ber)": {
+          "runnerId": 1953661881110016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Al-Taawoun Buraidah vs Al Hazm": {
+      "id": 1954488610330016,
+      "start": "2022-01-07T15:05:00.000Z",
+      "allRunners": {
+        "Al-Taawoun Buraidah": {
+          "runnerId": 1954488613940016,
+          "back": 0,
+          "lay": 0
+        },
+        "Al Hazm": {
+          "runnerId": 1954488613970016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Al )": {
+          "runnerId": 1954488614010016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Al Sadd vs Qatar SC": {
+      "id": 1953710458530016,
+      "start": "2022-01-07T15:25:00.000Z",
+      "allRunners": {
+        "Al Sadd": {
+          "runnerId": 1953710460100016,
+          "back": 0,
+          "lay": 0
+        },
+        "Qatar SC": {
+          "runnerId": 1953710460140016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al /Qat)": {
+          "runnerId": 1953710460170116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Al-Gharafa SC vs Al-Ahli": {
+      "id": 1953710449230016,
+      "start": "2022-01-07T15:25:00.000Z",
+      "allRunners": {
+        "Al-Gharafa SC": {
+          "runnerId": 1953710450850016,
+          "back": 1.75,
+          "lay": 1.94
+        },
+        "Al-Ahli": {
+          "runnerId": 1953710450890016,
+          "back": 4.2,
+          "lay": 5
+        },
+        "DRAW (Al-/Al-)": {
+          "runnerId": 1953710450930016,
+          "back": 3.9,
+          "lay": 4.6
+        }
+      }
+    },
+    "Société Omnisports de l'Armée vs ES Bafing": {
+      "id": 1953669820060016,
+      "start": "2022-01-07T15:30:00.000Z",
+      "allRunners": {
+        "Société Omnisports de l'Armée": {
+          "runnerId": 1953669821650016,
+          "back": 0,
+          "lay": 0
+        },
+        "ES Bafing": {
+          "runnerId": 1953669821680016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Soc/ES )": {
+          "runnerId": 1953669821720016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "CA Juventus U20 vs Canaã Esporte Clube U20": {
+      "id": 1953721116910016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "CA Juventus U20": {
+          "runnerId": 1953721118690116,
+          "back": 0,
+          "lay": 0
+        },
+        "Canaã Esporte Clube U20": {
+          "runnerId": 1953721118730016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (CA /Can)": {
+          "runnerId": 1953721118770116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "CA Votuporanguense U20 vs Clube Atletico Matogrossense U20": {
+      "id": 1953721050200016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "CA Votuporanguense U20": {
+          "runnerId": 1953721051910116,
+          "back": 0,
+          "lay": 0
+        },
+        "Clube Atletico Matogrossense U20": {
+          "runnerId": 1953721051950116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (CA /Clu)": {
+          "runnerId": 1953721051990016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Flamengo de Guarulhos U20 vs Santana EC U20": {
+      "id": 1953721086050016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "Flamengo de Guarulhos U20": {
+          "runnerId": 1953721087780116,
+          "back": 0,
+          "lay": 0
+        },
+        "Santana EC U20": {
+          "runnerId": 1953721087820016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Fla/San)": {
+          "runnerId": 1953721087850116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "GAMTEL Football Club vs Red Hawks FC": {
+      "id": 1955330192150016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "GAMTEL Football Club": {
+          "runnerId": 1955330192740116,
+          "back": 0,
+          "lay": 0
+        },
+        "Red Hawks FC": {
+          "runnerId": 1955330192780016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (GAM/Red)": {
+          "runnerId": 1955330192810016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Jaguariuna FC U20 vs Fluminense EC Piaui U20": {
+      "id": 1953721076140016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "Jaguariuna FC U20": {
+          "runnerId": 1953721078080016,
+          "back": 0,
+          "lay": 0
+        },
+        "Fluminense EC Piaui U20": {
+          "runnerId": 1953721078110116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Jag/Flu)": {
+          "runnerId": 1953721078150016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Manthiqueira U20 vs EC São José (RS) U20": {
+      "id": 1953721069460016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "Manthiqueira U20": {
+          "runnerId": 1953721071270016,
+          "back": 3.6,
+          "lay": 0
+        },
+        "EC São José (RS) U20": {
+          "runnerId": 1953721071300016,
+          "back": 1.94,
+          "lay": 2.22
+        },
+        "DRAW (Man/EC )": {
+          "runnerId": 1953721071330016,
+          "back": 3.4,
+          "lay": 0
+        }
+      }
+    },
+    "Maua Futebol TE U20 vs Volta Redonda U20": {
+      "id": 1953721105320016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "Maua Futebol TE U20": {
+          "runnerId": 1953721107150016,
+          "back": 0,
+          "lay": 0
+        },
+        "Volta Redonda U20": {
+          "runnerId": 1953721107180116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mau/Vol)": {
+          "runnerId": 1953721107220116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "SE Matonense U20 vs Jacuipense U20": {
+      "id": 1953721062810016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "SE Matonense U20": {
+          "runnerId": 1953721064580116,
+          "back": 0,
+          "lay": 0
+        },
+        "Jacuipense U20": {
+          "runnerId": 1953721064610116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (SE /Jac)": {
+          "runnerId": 1953721064650016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Tanabi EC U20 vs Aquidauanense U20": {
+      "id": 1953721056310016,
+      "start": "2022-01-07T16:00:00.000Z",
+      "allRunners": {
+        "Tanabi EC U20": {
+          "runnerId": 1953721058060116,
+          "back": 1.63,
+          "lay": 1.86
+        },
+        "Aquidauanense U20": {
+          "runnerId": 1953721058100016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Tan/Aqu)": {
+          "runnerId": 1953721058130016,
+          "back": 0,
+          "lay": 4.7
+        }
+      }
+    },
+    "Ituano FC U20 vs Fortaleza U20": {
+      "id": 1953721126210016,
+      "start": "2022-01-07T16:15:00.000Z",
+      "allRunners": {
+        "Ituano FC U20": {
+          "runnerId": 1953721128000016,
+          "back": 0,
+          "lay": 0
+        },
+        "Fortaleza U20": {
+          "runnerId": 1953721128040016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Itu/For)": {
+          "runnerId": 1953721128070116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Al-Ittihad Jeddah vs Al-Fayha FC": {
+      "id": 1954488624910016,
+      "start": "2022-01-07T16:55:00.000Z",
+      "allRunners": {
+        "Al-Ittihad Jeddah": {
+          "runnerId": 1954488628450016,
+          "back": 1.5,
+          "lay": 1.75
+        },
+        "Al-Fayha FC": {
+          "runnerId": 1954488628480116,
+          "back": 5.2,
+          "lay": 0
+        },
+        "DRAW (Al-/Al-)": {
+          "runnerId": 1954488628520016,
+          "back": 3.95,
+          "lay": 5.5
+        }
+      }
+    },
+    "MC Oran vs ASO Chlef": {
+      "id": 1953718929030016,
+      "start": "2022-01-07T17:00:00.000Z",
+      "allRunners": {
+        "MC Oran": {
+          "runnerId": 1953718931890116,
+          "back": 0,
+          "lay": 0
+        },
+        "ASO Chlef": {
+          "runnerId": 1953718931930016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (MC /ASO)": {
+          "runnerId": 1953718931970016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Trabzonspor vs Yeni Malatyaspor": {
+      "id": 1949424849780016,
+      "start": "2022-01-07T17:00:00.000Z",
+      "allRunners": {
+        "Trabzonspor": {
+          "runnerId": 1949424852760016,
+          "back": 1.33,
+          "lay": 1.38
+        },
+        "Yeni Malatyaspor": {
+          "runnerId": 1949424852800016,
+          "back": 10,
+          "lay": 12.5
+        },
+        "DRAW (Tra/Yen)": {
+          "runnerId": 1949424852840016,
+          "back": 5.4,
+          "lay": 6.2
+        }
+      }
+    },
+    "Annecy FC vs FC Bourg-Péronnas": {
+      "id": 1953669480300016,
+      "start": "2022-01-07T17:30:00.000Z",
+      "allRunners": {
+        "Annecy FC": {
+          "runnerId": 1953669483630116,
+          "back": 2.5,
+          "lay": 2.92
+        },
+        "FC Bourg-Péronnas": {
+          "runnerId": 1953669483670016,
+          "back": 2.78,
+          "lay": 3.25
+        },
+        "DRAW (Ann/FC )": {
+          "runnerId": 1953669483700116,
+          "back": 3.1,
+          "lay": 3.75
+        }
+      }
+    },
+    "Chambly Oise FC vs US Concarneau": {
+      "id": 1953669434290016,
+      "start": "2022-01-07T17:30:00.000Z",
+      "allRunners": {
+        "Chambly Oise FC": {
+          "runnerId": 1953669437580016,
+          "back": 0,
+          "lay": 0
+        },
+        "US Concarneau": {
+          "runnerId": 1953669437610116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Cha/US )": {
+          "runnerId": 1953669437650016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "FC Bastia-Borgo vs LB Châteauroux": {
+      "id": 1953669508350016,
+      "start": "2022-01-07T17:30:00.000Z",
+      "allRunners": {
+        "FC Bastia-Borgo": {
+          "runnerId": 1953669511670016,
+          "back": 0,
+          "lay": 0
+        },
+        "LB Châteauroux": {
+          "runnerId": 1953669511700116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (FC /LB )": {
+          "runnerId": 1953669511740016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Orleans vs CS Sedan Ardennes": {
+      "id": 1953669468400016,
+      "start": "2022-01-07T17:30:00.000Z",
+      "allRunners": {
+        "Orleans": {
+          "runnerId": 1953669471730016,
+          "back": 0,
+          "lay": 0
+        },
+        "CS Sedan Ardennes": {
+          "runnerId": 1953669471760116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Orl/CS )": {
+          "runnerId": 1953669471800016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Red Star FC 93 vs Stade Lavallois": {
+      "id": 1953669452780016,
+      "start": "2022-01-07T17:30:00.000Z",
+      "allRunners": {
+        "Red Star FC 93": {
+          "runnerId": 1953669456180116,
+          "back": 2.16,
+          "lay": 2.58
+        },
+        "Stade Lavallois": {
+          "runnerId": 1953669456220016,
+          "back": 3.35,
+          "lay": 4.2
+        },
+        "DRAW (Red/Sta)": {
+          "runnerId": 1953669456250116,
+          "back": 2.92,
+          "lay": 3.6
+        }
+      }
+    },
+    "Stade Briochin vs US Boulogne": {
+      "id": 1953669419520016,
+      "start": "2022-01-07T17:30:00.000Z",
+      "allRunners": {
+        "Stade Briochin": {
+          "runnerId": 1953669422910016,
+          "back": 2.06,
+          "lay": 2.42
+        },
+        "US Boulogne": {
+          "runnerId": 1953669422950016,
+          "back": 3.7,
+          "lay": 4.6
+        },
+        "DRAW (Sta/US )": {
+          "runnerId": 1953669422990016,
+          "back": 2.92,
+          "lay": 3.6
+        }
+      }
+    },
+    "Helmond Sport vs FC Dordrecht": {
+      "id": 1952839522270016,
+      "start": "2022-01-07T17:45:00.000Z",
+      "allRunners": {
+        "Helmond Sport": {
+          "runnerId": 1952839523680016,
+          "back": 1.75,
+          "lay": 2.06
+        },
+        "FC Dordrecht": {
+          "runnerId": 1952839523720016,
+          "back": 3.6,
+          "lay": 4.7
+        },
+        "DRAW (Hel/FC )": {
+          "runnerId": 1952839523760016,
+          "back": 3.8,
+          "lay": 5.1
+        }
+      }
+    },
+    "CO Korhogo vs ASI Abengourou": {
+      "id": 1953669811960016,
+      "start": "2022-01-07T18:00:00.000Z",
+      "allRunners": {
+        "CO Korhogo": {
+          "runnerId": 1953669813710016,
+          "back": 0,
+          "lay": 0
+        },
+        "ASI Abengourou": {
+          "runnerId": 1953669813750016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (CO /ASI)": {
+          "runnerId": 1953669813790016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "AA Portuguesa Santista U20 vs CRB U20": {
+      "id": 1953721174140016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "AA Portuguesa Santista U20": {
+          "runnerId": 1953721175920016,
+          "back": 0,
+          "lay": 0
+        },
+        "CRB U20": {
+          "runnerId": 1953721175950016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (AA /CRB)": {
+          "runnerId": 1953721175980116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "AD Guarulhos U20 vs Avaí U20": {
+      "id": 1953721161770016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "AD Guarulhos U20": {
+          "runnerId": 1953721163560116,
+          "back": 0,
+          "lay": 0
+        },
+        "Avaí U20": {
+          "runnerId": 1953721163600116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (AD /Ava)": {
+          "runnerId": 1953721163640016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Fast Clube Manaus U20 vs Fluminense FC U20": {
+      "id": 1953721148440016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "Fast Clube Manaus U20": {
+          "runnerId": 1953721150280016,
+          "back": 0,
+          "lay": 0
+        },
+        "Fluminense FC U20": {
+          "runnerId": 1953721150310116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Fas/Flu)": {
+          "runnerId": 1953721150350016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Grêmio Esportivo Mauaense U20 vs Atlético Goianiense U20": {
+      "id": 1953721168060016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "Grêmio Esportivo Mauaense U20": {
+          "runnerId": 1953721169800016,
+          "back": 0,
+          "lay": 0
+        },
+        "Atlético Goianiense U20": {
+          "runnerId": 1953721169830116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Grê/Atl)": {
+          "runnerId": 1953721169870116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Guarani SP U20 vs Villa Nova FC (GO) U20": {
+      "id": 1953721142610016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "Guarani SP U20": {
+          "runnerId": 1953721144350116,
+          "back": 0,
+          "lay": 0
+        },
+        "Villa Nova FC (GO) U20": {
+          "runnerId": 1953721144390016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Gua/Vil)": {
+          "runnerId": 1953721144430016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Monte Azul U20 vs Bahia EC U20": {
+      "id": 1953721134200016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "Monte Azul U20": {
+          "runnerId": 1953721135950116,
+          "back": 0,
+          "lay": 0
+        },
+        "Bahia EC U20": {
+          "runnerId": 1953721135990016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mon/Bah)": {
+          "runnerId": 1953721136020016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Red Bull Bragantino U20 vs ABC Futebol U20": {
+      "id": 1953721328910016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "Red Bull Bragantino U20": {
+          "runnerId": 1953721330700016,
+          "back": 1.44,
+          "lay": 1.61
+        },
+        "ABC Futebol U20": {
+          "runnerId": 1953721330730116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Red/ABC)": {
+          "runnerId": 1953721330770016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "XV Piracicaba U20 vs EC Vitória U20": {
+      "id": 1953721155130016,
+      "start": "2022-01-07T18:15:00.000Z",
+      "allRunners": {
+        "XV Piracicaba U20": {
+          "runnerId": 1953721157840016,
+          "back": 0,
+          "lay": 0
+        },
+        "EC Vitória U20": {
+          "runnerId": 1953721157870116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (XV /EC )": {
+          "runnerId": 1953721157910016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Santa Clara vs Sporting CP": {
+      "id": 1950262561760016,
+      "start": "2022-01-07T18:30:00.000Z",
+      "allRunners": {
+        "Santa Clara": {
+          "runnerId": 1950262564800116,
+          "back": 9,
+          "lay": 10.5
+        },
+        "Sporting CP": {
+          "runnerId": 1950262564840016,
+          "back": 1.45,
+          "lay": 1.5
+        },
+        "DRAW (San/Spo)": {
+          "runnerId": 1950262564880016,
+          "back": 4.6,
+          "lay": 4.9
+        }
+      }
+    },
+    "Brighton & Hove Albion U23 vs Arsenal U23": {
+      "id": 1952859402060016,
+      "start": "2022-01-07T19:00:00.000Z",
+      "allRunners": {
+        "Brighton & Hove Albion U23": {
+          "runnerId": 1952859404520116,
+          "back": 0,
+          "lay": 0
+        },
+        "Arsenal U23": {
+          "runnerId": 1952859404560016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Bri/Ars)": {
+          "runnerId": 1952859404590116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Exeter City vs Portsmouth": {
+      "id": 1940732866870016,
+      "start": "2022-01-07T19:30:00.000Z",
+      "allRunners": {
+        "Exeter City": {
+          "runnerId": 1940732867690116,
+          "back": 3.5,
+          "lay": 4.3
+        },
+        "Portsmouth": {
+          "runnerId": 1940732867730016,
+          "back": 1.99,
+          "lay": 2.3
+        },
+        "DRAW (Exe/Por)": {
+          "runnerId": 1940732867770016,
+          "back": 3.2,
+          "lay": 4.2
+        }
+      }
+    },
+    "FC Bayern München vs Borussia Mönchengladbach": {
+      "id": 1941726611260016,
+      "start": "2022-01-07T19:30:00.000Z",
+      "allRunners": {
+        "FC Bayern München": {
+          "runnerId": 1941726616980016,
+          "back": 1.4,
+          "lay": 1.41
+        },
+        "Borussia Mönchengladbach": {
+          "runnerId": 1941726617010116,
+          "back": 8,
+          "lay": 8.6
+        },
+        "DRAW (FC /Bor)": {
+          "runnerId": 1941726617050016,
+          "back": 5.9,
+          "lay": 6.4
+        }
+      }
+    },
+    "Brentwood Town vs Hullbridge Sports": {
+      "id": 1955400331110016,
+      "start": "2022-01-07T19:45:00.000Z",
+      "allRunners": {
+        "Brentwood Town": {
+          "runnerId": 1955400332470116,
+          "back": 0,
+          "lay": 0
+        },
+        "Hullbridge Sports": {
+          "runnerId": 1955400332510016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Bre/Hul)": {
+          "runnerId": 1955400332550016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Edinburgh City vs Elgin City": {
+      "id": 1953955447440016,
+      "start": "2022-01-07T19:45:00.000Z",
+      "allRunners": {
+        "Edinburgh City": {
+          "runnerId": 1953955452130016,
+          "back": 2.66,
+          "lay": 3.15
+        },
+        "Elgin City": {
+          "runnerId": 1953955452170016,
+          "back": 2.56,
+          "lay": 3.05
+        },
+        "DRAW (Edi/Elg)": {
+          "runnerId": 1953955452210016,
+          "back": 3.2,
+          "lay": 3.85
+        }
+      }
+    },
+    "Manchester 62 FC vs Lincoln Red Imps FC": {
+      "id": 1955602457180016,
+      "start": "2022-01-07T19:45:00.000Z",
+      "allRunners": {
+        "Manchester 62 FC": {
+          "runnerId": 1955602458240016,
+          "back": 0,
+          "lay": 0
+        },
+        "Lincoln Red Imps FC": {
+          "runnerId": 1955602458280016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Man/Lin)": {
+          "runnerId": 1955602458310116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Girondins de Bordeaux vs Olympique Marseille": {
+      "id": 1942539759430016,
+      "start": "2022-01-07T20:00:00.000Z",
+      "allRunners": {
+        "Girondins de Bordeaux": {
+          "runnerId": 1942539759950016,
+          "back": 5.7,
+          "lay": 6.2
+        },
+        "Olympique Marseille": {
+          "runnerId": 1942539759990016,
+          "back": 1.61,
+          "lay": 1.64
+        },
+        "DRAW (Gir/Oly)": {
+          "runnerId": 1942539760030016,
+          "back": 4.5,
+          "lay": 4.8
+        }
+      }
+    },
+    "GO Audax U20 vs Camacariense U20": {
+      "id": 1953721180870016,
+      "start": "2022-01-07T20:00:00.000Z",
+      "allRunners": {
+        "GO Audax U20": {
+          "runnerId": 1953721182620016,
+          "back": 0,
+          "lay": 0
+        },
+        "Camacariense U20": {
+          "runnerId": 1953721182660016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (GO /Cam)": {
+          "runnerId": 1953721182700016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Roda JC vs MVV Maastricht": {
+      "id": 1952839534980016,
+      "start": "2022-01-07T20:00:00.000Z",
+      "allRunners": {
+        "Roda JC": {
+          "runnerId": 1952839536200116,
+          "back": 1.27,
+          "lay": 1.31
+        },
+        "MVV Maastricht": {
+          "runnerId": 1952839536240016,
+          "back": 10.5,
+          "lay": 12.5
+        },
+        "DRAW (Rod/MVV)": {
+          "runnerId": 1952839536280016,
+          "back": 6.6,
+          "lay": 7.6
+        }
+      }
+    },
+    "SD Amorebieta vs CD Tenerife": {
+      "id": 1949408816230016,
+      "start": "2022-01-07T20:00:00.000Z",
+      "allRunners": {
+        "SD Amorebieta": {
+          "runnerId": 1949408820420016,
+          "back": 3.3,
+          "lay": 3.5
+        },
+        "CD Tenerife": {
+          "runnerId": 1949408820450116,
+          "back": 2.5,
+          "lay": 2.6
+        },
+        "DRAW (SD /CD )": {
+          "runnerId": 1949408820490016,
+          "back": 3.1,
+          "lay": 3.25
+        }
+      }
+    },
+    "Swindon Town vs Manchester City": {
+      "id": 1949394019930016,
+      "start": "2022-01-07T20:00:00.000Z",
+      "allRunners": {
+        "Swindon Town": {
+          "runnerId": 1949394024300016,
+          "back": 14.5,
+          "lay": 20
+        },
+        "Manchester City": {
+          "runnerId": 1949394024340016,
+          "back": 1.19,
+          "lay": 1.22
+        },
+        "DRAW (Swi/Man)": {
+          "runnerId": 1949394024370016,
+          "back": 8.4,
+          "lay": 9.4
+        }
+      }
+    },
+    "Uniao Mogi das Cruzes FC U20 vs Sao Raimundo EC U20": {
+      "id": 1953721187590016,
+      "start": "2022-01-07T20:15:00.000Z",
+      "allRunners": {
+        "Uniao Mogi das Cruzes FC U20": {
+          "runnerId": 1953721189440116,
+          "back": 0,
+          "lay": 0
+        },
+        "Sao Raimundo EC U20": {
+          "runnerId": 1953721189480016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Uni/Sao)": {
+          "runnerId": 1953721189520016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "AA Francana U20 vs Confianca EC U20": {
+      "id": 1953992402310016,
+      "start": "2022-01-07T20:45:00.000Z",
+      "allRunners": {
+        "AA Francana U20": {
+          "runnerId": 1953992404210016,
+          "back": 0,
+          "lay": 0
+        },
+        "Confianca EC U20": {
+          "runnerId": 1953992404250016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (AA /Con)": {
+          "runnerId": 1953992404290016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "EC Santo André U20 vs Joinville EC U20": {
+      "id": 1953992408560016,
+      "start": "2022-01-07T22:15:00.000Z",
+      "allRunners": {
+        "EC Santo André U20": {
+          "runnerId": 1953992410270116,
+          "back": 0,
+          "lay": 0
+        },
+        "Joinville EC U20": {
+          "runnerId": 1953992410310016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (EC /Joi)": {
+          "runnerId": 1953992410350016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "EC São José U20 vs Resende FC U20": {
+      "id": 1953992414500016,
+      "start": "2022-01-07T22:30:00.000Z",
+      "allRunners": {
+        "EC São José U20": {
+          "runnerId": 1953992416180116,
+          "back": 0,
+          "lay": 0
+        },
+        "Resende FC U20": {
+          "runnerId": 1953992416220116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (EC /Res)": {
+          "runnerId": 1953992416260016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Portuguesa U20 vs SC Internacional U20": {
+      "id": 1953992420510016,
+      "start": "2022-01-07T22:30:00.000Z",
+      "allRunners": {
+        "Portuguesa U20": {
+          "runnerId": 1953992422350016,
+          "back": 0,
+          "lay": 0
+        },
+        "SC Internacional U20": {
+          "runnerId": 1953992422390116,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Por/SC )": {
+          "runnerId": 1953992422440016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "CD Tapatio vs Mineros de Zacatecas": {
+      "id": 1953984868920016,
+      "start": "2022-01-07T23:00:00.000Z",
+      "allRunners": {
+        "CD Tapatio": {
+          "runnerId": 1953984871720016,
+          "back": 2.5,
+          "lay": 3.1
+        },
+        "Mineros de Zacatecas": {
+          "runnerId": 1953984871750016,
+          "back": 2.64,
+          "lay": 3.2
+        },
+        "DRAW (CD /Min)": {
+          "runnerId": 1953984871780116,
+          "back": 3,
+          "lay": 3.8
+        }
+      }
+    },
+    "Ponte Preta U20 vs EC Juventude U20": {
+      "id": 1953992426420016,
+      "start": "2022-01-07T23:00:00.000Z",
+      "allRunners": {
+        "Ponte Preta U20": {
+          "runnerId": 1953992428210016,
+          "back": 0,
+          "lay": 0
+        },
+        "EC Juventude U20": {
+          "runnerId": 1953992428250016,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Pon/EC )": {
+          "runnerId": 1953992428280016,
           "back": 0,
           "lay": 0
         }

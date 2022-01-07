@@ -91,13 +91,17 @@
 			const obj = JSON.parse(data);
 			console.log(obj);
 
-			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify({ name:'Jay', age: 7 }));
+			// notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify({ name:'Jay', age: 7 }));
 		});
 	});
 
 	//////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
 	// Server listen at the given port number
 	const PORT = process.env.PORT || 3000;
+
+	app.use(express.json());               // for body parsing
+	app.use(express.static('../client'));  // path to public folder you can access through server
+
 	httpServer.listen(PORT, async () => {
 		console.log("Server is running on the port : " + httpServer.address().port);
 	});
@@ -651,6 +655,7 @@
 
 					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 				}
+				notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
 			}
 		}
@@ -833,6 +838,7 @@
 
 			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
+			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		}
 	};
 
@@ -882,7 +888,16 @@
 	(function () {
 		getNewSession();
 	})(); // IIF - Main entry (login)
+
+
+
 }()); // namespace
+
+
+
+
+
+
 
 /*
 
