@@ -182,7 +182,6 @@ window.addEventListener('load', function() {
 	  };
 
 
-	let g_eventCounter = 0;
 	let g_runnersStr = '';
 
 	printRunner = function(runnerName, odd, cssClass) {
@@ -196,7 +195,7 @@ window.addEventListener('load', function() {
 	};
 
 	createPredictedWinnersTable = function(predictedWinnerList) {
-		g_eventCounter = 0;
+		let eventCounter = 0;
 		g_runnersStr = '';
 		let metaData = '';
 
@@ -215,13 +214,12 @@ window.addEventListener('load', function() {
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
-									<div class ="commonClass">(${++g_eventCounter})   ${eventName}   (${sport.toUpperCase()})</div>
+									<div class ="commonClass">(${++eventCounter})   ${eventName}   (${sport.toUpperCase()})</div>
 								</div>
 								<br/>`;
 
 					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
 					metaData = predictedWinnerList[sport][eventNo]['metaData'];
-					
 
 					printRunner(predictedWinnerList[sport][eventNo]['runner-name'], predictedWinnerList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
 
@@ -238,12 +236,18 @@ window.addEventListener('load', function() {
 			}
 		}
 
+		document.querySelector('#statistics').innerHTML = `# Total Number of Predictions = ${eventCounter}`;
+		document.querySelector('#statistics').innerHTML += `<br>Today's Bet Amount Limit =  £ ${metaData.remainingTotalBetAmountLimit} / £ ${metaData.todayTotalBetAmountLimit}, 
+																UserBalance = £ ${metaData.userBalance}, 
+																WinConfidencePercentage = ${metaData.winConfidencePercentage}%, 
+																MinProfitOdd = ${metaData.minProfitOdd}, 
+																Stake = £ ${metaData.stakeValue}`;
+		// document.querySelector('#statistics').innerHTML += `<br>MetaData = ${JSON.stringify(metaData)}`;
+
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
-		document.querySelector('#statistics').innerHTML = `# Total Number of Predictions = ${g_eventCounter}`;
-		document.querySelector('#statistics').innerHTML += `<br>MetaData = ${JSON.stringify(metaData)}`;
 	};
 
-	// createPredictedWinnersTable(g_sportsWiseBetList);
+	// createPredictedWinnersTable(g_sportsWiseBetList); // test
 
 
 
