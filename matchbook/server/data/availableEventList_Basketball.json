@@ -248,11 +248,11 @@
         "Minas Tênis Clube": {
           "runnerId": 1957242497870116,
           "back": 1.15,
-          "lay": 1.18
+          "lay": 1.19
         },
         "ZOPONE Bauru Basket": {
           "runnerId": 1957242497910116,
-          "back": 6.4,
+          "back": 6.2,
           "lay": 7.8
         }
       }
@@ -1189,13 +1189,13 @@
       "allRunners": {
         "Cerrado Iesplan": {
           "runnerId": 1957242502070016,
-          "back": 1.62,
+          "back": 1.63,
           "lay": 1.79
         },
         "Fortaleza Basquete Cearense": {
           "runnerId": 1957242502100116,
           "back": 2.26,
-          "lay": 2.62
+          "lay": 2.6
         }
       }
     },

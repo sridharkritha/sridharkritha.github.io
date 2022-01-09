@@ -7,13 +7,13 @@
       "allRunners": {
         "Gael Monfils": {
           "runnerId": 1956855662520116,
-          "back": 1.16,
+          "back": 1.14,
           "lay": 1.29
         },
         "Karen Khachanov": {
           "runnerId": 1956855662570016,
           "back": 0,
-          "lay": 7
+          "lay": 7.8
         }
       }
     },
@@ -40,7 +40,7 @@
         "Rafael Nadal": {
           "runnerId": 1956890733180016,
           "back": 1.12,
-          "lay": 0
+          "lay": 1.25
         },
         "Maxime Cressy": {
           "runnerId": 1956890733220016,

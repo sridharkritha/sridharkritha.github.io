@@ -7,18 +7,18 @@
       "allRunners": {
         "Melbourne City FC": {
           "runnerId": 1954204509350016,
-          "back": 1.63,
-          "lay": 2.02
+          "back": 1.64,
+          "lay": 1.88
         },
         "Western Sydney Wanderers": {
           "runnerId": 1954204509380116,
-          "back": 5,
-          "lay": 8.4
+          "back": 6.2,
+          "lay": 8.2
         },
         "DRAW (Mel/Wes)": {
           "runnerId": 1954204509420016,
           "back": 3.1,
-          "lay": 3.9
+          "lay": 3.85
         }
       }
     },
@@ -532,7 +532,7 @@
       "allRunners": {
         "Prachuap FC": {
           "runnerId": 1955308444610016,
-          "back": 2.14,
+          "back": 2.18,
           "lay": 2.48
         },
         "Khonkaen United FC": {
@@ -1498,17 +1498,17 @@
       "allRunners": {
         "Girona": {
           "runnerId": 1951009924920016,
-          "back": 1.79,
-          "lay": 1.82
+          "back": 1.8,
+          "lay": 1.85
         },
         "Fuenlabrada": {
           "runnerId": 1951009924950116,
-          "back": 5.8,
+          "back": 5.9,
           "lay": 6.4
         },
         "DRAW (Gir/Fue)": {
           "runnerId": 1951009924990016,
-          "back": 3.5,
+          "back": 3.4,
           "lay": 3.6
         }
       }
@@ -1756,7 +1756,7 @@
         "Stade Reims": {
           "runnerId": 1942539774650016,
           "back": 3.1,
-          "lay": 3.2
+          "lay": 3.15
         },
         "DRAW (Cle/Sta)": {
           "runnerId": 1942539774690016,
@@ -2391,7 +2391,7 @@
         "DRAW (Lug/Mir)": {
           "runnerId": 1951009951560116,
           "back": 3.25,
-          "lay": 3.4
+          "lay": 3.35
         }
       }
     },
@@ -2622,7 +2622,7 @@
         "DRAW (Por/Mar)": {
           "runnerId": 1951050854440116,
           "back": 3.25,
-          "lay": 3.5
+          "lay": 3.45
         }
       }
     },
@@ -2638,12 +2638,12 @@
         "Atalanta": {
           "runnerId": 1941717608350016,
           "back": 1.41,
-          "lay": 1.51
+          "lay": 1.5
         },
         "DRAW (Udi/Ata)": {
           "runnerId": 1941717608390016,
-          "back": 4.7,
-          "lay": 5.6
+          "back": 4.9,
+          "lay": 5.5
         }
       }
     },
@@ -3578,7 +3578,7 @@
         "Sporting de Braga": {
           "runnerId": 1951050819980016,
           "back": 1.45,
-          "lay": 1.5
+          "lay": 1.49
         },
         "Famalicão": {
           "runnerId": 1951050820010116,
@@ -3724,12 +3724,12 @@
       "allRunners": {
         "Ethiopia": {
           "runnerId": 1953582311770116,
-          "back": 4.6,
+          "back": 4.5,
           "lay": 4.9
         },
         "Cape Verde": {
           "runnerId": 1953582311810016,
-          "back": 2.08,
+          "back": 2.1,
           "lay": 2.18
         },
         "DRAW (Eth/Cap)": {
