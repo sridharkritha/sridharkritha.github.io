@@ -1,0 +1,101 @@
+{
+  "id": 9,
+  "events": {
+    "Gael Monfils vs Karen Khachanov": {
+      "id": 1956855662170016,
+      "start": "2022-01-09T07:36:00.000Z",
+      "allRunners": {
+        "Gael Monfils": {
+          "runnerId": 1956855662520116,
+          "back": 1.16,
+          "lay": 1.29
+        },
+        "Karen Khachanov": {
+          "runnerId": 1956855662570016,
+          "back": 0,
+          "lay": 7
+        }
+      }
+    },
+    "Panna Udvardy vs Giuliana Olmos": {
+      "id": 1956745767420116,
+      "start": "2022-01-09T08:28:00.000Z",
+      "allRunners": {
+        "Panna Udvardy": {
+          "runnerId": 1956745767810016,
+          "back": 0,
+          "lay": 0
+        },
+        "Giuliana Olmos": {
+          "runnerId": 1956745767840116,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Rafael Nadal vs Maxime Cressy": {
+      "id": 1956890729060016,
+      "start": "2022-01-09T08:33:00.000Z",
+      "allRunners": {
+        "Rafael Nadal": {
+          "runnerId": 1956890733180016,
+          "back": 1.12,
+          "lay": 0
+        },
+        "Maxime Cressy": {
+          "runnerId": 1956890733220016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Roberto Bautista Agut vs Felix Auger-Aliassime": {
+      "id": 1956757083070016,
+      "start": "2022-01-09T08:36:00.000Z",
+      "allRunners": {
+        "Roberto Bautista Agut": {
+          "runnerId": 1956757083410016,
+          "back": 1.38,
+          "lay": 0
+        },
+        "Felix Auger-Aliassime": {
+          "runnerId": 1956757083450016,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Facundo Diaz Acosta vs Santiago Fa Rodriguez Taverna": {
+      "id": 1957020813710016,
+      "start": "2022-01-09T13:00:00.000Z",
+      "allRunners": {
+        "Facundo Diaz Acosta": {
+          "runnerId": 1957020814230116,
+          "back": 2.22,
+          "lay": 2.5
+        },
+        "Santiago Fa Rodriguez Taverna": {
+          "runnerId": 1957020814270016,
+          "back": 1.67,
+          "lay": 1.82
+        }
+      }
+    },
+    "Mukund Sasikumar vs Luca Nardi": {
+      "id": 1957000311990016,
+      "start": "2022-01-09T17:00:00.000Z",
+      "allRunners": {
+        "Mukund Sasikumar": {
+          "runnerId": 1957000312490116,
+          "back": 3.2,
+          "lay": 3.75
+        },
+        "Luca Nardi": {
+          "runnerId": 1957000312530116,
+          "back": 1.37,
+          "lay": 1.46
+        }
+      }
+    }
+  }
+}

@@ -50,9 +50,30 @@
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	// let g_sportsInterested = ['Horse Racing','Greyhound Racing', 'Cricket'];  
-	// let g_sportsInterested = ['Horse Racing'];
-	let g_sportsInterested = ['Horse Racing','Soccer'];
+	// let g_sportsInterested = ['ALL'];
+	let g_sportsInterested = [
+		'Horse Racing',
+
+		'American Football',
+		"Baseball",
+		'Basketball',
+		"Boxing",
+		"Chess",
+		'Cricket',
+		"Cycling",
+		'Enhanced Specials',
+		"Golf",
+		'Greyhound Racing',
+		'Ice Hockey',
+		"Motor Sport",
+		"Rugby League",
+		'Rugby Union',
+		'Snooker',
+		'Soccer',
+		"Table Tennis",
+		'Tennis',
+		"Volleyball"
+	];
 
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$

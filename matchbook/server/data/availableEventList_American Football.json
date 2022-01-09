@@ -1,0 +1,443 @@
+{
+  "id": 1,
+  "events": {
+    "Chicago Bears at Minnesota Vikings": {
+      "id": 1951280527380016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Chicago Bears": {
+          "runnerId": 1951280527680016,
+          "back": 2.84,
+          "lay": 2.96
+        },
+        "Minnesota Vikings": {
+          "runnerId": 1951280527640116,
+          "back": 1.51,
+          "lay": 1.54
+        }
+      }
+    },
+    "Cincinnati Bengals at Cleveland Browns": {
+      "id": 1951265913070016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Cincinnati Bengals": {
+          "runnerId": 1951265913450016,
+          "back": 3.1,
+          "lay": 3.25
+        },
+        "Cleveland Browns": {
+          "runnerId": 1951265913410016,
+          "back": 1.45,
+          "lay": 1.47
+        }
+      }
+    },
+    "Green Bay Packers at Detroit Lions": {
+      "id": 1951267602250016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Green Bay Packers": {
+          "runnerId": 1951267602620016,
+          "back": 1.64,
+          "lay": 1.69
+        },
+        "Detroit Lions": {
+          "runnerId": 1951267602580016,
+          "back": 2.44,
+          "lay": 2.56
+        }
+      }
+    },
+    "Indianapolis Colts at Jacksonville Jaguars": {
+      "id": 1951270290580016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Indianapolis Colts": {
+          "runnerId": 1951270290960016,
+          "back": 1.11,
+          "lay": 1.12
+        },
+        "Jacksonville Jaguars": {
+          "runnerId": 1951270290910016,
+          "back": 9.2,
+          "lay": 10.5
+        }
+      }
+    },
+    "NFL - AFC Conference": {
+      "id": 1798740730100029,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Kansas City Chiefs": {
+          "runnerId": 1798751870970029,
+          "back": 0,
+          "lay": 0
+        },
+        "New England Patriots": {
+          "runnerId": 1798751871230029,
+          "back": 0,
+          "lay": 0
+        },
+        "Tennessee Titans": {
+          "runnerId": 1798751871200129,
+          "back": 0,
+          "lay": 0
+        },
+        "Buffalo Bills": {
+          "runnerId": 1798751871030129,
+          "back": 0,
+          "lay": 0
+        },
+        "Cincinnati Bengals": {
+          "runnerId": 1798751871360129,
+          "back": 0,
+          "lay": 0
+        },
+        "Indianapolis Colts": {
+          "runnerId": 1798751871140029,
+          "back": 0,
+          "lay": 0
+        },
+        "Los Angeles Chargers": {
+          "runnerId": 1798751871010029,
+          "back": 0,
+          "lay": 0
+        },
+        "Las Vegas Raiders": {
+          "runnerId": 1798751871280129,
+          "back": 0,
+          "lay": 0
+        },
+        "Baltimore Ravens": {
+          "runnerId": 1798751871060029,
+          "back": 0,
+          "lay": 0
+        },
+        "Pittsburgh Steelers": {
+          "runnerId": 1798751871260029,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "NFL - NFC Conference": {
+      "id": 1798753448650029,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Green Bay Packers": {
+          "runnerId": 1798813455430029,
+          "back": 0,
+          "lay": 0
+        },
+        "Tampa Bay Buccaneers": {
+          "runnerId": 1798813455300029,
+          "back": 0,
+          "lay": 0
+        },
+        "Los Angeles Rams": {
+          "runnerId": 1798813455340129,
+          "back": 0,
+          "lay": 0
+        },
+        "Dallas Cowboys": {
+          "runnerId": 1798813455550129,
+          "back": 0,
+          "lay": 0
+        },
+        "Arizona Cardinals": {
+          "runnerId": 1798813455580129,
+          "back": 0,
+          "lay": 0
+        },
+        "San Francisco 49ers": {
+          "runnerId": 1798813455380029,
+          "back": 0,
+          "lay": 0
+        },
+        "Philadelphia Eagles": {
+          "runnerId": 1798813455740129,
+          "back": 0,
+          "lay": 0
+        },
+        "New Orleans Saints": {
+          "runnerId": 1798813455460029,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Pittsburgh Steelers at Baltimore Ravens": {
+      "id": 1951266282280016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Pittsburgh Steelers": {
+          "runnerId": 1951266282700016,
+          "back": 2.7,
+          "lay": 2.82
+        },
+        "Baltimore Ravens": {
+          "runnerId": 1951266282640116,
+          "back": 1.54,
+          "lay": 1.59
+        }
+      }
+    },
+    "Super Bowl LVI": {
+      "id": 1686146728990011,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Green Bay Packers": {
+          "runnerId": 1686158458690011,
+          "back": 0,
+          "lay": 0
+        },
+        "Kansas City Chiefs": {
+          "runnerId": 1686158458580011,
+          "back": 0,
+          "lay": 0
+        },
+        "Tampa Bay Buccaneers": {
+          "runnerId": 1686158458640011,
+          "back": 0,
+          "lay": 0
+        },
+        "Buffalo Bills": {
+          "runnerId": 1686158458760011,
+          "back": 0,
+          "lay": 0
+        },
+        "Los Angeles Rams": {
+          "runnerId": 1686158458790011,
+          "back": 0,
+          "lay": 0
+        },
+        "Dallas Cowboys": {
+          "runnerId": 1686158459040011,
+          "back": 0,
+          "lay": 0
+        },
+        "Tennessee Titans": {
+          "runnerId": 1686158459060111,
+          "back": 0,
+          "lay": 0
+        },
+        "New England Patriots": {
+          "runnerId": 1686158459120111,
+          "back": 0,
+          "lay": 0
+        },
+        "Indianapolis Colts": {
+          "runnerId": 1686158458950011,
+          "back": 0,
+          "lay": 0
+        },
+        "Cincinnati Bengals": {
+          "runnerId": 1686158459510011,
+          "back": 0,
+          "lay": 0
+        },
+        "Arizona Cardinals": {
+          "runnerId": 1686158459180111,
+          "back": 0,
+          "lay": 0
+        },
+        "San Francisco 49ers": {
+          "runnerId": 1686158458820111,
+          "back": 0,
+          "lay": 0
+        },
+        "Baltimore Ravens": {
+          "runnerId": 1686158458850111,
+          "back": 0,
+          "lay": 0
+        },
+        "Los Angeles Chargers": {
+          "runnerId": 1686158459090111,
+          "back": 0,
+          "lay": 0
+        },
+        "Philadelphia Eagles": {
+          "runnerId": 1686158459460011,
+          "back": 0,
+          "lay": 0
+        },
+        "New Orleans Saints": {
+          "runnerId": 1686158458890011,
+          "back": 0,
+          "lay": 0
+        },
+        "Pittsburgh Steelers": {
+          "runnerId": 1686158459150111,
+          "back": 0,
+          "lay": 0
+        },
+        "Las Vegas Raiders": {
+          "runnerId": 1686158459360111,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "Tennessee Titans at Houston Texans": {
+      "id": 1951280548970016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Tennessee Titans": {
+          "runnerId": 1951280549310016,
+          "back": 1.21,
+          "lay": 1.23
+        },
+        "Houston Texans": {
+          "runnerId": 1951280549270016,
+          "back": 5.4,
+          "lay": 5.8
+        }
+      }
+    },
+    "Washington Football Team at New York Giants": {
+      "id": 1951269684140016,
+      "start": "2022-01-09T18:00:00.000Z",
+      "allRunners": {
+        "Washington Football Team": {
+          "runnerId": 1951269684530116,
+          "back": 1.35,
+          "lay": 1.38
+        },
+        "New York Giants": {
+          "runnerId": 1951269684490016,
+          "back": 3.6,
+          "lay": 3.85
+        }
+      }
+    },
+    "Carolina Panthers at Tampa Bay Buccaneers": {
+      "id": 1951280539340016,
+      "start": "2022-01-09T21:25:00.000Z",
+      "allRunners": {
+        "Carolina Panthers": {
+          "runnerId": 1951280539690116,
+          "back": 4.4,
+          "lay": 4.6
+        },
+        "Tampa Bay Buccaneers": {
+          "runnerId": 1951280539650016,
+          "back": 1.28,
+          "lay": 1.3
+        }
+      }
+    },
+    "New England Patriots at Miami Dolphins": {
+      "id": 1951280523770016,
+      "start": "2022-01-09T21:25:00.000Z",
+      "allRunners": {
+        "New England Patriots": {
+          "runnerId": 1951280524100016,
+          "back": 1.41,
+          "lay": 1.43
+        },
+        "Miami Dolphins": {
+          "runnerId": 1951280524060016,
+          "back": 3.3,
+          "lay": 3.45
+        }
+      }
+    },
+    "New Orleans Saints at Atlanta Falcons": {
+      "id": 1951147212200016,
+      "start": "2022-01-09T21:25:00.000Z",
+      "allRunners": {
+        "New Orleans Saints": {
+          "runnerId": 1951147212580016,
+          "back": 1.56,
+          "lay": 1.6
+        },
+        "Atlanta Falcons": {
+          "runnerId": 1951147212540016,
+          "back": 2.66,
+          "lay": 2.78
+        }
+      }
+    },
+    "New York Jets at Buffalo Bills": {
+      "id": 1951280511230016,
+      "start": "2022-01-09T21:25:00.000Z",
+      "allRunners": {
+        "New York Jets": {
+          "runnerId": 1951280511590116,
+          "back": 9.4,
+          "lay": 11
+        },
+        "Buffalo Bills": {
+          "runnerId": 1951280511550016,
+          "back": 1.1,
+          "lay": 1.12
+        }
+      }
+    },
+    "San Francisco 49ers at Los Angeles Rams": {
+      "id": 1951270602160016,
+      "start": "2022-01-09T21:25:00.000Z",
+      "allRunners": {
+        "San Francisco 49ers": {
+          "runnerId": 1951270602500116,
+          "back": 2.66,
+          "lay": 2.74
+        },
+        "Los Angeles Rams": {
+          "runnerId": 1951270602460216,
+          "back": 1.58,
+          "lay": 1.6
+        }
+      }
+    },
+    "Seattle Seahawks at Arizona Cardinals": {
+      "id": 1951280574560016,
+      "start": "2022-01-09T21:25:00.000Z",
+      "allRunners": {
+        "Seattle Seahawks": {
+          "runnerId": 1951280574930116,
+          "back": 3.2,
+          "lay": 3.35
+        },
+        "Arizona Cardinals": {
+          "runnerId": 1951280574900016,
+          "back": 1.42,
+          "lay": 1.46
+        }
+      }
+    },
+    "NFL - AFC East": {
+      "id": 1798818678880029,
+      "start": "2022-01-09T21:25:02.000Z",
+      "allRunners": {
+        "Buffalo Bills": {
+          "runnerId": 1798820290870129,
+          "back": 0,
+          "lay": 0
+        },
+        "New England Patriots": {
+          "runnerId": 1798820290910029,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    },
+    "NFL - NFC West": {
+      "id": 1798834309930029,
+      "start": "2022-01-09T21:25:03.000Z",
+      "allRunners": {
+        "Los Angeles Rams": {
+          "runnerId": 1798835601680029,
+          "back": 0,
+          "lay": 0
+        },
+        "Arizona Cardinals": {
+          "runnerId": 1798835601770129,
+          "back": 0,
+          "lay": 0
+        }
+      }
+    }
+  }
+}
