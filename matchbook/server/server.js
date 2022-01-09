@@ -81,7 +81,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -507,7 +507,7 @@
 		if(isNullObject(g_moneyStatus)) {
 			if(await UTIL.isFileExist('./data-Report/money.json'))
 			{
-				g_moneyStatus = UTIL.readJsonFile('./data-Report/money.json');
+				g_moneyStatus = await UTIL.readJsonFile('./data-Report/money.json');
 				if(g_moneyStatus.account.date === new Date().toDateString())
 				{
 					g_remainingTotalBetAmountLimit = g_moneyStatus.account.remainingTotalBetAmountLimit;
@@ -609,7 +609,7 @@
 							console.log("User Balance is VERY LOW !!!!");
 						}
 						else if(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit < g_BetStakeValue) {
-							console.log("Reached your today's bet limit - No more bets allowed !!!!");
+							console.log(`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 						}
 					}
 				}
@@ -892,7 +892,7 @@
 			if (error) throw new Error(error);
 
 			const jsonFormat = JSON.parse(body);
-			console.log(jsonFormat); // jsonFormat.balance
+			// console.log(jsonFormat); // jsonFormat.balance
 			g_userBalance = Math.floor(jsonFormat.balance * 100) / 100;
 		});
 	};

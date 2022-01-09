@@ -67,9 +67,9 @@ const DOOR = (function() {
 
 				if(isFileExist) {
 					const data = await fs.promises.readFile(fileFullPath, 'utf8');
-					console.log("Read the local json successfully");
+					// console.log("Read the local json successfully");
 					const jsonObject = JSON.parse(data);
-					console.log(jsonObject);
+					// console.log(jsonObject);
 
 					// "login.lastLoginTIme": "2021-12-22T06:55:09.000Z"
 					const elapsedTime = new Date() - new Date(jsonObject["login.lastLoginTIme"]); // milli seconds
