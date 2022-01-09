@@ -7,60 +7,18 @@
       "allRunners": {
         "Melbourne City FC": {
           "runnerId": 1954204509350016,
-          "back": 1.43,
-          "lay": 1.45
+          "back": 1.62,
+          "lay": 1.84
         },
         "Western Sydney Wanderers": {
           "runnerId": 1954204509380116,
-          "back": 7.6,
-          "lay": 8.2
+          "back": 6.6,
+          "lay": 8.6
         },
         "DRAW (Mel/Wes)": {
           "runnerId": 1954204509420016,
-          "back": 5.4,
-          "lay": 5.8
-        }
-      }
-    },
-    "Rajasthan United Football Club vs Sudeva Delhi FC": {
-      "id": 1954233183570016,
-      "start": "2022-01-09T08:30:00.000Z",
-      "allRunners": {
-        "Rajasthan United Football Club": {
-          "runnerId": 1954233184310016,
-          "back": 0,
-          "lay": 0
-        },
-        "Sudeva Delhi FC": {
-          "runnerId": 1954233184350016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Raj/Sud)": {
-          "runnerId": 1954233184380116,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
-    "AFC Leopards vs Nzoia Sugar FC": {
-      "id": 1954234548080016,
-      "start": "2022-01-09T10:00:00.000Z",
-      "allRunners": {
-        "AFC Leopards": {
-          "runnerId": 1954234550750116,
-          "back": 0,
-          "lay": 2.4
-        },
-        "Nzoia Sugar FC": {
-          "runnerId": 1954234550790016,
-          "back": 3.9,
-          "lay": 5.1
-        },
-        "DRAW (AFC/Nzo)": {
-          "runnerId": 1954234550820116,
-          "back": 2.86,
-          "lay": 0
+          "back": 3.15,
+          "lay": 3.9
         }
       }
     },
@@ -70,18 +28,18 @@
       "allRunners": {
         "Bali United": {
           "runnerId": 1955258658870016,
-          "back": 1.36,
-          "lay": 1.51
+          "back": 1.45,
+          "lay": 1.59
         },
         "Barito Putera": {
           "runnerId": 1955258658900016,
-          "back": 0,
+          "back": 8,
           "lay": 0
         },
         "DRAW (Bal/Bar)": {
           "runnerId": 1955258658940116,
-          "back": 4.4,
-          "lay": 6
+          "back": 3.95,
+          "lay": 5.2
         }
       }
     },
@@ -91,17 +49,17 @@
       "allRunners": {
         "CF Intercity": {
           "runnerId": 1955356885840016,
-          "back": 3.85,
+          "back": 3.95,
           "lay": 4.8
         },
         "CF La Nucia": {
           "runnerId": 1955356885870016,
-          "back": 2.06,
-          "lay": 0
+          "back": 2,
+          "lay": 2.36
         },
         "DRAW (CF /CF )": {
           "runnerId": 1955356885900116,
-          "back": 0,
+          "back": 2.9,
           "lay": 0
         }
       }
@@ -112,18 +70,18 @@
       "allRunners": {
         "Erzurum BB": {
           "runnerId": 1955354504360016,
-          "back": 1.3,
-          "lay": 1.41
+          "back": 0,
+          "lay": 0
         },
         "Menemenspor": {
           "runnerId": 1955354504400016,
-          "back": 8.4,
-          "lay": 13
+          "back": 0,
+          "lay": 0
         },
         "DRAW (Erz/Men)": {
           "runnerId": 1955354504430116,
-          "back": 5.1,
-          "lay": 7
+          "back": 0,
+          "lay": 0
         }
       }
     },
@@ -133,18 +91,18 @@
       "allRunners": {
         "Konyaspor": {
           "runnerId": 1950775848020116,
-          "back": 2.12,
-          "lay": 2.22
+          "back": 2.22,
+          "lay": 2.28
         },
         "Sivasspor": {
           "runnerId": 1950775848060016,
           "back": 3.8,
-          "lay": 4.2
+          "lay": 4.1
         },
         "DRAW (Kon/Siv)": {
           "runnerId": 1950775848100016,
-          "back": 3.4,
-          "lay": 3.6
+          "back": 3.25,
+          "lay": 3.4
         }
       }
     },
@@ -154,18 +112,18 @@
       "allRunners": {
         "Manisa Futbol Kulubu": {
           "runnerId": 1955354554390016,
-          "back": 1.66,
-          "lay": 1.96
+          "back": 1.78,
+          "lay": 2.12
         },
         "Istanbulspor": {
           "runnerId": 1955354554420116,
-          "back": 4.5,
-          "lay": 6.2
+          "back": 4,
+          "lay": 5.3
         },
         "DRAW (Man/Ist)": {
           "runnerId": 1955354554460016,
-          "back": 3.4,
-          "lay": 4.6
+          "back": 3.25,
+          "lay": 4.4
         }
       }
     },
@@ -259,18 +217,18 @@
       "allRunners": {
         "CD Móstoles": {
           "runnerId": 1955349508310116,
-          "back": 1.45,
-          "lay": 1.68
+          "back": 1.52,
+          "lay": 1.75
         },
         "Unión Club Ceares": {
           "runnerId": 1955349508350116,
-          "back": 7.6,
-          "lay": 0
+          "back": 7,
+          "lay": 9.4
         },
         "DRAW (CD /Uni)": {
           "runnerId": 1955349508390116,
           "back": 3.65,
-          "lay": 4.7
+          "lay": 4.5
         }
       }
     },
@@ -370,7 +328,7 @@
         "SD Logroñés": {
           "runnerId": 1955367127170016,
           "back": 3.05,
-          "lay": 4.2
+          "lay": 3.95
         },
         "DRAW (Cel/SD )": {
           "runnerId": 1955367127210016,
@@ -385,18 +343,18 @@
       "allRunners": {
         "Chonburi": {
           "runnerId": 1955308433810016,
-          "back": 2.14,
-          "lay": 2.64
+          "back": 2.06,
+          "lay": 2.6
         },
         "Muangthong United": {
           "runnerId": 1955308433860016,
-          "back": 2.74,
-          "lay": 3.45
+          "back": 2.72,
+          "lay": 3.6
         },
         "DRAW (Cho/Mua)": {
           "runnerId": 1955308433900016,
-          "back": 3.45,
-          "lay": 4.6
+          "back": 3.5,
+          "lay": 4.8
         }
       }
     },
@@ -427,18 +385,18 @@
       "allRunners": {
         "CP Cacereño": {
           "runnerId": 1955336225910016,
-          "back": 0,
-          "lay": 0
+          "back": 2.38,
+          "lay": 2.78
         },
         "Ceuta": {
           "runnerId": 1955336225940116,
-          "back": 0,
-          "lay": 0
+          "back": 3.1,
+          "lay": 3.75
         },
         "DRAW (CP /Ceu)": {
           "runnerId": 1955336225970116,
-          "back": 0,
-          "lay": 0
+          "back": 2.86,
+          "lay": 3.55
         }
       }
     },
@@ -449,7 +407,7 @@
         "Deportivo La Coruña": {
           "runnerId": 1955367135210016,
           "back": 1.42,
-          "lay": 1.58
+          "lay": 1.55
         },
         "CF Talavera de la Reina": {
           "runnerId": 1955367135240016,
@@ -458,7 +416,7 @@
         },
         "DRAW (Dep/CF )": {
           "runnerId": 1955367135280016,
-          "back": 4,
+          "back": 4.1,
           "lay": 5.1
         }
       }
@@ -511,39 +469,18 @@
       "allRunners": {
         "Granada CF II": {
           "runnerId": 1955356839210116,
-          "back": 0,
-          "lay": 0
+          "back": 2.66,
+          "lay": 3.5
         },
         "CD Eldense": {
           "runnerId": 1955356839250016,
-          "back": 0,
-          "lay": 0
+          "back": 2.48,
+          "lay": 3.25
         },
         "DRAW (Gra/CD )": {
           "runnerId": 1955356839280116,
-          "back": 2.58,
-          "lay": 0
-        }
-      }
-    },
-    "Mar Menor CF vs CD Ejido": {
-      "id": 1955356905370016,
-      "start": "2022-01-09T11:00:00.000Z",
-      "allRunners": {
-        "Mar Menor CF": {
-          "runnerId": 1955356906840016,
-          "back": 0,
-          "lay": 0
-        },
-        "CD Ejido": {
-          "runnerId": 1955356906870016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Mar/CD )": {
-          "runnerId": 1955356906900116,
-          "back": 0,
-          "lay": 0
+          "back": 2.76,
+          "lay": 3.65
         }
       }
     },
@@ -564,7 +501,7 @@
         "DRAW (Mer/UD )": {
           "runnerId": 1955336279510016,
           "back": 3,
-          "lay": 3.95
+          "lay": 3.9
         }
       }
     },
@@ -606,7 +543,7 @@
         "DRAW (Pra/Kho)": {
           "runnerId": 1955308444680116,
           "back": 3.25,
-          "lay": 4
+          "lay": 3.95
         }
       }
     },
@@ -637,18 +574,18 @@
       "allRunners": {
         "SD Ejea": {
           "runnerId": 1955330717910016,
-          "back": 0,
-          "lay": 0
+          "back": 2.7,
+          "lay": 3.25
         },
         "Terrassa": {
           "runnerId": 1955330717940016,
-          "back": 0,
-          "lay": 0
+          "back": 2.66,
+          "lay": 3.2
         },
         "DRAW (SD /Ter)": {
           "runnerId": 1955330717970116,
-          "back": 0,
-          "lay": 0
+          "back": 2.86,
+          "lay": 3.5
         }
       }
     },
@@ -663,7 +600,7 @@
         },
         "Real Balompédica Linense": {
           "runnerId": 1955310859970016,
-          "back": 2.44,
+          "back": 2.34,
           "lay": 3.05
         },
         "DRAW (Sev/Rea)": {
@@ -680,17 +617,17 @@
         "U.D Llanera": {
           "runnerId": 1955349459230016,
           "back": 3.55,
-          "lay": 0
+          "lay": 4.5
         },
         "Union Adarve Barrio del Pilar": {
           "runnerId": 1955349459260116,
-          "back": 0,
+          "back": 2.02,
           "lay": 2.34
         },
         "DRAW (U.D/Uni)": {
           "runnerId": 1955349459300016,
           "back": 3.05,
-          "lay": 0
+          "lay": 3.9
         }
       }
     },
@@ -700,18 +637,18 @@
       "allRunners": {
         "UD Socuéllamos": {
           "runnerId": 1955356818050016,
-          "back": 0,
-          "lay": 0
+          "back": 2.6,
+          "lay": 3.35
         },
         "CA Pulpileño": {
           "runnerId": 1955356818080116,
-          "back": 0,
-          "lay": 0
+          "back": 2.6,
+          "lay": 3.35
         },
         "DRAW (UD /CA )": {
           "runnerId": 1955356818120016,
-          "back": 0,
-          "lay": 0
+          "back": 2.76,
+          "lay": 3.6
         }
       }
     },
@@ -721,18 +658,18 @@
       "allRunners": {
         "Villanovense": {
           "runnerId": 1955336193220116,
-          "back": 1.27,
-          "lay": 1.37
+          "back": 1.34,
+          "lay": 1.46
         },
         "CF Panaderia Pulido": {
           "runnerId": 1955336193260016,
-          "back": 0,
+          "back": 10.5,
           "lay": 0
         },
         "DRAW (Vil/CF )": {
           "runnerId": 1955336193300016,
-          "back": 5.4,
-          "lay": 6.6
+          "back": 4.5,
+          "lay": 5.7
         }
       }
     },
@@ -742,17 +679,17 @@
       "allRunners": {
         "FC Volendam": {
           "runnerId": 1954481220040016,
-          "back": 1.35,
+          "back": 1.32,
           "lay": 1.37
         },
         "SC Telstar": {
           "runnerId": 1954481220080016,
-          "back": 8.8,
-          "lay": 10.5
+          "back": 9,
+          "lay": 9.8
         },
         "DRAW (FC /SC )": {
           "runnerId": 1954481220120016,
-          "back": 5.9,
+          "back": 6,
           "lay": 6.6
         }
       }
@@ -763,13 +700,13 @@
       "allRunners": {
         "Port FC": {
           "runnerId": 1955308420100016,
-          "back": 2.42,
-          "lay": 2.96
+          "back": 2.56,
+          "lay": 3.3
         },
         "Bangkok United": {
           "runnerId": 1955308420130016,
-          "back": 2.52,
-          "lay": 3.15
+          "back": 2.32,
+          "lay": 2.92
         },
         "DRAW (Por/Ban)": {
           "runnerId": 1955308420170016,
@@ -805,17 +742,17 @@
       "allRunners": {
         "Venezia": {
           "runnerId": 1941717620650116,
-          "back": 7,
-          "lay": 7.4
+          "back": 6.8,
+          "lay": 7
         },
         "AC Milan": {
           "runnerId": 1941717620690016,
           "back": 1.56,
-          "lay": 1.58
+          "lay": 1.57
         },
         "DRAW (Ven/AC )": {
           "runnerId": 1941717620730016,
-          "back": 4.5,
+          "back": 4.6,
           "lay": 4.7
         }
       }
@@ -841,6 +778,27 @@
         }
       }
     },
+    "AFC Leopards vs Nzoia Sugar FC": {
+      "id": 1954234548080016,
+      "start": "2022-01-09T12:00:00.000Z",
+      "allRunners": {
+        "AFC Leopards": {
+          "runnerId": 1954234550750116,
+          "back": 1.98,
+          "lay": 2.4
+        },
+        "Nzoia Sugar FC": {
+          "runnerId": 1954234550790016,
+          "back": 3.8,
+          "lay": 5
+        },
+        "DRAW (AFC/Nzo)": {
+          "runnerId": 1954234550820116,
+          "back": 2.84,
+          "lay": 3.75
+        }
+      }
+    },
     "Brighton & Hove Albion Women vs Manchester City Women": {
       "id": 1954484274990016,
       "start": "2022-01-09T12:00:00.000Z",
@@ -858,7 +816,7 @@
         "DRAW (Bri/Man)": {
           "runnerId": 1954484277110016,
           "back": 7.2,
-          "lay": 10.5
+          "lay": 0
         }
       }
     },
@@ -1015,18 +973,18 @@
       "allRunners": {
         "Stade Brestois 29": {
           "runnerId": 1942539766920116,
-          "back": 3.05,
-          "lay": 3.25
+          "back": 3.15,
+          "lay": 3.2
         },
         "OGC Nice": {
           "runnerId": 1942539766960116,
-          "back": 2.42,
-          "lay": 2.5
+          "back": 2.44,
+          "lay": 2.46
         },
         "DRAW (Sta/OGC)": {
           "runnerId": 1942539767000116,
           "back": 3.55,
-          "lay": 3.65
+          "lay": 3.6
         }
       }
     },
@@ -1120,18 +1078,18 @@
       "allRunners": {
         "Luton Town": {
           "runnerId": 1950996422110116,
-          "back": 1.43,
-          "lay": 1.46
+          "back": 1.44,
+          "lay": 1.48
         },
         "Harrogate Town": {
           "runnerId": 1950996422150016,
-          "back": 9,
-          "lay": 10
+          "back": 8.8,
+          "lay": 9.6
         },
         "DRAW (Lut/Har)": {
           "runnerId": 1950996422180116,
-          "back": 4.7,
-          "lay": 5.1
+          "back": 4.6,
+          "lay": 5
         }
       }
     },
@@ -1540,18 +1498,18 @@
       "allRunners": {
         "Girona": {
           "runnerId": 1951009924920016,
-          "back": 1.78,
-          "lay": 1.83
+          "back": 1.77,
+          "lay": 1.82
         },
         "Fuenlabrada": {
           "runnerId": 1951009924950116,
-          "back": 5.8,
-          "lay": 6.6
+          "back": 5.9,
+          "lay": 6.4
         },
         "DRAW (Gir/Fue)": {
           "runnerId": 1951009924990016,
-          "back": 3.5,
-          "lay": 3.65
+          "back": 3.45,
+          "lay": 3.75
         }
       }
     },
@@ -1630,12 +1588,12 @@
         "Altay SK Izmir": {
           "runnerId": 1951024231400116,
           "back": 3.7,
-          "lay": 3.9
+          "lay": 3.95
         },
         "DRAW (Kay/Alt)": {
           "runnerId": 1951024231440116,
           "back": 3.55,
-          "lay": 3.85
+          "lay": 3.8
         }
       }
     },
@@ -1645,12 +1603,12 @@
       "allRunners": {
         "Rayo Vallecano": {
           "runnerId": 1951048906820116,
-          "back": 2.62,
-          "lay": 2.66
+          "back": 2.64,
+          "lay": 2.68
         },
         "Real Betis": {
           "runnerId": 1951048906860016,
-          "back": 2.84,
+          "back": 2.88,
           "lay": 2.94
         },
         "DRAW (Ray/Rea)": {
@@ -1687,18 +1645,18 @@
       "allRunners": {
         "Empoli": {
           "runnerId": 1941717653320016,
-          "back": 2.7,
-          "lay": 2.76
+          "back": 2.68,
+          "lay": 2.72
         },
         "Sassuolo": {
           "runnerId": 1941717653350116,
-          "back": 2.6,
+          "back": 2.62,
           "lay": 2.66
         },
         "DRAW (Emp/Sas)": {
           "runnerId": 1941717653390016,
-          "back": 3.9,
-          "lay": 4.1
+          "back": 3.95,
+          "lay": 4
         }
       }
     },
@@ -1750,13 +1708,13 @@
       "allRunners": {
         "Cardiff City": {
           "runnerId": 1950996330840016,
-          "back": 2.42,
-          "lay": 2.5
+          "back": 2.38,
+          "lay": 2.46
         },
         "Preston North End": {
           "runnerId": 1950996330880016,
-          "back": 3.15,
-          "lay": 3.35
+          "back": 3.35,
+          "lay": 3.4
         },
         "DRAW (Car/Pre)": {
           "runnerId": 1950996330910116,
@@ -1776,7 +1734,7 @@
         },
         "Norwich City": {
           "runnerId": 1950996486200116,
-          "back": 2.28,
+          "back": 2.3,
           "lay": 2.38
         },
         "DRAW (Cha/Nor)": {
@@ -1792,18 +1750,18 @@
       "allRunners": {
         "Clermont Foot": {
           "runnerId": 1942539774610116,
-          "back": 2.5,
-          "lay": 2.58
+          "back": 2.74,
+          "lay": 2.8
         },
         "Stade Reims": {
           "runnerId": 1942539774650016,
-          "back": 3.35,
-          "lay": 3.5
+          "back": 3.05,
+          "lay": 3.15
         },
         "DRAW (Cle/Sta)": {
           "runnerId": 1942539774690016,
-          "back": 3.15,
-          "lay": 3.3
+          "back": 3.1,
+          "lay": 3.15
         }
       }
     },
@@ -1813,17 +1771,17 @@
       "allRunners": {
         "FC Metz": {
           "runnerId": 1942539802370016,
-          "back": 5.1,
-          "lay": 5.4
+          "back": 5.2,
+          "lay": 5.3
         },
         "RC Strasbourg": {
           "runnerId": 1942539802410016,
-          "back": 1.79,
+          "back": 1.78,
           "lay": 1.8
         },
         "DRAW (FC /RC )": {
           "runnerId": 1942539802440116,
-          "back": 4,
+          "back": 3.95,
           "lay": 4.1
         }
       }
@@ -1876,18 +1834,18 @@
       "allRunners": {
         "Liverpool": {
           "runnerId": 1950996318020016,
-          "back": 1.19,
-          "lay": 1.22
+          "back": 1.17,
+          "lay": 1.2
         },
         "Shrewsbury Town": {
           "runnerId": 1950996318050016,
-          "back": 16,
-          "lay": 25
+          "back": 17,
+          "lay": 23
         },
         "DRAW (Liv/Shr)": {
           "runnerId": 1950996318080116,
-          "back": 8.4,
-          "lay": 9.2
+          "back": 9,
+          "lay": 11
         }
       }
     },
@@ -1960,13 +1918,13 @@
       "allRunners": {
         "Stoke City": {
           "runnerId": 1950996294310016,
-          "back": 1.52,
-          "lay": 1.57
+          "back": 1.57,
+          "lay": 1.62
         },
         "Leyton Orient": {
           "runnerId": 1950996294340016,
-          "back": 8.2,
-          "lay": 9.2
+          "back": 8,
+          "lay": 8.2
         },
         "DRAW (Sto/Ley)": {
           "runnerId": 1950996294380016,
@@ -2029,12 +1987,12 @@
         "Morecambe": {
           "runnerId": 1950996393670016,
           "back": 36,
-          "lay": 220
+          "lay": 55
         },
         "DRAW (Tot/Mor)": {
           "runnerId": 1950996393700116,
-          "back": 13.5,
-          "lay": 18.5
+          "back": 16,
+          "lay": 17
         }
       }
     },
@@ -2044,18 +2002,18 @@
       "allRunners": {
         "West Ham": {
           "runnerId": 1950996468790116,
-          "back": 1.74,
-          "lay": 1.79
+          "back": 1.71,
+          "lay": 1.76
         },
         "Leeds United": {
           "runnerId": 1950996468830016,
-          "back": 5,
-          "lay": 5.4
+          "back": 5.7,
+          "lay": 5.8
         },
         "DRAW (Wes/Lee)": {
           "runnerId": 1950996468860116,
-          "back": 4,
-          "lay": 4.3
+          "back": 3.95,
+          "lay": 4.1
         }
       }
     },
@@ -2065,12 +2023,12 @@
       "allRunners": {
         "Wolverhampton Wanderers": {
           "runnerId": 1950996441480016,
-          "back": 1.46,
-          "lay": 1.49
+          "back": 1.47,
+          "lay": 1.5
         },
         "Sheffield United": {
           "runnerId": 1950996441510016,
-          "back": 9.2,
+          "back": 9,
           "lay": 9.6
         },
         "DRAW (Wol/She)": {
@@ -2086,18 +2044,18 @@
       "allRunners": {
         "Hertha BSC": {
           "runnerId": 1941726708250016,
-          "back": 2.98,
-          "lay": 3
+          "back": 2.86,
+          "lay": 2.92
         },
         "1. FC Köln": {
           "runnerId": 1941726708290016,
-          "back": 2.6,
-          "lay": 2.66
+          "back": 2.68,
+          "lay": 2.72
         },
         "DRAW (Her/1. )": {
           "runnerId": 1941726708320116,
           "back": 3.55,
-          "lay": 3.65
+          "lay": 3.6
         }
       }
     },
@@ -2444,17 +2402,17 @@
         "Lugo": {
           "runnerId": 1951009951490016,
           "back": 2.34,
-          "lay": 2.42
+          "lay": 2.44
         },
         "Mirandés": {
           "runnerId": 1951009951530016,
-          "back": 3.5,
+          "back": 3.6,
           "lay": 3.75
         },
         "DRAW (Lug/Mir)": {
           "runnerId": 1951009951560116,
           "back": 3.25,
-          "lay": 3.35
+          "lay": 3.45
         }
       }
     },
@@ -2532,13 +2490,13 @@
         },
         "Panathinaikos": {
           "runnerId": 1954516509610116,
-          "back": 2.04,
-          "lay": 2.16
+          "back": 2.06,
+          "lay": 2.14
         },
         "DRAW (NFC/Pan)": {
           "runnerId": 1954516509650116,
-          "back": 3.4,
-          "lay": 3.7
+          "back": 3.3,
+          "lay": 3.6
         }
       }
     },
@@ -2549,16 +2507,16 @@
         "Sevilla": {
           "runnerId": 1951048890310016,
           "back": 1.62,
-          "lay": 1.65
+          "lay": 1.63
         },
         "Getafe": {
           "runnerId": 1951048890350016,
           "back": 8,
-          "lay": 8.6
+          "lay": 8.4
         },
         "DRAW (Sev/Get)": {
           "runnerId": 1951048890380016,
-          "back": 3.7,
+          "back": 3.8,
           "lay": 3.85
         }
       }
@@ -2632,18 +2590,18 @@
       "allRunners": {
         "CD Marchamalo": {
           "runnerId": 1955356849190116,
-          "back": 9.4,
-          "lay": 0
+          "back": 7.8,
+          "lay": 10.5
         },
         "Hercules CF": {
           "runnerId": 1955356849230016,
-          "back": 1.35,
-          "lay": 1.47
+          "back": 1.39,
+          "lay": 1.53
         },
         "DRAW (CD /Her)": {
           "runnerId": 1955356849260116,
           "back": 4.7,
-          "lay": 6
+          "lay": 5.6
         }
       }
     },
@@ -2653,18 +2611,18 @@
       "allRunners": {
         "Napoli": {
           "runnerId": 1941717585870016,
-          "back": 1.38,
-          "lay": 1.4
+          "back": 1.35,
+          "lay": 1.37
         },
         "Sampdoria": {
           "runnerId": 1941717585900116,
-          "back": 10,
-          "lay": 11
+          "back": 11,
+          "lay": 11.5
         },
         "DRAW (Nap/Sam)": {
           "runnerId": 1941717585940016,
-          "back": 5.3,
-          "lay": 5.6
+          "back": 5.5,
+          "lay": 5.7
         }
       }
     },
@@ -2674,18 +2632,18 @@
       "allRunners": {
         "Portimonense": {
           "runnerId": 1951050854380016,
-          "back": 2.16,
-          "lay": 2.24
+          "back": 2.22,
+          "lay": 2.3
         },
         "Marítimo": {
           "runnerId": 1951050854410116,
-          "back": 3.8,
-          "lay": 4.1
+          "back": 3.75,
+          "lay": 3.95
         },
         "DRAW (Por/Mar)": {
           "runnerId": 1951050854440116,
-          "back": 3.35,
-          "lay": 3.5
+          "back": 3.25,
+          "lay": 3.45
         }
       }
     },
@@ -2696,11 +2654,11 @@
         "Udinese": {
           "runnerId": 1941717608310016,
           "back": 7.4,
-          "lay": 8.8
+          "lay": 8.6
         },
         "Atalanta": {
           "runnerId": 1941717608350016,
-          "back": 1.39,
+          "back": 1.41,
           "lay": 1.52
         },
         "DRAW (Udi/Ata)": {
@@ -2721,13 +2679,13 @@
         },
         "VVV-Venlo": {
           "runnerId": 1954481249340116,
-          "back": 7.2,
-          "lay": 10
+          "back": 7.4,
+          "lay": 9.4
         },
         "DRAW (De /VVV)": {
           "runnerId": 1954481249380016,
           "back": 4.4,
-          "lay": 6.2
+          "lay": 5.5
         }
       }
     },
@@ -2899,27 +2857,6 @@
         }
       }
     },
-    "Arenas Club vs CD Ardoi": {
-      "id": 1955348512430016,
-      "start": "2022-01-09T16:00:00.000Z",
-      "allRunners": {
-        "Arenas Club": {
-          "runnerId": 1955348515430016,
-          "back": 0,
-          "lay": 0
-        },
-        "CD Ardoi": {
-          "runnerId": 1955348515470016,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Are/CD )": {
-          "runnerId": 1955348515500016,
-          "back": 0,
-          "lay": 0
-        }
-      }
-    },
     "Badalona vs CD Teruel": {
       "id": 1955330648550016,
       "start": "2022-01-09T16:00:00.000Z",
@@ -2948,16 +2885,16 @@
         "Cameroon": {
           "runnerId": 1953582300540016,
           "back": 1.58,
-          "lay": 1.7
+          "lay": 1.67
         },
         "Burkina Faso": {
           "runnerId": 1953582300570116,
           "back": 7.6,
-          "lay": 9.6
+          "lay": 9
         },
         "DRAW (Cam/Bur)": {
           "runnerId": 1953582300610016,
-          "back": 3.6,
+          "back": 3.65,
           "lay": 4.1
         }
       }
@@ -2968,18 +2905,18 @@
       "allRunners": {
         "Caykur Rizespor": {
           "runnerId": 1951024186730016,
-          "back": 2.96,
+          "back": 3,
           "lay": 3.2
         },
         "Besiktas JK": {
           "runnerId": 1951024186760016,
-          "back": 2.44,
-          "lay": 2.58
+          "back": 2.42,
+          "lay": 2.54
         },
         "DRAW (Cay/Bes)": {
           "runnerId": 1951024186800016,
           "back": 3.5,
-          "lay": 3.7
+          "lay": 3.8
         }
       }
     },
@@ -3095,11 +3032,11 @@
         "Eyüpspor": {
           "runnerId": 1955354569690016,
           "back": 1.96,
-          "lay": 2.34
+          "lay": 2.3
         },
         "Gençlerbirligi SK": {
           "runnerId": 1955354569730016,
-          "back": 3.55,
+          "back": 3.6,
           "lay": 4.5
         },
         "DRAW (Eyü/Gen)": {
@@ -3178,17 +3115,17 @@
       "allRunners": {
         "Racing Santander": {
           "runnerId": 1955367157830016,
-          "back": 1.7,
-          "lay": 1.89
+          "back": 1.67,
+          "lay": 1.85
         },
         "San Sebastian de los Reyes": {
           "runnerId": 1955367157870016,
-          "back": 5.8,
+          "back": 5.9,
           "lay": 0
         },
         "DRAW (Rac/San)": {
           "runnerId": 1955367157910016,
-          "back": 3.2,
+          "back": 3.25,
           "lay": 3.9
         }
       }
@@ -3304,18 +3241,18 @@
       "allRunners": {
         "FC Nantes": {
           "runnerId": 1942539817080016,
-          "back": 3.7,
-          "lay": 3.85
+          "back": 3.75,
+          "lay": 3.8
         },
         "AS Monaco": {
           "runnerId": 1942539817110116,
-          "back": 2.22,
-          "lay": 2.28
+          "back": 2.26,
+          "lay": 2.3
         },
         "DRAW (FC /AS )": {
           "runnerId": 1942539817150016,
           "back": 3.35,
-          "lay": 3.5
+          "lay": 3.45
         }
       }
     },
@@ -3367,18 +3304,18 @@
       "allRunners": {
         "VfL Bochum": {
           "runnerId": 1941726723970016,
-          "back": 3.4,
+          "back": 3.5,
           "lay": 3.55
         },
         "VfL Wolfsburg": {
           "runnerId": 1941726724000016,
-          "back": 2.26,
-          "lay": 2.32
+          "back": 2.3,
+          "lay": 2.34
         },
         "DRAW (VfL/VfL)": {
           "runnerId": 1941726724030116,
-          "back": 3.6,
-          "lay": 3.65
+          "back": 3.5,
+          "lay": 3.55
         }
       }
     },
@@ -3388,18 +3325,18 @@
       "allRunners": {
         "Hapoel Hadera FC": {
           "runnerId": 1955318149990016,
-          "back": 0,
-          "lay": 0
+          "back": 3.2,
+          "lay": 4.4
         },
         "Maccabi Netanya": {
           "runnerId": 1955318150020116,
-          "back": 0,
-          "lay": 0
+          "back": 2.04,
+          "lay": 2.58
         },
         "DRAW (Hap/Mac)": {
           "runnerId": 1955318150060016,
-          "back": 0,
-          "lay": 0
+          "back": 2.94,
+          "lay": 3.95
         }
       }
     },
@@ -3409,18 +3346,18 @@
       "allRunners": {
         "Nottingham Forest": {
           "runnerId": 1951268671570016,
-          "back": 9,
-          "lay": 10
+          "back": 10.5,
+          "lay": 11.5
         },
         "Arsenal": {
           "runnerId": 1951268671600116,
-          "back": 1.41,
-          "lay": 1.44
+          "back": 1.37,
+          "lay": 1.4
         },
         "DRAW (Not/Ars)": {
           "runnerId": 1951268671640016,
-          "back": 5,
-          "lay": 5.4
+          "back": 5.2,
+          "lay": 5.6
         }
       }
     },
@@ -3451,18 +3388,18 @@
       "allRunners": {
         "Málaga": {
           "runnerId": 1951009964580016,
-          "back": 2.54,
-          "lay": 2.68
+          "back": 2.56,
+          "lay": 2.66
         },
         "Real Sporting de Gijon": {
           "runnerId": 1951009964610116,
-          "back": 3.25,
-          "lay": 3.5
+          "back": 3.3,
+          "lay": 3.45
         },
         "DRAW (Mál/Rea)": {
           "runnerId": 1951009964650016,
-          "back": 3.1,
-          "lay": 3.3
+          "back": 3.05,
+          "lay": 3.25
         }
       }
     },
@@ -3473,17 +3410,17 @@
         "AS Roma": {
           "runnerId": 1941717543490016,
           "back": 3.55,
-          "lay": 3.7
+          "lay": 3.6
         },
         "Juventus": {
           "runnerId": 1941717543530016,
-          "back": 2.24,
-          "lay": 2.28
+          "back": 2.28,
+          "lay": 2.3
         },
         "DRAW (AS /Juv)": {
           "runnerId": 1941717543560116,
           "back": 3.5,
-          "lay": 3.65
+          "lay": 3.55
         }
       }
     },
@@ -3493,18 +3430,18 @@
       "allRunners": {
         "Deportivo Alaves": {
           "runnerId": 1951048826580016,
-          "back": 4.3,
+          "back": 4.4,
           "lay": 4.5
         },
         "Athletic Bilbao": {
           "runnerId": 1951048826620016,
-          "back": 2.06,
-          "lay": 2.08
+          "back": 2.04,
+          "lay": 2.06
         },
         "DRAW (Dep/Ath)": {
           "runnerId": 1951048826660016,
-          "back": 3.5,
-          "lay": 3.55
+          "back": 3.45,
+          "lay": 3.5
         }
       }
     },
@@ -3536,16 +3473,16 @@
         "Genoa": {
           "runnerId": 1941717565620016,
           "back": 2.14,
-          "lay": 2.2
+          "lay": 2.16
         },
         "Spezia": {
           "runnerId": 1941717565660016,
-          "back": 4,
-          "lay": 4.2
+          "back": 4.1,
+          "lay": 4.3
         },
         "DRAW (Gen/Spe)": {
           "runnerId": 1941717565700016,
-          "back": 3.35,
+          "back": 3.4,
           "lay": 3.45
         }
       }
@@ -3556,7 +3493,7 @@
       "allRunners": {
         "Osasuna": {
           "runnerId": 1951048859240116,
-          "back": 1.77,
+          "back": 1.76,
           "lay": 1.79
         },
         "Cádiz": {
@@ -3662,17 +3599,17 @@
         "Sporting de Braga": {
           "runnerId": 1951050819980016,
           "back": 1.45,
-          "lay": 1.48
+          "lay": 1.5
         },
         "Famalicão": {
           "runnerId": 1951050820010116,
-          "back": 7.8,
+          "back": 7.4,
           "lay": 8.4
         },
         "DRAW (Spo/Fam)": {
           "runnerId": 1951050820050116,
           "back": 5,
-          "lay": 5.4
+          "lay": 5.5
         }
       }
     },
@@ -3808,17 +3745,17 @@
       "allRunners": {
         "Ethiopia": {
           "runnerId": 1953582311770116,
-          "back": 4.9,
-          "lay": 5.7
+          "back": 4.7,
+          "lay": 5.5
         },
         "Cape Verde": {
           "runnerId": 1953582311810016,
-          "back": 1.96,
-          "lay": 2.06
+          "back": 1.98,
+          "lay": 2.12
         },
         "DRAW (Eth/Cap)": {
           "runnerId": 1953582311850016,
-          "back": 3.1,
+          "back": 3.05,
           "lay": 3.4
         }
       }
@@ -3872,7 +3809,7 @@
         "Ponferradina": {
           "runnerId": 1951281430210016,
           "back": 2.34,
-          "lay": 2.44
+          "lay": 2.46
         },
         "Real Zaragoza": {
           "runnerId": 1951281430240116,
@@ -3881,7 +3818,7 @@
         },
         "DRAW (Pon/Rea)": {
           "runnerId": 1951281430280016,
-          "back": 3.1,
+          "back": 3.05,
           "lay": 3.25
         }
       }
@@ -3934,13 +3871,13 @@
       "allRunners": {
         "Hellas Verona": {
           "runnerId": 1941717633210016,
-          "back": 1.39,
-          "lay": 1.4
+          "back": 1.41,
+          "lay": 1.42
         },
         "Salernitana": {
           "runnerId": 1941717633250016,
-          "back": 9.8,
-          "lay": 11
+          "back": 9.6,
+          "lay": 10
         },
         "DRAW (Hel/Sal)": {
           "runnerId": 1941717633290016,
@@ -3955,17 +3892,17 @@
       "allRunners": {
         "Internazionale": {
           "runnerId": 1941717575880016,
-          "back": 1.42,
+          "back": 1.43,
           "lay": 1.44
         },
         "Lazio": {
           "runnerId": 1941717575910016,
-          "back": 8.4,
-          "lay": 9
+          "back": 8.6,
+          "lay": 8.8
         },
         "DRAW (Int/Laz)": {
           "runnerId": 1941717575940116,
-          "back": 5.3,
+          "back": 5.4,
           "lay": 5.5
         }
       }
@@ -3977,16 +3914,16 @@
         "Olympique Lyonnais": {
           "runnerId": 1942539796140116,
           "back": 3.5,
-          "lay": 3.65
+          "lay": 3.6
         },
         "Paris Saint-Germain": {
           "runnerId": 1942539796180016,
-          "back": 2.08,
+          "back": 2.1,
           "lay": 2.12
         },
         "DRAW (Oly/Par)": {
           "runnerId": 1942539796220016,
-          "back": 4,
+          "back": 4.1,
           "lay": 4.2
         }
       }
@@ -4039,18 +3976,18 @@
       "allRunners": {
         "Villarreal": {
           "runnerId": 1951317866460016,
-          "back": 2.86,
-          "lay": 2.92
+          "back": 2.9,
+          "lay": 2.94
         },
         "Atlético de Madrid": {
           "runnerId": 1951317866500016,
           "back": 2.8,
-          "lay": 2.88
+          "lay": 2.84
         },
         "DRAW (Vil/Atl)": {
           "runnerId": 1951317866540016,
-          "back": 3.35,
-          "lay": 3.4
+          "back": 3.3,
+          "lay": 3.35
         }
       }
     },
@@ -4060,13 +3997,13 @@
       "allRunners": {
         "Belenenses": {
           "runnerId": 1951319757470016,
-          "back": 2.86,
-          "lay": 3.05
+          "back": 2.82,
+          "lay": 3
         },
         "Futebol Clube de Arouca": {
           "runnerId": 1951319757510016,
-          "back": 2.72,
-          "lay": 2.84
+          "back": 2.74,
+          "lay": 2.9
         },
         "DRAW (Bel/Fut)": {
           "runnerId": 1951319757550016,
@@ -4081,18 +4018,18 @@
       "allRunners": {
         "UD Las Palmas": {
           "runnerId": 1951281405310116,
-          "back": 2.2,
-          "lay": 2.32
+          "back": 2.22,
+          "lay": 2.34
         },
         "UD Almería": {
           "runnerId": 1951281405340116,
           "back": 3.65,
-          "lay": 3.95
+          "lay": 3.85
         },
         "DRAW (UD /UD )": {
           "runnerId": 1951281405380016,
-          "back": 3.3,
-          "lay": 3.55
+          "back": 3.35,
+          "lay": 3.5
         }
       }
     },
@@ -4124,11 +4061,11 @@
         "Ferroviária U20": {
           "runnerId": 1955649539200016,
           "back": 0,
-          "lay": 0
+          "lay": 3.85
         },
         "Santos FC U20": {
           "runnerId": 1955649539230116,
-          "back": 0,
+          "back": 2.08,
           "lay": 2.56
         },
         "DRAW (Fer/San)": {
@@ -4170,7 +4107,7 @@
         },
         "Club Atletico Morelia": {
           "runnerId": 1955639016590116,
-          "back": 2.24,
+          "back": 2.26,
           "lay": 2.62
         },
         "DRAW (Tla/Clu)": {

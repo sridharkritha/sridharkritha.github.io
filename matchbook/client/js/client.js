@@ -214,7 +214,7 @@ window.addEventListener('load', function() {
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
-									<div class ="commonClass">(${++eventCounter})   ${eventName}   (${sport.toUpperCase()})</div>
+									<div class ="commonClass">(${++eventCounter})   ${eventName}   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']} </div>
 								</div>
 								<br/>`;
 

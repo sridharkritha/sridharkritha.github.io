@@ -561,7 +561,6 @@
 						{
 							// mock bet
 							betObj['status'] = 'matched';
-							betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
 							betObj['event-id'] = g_predictedWinners[i].raceId;
 							betObj['event-name'] =  g_predictedWinners[i].raceName;
 
@@ -678,7 +677,8 @@
 			"sport-name": getSportsNameBySportsId(lastBetResult['sport-id']),
 			"event-id":lastBetResult['event-id'],
 			"event-name":lastBetResult['event-name'],
-	
+			"event-start-time": new Date(lastBetResult['event-start-time']).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
+
 			"runner-name":lastBetResult['runner-name'],
 			"decimal-odds":lastBetResult['decimal-odds'],
 			"stake": lastBetResult['stake'], // g_BetStakeValue,
