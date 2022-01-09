@@ -1,8 +1,8 @@
 {
   "account": {
-    "userBalance": 9.93,
-    "remainingTotalBetAmountLimit": 0.2,
-    "todayTotalBetAmountLimit": 0.2,
+    "userBalance": 9.86,
+    "remainingTotalBetAmountLimit": 1.8,
+    "todayTotalBetAmountLimit": 3,
     "date": "Sun Jan 09 2022"
   }
 }

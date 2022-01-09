@@ -18,7 +18,7 @@
 
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 0.2; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 3.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -41,7 +41,7 @@
 	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
 	let g_minProfitOdd = 0.7; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 
-	let g_maxRunnersCount = 8;
+	let g_maxRunnersCount = 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	/*
@@ -121,7 +121,7 @@
 
 	//////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
 	// Server listen at the given port number
-	const PORT = process.env.PORT || 3000;
+	const PORT = process.env.PORT || 3003;
 
 	app.use(express.json());               // for body parsing
 	app.use(express.static('../client'));  // path to public folder you can access through server
@@ -553,10 +553,10 @@
 			if( startTime.getDate() === g_currentTime.getDate() && startTime.getMonth() === g_currentTime.getMonth() && 
 				startTime.getFullYear() === g_currentTime.getFullYear())
 			{
-				// g_betMinutesOffset = 1; // place bet: +1 min before the start time, -5 min after the start time
+				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 				if(g_currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
 				{
-					if(!(g_currentTime.getTime() > startTime.getTime() + 2* 60*1000))
+					if(!(g_currentTime.getTime() > startTime.getTime() + 2*60*1000))
 					{
 						let betObj = {};
 
@@ -592,7 +592,7 @@
 
 							g_betNow.push(betObj);
 						}
-						else if(g_userBalance >= g_BetStakeValue && g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit >= g_BetStakeValue) {
+						else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) >= g_BetStakeValue) {
 
 							g_betNow.push(betObj);
 
@@ -608,7 +608,7 @@
 						else if(g_userBalance < g_BetStakeValue) {
 							console.log("User Balance is VERY LOW !!!!");
 						}
-						else if(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit < g_BetStakeValue) {
+						else if(UTIL.roundIt(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) < g_BetStakeValue) {
 							console.log(`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 						}
 					}
@@ -683,6 +683,7 @@
 					let obj = populateDataAfterBetSubmit(lastBetResult);
 					console.log(obj);
 
+					// ??????
 					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 				}
 				notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
@@ -708,6 +709,7 @@
 			// g_db["sportId"][sportsName]["events"][eventName]
 			"event-full-details": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']],
 			"metaData": lastBetResult['metaData'], // g_db["sportId"]["metaData"],
+			// "metaData": g_db["sportId"]["metaData"],
 			
 			"bet-placed-time": UTIL.getCurrentTimeDate() 
 		};
