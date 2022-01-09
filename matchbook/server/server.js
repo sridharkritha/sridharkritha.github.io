@@ -18,7 +18,7 @@
 
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 10; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 0.2; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -53,26 +53,27 @@
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
 		'Horse Racing',
-
-		'American Football',
-		"Baseball",
-		'Basketball',
-		"Boxing",
-		"Chess",
-		'Cricket',
-		"Cycling",
-		'Enhanced Specials',
-		"Golf",
-		'Greyhound Racing',
-		'Ice Hockey',
-		"Motor Sport",
-		"Rugby League",
-		'Rugby Union',
-		'Snooker',
 		'Soccer',
-		"Table Tennis",
-		'Tennis',
-		"Volleyball"
+
+		// 'American Football',
+		// "Baseball",
+		// 'Basketball',
+		// "Boxing",
+		// "Chess",
+		// 'Cricket',
+		// "Cycling",
+		// 'Enhanced Specials',
+		// "Golf",
+		// 'Greyhound Racing',
+		// 'Ice Hockey',
+		// "Motor Sport",
+		// "Rugby League",
+		// 'Rugby Union',
+		// 'Snooker',
+		// "Table Tennis",
+		// 'Tennis',
+		// "Volleyball"
+
 	];
 
 
@@ -595,8 +596,8 @@
 
 							g_betNow.push(betObj);
 
-							g_userBalance -= g_BetStakeValue;
-							g_remainingTotalBetAmountLimit -= g_todayTotalBetAmountLimit;
+							g_userBalance = UTIL.roundIt(g_userBalance - g_BetStakeValue);
+							g_remainingTotalBetAmountLimit = UTIL.roundIt(g_remainingTotalBetAmountLimit + g_BetStakeValue);
 
 							if(!g_moneyStatus.account)	g_moneyStatus.account = {};
 							g_moneyStatus.account.userBalance = g_userBalance;

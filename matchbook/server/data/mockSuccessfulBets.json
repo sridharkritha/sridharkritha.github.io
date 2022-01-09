@@ -8,7 +8,7 @@
       "event-name": "12:50 Fairyhouse",
       "event-start-time": "09/01/2022, 12:50:00",
       "runner-name": "2 Britzka",
-      "decimal-odds": 2.3,
+      "decimal-odds": 2.4,
       "stake": 0.2,
       "event-full-details": {
         "id": 1955970494560016,
@@ -16,11 +16,11 @@
         "allRunners": {
           "2 Britzka": {
             "runnerId": 1955970495280116,
-            "back": 2.2,
-            "lay": 2.58,
+            "back": 2.38,
+            "lay": 2.7,
             "name": "2 Britzka",
             "numberOfRunners": 7,
-            "winPercentage": 81.8181818181818,
+            "winPercentage": 93.27731092436974,
             "startTime": "2022-01-09T12:50:00.000Z",
             "raceId": 1955970494560016,
             "raceName": "12:50 Fairyhouse",
@@ -29,25 +29,25 @@
           "3 Iberique Du Seuil": {
             "runnerId": 1955970495310116,
             "back": 4.6,
-            "lay": 7.2,
+            "lay": 5.8,
             "name": "3 Iberique Du Seuil"
           },
           "6 Feigh": {
             "runnerId": 1955970495410016,
-            "back": 4,
-            "lay": 5.5,
+            "back": 5.1,
+            "lay": 5.7,
             "name": "6 Feigh"
           },
           "7 White Pepper": {
             "runnerId": 1955970495440016,
-            "back": 4.1,
-            "lay": 7.6,
+            "back": 5.1,
+            "lay": 7.8,
             "name": "7 White Pepper"
           },
           "1 Black Sirius": {
             "runnerId": 1955970495250016,
-            "back": 16.5,
-            "lay": 50,
+            "back": 14,
+            "lay": 0,
             "name": "1 Black Sirius"
           },
           "4 Just For Yuse": {
@@ -65,11 +65,11 @@
         },
         "luckyWinner": {
           "runnerId": 1955970495280116,
-          "back": 2.2,
-          "lay": 2.58,
+          "back": 2.38,
+          "lay": 2.7,
           "name": "2 Britzka",
           "numberOfRunners": 7,
-          "winPercentage": 81.8181818181818,
+          "winPercentage": 93.27731092436974,
           "startTime": "2022-01-09T12:50:00.000Z",
           "raceId": 1955970494560016,
           "raceName": "12:50 Fairyhouse",
@@ -78,325 +78,13 @@
       },
       "metaData": {
         "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 10,
+        "todayTotalBetAmountLimit": 0.2,
         "remainingTotalBetAmountLimit": 0,
-        "userBalance": 0.13,
+        "userBalance": 10.13,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "bet-placed-time": "08:44:40  09-01-2022"
-    }
-  ],
-  "Soccer": [
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1955354549900016,
-      "event-name": "Manisa Futbol Kulubu vs Istanbulspor",
-      "event-start-time": "09/01/2022, 10:30:00",
-      "runner-name": "Manisa Futbol Kulubu",
-      "decimal-odds": 1.8,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1955354549900016,
-        "start": "2022-01-09T10:30:00.000Z",
-        "allRunners": {
-          "Manisa Futbol Kulubu": {
-            "runnerId": 1955354554390016,
-            "back": 1.78,
-            "lay": 2.12,
-            "name": "Manisa Futbol Kulubu",
-            "numberOfRunners": 3,
-            "winPercentage": 82.58426966292134,
-            "startTime": "2022-01-09T10:30:00.000Z",
-            "raceId": 1955354549900016,
-            "raceName": "Manisa Futbol Kulubu vs Istanbulspor",
-            "sportName": "Soccer"
-          },
-          "Istanbulspor": {
-            "runnerId": 1955354554420116,
-            "back": 4,
-            "lay": 5.3,
-            "name": "Istanbulspor"
-          },
-          "DRAW (Man/Ist)": {
-            "runnerId": 1955354554460016,
-            "back": 3.25,
-            "lay": 4.4,
-            "name": "DRAW (Man/Ist)"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1955354554390016,
-          "back": 1.78,
-          "lay": 2.12,
-          "name": "Manisa Futbol Kulubu",
-          "numberOfRunners": 3,
-          "winPercentage": 82.58426966292134,
-          "startTime": "2022-01-09T10:30:00.000Z",
-          "raceId": 1955354549900016,
-          "raceName": "Manisa Futbol Kulubu vs Istanbulspor",
-          "sportName": "Soccer"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 10,
-        "remainingTotalBetAmountLimit": 0,
-        "userBalance": 0.13,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "bet-placed-time": "08:44:52  09-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1951009920440016,
-      "event-name": "Girona vs Fuenlabrada",
-      "event-start-time": "09/01/2022, 13:00:00",
-      "runner-name": "Girona",
-      "decimal-odds": 1.8,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1951009920440016,
-        "start": "2022-01-09T13:00:00.000Z",
-        "allRunners": {
-          "Girona": {
-            "runnerId": 1951009924920016,
-            "back": 1.79,
-            "lay": 1.85,
-            "name": "Girona",
-            "numberOfRunners": 3,
-            "winPercentage": 92.73743016759776,
-            "startTime": "2022-01-09T13:00:00.000Z",
-            "raceId": 1951009920440016,
-            "raceName": "Girona vs Fuenlabrada",
-            "sportName": "Soccer"
-          },
-          "Fuenlabrada": {
-            "runnerId": 1951009924950116,
-            "back": 5.8,
-            "lay": 6.4,
-            "name": "Fuenlabrada"
-          },
-          "DRAW (Gir/Fue)": {
-            "runnerId": 1951009924990016,
-            "back": 3.45,
-            "lay": 3.6,
-            "name": "DRAW (Gir/Fue)"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1951009924920016,
-          "back": 1.79,
-          "lay": 1.85,
-          "name": "Girona",
-          "numberOfRunners": 3,
-          "winPercentage": 92.73743016759776,
-          "startTime": "2022-01-09T13:00:00.000Z",
-          "raceId": 1951009920440016,
-          "raceName": "Girona vs Fuenlabrada",
-          "sportName": "Soccer"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 10,
-        "remainingTotalBetAmountLimit": 0,
-        "userBalance": 0.13,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "bet-placed-time": "08:44:52  09-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1942539801880016,
-      "event-name": "FC Metz vs RC Strasbourg",
-      "event-start-time": "09/01/2022, 14:00:00",
-      "runner-name": "RC Strasbourg",
-      "decimal-odds": 1.8,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1942539801880016,
-        "start": "2022-01-09T14:00:00.000Z",
-        "allRunners": {
-          "FC Metz": {
-            "runnerId": 1942539802370016,
-            "back": 5.2,
-            "lay": 5.4,
-            "name": "FC Metz"
-          },
-          "RC Strasbourg": {
-            "runnerId": 1942539802410016,
-            "back": 1.79,
-            "lay": 1.8,
-            "name": "RC Strasbourg",
-            "numberOfRunners": 3,
-            "winPercentage": 120.6703910614525,
-            "startTime": "2022-01-09T14:00:00.000Z",
-            "raceId": 1942539801880016,
-            "raceName": "FC Metz vs RC Strasbourg",
-            "sportName": "Soccer"
-          },
-          "DRAW (FC /RC )": {
-            "runnerId": 1942539802440116,
-            "back": 3.95,
-            "lay": 4.1,
-            "name": "DRAW (FC /RC )"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1942539802410016,
-          "back": 1.79,
-          "lay": 1.8,
-          "name": "RC Strasbourg",
-          "numberOfRunners": 3,
-          "winPercentage": 120.6703910614525,
-          "startTime": "2022-01-09T14:00:00.000Z",
-          "raceId": 1942539801880016,
-          "raceName": "FC Metz vs RC Strasbourg",
-          "sportName": "Soccer"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 10,
-        "remainingTotalBetAmountLimit": 0,
-        "userBalance": 0.13,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "bet-placed-time": "08:44:52  09-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1950996464720016,
-      "event-name": "West Ham vs Leeds United",
-      "event-start-time": "09/01/2022, 14:00:00",
-      "runner-name": "West Ham",
-      "decimal-odds": 1.8,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1950996464720016,
-        "start": "2022-01-09T14:00:00.000Z",
-        "allRunners": {
-          "West Ham": {
-            "runnerId": 1950996468790116,
-            "back": 1.71,
-            "lay": 1.76,
-            "name": "West Ham",
-            "numberOfRunners": 3,
-            "winPercentage": 130.99415204678365,
-            "startTime": "2022-01-09T14:00:00.000Z",
-            "raceId": 1950996464720016,
-            "raceName": "West Ham vs Leeds United",
-            "sportName": "Soccer"
-          },
-          "Leeds United": {
-            "runnerId": 1950996468830016,
-            "back": 5.7,
-            "lay": 5.8,
-            "name": "Leeds United"
-          },
-          "DRAW (Wes/Lee)": {
-            "runnerId": 1950996468860116,
-            "back": 3.95,
-            "lay": 4.2,
-            "name": "DRAW (Wes/Lee)"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1950996468790116,
-          "back": 1.71,
-          "lay": 1.76,
-          "name": "West Ham",
-          "numberOfRunners": 3,
-          "winPercentage": 130.99415204678365,
-          "startTime": "2022-01-09T14:00:00.000Z",
-          "raceId": 1950996464720016,
-          "raceName": "West Ham vs Leeds United",
-          "sportName": "Soccer"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 10,
-        "remainingTotalBetAmountLimit": 0,
-        "userBalance": 0.13,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "bet-placed-time": "08:44:52  09-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1951048853760016,
-      "event-name": "Osasuna vs Cádiz",
-      "event-start-time": "09/01/2022, 17:30:00",
-      "runner-name": "Osasuna",
-      "decimal-odds": 1.8,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1951048853760016,
-        "start": "2022-01-09T17:30:00.000Z",
-        "allRunners": {
-          "Osasuna": {
-            "runnerId": 1951048859240116,
-            "back": 1.76,
-            "lay": 1.78,
-            "name": "Osasuna",
-            "numberOfRunners": 3,
-            "winPercentage": 101.70454545454544,
-            "startTime": "2022-01-09T17:30:00.000Z",
-            "raceId": 1951048853760016,
-            "raceName": "Osasuna vs Cádiz",
-            "sportName": "Soccer"
-          },
-          "Cádiz": {
-            "runnerId": 1951048859280116,
-            "back": 6.2,
-            "lay": 6.6,
-            "name": "Cádiz"
-          },
-          "DRAW (Osa/Cád)": {
-            "runnerId": 1951048859320116,
-            "back": 3.55,
-            "lay": 3.65,
-            "name": "DRAW (Osa/Cád)"
-          }
-        },
-        "luckyWinner": {
-          "runnerId": 1951048859240116,
-          "back": 1.76,
-          "lay": 1.78,
-          "name": "Osasuna",
-          "numberOfRunners": 3,
-          "winPercentage": 101.70454545454544,
-          "startTime": "2022-01-09T17:30:00.000Z",
-          "raceId": 1951048853760016,
-          "raceName": "Osasuna vs Cádiz",
-          "sportName": "Soccer"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 10,
-        "remainingTotalBetAmountLimit": 0,
-        "userBalance": 0.13,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "bet-placed-time": "08:44:52  09-01-2022"
+      "bet-placed-time": "09:05:02  09-01-2022"
     }
   ]
 }
