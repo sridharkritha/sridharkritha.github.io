@@ -21,6 +21,7 @@
 	const g_todayTotalBetAmountLimit = 10; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
+	let   g_moneyStatus = {};
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	let g_sessionToken = null;
@@ -480,44 +481,28 @@
 		return true;
 	};
 
-	findLuckyMatch = function(sportName, jsonObj, objLevelFilter, callback) {
-		if(!isNullObject(g_alreadyPlacedBetList)) {
-			// Read from array
-			luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
-		}
-		else {
-			// Check if a file is exist or not
-			fs.open('./data-Report/alreadyPlacedBetList.json', 'r', function(err, fd)
+	findLuckyMatch = async (sportName, jsonObj, objLevelFilter, callback) => {
+		if(isNullObject(g_moneyStatus)) {
+			if(await UTIL.isFileExist('./data-Report/money.json'))
 			{
-				if(err)
+				g_moneyStatus = UTIL.readJsonFile('./data-Report/money.json');
+				if(g_moneyStatus.account.date === new Date().toDateString())
 				{
-					if(err.code === 'ENOENT')
-					{
-						// File is not exist, creat a empty file
-						fs.closeSync(fs.openSync('./data-Report/alreadyPlacedBetList.json', 'w'));
-						g_alreadyPlacedBetList = {} ;
-						luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
-						console.log("Success: ./data-Report/alreadyPlacedBetList.json - created and saved!");
-					}
+					g_remainingTotalBetAmountLimit = g_moneyStatus.account.remainingTotalBetAmountLimit;
 				}
-				else
-				{
-					// File is exist, read from the file (Asynchronous 'json' file read)
-					fs.readFile('./data-Report/alreadyPlacedBetList.json', function(err, data) {
-						if (err) throw err;
-						if(data && data.length) {
-							g_alreadyPlacedBetList = JSON.parse(data);
-						}
-						else {
-							g_alreadyPlacedBetList = {} ;
-						}
-						
-						luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
-					});
-				}
-			});
+			}
 		}
+
+		if(isNullObject(g_alreadyPlacedBetList)) {
+			if(await UTIL.isFileExist('./data-Report/alreadyPlacedBetList.json'))
+			{
+				g_alreadyPlacedBetList = await UTIL.readJsonFile('./data-Report/alreadyPlacedBetList.json')
+			}
+		}
+
+		luckyMatchFilter(sportName, jsonObj, objLevelFilter, callback);
 	};
+	
 
 	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
@@ -586,14 +571,24 @@
 
 							g_betNow.push(betObj);
 						}
-						else if(g_userBalance >= g_BetStakeValue) {
+						else if(g_userBalance >= g_BetStakeValue && g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit >= g_BetStakeValue) {
 
 							g_betNow.push(betObj);
 
 							g_userBalance -= g_BetStakeValue;
+							g_remainingTotalBetAmountLimit -= g_todayTotalBetAmountLimit;
+
+							if(!g_moneyStatus.account)	g_moneyStatus.account = {};
+							g_moneyStatus.account.userBalance = g_userBalance;
+							g_moneyStatus.account.remainingTotalBetAmountLimit = g_remainingTotalBetAmountLimit;
+							g_moneyStatus.account.todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
+							g_moneyStatus.account.date = new Date().toDateString();
 						}
 						else if(g_userBalance < g_BetStakeValue) {
 							console.log("User Balance is VERY LOW !!!!");
+						}
+						else if(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit < g_BetStakeValue) {
+							console.log("Reached your today's bet limit - No more bets allowed !!!!");
 						}
 					}
 				}
@@ -854,6 +849,8 @@
 
 			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
 			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
+			UTIL.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
+
 			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		}
 	};

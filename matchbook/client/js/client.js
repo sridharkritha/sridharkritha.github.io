@@ -240,7 +240,7 @@ window.addEventListener('load', function() {
 		document.querySelector('#statistics').innerHTML += `<br>Today's Bet Amount Limit =  £ ${metaData.remainingTotalBetAmountLimit} / £ ${metaData.todayTotalBetAmountLimit}, 
 																UserBalance = £ ${metaData.userBalance}, 
 																WinConfidencePercentage = ${metaData.winConfidencePercentage}%, 
-																MinProfitOdd = ${metaData.minProfitOdd}, 
+																MinProfitOdd = £ ${metaData.minProfitOdd}, 
 																Stake = £ ${metaData.stakeValue}`;
 		// document.querySelector('#statistics').innerHTML += `<br>MetaData = ${JSON.stringify(metaData)}`;
 

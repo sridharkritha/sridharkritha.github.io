@@ -1,7 +1,7 @@
 // Namespace using Module Pattern 
 // https://javascriptweblog.wordpress.com/2010/12/07/namespacing-in-javascript/
 // https://liangwu.wordpress.com/2016/07/11/module-pattern-variations-and-common-practices/
-const fs = require('fs');
+const fs = require('fs').promises; // promise version of require('fs');
 const UTIL = (function() {
 	// Private Members
 	return {
@@ -49,30 +49,44 @@ const UTIL = (function() {
 			};
 		},
 
-		writeJsonFile: function(jsonString, fileName, isOverwriteNotAllowed) {
+		isFileExist: async (fileName) => { 
+			// const result = await fs.stat(fileName).then(() => true).catch(() => false);
+			// return result;  // same as below one line statement
+			return await fs.stat(fileName).then(() => true).catch(() => false); // caller: await isFileExist(); =>  MUST have await bcos true/false is wrapped by promise bcos of async function
+		},
 
+		readJsonFile: async(fileName) => {
+			try {
+					const data = await fs.readFile(fileName, 'utf8'); // promise is returned
+					const jsonObject = JSON.parse(data);
+					console.log(`Read the ${fileName} file successfully`);
+					// console.log(jsonObject);
+					return jsonObject;
+			}
+			catch(e) {
+				console.error(`ERROR: Unable to read the ${fileName} file`);
+				console.log(e);
+			}
+		},
+
+		writeJsonFile: async(jsonString, fileName, isOverwriteNotAllowed) => {
+			// 1. create a file if NOT exist
+			// 2. By default, the file overwrites (isOverwriteNotAllowed = false)
 			let  isFileExist = false;
 
 			if(isOverwriteNotAllowed) {
-				(async () => { 
-					isFileExist = await fs.promises.stat(fileName	).then(() => true).catch(() => false);
-				})();
+				isFileExist = await UTIL.isFileExist(fileName); // await is MUST
 			}
 
 			if(!isFileExist) {
-				let jsonFormat = jsonString;
-	
-				if(typeof jsonString === 'string') {
-					jsonFormat = JSON.parse(jsonString);
+				try {
+					await fs.writeFile(fileName, JSON.stringify(jsonString, null, 2), 'utf8'); // promise is returned
+					// console.log(`Writing to the ${fileName} file is successfully`);
 				}
-				
-				const data = JSON.stringify(jsonFormat, null, 2);
-				
-				// Asynchronous file write
-				fs.writeFile(fileName, data, function(err) {
-					if (err) throw err;
-					//console.log('Data written to file');
-				});
+				catch(e) {
+					console.error(`ERROR: Unable to write the ${fileName} file`);
+					console.log(e);
+				}
 			}
 		},
 
@@ -94,10 +108,6 @@ const UTIL = (function() {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		
-
-
-
 	};
 })();
 
@@ -105,6 +115,8 @@ const UTIL = (function() {
 // exports the variables and functions above so that other modules can use them
 module.exports.getCurrentTimeDate = UTIL.getCurrentTimeDate;
 module.exports.getDefaultOptions = UTIL.getDefaultOptions;
+module.exports.isFileExist = UTIL.isFileExist;
+module.exports.readJsonFile = UTIL.readJsonFile;
 module.exports.writeJsonFile = UTIL.writeJsonFile;
 module.exports.randomIntFromInterval = UTIL.randomIntFromInterval;
 module.exports.milliSecondsToHMS = UTIL.milliSecondsToHMS;
