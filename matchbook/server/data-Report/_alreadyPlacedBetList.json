@@ -1,47 +1,498 @@
-[
-  {
-    "event-id": 1948200594440016,
-    "status": "matched",
-    "decimal-odds": 2,
-    "event-name": "11:35 Lingfield",
-    "runner-name": "2 Alphonse Le Grande",
-    "stakeValue": 0.2,
-    "bet-placed-time": "07:36:57\t31-12-2021"
-  },
-  {
-    "event-id": 1941732495690016,
-    "status": "open",
-    "decimal-odds": 1.9,
-    "event-name": "Valencia vs Espanyol",
-    "runner-name": "Valencia",
-    "stakeValue": 0.2,
-    "bet-placed-time": "07:37:00\t31-12-2021"
-  },
-  {
-    "event-id": 1948200598790016,
-    "status": "open",
-    "decimal-odds": 2.7,
-    "event-name": "13:50 Lingfield",
-    "runner-name": "7 Follow Your Heart",
-    "stakeValue": 0.2,
-    "bet-placed-time": "12:52:44\t31-12-2021"
-  },
-  {
-    "event-id": 1948200596520016,
-    "status": "open",
-    "decimal-odds": 3.2,
-    "event-name": "12:40 Lingfield",
-    "runner-name": "5 Lihou",
-    "stakeValue": 0.2,
-    "bet-placed-time": "12:52:44\t31-12-2021"
-  },
-  {
-    "event-id": 1948192180610016,
-    "status": "open",
-    "decimal-odds": 2.2,
-    "event-name": "15:40 Uttoxeter",
-    "runner-name": "2 Fancy Your Chances",
-    "stakeValue": 0.2,
-    "bet-placed-time": "12:52:44\t31-12-2021"
-  }
-]
+{
+  "Horse Racing": [
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1955964488320016,
+      "event-name": "15:30 Ayr",
+      "event-start-time": "Invalid Date",
+      "runner-name": "2 Tfou",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1955964488320016,
+        "start": "2022-01-09T15:30:00.000Z",
+        "allRunners": {
+          "2 Tfou": {
+            "runnerId": 1955964488810016,
+            "back": 1.73,
+            "lay": 1.78,
+            "name": "2 Tfou",
+            "numberOfRunners": 5,
+            "winPercentage": 87.86127167630057,
+            "startTime": "2022-01-09T15:30:00.000Z",
+            "raceId": 1955964488320016,
+            "raceName": "15:30 Ayr",
+            "sportName": "Horse Racing"
+          },
+          "4 Burn The Evidence": {
+            "runnerId": 1955964488870016,
+            "back": 3.25,
+            "lay": 3.3,
+            "name": "4 Burn The Evidence"
+          },
+          "3 Brompton Park": {
+            "runnerId": 1955964488840016,
+            "back": 14,
+            "lay": 15,
+            "name": "3 Brompton Park"
+          },
+          "5 Ring Pretender": {
+            "runnerId": 1955964488900016,
+            "back": 24,
+            "lay": 30,
+            "name": "5 Ring Pretender"
+          },
+          "1 Gie It Laldy": {
+            "runnerId": 1955964488750016,
+            "back": 32,
+            "lay": 100,
+            "name": "1 Gie It Laldy"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1955964488810016,
+          "back": 1.73,
+          "lay": 1.78,
+          "name": "2 Tfou",
+          "numberOfRunners": 5,
+          "winPercentage": 87.86127167630057,
+          "startTime": "2022-01-09T15:30:00.000Z",
+          "raceId": 1955964488320016,
+          "raceName": "15:30 Ayr",
+          "sportName": "Horse Racing"
+        }
+      },
+      "bet-placed-time": "14:16:51  09-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1955970515170016,
+      "event-name": "15:50 Fairyhouse",
+      "event-start-time": "Invalid Date",
+      "runner-name": "4 Grivei",
+      "decimal-odds": 2.4,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1955970515170016,
+        "start": "2022-01-09T15:50:08.000Z",
+        "allRunners": {
+          "4 Grivei": {
+            "runnerId": 1955970516220016,
+            "back": 2.3,
+            "lay": 2.44,
+            "name": "4 Grivei",
+            "numberOfRunners": 11,
+            "winPercentage": 152.17391304347828,
+            "startTime": "2022-01-09T15:50:08.000Z",
+            "raceId": 1955970515170016,
+            "raceName": "15:50 Fairyhouse",
+            "sportName": "Horse Racing"
+          },
+          "2 Caldwell Diamond": {
+            "runnerId": 1955970516160016,
+            "back": 5.8,
+            "lay": 6.4,
+            "name": "2 Caldwell Diamond"
+          },
+          "6 Passing Well": {
+            "runnerId": 1955970516280016,
+            "back": 6.6,
+            "lay": 7.4,
+            "name": "6 Passing Well"
+          },
+          "11 Spanish Present": {
+            "runnerId": 1955970516430116,
+            "back": 15,
+            "lay": 19.5,
+            "name": "11 Spanish Present"
+          },
+          "7 Peaceful Sunday": {
+            "runnerId": 1955970516310116,
+            "back": 13.5,
+            "lay": 16.5,
+            "name": "7 Peaceful Sunday"
+          },
+          "8 Plains Indian": {
+            "runnerId": 1955970516340016,
+            "back": 18.5,
+            "lay": 20,
+            "name": "8 Plains Indian"
+          },
+          "5 Heliko Conti": {
+            "runnerId": 1955970516250016,
+            "back": 18,
+            "lay": 21,
+            "name": "5 Heliko Conti"
+          },
+          "9 Sammy Smart": {
+            "runnerId": 1955970516370016,
+            "back": 32,
+            "lay": 40,
+            "name": "9 Sammy Smart"
+          },
+          "3 Daghdha": {
+            "runnerId": 1955970516190116,
+            "back": 75,
+            "lay": 100,
+            "name": "3 Daghdha"
+          },
+          "1 Ballyglass Beauty": {
+            "runnerId": 1955970516130016,
+            "back": 100,
+            "lay": 0,
+            "name": "1 Ballyglass Beauty"
+          },
+          "10 Silver King": {
+            "runnerId": 1955970516400116,
+            "back": 0,
+            "lay": 0,
+            "name": "10 Silver King"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1955970516220016,
+          "back": 2.3,
+          "lay": 2.44,
+          "name": "4 Grivei",
+          "numberOfRunners": 11,
+          "winPercentage": 152.17391304347828,
+          "startTime": "2022-01-09T15:50:08.000Z",
+          "raceId": 1955970515170016,
+          "raceName": "15:50 Fairyhouse",
+          "sportName": "Horse Racing"
+        }
+      },
+      "bet-placed-time": "15:51:17  09-01-2022"
+    }
+  ],
+  "Soccer": [
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1954516507170016,
+      "event-name": "NFC Volos vs Panathinaikos",
+      "event-start-time": "Invalid Date",
+      "runner-name": "Panathinaikos",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1954516507170016,
+        "start": "2022-01-09T15:15:00.000Z",
+        "allRunners": {
+          "NFC Volos": {
+            "runnerId": 1954516509580016,
+            "back": 5,
+            "lay": 5.4,
+            "name": "NFC Volos"
+          },
+          "Panathinaikos": {
+            "runnerId": 1954516509610116,
+            "back": 1.89,
+            "lay": 1.94,
+            "name": "Panathinaikos",
+            "numberOfRunners": 3,
+            "winPercentage": 82.53968253968256,
+            "startTime": "2022-01-09T15:15:00.000Z",
+            "raceId": 1954516507170016,
+            "raceName": "NFC Volos vs Panathinaikos",
+            "sportName": "Soccer"
+          },
+          "DRAW (NFC/Pan)": {
+            "runnerId": 1954516509650116,
+            "back": 3.45,
+            "lay": 3.65,
+            "name": "DRAW (NFC/Pan)"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1954516509610116,
+          "back": 1.89,
+          "lay": 1.94,
+          "name": "Panathinaikos",
+          "numberOfRunners": 3,
+          "winPercentage": 82.53968253968256,
+          "startTime": "2022-01-09T15:15:00.000Z",
+          "raceId": 1954516507170016,
+          "raceName": "NFC Volos vs Panathinaikos",
+          "sportName": "Soccer"
+        }
+      },
+      "bet-placed-time": "14:41:23  09-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1941717606950016,
+      "event-name": "Udinese vs Atalanta",
+      "event-start-time": "Invalid Date",
+      "runner-name": "Atalanta",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1941717606950016,
+        "start": "2022-01-09T15:30:00.000Z",
+        "allRunners": {
+          "Udinese": {
+            "runnerId": 1941717608310016,
+            "back": 5.3,
+            "lay": 5.4,
+            "name": "Udinese"
+          },
+          "Atalanta": {
+            "runnerId": 1941717608350016,
+            "back": 1.77,
+            "lay": 1.79,
+            "name": "Atalanta",
+            "numberOfRunners": 3,
+            "winPercentage": 123.16384180790962,
+            "startTime": "2022-01-09T15:30:00.000Z",
+            "raceId": 1941717606950016,
+            "raceName": "Udinese vs Atalanta",
+            "sportName": "Soccer"
+          },
+          "DRAW (Udi/Ata)": {
+            "runnerId": 1941717608390016,
+            "back": 3.95,
+            "lay": 4.1,
+            "name": "DRAW (Udi/Ata)"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1941717608350016,
+          "back": 1.77,
+          "lay": 1.79,
+          "name": "Atalanta",
+          "numberOfRunners": 3,
+          "winPercentage": 123.16384180790962,
+          "startTime": "2022-01-09T15:30:00.000Z",
+          "raceId": 1941717606950016,
+          "raceName": "Udinese vs Atalanta",
+          "sportName": "Soccer"
+        }
+      },
+      "bet-placed-time": "15:06:25  09-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1951048853760016,
+      "event-name": "Osasuna vs Cádiz",
+      "event-start-time": "Invalid Date",
+      "runner-name": "Osasuna",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1951048853760016,
+        "start": "2022-01-09T17:30:00.000Z",
+        "allRunners": {
+          "Osasuna": {
+            "runnerId": 1951048859240116,
+            "back": 1.72,
+            "lay": 1.73,
+            "name": "Osasuna",
+            "numberOfRunners": 3,
+            "winPercentage": 115.11627906976746,
+            "startTime": "2022-01-09T17:30:00.000Z",
+            "raceId": 1951048853760016,
+            "raceName": "Osasuna vs Cádiz",
+            "sportName": "Soccer"
+          },
+          "Cádiz": {
+            "runnerId": 1951048859280116,
+            "back": 6.6,
+            "lay": 6.8,
+            "name": "Cádiz"
+          },
+          "DRAW (Osa/Cád)": {
+            "runnerId": 1951048859320116,
+            "back": 3.7,
+            "lay": 3.75,
+            "name": "DRAW (Osa/Cád)"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1951048859240116,
+          "back": 1.72,
+          "lay": 1.73,
+          "name": "Osasuna",
+          "numberOfRunners": 3,
+          "winPercentage": 115.11627906976746,
+          "startTime": "2022-01-09T17:30:00.000Z",
+          "raceId": 1951048853760016,
+          "raceName": "Osasuna vs Cádiz",
+          "sportName": "Soccer"
+        }
+      },
+      "bet-placed-time": "15:27:22  09-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1955371335880016,
+      "event-name": "Comercial FC U20 vs Criciuma EC U20",
+      "event-start-time": "Invalid Date",
+      "runner-name": "Criciuma EC U20",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1955371335880016,
+        "start": "2022-01-09T18:15:00.000Z",
+        "allRunners": {
+          "Comercial FC U20": {
+            "runnerId": 1955371337530016,
+            "back": 3.45,
+            "lay": 4.7,
+            "name": "Comercial FC U20"
+          },
+          "Criciuma EC U20": {
+            "runnerId": 1955371337570016,
+            "back": 1.82,
+            "lay": 2.2,
+            "name": "Criciuma EC U20",
+            "numberOfRunners": 3,
+            "winPercentage": 89.56043956043956,
+            "startTime": "2022-01-09T18:15:00.000Z",
+            "raceId": 1955371335880016,
+            "raceName": "Comercial FC U20 vs Criciuma EC U20",
+            "sportName": "Soccer"
+          },
+          "DRAW (Com/Cri)": {
+            "runnerId": 1955371337600016,
+            "back": 3.5,
+            "lay": 4.7,
+            "name": "DRAW (Com/Cri)"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1955371337570016,
+          "back": 1.82,
+          "lay": 2.2,
+          "name": "Criciuma EC U20",
+          "numberOfRunners": 3,
+          "winPercentage": 89.56043956043956,
+          "startTime": "2022-01-09T18:15:00.000Z",
+          "raceId": 1955371335880016,
+          "raceName": "Comercial FC U20 vs Criciuma EC U20",
+          "sportName": "Soccer"
+        }
+      },
+      "bet-placed-time": "15:59:56  09-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1942539795610016,
+      "event-name": "Olympique Lyonnais vs Paris Saint-Germain",
+      "event-start-time": "Invalid Date",
+      "runner-name": "Paris Saint-Germain",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1942539795610016,
+        "start": "2022-01-09T19:45:00.000Z",
+        "allRunners": {
+          "Olympique Lyonnais": {
+            "runnerId": 1942539796140116,
+            "back": 3.8,
+            "lay": 3.85,
+            "name": "Olympique Lyonnais"
+          },
+          "Paris Saint-Germain": {
+            "runnerId": 1942539796180016,
+            "back": 2.04,
+            "lay": 2.08,
+            "name": "Paris Saint-Germain",
+            "numberOfRunners": 3,
+            "winPercentage": 86.27450980392155,
+            "startTime": "2022-01-09T19:45:00.000Z",
+            "raceId": 1942539795610016,
+            "raceName": "Olympique Lyonnais vs Paris Saint-Germain",
+            "sportName": "Soccer"
+          },
+          "DRAW (Oly/Par)": {
+            "runnerId": 1942539796220016,
+            "back": 4,
+            "lay": 4.1,
+            "name": "DRAW (Oly/Par)"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1942539796180016,
+          "back": 2.04,
+          "lay": 2.08,
+          "name": "Paris Saint-Germain",
+          "numberOfRunners": 3,
+          "winPercentage": 86.27450980392155,
+          "startTime": "2022-01-09T19:45:00.000Z",
+          "raceId": 1942539795610016,
+          "raceName": "Olympique Lyonnais vs Paris Saint-Germain",
+          "sportName": "Soccer"
+        }
+      },
+      "bet-placed-time": "15:59:56  09-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1955356857910016,
+      "event-name": "Aguilas FC vs Calvo Sotelo Puertollano CF",
+      "event-start-time": "Invalid Date",
+      "runner-name": "Aguilas FC",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1955356857910016,
+        "start": "2022-01-09T16:00:00.000Z",
+        "allRunners": {
+          "Aguilas FC": {
+            "runnerId": 1955356859350016,
+            "back": 1.71,
+            "lay": 2.22,
+            "name": "Aguilas FC",
+            "numberOfRunners": 3,
+            "winPercentage": 81.28654970760235,
+            "startTime": "2022-01-09T16:00:00.000Z",
+            "raceId": 1955356857910016,
+            "raceName": "Aguilas FC vs Calvo Sotelo Puertollano CF",
+            "sportName": "Soccer"
+          },
+          "Calvo Sotelo Puertollano CF": {
+            "runnerId": 1955356859390016,
+            "back": 3.8,
+            "lay": 6.4,
+            "name": "Calvo Sotelo Puertollano CF"
+          },
+          "DRAW (Agu/Cal)": {
+            "runnerId": 1955356859420116,
+            "back": 3.1,
+            "lay": 4.2,
+            "name": "DRAW (Agu/Cal)"
+          }
+        },
+        "luckyWinner": {
+          "runnerId": 1955356859350016,
+          "back": 1.71,
+          "lay": 2.22,
+          "name": "Aguilas FC",
+          "numberOfRunners": 3,
+          "winPercentage": 81.28654970760235,
+          "startTime": "2022-01-09T16:00:00.000Z",
+          "raceId": 1955356857910016,
+          "raceName": "Aguilas FC vs Calvo Sotelo Puertollano CF",
+          "sportName": "Soccer"
+        }
+      },
+      "bet-placed-time": "15:59:56  09-01-2022"
+    }
+  ]
+}

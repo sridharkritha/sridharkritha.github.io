@@ -247,7 +247,7 @@ window.addEventListener('load', function() {
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
 	};
 
-	// createPredictedWinnersTable(g_sportsWiseBetList); // test
+	createPredictedWinnersTable(g_sportsWiseBetList); // test
 
 
 

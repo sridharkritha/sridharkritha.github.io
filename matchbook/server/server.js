@@ -445,11 +445,23 @@
 								const raceName = race;
 								const luckyRunner = [];
 
+								// // meta data
+								// const metaData = {
+								// 	"stakeValue"                   : g_BetStakeValue,
+								// 	"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
+								// 	"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
+								// 	"userBalance"                  : g_userBalance,
+								// 	"winConfidencePercentage"      : g_winConfidencePercentage,
+								// 	"minProfitOdd"                 : g_minProfitOdd
+								// };
+								// g_db["sportId"][sportName]["events"][raceName]["metaData"] = metaData;
+
 								for(let runner in jsonObj[prop][race]["allRunners"]) { 
 									if(jsonObj[prop][race]["allRunners"].hasOwnProperty(runner)) {
 										if(typeof jsonObj[prop][race]["allRunners"][runner] === "object") {
 											let runnerObj = jsonObj[prop][race]["allRunners"][runner];
 											runnerObj.name = runner;
+											runnerObj['event-name'] = raceName;
 											let back = jsonObj[prop][race]["allRunners"][runner].back;
 											if(!back) {
 												back = Number.MAX_VALUE;
@@ -528,15 +540,15 @@
 
 	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
-		// meta data
-		const metaData = {
-			"stakeValue"                   : g_BetStakeValue,
-			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
-			"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
-			"userBalance"                  : g_userBalance,
-			"winConfidencePercentage"      : g_winConfidencePercentage,
-			"minProfitOdd"                 : g_minProfitOdd
-		};
+		// // meta data
+		// const metaData = {
+		// 	"stakeValue"                   : g_BetStakeValue,
+		// 	"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
+		// 	"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
+		// 	"userBalance"                  : g_userBalance,
+		// 	"winConfidencePercentage"      : g_winConfidencePercentage,
+		// 	"minProfitOdd"                 : g_minProfitOdd
+		// };
 
 
 		for(let i = 0; i < g_predictedWinners.length; ++i) {
@@ -576,7 +588,9 @@
 						betObj['event-start-time'] = g_predictedWinners[i].startTime;
 						betObj['sportName'] = g_predictedWinners[i].sportName;
 						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
-						betObj['metaData'] = metaData;
+						// betObj['metaData'] = metaData;
+						// g_db.sportId[g_predictedWinners[i].sportName].metaData = metaData;
+						
 
 
 						if(g_isLockedForBetting)
@@ -687,7 +701,7 @@
 					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 				}
 				notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
-				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
+				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/mockSuccessfulBets.json');
 			}
 		}
 	};
@@ -700,7 +714,6 @@
 			"sport-name": getSportsNameBySportsId(lastBetResult['sport-id']),
 			"event-id":lastBetResult['event-id'],
 			"event-name":lastBetResult['event-name'],
-			"event-start-time": new Date(lastBetResult['event-start-time']).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
 
 			"runner-name":lastBetResult['runner-name'],
 			"decimal-odds":lastBetResult['decimal-odds'],
@@ -708,8 +721,10 @@
 
 			// g_db["sportId"][sportsName]["events"][eventName]
 			"event-full-details": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']],
-			"metaData": lastBetResult['metaData'], // g_db["sportId"]["metaData"],
-			// "metaData": g_db["sportId"]["metaData"],
+			// "metaData": lastBetResult['metaData'], // g_db["sportId"]["metaData"],
+			"metaData": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']]["metaData"],
+			// "event-start-time": new Date(lastBetResult['event-start-time']).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
+			"event-start-time": new Date(g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']]["start"]).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
 			
 			"bet-placed-time": UTIL.getCurrentTimeDate() 
 		};
@@ -720,6 +735,21 @@
 		return obj;
 	};
 
+	// Get meta data for each event
+	getEventMetaData = () => {
+		// meta data
+		const metaData = {
+			"stakeValue"                   : g_BetStakeValue,
+			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
+			"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
+			"userBalance"                  : g_userBalance,
+			"winConfidencePercentage"      : g_winConfidencePercentage,
+			"minProfitOdd"                 : g_minProfitOdd
+		};
+
+		return metaData;
+	};
+
 
 	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
@@ -728,6 +758,8 @@
 			g_db.sportId[sportName].events[event].allRunners = obj;
 			g_db.sportId[sportName].events[event].id = eventId;
 			g_db.sportId[sportName].events[event].start = startTime;
+			// g_db["sportId"][sportName]["events"][raceName]["metaData"] = metaData;
+			g_db.sportId[sportName].events[event].metaData = getEventMetaData();
 
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
@@ -872,7 +904,7 @@
 			}
 
 			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
-			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data/mockSuccessfulBets.json');
+			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/mockSuccessfulBets.json');
 			UTIL.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
 
 			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
