@@ -1,0 +1,1796 @@
+{
+  "id": 24735152712200,
+  "events": {
+    "10:30 Fairview": {
+      "id": 1957595398370016,
+      "start": "2022-01-10T10:30:00.000Z",
+      "allRunners": {
+        "1 Jackbequick": {
+          "runnerId": 1957595399080016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 Irish Sea": {
+          "runnerId": 1957595399120016,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Midnight Cowboy": {
+          "runnerId": 1957595399160016,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Stay The Course": {
+          "runnerId": 1957595399190016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 All Swagger": {
+          "runnerId": 1957595399220116,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Jack's Jamboree": {
+          "runnerId": 1957595399260016,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Grace Lightning": {
+          "runnerId": 1957595399290016,
+          "back": 0,
+          "lay": 0
+        },
+        "8 Just The Wind": {
+          "runnerId": 1957595399320016,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "11:05 Fairview": {
+      "id": 1957595399970016,
+      "start": "2022-01-10T11:05:00.000Z",
+      "allRunners": {
+        "1 Stranger Danger": {
+          "runnerId": 1957595400420016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 Sullenberger": {
+          "runnerId": 1957595400460016,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Inherit The Rain": {
+          "runnerId": 1957595400490016,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Evies First": {
+          "runnerId": 1957595400520016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Crown Guardian": {
+          "runnerId": 1957595400550016,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Cruzador": {
+          "runnerId": 1957595400580116,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "11:40 Fairview": {
+      "id": 1957595400910016,
+      "start": "2022-01-10T11:40:00.000Z",
+      "allRunners": {
+        "1 Paris Rix": {
+          "runnerId": 1957595401490016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 No Laying Up": {
+          "runnerId": 1957595401530016,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Glacier Gold": {
+          "runnerId": 1957595401590016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Legitimate": {
+          "runnerId": 1957595401620116,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Rock Garden": {
+          "runnerId": 1957595401650116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Vista Nova": {
+          "runnerId": 1957595401690016,
+          "back": 0,
+          "lay": 0
+        },
+        "8 Storm Chaser": {
+          "runnerId": 1957595401720016,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Querari Ferrari": {
+          "runnerId": 1957595401560016,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "12:15 Fairview": {
+      "id": 1957595402120016,
+      "start": "2022-01-10T12:15:00.000Z",
+      "allRunners": {
+        "1 Innerspace": {
+          "runnerId": 1957595403270016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 On Your Marks": {
+          "runnerId": 1957595403300016,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Charlie Mccreevy": {
+          "runnerId": 1957595403330016,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Crystal Stream": {
+          "runnerId": 1957595403360116,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Capernaum": {
+          "runnerId": 1957595403390116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Cane Lime 'n Soda": {
+          "runnerId": 1957595403450016,
+          "back": 0,
+          "lay": 0
+        },
+        "8 Bold Strike": {
+          "runnerId": 1957595403480016,
+          "back": 0,
+          "lay": 0
+        },
+        "9 Constellation Code": {
+          "runnerId": 1957595403510016,
+          "back": 0,
+          "lay": 0
+        },
+        "10 Young Nelson": {
+          "runnerId": 1957595403540016,
+          "back": 0,
+          "lay": 0
+        },
+        "11 My Boy Reecey": {
+          "runnerId": 1957595403570016,
+          "back": 0,
+          "lay": 0
+        },
+        "12 Uplifted": {
+          "runnerId": 1957595403600016,
+          "back": 0,
+          "lay": 0
+        },
+        "13 Magari": {
+          "runnerId": 1957595403630116,
+          "back": 0,
+          "lay": 0
+        },
+        "14 Cana": {
+          "runnerId": 1957595403660116,
+          "back": 0,
+          "lay": 0
+        },
+        "15 Queen Louise": {
+          "runnerId": 1957595403690116,
+          "back": 0,
+          "lay": 0
+        },
+        "16 Whole Of The Moon": {
+          "runnerId": 1957595403730016,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Flying Pekan": {
+          "runnerId": 1957595403420116,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "12:45 Ludlow": {
+      "id": 1956830763120016,
+      "start": "2022-01-10T12:45:00.000Z",
+      "allRunners": {
+        "5 Dr T J Eckleburg": {
+          "runnerId": 1956830764010016,
+          "back": 1.85,
+          "lay": 1.95
+        },
+        "1 Illico Des Places": {
+          "runnerId": 1956830763880016,
+          "back": 4.3,
+          "lay": 8
+        },
+        "7 Imperial Sun": {
+          "runnerId": 1956830764070016,
+          "back": 7,
+          "lay": 9
+        },
+        "10 Angels Landing": {
+          "runnerId": 1956830764170116,
+          "back": 7,
+          "lay": 12
+        },
+        "2 Appreciate": {
+          "runnerId": 1956830763920016,
+          "back": 21,
+          "lay": 0
+        },
+        "3 Bryanwood": {
+          "runnerId": 1956830763950016,
+          "back": 21,
+          "lay": 0
+        },
+        "4 Dragon's Fire": {
+          "runnerId": 1956830763980016,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Fight For It": {
+          "runnerId": 1956830764040016,
+          "back": 16,
+          "lay": 0
+        },
+        "8 Kolisi": {
+          "runnerId": 1956830764100116,
+          "back": 14.5,
+          "lay": 0
+        },
+        "9 Mind Hunter": {
+          "runnerId": 1956830764140116,
+          "back": 26,
+          "lay": 990
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "12:50 Fairview": {
+      "id": 1957595404390016,
+      "start": "2022-01-10T12:50:00.000Z",
+      "allRunners": {
+        "1 Divine Odyssey": {
+          "runnerId": 1957595405060016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 Aranjuez": {
+          "runnerId": 1957595405090116,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Barberton Silver": {
+          "runnerId": 1957595405120116,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Ancient Times": {
+          "runnerId": 1957595405150016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Miss Orange": {
+          "runnerId": 1957595405180116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Great Warrior": {
+          "runnerId": 1957595405250016,
+          "back": 0,
+          "lay": 0
+        },
+        "8 Port Key": {
+          "runnerId": 1957595405280116,
+          "back": 0,
+          "lay": 0
+        },
+        "9 Assured": {
+          "runnerId": 1957595405310116,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Jacob's Ladder": {
+          "runnerId": 1957595405220016,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "13:00 Taunton": {
+      "id": 1956831979080016,
+      "start": "2022-01-10T13:00:00.000Z",
+      "allRunners": {
+        "2 Jpr One": {
+          "runnerId": 1956831979820016,
+          "back": 1.68,
+          "lay": 1.82
+        },
+        "8 Tango Tara": {
+          "runnerId": 1956831979990016,
+          "back": 5.9,
+          "lay": 9.4
+        },
+        "1 Grangeclare Glory": {
+          "runnerId": 1956831979790016,
+          "back": 7.2,
+          "lay": 0
+        },
+        "4 Hyland": {
+          "runnerId": 1956831979870116,
+          "back": 12,
+          "lay": 0
+        },
+        "3 Hostile": {
+          "runnerId": 1956831979850016,
+          "back": 15.5,
+          "lay": 50
+        },
+        "5 Newtonian": {
+          "runnerId": 1956831979900116,
+          "back": 12,
+          "lay": 50
+        },
+        "6 Storm Lord": {
+          "runnerId": 1956831979930116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 T'araison": {
+          "runnerId": 1956831979960016,
+          "back": 18.5,
+          "lay": 0
+        },
+        "9 Sevenofus": {
+          "runnerId": 1956831980020016,
+          "back": 25,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "13:15 Ludlow": {
+      "id": 1956830764950016,
+      "start": "2022-01-10T13:15:00.000Z",
+      "allRunners": {
+        "4 Legends Gold": {
+          "runnerId": 1956830765610116,
+          "back": 5.1,
+          "lay": 6.6
+        },
+        "2 Jatiluwih": {
+          "runnerId": 1956830765550016,
+          "back": 5.1,
+          "lay": 8
+        },
+        "5 Castle Robin": {
+          "runnerId": 1956830765650016,
+          "back": 4.9,
+          "lay": 8.6
+        },
+        "3 Quick Wave": {
+          "runnerId": 1956830765580016,
+          "back": 8,
+          "lay": 0
+        },
+        "6 Bobo Mac": {
+          "runnerId": 1956830765680016,
+          "back": 9.6,
+          "lay": 19
+        },
+        "1 Demachine": {
+          "runnerId": 1956830765520016,
+          "back": 2.46,
+          "lay": 2.62
+        },
+        "7 Volcano": {
+          "runnerId": 1956830765710116,
+          "back": 15.5,
+          "lay": 90
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "13:25 Fairview": {
+      "id": 1957595405750016,
+      "start": "2022-01-10T13:25:00.000Z",
+      "allRunners": {
+        "1 Mach Four": {
+          "runnerId": 1957595406510016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 El Romiachi": {
+          "runnerId": 1957595406540116,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Phil's Power": {
+          "runnerId": 1957595406580016,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Storm Commander": {
+          "runnerId": 1957595406610016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Wings Of Fire": {
+          "runnerId": 1957595406640116,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Dubula": {
+          "runnerId": 1957595406670116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Moon Game": {
+          "runnerId": 1957595406710016,
+          "back": 0,
+          "lay": 0
+        },
+        "8 Psycho King": {
+          "runnerId": 1957595406740016,
+          "back": 0,
+          "lay": 0
+        },
+        "9 Alado's Pride": {
+          "runnerId": 1957595406770016,
+          "back": 0,
+          "lay": 0
+        },
+        "10 Zig Zag": {
+          "runnerId": 1957595406800016,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "13:30 Taunton": {
+      "id": 1956831980740016,
+      "start": "2022-01-10T13:30:00.000Z",
+      "allRunners": {
+        "6 Knickerbockerglory": {
+          "runnerId": 1956831981840116,
+          "back": 2.42,
+          "lay": 3
+        },
+        "12 Sword Beach": {
+          "runnerId": 1956831982010016,
+          "back": 6.6,
+          "lay": 18.5
+        },
+        "1 Ben Lilly": {
+          "runnerId": 1956831981700016,
+          "back": 11,
+          "lay": 0
+        },
+        "2 Charming Getaway": {
+          "runnerId": 1956831981730116,
+          "back": 10.5,
+          "lay": 65
+        },
+        "4 Hartnoll Hero": {
+          "runnerId": 1956831981790016,
+          "back": 16,
+          "lay": 0
+        },
+        "5 Jump Over The Moon": {
+          "runnerId": 1956831981810116,
+          "back": 10,
+          "lay": 0
+        },
+        "7 Marettimo": {
+          "runnerId": 1956831981870116,
+          "back": 19.5,
+          "lay": 0
+        },
+        "8 Moveit Like Minnie": {
+          "runnerId": 1956831981900016,
+          "back": 4.8,
+          "lay": 17
+        },
+        "9 Muy Bien": {
+          "runnerId": 1956831981920116,
+          "back": 10,
+          "lay": 0
+        },
+        "10 Quickbuck": {
+          "runnerId": 1956831981950016,
+          "back": 4.2,
+          "lay": 5.7
+        },
+        "11 Rocambolas": {
+          "runnerId": 1956831981980016,
+          "back": 15,
+          "lay": 0
+        },
+        "13 Chillabella": {
+          "runnerId": 1956831982030116,
+          "back": 4.2,
+          "lay": 1000
+        },
+        "14 Chadlington Lad": {
+          "runnerId": 1956831982070016,
+          "back": 6,
+          "lay": 0
+        },
+        "3 Forward Plan": {
+          "runnerId": 1956831981760116,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "13:45 Ludlow": {
+      "id": 1956830766090016,
+      "start": "2022-01-10T13:45:00.000Z",
+      "allRunners": {
+        "5 One For You": {
+          "runnerId": 1956830766800016,
+          "back": 3,
+          "lay": 3.85
+        },
+        "6 Khan": {
+          "runnerId": 1956830766830016,
+          "back": 3.8,
+          "lay": 4.7
+        },
+        "3 Polish": {
+          "runnerId": 1956830766740016,
+          "back": 5.8,
+          "lay": 12
+        },
+        "1 Ratfacemcdougall": {
+          "runnerId": 1956830766680016,
+          "back": 7.6,
+          "lay": 16
+        },
+        "2 Geordie Des Champs": {
+          "runnerId": 1956830766710016,
+          "back": 13,
+          "lay": 27
+        },
+        "4 Corrany": {
+          "runnerId": 1956830766770016,
+          "back": 17.5,
+          "lay": 560
+        },
+        "7 Treasure Dillon": {
+          "runnerId": 1956830766860016,
+          "back": 6.2,
+          "lay": 18
+        },
+        "8 Equus Millar": {
+          "runnerId": 1956830766890016,
+          "back": 12,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "14:00 Taunton": {
+      "id": 1956831982690016,
+      "start": "2022-01-10T14:00:00.000Z",
+      "allRunners": {
+        "8 Natty Night": {
+          "runnerId": 1956831983910116,
+          "back": 3.35,
+          "lay": 4.5
+        },
+        "5 Iceburgh Bay": {
+          "runnerId": 1956831983830016,
+          "back": 12,
+          "lay": 30
+        },
+        "1 Benandgone": {
+          "runnerId": 1956831983700016,
+          "back": 11,
+          "lay": 0
+        },
+        "2 Could Talkaboutit": {
+          "runnerId": 1956831983740016,
+          "back": 3.5,
+          "lay": 0
+        },
+        "3 Don't Say Never": {
+          "runnerId": 1956831983770016,
+          "back": 7,
+          "lay": 0
+        },
+        "4 Iberio": {
+          "runnerId": 1956831983800016,
+          "back": 11,
+          "lay": 1000
+        },
+        "6 Jack The Farmer": {
+          "runnerId": 1956831983860016,
+          "back": 6.6,
+          "lay": 0
+        },
+        "7 Mister Splash": {
+          "runnerId": 1956831983890016,
+          "back": 7.6,
+          "lay": 34
+        },
+        "9 Sands Chorus": {
+          "runnerId": 1956831983950016,
+          "back": 7,
+          "lay": 0
+        },
+        "10 San Giovanni": {
+          "runnerId": 1956831983980016,
+          "back": 3.15,
+          "lay": 4.5
+        },
+        "11 Kishorn": {
+          "runnerId": 1956831984010016,
+          "back": 4.2,
+          "lay": 0
+        },
+        "12 Yvette Guilbert": {
+          "runnerId": 1956831984040116,
+          "back": 5.6,
+          "lay": 6.8
+        },
+        "13 Titian": {
+          "runnerId": 1956831984080016,
+          "back": 6.4,
+          "lay": 8.8
+        },
+        "14 Drag Race": {
+          "runnerId": 1956831984110016,
+          "back": 3.55,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "14:05 Fairview": {
+      "id": 1957595407280016,
+      "start": "2022-01-10T14:05:00.000Z",
+      "allRunners": {
+        "1 Franca": {
+          "runnerId": 1957595407810016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 Lollapalooza": {
+          "runnerId": 1957595407850016,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Zambaq": {
+          "runnerId": 1957595407880016,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Miss Nibbles": {
+          "runnerId": 1957595407910016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Twice To Heaven": {
+          "runnerId": 1957595407940016,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Grayswood Pink": {
+          "runnerId": 1957595407970116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Savannah Winter": {
+          "runnerId": 1957595408000116,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "14:15 Ludlow": {
+      "id": 1956830767280016,
+      "start": "2022-01-10T14:15:00.000Z",
+      "allRunners": {
+        "6 Jet Plane": {
+          "runnerId": 1956830768220116,
+          "back": 2.8,
+          "lay": 3.3
+        },
+        "9 Pulling Stumps": {
+          "runnerId": 1956830768310016,
+          "back": 7.4,
+          "lay": 12
+        },
+        "11 Wrong Shape Ball": {
+          "runnerId": 1956830768360016,
+          "back": 8.6,
+          "lay": 17
+        },
+        "1 Beep Beep": {
+          "runnerId": 1956830768060016,
+          "back": 10.5,
+          "lay": 0
+        },
+        "2 Boley Bay": {
+          "runnerId": 1956830768100016,
+          "back": 6,
+          "lay": 0
+        },
+        "3 Eppleton Collier": {
+          "runnerId": 1956830768130116,
+          "back": 10.5,
+          "lay": 75
+        },
+        "4 Go Sacre Go": {
+          "runnerId": 1956830768160116,
+          "back": 3.1,
+          "lay": 5.8
+        },
+        "5 In Our Dreams": {
+          "runnerId": 1956830768190116,
+          "back": 8.2,
+          "lay": 55
+        },
+        "7 Meechlands Magic": {
+          "runnerId": 1956830768250116,
+          "back": 42,
+          "lay": 0
+        },
+        "8 Moot Court": {
+          "runnerId": 1956830768280016,
+          "back": 11.5,
+          "lay": 38
+        },
+        "10 Samtara": {
+          "runnerId": 1956830768330116,
+          "back": 8.2,
+          "lay": 24
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "14:30 Taunton": {
+      "id": 1956831984700016,
+      "start": "2022-01-10T14:30:00.000Z",
+      "allRunners": {
+        "1 Quoi De Neuf": {
+          "runnerId": 1956831985110016,
+          "back": 2.96,
+          "lay": 5.1
+        },
+        "4 Golden Boy Grey": {
+          "runnerId": 1956831985200116,
+          "back": 4,
+          "lay": 4.5
+        },
+        "3 Sarasota Star": {
+          "runnerId": 1956831985170016,
+          "back": 3.4,
+          "lay": 5
+        },
+        "5 All Dancer": {
+          "runnerId": 1956831985230116,
+          "back": 3.7,
+          "lay": 7.4
+        },
+        "2 Rockstar Ronnie": {
+          "runnerId": 1956831985140016,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "14:35 Fairview": {
+      "id": 1957595408370016,
+      "start": "2022-01-10T14:35:00.000Z",
+      "allRunners": {
+        "1 Baltic Beat": {
+          "runnerId": 1957595409150016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 Dogliotti": {
+          "runnerId": 1957595409180016,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Kingston Rock": {
+          "runnerId": 1957595409210116,
+          "back": 0,
+          "lay": 0
+        },
+        "4 Masterful": {
+          "runnerId": 1957595409250016,
+          "back": 0,
+          "lay": 0
+        },
+        "5 Sanctity": {
+          "runnerId": 1957595409280016,
+          "back": 0,
+          "lay": 0
+        },
+        "6 Curious": {
+          "runnerId": 1957595409310116,
+          "back": 0,
+          "lay": 0
+        },
+        "7 Red Bishop": {
+          "runnerId": 1957595409350116,
+          "back": 0,
+          "lay": 0
+        },
+        "8 Red Eight": {
+          "runnerId": 1957595409380116,
+          "back": 0,
+          "lay": 0
+        },
+        "9 The Gaul": {
+          "runnerId": 1957595409410116,
+          "back": 0,
+          "lay": 0
+        },
+        "10 Silver Celebrity": {
+          "runnerId": 1957595409450016,
+          "back": 0,
+          "lay": 0
+        },
+        "11 Livingstone": {
+          "runnerId": 1957595409480016,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "14:45 Ludlow": {
+      "id": 1956830768860016,
+      "start": "2022-01-10T14:45:00.000Z",
+      "allRunners": {
+        "1 Bridge North": {
+          "runnerId": 1956830769550016,
+          "back": 2.16,
+          "lay": 2.64
+        },
+        "2 Deal Em High": {
+          "runnerId": 1956830769580116,
+          "back": 0,
+          "lay": 0
+        },
+        "3 Has Troke": {
+          "runnerId": 1956830769610116,
+          "back": 6.2,
+          "lay": 11.5
+        },
+        "4 Hooky Street": {
+          "runnerId": 1956830769640116,
+          "back": 6.2,
+          "lay": 0
+        },
+        "6 Moonlight Flit": {
+          "runnerId": 1956830769710016,
+          "back": 2.52,
+          "lay": 0
+        },
+        "7 Outback Frontiers": {
+          "runnerId": 1956830769730116,
+          "back": 24,
+          "lay": 0
+        },
+        "8 Phantom Getaway": {
+          "runnerId": 1956830769760116,
+          "back": 5.6,
+          "lay": 12
+        },
+        "9 Teddy The Knight": {
+          "runnerId": 1956830769800016,
+          "back": 0,
+          "lay": 0
+        },
+        "10 The Boola Boss": {
+          "runnerId": 1956830769830016,
+          "back": 10.5,
+          "lay": 17
+        },
+        "5 Landen Calling": {
+          "runnerId": 1956830769670116,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "15:00 Taunton": {
+      "id": 1956831985540016,
+      "start": "2022-01-10T15:00:00.000Z",
+      "allRunners": {
+        "3 Masters Legacy": {
+          "runnerId": 1956831986210016,
+          "back": 3.65,
+          "lay": 6.2
+        },
+        "4 Arrivederci": {
+          "runnerId": 1956831986240116,
+          "back": 4.1,
+          "lay": 6.4
+        },
+        "2 Leoncavallo": {
+          "runnerId": 1956831986180016,
+          "back": 4.3,
+          "lay": 0
+        },
+        "1 Skandiburg": {
+          "runnerId": 1956831986150016,
+          "back": 12.5,
+          "lay": 30
+        },
+        "6 Birds Of Prey": {
+          "runnerId": 1956831986300116,
+          "back": 11,
+          "lay": 0
+        },
+        "8 Canford Light": {
+          "runnerId": 1956831986360116,
+          "back": 11.5,
+          "lay": 44
+        },
+        "5 Aggy With It": {
+          "runnerId": 1956831986270116,
+          "back": 6,
+          "lay": 10
+        },
+        "7 Cap Du Mathan": {
+          "runnerId": 1956831986330116,
+          "back": 6.2,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "15:15 Ludlow": {
+      "id": 1956830770320016,
+      "start": "2022-01-10T15:15:00.000Z",
+      "allRunners": {
+        "1 Java Point": {
+          "runnerId": 1956830770870016,
+          "back": 3.75,
+          "lay": 6.4
+        },
+        "5 Jimmy The Digger": {
+          "runnerId": 1956830770990016,
+          "back": 4.9,
+          "lay": 7
+        },
+        "4 Wildfire Warrior": {
+          "runnerId": 1956830770960016,
+          "back": 4.3,
+          "lay": 5.5
+        },
+        "2 Isolate": {
+          "runnerId": 1956830770900016,
+          "back": 6.2,
+          "lay": 20
+        },
+        "3 Une De La Seniere": {
+          "runnerId": 1956830770930016,
+          "back": 7.2,
+          "lay": 24
+        },
+        "6 Method Madness": {
+          "runnerId": 1956830771010116,
+          "back": 7.2,
+          "lay": 27
+        },
+        "7 Fanamix": {
+          "runnerId": 1956830771040116,
+          "back": 12.5,
+          "lay": 85
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "15:30 Taunton": {
+      "id": 1956831986760016,
+      "start": "2022-01-10T15:30:00.000Z",
+      "allRunners": {
+        "8 Queen Of The Court": {
+          "runnerId": 1956831987740016,
+          "back": 4.3,
+          "lay": 11
+        },
+        "1 Young O'leary": {
+          "runnerId": 1956831987520016,
+          "back": 4.5,
+          "lay": 9
+        },
+        "5 Dont Be Robin": {
+          "runnerId": 1956831987650116,
+          "back": 8.8,
+          "lay": 25
+        },
+        "9 Ericas Lad": {
+          "runnerId": 1956831987770016,
+          "back": 10.5,
+          "lay": 21
+        },
+        "10 Treacys Jim": {
+          "runnerId": 1956831987790116,
+          "back": 4.4,
+          "lay": 65
+        },
+        "11 Hot Smoked": {
+          "runnerId": 1956831987820116,
+          "back": 4.4,
+          "lay": 190
+        },
+        "2 Artemision": {
+          "runnerId": 1956831987560016,
+          "back": 8.2,
+          "lay": 38
+        },
+        "3 Minella Examiner": {
+          "runnerId": 1956831987590016,
+          "back": 11.5,
+          "lay": 95
+        },
+        "4 Black Centaur": {
+          "runnerId": 1956831987620016,
+          "back": 5.6,
+          "lay": 10.5
+        },
+        "6 Duc Kauto": {
+          "runnerId": 1956831987680116,
+          "back": 11,
+          "lay": 80
+        },
+        "7 Feodora": {
+          "runnerId": 1956831987710016,
+          "back": 6.4,
+          "lay": 11
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "15:45 Ludlow": {
+      "id": 1956830771400016,
+      "start": "2022-01-10T15:45:00.000Z",
+      "allRunners": {
+        "12 You Wear It Well": {
+          "runnerId": 1956830772730016,
+          "back": 7.6,
+          "lay": 12.5
+        },
+        "2 Ebonello": {
+          "runnerId": 1956830772420016,
+          "back": 6.8,
+          "lay": 11.5
+        },
+        "1 Dicey Rielly": {
+          "runnerId": 1956830772380016,
+          "back": 9.2,
+          "lay": 0
+        },
+        "3 Jaunty Zing": {
+          "runnerId": 1956830772450016,
+          "back": 11.5,
+          "lay": 0
+        },
+        "4 Jobesgreen Girl": {
+          "runnerId": 1956830772480016,
+          "back": 9.2,
+          "lay": 0
+        },
+        "5 Maria Di Febbo": {
+          "runnerId": 1956830772510116,
+          "back": 4.6,
+          "lay": 0
+        },
+        "6 Mullenbeg": {
+          "runnerId": 1956830772540116,
+          "back": 7.2,
+          "lay": 40
+        },
+        "7 Parisienne Gold": {
+          "runnerId": 1956830772570116,
+          "back": 11.5,
+          "lay": 0
+        },
+        "8 Peerless Beauty": {
+          "runnerId": 1956830772600116,
+          "back": 2.62,
+          "lay": 3.45
+        },
+        "9 Prosopagnosia": {
+          "runnerId": 1956830772630116,
+          "back": 4.6,
+          "lay": 0
+        },
+        "10 Supreme Sunset": {
+          "runnerId": 1956830772670016,
+          "back": 6.2,
+          "lay": 85
+        },
+        "11 Tara Haze": {
+          "runnerId": 1956830772700016,
+          "back": 6,
+          "lay": 0
+        },
+        "13 Mayway": {
+          "runnerId": 1956830772760116,
+          "back": 6,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "16:00 Wolverhampton": {
+      "id": 1956830773340016,
+      "start": "2022-01-10T16:00:00.000Z",
+      "allRunners": {
+        "1 Dark Design": {
+          "runnerId": 1956830774230016,
+          "back": 2.62,
+          "lay": 3.5
+        },
+        "3 Intervention": {
+          "runnerId": 1956830774290116,
+          "back": 4.3,
+          "lay": 7.4
+        },
+        "5 Okaidi": {
+          "runnerId": 1956830774350116,
+          "back": 7.4,
+          "lay": 10
+        },
+        "9 Broughtons Flare": {
+          "runnerId": 1956830774470016,
+          "back": 8.8,
+          "lay": 0
+        },
+        "10 Impressions Dream": {
+          "runnerId": 1956830774500016,
+          "back": 0,
+          "lay": 0
+        },
+        "2 Bomb Squad": {
+          "runnerId": 1956830774260016,
+          "back": 12,
+          "lay": 0
+        },
+        "4 Rocking Reg": {
+          "runnerId": 1956830774320016,
+          "back": 17,
+          "lay": 260
+        },
+        "6 Peachey Carnehan": {
+          "runnerId": 1956830774380116,
+          "back": 11.5,
+          "lay": 28
+        },
+        "7 Irish Times": {
+          "runnerId": 1956830774410016,
+          "back": 10.5,
+          "lay": 120
+        },
+        "8 Secret To Success": {
+          "runnerId": 1956830774440016,
+          "back": 11,
+          "lay": 0
+        },
+        "11 Owens Lad": {
+          "runnerId": 1956830774520116,
+          "back": 17.5,
+          "lay": 320
+        },
+        "12 Giant Steps": {
+          "runnerId": 1956830774550116,
+          "back": 10,
+          "lay": 55
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "16:05 Taunton": {
+      "id": 1956831989110016,
+      "start": "2022-01-10T16:05:00.000Z",
+      "allRunners": {
+        "9 No No Tonic": {
+          "runnerId": 1956831990610016,
+          "back": 4.5,
+          "lay": 9
+        },
+        "15 September Daisy": {
+          "runnerId": 1956831990790016,
+          "back": 9.2,
+          "lay": 0
+        },
+        "10 Miss M": {
+          "runnerId": 1956831990640116,
+          "back": 8.6,
+          "lay": 0
+        },
+        "16 Miss Marette": {
+          "runnerId": 1956831990820016,
+          "back": 4.6,
+          "lay": 0
+        },
+        "1 Amelia's Dance": {
+          "runnerId": 1956831990340016,
+          "back": 10.5,
+          "lay": 480
+        },
+        "2 Joyful Kit": {
+          "runnerId": 1956831990370016,
+          "back": 5.1,
+          "lay": 780
+        },
+        "4 Gaot": {
+          "runnerId": 1956831990440016,
+          "back": 4.8,
+          "lay": 7.4
+        },
+        "5 Wilderness": {
+          "runnerId": 1956831990470116,
+          "back": 10,
+          "lay": 0
+        },
+        "6 Minnie Escape": {
+          "runnerId": 1956831990510016,
+          "back": 11.5,
+          "lay": 95
+        },
+        "7 Blue Heather": {
+          "runnerId": 1956831990550016,
+          "back": 5.7,
+          "lay": 0
+        },
+        "8 West On Sunset": {
+          "runnerId": 1956831990580116,
+          "back": 5.2,
+          "lay": 0
+        },
+        "11 Sawpit Sienna": {
+          "runnerId": 1956831990670116,
+          "back": 8.6,
+          "lay": 75
+        },
+        "12 Sindabella": {
+          "runnerId": 1956831990700116,
+          "back": 8.2,
+          "lay": 0
+        },
+        "13 Dolly McQueen": {
+          "runnerId": 1956831990730016,
+          "back": 9.2,
+          "lay": 75
+        },
+        "14 The Cilleens": {
+          "runnerId": 1956831990760016,
+          "back": 3.4,
+          "lay": 0
+        },
+        "17 Vinnie's Icon": {
+          "runnerId": 1956831990850116,
+          "back": 4.2,
+          "lay": 0
+        },
+        "3 Monete": {
+          "runnerId": 1956831990400116,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "16:30 Wolverhampton": {
+      "id": 1956830791000016,
+      "start": "2022-01-10T16:30:00.000Z",
+      "allRunners": {
+        "1 Algheed": {
+          "runnerId": 1956830792320016,
+          "back": 2.16,
+          "lay": 3.05
+        },
+        "4 First Lott": {
+          "runnerId": 1956830792420016,
+          "back": 3.05,
+          "lay": 17
+        },
+        "5 Khatwah": {
+          "runnerId": 1956830792450116,
+          "back": 3.85,
+          "lay": 6
+        },
+        "2 Got The Moves": {
+          "runnerId": 1956830792360016,
+          "back": 8.2,
+          "lay": 11
+        },
+        "3 Apatite": {
+          "runnerId": 1956830792380116,
+          "back": 7,
+          "lay": 1000
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "17:00 Wolverhampton": {
+      "id": 1956830792790016,
+      "start": "2022-01-10T17:00:00.000Z",
+      "allRunners": {
+        "9 Shurut": {
+          "runnerId": 1956830793830116,
+          "back": 2.88,
+          "lay": 7.2
+        },
+        "1 Diamond Memories": {
+          "runnerId": 1956830793560016,
+          "back": 50,
+          "lay": 0
+        },
+        "2 Swiss Sancerre": {
+          "runnerId": 1956830793600116,
+          "back": 6.6,
+          "lay": 0
+        },
+        "3 Bare Necessity": {
+          "runnerId": 1956830793640016,
+          "back": 6.2,
+          "lay": 0
+        },
+        "4 Enlightenment": {
+          "runnerId": 1956830793670116,
+          "back": 12,
+          "lay": 0
+        },
+        "5 Misscall": {
+          "runnerId": 1956830793700116,
+          "back": 3.1,
+          "lay": 7.4
+        },
+        "6 Return Voyage": {
+          "runnerId": 1956830793730116,
+          "back": 11.5,
+          "lay": 0
+        },
+        "7 Sequeira Lady": {
+          "runnerId": 1956830793760116,
+          "back": 9.2,
+          "lay": 65
+        },
+        "8 Sharron Macready": {
+          "runnerId": 1956830793800016,
+          "back": 7.6,
+          "lay": 13
+        },
+        "10 Sweet Aroma": {
+          "runnerId": 1956830793870016,
+          "back": 8.2,
+          "lay": 12.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "17:30 Wolverhampton": {
+      "id": 1956830794360016,
+      "start": "2022-01-10T17:30:00.000Z",
+      "allRunners": {
+        "10 Fennaan": {
+          "runnerId": 1956830795380016,
+          "back": 3.5,
+          "lay": 8.6
+        },
+        "5 Eligible": {
+          "runnerId": 1956830795220016,
+          "back": 4.8,
+          "lay": 7
+        },
+        "1 My Brother Mike": {
+          "runnerId": 1956830795090016,
+          "back": 5.4,
+          "lay": 20
+        },
+        "8 Far From A Ruby": {
+          "runnerId": 1956830795320016,
+          "back": 6.6,
+          "lay": 0
+        },
+        "3 Simulation Theory": {
+          "runnerId": 1956830795160016,
+          "back": 30,
+          "lay": 280
+        },
+        "2 Gertcha": {
+          "runnerId": 1956830795120016,
+          "back": 12,
+          "lay": 220
+        },
+        "4 Old Port": {
+          "runnerId": 1956830795190016,
+          "back": 6.2,
+          "lay": 34
+        },
+        "6 Universal Effect": {
+          "runnerId": 1956830795250116,
+          "back": 6.6,
+          "lay": 0
+        },
+        "7 Pink Jazz": {
+          "runnerId": 1956830795280116,
+          "back": 8.4,
+          "lay": 24
+        },
+        "9 Full Approval": {
+          "runnerId": 1956830795350016,
+          "back": 6,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "18:00 Wolverhampton": {
+      "id": 1956830795940016,
+      "start": "2022-01-10T18:00:00.000Z",
+      "allRunners": {
+        "3 Kenzai Warrior": {
+          "runnerId": 1956830796280116,
+          "back": 3.3,
+          "lay": 3.5
+        },
+        "1 Dark Pine": {
+          "runnerId": 1956830796220016,
+          "back": 2.8,
+          "lay": 3
+        },
+        "2 Fox Tal": {
+          "runnerId": 1956830796250116,
+          "back": 2.42,
+          "lay": 4.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "18:30 Wolverhampton": {
+      "id": 1956830796530016,
+      "start": "2022-01-10T18:30:00.000Z",
+      "allRunners": {
+        "4 Ooh Is It": {
+          "runnerId": 1956830797370116,
+          "back": 4.5,
+          "lay": 5.5
+        },
+        "7 Show Me A Sunset": {
+          "runnerId": 1956830797460116,
+          "back": 5.1,
+          "lay": 9.4
+        },
+        "5 Atiyah": {
+          "runnerId": 1956830797400116,
+          "back": 6,
+          "lay": 8.6
+        },
+        "1 Huraiz": {
+          "runnerId": 1956830797280016,
+          "back": 8.4,
+          "lay": 15
+        },
+        "2 Ornate": {
+          "runnerId": 1956830797310016,
+          "back": 12.5,
+          "lay": 140
+        },
+        "3 Idoapologise": {
+          "runnerId": 1956830797340016,
+          "back": 13,
+          "lay": 0
+        },
+        "6 Charming Kid": {
+          "runnerId": 1956830797430116,
+          "back": 7.4,
+          "lay": 12.5
+        },
+        "8 Roydmoor": {
+          "runnerId": 1956830797490116,
+          "back": 6.8,
+          "lay": 9
+        },
+        "9 The Daley Express": {
+          "runnerId": 1956830797520116,
+          "back": 12,
+          "lay": 60
+        },
+        "10 Zapper Cass": {
+          "runnerId": 1956830797550116,
+          "back": 21,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "19:00 Wolverhampton": {
+      "id": 1956830798040016,
+      "start": "2022-01-10T19:00:00.000Z",
+      "allRunners": {
+        "5 Hooflepuff": {
+          "runnerId": 1956830798780016,
+          "back": 3.3,
+          "lay": 4.4
+        },
+        "2 Richard R H B": {
+          "runnerId": 1956830798680116,
+          "back": 5.8,
+          "lay": 9
+        },
+        "3 Songkran": {
+          "runnerId": 1956830798710116,
+          "back": 9,
+          "lay": 20
+        },
+        "1 Lough Cutra": {
+          "runnerId": 1956830798650016,
+          "back": 5.2,
+          "lay": 9.4
+        },
+        "4 Knowwhentorun": {
+          "runnerId": 1956830798740116,
+          "back": 5,
+          "lay": 11
+        },
+        "6 Dark Company": {
+          "runnerId": 1956830798800116,
+          "back": 7.4,
+          "lay": 0
+        },
+        "7 Wholelotafun": {
+          "runnerId": 1956830798830116,
+          "back": 11.5,
+          "lay": 0
+        },
+        "8 Mummy's Boy": {
+          "runnerId": 1956830798860116,
+          "back": 7.8,
+          "lay": 17.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "remainingTotalBetAmountLimit": 0,
+        "userBalance": 10.35,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    }
+  }
+}

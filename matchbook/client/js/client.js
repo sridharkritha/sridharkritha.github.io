@@ -1,185 +1,361 @@
 
 window.addEventListener('load', function() {
 
-
 	const g_sportsWiseBetList = 
-	{
-		"Soccer": [
-		  {
-			"status": "matched",
-			"sport-id": 15,
-			"sport-name": "Soccer",
-			"event-id": 1949402913700016,
-			"event-name": "FC Cartagena vs Valencia",
-			"runner-name": "Valencia",
-			"decimal-odds": 1.9,
-			"stake": 0.2,
-			"event-full-details": {
-			  "id": 1949402913700016,
-			  "start": "2022-01-05T15:00:00.000Z",
-			  "allRunners": {
-				"FC Cartagena": {
-				  "runnerId": 1949402917630016,
-				  "back": 5,
-				  "lay": 5.4,
-				  "name": "FC Cartagena"
-				},
-				"Valencia": {
-				  "runnerId": 1949402917660116,
-				  "back": 1.82,
-				  "lay": 1.89,
-				  "name": "Valencia",
-				  "numberOfRunners": 3,
-				  "winPercentage": 97.8021978021978,
-				  "startTime": "2022-01-05T15:00:00.000Z",
-				  "raceId": 1949402913700016,
-				  "raceName": "FC Cartagena vs Valencia",
-				  "sportName": "Soccer"
-				},
-				"DRAW (FC /Val)": {
-				  "runnerId": 1949402917700016,
-				  "back": 3.6,
-				  "lay": 3.8,
-				  "name": "DRAW (FC /Val)"
-				}
-			  },
-			  "luckyWinner": {
-				"runnerId": 1949402917660116,
-				"back": 1.82,
-				"lay": 1.89,
-				"name": "Valencia",
-				"numberOfRunners": 3,
-				"winPercentage": 97.8021978021978,
-				"startTime": "2022-01-05T15:00:00.000Z",
-				"raceId": 1949402913700016,
-				"raceName": "FC Cartagena vs Valencia",
-				"sportName": "Soccer"
-			  }
-			},
-			"bet-placed-time": "08:14:16  05-01-2022"
-		  },
-		  {
-			"status": "matched",
-			"sport-id": 15,
-			"sport-name": "Soccer",
-			"event-id": 1949433747610016,
-			"event-name": "Besiktas JK vs Antalyaspor",
-			"runner-name": "Besiktas JK",
-			"decimal-odds": 1.8,
-			"stake": 0.2,
-			"event-full-details": {
-			  "id": 1949433747610016,
-			  "start": "2022-01-05T17:45:00.000Z",
-			  "allRunners": {
-				"Besiktas JK": {
-				  "runnerId": 1949433748770016,
-				  "back": 1.75,
-				  "lay": 2.14,
-				  "name": "Besiktas JK",
-				  "numberOfRunners": 3,
-				  "winPercentage": 91.42857142857143,
-				  "startTime": "2022-01-05T17:45:00.000Z",
-				  "raceId": 1949433747610016,
-				  "raceName": "Besiktas JK vs Antalyaspor",
-				  "sportName": "Soccer"
-				},
-				"Antalyaspor": {
-				  "runnerId": 1949433748810016,
-				  "back": 4.2,
-				  "lay": 4.7,
-				  "name": "Antalyaspor"
-				},
-				"DRAW (Bes/Ant)": {
-				  "runnerId": 1949433748850016,
-				  "back": 3.35,
-				  "lay": 4.6,
-				  "name": "DRAW (Bes/Ant)"
-				}
-			  },
-			  "luckyWinner": {
-				"runnerId": 1949433748770016,
-				"back": 1.75,
-				"lay": 2.14,
-				"name": "Besiktas JK",
-				"numberOfRunners": 3,
-				"winPercentage": 91.42857142857143,
-				"startTime": "2022-01-05T17:45:00.000Z",
-				"raceId": 1949433747610016,
-				"raceName": "Besiktas JK vs Antalyaspor",
-				"sportName": "Soccer"
-			  }
-			},
-			"bet-placed-time": "08:14:17  05-01-2022"
-		  }
-		],
-		"Horse Racing": [
-		  {
-			"status": "matched",
-			"sport-id": 24735152712200,
-			"sport-name": "Horse Racing",
-			"event-id": 1952502854800016,
-			"event-name": "14:55 Ffos Las",
-			"runner-name": "1 Getaweapon",
-			"decimal-odds": 2.2,
-			"stake": 0.2,
-			"event-full-details": {
-			  "id": 1952502854800016,
-			  "start": "2022-01-05T14:55:00.000Z",
-			  "allRunners": {
-				"1 Getaweapon": {
-				  "runnerId": 1952502855210016,
-				  "back": 2.16,
-				  "lay": 2.7,
-				  "name": "1 Getaweapon",
-				  "numberOfRunners": 5,
-				  "winPercentage": 99.07407407407405,
-				  "startTime": "2022-01-05T14:55:00.000Z",
-				  "raceId": 1952502854800016,
-				  "raceName": "14:55 Ffos Las",
-				  "sportName": "Horse Racing"
-				},
-				"3 Fashion's Model": {
-				  "runnerId": 1952502855270016,
-				  "back": 5.5,
-				  "lay": 11,
-				  "name": "3 Fashion's Model"
-				},
-				"5 Gaia Vallis": {
-				  "runnerId": 1952502855330016,
-				  "back": 4.7,
-				  "lay": 0,
-				  "name": "5 Gaia Vallis"
-				},
-				"2 So Socksy": {
-				  "runnerId": 1952502855240016,
-				  "back": 4.3,
-				  "lay": 10,
-				  "name": "2 So Socksy"
-				},
-				"4 Get An Oscar": {
-				  "runnerId": 1952502855300016,
-				  "back": 9,
-				  "lay": 18.5,
-				  "name": "4 Get An Oscar"
-				}
-			  },
-			  "luckyWinner": {
-				"runnerId": 1952502855210016,
-				"back": 2.16,
-				"lay": 2.7,
-				"name": "1 Getaweapon",
-				"numberOfRunners": 5,
-				"winPercentage": 99.07407407407405,
-				"startTime": "2022-01-05T14:55:00.000Z",
-				"raceId": 1952502854800016,
-				"raceName": "14:55 Ffos Las",
-				"sportName": "Horse Racing"
-			  }
-			},
-			"bet-placed-time": "08:15:40  05-01-2022"
-		  }
-		]
-	  };
+									{
+										"Horse Racing": [
+											{
+												"status": "matched",
+												"sport-id": 24735152712200,
+												"sport-name": "Horse Racing",
+												"event-id": 1956830763120016,
+												"event-name": "12:45 Ludlow",
+												"runner-name": "5 Dr T J Eckleburg",
+												"decimal-odds": 1.8,
+												"stake": 0.2,
+												"event-full-details": {
+													"id": 1956830763120016,
+													"start": "2022-01-10T12:45:00.000Z",
+													"allRunners": {
+														"5 Dr T J Eckleburg": {
+															"runnerId": 1956830764010016,
+															"back": 1.76,
+															"lay": 1.95,
+															"name": "5 Dr T J Eckleburg",
+															"event-name": "12:45 Ludlow",
+															"numberOfRunners": 10,
+															"winPercentage": 150.00000000000003,
+															"startTime": "2022-01-10T12:45:00.000Z",
+															"raceId": 1956830763120016,
+															"raceName": "12:45 Ludlow",
+															"sportName": "Horse Racing"
+														},
+														"1 Illico Des Places": {
+															"runnerId": 1956830763880016,
+															"back": 4.4,
+															"lay": 6.2,
+															"name": "1 Illico Des Places",
+															"event-name": "12:45 Ludlow"
+														},
+														"7 Imperial Sun": {
+															"runnerId": 1956830764070016,
+															"back": 6.6,
+															"lay": 8.8,
+															"name": "7 Imperial Sun",
+															"event-name": "12:45 Ludlow"
+														},
+														"10 Angels Landing": {
+															"runnerId": 1956830764170116,
+															"back": 7,
+															"lay": 14,
+															"name": "10 Angels Landing",
+															"event-name": "12:45 Ludlow"
+														},
+														"2 Appreciate": {
+															"runnerId": 1956830763920016,
+															"back": 21,
+															"lay": 0,
+															"name": "2 Appreciate",
+															"event-name": "12:45 Ludlow"
+														},
+														"3 Bryanwood": {
+															"runnerId": 1956830763950016,
+															"back": 21,
+															"lay": 0,
+															"name": "3 Bryanwood",
+															"event-name": "12:45 Ludlow"
+														},
+														"4 Dragon's Fire": {
+															"runnerId": 1956830763980016,
+															"back": 6,
+															"lay": 0,
+															"name": "4 Dragon's Fire",
+															"event-name": "12:45 Ludlow"
+														},
+														"6 Fight For It": {
+															"runnerId": 1956830764040016,
+															"back": 16,
+															"lay": 0,
+															"name": "6 Fight For It",
+															"event-name": "12:45 Ludlow"
+														},
+														"8 Kolisi": {
+															"runnerId": 1956830764100116,
+															"back": 14.5,
+															"lay": 0,
+															"name": "8 Kolisi",
+															"event-name": "12:45 Ludlow"
+														},
+														"9 Mind Hunter": {
+															"runnerId": 1956830764140116,
+															"back": 26,
+															"lay": 990,
+															"name": "9 Mind Hunter",
+															"event-name": "12:45 Ludlow"
+														}
+													},
+													"metaData": {
+														"stakeValue": 0.2,
+														"todayTotalBetAmountLimit": 3,
+														"remainingTotalBetAmountLimit": 0,
+														"userBalance": 10.35,
+														"winConfidencePercentage": 80,
+														"minProfitOdd": 0.7
+													},
+													"luckyWinner": {
+														"runnerId": 1956830764010016,
+														"back": 1.76,
+														"lay": 1.95,
+														"name": "5 Dr T J Eckleburg",
+														"event-name": "12:45 Ludlow",
+														"numberOfRunners": 10,
+														"winPercentage": 150.00000000000003,
+														"startTime": "2022-01-10T12:45:00.000Z",
+														"raceId": 1956830763120016,
+														"raceName": "12:45 Ludlow",
+														"sportName": "Horse Racing"
+													}
+												},
+												"metaData": {
+													"stakeValue": 0.2,
+													"todayTotalBetAmountLimit": 3,
+													"remainingTotalBetAmountLimit": 0,
+													"userBalance": 10.35,
+													"winConfidencePercentage": 80,
+													"minProfitOdd": 0.7
+												},
+												"event-start-time": "10/01/2022, 12:45:00",
+												"bet-placed-time": "07:50:54  10-01-2022"
+											},
+											{
+												"status": "matched",
+												"sport-id": 24735152712200,
+												"sport-name": "Horse Racing",
+												"event-id": 1956831980740016,
+												"event-name": "13:30 Taunton",
+												"runner-name": "6 Knickerbockerglory",
+												"decimal-odds": 2.4,
+												"stake": 0.2,
+												"event-full-details": {
+													"id": 1956831980740016,
+													"start": "2022-01-10T13:30:00.000Z",
+													"allRunners": {
+														"6 Knickerbockerglory": {
+															"runnerId": 1956831981840116,
+															"back": 2.36,
+															"lay": 2.6,
+															"name": "6 Knickerbockerglory",
+															"event-name": "13:30 Taunton",
+															"numberOfRunners": 14,
+															"winPercentage": 82.20338983050848,
+															"startTime": "2022-01-10T13:30:00.000Z",
+															"raceId": 1956831980740016,
+															"raceName": "13:30 Taunton",
+															"sportName": "Horse Racing"
+														},
+														"12 Sword Beach": {
+															"runnerId": 1956831982010016,
+															"back": 6.6,
+															"lay": 34,
+															"name": "12 Sword Beach",
+															"event-name": "13:30 Taunton"
+														},
+														"1 Ben Lilly": {
+															"runnerId": 1956831981700016,
+															"back": 11,
+															"lay": 0,
+															"name": "1 Ben Lilly",
+															"event-name": "13:30 Taunton"
+														},
+														"2 Charming Getaway": {
+															"runnerId": 1956831981730116,
+															"back": 10.5,
+															"lay": 0,
+															"name": "2 Charming Getaway",
+															"event-name": "13:30 Taunton"
+														},
+														"4 Hartnoll Hero": {
+															"runnerId": 1956831981790016,
+															"back": 16,
+															"lay": 0,
+															"name": "4 Hartnoll Hero",
+															"event-name": "13:30 Taunton"
+														},
+														"5 Jump Over The Moon": {
+															"runnerId": 1956831981810116,
+															"back": 10,
+															"lay": 0,
+															"name": "5 Jump Over The Moon",
+															"event-name": "13:30 Taunton"
+														},
+														"7 Marettimo": {
+															"runnerId": 1956831981870116,
+															"back": 19.5,
+															"lay": 0,
+															"name": "7 Marettimo",
+															"event-name": "13:30 Taunton"
+														},
+														"8 Moveit Like Minnie": {
+															"runnerId": 1956831981900016,
+															"back": 5.1,
+															"lay": 17,
+															"name": "8 Moveit Like Minnie",
+															"event-name": "13:30 Taunton"
+														},
+														"9 Muy Bien": {
+															"runnerId": 1956831981920116,
+															"back": 15,
+															"lay": 0,
+															"name": "9 Muy Bien",
+															"event-name": "13:30 Taunton"
+														},
+														"10 Quickbuck": {
+															"runnerId": 1956831981950016,
+															"back": 4.3,
+															"lay": 0,
+															"name": "10 Quickbuck",
+															"event-name": "13:30 Taunton"
+														},
+														"11 Rocambolas": {
+															"runnerId": 1956831981980016,
+															"back": 10,
+															"lay": 0,
+															"name": "11 Rocambolas",
+															"event-name": "13:30 Taunton"
+														},
+														"13 Chillabella": {
+															"runnerId": 1956831982030116,
+															"back": 6,
+															"lay": 990,
+															"name": "13 Chillabella",
+															"event-name": "13:30 Taunton"
+														},
+														"14 Chadlington Lad": {
+															"runnerId": 1956831982070016,
+															"back": 19,
+															"lay": 0,
+															"name": "14 Chadlington Lad",
+															"event-name": "13:30 Taunton"
+														},
+														"3 Forward Plan": {
+															"runnerId": 1956831981760116,
+															"back": 0,
+															"lay": 0,
+															"name": "3 Forward Plan",
+															"event-name": "13:30 Taunton"
+														}
+													},
+													"metaData": {
+														"stakeValue": 0.2,
+														"todayTotalBetAmountLimit": 3,
+														"remainingTotalBetAmountLimit": 0,
+														"userBalance": 10.35,
+														"winConfidencePercentage": 80,
+														"minProfitOdd": 0.7
+													},
+													"luckyWinner": {
+														"runnerId": 1956831981840116,
+														"back": 2.36,
+														"lay": 2.6,
+														"name": "6 Knickerbockerglory",
+														"event-name": "13:30 Taunton",
+														"numberOfRunners": 14,
+														"winPercentage": 82.20338983050848,
+														"startTime": "2022-01-10T13:30:00.000Z",
+														"raceId": 1956831980740016,
+														"raceName": "13:30 Taunton",
+														"sportName": "Horse Racing"
+													}
+												},
+												"metaData": {
+													"stakeValue": 0.2,
+													"todayTotalBetAmountLimit": 3,
+													"remainingTotalBetAmountLimit": 0,
+													"userBalance": 10.35,
+													"winConfidencePercentage": 80,
+													"minProfitOdd": 0.7
+												},
+												"event-start-time": "10/01/2022, 13:30:00",
+												"bet-placed-time": "07:52:44  10-01-2022"
+											}
+										],
+										"Soccer": [
+											{
+												"status": "matched",
+												"sport-id": 15,
+												"sport-name": "Soccer",
+												"event-id": 1955588068000016,
+												"event-name": "Jong FC Utrecht vs Jong Ajax",
+												"runner-name": "Jong Ajax",
+												"decimal-odds": 1.8,
+												"stake": 0.2,
+												"event-full-details": {
+													"id": 1955588068000016,
+													"start": "2022-01-10T17:45:00.000Z",
+													"allRunners": {
+														"Jong FC Utrecht": {
+															"runnerId": 1955588069240016,
+															"back": 4.6,
+															"lay": 4.9,
+															"name": "Jong FC Utrecht",
+															"event-name": "Jong FC Utrecht vs Jong Ajax"
+														},
+														"Jong Ajax": {
+															"runnerId": 1955588069280016,
+															"back": 1.72,
+															"lay": 1.78,
+															"name": "Jong Ajax",
+															"event-name": "Jong FC Utrecht vs Jong Ajax",
+															"numberOfRunners": 3,
+															"winPercentage": 155.81395348837214,
+															"startTime": "2022-01-10T17:45:00.000Z",
+															"raceId": 1955588068000016,
+															"raceName": "Jong FC Utrecht vs Jong Ajax",
+															"sportName": "Soccer"
+														},
+														"DRAW (Jon/Jon)": {
+															"runnerId": 1955588069310016,
+															"back": 4.4,
+															"lay": 4.7,
+															"name": "DRAW (Jon/Jon)",
+															"event-name": "Jong FC Utrecht vs Jong Ajax"
+														}
+													},
+													"metaData": {
+														"stakeValue": 0.2,
+														"todayTotalBetAmountLimit": 3,
+														"remainingTotalBetAmountLimit": 0,
+														"userBalance": 10.35,
+														"winConfidencePercentage": 80,
+														"minProfitOdd": 0.7
+													},
+													"luckyWinner": {
+														"runnerId": 1955588069280016,
+														"back": 1.72,
+														"lay": 1.78,
+														"name": "Jong Ajax",
+														"event-name": "Jong FC Utrecht vs Jong Ajax",
+														"numberOfRunners": 3,
+														"winPercentage": 155.81395348837214,
+														"startTime": "2022-01-10T17:45:00.000Z",
+														"raceId": 1955588068000016,
+														"raceName": "Jong FC Utrecht vs Jong Ajax",
+														"sportName": "Soccer"
+													}
+												},
+												"metaData": {
+													"stakeValue": 0.2,
+													"todayTotalBetAmountLimit": 3,
+													"remainingTotalBetAmountLimit": 0,
+													"userBalance": 10.35,
+													"winConfidencePercentage": 80,
+													"minProfitOdd": 0.7
+												},
+												"event-start-time": "10/01/2022, 17:45:00",
+												"bet-placed-time": "07:50:59  10-01-2022"
+											}
+										]
+									};
 
 
 	let g_runnersStr = '';
@@ -211,15 +387,21 @@ window.addEventListener('load', function() {
 				for(let eventNo = 0, n = predictedWinnerList[sport].length; eventNo < n; ++eventNo) {
 					// Event Name
 					const eventName = predictedWinnerList[sport][eventNo]['event-name'];
+					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
+					metaData = predictedWinnerList[sport][eventNo]['metaData'];
+
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
 									<div class ="commonClass">(${++eventCounter})   ${eventName}   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']} </div>
+								
+									Today's Bet Amount Limit =  £ ${metaData.remainingTotalBetAmountLimit} / £ ${metaData.todayTotalBetAmountLimit}, 
+									UserBalance = £ ${metaData.userBalance}, 
+									WinConfidencePercentage = ${metaData.winConfidencePercentage}%, 
+									MinProfitOdd = £ ${metaData.minProfitOdd}, 
+									Stake = £ ${metaData.stakeValue}
 								</div>
 								<br/>`;
-
-					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
-					metaData = predictedWinnerList[sport][eventNo]['metaData'];
 
 					printRunner(predictedWinnerList[sport][eventNo]['runner-name'], predictedWinnerList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
 
@@ -237,17 +419,10 @@ window.addEventListener('load', function() {
 		}
 
 		document.querySelector('#statistics').innerHTML = `# Total Number of Predictions = ${eventCounter}`;
-		document.querySelector('#statistics').innerHTML += `<br>Today's Bet Amount Limit =  £ ${metaData.remainingTotalBetAmountLimit} / £ ${metaData.todayTotalBetAmountLimit}, 
-																UserBalance = £ ${metaData.userBalance}, 
-																WinConfidencePercentage = ${metaData.winConfidencePercentage}%, 
-																MinProfitOdd = £ ${metaData.minProfitOdd}, 
-																Stake = £ ${metaData.stakeValue}`;
-		// document.querySelector('#statistics').innerHTML += `<br>MetaData = ${JSON.stringify(metaData)}`;
-
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
 	};
 
-	createPredictedWinnersTable(g_sportsWiseBetList); // test
+	// createPredictedWinnersTable(g_sportsWiseBetList); // test
 
 
 
