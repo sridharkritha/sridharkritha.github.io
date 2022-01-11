@@ -422,7 +422,32 @@ window.addEventListener('load', function() {
 		document.querySelector('#predictionList').innerHTML = g_runnersStr;
 	};
 
-	// createPredictedWinnersTable(g_sportsWiseBetList); // test
+	createPredictedWinnersTable(g_sportsWiseBetList); // test
+
+	/////////////////////////// Button Events //////////////////////////////////
+	
+	const g_pageName = document.querySelector('#pageNameId');
+	g_pageName.innerHTML = `<b>:: Predictions List ::</b>`;
+
+	const g_predictionBtn = document.querySelector('#predictionBtnId');
+	const g_placedBetBtn = document.querySelector('#placedBetBtnId');
+	g_predictionBtn.addEventListener('click', showResults);
+	g_placedBetBtn.addEventListener('click', showResults);
+
+	function showResults(e) {
+		switch(this.dataset.key)  // e.currentTarget.dataset.key
+		{
+			case "predictionsList":
+				g_pageName.innerHTML = `<b>:: Predictions List ::</b>`;
+				break;
+			case "placedBets":
+				g_pageName.innerHTML = `<b>:: Bet Placed List ::</b>`;
+				break;
+		}
+		// console.log(e.key);       // d
+		// console.log(this.value);  // srid
+	}
+	////////////////////////////////////////////////////////////////////////////
 
 
 
