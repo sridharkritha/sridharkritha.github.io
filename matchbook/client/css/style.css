@@ -58,7 +58,7 @@
 .sportsName { background: #212F3D;}
 .eventName  { background: #c70039 ;}
 #statistics  { background: #6C3483 ;}
-.pageName { background: #9A7D0A ;}
+.pageNameDisplayArea { background: #9A7D0A ;}
  
 
 
@@ -74,6 +74,7 @@
 .gridColumnLayout_2  { grid-template-columns: repeat(2, 1fr); }
 .gridColumnLayout_3  { grid-template-columns: repeat(3, 1fr); }
 
+.textAlignCenter { text-align: center; }
 
 /* buttons */
 .buttonsWrapper  {
