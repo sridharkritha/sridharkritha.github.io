@@ -360,6 +360,12 @@ window.addEventListener('load', function() {
 
 	let g_runnersStr = '';
 
+	// enum - constants
+	const g_SYMBOL_CONSTANTS = Object.freeze({
+		PREDICTION_LIST:   "PREDICTION_LIST", // Symbol("predictionsList"),
+		PLACED_BET_LIST:  "PLACED_BET_LIST"   // Symbol("placedBets")
+	});
+
 	printRunner = function(runnerName, odd, cssClass) {
 		cssClass = cssClass || '';
 		g_runnersStr += `<div class="gridColumnLayout gridColumnLayout_2">
@@ -425,7 +431,7 @@ window.addEventListener('load', function() {
 	createPredictedWinnersTable(g_sportsWiseBetList); // test
 
 	/////////////////////////// Button Events //////////////////////////////////
-	let g_pageName = 'predictionsList';
+	let g_activePageName = g_SYMBOL_CONSTANTS.PREDICTION_LIST;
 	const g_pageNameDisplayArea = document.querySelector('#pageNameDisplayAreaId');
 	g_pageNameDisplayArea.innerHTML = `<b>:: Predictions List ::</b>`;
 
@@ -437,13 +443,15 @@ window.addEventListener('load', function() {
 	function showResults(e) {
 		switch(this.dataset.key)  // e.currentTarget.dataset.key
 		{
-			case 'predictionsList':
-				g_pageName = this.dataset.key;
+			case g_SYMBOL_CONSTANTS.PREDICTION_LIST:
+				g_activePageName = this.dataset.key;
 				g_pageNameDisplayArea.innerHTML = `<b>:: Predictions List ::</b>`;
+				notifyToServer('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', JSON.stringify({ name:'sridhar', age: 40}));
 				break;
-			case 'placedBets':
-				g_pageName = this.dataset.key;
+			case g_SYMBOL_CONSTANTS.PLACED_BET_LIST:
+				g_activePageName = this.dataset.key;
 				g_pageNameDisplayArea.innerHTML = `<b>:: Bet Placed List ::</b>`;
+				notifyToServer('CLIENT_TO_SERVER_GIVE_ALREADY_PLACED_BETS_EVENT', JSON.stringify({ name:'jay', age: 7}));
 				break;
 		}
 		// console.log(e.key);       // d
@@ -451,13 +459,16 @@ window.addEventListener('load', function() {
 	}
 	////////////////////////////////////////////////////////////////////////////
 
-
-
-
-	
-
-
-
+	populateClientPage = (data, dataType) => {
+		const result = JSON.parse(data);
+		console.log(result);
+		if(g_activePageName === g_SYMBOL_CONSTANTS.PREDICTION_LIST && dataType === g_SYMBOL_CONSTANTS.PREDICTION_LIST) {
+			createPredictedWinnersTable(result);
+		}
+		else if(g_activePageName === g_SYMBOL_CONSTANTS.PLACED_BET_LIST && dataType === g_SYMBOL_CONSTANTS.PLACED_BET_LIST) {
+			createPredictedWinnersTable(result);
+		}
+	};
 
 	//////////// SOCKET.IO /////////////////////////////////////////////////////// 
 
@@ -468,15 +479,11 @@ window.addEventListener('load', function() {
 		socket.emit(event, data);
 	}
 
-	notifyToServer('CLIENT_TO_SERVER_EVENT', JSON.stringify({ name:'sridhar', age: 40}));
-
+	notifyToServer('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', JSON.stringify({ name:'sridhar', age: 40}));
 
 	// [Client <= Server] Receive data from server to client
-	socket.on("SERVER_TO_CLIENT_EVENT", async (data) => {
-		const predictedWinnerList = JSON.parse(data);
-		console.log(predictedWinnerList);
-		createPredictedWinnersTable(predictedWinnerList);
-	});
+	socket.on('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT',   async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.PREDICTION_LIST); });
+	socket.on('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.PLACED_BET_LIST); });
 
 	/*
 
