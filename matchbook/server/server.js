@@ -8,9 +8,11 @@
 	const httpServer = require("http").createServer(app); // explicitly create a 'http' server instead of using express() server
 	const io = require("socket.io")(httpServer);
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	const UTIL = require('./util');
-	const DOOR = require('./door');
-	const MISC = require('./misc');
+	const FA    = require('./fileAccess');
+	const TIMER = require('./timer');
+	const UTIL  = require('./util');
+	const DOOR  = require('./door');
+	const MISC  = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	const g_betCycleTime = 8000; // 1000 => 1 sec => Every 1 second scan for any new betting opportunity
 	let g_betScanRound = 0;
@@ -28,7 +30,10 @@
 	let g_db = {};
 	g_db.sportId = {};
 	let g_predictedWinners = [];
-	let g_alreadyPlacedBetList = {};
+
+	let g_alreadyPlacedBetList = {};	// client report data
+	let g_predictedWinnerBetList = {};	// client report data
+
 	let g_lastCycleElapsedTime = 0;
 	let g_currentTime = 0;
 	let g_betNow = [];
@@ -39,7 +44,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
 	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
-	let g_minProfitOdd = 0.7; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	let g_minProfitOdd = 0.7; // 0.7 ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 
 	let g_maxRunnersCount = 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
@@ -110,12 +115,19 @@
 		});
 
 		// [Client => Server] Receive data from client to server
-		socket.on('CLIENT_TO_SERVER_EVENT', async (data) => {
+		socket.on('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', async (data) => {
 			const obj = JSON.parse(data);
 			console.log(obj);
 
-			// notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify({ name:'Jay', age: 7 }));
-			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
+			notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
+		});
+
+		// [Client => Server] Receive data from client to server
+		socket.on('CLIENT_TO_SERVER_GIVE_ALREADY_PLACED_BETS_EVENT', async (data) => {
+			const obj = JSON.parse(data);
+			console.log(obj);
+
+			notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		});
 	});
 
@@ -138,11 +150,11 @@
 	};
 
 	isAlreadyBetPlacedEvent = function(eventId) {
-		for (let sport in g_alreadyPlacedBetList) {
-			if (g_alreadyPlacedBetList.hasOwnProperty(sport)) {
-				for(let count  = 0; count < g_alreadyPlacedBetList[sport].length; ++count) {
-					if("event-id" in  g_alreadyPlacedBetList[sport][count]) {
-						if(g_alreadyPlacedBetList[sport][count]["event-id"] === eventId) 
+		for (let sport in g_predictedWinnerBetList) {
+			if (g_predictedWinnerBetList.hasOwnProperty(sport)) {
+				for(let count  = 0; count < g_predictedWinnerBetList[sport].length; ++count) {
+					if("event-id" in  g_predictedWinnerBetList[sport][count]) {
+						if(g_predictedWinnerBetList[sport][count]["event-id"] === eventId) 
 							return true;
 					}
 				}
@@ -228,13 +240,18 @@
 
 	// Get Sports
 	// Get the list of sports supported by Matchbook
-	getSports = function (callback) {
+	getSports = async function (callback) {
 		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/lookups/sports';
 		options.qs = { offset: '0', 'per-page': '20', order: 'name asc', status: 'active' };
 
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = g_sessionToken;
+
+		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+		console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) {
@@ -269,7 +286,7 @@
 			}
 		}
 
-		UTIL.writeJsonFile(g_db,'./data-Report/availableSports.json', true);
+		FA.writeJsonFile(g_db,'./data-Report/availableSports.json', true);
 		return callback(null);
 	};
 
@@ -350,7 +367,7 @@
 	};
 
 	// Get Event
-	getEvent = function (event_id, returnFunction) {
+	getEvent = async function (event_id, returnFunction) {
 		const options = UTIL.getDefaultOptions();
 		options.qs = {
 			'exchange-type': 'back-lay',
@@ -369,6 +386,11 @@
 		options.headers['session-token'] = g_sessionToken;
 
 		// console.log(options);
+
+		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+		console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) 
@@ -517,9 +539,9 @@
 
 	findLuckyMatch = async (sportName, jsonObj, objLevelFilter, callback) => {
 		if(isNullObject(g_moneyStatus)) {
-			if(await UTIL.isFileExist('./data-Report/money.json'))
+			if(await FA.isFileExist('./data-Report/money.json'))
 			{
-				g_moneyStatus = await UTIL.readJsonFile('./data-Report/money.json');
+				g_moneyStatus = await FA.readJsonFile('./data-Report/money.json');
 				if(g_moneyStatus.account.date === new Date().toDateString())
 				{
 					g_remainingTotalBetAmountLimit = g_moneyStatus.account.remainingTotalBetAmountLimit;
@@ -527,10 +549,10 @@
 			}
 		}
 
-		if(isNullObject(g_alreadyPlacedBetList)) {
-			if(await UTIL.isFileExist('./data-Report/alreadyPlacedBetList.json'))
+		if(isNullObject(g_predictedWinnerBetList)) {
+			if(await FA.isFileExist('./data-Report/alreadyPlacedBetList.json'))
 			{
-				g_alreadyPlacedBetList = await UTIL.readJsonFile('./data-Report/alreadyPlacedBetList.json')
+				g_predictedWinnerBetList = await FA.readJsonFile('./data-Report/alreadyPlacedBetList.json');
 			}
 		}
 
@@ -634,7 +656,7 @@
 
 	// Submit Offers
 	// Submit one or more offers i.e. your intention or willingness to have bets with other users.
-	submitOffers = function (callback) {
+	submitOffers = async function (callback) {
 		// "16:30 Wincanton": {
 		// 	"5 Tikkapick": {
 		// 	  "runnerId": 1052216604020016,
@@ -670,6 +692,10 @@
 
 		if(luckyBet.offers.length) {
 			if(!g_isLockedForBetting) {
+				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////
+				const result = await TIMER.awaitForMaxReqTimeSlot("BETTING_WRITE");
+				console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+				////////////////////////////////////////////////////////////////////////////////////////////////////////
 				request(options, function (error, response, body) {
 					if (!error && response.statusCode == 200) {
 						//console.log(response);
@@ -694,20 +720,20 @@
 				//console.log(response);
 				for(let i = 0; i < g_betNow.length; ++i) {
 					let lastBetResult = g_betNow[i];
-					let obj = populateDataAfterBetSubmit(lastBetResult);
+					let obj = populateDataAfterBetSubmit(lastBetResult, false);
 					console.log(obj);
 
 					// ??????
-					getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
+					// getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 				}
-				notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
-				UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/mockSuccessfulBets.json');
+				notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
+				FA.writeJsonFile(g_predictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
 			}
 		}
 	};
 
 
-	populateDataAfterBetSubmit = function(lastBetResult) {
+	populateDataAfterBetSubmit = function(lastBetResult, isRealBet) {
 		let obj = 	{
 			"status":lastBetResult['status'],
 			"sport-id":lastBetResult['sport-id'],
@@ -726,11 +752,17 @@
 			// "event-start-time": new Date(lastBetResult['event-start-time']).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
 			"event-start-time": new Date(g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']]["start"]).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
 			
-			"bet-placed-time": UTIL.getCurrentTimeDate() 
+			"bet-placed-time": TIMER.getCurrentTimeDate() 
 		};
 
-		if(!g_alreadyPlacedBetList[obj["sport-name"]]) g_alreadyPlacedBetList[obj["sport-name"]] = [];
-		g_alreadyPlacedBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
+		if(isRealBet)
+		{
+			if(!g_alreadyPlacedBetList[obj["sport-name"]]) g_alreadyPlacedBetList[obj["sport-name"]] = [];
+			g_alreadyPlacedBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
+		}
+
+		if(!g_predictedWinnerBetList[obj["sport-name"]]) g_predictedWinnerBetList[obj["sport-name"]] = [];
+		g_predictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
 
 		return obj;
 	};
@@ -764,7 +796,7 @@
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				UTIL.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_${sportName}.json`);
+				FA.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_${sportName}.json`);
 
 				findLuckyMatch(sportName, g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
@@ -790,10 +822,10 @@
 		
 		g_lastCycleElapsedTime = scanCurrentTime.getTime();
 
-		let elapsedTime = UTIL.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
+		let elapsedTime = TIMER.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
 
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
-		console.log(`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${UTIL.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${UTIL.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
+		console.log(`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
 
 		findSportsIds();
 	};
@@ -898,16 +930,17 @@
 			for(let i = 0; i < nSubmittedBets; ++i) {
 				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-					let obj = populateDataAfterBetSubmit(lastBetResult);
+					let obj = populateDataAfterBetSubmit(lastBetResult, true);
 					console.log(obj);
 				}
 			}
 
-			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
-			UTIL.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/mockSuccessfulBets.json');
-			UTIL.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
+			FA.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
+			FA.writeJsonFile(g_predictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
+			FA.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
 
-			notifyAllUser('SERVER_TO_CLIENT_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
+			notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
+			notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
 		}
 	};
 
@@ -915,12 +948,16 @@
 	// Get Sports Wallet Balance
 	// Get the new sports balance for the user currently logged in.
 	// This API requires authentication and will return a 401 in case the session expired or no session token is provided.
-	getUserBalance = function () {
+	getUserBalance = async function () {
 		const options = UTIL.getDefaultOptions();
 		options.url = 'https://api.matchbook.com/edge/rest/account/balance';
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = g_sessionToken;
 
+		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+		const result = await TIMER.awaitForMaxReqTimeSlot("ACCOUNT");
+		console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
@@ -953,9 +990,47 @@
 		DOOR.getLastSession(loginCallback);
 	};
 
+	////////////////////////////////////////////////////////////////////////
+	myTest = async (value) => {
+		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+		console.log(`sri-after: ${new Date().getTime()}    ${result}`);
+	};
+
+	myTestWrapper = async (value) => {
+		let result = await myTest(value);
+		result = result;
+	}
+
+	///////////////////////////////////////////////////////////////////////
+
 	// Entry Function
 	(function () {
+
 		getNewSession();
+
+
+		////////////////////////////////////////////////////////////////////////
+		// correct
+		// (async () => {
+		// 	await myTest("one");
+		// 	await myTest("two");
+		// 	await myTest("three");
+		// 	await myTest("four");
+		// 	await myTest("five");
+		// })();
+
+
+
+		// Wrong
+		// myTestWrapper("one");
+		// myTestWrapper("two");
+		// myTestWrapper("three");
+		// myTestWrapper("four");
+		// myTestWrapper("five");
+
+		// myTest("one").then(myTest("two")).then(myTest("three")).then(myTest("four")).then(myTest("five"));
+
+		////////////////////////////////////////////////////////////////////////
 	})(); // IIF - Main entry (login)
 
 
