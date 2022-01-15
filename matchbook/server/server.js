@@ -58,7 +58,7 @@
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
 		'Horse Racing',
-		'Soccer',
+		// 'Soccer',
 
 		// 'American Football',
 		// "Baseball",
@@ -107,17 +107,17 @@
 	
 	// Client request for a new connection
 	io.on('connection', async (socket) => {
-		console.log('Server: A new client with socket-id: ${socket.id} is connected to me !'); // socket.id => can be used as UNIQUE id for finding the client 
+		UTIL.print("must",'Server: A new client with socket-id: ${socket.id} is connected to me !'); // socket.id => can be used as UNIQUE id for finding the client 
 
 		// when client(browser) closed/disconnect from the server
 		socket.on('disconnect', function() {
-			console.log('A Client has closed / disconnected from the Server !');
+			UTIL.print("must",'A Client has closed / disconnected from the Server !');
 		});
 
 		// [Client => Server] Receive data from client to server
 		socket.on('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', async (data) => {
 			const obj = JSON.parse(data);
-			console.log(obj);
+			UTIL.print("must",obj);
 
 			notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
 		});
@@ -125,7 +125,7 @@
 		// [Client => Server] Receive data from client to server
 		socket.on('CLIENT_TO_SERVER_GIVE_ALREADY_PLACED_BETS_EVENT', async (data) => {
 			const obj = JSON.parse(data);
-			console.log(obj);
+			UTIL.print("must",obj);
 
 			notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		});
@@ -139,7 +139,7 @@
 	app.use(express.static('../client'));  // path to public folder you can access through server
 
 	httpServer.listen(PORT, async () => {
-		console.log("Server is running on the port : " + httpServer.address().port);
+		UTIL.print("must","Server is running on the port : " + httpServer.address().port);
 	});
 
 
@@ -206,7 +206,7 @@
 						if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
 							|| dateObject.getFullYear() !== currentDate.getFullYear())
 						{
-							// console.log('SKIP: ' + dateObject + ' !== ' + currentDate);
+							// UTIL.print("ignore",'SKIP: ' + dateObject + ' !== ' + currentDate);
 							continue; // skip
 						}
 					}
@@ -225,7 +225,13 @@
 		return callback(null, extraArgs.sports_cbCount, extraArgs.closureSave);
 	};
 
-	requestResponse = function(options, obj, destObj, keys, filterDay, closureSave, sports_cbCount, callback) {
+	requestResponse = async function(options, obj, destObj, keys, filterDay, closureSave, sports_cbCount, callback) {
+
+		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		request(options, function (error, response, body) {
 			if (error) {
 				return callback(error, sports_cbCount, null);
@@ -250,7 +256,7 @@
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
@@ -309,17 +315,22 @@
 
 		for (let eventObj in eventCollection) {
 			if (eventCollection.hasOwnProperty(eventObj) && eventCollection[eventObj].id === eventId) {
-				console.log(eventObj);         // key
-				console.log(eventCollection[eventObj]); // value
+				UTIL.print("must",eventObj);         // key
+				UTIL.print("must",eventCollection[eventObj]); // value
 				return eventCollection[eventObj];
 			}
 		}
 	};
 
 	// Get the full data from all pages (default: 20 pages)
-	morePages = function(options, perPage, updateMethod, callback, extraArgs) {
+	morePages = async function(options, perPage, updateMethod, callback, extraArgs) {
 
 		options.qs['per-page'] = perPage;
+
+		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) {
@@ -385,11 +396,11 @@
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = g_sessionToken;
 
-		// console.log(options);
+		// UTIL.print("ignore",options);
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
@@ -642,10 +653,10 @@
 							g_moneyStatus.account.date = new Date().toDateString();
 						}
 						else if(g_userBalance < g_BetStakeValue) {
-							console.log("User Balance is VERY LOW !!!!");
+							UTIL.print("must","User Balance is VERY LOW !!!!");
 						}
 						else if(UTIL.roundIt(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) < g_BetStakeValue) {
-							console.log(`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
+							UTIL.print("must",`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 						}
 					}
 				}
@@ -694,19 +705,19 @@
 			if(!g_isLockedForBetting) {
 				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////
 				const result = await TIMER.awaitForMaxReqTimeSlot("BETTING_WRITE");
-				console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+				UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 				////////////////////////////////////////////////////////////////////////////////////////////////////////
 				request(options, function (error, response, body) {
 					if (!error && response.statusCode == 200) {
-						//console.log(response);
+						//UTIL.print("ignore",response);
 						return callback(null, response);
 					}
 					else {
-						console.log(response.statusCode + " Error in bet placed");
+						UTIL.print("must",response.statusCode + " Error in bet placed");
 
 						if(response.body.offers) {
 							for(let count = 0; count < response.body.offers.length; ++count) {
-								console.log(response.body.offers[count].errors);
+								UTIL.print("must",response.body.offers[count].errors);
 							}
 						}
 
@@ -717,11 +728,11 @@
 			else
 			{
 				// mock bet placed
-				//console.log(response);
+				//UTIL.print("ignore",response);
 				for(let i = 0; i < g_betNow.length; ++i) {
 					let lastBetResult = g_betNow[i];
 					let obj = populateDataAfterBetSubmit(lastBetResult, false);
-					console.log(obj);
+					UTIL.print("must",obj);
 
 					// ??????
 					// getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
@@ -785,7 +796,7 @@
 
 	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
-			// console.log(obj);
+			// UTIL.print("ignore",obj);
 			
 			g_db.sportId[sportName].events[event].allRunners = obj;
 			g_db.sportId[sportName].events[event].id = eventId;
@@ -800,7 +811,7 @@
 
 				findLuckyMatch(sportName, g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
-							console.log(err);
+							UTIL.print("must",err);
 							throw new Error(err);
 						}
 						else{
@@ -825,7 +836,7 @@
 		let elapsedTime = TIMER.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
 
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
-		console.log(`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
+		UTIL.print("must",`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
 
 		findSportsIds();
 	};
@@ -837,9 +848,9 @@
 		getSports(callback_getSports);
 	};
 
-	callback_getSports = function(err, data) {
+	callback_getSports = async function(err, data) {
 		if(err) {
-			console.log(err);
+			UTIL.print("must",err);
 			throw new Error(err);
 		}
 		else{
@@ -849,21 +860,29 @@
 
 			let sports_cbCount = new callbackCount(0, g_sportsInterested.length);
 			// Calling callback functions inside a loop
-			g_sportsInterested.forEach(function(sport) {
+			// g_sportsInterested.forEach(function(sport) {
+			for (const sport of g_sportsInterested) {
 				// input  - sports id
 				// output - event id
 				// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
 				// getEvents('24735152712200'); // sportsid
 				// getEvents(g_db.sportId['Horse Racing'], function(err, data) {
+
+				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+				const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+				UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 				getEvents(sport, sports_cbCount, callback_getEvents);
-			}); //forEach
+			}
+			//); //forEach
 		}
 	};
 
-	callback_getEvents = function(err, sports_cbCount, sport) {
+	callback_getEvents = async function(err, sports_cbCount, sport) {
 		if(err){
-			console.log(err);
-			console.log("ERROR: TRYING AGAIN BY A NEW REQUEST");
+			UTIL.print("must",err);
+			UTIL.print("must","ERROR: TRYING AGAIN BY A NEW REQUEST");
 			run();
 
 			// throw new Error(err);
@@ -874,20 +893,32 @@
 				let races = Object.keys(g_db.sportId[sport].events);
 				let events_cbCount = new callbackCount(0, races.length);
 
-				races.forEach(function(race) {
+				// races.forEach(function(race) {
+				for (const race of races) {
 					// input  - event id
 					// output - id (player)
 					// https://api.matchbook.com/edge/rest/events/1033210398700016
+
+					/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+					const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+					UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+					////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 					getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
 									sports_cbCount, events_cbCount, callback_getEventInfo);
-				}); //forEach
+				}
+				// ); //forEach
+
+
+
+
 			}
 		}
 	};
 
 	callback_getEventInfo = function(err, sports_cbCount, events_cbCount, isReadyForBetting) {
 		if(err){
-			console.log(err);
+			UTIL.print("must",err);
 			throw new Error(err);
 		}
 
@@ -922,16 +953,16 @@
 
 	callback_submitOffers = function(err, response) {
 		if(err){
-			console.log(err);
+			UTIL.print("must",err);
 		}
 		else{
-			//console.log(response);
+			//UTIL.print("ignore",response);
 			const nSubmittedBets = response.body.offers.length;
 			for(let i = 0; i < nSubmittedBets; ++i) {
 				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
 					let obj = populateDataAfterBetSubmit(lastBetResult, true);
-					console.log(obj);
+					UTIL.print("must",obj);
 				}
 			}
 
@@ -956,14 +987,14 @@
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("ACCOUNT");
-		console.log(`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
 			const jsonFormat = JSON.parse(body);
-			// console.log(jsonFormat); // jsonFormat.balance
+			// UTIL.print("ignore",jsonFormat); // jsonFormat.balance
 			g_userBalance = Math.floor(jsonFormat.balance * 100) / 100;
 		});
 	};
@@ -973,7 +1004,7 @@
 		if(err){
 			g_sessionToken = null;
 			g_sessionStartTime = 0;
-			console.log(err);
+			UTIL.print("must",err);
 		}
 		else{
 			g_sessionToken = sessionToken;
@@ -993,7 +1024,7 @@
 	////////////////////////////////////////////////////////////////////////
 	myTest = async (value) => {
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		console.log(`sri-after: ${new Date().getTime()}    ${result}`);
+		UTIL.print("ignore",`sri-after: ${new Date().getTime()}    ${result}`);
 	};
 
 	myTestWrapper = async (value) => {
