@@ -3,6 +3,8 @@
 	const request = require('request');
 	const fs = require('fs');
 
+	// Server listen at the given port number
+	const PORT = process.env.PORT || 3004;
 	const express = require("express");
 	const app = express();
 	const httpServer = require("http").createServer(app); // explicitly create a 'http' server instead of using express() server
@@ -20,7 +22,7 @@
 
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 3.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 6.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -30,6 +32,12 @@
 	let g_db = {};
 	g_db.sportId = {};
 	let g_predictedWinners = [];
+
+
+	// const g_onlyOne_raceName = "14:00 Southwell"; // test only one race
+	// const g_onlyOne_raceName = "15:50 Punchestown";
+	// const g_onlyOne_raceName = "Aleksandar Vukic vs Lloyd Harris";
+	const g_onlyOne_raceName = null; 
 
 	let g_alreadyPlacedBetList = {};	// client report data
 	let g_predictedWinnerBetList = {};	// client report data
@@ -58,27 +66,27 @@
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
 		'Horse Racing',
-		// 'Soccer',
+		'Soccer',
+		'Greyhound Racing',
+		'American Football',
+		'Basketball',
+		"Boxing",
+		"Golf",
+	//	'Ice Hockey',
+		// 'Rugby Union',
+		// 'Enhanced Specials',
+		// 'Snooker',
 
-		// 'American Football',
+
 		// "Baseball",
-		// 'Basketball',
-		// "Boxing",
 		// "Chess",
 		// 'Cricket',
 		// "Cycling",
-		// 'Enhanced Specials',
-		// "Golf",
-		// 'Greyhound Racing',
-		// 'Ice Hockey',
 		// "Motor Sport",
 		// "Rugby League",
-		// 'Rugby Union',
-		// 'Snooker',
 		// "Table Tennis",
 		// 'Tennis',
 		// "Volleyball"
-
 	];
 
 
@@ -132,9 +140,6 @@
 	});
 
 	//////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
-	// Server listen at the given port number
-	const PORT = process.env.PORT || 3003;
-
 	app.use(express.json());               // for body parsing
 	app.use(express.static('../client'));  // path to public folder you can access through server
 
@@ -404,8 +409,13 @@
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
-			if (error) 
-				throw new Error(error);
+			if (error) {
+				if (error.code === "ECONNRESET") {
+					UTIL.print("must", "Timeout occurred in getEvent() - Trying again !!!");
+					return;
+				}
+				else throw new Error(error);
+			}
 
 			const jsonFormat = JSON.parse(body);
 
@@ -807,7 +817,8 @@
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
 			{
-				FA.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_${sportName}.json`);
+				// FA.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_${sportName}.json`);
+				FA.writeJsonFile(g_db.sportId[sportName], `./data/availableEventList_ALL_Sports.json`);
 
 				findLuckyMatch(sportName, g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
@@ -830,14 +841,17 @@
 		++g_betScanRound;
 
 		let scanCurrentTime = new Date();
+
+		let elapsedTime = scanCurrentTime - g_lastCycleElapsedTime;
 		
 		g_lastCycleElapsedTime = scanCurrentTime.getTime();
 
-		let elapsedTime = TIMER.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
+		let runningTime = TIMER.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
+
+
 
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
-		UTIL.print("must",`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## ElapsedTime: ${elapsedTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## Date: ${scanCurrentTime.toDateString()}`);
-
+		UTIL.print("must",`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`);
 		findSportsIds();
 	};
 
@@ -903,9 +917,13 @@
 					const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
 					UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 					////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+					// g_onlyOne_raceName === "14:00 Southwell"
+					if(!g_onlyOne_raceName || race === g_onlyOne_raceName) {
+						if(race === g_onlyOne_raceName) events_cbCount.totalCount = 1; // Taking only one race event for testing
 
-					getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
-									sports_cbCount, events_cbCount, callback_getEventInfo);
+						getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
+							sports_cbCount, events_cbCount, callback_getEventInfo);
+					}
 				}
 				// ); //forEach
 
@@ -1036,6 +1054,17 @@
 
 	// Entry Function
 	(function () {
+
+		if(!g_isLockedForBetting)
+		{
+			console.log(`
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$            $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ REAL MONEY $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$            $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$			
+			`);
+		}
 
 		getNewSession();
 

@@ -312,5 +312,38 @@ ________________________________________________________________________________
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-
+Error: socket hang up
+    at connResetException (internal/errors.js:614:14)
+    at TLSSocket.socketOnEnd (_http_client.js:491:23)
+    at TLSSocket.emit (events.js:327:22)
+    at endReadableNT (_stream_readable.js:1224:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  code: 'ECONNRESET'
+}
+ERROR: TRYING AGAIN BY A NEW REQUEST
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+node:1093) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'Luke Donald vs Kevin Tway (R3)' of undefined
+    at callback_getEvents (/mnt/c/Users/skrishnan/Documents/GitHub/sridharkritha.github.io/matchbook/server/server.js:913:58)
+    at runMicrotasks (<anonymous>)
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at listOnTimeout (internal/timers.js:518:9)
+    at processTimers (internal/timers.js:492:7)
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1093) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:1093) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+
+
+-------------------------------------------------------------------------------
+
+/mnt/c/Users/skrishnan/Documents/GitHub/sridharkritha.github.io/matchbook/server/server.js:801
+                        g_db.sportId[sportName].events[event].allRunners = obj;
+                                                      ^
+
+TypeError: Cannot read property '18:15 Chelmsford' of undefined
+    at /mnt/c/Users/skrishnan/Documents/GitHub/sridharkritha.github.io/matchbook/server/server.js:801:34
+    at Request._callback (/mnt/c/Users/skrishnan/Documents/GitHub/sridharkritha.github.io/matchbook/server/server.js:451:4)
+    at Request.self.callback (/mnt/c/Users/skrishnan/Documents/GitHub/sridharkritha.github.io/matchbook/node_modules/request/request.js:185:22)
+
+    -----------------------------------------------------
+
+    "request": "^2.88.0"

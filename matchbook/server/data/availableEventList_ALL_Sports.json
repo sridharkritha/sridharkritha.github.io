@@ -24,7 +24,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -53,7 +53,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -82,7 +82,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -94,13 +94,13 @@
       "allRunners": {
         "Altay SK Izmir": {
           "runnerId": 1956885907160016,
-          "back": 2.7,
-          "lay": 2.82
+          "back": 2.76,
+          "lay": 2.86
         },
         "Alanyaspor": {
           "runnerId": 1956885907200016,
-          "back": 2.64,
-          "lay": 2.76
+          "back": 2.6,
+          "lay": 2.72
         },
         "DRAW (Alt/Ala)": {
           "runnerId": 1956885907240016,
@@ -111,7 +111,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -140,7 +140,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -169,7 +169,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -182,23 +182,23 @@
         "Tuzlaspor": {
           "runnerId": 1961339731890101,
           "back": 1.8,
-          "lay": 2.04
+          "lay": 1.98
         },
         "Altinordu": {
           "runnerId": 1961339731930001,
           "back": 4,
-          "lay": 5.2
+          "lay": 5.1
         },
         "DRAW (Tuz/Alt)": {
           "runnerId": 1961339731960101,
-          "back": 3.35,
+          "back": 3.5,
           "lay": 4.2
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -216,7 +216,7 @@
         "Valencia": {
           "runnerId": 1958803174800116,
           "back": 1.69,
-          "lay": 1.74
+          "lay": 1.72
         },
         "DRAW (Atl/Val)": {
           "runnerId": 1958803174830116,
@@ -227,7 +227,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -256,7 +256,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -268,24 +268,24 @@
       "allRunners": {
         "Muangthong United": {
           "runnerId": 1961292330670001,
-          "back": 2.48,
-          "lay": 2.96
+          "back": 2.6,
+          "lay": 3.1
         },
         "BG Pathumthani United": {
           "runnerId": 1961292330710001,
-          "back": 2.54,
-          "lay": 3
+          "back": 2.44,
+          "lay": 2.88
         },
         "DRAW (Mua/BG )": {
           "runnerId": 1961292330740101,
-          "back": 3.4,
-          "lay": 4.1
+          "back": 3.35,
+          "lay": 4.2
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -314,7 +314,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -327,23 +327,23 @@
         "Police Tero F.C.": {
           "runnerId": 1961292341100101,
           "back": 1.99,
-          "lay": 2.32
+          "lay": 2.26
         },
         "Nakhon Ratchasima": {
           "runnerId": 1961292341140001,
-          "back": 3.45,
+          "back": 3.5,
           "lay": 4.2
         },
         "DRAW (Pol/Nak)": {
           "runnerId": 1961292341180001,
-          "back": 3.3,
+          "back": 3.35,
           "lay": 4.2
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -360,8 +360,8 @@
         },
         "Juventus Women": {
           "runnerId": 1961349998600101,
-          "back": 0,
-          "lay": 0
+          "back": 1.08,
+          "lay": 1.12
         },
         "DRAW (Pom/Juv)": {
           "runnerId": 1961349998640101,
@@ -372,7 +372,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -401,7 +401,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -413,24 +413,24 @@
       "allRunners": {
         "FC Utrecht": {
           "runnerId": 1958024809580116,
-          "back": 7,
+          "back": 7.2,
           "lay": 7.8
         },
         "Ajax": {
           "runnerId": 1958024809620016,
-          "back": 1.48,
-          "lay": 1.51
+          "back": 1.47,
+          "lay": 1.5
         },
         "DRAW (FC /Aja)": {
           "runnerId": 1958024809650116,
-          "back": 5,
-          "lay": 5.3
+          "back": 5.1,
+          "lay": 5.5
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -442,24 +442,24 @@
       "allRunners": {
         "Fiorentina Women": {
           "runnerId": 1961349983720101,
-          "back": 2.92,
-          "lay": 3.65
+          "back": 3.45,
+          "lay": 0
         },
         "Sassuolo Women": {
           "runnerId": 1961349983760001,
-          "back": 1.92,
-          "lay": 2.24
+          "back": 1.78,
+          "lay": 2.08
         },
         "DRAW (Fio/Sas)": {
           "runnerId": 1961349983800001,
-          "back": 0,
+          "back": 4,
           "lay": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -477,18 +477,18 @@
         "Buriram United": {
           "runnerId": 1961292317220101,
           "back": 1.27,
-          "lay": 1.52
+          "lay": 1.51
         },
         "DRAW (JL /Bur)": {
           "runnerId": 1961292317260001,
-          "back": 4.9,
+          "back": 5,
           "lay": 6.4
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -517,7 +517,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -529,24 +529,24 @@
       "allRunners": {
         "Bidco United": {
           "runnerId": 1960487163550001,
-          "back": 2.12,
-          "lay": 2.5
+          "back": 2.18,
+          "lay": 2.64
         },
         "Sofapaka FC": {
           "runnerId": 1960487163580001,
-          "back": 3.75,
-          "lay": 4.7
+          "back": 3.45,
+          "lay": 4.4
         },
         "DRAW (Bid/Sof)": {
           "runnerId": 1960487163610101,
-          "back": 2.78,
+          "back": 2.86,
           "lay": 3.4
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -575,7 +575,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -587,12 +587,12 @@
       "allRunners": {
         "Hull City": {
           "runnerId": 1956966733110116,
-          "back": 2.9,
+          "back": 2.92,
           "lay": 3.05
         },
         "Stoke City": {
           "runnerId": 1956966733150016,
-          "back": 2.72,
+          "back": 2.74,
           "lay": 2.8
         },
         "DRAW (Hul/Sto)": {
@@ -604,7 +604,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -633,7 +633,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -645,24 +645,24 @@
       "allRunners": {
         "Middlesbrough U23": {
           "runnerId": 1961352339700101,
-          "back": 1.81,
-          "lay": 2
+          "back": 1.75,
+          "lay": 2.02
         },
         "Sunderland U23": {
           "runnerId": 1961352339740001,
-          "back": 3.6,
-          "lay": 0
+          "back": 3.55,
+          "lay": 4.5
         },
         "DRAW (Mid/Sun)": {
           "runnerId": 1961352339780001,
-          "back": 4,
-          "lay": 0
+          "back": 4.1,
+          "lay": 5.3
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -691,7 +691,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -720,7 +720,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -749,7 +749,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -778,7 +778,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -807,7 +807,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -819,12 +819,12 @@
       "allRunners": {
         "1. FC Heidenheim": {
           "runnerId": 1957242788130016,
-          "back": 1.67,
-          "lay": 1.71
+          "back": 1.68,
+          "lay": 1.72
         },
         "FC Ingolstadt 04": {
           "runnerId": 1957242788170016,
-          "back": 6,
+          "back": 5.8,
           "lay": 6.4
         },
         "DRAW (1. /FC )": {
@@ -836,7 +836,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -865,7 +865,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -877,7 +877,7 @@
       "allRunners": {
         "FC Schalke 04": {
           "runnerId": 1957242751230016,
-          "back": 1.83,
+          "back": 1.82,
           "lay": 1.86
         },
         "Holstein Kiel": {
@@ -894,7 +894,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -923,7 +923,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -935,7 +935,7 @@
       "allRunners": {
         "Leganés II": {
           "runnerId": 1961335650380101,
-          "back": 2.02,
+          "back": 2.04,
           "lay": 0
         },
         "Unión Popular de Langreo": {
@@ -952,7 +952,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -964,7 +964,7 @@
       "allRunners": {
         "Royal Antwerp": {
           "runnerId": 1957228912740016,
-          "back": 2.18,
+          "back": 2.16,
           "lay": 2.26
         },
         "Sporting de Charleroi": {
@@ -975,13 +975,13 @@
         "DRAW (Roy/Spo)": {
           "runnerId": 1957228912810116,
           "back": 3.6,
-          "lay": 3.85
+          "lay": 3.95
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1010,7 +1010,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1039,7 +1039,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1068,7 +1068,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1097,7 +1097,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1126,7 +1126,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1155,7 +1155,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1184,7 +1184,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1213,7 +1213,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1230,7 +1230,7 @@
         },
         "Partizani Tirana": {
           "runnerId": 1961295898750001,
-          "back": 1.88,
+          "back": 1.89,
           "lay": 0
         },
         "DRAW (KS /Par)": {
@@ -1242,7 +1242,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1271,7 +1271,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1300,7 +1300,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1329,7 +1329,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1358,7 +1358,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1387,7 +1387,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1521,7 +1521,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1550,7 +1550,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1579,7 +1579,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1608,7 +1608,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1637,7 +1637,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1666,7 +1666,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1695,7 +1695,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1724,7 +1724,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1736,12 +1736,12 @@
       "allRunners": {
         "Gambia": {
           "runnerId": 1958792720170116,
-          "back": 7,
-          "lay": 8.2
+          "back": 7.2,
+          "lay": 8.4
         },
         "Mali": {
           "runnerId": 1958792720210016,
-          "back": 1.76,
+          "back": 1.75,
           "lay": 1.81
         },
         "DRAW (Gam/Mal)": {
@@ -1753,7 +1753,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1782,7 +1782,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1811,7 +1811,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1840,7 +1840,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1869,7 +1869,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1898,7 +1898,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1927,7 +1927,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1956,7 +1956,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1985,7 +1985,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2014,7 +2014,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2043,7 +2043,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2056,7 +2056,7 @@
         "Cambuur Leeuwarden": {
           "runnerId": 1958024830390116,
           "back": 2.78,
-          "lay": 2.9
+          "lay": 2.92
         },
         "Sparta Rotterdam": {
           "runnerId": 1958024830420116,
@@ -2072,7 +2072,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2101,7 +2101,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2113,8 +2113,8 @@
       "allRunners": {
         "Inter Milan Women": {
           "runnerId": 1961349991400001,
-          "back": 1.36,
-          "lay": 1.62
+          "back": 0,
+          "lay": 0
         },
         "Napoli Calcio Women": {
           "runnerId": 1961349991430101,
@@ -2130,7 +2130,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2159,7 +2159,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2182,13 +2182,13 @@
         "DRAW (AS /Cle)": {
           "runnerId": 1957231088550116,
           "back": 4.9,
-          "lay": 5.1
+          "lay": 5.2
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2201,7 +2201,7 @@
         "ASO Chlef": {
           "runnerId": 1961353062570001,
           "back": 4.7,
-          "lay": 6.2
+          "lay": 0
         },
         "CR Belouizdad": {
           "runnerId": 1961353062600001,
@@ -2217,7 +2217,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2246,7 +2246,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2259,12 +2259,12 @@
         "FC Lorient": {
           "runnerId": 1956947715630116,
           "back": 2.42,
-          "lay": 2.48
+          "lay": 2.46
         },
         "Angers SCO": {
           "runnerId": 1956947715660116,
           "back": 3.45,
-          "lay": 3.6
+          "lay": 3.55
         },
         "DRAW (FC /Ang)": {
           "runnerId": 1956947715700016,
@@ -2275,7 +2275,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2304,7 +2304,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2333,7 +2333,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2345,24 +2345,24 @@
       "allRunners": {
         "Leicester City FC Women": {
           "runnerId": 1960459132610001,
-          "back": 4.4,
-          "lay": 5.3
+          "back": 4.5,
+          "lay": 5.8
         },
         "Brighton & Hove Albion Women": {
           "runnerId": 1960459132640101,
           "back": 1.67,
-          "lay": 1.95
+          "lay": 1.94
         },
         "DRAW (Lei/Bri)": {
           "runnerId": 1960459132680001,
-          "back": 3.6,
+          "back": 3.65,
           "lay": 4.3
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2380,7 +2380,7 @@
         "Brentford": {
           "runnerId": 1952063642020116,
           "back": 13,
-          "lay": 13.5
+          "lay": 14
         },
         "DRAW (Liv/Bre)": {
           "runnerId": 1952063642060016,
@@ -2391,7 +2391,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2403,13 +2403,13 @@
       "allRunners": {
         "RC Strasbourg": {
           "runnerId": 1957231146680116,
-          "back": 2.08,
-          "lay": 2.12
+          "back": 2.06,
+          "lay": 2.1
         },
         "Montpellier HSC": {
           "runnerId": 1957231146740016,
-          "back": 3.95,
-          "lay": 4
+          "back": 4,
+          "lay": 4.1
         },
         "DRAW (RC /Mon)": {
           "runnerId": 1957231146770116,
@@ -2420,7 +2420,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2449,7 +2449,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2461,24 +2461,24 @@
       "allRunners": {
         "US Biskra": {
           "runnerId": 1961353074090001,
-          "back": 2.46,
-          "lay": 2.84
+          "back": 2.44,
+          "lay": 2.94
         },
         "CS Constantine": {
           "runnerId": 1961353074120001,
-          "back": 2.84,
+          "back": 2.72,
           "lay": 3.35
         },
         "DRAW (US /CS )": {
           "runnerId": 1961353074150101,
-          "back": 3.05,
-          "lay": 3.75
+          "back": 3.1,
+          "lay": 3.8
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2491,7 +2491,7 @@
         "Venezia": {
           "runnerId": 1957235564480016,
           "back": 3.15,
-          "lay": 3.2
+          "lay": 3.25
         },
         "Empoli": {
           "runnerId": 1957235564510116,
@@ -2507,7 +2507,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2536,7 +2536,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2650,7 +2650,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2662,24 +2662,53 @@
       "allRunners": {
         "FC Augsburg": {
           "runnerId": 1956959143290116,
-          "back": 3.15,
-          "lay": 3.2
+          "back": 3.2,
+          "lay": 3.25
         },
         "Eintracht Frankfurt": {
           "runnerId": 1956959143320116,
-          "back": 2.48,
+          "back": 2.5,
           "lay": 2.52
         },
         "DRAW (FC /Ein)": {
           "runnerId": 1956959143360016,
           "back": 3.45,
-          "lay": 3.55
+          "lay": 3.5
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al Ahli Akhaa Aley vs Al-Nejmeh": {
+      "id": 1963659762410001,
+      "start": "2022-01-16T14:45:00.000Z",
+      "allRunners": {
+        "Al Ahli Akhaa Aley": {
+          "runnerId": 1963659762980001,
+          "back": 0,
+          "lay": 0
+        },
+        "Al-Nejmeh": {
+          "runnerId": 1963659763010101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al /Al-)": {
+          "runnerId": 1963659763050001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2708,7 +2737,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2737,7 +2766,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2766,7 +2795,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2795,7 +2824,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2824,7 +2853,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2853,7 +2882,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2882,7 +2911,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2911,7 +2940,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2940,7 +2969,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2952,13 +2981,13 @@
       "allRunners": {
         "JS Saoura": {
           "runnerId": 1961353115410001,
-          "back": 1.63,
-          "lay": 1.79
+          "back": 1.65,
+          "lay": 1.82
         },
         "Paradou AC": {
           "runnerId": 1961353115440101,
           "back": 0,
-          "lay": 7.6
+          "lay": 7.2
         },
         "DRAW (JS /Par)": {
           "runnerId": 1961353115480001,
@@ -2969,7 +2998,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -2998,7 +3027,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3027,7 +3056,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3056,7 +3085,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3085,7 +3114,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3114,7 +3143,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3143,7 +3172,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3172,7 +3201,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3201,7 +3230,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3230,7 +3259,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3259,7 +3288,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3288,7 +3317,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3317,7 +3346,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3346,7 +3375,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3375,7 +3404,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3388,23 +3417,23 @@
         "AEK Athens": {
           "runnerId": 1960495027440101,
           "back": 1.33,
-          "lay": 1.38
+          "lay": 1.36
         },
         "Panetolikos": {
           "runnerId": 1960495027480001,
-          "back": 9.2,
+          "back": 9.4,
           "lay": 12
         },
         "DRAW (AEK/Pan)": {
           "runnerId": 1960495027520001,
-          "back": 5.8,
+          "back": 5.7,
           "lay": 6.4
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3433,7 +3462,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3462,7 +3491,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3491,7 +3520,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3520,7 +3549,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3532,24 +3561,24 @@
       "allRunners": {
         "Pordenone": {
           "runnerId": 1957247087590016,
-          "back": 4.5,
-          "lay": 5
+          "back": 4.6,
+          "lay": 5.1
         },
         "Lecce": {
           "runnerId": 1957247087620016,
-          "back": 1.9,
-          "lay": 1.98
+          "back": 1.89,
+          "lay": 1.97
         },
         "DRAW (Por/Lec)": {
           "runnerId": 1957247087660016,
-          "back": 3.45,
+          "back": 3.5,
           "lay": 3.8
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3566,19 +3595,19 @@
         },
         "Benevento": {
           "runnerId": 1957247047780016,
-          "back": 2.32,
-          "lay": 2.46
+          "back": 2.3,
+          "lay": 2.44
         },
         "DRAW (SPA/Ben)": {
           "runnerId": 1957247047810116,
-          "back": 3.35,
+          "back": 3.4,
           "lay": 3.65
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3590,13 +3619,13 @@
       "allRunners": {
         "Santa Clara": {
           "runnerId": 1957254758430016,
-          "back": 1.78,
-          "lay": 1.83
+          "back": 1.77,
+          "lay": 1.82
         },
         "Tondela": {
           "runnerId": 1957254758470016,
           "back": 5.4,
-          "lay": 5.6
+          "lay": 5.8
         },
         "DRAW (San/Ton)": {
           "runnerId": 1957254758500116,
@@ -3607,7 +3636,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3636,7 +3665,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3665,7 +3694,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3694,7 +3723,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3723,7 +3752,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3752,7 +3781,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3764,13 +3793,13 @@
       "allRunners": {
         "Tunisia": {
           "runnerId": 1958792737230116,
-          "back": 1.49,
+          "back": 1.48,
           "lay": 1.51
         },
         "Mauritania": {
           "runnerId": 1958792737280016,
           "back": 8.4,
-          "lay": 9.6
+          "lay": 9.8
         },
         "DRAW (Tun/Mau)": {
           "runnerId": 1958792737320016,
@@ -3781,7 +3810,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3798,7 +3827,7 @@
         },
         "Olympique Lyonnais": {
           "runnerId": 1957231162580016,
-          "back": 1.66,
+          "back": 1.67,
           "lay": 1.68
         },
         "DRAW (Tro/Oly)": {
@@ -3810,7 +3839,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3839,7 +3868,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3868,7 +3897,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3897,7 +3926,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3926,7 +3955,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3943,19 +3972,19 @@
         },
         "Cagliari": {
           "runnerId": 1957235473080016,
-          "back": 10,
+          "back": 10.5,
           "lay": 11
         },
         "DRAW (AS /Cag)": {
           "runnerId": 1957235473110116,
           "back": 5.5,
-          "lay": 5.6
+          "lay": 5.7
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -3984,7 +4013,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4013,7 +4042,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4042,7 +4071,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4054,24 +4083,24 @@
       "allRunners": {
         "Anderlecht": {
           "runnerId": 1957228875900016,
-          "back": 1.56,
-          "lay": 1.63
+          "back": 1.53,
+          "lay": 1.58
         },
         "Standard de Liège": {
           "runnerId": 1957228875940016,
-          "back": 5.7,
+          "back": 6.2,
           "lay": 6.8
         },
         "DRAW (And/Sta)": {
           "runnerId": 1957228875980016,
-          "back": 4.3,
-          "lay": 5.1
+          "back": 4.6,
+          "lay": 5
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4100,7 +4129,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4112,13 +4141,13 @@
       "allRunners": {
         "Panathinaikos": {
           "runnerId": 1960773204580001,
-          "back": 3.5,
-          "lay": 3.8
+          "back": 3.4,
+          "lay": 3.7
         },
         "Olympiacos": {
           "runnerId": 1960773204610101,
-          "back": 2.3,
-          "lay": 2.42
+          "back": 2.32,
+          "lay": 2.46
         },
         "DRAW (Pan/Oly)": {
           "runnerId": 1960773204640101,
@@ -4129,7 +4158,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4141,24 +4170,24 @@
       "allRunners": {
         "PAS Giannina": {
           "runnerId": 1960773213960001,
-          "back": 1.92,
-          "lay": 2.18
+          "back": 2.04,
+          "lay": 2.16
         },
         "Atromitos Athens": {
           "runnerId": 1960773213990101,
-          "back": 4.2,
-          "lay": 5.1
+          "back": 4.4,
+          "lay": 5
         },
         "DRAW (PAS/Atr)": {
           "runnerId": 1960773214030001,
-          "back": 3.05,
-          "lay": 3.7
+          "back": 3.1,
+          "lay": 3.35
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4187,7 +4216,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4216,7 +4245,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4245,7 +4274,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4274,7 +4303,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4303,7 +4332,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4332,7 +4361,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4344,24 +4373,24 @@
       "allRunners": {
         "Vizela": {
           "runnerId": 1957254776720116,
-          "back": 11,
+          "back": 10.5,
           "lay": 12.5
         },
         "Sporting CP": {
           "runnerId": 1957254776760016,
           "back": 1.34,
-          "lay": 1.38
+          "lay": 1.39
         },
         "DRAW (Viz/Spo)": {
           "runnerId": 1957254776800016,
-          "back": 5.4,
+          "back": 5.3,
           "lay": 6
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4390,7 +4419,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4412,14 +4441,14 @@
         },
         "DRAW (Rea/Ath)": {
           "runnerId": 1961628899350001,
-          "back": 3.95,
+          "back": 4,
           "lay": 4.2
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4431,8 +4460,8 @@
       "allRunners": {
         "Tottenham Hotspur Women": {
           "runnerId": 1960740151610001,
-          "back": 1.83,
-          "lay": 2.08
+          "back": 0,
+          "lay": 2.02
         },
         "West Ham United Women": {
           "runnerId": 1960740151650001,
@@ -4441,14 +4470,14 @@
         },
         "DRAW (Tot/Wes)": {
           "runnerId": 1960740151690001,
-          "back": 3.35,
+          "back": 3.4,
           "lay": 4.1
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4477,7 +4506,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4494,7 +4523,7 @@
         },
         "Equatorial Guinea": {
           "runnerId": 1958873085010116,
-          "back": 15,
+          "back": 14.5,
           "lay": 24
         },
         "DRAW (Alg/Equ)": {
@@ -4506,7 +4535,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4535,7 +4564,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4553,7 +4582,7 @@
         "Internazionale": {
           "runnerId": 1957235488450016,
           "back": 2.32,
-          "lay": 2.34
+          "lay": 2.36
         },
         "DRAW (Ata/Int)": {
           "runnerId": 1957235488480116,
@@ -4564,7 +4593,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4587,13 +4616,13 @@
         "DRAW (Oly/Lil)": {
           "runnerId": 1957231070530016,
           "back": 3.4,
-          "lay": 3.5
+          "lay": 3.45
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4622,7 +4651,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4651,7 +4680,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4663,13 +4692,13 @@
       "allRunners": {
         "Belenenses": {
           "runnerId": 1957254706320116,
-          "back": 16,
+          "back": 16.5,
           "lay": 21
         },
         "FC Porto": {
           "runnerId": 1957254706360016,
           "back": 1.21,
-          "lay": 1.23
+          "lay": 1.22
         },
         "DRAW (Bel/FC )": {
           "runnerId": 1957254706390116,
@@ -4680,7 +4709,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4709,7 +4738,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4738,7 +4767,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4767,7 +4796,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4796,7 +4825,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4825,7 +4854,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4854,7 +4883,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4866,8 +4895,8 @@
       "allRunners": {
         "Colombia": {
           "runnerId": 1959072632530116,
-          "back": 0,
-          "lay": 0
+          "back": 1.45,
+          "lay": 1.61
         },
         "Honduras": {
           "runnerId": 1959072632570016,
@@ -4876,14 +4905,14 @@
         },
         "DRAW (Col/Hon)": {
           "runnerId": 1959072632600116,
-          "back": 0,
-          "lay": 0
+          "back": 3.95,
+          "lay": 5
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4912,7 +4941,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4941,7 +4970,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4970,7 +4999,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -4999,7 +5028,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -5028,7 +5057,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 4.4,
+        "remainingTotalBetAmountLimit": 6,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7

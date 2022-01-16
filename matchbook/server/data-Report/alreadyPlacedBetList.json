@@ -1,0 +1,596 @@
+{
+  "Soccer": [
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1957228947390016,
+      "event-name": "KAS Eupen vs Cercle Brugge",
+      "runner-name": "Cercle Brugge",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1957228947390016,
+        "start": "2022-01-16T15:00:00.000Z",
+        "allRunners": {
+          "KAS Eupen": {
+            "runnerId": 1957228949240016,
+            "back": 4,
+            "lay": 4.5,
+            "name": "KAS Eupen",
+            "event-name": "KAS Eupen vs Cercle Brugge"
+          },
+          "Cercle Brugge": {
+            "runnerId": 1957228949270116,
+            "back": 1.94,
+            "lay": 2.04,
+            "name": "Cercle Brugge",
+            "event-name": "KAS Eupen vs Cercle Brugge",
+            "numberOfRunners": 3,
+            "winPercentage": 88.14432989690722,
+            "startTime": "2022-01-16T15:00:00.000Z",
+            "raceId": 1957228947390016,
+            "raceName": "KAS Eupen vs Cercle Brugge",
+            "sportName": "Soccer"
+          },
+          "DRAW (KAS/Cer)": {
+            "runnerId": 1957228949310016,
+            "back": 3.65,
+            "lay": 4.1,
+            "name": "DRAW (KAS/Cer)",
+            "event-name": "KAS Eupen vs Cercle Brugge"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1957228949270116,
+          "back": 1.94,
+          "lay": 2.04,
+          "name": "Cercle Brugge",
+          "event-name": "KAS Eupen vs Cercle Brugge",
+          "numberOfRunners": 3,
+          "winPercentage": 88.14432989690722,
+          "startTime": "2022-01-16T15:00:00.000Z",
+          "raceId": 1957228947390016,
+          "raceName": "KAS Eupen vs Cercle Brugge",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 15:00:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1957231114790016,
+      "event-name": "Stade Reims vs FC Metz",
+      "runner-name": "Stade Reims",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1957231114790016,
+        "start": "2022-01-16T14:00:00.000Z",
+        "allRunners": {
+          "Stade Reims": {
+            "runnerId": 1957231117540116,
+            "back": 1.74,
+            "lay": 1.75,
+            "name": "Stade Reims",
+            "event-name": "Stade Reims vs FC Metz",
+            "numberOfRunners": 3,
+            "winPercentage": 115.51724137931033,
+            "startTime": "2022-01-16T14:00:00.000Z",
+            "raceId": 1957231114790016,
+            "raceName": "Stade Reims vs FC Metz",
+            "sportName": "Soccer"
+          },
+          "FC Metz": {
+            "runnerId": 1957231117580116,
+            "back": 6,
+            "lay": 6.2,
+            "name": "FC Metz",
+            "event-name": "Stade Reims vs FC Metz"
+          },
+          "DRAW (Sta/FC )": {
+            "runnerId": 1957231117620116,
+            "back": 3.75,
+            "lay": 3.85,
+            "name": "DRAW (Sta/FC )",
+            "event-name": "Stade Reims vs FC Metz"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1957231117540116,
+          "back": 1.74,
+          "lay": 1.75,
+          "name": "Stade Reims",
+          "event-name": "Stade Reims vs FC Metz",
+          "numberOfRunners": 3,
+          "winPercentage": 115.51724137931033,
+          "startTime": "2022-01-16T14:00:00.000Z",
+          "raceId": 1957231114790016,
+          "raceName": "Stade Reims vs FC Metz",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 14:00:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1957242747320016,
+      "event-name": "FC Schalke 04 vs Holstein Kiel",
+      "runner-name": "FC Schalke 04",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1957242747320016,
+        "start": "2022-01-16T12:30:00.000Z",
+        "allRunners": {
+          "FC Schalke 04": {
+            "runnerId": 1957242751230016,
+            "back": 1.83,
+            "lay": 1.86,
+            "name": "FC Schalke 04",
+            "event-name": "FC Schalke 04 vs Holstein Kiel",
+            "numberOfRunners": 3,
+            "winPercentage": 129.50819672131146,
+            "startTime": "2022-01-16T12:30:00.000Z",
+            "raceId": 1957242747320016,
+            "raceName": "FC Schalke 04 vs Holstein Kiel",
+            "sportName": "Soccer"
+          },
+          "Holstein Kiel": {
+            "runnerId": 1957242751270016,
+            "back": 4.3,
+            "lay": 4.5,
+            "name": "Holstein Kiel",
+            "event-name": "FC Schalke 04 vs Holstein Kiel"
+          },
+          "DRAW (FC /Hol)": {
+            "runnerId": 1957242751300016,
+            "back": 4.2,
+            "lay": 4.5,
+            "name": "DRAW (FC /Hol)",
+            "event-name": "FC Schalke 04 vs Holstein Kiel"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1957242751230016,
+          "back": 1.83,
+          "lay": 1.86,
+          "name": "FC Schalke 04",
+          "event-name": "FC Schalke 04 vs Holstein Kiel",
+          "numberOfRunners": 3,
+          "winPercentage": 129.50819672131146,
+          "startTime": "2022-01-16T12:30:00.000Z",
+          "raceId": 1957242747320016,
+          "raceName": "FC Schalke 04 vs Holstein Kiel",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 12:30:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1957254755670016,
+      "event-name": "Santa Clara vs Tondela",
+      "runner-name": "Santa Clara",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1957254755670016,
+        "start": "2022-01-16T15:30:00.000Z",
+        "allRunners": {
+          "Santa Clara": {
+            "runnerId": 1957254758430016,
+            "back": 1.78,
+            "lay": 1.83,
+            "name": "Santa Clara",
+            "event-name": "Santa Clara vs Tondela",
+            "numberOfRunners": 3,
+            "winPercentage": 107.86516853932585,
+            "startTime": "2022-01-16T15:30:00.000Z",
+            "raceId": 1957254755670016,
+            "raceName": "Santa Clara vs Tondela",
+            "sportName": "Soccer"
+          },
+          "Tondela": {
+            "runnerId": 1957254758470016,
+            "back": 5.4,
+            "lay": 5.6,
+            "name": "Tondela",
+            "event-name": "Santa Clara vs Tondela"
+          },
+          "DRAW (San/Ton)": {
+            "runnerId": 1957254758500116,
+            "back": 3.7,
+            "lay": 4,
+            "name": "DRAW (San/Ton)",
+            "event-name": "Santa Clara vs Tondela"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1957254758430016,
+          "back": 1.78,
+          "lay": 1.83,
+          "name": "Santa Clara",
+          "event-name": "Santa Clara vs Tondela",
+          "numberOfRunners": 3,
+          "winPercentage": 107.86516853932585,
+          "startTime": "2022-01-16T15:30:00.000Z",
+          "raceId": 1957254755670016,
+          "raceName": "Santa Clara vs Tondela",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 15:30:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1961352338500001,
+      "event-name": "Middlesbrough U23 vs Sunderland U23",
+      "runner-name": "Middlesbrough U23",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1961352338500001,
+        "start": "2022-01-16T12:00:00.000Z",
+        "allRunners": {
+          "Middlesbrough U23": {
+            "runnerId": 1961352339700101,
+            "back": 1.81,
+            "lay": 2,
+            "name": "Middlesbrough U23",
+            "event-name": "Middlesbrough U23 vs Sunderland U23",
+            "numberOfRunners": 3,
+            "winPercentage": 98.89502762430939,
+            "startTime": "2022-01-16T12:00:00.000Z",
+            "raceId": 1961352338500001,
+            "raceName": "Middlesbrough U23 vs Sunderland U23",
+            "sportName": "Soccer"
+          },
+          "Sunderland U23": {
+            "runnerId": 1961352339740001,
+            "back": 3.6,
+            "lay": 0,
+            "name": "Sunderland U23",
+            "event-name": "Middlesbrough U23 vs Sunderland U23"
+          },
+          "DRAW (Mid/Sun)": {
+            "runnerId": 1961352339780001,
+            "back": 4,
+            "lay": 0,
+            "name": "DRAW (Mid/Sun)",
+            "event-name": "Middlesbrough U23 vs Sunderland U23"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1961352339700101,
+          "back": 1.81,
+          "lay": 2,
+          "name": "Middlesbrough U23",
+          "event-name": "Middlesbrough U23 vs Sunderland U23",
+          "numberOfRunners": 3,
+          "winPercentage": 98.89502762430939,
+          "startTime": "2022-01-16T12:00:00.000Z",
+          "raceId": 1961352338500001,
+          "raceName": "Middlesbrough U23 vs Sunderland U23",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 12:00:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1952063686990016,
+      "event-name": "West Ham vs Leeds United",
+      "runner-name": "West Ham",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1952063686990016,
+        "start": "2022-01-16T14:00:00.000Z",
+        "allRunners": {
+          "West Ham": {
+            "runnerId": 1952063691780016,
+            "back": 1.71,
+            "lay": 1.73,
+            "name": "West Ham",
+            "event-name": "West Ham vs Leeds United",
+            "numberOfRunners": 3,
+            "winPercentage": 151.46198830409358,
+            "startTime": "2022-01-16T14:00:00.000Z",
+            "raceId": 1952063686990016,
+            "raceName": "West Ham vs Leeds United",
+            "sportName": "Soccer"
+          },
+          "Leeds United": {
+            "runnerId": 1952063691830016,
+            "back": 5.3,
+            "lay": 5.4,
+            "name": "Leeds United",
+            "event-name": "West Ham vs Leeds United"
+          },
+          "DRAW (Wes/Lee)": {
+            "runnerId": 1952063691870116,
+            "back": 4.3,
+            "lay": 4.4,
+            "name": "DRAW (Wes/Lee)",
+            "event-name": "West Ham vs Leeds United"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1952063691780016,
+          "back": 1.71,
+          "lay": 1.73,
+          "name": "West Ham",
+          "event-name": "West Ham vs Leeds United",
+          "numberOfRunners": 3,
+          "winPercentage": 151.46198830409358,
+          "startTime": "2022-01-16T14:00:00.000Z",
+          "raceId": 1952063686990016,
+          "raceName": "West Ham vs Leeds United",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 14:00:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1957247086350016,
+      "event-name": "Pordenone vs Lecce",
+      "runner-name": "Lecce",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1957247086350016,
+        "start": "2022-01-16T15:15:00.000Z",
+        "allRunners": {
+          "Pordenone": {
+            "runnerId": 1957247087590016,
+            "back": 4.5,
+            "lay": 5,
+            "name": "Pordenone",
+            "event-name": "Pordenone vs Lecce"
+          },
+          "Lecce": {
+            "runnerId": 1957247087620016,
+            "back": 1.9,
+            "lay": 1.98,
+            "name": "Lecce",
+            "event-name": "Pordenone vs Lecce",
+            "numberOfRunners": 3,
+            "winPercentage": 81.57894736842107,
+            "startTime": "2022-01-16T15:15:00.000Z",
+            "raceId": 1957247086350016,
+            "raceName": "Pordenone vs Lecce",
+            "sportName": "Soccer"
+          },
+          "DRAW (Por/Lec)": {
+            "runnerId": 1957247087660016,
+            "back": 3.45,
+            "lay": 3.8,
+            "name": "DRAW (Por/Lec)",
+            "event-name": "Pordenone vs Lecce"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1957247087620016,
+          "back": 1.9,
+          "lay": 1.98,
+          "name": "Lecce",
+          "event-name": "Pordenone vs Lecce",
+          "numberOfRunners": 3,
+          "winPercentage": 81.57894736842107,
+          "startTime": "2022-01-16T15:15:00.000Z",
+          "raceId": 1957247086350016,
+          "raceName": "Pordenone vs Lecce",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 15:15:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1961339730050001,
+      "event-name": "Tuzlaspor vs Altinordu",
+      "runner-name": "Tuzlaspor",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1961339730050001,
+        "start": "2022-01-16T10:30:00.000Z",
+        "allRunners": {
+          "Tuzlaspor": {
+            "runnerId": 1961339731890101,
+            "back": 1.8,
+            "lay": 2.04,
+            "name": "Tuzlaspor",
+            "event-name": "Tuzlaspor vs Altinordu",
+            "numberOfRunners": 3,
+            "winPercentage": 86.11111111111111,
+            "startTime": "2022-01-16T10:30:00.000Z",
+            "raceId": 1961339730050001,
+            "raceName": "Tuzlaspor vs Altinordu",
+            "sportName": "Soccer"
+          },
+          "Altinordu": {
+            "runnerId": 1961339731930001,
+            "back": 4,
+            "lay": 5.2,
+            "name": "Altinordu",
+            "event-name": "Tuzlaspor vs Altinordu"
+          },
+          "DRAW (Tuz/Alt)": {
+            "runnerId": 1961339731960101,
+            "back": 3.35,
+            "lay": 4.2,
+            "name": "DRAW (Tuz/Alt)",
+            "event-name": "Tuzlaspor vs Altinordu"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 6,
+          "remainingTotalBetAmountLimit": 4.4,
+          "userBalance": 8.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1961339731890101,
+          "back": 1.8,
+          "lay": 2.04,
+          "name": "Tuzlaspor",
+          "event-name": "Tuzlaspor vs Altinordu",
+          "numberOfRunners": 3,
+          "winPercentage": 86.11111111111111,
+          "startTime": "2022-01-16T10:30:00.000Z",
+          "raceId": 1961339730050001,
+          "raceName": "Tuzlaspor vs Altinordu",
+          "sportName": "Soccer"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 6,
+        "remainingTotalBetAmountLimit": 4.4,
+        "userBalance": 8.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "16/01/2022, 10:30:00",
+      "bet-placed-time": "08:36:01  16-01-2022"
+    }
+  ]
+}

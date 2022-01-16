@@ -85,34 +85,16 @@ const TIMER = (function() {
 									BETTING_WRITE : "REPORTS"
 		}),
 
-		// awaitForMaxReqTimeSlot : (reqType) => {
-		// 	switch(reqType)
-		// 	{
-		// 		case g_reqType.ACCOUNT:
-		// 			setTimeoutPromise("ACCOUNT");
-		// 			break;
-		// 		case g_reqType.EVENTS:
-		// 			setTimeoutPromise("EVENTS");
-		// 			break;
-		// 		case g_reqType.SECURITY:
-		// 			setTimeoutPromise("SECURITY");
-		// 			break;
-		// 		case g_reqType.NAVIGATION:
-		// 			setTimeoutPromise("NAVIGATION");
-		// 			break;
-		// 		case g_reqType.REPORTS:
-		// 			setTimeoutPromise("REPORTS");
-		// 			break;
-		// 		case g_reqType.BETTING_WRITE:
-		// 			setTimeoutPromise("BETTING_WRITE");
-		// 			break;
-		// 	}
-		// 	// return new Promise(r => setTimeout(r, ms));
-
-		// },
-
-		// setTimeoutPromise : (type) => {
 		awaitForMaxReqTimeSlot : (type) => {
+			// TEST (start) 
+			return new Promise(resolve => setTimeout(() => {
+				TIMER.g_reqTypeTimer[type] = new Date();
+				resolve(`${type} : ${TIMER.g_minHttpReqWaitTime()[type]} ms`);
+			}, 0));
+			// TEST (end)
+
+
+
 			let delay = 0;
 			if(!TIMER.g_reqType[type]) console.error("Invalid Http request group type");
 			const timeElapsed = new Date() - TIMER.g_reqTypeTimer[type];
