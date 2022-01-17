@@ -22,7 +22,7 @@
 
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 6.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 10.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -34,10 +34,9 @@
 	let g_predictedWinners = [];
 
 
-	// const g_onlyOne_raceName = "14:00 Southwell"; // test only one race
-	// const g_onlyOne_raceName = "15:50 Punchestown";
-	// const g_onlyOne_raceName = "Aleksandar Vukic vs Lloyd Harris";
-	const g_onlyOne_raceName = null; 
+	const g_onlyOne_raceName = "14:15 Fakenham"; // test only one race
+	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
+	// const g_onlyOne_raceName = null; 
 
 	let g_alreadyPlacedBetList = {};	// client report data
 	let g_predictedWinnerBetList = {};	// client report data
@@ -66,13 +65,13 @@
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
 		'Horse Racing',
-		'Soccer',
-		'Greyhound Racing',
-		'American Football',
-		'Basketball',
-		"Boxing",
-		"Golf",
-	//	'Ice Hockey',
+		// 'Soccer',
+		// 'Greyhound Racing',
+		// 'American Football',
+		// 'Basketball',
+		// "Boxing",
+		// "Golf",
+		// 'Ice Hockey',
 		// 'Rugby Union',
 		// 'Enhanced Specials',
 		// 'Snooker',
@@ -94,7 +93,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -155,6 +154,8 @@
 	};
 
 	isAlreadyBetPlacedEvent = function(eventId) {
+		// if(g_onlyOne_raceName) return false; // NEVER do it !!! places duplicate bets
+
 		for (let sport in g_predictedWinnerBetList) {
 			if (g_predictedWinnerBetList.hasOwnProperty(sport)) {
 				for(let count  = 0; count < g_predictedWinnerBetList[sport].length; ++count) {
@@ -218,10 +219,13 @@
 
 					const name = jsonFormat[extraArgs.obj][key][extraArgs.destObj];
 					g_db.sportId[extraArgs.closureSave][extraArgs.obj][name] = {};
+					let value = null;
 
 					for(let i = 0; i < extraArgs.keys.length; ++i)
 					{
-						g_db.sportId[extraArgs.closureSave][extraArgs.obj][name][extraArgs.keys[i]] = jsonFormat[extraArgs.obj][key][extraArgs.keys[i]];
+						value = jsonFormat[extraArgs.obj][key][extraArgs.keys[i]];
+						if(value || value == 0)
+							g_db.sportId[extraArgs.closureSave][extraArgs.obj][name][extraArgs.keys[i]] = value;
 					}
 				}
 			}
@@ -378,8 +382,10 @@
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = g_sessionToken;
 
+		const keysToFetch = ["id", "start", "status", "in-running-flag", "race-length"];
+
 		// closure needed for storing the sport name ????
-		requestResponse(options, 'events', 'name', ['id','start'], g_whichDayEvent, sport, sports_cbCount, callback);
+		requestResponse(options, 'events', 'name', keysToFetch, g_whichDayEvent, sport, sports_cbCount, callback);
 	};
 
 	// Get Event
@@ -418,6 +424,8 @@
 			}
 
 			const jsonFormat = JSON.parse(body);
+			// jsonFormat.in-running-flag: false
+			// jsonFormat.race-length: "0m 7f 14y"
 
 			const runnersObj = {};
 
@@ -573,7 +581,10 @@
 		if(isNullObject(g_predictedWinnerBetList)) {
 			if(await FA.isFileExist('./data-Report/alreadyPlacedBetList.json'))
 			{
-				g_predictedWinnerBetList = await FA.readJsonFile('./data-Report/alreadyPlacedBetList.json');
+				g_alreadyPlacedBetList = await FA.readJsonFile('./data-Report/alreadyPlacedBetList.json');
+
+				// g_predictedWinnerBetList = g_alreadyPlacedBetList;
+				g_predictedWinnerBetList = JSON.parse(JSON.stringify(g_alreadyPlacedBetList)); // deep object clone
 			}
 		}
 
@@ -608,7 +619,7 @@
 			if( startTime.getDate() === g_currentTime.getDate() && startTime.getMonth() === g_currentTime.getMonth() && 
 				startTime.getFullYear() === g_currentTime.getFullYear())
 			{
-				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
+				g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 				if(g_currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
 				{
 					if(!(g_currentTime.getTime() > startTime.getTime() + 2*60*1000))
