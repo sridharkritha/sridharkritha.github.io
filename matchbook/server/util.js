@@ -30,6 +30,9 @@ const UTIL = (function() {
 				case "ignore":
 					// console.log(msg);
 					break;
+				case "log":
+					console.log(msg);
+					break;
 				default:
 					console.log(msg);
 					break;

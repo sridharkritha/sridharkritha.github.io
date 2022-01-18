@@ -358,12 +358,15 @@ window.addEventListener('load', function() {
 									};
 
 
-	let g_runnersStr = '';
+	let g_runnersStr  = "";
+	let g_logMessages = "";
 
 	// enum - constants
 	const g_SYMBOL_CONSTANTS = Object.freeze({
-		PREDICTION_LIST:   "PREDICTION_LIST", // Symbol("predictionsList"),
-		PLACED_BET_LIST:  "PLACED_BET_LIST"   // Symbol("placedBets")
+		"ALL_PREDICTION_LIST"     :  "ALL_PREDICTION_LIST",
+		"CURRENT_PREDICTION_LIST" :  "CURRENT_PREDICTION_LIST",
+		"PLACED_BET_LIST"         :  "PLACED_BET_LIST",
+		"LOG_MESSAGES"            :  "LOG_MESSAGES"
 	});
 
 	printRunner = function(runnerName, odd, cssClass) {
@@ -376,10 +379,26 @@ window.addEventListener('load', function() {
 					</div>`;
 	};
 
+	fillMainHTMLContent = function(statsMsg, content) {
+		document.querySelector('#statistics').innerHTML = statsMsg;
+		document.querySelector('#predictionList').innerHTML = content;
+	};
+
+	showLogMessages = function() {
+		const htmlContent = `<div class="sportsName"><div class ="commonClass"><b>${g_logMessages}</b></div></div>`;
+		fillMainHTMLContent("", htmlContent);
+	};
+
+	renderLogMessages = function(msg) {
+		g_logMessages += msg + "<br/>";
+		showLogMessages();
+	};
+
 	createPredictedWinnersTable = function(predictedWinnerList) {
 		let eventCounter = 0;
-		g_runnersStr = '';
-		let metaData = '';
+		g_runnersStr = "";
+		let metaData = "";
+		let statsMsg = "";
 
 		for (let sport in predictedWinnerList) {
 			if (predictedWinnerList.hasOwnProperty(sport)) {
@@ -424,34 +443,68 @@ window.addEventListener('load', function() {
 			}
 		}
 
-		document.querySelector('#statistics').innerHTML = `# Total Number of Predictions = ${eventCounter}`;
-		document.querySelector('#predictionList').innerHTML = g_runnersStr;
+		statsMsg = `# Total Number of Predictions = ${eventCounter}`;
+		fillMainHTMLContent(statsMsg, g_runnersStr);
 	};
 
-	createPredictedWinnersTable(g_sportsWiseBetList); // test
+	// createPredictedWinnersTable(g_sportsWiseBetList); // test
 
 	/////////////////////////// Button Events //////////////////////////////////
-	let g_activePageName = g_SYMBOL_CONSTANTS.PREDICTION_LIST;
+	let g_activePageName = g_SYMBOL_CONSTANTS.ALL_PREDICTION_LIST;
 	const g_pageNameDisplayArea = document.querySelector('#pageNameDisplayAreaId');
 	g_pageNameDisplayArea.innerHTML = `<b>:: Predictions List ::</b>`;
 
-	const g_predictionBtn = document.querySelector('#predictionBtnId');
-	const g_placedBetBtn = document.querySelector('#placedBetBtnId');
-	g_predictionBtn.addEventListener('click', showResults);
-	g_placedBetBtn.addEventListener('click', showResults);
+	// button id and addEventListeners mapping
+	document.querySelector('#allPredictionBtnId').addEventListener('click', showResults);
+	document.querySelector('#currentPredictionBtnId').addEventListener('click', showResults);
+	document.querySelector('#placedBetBtnId').addEventListener('click', showResults);
+	document.querySelector('#logMessagesBtnId').addEventListener('click', showResults);
+
+	/////////////////////////////////// SOCKET.IO (start) //////////////////////////////////////////////////////////////
+
+	const socket = io(); // NOTE: you MUST run by http://localhost:3000/index.html
+
+	// [Client <= Server] Receive data from server to client
+	socket.on('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT',     async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.ALL_PREDICTION_LIST); });
+	socket.on('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.CURRENT_PREDICTION_LIST); });
+	socket.on('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT',       async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.PLACED_BET_LIST); });
+	socket.on('SERVER_TO_CLIENT_LOG_MESSAGES_EVENT',              async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.LOG_MESSAGES); });
+
+	// [Client => Server] Send the data from client to server 
+	function notifyToServer(event, data) {
+		socket.emit(event, data);
+	}
+
+	notifyToServer('CLIENT_TO_SERVER_GIVE_ALL_PREDICTION_EVENT', JSON.stringify({ msg:"give all prediction list"}));
+
+	/////////////////////////////////// SOCKET.IO (end) //////////////////////////////////////////////////////////////
 
 	function showResults(e) {
 		switch(this.dataset.key)  // e.currentTarget.dataset.key
 		{
-			case g_SYMBOL_CONSTANTS.PREDICTION_LIST:
+			case g_SYMBOL_CONSTANTS.ALL_PREDICTION_LIST:
 				g_activePageName = this.dataset.key;
-				g_pageNameDisplayArea.innerHTML = `<b>:: Predictions List ::</b>`;
-				notifyToServer('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', JSON.stringify({ name:'sridhar', age: 40}));
+				g_pageNameDisplayArea.innerHTML = `<b>:: All Predictions List ::</b>`;
+				notifyToServer('CLIENT_TO_SERVER_GIVE_ALL_PREDICTION_EVENT', JSON.stringify({  msg:"give all prediction list"}));
 				break;
+
+			case g_SYMBOL_CONSTANTS.CURRENT_PREDICTION_LIST:
+				g_activePageName = this.dataset.key;
+				g_pageNameDisplayArea.innerHTML = `<b>:: Current Prediction List ::</b>`;
+				notifyToServer('CLIENT_TO_SERVER_GIVE_CURRENT_PREDICTION_EVENT', JSON.stringify({ msg:'give current prediction list'}));
+				break;
+
 			case g_SYMBOL_CONSTANTS.PLACED_BET_LIST:
 				g_activePageName = this.dataset.key;
 				g_pageNameDisplayArea.innerHTML = `<b>:: Bet Placed List ::</b>`;
-				notifyToServer('CLIENT_TO_SERVER_GIVE_ALREADY_PLACED_BETS_EVENT', JSON.stringify({ name:'jay', age: 7}));
+				notifyToServer('CLIENT_TO_SERVER_GIVE_ALREADY_PLACED_BETS_EVENT', JSON.stringify({ msg:"give already placed bet list" }));
+				break;
+
+			case g_SYMBOL_CONSTANTS.LOG_MESSAGES:
+				g_activePageName = this.dataset.key;
+				g_pageNameDisplayArea.innerHTML = `<b>:: Log Messages ::</b>`;
+				showLogMessages();
+				notifyToServer('CLIENT_TO_SERVER_GIVE_LOG_MESSAGES_EVENT', JSON.stringify({ msg:'give log messages'}));
 				break;
 		}
 		// console.log(e.key);       // d
@@ -460,127 +513,20 @@ window.addEventListener('load', function() {
 	////////////////////////////////////////////////////////////////////////////
 
 	populateClientPage = (data, dataType) => {
-		const result = JSON.parse(data);
-		console.log(result);
-		if(g_activePageName === g_SYMBOL_CONSTANTS.PREDICTION_LIST && dataType === g_SYMBOL_CONSTANTS.PREDICTION_LIST) {
-			createPredictedWinnersTable(result);
-		}
-		else if(g_activePageName === g_SYMBOL_CONSTANTS.PLACED_BET_LIST && dataType === g_SYMBOL_CONSTANTS.PLACED_BET_LIST) {
-			createPredictedWinnersTable(result);
-		}
-	};
 
-	//////////// SOCKET.IO /////////////////////////////////////////////////////// 
-
-	const socket = io(); // NOTE: you MUST run by http://localhost:3000/index.html
-
-	// [Client => Server] Send the data from client to server 
-	function notifyToServer(event, data) {
-		socket.emit(event, data);
-	}
-
-	notifyToServer('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', JSON.stringify({ name:'sridhar', age: 40}));
-
-	// [Client <= Server] Receive data from server to client
-	socket.on('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT',   async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.PREDICTION_LIST); });
-	socket.on('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.PLACED_BET_LIST); });
-
-	/*
-
-	///////////////////// REST API /////////////////////////////////////////////////////////////////////////////////////
-	////////////// Basic HTTP VERBS //////////////////////////////
-	// 1. Get    : Get the data from server
-	// 2. Post   : Add some data to server
-	///////////// Extended HTTP VERBS /////////////////////
-	// 3. Delete : (like Get) Delete the data from the server
-	// 4. Put    : (like Post) Replace the existing data object by the new data object in the server.
-	// 5. Patch  : (like Post) Make a minor correction/edit inside the object (property alteration) which is in the server
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-
-	// 1a. GET(?): get user details by key value pair
-	const getUserByName = async (keyValue) => {
-		try {
-				const response = await fetch('/api/getUserByQuery?' + keyValue); // or from browser: http://localhost:3000/api/getUserByQuery?name=Sridhar
-				const data = await response.json();
-				// enter you logic when the fetch is successful
-				console.log(data);
-			} catch(error) {
-				// enter your logic for when there is an error (ex. error toast)
-				console.log(error);
+		if(g_activePageName === dataType) 
+		{
+			if(g_activePageName === g_SYMBOL_CONSTANTS.LOG_MESSAGES) {
+				renderLogMessages(data);
 			}
-	};
-
-	getUserByName("name=Sridhar");
-
-	// 1b. GET(/): get user details by user id value
-	const getUserByValue = async (value) => {
-		try {
-				const response = await fetch('/api/getUserIdValue/' + value); // or from browser: http://localhost:3000/api/getUserIdValue/5ec3c7c
-				const data = await response.json();
-				// enter you logic when the fetch is successful
-				console.log(data);
-			} catch(error) {
-				// enter your logic for when there is an error (ex. error toast)
-				console.log(error);
+			else {
+				const result = JSON.parse(data);
+				console.log(result);
+				createPredictedWinnersTable(result);
 			}
+		}
 	};
 
-	getUserByValue("5ec3c7c");
 
-	// 2. POST: Add user - login method
-	async function login(username, password) {
-		// To handle an error in an async function, you MUST use try/catch
-		try {
-			// fetch() starts a request and returns a promise.
-			// Warning: fetch does NOT FAIL even for the incorrect page url request (Page NOT found error) bcos it consider's as successfully HTTP request.
-			// It throws error only if there is some network failure(not able to send the request / not able to receive response from the server).
-			// Issues like "page not found" in server [eg: serverErrors (500–599),clientErrors (400–499)], you can only find by 'response.ok' and 'response.status' from the successful response msg.
-			const response = await fetch('/api/login', {
-											method: 'POST',
-											headers: { 'Content-Type': 'application/json' },
-											body: JSON.stringify({
-																	username,
-																	password
-																 })
-											});
-			// 'response.ok == true' ONLY if status range 200-299
-			if (!response.ok) throw Error(`An error has occured: ${response.status}`);
-			// if (response.status < 200 && response.status > 299) throw Error(`An error has occured: ${response.status}`);
-
-			const result = await response.json();
-			console.log(result); // msg from Server
-		}
-		catch(e) {
-			console.log(e);
-		}
-	}
-
-	login("sridhar", "1234");
-
-	// 3. DELETE:
-	async function deleteItem(id) {
-		try {
-			let response = await fetch(`https://url/${id}`, { method: "DELETE" });
-		} catch (err) {
-		}
-	}
-
-	// 3. PUT:
-	async function replaceItem(obj) {
-		try {
-			let response = await fetch(`/api/replaceData`, {
-			//let response = await fetch(`/api/replaceData/${obj.myId}`, {
-											method: "PUT",
-											headers: { "Content-Type": "application/json" },
-											body: JSON.stringify(todo)
-										});
-		} catch (err) {
-		}
-	}
-
-	replaceItem({myId: 3456})
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
 
 }); // window.addEventListener('load', function() {

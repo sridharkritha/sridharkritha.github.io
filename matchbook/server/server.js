@@ -34,12 +34,13 @@
 	let g_predictedWinners = [];
 
 
-	const g_onlyOne_raceName = "14:15 Fakenham"; // test only one race
+	// const g_onlyOne_raceName = "14:35 Chepstow"; // test only one race
 	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
-	// const g_onlyOne_raceName = null; 
+	const g_onlyOne_raceName = null; 
 
-	let g_alreadyPlacedBetList = {};	// client report data
-	let g_predictedWinnerBetList = {};	// client report data
+	let g_alreadyPlacedBetList = {};			// client report data
+	let g_allPredictedWinnerBetList = {};			// client report data
+	let g_currentPredictedWinnerBetList = {};	// client report data
 
 	let g_lastCycleElapsedTime = 0;
 	let g_currentTime = 0;
@@ -53,7 +54,7 @@
 	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
 	let g_minProfitOdd = 0.7; // 0.7 ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 
-	let g_maxRunnersCount = 16; // 8
+	let g_maxRunnersCount = 25; // 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	/*
@@ -93,7 +94,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = false; // false => REAL MONEY
+	const g_isLockedForBetting = true; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -122,11 +123,19 @@
 		});
 
 		// [Client => Server] Receive data from client to server
-		socket.on('CLIENT_TO_SERVER_GIVE_PREDICTION_EVENT', async (data) => {
+		socket.on('CLIENT_TO_SERVER_GIVE_ALL_PREDICTION_EVENT', async (data) => {
 			const obj = JSON.parse(data);
 			UTIL.print("must",obj);
 
-			notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
+			notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+		});
+
+		// [Client => Server] Receive data from client to server
+		socket.on('CLIENT_TO_SERVER_GIVE_CURRENT_PREDICTION_EVENT', async (data) => {
+			const obj = JSON.parse(data);
+			UTIL.print("must",obj);
+
+			notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
 		});
 
 		// [Client => Server] Receive data from client to server
@@ -156,11 +165,11 @@
 	isAlreadyBetPlacedEvent = function(eventId) {
 		// if(g_onlyOne_raceName) return false; // NEVER do it !!! places duplicate bets
 
-		for (let sport in g_predictedWinnerBetList) {
-			if (g_predictedWinnerBetList.hasOwnProperty(sport)) {
-				for(let count  = 0; count < g_predictedWinnerBetList[sport].length; ++count) {
-					if("event-id" in  g_predictedWinnerBetList[sport][count]) {
-						if(g_predictedWinnerBetList[sport][count]["event-id"] === eventId) 
+		for (let sport in g_allPredictedWinnerBetList) {
+			if (g_allPredictedWinnerBetList.hasOwnProperty(sport)) {
+				for(let count  = 0; count < g_allPredictedWinnerBetList[sport].length; ++count) {
+					if("event-id" in  g_allPredictedWinnerBetList[sport][count]) {
+						if(g_allPredictedWinnerBetList[sport][count]["event-id"] === eventId) 
 							return true;
 					}
 				}
@@ -578,13 +587,12 @@
 			}
 		}
 
-		if(isNullObject(g_predictedWinnerBetList)) {
+		if(isNullObject(g_allPredictedWinnerBetList)) {
 			if(await FA.isFileExist('./data-Report/alreadyPlacedBetList.json'))
 			{
 				g_alreadyPlacedBetList = await FA.readJsonFile('./data-Report/alreadyPlacedBetList.json');
 
-				// g_predictedWinnerBetList = g_alreadyPlacedBetList;
-				g_predictedWinnerBetList = JSON.parse(JSON.stringify(g_alreadyPlacedBetList)); // deep object clone
+				g_allPredictedWinnerBetList = JSON.parse(JSON.stringify(g_alreadyPlacedBetList)); // deep object clone
 			}
 		}
 
@@ -758,8 +766,9 @@
 					// ??????
 					// getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 				}
-				notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
-				FA.writeJsonFile(g_predictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
+				notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+				notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
+				FA.writeJsonFile(g_allPredictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
 			}
 		}
 	};
@@ -793,8 +802,11 @@
 			g_alreadyPlacedBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
 		}
 
-		if(!g_predictedWinnerBetList[obj["sport-name"]]) g_predictedWinnerBetList[obj["sport-name"]] = [];
-		g_predictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
+		if(!g_allPredictedWinnerBetList[obj["sport-name"]]) g_allPredictedWinnerBetList[obj["sport-name"]] = [];
+		g_allPredictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
+
+		if(!g_currentPredictedWinnerBetList[obj["sport-name"]]) g_currentPredictedWinnerBetList[obj["sport-name"]] = [];
+		g_currentPredictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
 
 		return obj;
 	};
@@ -862,7 +874,10 @@
 
 
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
-		UTIL.print("must",`BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`);
+		let logMsg = `BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`;
+		UTIL.print("log", logMsg);
+		notifyAllUser('SERVER_TO_CLIENT_LOG_MESSAGES_EVENT', logMsg /*JSON.stringify(g_alreadyPlacedBetList)*/); // notify the client
+
 		findSportsIds();
 	};
 
@@ -996,11 +1011,12 @@
 			}
 
 			FA.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
-			FA.writeJsonFile(g_predictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
+			FA.writeJsonFile(g_allPredictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
 			FA.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
 
 			notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
-			notifyAllUser('SERVER_TO_CLIENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_predictedWinnerBetList)); // notify the client
+			notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+			notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
 		}
 	};
 
