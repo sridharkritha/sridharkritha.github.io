@@ -391,7 +391,7 @@ window.addEventListener('load', function() {
 
 	renderLogMessages = function(msg) {
 		g_logMessages += msg + "<br/>";
-		showLogMessages();
+		// showLogMessages();
 	};
 
 	createPredictedWinnersTable = function(predictedWinnerList) {
@@ -468,7 +468,7 @@ window.addEventListener('load', function() {
 	socket.on('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT',     async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.ALL_PREDICTION_LIST); });
 	socket.on('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.CURRENT_PREDICTION_LIST); });
 	socket.on('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT',       async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.PLACED_BET_LIST); });
-	socket.on('SERVER_TO_CLIENT_LOG_MESSAGES_EVENT',              async (data) => { populateClientPage(data, g_SYMBOL_CONSTANTS.LOG_MESSAGES); });
+	socket.on('SERVER_TO_CLIENT_LOG_MESSAGES_EVENT',              async (data) => { renderLogMessages(data); populateClientPage(data, g_SYMBOL_CONSTANTS.LOG_MESSAGES);});
 
 	// [Client => Server] Send the data from client to server 
 	function notifyToServer(event, data) {
@@ -517,7 +517,7 @@ window.addEventListener('load', function() {
 		if(g_activePageName === dataType) 
 		{
 			if(g_activePageName === g_SYMBOL_CONSTANTS.LOG_MESSAGES) {
-				renderLogMessages(data);
+				showLogMessages();
 			}
 			else {
 				const result = JSON.parse(data);
