@@ -582,7 +582,7 @@
 			if( startTime.getDate() === g_currentTime.getDate() && startTime.getMonth() === g_currentTime.getMonth() && 
 				startTime.getFullYear() === g_currentTime.getFullYear())
 			{
-				g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
+				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 				if(g_currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
 				{
 					if(!(g_currentTime.getTime() > startTime.getTime() + 2*60*1000))

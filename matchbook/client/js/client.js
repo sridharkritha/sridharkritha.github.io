@@ -394,6 +394,11 @@ window.addEventListener('load', function() {
 		// showLogMessages();
 	};
 
+	clearLogMessages = () => { 
+		g_logMessages = "";
+		fillMainHTMLContent("", "");
+	};
+
 	createPredictedWinnersTable = function(predictedWinnerList) {
 		let eventCounter = 0;
 		g_runnersStr = "";
@@ -459,6 +464,8 @@ window.addEventListener('load', function() {
 	document.querySelector('#currentPredictionBtnId').addEventListener('click', showResults);
 	document.querySelector('#placedBetBtnId').addEventListener('click', showResults);
 	document.querySelector('#logMessagesBtnId').addEventListener('click', showResults);
+
+	document.querySelector('#clearLogMessagesBtnId').addEventListener('click', clearLogMessages);
 
 	/////////////////////////////////// SOCKET.IO (start) //////////////////////////////////////////////////////////////
 
