@@ -1,14 +1,17 @@
 (function () {
 	// https://developers.matchbook.com/reference
 	const request = require('request');
-	const fs = require('fs');
+	// const fs = require('fs');
 
-	// Server listen at the given port number
-	const PORT = process.env.PORT || 3004;
-	const express = require("express");
-	const app = express();
-	const httpServer = require("http").createServer(app); // explicitly create a 'http' server instead of using express() server
-	const io = require("socket.io")(httpServer);
+	const CONNECTIONS = require("./connections");
+	const io = CONNECTIONS.io;
+
+	// // Server listen at the given port number
+	// const PORT = process.env.PORT || 3004;
+	// const express = require("express");
+	// const app = express();
+	// const httpServer = require("http").createServer(app); // explicitly create a 'http' server instead of using express() server
+	// const io = require("socket.io")(httpServer);
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	const FA    = require('./fileAccess');
 	const TIMER = require('./timer');
@@ -108,52 +111,52 @@
 		// g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
 /////////////////////////////////////////// socket.io //////////////////////////////////////////////////////////////////
-	// [Server => Client(S)] Notify all the connected clients
-	function notifyAllUser(event, data) {
-		io.emit(event, data);
-	}
+	// // [Server => Client(S)] Notify all the connected clients
+	// function notifyAllUser(event, data) {
+	// 	io.emit(event, data);
+	// }
 	
 	// Client request for a new connection
 	io.on('connection', async (socket) => {
-		UTIL.print("must",'Server: A new client with socket-id: ${socket.id} is connected to me !'); // socket.id => can be used as UNIQUE id for finding the client 
+		CONNECTIONS.print("must",'Server: A new client with socket-id: ${socket.id} is connected to me !'); // socket.id => can be used as UNIQUE id for finding the client 
 
 		// when client(browser) closed/disconnect from the server
 		socket.on('disconnect', function() {
-			UTIL.print("must",'A Client has closed / disconnected from the Server !');
+			CONNECTIONS.print("must",'A Client has closed / disconnected from the Server !');
 		});
 
 		// [Client => Server] Receive data from client to server
 		socket.on('CLIENT_TO_SERVER_GIVE_ALL_PREDICTION_EVENT', async (data) => {
 			const obj = JSON.parse(data);
-			UTIL.print("must",obj);
+			CONNECTIONS.print("must",obj); // client msg
 
-			notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
 		});
 
 		// [Client => Server] Receive data from client to server
 		socket.on('CLIENT_TO_SERVER_GIVE_CURRENT_PREDICTION_EVENT', async (data) => {
 			const obj = JSON.parse(data);
-			UTIL.print("must",obj);
+			CONNECTIONS.print("must",obj); // client msg
 
-			notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
 		});
 
 		// [Client => Server] Receive data from client to server
 		socket.on('CLIENT_TO_SERVER_GIVE_ALREADY_PLACED_BETS_EVENT', async (data) => {
 			const obj = JSON.parse(data);
-			UTIL.print("must",obj);
+			CONNECTIONS.print("must",obj); // client msg
 
-			notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		});
 	});
 
-	//////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
-	app.use(express.json());               // for body parsing
-	app.use(express.static('../client'));  // path to public folder you can access through server
+	// //////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
+	// app.use(express.json());               // for body parsing
+	// app.use(express.static('../client'));  // path to public folder you can access through server
 
-	httpServer.listen(PORT, async () => {
-		UTIL.print("must","Server is running on the port : " + httpServer.address().port);
-	});
+	// httpServer.listen(PORT, async () => {
+	// 	CONNECTIONS.print("must","Server is running on the port : " + httpServer.address().port);
+	// });
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -221,7 +224,7 @@
 						if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
 							|| dateObject.getFullYear() !== currentDate.getFullYear())
 						{
-							// UTIL.print("ignore",'SKIP: ' + dateObject + ' !== ' + currentDate);
+							// CONNECTIONS.print("ignore",'SKIP: ' + dateObject + ' !== ' + currentDate);
 							continue; // skip
 						}
 					}
@@ -247,7 +250,7 @@
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
@@ -274,7 +277,7 @@
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
@@ -333,8 +336,8 @@
 
 		for (let eventObj in eventCollection) {
 			if (eventCollection.hasOwnProperty(eventObj) && eventCollection[eventObj].id === eventId) {
-				UTIL.print("must",eventObj);         // key
-				UTIL.print("must",eventCollection[eventObj]); // value
+				CONNECTIONS.print("must",eventObj);         // key
+				CONNECTIONS.print("must",eventCollection[eventObj]); // value
 				return eventCollection[eventObj];
 			}
 		}
@@ -347,7 +350,7 @@
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
@@ -416,17 +419,17 @@
 		// Cookie data for maintaining the session
 		options.headers['session-token'] = g_sessionToken;
 
-		// UTIL.print("ignore",options);
+		// CONNECTIONS.print("ignore",options);
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) {
 				if (error.code === "ECONNRESET") {
-					UTIL.print("must", "Timeout occurred in getEvent() - Trying again !!!");
+					CONNECTIONS.print("must", "Timeout occurred in getEvent() - Trying again !!!");
 					return;
 				}
 				else throw new Error(error);
@@ -682,10 +685,10 @@
 							g_moneyStatus.account.date = new Date().toDateString();
 						}
 						else if(g_userBalance < g_BetStakeValue) {
-							UTIL.print("must","User Balance is VERY LOW !!!!");
+							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
 						}
 						else if(UTIL.roundIt(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) < g_BetStakeValue) {
-							UTIL.print("must",`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
+							CONNECTIONS.print("must",`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 						}
 					}
 				}
@@ -734,19 +737,19 @@
 			if(!g_isLockedForBetting) {
 				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////
 				const result = await TIMER.awaitForMaxReqTimeSlot("BETTING_WRITE");
-				UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+				CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 				////////////////////////////////////////////////////////////////////////////////////////////////////////
 				request(options, function (error, response, body) {
 					if (!error && response.statusCode == 200) {
-						//UTIL.print("ignore",response);
+						//CONNECTIONS.print("ignore",response);
 						return callback(null, response);
 					}
 					else {
-						UTIL.print("must",response.statusCode + " Error in bet placed");
+						CONNECTIONS.print("must",response.statusCode + " Error in bet placed");
 
 						if(response.body.offers) {
 							for(let count = 0; count < response.body.offers.length; ++count) {
-								UTIL.print("must",response.body.offers[count].errors);
+								CONNECTIONS.print("must",response.body.offers[count].errors);
 							}
 						}
 
@@ -757,17 +760,17 @@
 			else
 			{
 				// mock bet placed
-				//UTIL.print("ignore",response);
+				//CONNECTIONS.print("ignore",response);
 				for(let i = 0; i < g_betNow.length; ++i) {
 					let lastBetResult = g_betNow[i];
 					let obj = populateDataAfterBetSubmit(lastBetResult, false);
-					UTIL.print("must",obj);
+					CONNECTIONS.print("must",obj);
 
 					// ??????
 					// getEventDetailsByEventId(getSportsIdBySportsName(g_betNow[i].sportName), g_betNow[i]['event-id']);
 				}
-				notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
-				notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
+				CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+				CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
 				FA.writeJsonFile(g_allPredictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
 			}
 		}
@@ -829,7 +832,7 @@
 
 	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
 		getEvent(eventId, function(obj) {
-			// UTIL.print("ignore",obj);
+			// CONNECTIONS.print("ignore",obj);
 			
 			g_db.sportId[sportName].events[event].allRunners = obj;
 			g_db.sportId[sportName].events[event].id = eventId;
@@ -845,7 +848,7 @@
 
 				findLuckyMatch(sportName, g_db.sportId[sportName], "events", function(err, data) {
 						if(err){
-							UTIL.print("must",err);
+							CONNECTIONS.print("must",err);
 							throw new Error(err);
 						}
 						else{
@@ -875,8 +878,7 @@
 
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
 		let logMsg = `BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`;
-		UTIL.print("log", logMsg);
-		notifyAllUser('SERVER_TO_CLIENT_LOG_MESSAGES_EVENT', logMsg /*JSON.stringify(g_alreadyPlacedBetList)*/); // notify the client
+		CONNECTIONS.print("logClient", logMsg);
 
 		findSportsIds();
 	};
@@ -890,7 +892,7 @@
 
 	callback_getSports = async function(err, data) {
 		if(err) {
-			UTIL.print("must",err);
+			CONNECTIONS.print("must",err);
 			throw new Error(err);
 		}
 		else{
@@ -910,7 +912,7 @@
 
 				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 				const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-				UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+				CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 				////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 				getEvents(sport, sports_cbCount, callback_getEvents);
@@ -921,8 +923,8 @@
 
 	callback_getEvents = async function(err, sports_cbCount, sport) {
 		if(err){
-			UTIL.print("must",err);
-			UTIL.print("must","ERROR: TRYING AGAIN BY A NEW REQUEST");
+			CONNECTIONS.print("must",err);
+			CONNECTIONS.print("must","ERROR: TRYING AGAIN BY A NEW REQUEST");
 			run();
 
 			// throw new Error(err);
@@ -941,11 +943,14 @@
 
 					/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 					const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-					UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+					CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 					////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					// g_onlyOne_raceName === "14:00 Southwell"
 					if(!g_onlyOne_raceName || race === g_onlyOne_raceName) {
 						if(race === g_onlyOne_raceName) events_cbCount.totalCount = 1; // Taking only one race event for testing
+
+						let logMsg = `Sports: ${sport} ############## Event Name: ${race}`;
+						CONNECTIONS.print("logClient", logMsg);
 
 						getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
 							sports_cbCount, events_cbCount, callback_getEventInfo);
@@ -962,7 +967,7 @@
 
 	callback_getEventInfo = function(err, sports_cbCount, events_cbCount, isReadyForBetting) {
 		if(err){
-			UTIL.print("must",err);
+			CONNECTIONS.print("must",err);
 			throw new Error(err);
 		}
 
@@ -997,16 +1002,16 @@
 
 	callback_submitOffers = function(err, response) {
 		if(err){
-			UTIL.print("must",err);
+			CONNECTIONS.print("must",err);
 		}
 		else{
-			//UTIL.print("ignore",response);
+			//CONNECTIONS.print("ignore",response);
 			const nSubmittedBets = response.body.offers.length;
 			for(let i = 0; i < nSubmittedBets; ++i) {
 				let lastBetResult = response.body.offers[i];
 				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
 					let obj = populateDataAfterBetSubmit(lastBetResult, true);
-					UTIL.print("must",obj);
+					CONNECTIONS.print("must",obj);
 				}
 			}
 
@@ -1014,9 +1019,9 @@
 			FA.writeJsonFile(g_allPredictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
 			FA.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
 
-			notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
-			notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
-			notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
 		}
 	};
 
@@ -1032,14 +1037,14 @@
 
 		/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
 		const result = await TIMER.awaitForMaxReqTimeSlot("ACCOUNT");
-		UTIL.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+		CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		request(options, function (error, response, body) {
 			if (error) throw new Error(error);
 
 			const jsonFormat = JSON.parse(body);
-			// UTIL.print("ignore",jsonFormat); // jsonFormat.balance
+			// CONNECTIONS.print("ignore",jsonFormat); // jsonFormat.balance
 			g_userBalance = Math.floor(jsonFormat.balance * 100) / 100;
 		});
 	};
@@ -1049,7 +1054,7 @@
 		if(err){
 			g_sessionToken = null;
 			g_sessionStartTime = 0;
-			UTIL.print("must",err);
+			CONNECTIONS.print("must",err);
 		}
 		else{
 			g_sessionToken = sessionToken;
@@ -1069,7 +1074,7 @@
 	////////////////////////////////////////////////////////////////////////
 	myTest = async (value) => {
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		UTIL.print("ignore",`sri-after: ${new Date().getTime()}    ${result}`);
+		CONNECTIONS.print("ignore",`sri-after: ${new Date().getTime()}    ${result}`);
 	};
 
 	myTestWrapper = async (value) => {

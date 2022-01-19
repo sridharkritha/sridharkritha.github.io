@@ -17,27 +17,7 @@ const UTIL = (function() {
 				}
 			};
 		},
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		print: (level, msg) => {
-			switch(level)
-			{
-				case "must":
-					console.log(msg);
-					break;
-				case "info":
-					console.log(msg);
-					break;
-				case "ignore":
-					// console.log(msg);
-					break;
-				case "log":
-					console.log(msg);
-					break;
-				default:
-					console.log(msg);
-					break;
-			}
-		},
+
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		randomIntFromInterval: function (min, max) { // min and max included 
 			return Math.floor(Math.random() * (max - min + 1) + min);
@@ -60,7 +40,6 @@ const UTIL = (function() {
 module.exports.getDefaultOptions = UTIL.getDefaultOptions;
 module.exports.randomIntFromInterval = UTIL.randomIntFromInterval;
 module.exports.roundIt = UTIL.roundIt;
-module.exports.print = UTIL.print;
 
 
 
