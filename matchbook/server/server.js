@@ -1,41 +1,33 @@
 (function () {
 	// https://developers.matchbook.com/reference
 	const request = require('request');
-	// const fs = require('fs');
 
 	const CONNECTIONS = require("./connections");
 	const io = CONNECTIONS.io;
-
-	// // Server listen at the given port number
-	// const PORT = process.env.PORT || 3004;
-	// const express = require("express");
-	// const app = express();
-	// const httpServer = require("http").createServer(app); // explicitly create a 'http' server instead of using express() server
-	// const io = require("socket.io")(httpServer);
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	const FA    = require('./fileAccess');
 	const TIMER = require('./timer');
 	const UTIL  = require('./util');
 	const DOOR  = require('./door');
 	const MISC  = require('./misc');
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	const g_betCycleTime = 8000; // 1000 => 1 sec => Every 1 second scan for any new betting opportunity
 	let g_betScanRound = 0;
 	const g_scanStartTime = new Date();
-
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
 	const g_todayTotalBetAmountLimit = 10.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
-
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	let g_sessionToken = null;
 	let g_db = {};
 	g_db.sportId = {};
 	let g_predictedWinners = [];
-
 
 	// const g_onlyOne_raceName = "14:35 Chepstow"; // test only one race
 	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
@@ -52,7 +44,8 @@
 	let g_sessionStartTime = 0;
 	let g_sportsList = [];
 	const g_sportsIdNameMapping = {};
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+
 	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
 	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
 	let g_minProfitOdd = 0.7; // 0.7 ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
@@ -92,7 +85,6 @@
 		// "Volleyball"
 	];
 
-
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -110,12 +102,8 @@
 		// g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		// g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
-/////////////////////////////////////////// socket.io //////////////////////////////////////////////////////////////////
-	// // [Server => Client(S)] Notify all the connected clients
-	// function notifyAllUser(event, data) {
-	// 	io.emit(event, data);
-	// }
-	
+	/////////////////////////////////////////// socket.io //////////////////////////////////////////////////////////////////
+
 	// Client request for a new connection
 	io.on('connection', async (socket) => {
 		CONNECTIONS.print("must",'Server: A new client with socket-id: ${socket.id} is connected to me !'); // socket.id => can be used as UNIQUE id for finding the client 
@@ -149,17 +137,8 @@
 			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
 		});
 	});
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	// //////////////////////////// SERVER IS LISTENING ////////////////////////////////////////////////////////////
-	// app.use(express.json());               // for body parsing
-	// app.use(express.static('../client'));  // path to public folder you can access through server
-
-	// httpServer.listen(PORT, async () => {
-	// 	CONNECTIONS.print("must","Server is running on the port : " + httpServer.address().port);
-	// });
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	callbackCount = function(currentCount , totalCount) {
 		this.currentCount = currentCount || 0;
 		this.totalCount = totalCount || 0;
@@ -382,7 +361,7 @@
 			'price-mode': 'expanded',
 			'minimum-liquidity': '10',
 			'include-event-participants': 'false'
-		};		
+		};
 
 		if(sportId)
 		{
@@ -508,17 +487,6 @@
 								const raceName = race;
 								const luckyRunner = [];
 
-								// // meta data
-								// const metaData = {
-								// 	"stakeValue"                   : g_BetStakeValue,
-								// 	"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
-								// 	"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
-								// 	"userBalance"                  : g_userBalance,
-								// 	"winConfidencePercentage"      : g_winConfidencePercentage,
-								// 	"minProfitOdd"                 : g_minProfitOdd
-								// };
-								// g_db["sportId"][sportName]["events"][raceName]["metaData"] = metaData;
-
 								for(let runner in jsonObj[prop][race]["allRunners"]) { 
 									if(jsonObj[prop][race]["allRunners"].hasOwnProperty(runner)) {
 										if(typeof jsonObj[prop][race]["allRunners"][runner] === "object") {
@@ -572,14 +540,8 @@
 		return callback(null, g_betNow);
 	};
 
-	// Check the given object is NULL object or NOT.
-	isNullObject = function(obj) {
-		for(let i in obj) return false;
-		return true;
-	};
-
 	findLuckyMatch = async (sportName, jsonObj, objLevelFilter, callback) => {
-		if(isNullObject(g_moneyStatus)) {
+		if(UTIL.isNullObject(g_moneyStatus)) {
 			if(await FA.isFileExist('./data-Report/money.json'))
 			{
 				g_moneyStatus = await FA.readJsonFile('./data-Report/money.json');
@@ -590,7 +552,7 @@
 			}
 		}
 
-		if(isNullObject(g_allPredictedWinnerBetList)) {
+		if(UTIL.isNullObject(g_allPredictedWinnerBetList)) {
 			if(await FA.isFileExist('./data-Report/alreadyPlacedBetList.json'))
 			{
 				g_alreadyPlacedBetList = await FA.readJsonFile('./data-Report/alreadyPlacedBetList.json');
@@ -605,16 +567,6 @@
 
 	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
-		// // meta data
-		// const metaData = {
-		// 	"stakeValue"                   : g_BetStakeValue,
-		// 	"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
-		// 	"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
-		// 	"userBalance"                  : g_userBalance,
-		// 	"winConfidencePercentage"      : g_winConfidencePercentage,
-		// 	"minProfitOdd"                 : g_minProfitOdd
-		// };
-
 
 		for(let i = 0; i < g_predictedWinners.length; ++i) {
 			let obj = g_predictedWinners[i];
@@ -653,10 +605,6 @@
 						betObj['event-start-time'] = g_predictedWinners[i].startTime;
 						betObj['sportName'] = g_predictedWinners[i].sportName;
 						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
-						// betObj['metaData'] = metaData;
-						// g_db.sportId[g_predictedWinners[i].sportName].metaData = metaData;
-						
-
 
 						if(g_isLockedForBetting)
 						{
