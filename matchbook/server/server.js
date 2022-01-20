@@ -29,9 +29,9 @@
 	g_db.sportId = {};
 	let g_predictedWinners = [];
 
-	const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
+	// const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
 	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
-	// const g_onlyOne_raceName = null; 
+	const g_onlyOne_raceName = null; 
 
 	let g_alreadyPlacedBetList = {};			// client report data
 	let g_allPredictedWinnerBetList = {};			// client report data
@@ -588,7 +588,7 @@
 			if( startTime.getDate() === currentTime.getDate() && startTime.getMonth() === currentTime.getMonth() && 
 				startTime.getFullYear() === currentTime.getFullYear())
 			{
-				g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
+				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 				if(currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
 				{
 					if(!(currentTime.getTime() > startTime.getTime() + 2*60*1000))
@@ -838,6 +838,7 @@
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
 		let logMsg = `BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`;
 		CONNECTIONS.print("logClient", logMsg);
+		if(g_onlyOne_raceName) 	console.log(`############## Only one race event mode: ${g_onlyOne_raceName} ##################`);
 
 		findSportsIds();
 	};

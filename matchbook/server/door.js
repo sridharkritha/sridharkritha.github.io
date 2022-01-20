@@ -67,7 +67,7 @@ const DOOR = (function() {
 
 				if(isFileExist) {
 					const data = await fs.promises.readFile(fileFullPath, 'utf8');
-					// console.log("Read the local json successfully");
+					// console.log("successfully - Read the local json");
 					const jsonObject = JSON.parse(data);
 					// console.log(jsonObject);
 
