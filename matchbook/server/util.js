@@ -10,7 +10,7 @@ const UTIL = (function() {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		// round after 2 decimal places
-		roundIt: function(value) {
+		roundIt2D: function(value) {
 			// return Math.floor(value * 100) / 100;                    // 0.3 - 0.2 = 0.09  (or) 1.256 => 1.25 
 			return Math.round((value + Number.EPSILON) * 100) / 100; // 0.3 - 0.2 = 0.1
 		},
@@ -47,7 +47,7 @@ const UTIL = (function() {
 // exports the variables and functions above so that other modules can use them
 module.exports.getDefaultOptions = UTIL.getDefaultOptions;
 module.exports.randomIntFromInterval = UTIL.randomIntFromInterval;
-module.exports.roundIt = UTIL.roundIt;
+module.exports.roundIt2D = UTIL.roundIt2D;
 module.exports.isNullObject = UTIL.isNullObject;
 
 

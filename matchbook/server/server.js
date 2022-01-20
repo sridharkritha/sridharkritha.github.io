@@ -18,7 +18,7 @@
 	const g_scanStartTime = new Date();
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 10.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 3.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_remainingTotalBetAmountLimit = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -29,16 +29,15 @@
 	g_db.sportId = {};
 	let g_predictedWinners = [];
 
-	// const g_onlyOne_raceName = "14:35 Chepstow"; // test only one race
+	const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
 	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
-	const g_onlyOne_raceName = null; 
+	// const g_onlyOne_raceName = null; 
 
 	let g_alreadyPlacedBetList = {};			// client report data
 	let g_allPredictedWinnerBetList = {};			// client report data
 	let g_currentPredictedWinnerBetList = {};	// client report data
 
 	let g_lastCycleElapsedTime = 0;
-	let g_currentTime = 0;
 	let g_betNow = [];
 	const g_sessionExpireTimeLimit = 5 * 60 * 60 * 1000; // 6 hours but create a new session every 5 hours
 	let g_sessionStartTime = 0;
@@ -76,7 +75,7 @@
 
 		// "Baseball",
 		// "Chess",
-		// 'Cricket',
+	//	 'Cricket',
 		// "Cycling",
 		// "Motor Sport",
 		// "Rugby League",
@@ -525,6 +524,10 @@
 										{
 											let obj = luckyRunner[0][1];
 											obj.sportName = sportName;
+											obj["in-running-flag"] = jsonObj[prop][race]["in-running-flag"];
+											obj["status"] = jsonObj[prop][race]["status"];
+											if(sportName === "Horse Racing") obj["race-length"] = jsonObj[prop][race]["race-length"];
+		
 											g_predictedWinners.push(obj);
 										}
 									}
@@ -567,11 +570,12 @@
 
 	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
+		let todayDateString = new Date().toDateString();
 
 		for(let i = 0; i < g_predictedWinners.length; ++i) {
 			let obj = g_predictedWinners[i];
 			let startTime = new Date(obj.startTime);
-			let g_currentTime =  new Date();
+			let currentTime =  new Date();
 
 			// { 	"runner-id":1052216604020016,
 				// 	"side":"back",
@@ -579,13 +583,13 @@
 				// 	"stake": 0.0
 			// }
 
-			if( startTime.getDate() === g_currentTime.getDate() && startTime.getMonth() === g_currentTime.getMonth() && 
-				startTime.getFullYear() === g_currentTime.getFullYear())
+			if( startTime.getDate() === currentTime.getDate() && startTime.getMonth() === currentTime.getMonth() && 
+				startTime.getFullYear() === currentTime.getFullYear())
 			{
-				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
-				if(g_currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
+				g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
+				if(currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
 				{
-					if(!(g_currentTime.getTime() > startTime.getTime() + 2*60*1000))
+					if(!(currentTime.getTime() > startTime.getTime() + 2*60*1000))
 					{
 						let betObj = {};
 
@@ -619,23 +623,28 @@
 
 							g_betNow.push(betObj);
 						}
-						else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) >= g_BetStakeValue) {
-
+						else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) >= g_BetStakeValue) {
+							// real bet
 							g_betNow.push(betObj);
 
-							g_userBalance = UTIL.roundIt(g_userBalance - g_BetStakeValue);
-							g_remainingTotalBetAmountLimit = UTIL.roundIt(g_remainingTotalBetAmountLimit + g_BetStakeValue);
+							g_userBalance = UTIL.roundIt2D(g_userBalance - g_BetStakeValue);
+							g_remainingTotalBetAmountLimit = UTIL.roundIt2D(g_remainingTotalBetAmountLimit + g_BetStakeValue);
 
-							if(!g_moneyStatus.account)	g_moneyStatus.account = {};
-							g_moneyStatus.account.userBalance = g_userBalance;
+							
+							if(!g_moneyStatus.account || g_moneyStatus.account && g_moneyStatus.account.date != todayDateString) {
+								g_moneyStatus.account = {};
+								g_moneyStatus.account.startingBalance = UTIL.roundIt2D(g_userBalance + g_BetStakeValue);
+								g_moneyStatus.account.todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
+								g_moneyStatus.account.date = todayDateString;
+							}
+							g_moneyStatus.account.currentBalance = g_userBalance;
 							g_moneyStatus.account.remainingTotalBetAmountLimit = g_remainingTotalBetAmountLimit;
-							g_moneyStatus.account.todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
-							g_moneyStatus.account.date = new Date().toDateString();
+							g_moneyStatus.account.totalPlacedBets = Math.round((g_moneyStatus.account.startingBalance - g_moneyStatus.account.currentBalance) / g_BetStakeValue) 
 						}
 						else if(g_userBalance < g_BetStakeValue) {
 							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
 						}
-						else if(UTIL.roundIt(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) < g_BetStakeValue) {
+						else if(UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) < g_BetStakeValue) {
 							CONNECTIONS.print("must",`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 						}
 					}
@@ -769,7 +778,7 @@
 			"stakeValue"                   : g_BetStakeValue,
 			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
 			"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
-			"userBalance"                  : g_userBalance,
+			"currentBalance"               : g_userBalance,
 			"winConfidencePercentage"      : g_winConfidencePercentage,
 			"minProfitOdd"                 : g_minProfitOdd
 		};
@@ -931,13 +940,13 @@
 				events_cbCount.currentCount = events_cbCount.totalCount = 0;
 				sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
 
-				g_currentTime = new Date().getTime();
-				remainingTime = g_currentTime - g_lastCycleElapsedTime;
+				let currentTime = new Date().getTime();
+				remainingTime = currentTime - g_lastCycleElapsedTime;
 				remainingTime = (g_betCycleTime - remainingTime) > 0 ? g_betCycleTime - remainingTime : 0;
 
 				setTimeout(function() {
 					// Check for session expire timeout
-					if(g_currentTime - new Date(g_sessionStartTime).getTime() > g_sessionExpireTimeLimit) {
+					if(currentTime - new Date(g_sessionStartTime).getTime() > g_sessionExpireTimeLimit) {
 						getNewSession();
 					}
 					else {
