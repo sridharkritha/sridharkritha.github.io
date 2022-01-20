@@ -1107,6 +1107,108 @@
       },
       "event-start-time": "20/01/2022, 21:02:00",
       "bet-placed-time": "14:47:07  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1966331622150001,
+      "event-name": "21:11 Perry Barr",
+      "runner-name": "Honeygar Luna",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966331622150001,
+        "start": "2022-01-20T21:11:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "480",
+        "allRunners": {
+          "Honeygar Luna": {
+            "runnerId": 1966331622590001,
+            "back": 1.83,
+            "lay": 0,
+            "name": "Honeygar Luna",
+            "event-name": "21:11 Perry Barr",
+            "numberOfRunners": 6,
+            "winPercentage": 93.98907103825135,
+            "startTime": "2022-01-20T21:11:00.000Z",
+            "raceId": 1966331622150001,
+            "raceName": "21:11 Perry Barr",
+            "sportName": "Greyhound Racing",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Ballymac Lash": {
+            "runnerId": 1966331622620001,
+            "back": 9.6,
+            "lay": 0,
+            "name": "Ballymac Lash",
+            "event-name": "21:11 Perry Barr"
+          },
+          "Barnfield Pete": {
+            "runnerId": 1966331622660001,
+            "back": 5.1,
+            "lay": 0,
+            "name": "Barnfield Pete",
+            "event-name": "21:11 Perry Barr"
+          },
+          "Mo Cara Lakota": {
+            "runnerId": 1966331622690001,
+            "back": 3.8,
+            "lay": 0,
+            "name": "Mo Cara Lakota",
+            "event-name": "21:11 Perry Barr"
+          },
+          "Blue Act": {
+            "runnerId": 1966331622720001,
+            "back": 3.55,
+            "lay": 0,
+            "name": "Blue Act",
+            "event-name": "21:11 Perry Barr"
+          },
+          "Bobs Silver": {
+            "runnerId": 1966331622740101,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Bobs Silver",
+            "event-name": "21:11 Perry Barr"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 2,
+          "currentBalance": 6.29,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966331622590001,
+          "back": 1.83,
+          "lay": 0,
+          "name": "Honeygar Luna",
+          "event-name": "21:11 Perry Barr",
+          "numberOfRunners": 6,
+          "winPercentage": 93.98907103825135,
+          "startTime": "2022-01-20T21:11:00.000Z",
+          "raceId": 1966331622150001,
+          "raceName": "21:11 Perry Barr",
+          "sportName": "Greyhound Racing",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 2,
+        "currentBalance": 6.29,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 21:11:00",
+      "bet-placed-time": "14:49:28  20-01-2022"
     }
   ]
 }

@@ -87,7 +87,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = false; // false => REAL MONEY
+	const g_isLockedForBetting = true; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -628,7 +628,8 @@
 							}
 							g_moneyStatus[todayDateString].currentBalance = g_userBalance;
 							g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount = g_sumOfAlreadyPlacedBetAmount;
-							g_moneyStatus[todayDateString].totalPlacedBets = Math.round((g_moneyStatus[todayDateString].startingBalance - g_moneyStatus[todayDateString].currentBalance) / g_BetStakeValue) 
+							// g_moneyStatus[todayDateString].totalPlacedBets = Math.round((g_moneyStatus[todayDateString].startingBalance - g_moneyStatus[todayDateString].currentBalance) / g_BetStakeValue) 
+							g_moneyStatus[todayDateString].totalPlacedBets = Math.round(g_sumOfAlreadyPlacedBetAmount / g_BetStakeValue); 
 						}
 						else if(g_userBalance < g_BetStakeValue) {
 							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
