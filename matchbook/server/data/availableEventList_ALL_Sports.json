@@ -52,7 +52,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -104,7 +104,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -191,7 +191,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -268,7 +268,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -340,7 +340,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -402,7 +402,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -417,17 +417,17 @@
       "allRunners": {
         "5 Family Pot": {
           "runnerId": 1965463933560101,
-          "back": 4.1,
+          "back": 4.2,
           "lay": 5.8
         },
         "6 Ivilnoble": {
           "runnerId": 1965463933590101,
           "back": 7.4,
-          "lay": 26
+          "lay": 0
         },
         "7 Duc Kauto": {
           "runnerId": 1965463933630001,
-          "back": 10,
+          "back": 9.8,
           "lay": 55
         },
         "11 Midnight Calamity": {
@@ -437,18 +437,18 @@
         },
         "1 The Toojumpa": {
           "runnerId": 1965463933440001,
-          "back": 3.75,
+          "back": 3.7,
           "lay": 4.8
         },
         "2 Finalshot": {
           "runnerId": 1965463933470001,
-          "back": 12.5,
-          "lay": 44
+          "back": 11,
+          "lay": 80
         },
         "3 Monition": {
           "runnerId": 1965463933500001,
-          "back": 13.5,
-          "lay": 0
+          "back": 10,
+          "lay": 1000
         },
         "4 Steel Wave": {
           "runnerId": 1965463933530001,
@@ -462,19 +462,19 @@
         },
         "9 Pembroke House": {
           "runnerId": 1965463933690001,
-          "back": 22,
+          "back": 21,
           "lay": 980
         },
         "10 Earcomesbob": {
           "runnerId": 1965463933720101,
           "back": 9,
-          "lay": 19
+          "lay": 34
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -531,7 +531,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -547,12 +547,12 @@
         "2 Duke Of Rockingham": {
           "runnerId": 1965463346320101,
           "back": 1.32,
-          "lay": 1.45
+          "lay": 1.46
         },
         "8 Name In Lights": {
           "runnerId": 1965463346490001,
-          "back": 4.9,
-          "lay": 8.6
+          "back": 3.7,
+          "lay": 8.8
         },
         "11 Moorland Rambler": {
           "runnerId": 1965463346580001,
@@ -566,18 +566,18 @@
         },
         "3 Kentford Drake": {
           "runnerId": 1965463346350001,
-          "back": 13.5,
+          "back": 0,
           "lay": 0
         },
         "4 Learntalot": {
           "runnerId": 1965463346380001,
-          "back": 16,
+          "back": 11,
           "lay": 0
         },
         "5 Monviel": {
           "runnerId": 1965463346410001,
-          "back": 13.5,
-          "lay": 85
+          "back": 9.2,
+          "lay": 0
         },
         "6 Moscow Spy": {
           "runnerId": 1965463346440001,
@@ -586,24 +586,24 @@
         },
         "7 My Rockstar": {
           "runnerId": 1965463346460101,
-          "back": 4.6,
+          "back": 0,
           "lay": 0
         },
         "9 Whynotnowken": {
           "runnerId": 1965463346520001,
-          "back": 27,
+          "back": 0,
           "lay": 0
         },
         "10 Precious": {
           "runnerId": 1965463346550001,
-          "back": 16,
-          "lay": 1000
+          "back": 0,
+          "lay": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -619,32 +619,32 @@
         "1 Zacony Rebel": {
           "runnerId": 1965463935520001,
           "back": 1.69,
-          "lay": 1.83
+          "lay": 1.81
         },
         "8 Tikitov": {
           "runnerId": 1965463935740101,
           "back": 8.6,
-          "lay": 32
+          "lay": 0
         },
         "2 Alternative Fact": {
           "runnerId": 1965463935560001,
           "back": 11.5,
-          "lay": 42
+          "lay": 0
         },
         "3 Cheeky Ricco": {
           "runnerId": 1965463935580101,
-          "back": 13.5,
+          "back": 6,
           "lay": 0
         },
         "4 Fine By Me": {
           "runnerId": 1965463935620001,
           "back": 13.5,
-          "lay": 0
+          "lay": 1000
         },
         "5 High Tech": {
           "runnerId": 1965463935650001,
           "back": 5.1,
-          "lay": 12
+          "lay": 9.4
         },
         "6 Outback Frontiers": {
           "runnerId": 1965463935680101,
@@ -653,7 +653,7 @@
         },
         "7 Regal Pretender": {
           "runnerId": 1965463935710001,
-          "back": 13.5,
+          "back": 4.6,
           "lay": 0
         },
         "9 Volatore": {
@@ -669,18 +669,18 @@
         "11 Sweet Spirit": {
           "runnerId": 1965463935830001,
           "back": 12.5,
-          "lay": 130
+          "lay": 0
         },
         "12 Olympe De Gouges": {
           "runnerId": 1965463935860001,
-          "back": 14.5,
+          "back": 13.5,
           "lay": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -747,7 +747,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -762,8 +762,8 @@
       "allRunners": {
         "8 Imphal": {
           "runnerId": 1965463366450101,
-          "back": 2.44,
-          "lay": 2.76
+          "back": 2.36,
+          "lay": 2.72
         },
         "6 Acey Milan": {
           "runnerId": 1965463366390101,
@@ -773,11 +773,11 @@
         "1 Geordie Des Champs": {
           "runnerId": 1965463366240001,
           "back": 11,
-          "lay": 280
+          "lay": 110
         },
         "2 Captain Drake": {
           "runnerId": 1965463366280001,
-          "back": 12,
+          "back": 13.5,
           "lay": 0
         },
         "3 Jepeck": {
@@ -788,23 +788,23 @@
         "4 St Barts": {
           "runnerId": 1965463366340001,
           "back": 5.6,
-          "lay": 11
+          "lay": 8.2
         },
         "5 Valtor": {
           "runnerId": 1965463366360101,
-          "back": 10.5,
-          "lay": 30
+          "back": 11,
+          "lay": 23
         },
         "7 Lord Of Kerak": {
           "runnerId": 1965463366420101,
-          "back": 6.6,
-          "lay": 34
+          "back": 6.8,
+          "lay": 13.5
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -819,18 +819,18 @@
       "allRunners": {
         "9 Mumbo Jumbo": {
           "runnerId": 1965463937530001,
-          "back": 2.92,
+          "back": 2.86,
           "lay": 3.4
         },
         "2 Blackcauseway": {
           "runnerId": 1965463937310101,
-          "back": 3.05,
-          "lay": 3.75
+          "back": 3.25,
+          "lay": 13
         },
         "1 Ballaquane": {
           "runnerId": 1965463937280001,
           "back": 10,
-          "lay": 1000
+          "lay": 0
         },
         "3 El Diablo": {
           "runnerId": 1965463937350001,
@@ -849,8 +849,8 @@
         },
         "6 Landen Calling": {
           "runnerId": 1965463937440001,
-          "back": 11,
-          "lay": 21
+          "back": 12,
+          "lay": 19.5
         },
         "7 Latitude": {
           "runnerId": 1965463937470101,
@@ -864,7 +864,7 @@
         },
         "10 Sinister Minister": {
           "runnerId": 1965463937560001,
-          "back": 10,
+          "back": 21,
           "lay": 1000
         },
         "11 Stunsail": {
@@ -881,7 +881,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -896,12 +896,12 @@
       "allRunners": {
         "1 Oneupmanship": {
           "runnerId": 1965463367460001,
-          "back": 3.6,
+          "back": 3.55,
           "lay": 4.6
         },
         "4 Esprit De Somoza": {
           "runnerId": 1965463367550001,
-          "back": 4.3,
+          "back": 4.2,
           "lay": 6
         },
         "5 Iron Mike": {
@@ -916,23 +916,23 @@
         },
         "3 Native Robin": {
           "runnerId": 1965463367520001,
-          "back": 6.6,
-          "lay": 14.5
+          "back": 7.6,
+          "lay": 9.8
         },
         "6 Mont Saint Vincent": {
           "runnerId": 1965463367600101,
           "back": 10.5,
-          "lay": 0
+          "lay": 21
         },
         "7 Larkbarrow Lad": {
           "runnerId": 1965463367630001,
-          "back": 8.2,
+          "back": 7.6,
           "lay": 46
         },
         "8 White Moon": {
           "runnerId": 1965463367660001,
           "back": 6.6,
-          "lay": 12
+          "lay": 10.5
         },
         "9 Lure Des Pres": {
           "runnerId": 1965463367690001,
@@ -943,7 +943,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -969,7 +969,7 @@
         "5 Not A Role Model": {
           "runnerId": 1965463938810001,
           "back": 9.6,
-          "lay": 17.5
+          "lay": 38
         },
         "4 Minella Till Dawn": {
           "runnerId": 1965463938770101,
@@ -983,19 +983,19 @@
         },
         "6 Karl Philippe": {
           "runnerId": 1965463938840001,
-          "back": 3.5,
+          "back": 3.45,
           "lay": 4.5
         },
         "7 Gardefort": {
           "runnerId": 1965463938870101,
-          "back": 4.3,
-          "lay": 5.1
+          "back": 4.2,
+          "lay": 5.2
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1010,28 +1010,28 @@
       "allRunners": {
         "10 Whydah Gally": {
           "runnerId": 1965463369150001,
-          "back": 3.85,
+          "back": 3.75,
           "lay": 4.8
         },
         "1 Stormy Flight": {
           "runnerId": 1965463368890001,
           "back": 8.2,
-          "lay": 14.5
+          "lay": 13.5
         },
         "2 Welsh Saint": {
           "runnerId": 1965463368910101,
-          "back": 9.2,
+          "back": 8.6,
           "lay": 20
         },
         "3 Henry Gondoff": {
           "runnerId": 1965463368940101,
           "back": 6.6,
-          "lay": 13.5
+          "lay": 15
         },
         "4 Jetaway Joey": {
           "runnerId": 1965463368970101,
           "back": 4.3,
-          "lay": 6
+          "lay": 6.2
         },
         "5 Midnight Midge": {
           "runnerId": 1965463369000101,
@@ -1041,17 +1041,17 @@
         "6 Mr Tambourine Man": {
           "runnerId": 1965463369030101,
           "back": 8,
-          "lay": 16
+          "lay": 15.5
         },
         "7 Coal Stock": {
           "runnerId": 1965463369060101,
-          "back": 20,
+          "back": 16,
           "lay": 0
         },
         "8 Smith's Bay": {
           "runnerId": 1965463369090101,
-          "back": 16,
-          "lay": 0
+          "back": 6.6,
+          "lay": 990
         },
         "9 Forever Des Long": {
           "runnerId": 1965463369120101,
@@ -1060,14 +1060,14 @@
         },
         "11 Age Of Wisdom": {
           "runnerId": 1965463369180001,
-          "back": 19,
+          "back": 12.5,
           "lay": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1082,8 +1082,8 @@
       "allRunners": {
         "5 So Said I": {
           "runnerId": 1965463939950001,
-          "back": 5.6,
-          "lay": 7
+          "back": 5.1,
+          "lay": 6.2
         },
         "8 Lily Glitters": {
           "runnerId": 1965463940040001,
@@ -1093,27 +1093,27 @@
         "6 Jersey Lady": {
           "runnerId": 1965463939980001,
           "back": 9.8,
-          "lay": 0
+          "lay": 19
         },
         "1 Tequila Blaze": {
           "runnerId": 1965463939830001,
-          "back": 6,
-          "lay": 17.5
+          "back": 5.5,
+          "lay": 20
         },
         "2 Glimpse Of Gala": {
           "runnerId": 1965463939860001,
-          "back": 5.1,
-          "lay": 11.5
+          "back": 5.9,
+          "lay": 29
         },
         "3 Terresita": {
           "runnerId": 1965463939890001,
-          "back": 3,
-          "lay": 3.9
+          "back": 2.92,
+          "lay": 3.75
         },
         "4 Malaita": {
           "runnerId": 1965463939920101,
           "back": 5.6,
-          "lay": 10
+          "lay": 7.4
         },
         "7 Jubilympics": {
           "runnerId": 1965463940000101,
@@ -1124,7 +1124,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1139,22 +1139,22 @@
       "allRunners": {
         "2 Velasco": {
           "runnerId": 1965463370220101,
-          "back": 2.82,
-          "lay": 3.85
+          "back": 3,
+          "lay": 3.75
         },
         "1 Poppa Poutine": {
           "runnerId": 1965463370200001,
-          "back": 4.5,
-          "lay": 7.4
+          "back": 4.4,
+          "lay": 0
         },
         "3 Pennyforapound": {
           "runnerId": 1965463370250101,
-          "back": 3.8,
-          "lay": 17
+          "back": 5.2,
+          "lay": 11
         },
         "4 Aki Bomaye": {
           "runnerId": 1965463370290001,
-          "back": 3.05,
+          "back": 5.1,
           "lay": 9
         },
         "5 Eragon De Chanay": {
@@ -1165,18 +1165,18 @@
         "6 Vaziani": {
           "runnerId": 1965463370350001,
           "back": 11,
-          "lay": 46
+          "lay": 55
         },
         "7 Pour Une Raison": {
           "runnerId": 1965463370380001,
           "back": 7,
-          "lay": 0
+          "lay": 990
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1216,8 +1216,8 @@
         },
         "4 Scots Sonnet": {
           "runnerId": 1965463327480001,
-          "back": 3.8,
-          "lay": 30
+          "back": 4.8,
+          "lay": 0
         },
         "5 Strong Team": {
           "runnerId": 1965463327510001,
@@ -1226,13 +1226,13 @@
         },
         "6 Vertice": {
           "runnerId": 1965463327540001,
-          "back": 3.65,
-          "lay": 5.3
+          "back": 3.45,
+          "lay": 4.7
         },
         "9 Smart Boyo": {
           "runnerId": 1965463327630001,
           "back": 7.2,
-          "lay": 26
+          "lay": 0
         },
         "10 Toshack": {
           "runnerId": 1965463327660001,
@@ -1243,7 +1243,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1258,18 +1258,18 @@
       "allRunners": {
         "2 Not That Fuisse": {
           "runnerId": 1965463941230001,
-          "back": 3.65,
+          "back": 4.2,
           "lay": 8.8
         },
         "4 Zamparelli": {
           "runnerId": 1965463941290001,
           "back": 7.2,
-          "lay": 65
+          "lay": 95
         },
         "1 Another Venture": {
           "runnerId": 1965463941190001,
           "back": 3,
-          "lay": 4.1
+          "lay": 3.8
         },
         "3 Unai": {
           "runnerId": 1965463941260001,
@@ -1283,7 +1283,7 @@
         },
         "6 Envious Editor": {
           "runnerId": 1965463941360001,
-          "back": 5.2,
+          "back": 12,
           "lay": 0
         },
         "7 Haven't Time": {
@@ -1294,7 +1294,7 @@
         "8 Hogan's Height": {
           "runnerId": 1965463941420101,
           "back": 3.05,
-          "lay": 15.5
+          "lay": 15
         },
         "9 Iftiraaq": {
           "runnerId": 1965463941460001,
@@ -1303,7 +1303,7 @@
         },
         "10 Ozzy Thomas": {
           "runnerId": 1965463941490001,
-          "back": 12.5,
+          "back": 11.5,
           "lay": 0
         },
         "11 Wonderoftheworld": {
@@ -1315,7 +1315,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1330,12 +1330,12 @@
       "allRunners": {
         "3 Destinee Royale": {
           "runnerId": 1965463371420001,
-          "back": 2.86,
+          "back": 2.8,
           "lay": 3.1
         },
         "4 Legends Gold": {
           "runnerId": 1965463371450001,
-          "back": 8.2,
+          "back": 7,
           "lay": 13.5
         },
         "8 El Paso Wood": {
@@ -1343,36 +1343,31 @@
           "back": 12,
           "lay": 19
         },
-        "6 Premier D'troice": {
-          "runnerId": 1965463371510001,
-          "back": 7.6,
-          "lay": 14.5
-        },
         "1 Colorado Doc": {
           "runnerId": 1965463371350001,
-          "back": 9.6,
+          "back": 10,
           "lay": 15.5
         },
         "2 Quarenta": {
           "runnerId": 1965463371390001,
           "back": 15.5,
-          "lay": 0
+          "lay": 110
         },
         "5 Captain Chaos": {
           "runnerId": 1965463371480001,
-          "back": 5.4,
+          "back": 5.9,
           "lay": 11
         },
         "7 Favori De Sivola": {
           "runnerId": 1965463371540001,
-          "back": 4.5,
-          "lay": 17
+          "back": 4.2,
+          "lay": 21
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1387,27 +1382,27 @@
       "allRunners": {
         "6 Ranger Bob": {
           "runnerId": 1965463329230001,
-          "back": 6.4,
-          "lay": 28
+          "back": 6.2,
+          "lay": 15
         },
         "1 Allerthorpe": {
           "runnerId": 1965463329060001,
-          "back": 7,
+          "back": 10,
           "lay": 0
         },
         "2 Lukoutoldmakezebak": {
           "runnerId": 1965463329090101,
           "back": 5.6,
-          "lay": 34
+          "lay": 15.5
         },
         "3 New Look": {
           "runnerId": 1965463329130001,
           "back": 11.5,
-          "lay": 95
+          "lay": 0
         },
         "4 Oasis Law": {
           "runnerId": 1965463329160001,
-          "back": 6.6,
+          "back": 11,
           "lay": 0
         },
         "5 Quoteline Direct": {
@@ -1418,23 +1413,23 @@
         "7 Visitant": {
           "runnerId": 1965463329260101,
           "back": 10.5,
-          "lay": 25
+          "lay": 22
         },
         "8 One Punch Terri": {
           "runnerId": 1965463329300001,
-          "back": 2.44,
-          "lay": 3.8
+          "back": 2.24,
+          "lay": 3.2
         },
         "9 Rose Of Lancashire": {
           "runnerId": 1965463329330001,
-          "back": 4.5,
-          "lay": 17
+          "back": 3.8,
+          "lay": 12
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1455,7 +1450,7 @@
         "1 Tchoupinminzac": {
           "runnerId": 1965463942860001,
           "back": 5.3,
-          "lay": 24
+          "lay": 20
         },
         "3 Gabriel's Getaway": {
           "runnerId": 1965463942920001,
@@ -1464,8 +1459,8 @@
         },
         "2 Carlo Du Berlais": {
           "runnerId": 1965463942890101,
-          "back": 2.76,
-          "lay": 4
+          "back": 2.82,
+          "lay": 11.5
         },
         "4 Gilwen Gus": {
           "runnerId": 1965463942950001,
@@ -1480,16 +1475,16 @@
         "6 Our Nobby": {
           "runnerId": 1965463943010101,
           "back": 11.5,
-          "lay": 60
+          "lay": 0
         },
         "7 Prince Mtm": {
           "runnerId": 1965463943040001,
-          "back": 7.2,
+          "back": 6,
           "lay": 0
         },
         "9 Mythical Fortune": {
           "runnerId": 1965463943090101,
-          "back": 6.6,
+          "back": 4.4,
           "lay": 0
         },
         "10 Robiola": {
@@ -1506,7 +1501,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1521,49 +1516,49 @@
       "allRunners": {
         "5 Getaway Tom": {
           "runnerId": 1965463372750101,
-          "back": 3.95,
-          "lay": 5.4
+          "back": 3.75,
+          "lay": 7.2
         },
         "8 Rosy Redrum": {
           "runnerId": 1965463372850001,
-          "back": 3.95,
+          "back": 4.1,
           "lay": 5.3
         },
         "1 Claude Almighty": {
           "runnerId": 1965463372630001,
           "back": 6.6,
-          "lay": 990
+          "lay": 0
         },
         "2 Thank You Blue": {
           "runnerId": 1965463372660101,
-          "back": 8.6,
-          "lay": 95
+          "back": 8.2,
+          "lay": 0
         },
         "3 Twin Power": {
           "runnerId": 1965463372690101,
-          "back": 2.64,
+          "back": 2.54,
           "lay": 4.1
         },
         "4 Kentford Swansong": {
           "runnerId": 1965463372720101,
           "back": 5.1,
-          "lay": 700
+          "lay": 0
         },
         "6 Masked Spirit": {
           "runnerId": 1965463372780001,
-          "back": 8.6,
-          "lay": 990
+          "back": 7.6,
+          "lay": 0
         },
         "7 Nous Esperons": {
           "runnerId": 1965463372810101,
-          "back": 11.5,
+          "back": 9.6,
           "lay": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1589,18 +1584,18 @@
         "3 Bungle Bay": {
           "runnerId": 1965463330160001,
           "back": 11.5,
-          "lay": 27
+          "lay": 30
         },
         "4 Sparka": {
           "runnerId": 1965463330190001,
-          "back": 2.78,
+          "back": 2.74,
           "lay": 3.95
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
+        "sumOfAlreadyPlacedBetAmount": 0.6,
         "currentBalance": 7.76,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -1615,296 +1610,12 @@
       "allRunners": {
         "1 Going Underground": {
           "runnerId": 1965463331100001,
-          "back": 4.6,
+          "back": 4.7,
           "lay": 6.6
         },
         "6 Zenzero": {
           "runnerId": 1965463331250101,
-          "back": 4.4,
+          "back": 4.8,
           "lay": 10.5
         },
-        "2 Central City": {
-          "runnerId": 1965463331130001,
-          "back": 9,
-          "lay": 20
-        },
-        "3 Balqaa": {
-          "runnerId": 1965463331160101,
-          "back": 5.1,
-          "lay": 0
-        },
-        "4 Publicist": {
-          "runnerId": 1965463331190001,
-          "back": 8,
-          "lay": 0
-        },
-        "5 Saulire Star": {
-          "runnerId": 1965463331220001,
-          "back": 4.4,
-          "lay": 0
-        },
-        "7 Cosa Sara": {
-          "runnerId": 1965463331280101,
-          "back": 8.2,
-          "lay": 0
-        },
-        "8 Gloryella": {
-          "runnerId": 1965463331310101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "17:30 Newcastle": {
-      "id": 1965463331710001,
-      "start": "2022-01-20T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 5f 0y",
-      "allRunners": {
-        "5 Look Out Louis": {
-          "runnerId": 1965463332470101,
-          "back": 5.5,
-          "lay": 0
-        },
-        "3 Miss Nay Never": {
-          "runnerId": 1965463332410001,
-          "back": 5.1,
-          "lay": 8.6
-        },
-        "1 Melodic Charm": {
-          "runnerId": 1965463332340001,
-          "back": 7,
-          "lay": 36
-        },
-        "4 Outrage": {
-          "runnerId": 1965463332440001,
-          "back": 11.5,
-          "lay": 100
-        },
-        "2 Night On Earth": {
-          "runnerId": 1965463332370001,
-          "back": 5.8,
-          "lay": 17
-        },
-        "6 Ornate": {
-          "runnerId": 1965463332500101,
-          "back": 4.4,
-          "lay": 5.3
-        },
-        "7 Ballyare": {
-          "runnerId": 1965463332530101,
-          "back": 5.5,
-          "lay": 0
-        },
-        "8 Buniann": {
-          "runnerId": 1965463332570001,
-          "back": 11.5,
-          "lay": 95
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "18:00 Newcastle": {
-      "id": 1965463332990001,
-      "start": "2022-01-20T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 5f 0y",
-      "allRunners": {
-        "1 Unfinishedsympathy": {
-          "runnerId": 1965463333450001,
-          "back": 4.8,
-          "lay": 7.8
-        },
-        "6 Lunasa": {
-          "runnerId": 1965463333610101,
-          "back": 5.7,
-          "lay": 26
-        },
-        "3 Firebomb": {
-          "runnerId": 1965463333520101,
-          "back": 3.85,
-          "lay": 8.6
-        },
-        "4 Antiphon": {
-          "runnerId": 1965463333560001,
-          "back": 2.16,
-          "lay": 7.6
-        },
-        "5 Coast": {
-          "runnerId": 1965463333590001,
-          "back": 9.8,
-          "lay": 23
-        },
-        "2 Coolmeen Royal": {
-          "runnerId": 1965463333490001,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "18:30 Newcastle": {
-      "id": 1965463333960001,
-      "start": "2022-01-20T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 7f 14y",
-      "allRunners": {
-        "5 How Impressive": {
-          "runnerId": 1965463334740001,
-          "back": 3.05,
-          "lay": 6
-        },
-        "1 Ba Na Hills": {
-          "runnerId": 1965463334620001,
-          "back": 11.5,
-          "lay": 0
-        },
-        "2 Beattie Is Back": {
-          "runnerId": 1965463334650001,
-          "back": 9.2,
-          "lay": 0
-        },
-        "3 Come On John": {
-          "runnerId": 1965463334680001,
-          "back": 12,
-          "lay": 0
-        },
-        "4 Dion Baker": {
-          "runnerId": 1965463334710001,
-          "back": 4.3,
-          "lay": 34
-        },
-        "6 Swinton": {
-          "runnerId": 1965463334770101,
-          "back": 2.76,
-          "lay": 5.7
-        },
-        "7 The Ganges": {
-          "runnerId": 1965463334800101,
-          "back": 9.2,
-          "lay": 0
-        },
-        "8 Boasted": {
-          "runnerId": 1965463334840001,
-          "back": 5.2,
-          "lay": 0
-        },
-        "9 Crazy Maisie": {
-          "runnerId": 1965463334860101,
-          "back": 6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "19:00 Newcastle": {
-      "id": 1965463335280001,
-      "start": "2022-01-20T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 6f 0y",
-      "allRunners": {
-        "10 Intervention": {
-          "runnerId": 1965463336380001,
-          "back": 2.18,
-          "lay": 2.66
-        },
-        "3 Blackjack": {
-          "runnerId": 1965463336180001,
-          "back": 7.6,
-          "lay": 11.5
-        },
-        "8 Tathmeen": {
-          "runnerId": 1965463336320101,
-          "back": 9,
-          "lay": 17
-        },
-        "11 Oriental Lilly": {
-          "runnerId": 1965463336410001,
-          "back": 8.2,
-          "lay": 0
-        },
-        "1 Tistaahal": {
-          "runnerId": 1965463336110001,
-          "back": 0,
-          "lay": 0
-        },
-        "2 Ginato": {
-          "runnerId": 1965463336150001,
-          "back": 11,
-          "lay": 18
-        },
-        "4 I Know How": {
-          "runnerId": 1965463336210001,
-          "back": 13,
-          "lay": 100
-        },
-        "5 Bakr": {
-          "runnerId": 1965463336240001,
-          "back": 9.6,
-          "lay": 19
-        },
-        "6 Excessable": {
-          "runnerId": 1965463336260101,
-          "back": 5.7,
-          "lay": 0
-        },
-        "7 Thaki": {
-          "runnerId": 1965463336290101,
-          "back": 6.6,
-          "lay": 30
-        },
-        "9 Absolute Dream": {
-          "runnerId": 1965463336350001,
-          "back": 8.6,
-          "lay": 90
-        },
-        "12 Charlemaine": {
-          "runnerId": 1965463336440001,
-          "back": 19,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.2,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    }
-  }
-}
+        "2 Central Ci

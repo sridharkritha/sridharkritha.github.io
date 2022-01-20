@@ -118,5 +118,167 @@
       "event-start-time": "20/01/2022, 13:45:00",
       "bet-placed-time": "07:02:49  20-01-2022"
     }
+  ],
+  "Soccer": [
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1965619706250001,
+      "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+      "runner-name": "Al-Shabab Riyadh",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965619706250001,
+        "start": "2022-01-20T15:10:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Al-Shabab Riyadh": {
+            "runnerId": 1965619709930001,
+            "back": 1.71,
+            "lay": 2.02,
+            "name": "Al-Shabab Riyadh",
+            "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+            "numberOfRunners": 3,
+            "winPercentage": 119.2982456140351,
+            "startTime": "2022-01-20T15:10:00.000Z",
+            "raceId": 1965619706250001,
+            "raceName": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Al-Fateh Al-Hasa": {
+            "runnerId": 1965619709960101,
+            "back": 4,
+            "lay": 0,
+            "name": "Al-Fateh Al-Hasa",
+            "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa"
+          },
+          "DRAW (Al-/Al-)": {
+            "runnerId": 1965619710000001,
+            "back": 3.75,
+            "lay": 4.7,
+            "name": "DRAW (Al-/Al-)",
+            "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.76,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965619709930001,
+          "back": 1.71,
+          "lay": 2.02,
+          "name": "Al-Shabab Riyadh",
+          "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+          "numberOfRunners": 3,
+          "winPercentage": 119.2982456140351,
+          "startTime": "2022-01-20T15:10:00.000Z",
+          "raceId": 1965619706250001,
+          "raceName": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.76,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 15:10:00",
+      "bet-placed-time": "07:48:24  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1960768127590001,
+      "event-name": "Galatasaray SK vs Kasimpasa SK",
+      "runner-name": "Galatasaray SK",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1960768127590001,
+        "start": "2022-01-20T17:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Galatasaray SK": {
+            "runnerId": 1960768129390001,
+            "back": 1.8,
+            "lay": 1.87,
+            "name": "Galatasaray SK",
+            "event-name": "Galatasaray SK vs Kasimpasa SK",
+            "numberOfRunners": 3,
+            "winPercentage": 111.11111111111109,
+            "startTime": "2022-01-20T17:00:00.000Z",
+            "raceId": 1960768127590001,
+            "raceName": "Galatasaray SK vs Kasimpasa SK",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Kasimpasa SK": {
+            "runnerId": 1960768129420001,
+            "back": 4.7,
+            "lay": 5.2,
+            "name": "Kasimpasa SK",
+            "event-name": "Galatasaray SK vs Kasimpasa SK"
+          },
+          "DRAW (Gal/Kas)": {
+            "runnerId": 1960768129450101,
+            "back": 3.8,
+            "lay": 4.1,
+            "name": "DRAW (Gal/Kas)",
+            "event-name": "Galatasaray SK vs Kasimpasa SK"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.76,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1960768129390001,
+          "back": 1.8,
+          "lay": 1.87,
+          "name": "Galatasaray SK",
+          "event-name": "Galatasaray SK vs Kasimpasa SK",
+          "numberOfRunners": 3,
+          "winPercentage": 111.11111111111109,
+          "startTime": "2022-01-20T17:00:00.000Z",
+          "raceId": 1960768127590001,
+          "raceName": "Galatasaray SK vs Kasimpasa SK",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.76,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 17:00:00",
+      "bet-placed-time": "07:48:24  20-01-2022"
+    }
   ]
 }

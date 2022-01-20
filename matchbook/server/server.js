@@ -61,7 +61,7 @@
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
 		'Horse Racing',
-		// 'Soccer',
+		'Soccer',
 		// 'Greyhound Racing',
 		// 'American Football',
 		// 'Basketball',

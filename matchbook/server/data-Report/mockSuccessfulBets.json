@@ -117,94 +117,52 @@
       },
       "event-start-time": "20/01/2022, 13:45:00",
       "bet-placed-time": "07:02:49  20-01-2022"
-    },
+    }
+  ],
+  "Soccer": [
     {
-      "status": "matched",
-      "sport-id": 24735152712200,
-      "sport-name": "Horse Racing",
-      "event-id": 1965463328410001,
-      "event-name": "15:55 Newcastle",
-      "runner-name": "8 One Punch Terri",
-      "decimal-odds": 2.5,
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1965619706250001,
+      "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+      "runner-name": "Al-Shabab Riyadh",
+      "decimal-odds": 1.8,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1965463328410001,
-        "start": "2022-01-20T15:55:00.000Z",
+        "id": 1965619706250001,
+        "start": "2022-01-20T15:10:00.000Z",
         "status": "open",
         "in-running-flag": false,
-        "race-length": "1m 2f 42y",
         "allRunners": {
-          "6 Ranger Bob": {
-            "runnerId": 1965463329230001,
-            "back": 6.4,
-            "lay": 28,
-            "name": "6 Ranger Bob",
-            "event-name": "15:55 Newcastle"
-          },
-          "1 Allerthorpe": {
-            "runnerId": 1965463329060001,
-            "back": 7,
-            "lay": 0,
-            "name": "1 Allerthorpe",
-            "event-name": "15:55 Newcastle"
-          },
-          "2 Lukoutoldmakezebak": {
-            "runnerId": 1965463329090101,
-            "back": 5.6,
-            "lay": 34,
-            "name": "2 Lukoutoldmakezebak",
-            "event-name": "15:55 Newcastle"
-          },
-          "3 New Look": {
-            "runnerId": 1965463329130001,
-            "back": 11.5,
-            "lay": 95,
-            "name": "3 New Look",
-            "event-name": "15:55 Newcastle"
-          },
-          "4 Oasis Law": {
-            "runnerId": 1965463329160001,
-            "back": 6.6,
-            "lay": 0,
-            "name": "4 Oasis Law",
-            "event-name": "15:55 Newcastle"
-          },
-          "5 Quoteline Direct": {
-            "runnerId": 1965463329190101,
-            "back": 11.5,
-            "lay": 0,
-            "name": "5 Quoteline Direct",
-            "event-name": "15:55 Newcastle"
-          },
-          "7 Visitant": {
-            "runnerId": 1965463329260101,
-            "back": 10.5,
-            "lay": 25,
-            "name": "7 Visitant",
-            "event-name": "15:55 Newcastle"
-          },
-          "8 One Punch Terri": {
-            "runnerId": 1965463329300001,
-            "back": 2.44,
-            "lay": 3.8,
-            "name": "8 One Punch Terri",
-            "event-name": "15:55 Newcastle",
-            "numberOfRunners": 9,
-            "winPercentage": 84.42622950819673,
-            "startTime": "2022-01-20T15:55:00.000Z",
-            "raceId": 1965463328410001,
-            "raceName": "15:55 Newcastle",
-            "sportName": "Horse Racing",
+          "Al-Shabab Riyadh": {
+            "runnerId": 1965619709930001,
+            "back": 1.71,
+            "lay": 2.02,
+            "name": "Al-Shabab Riyadh",
+            "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+            "numberOfRunners": 3,
+            "winPercentage": 119.2982456140351,
+            "startTime": "2022-01-20T15:10:00.000Z",
+            "raceId": 1965619706250001,
+            "raceName": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+            "sportName": "Soccer",
             "in-running-flag": false,
-            "status": "open",
-            "race-length": "1m 2f 42y"
+            "status": "open"
           },
-          "9 Rose Of Lancashire": {
-            "runnerId": 1965463329330001,
-            "back": 4.5,
-            "lay": 17,
-            "name": "9 Rose Of Lancashire",
-            "event-name": "15:55 Newcastle"
+          "Al-Fateh Al-Hasa": {
+            "runnerId": 1965619709960101,
+            "back": 4,
+            "lay": 0,
+            "name": "Al-Fateh Al-Hasa",
+            "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa"
+          },
+          "DRAW (Al-/Al-)": {
+            "runnerId": 1965619710000001,
+            "back": 3.75,
+            "lay": 4.7,
+            "name": "DRAW (Al-/Al-)",
+            "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa"
           }
         },
         "metaData": {
@@ -216,20 +174,19 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1965463329300001,
-          "back": 2.44,
-          "lay": 3.8,
-          "name": "8 One Punch Terri",
-          "event-name": "15:55 Newcastle",
-          "numberOfRunners": 9,
-          "winPercentage": 84.42622950819673,
-          "startTime": "2022-01-20T15:55:00.000Z",
-          "raceId": 1965463328410001,
-          "raceName": "15:55 Newcastle",
-          "sportName": "Horse Racing",
+          "runnerId": 1965619709930001,
+          "back": 1.71,
+          "lay": 2.02,
+          "name": "Al-Shabab Riyadh",
+          "event-name": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+          "numberOfRunners": 3,
+          "winPercentage": 119.2982456140351,
+          "startTime": "2022-01-20T15:10:00.000Z",
+          "raceId": 1965619706250001,
+          "raceName": "Al-Shabab Riyadh vs Al-Fateh Al-Hasa",
+          "sportName": "Soccer",
           "in-running-flag": false,
-          "status": "open",
-          "race-length": "1m 2f 42y"
+          "status": "open"
         }
       },
       "metaData": {
@@ -240,8 +197,88 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "20/01/2022, 15:55:00",
-      "bet-placed-time": "07:39:39  20-01-2022"
+      "event-start-time": "20/01/2022, 15:10:00",
+      "bet-placed-time": "07:48:24  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1960768127590001,
+      "event-name": "Galatasaray SK vs Kasimpasa SK",
+      "runner-name": "Galatasaray SK",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1960768127590001,
+        "start": "2022-01-20T17:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Galatasaray SK": {
+            "runnerId": 1960768129390001,
+            "back": 1.8,
+            "lay": 1.87,
+            "name": "Galatasaray SK",
+            "event-name": "Galatasaray SK vs Kasimpasa SK",
+            "numberOfRunners": 3,
+            "winPercentage": 111.11111111111109,
+            "startTime": "2022-01-20T17:00:00.000Z",
+            "raceId": 1960768127590001,
+            "raceName": "Galatasaray SK vs Kasimpasa SK",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Kasimpasa SK": {
+            "runnerId": 1960768129420001,
+            "back": 4.7,
+            "lay": 5.2,
+            "name": "Kasimpasa SK",
+            "event-name": "Galatasaray SK vs Kasimpasa SK"
+          },
+          "DRAW (Gal/Kas)": {
+            "runnerId": 1960768129450101,
+            "back": 3.8,
+            "lay": 4.1,
+            "name": "DRAW (Gal/Kas)",
+            "event-name": "Galatasaray SK vs Kasimpasa SK"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.76,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1960768129390001,
+          "back": 1.8,
+          "lay": 1.87,
+          "name": "Galatasaray SK",
+          "event-name": "Galatasaray SK vs Kasimpasa SK",
+          "numberOfRunners": 3,
+          "winPercentage": 111.11111111111109,
+          "startTime": "2022-01-20T17:00:00.000Z",
+          "raceId": 1960768127590001,
+          "raceName": "Galatasaray SK vs Kasimpasa SK",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.76,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 17:00:00",
+      "bet-placed-time": "07:48:24  20-01-2022"
     }
   ]
 }
