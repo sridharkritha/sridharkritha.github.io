@@ -117,6 +117,548 @@
       },
       "event-start-time": "20/01/2022, 13:45:00",
       "bet-placed-time": "07:02:49  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1965463335280001,
+      "event-name": "19:00 Newcastle",
+      "runner-name": "10 Intervention",
+      "decimal-odds": 2.4,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965463335280001,
+        "start": "2022-01-20T19:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "0m 6f 0y",
+        "allRunners": {
+          "10 Intervention": {
+            "runnerId": 1965463336380001,
+            "back": 2.34,
+            "lay": 2.44,
+            "name": "10 Intervention",
+            "event-name": "19:00 Newcastle",
+            "numberOfRunners": 12,
+            "winPercentage": 173.50427350427353,
+            "startTime": "2022-01-20T19:00:00.000Z",
+            "raceId": 1965463335280001,
+            "raceName": "19:00 Newcastle",
+            "sportName": "Horse Racing",
+            "in-running-flag": false,
+            "status": "open",
+            "race-length": "0m 6f 0y"
+          },
+          "3 Blackjack": {
+            "runnerId": 1965463336180001,
+            "back": 6.4,
+            "lay": 7.4,
+            "name": "3 Blackjack",
+            "event-name": "19:00 Newcastle"
+          },
+          "8 Tathmeen": {
+            "runnerId": 1965463336320101,
+            "back": 12,
+            "lay": 13.5,
+            "name": "8 Tathmeen",
+            "event-name": "19:00 Newcastle"
+          },
+          "11 Oriental Lilly": {
+            "runnerId": 1965463336410001,
+            "back": 10,
+            "lay": 16,
+            "name": "11 Oriental Lilly",
+            "event-name": "19:00 Newcastle"
+          },
+          "7 Thaki": {
+            "runnerId": 1965463336290101,
+            "back": 11.5,
+            "lay": 16,
+            "name": "7 Thaki",
+            "event-name": "19:00 Newcastle"
+          },
+          "2 Ginato": {
+            "runnerId": 1965463336150001,
+            "back": 11.5,
+            "lay": 17,
+            "name": "2 Ginato",
+            "event-name": "19:00 Newcastle"
+          },
+          "5 Bakr": {
+            "runnerId": 1965463336240001,
+            "back": 12,
+            "lay": 18,
+            "name": "5 Bakr",
+            "event-name": "19:00 Newcastle"
+          },
+          "9 Absolute Dream": {
+            "runnerId": 1965463336350001,
+            "back": 29,
+            "lay": 55,
+            "name": "9 Absolute Dream",
+            "event-name": "19:00 Newcastle"
+          },
+          "4 I Know How": {
+            "runnerId": 1965463336210001,
+            "back": 30,
+            "lay": 120,
+            "name": "4 I Know How",
+            "event-name": "19:00 Newcastle"
+          },
+          "1 Tistaahal": {
+            "runnerId": 1965463336110001,
+            "back": 30,
+            "lay": 320,
+            "name": "1 Tistaahal",
+            "event-name": "19:00 Newcastle"
+          },
+          "12 Charlemaine": {
+            "runnerId": 1965463336440001,
+            "back": 30,
+            "lay": 480,
+            "name": "12 Charlemaine",
+            "event-name": "19:00 Newcastle"
+          },
+          "6 Excessable": {
+            "runnerId": 1965463336260101,
+            "back": 30,
+            "lay": 260,
+            "name": "6 Excessable",
+            "event-name": "19:00 Newcastle"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.49,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965463336380001,
+          "back": 2.34,
+          "lay": 2.44,
+          "name": "10 Intervention",
+          "event-name": "19:00 Newcastle",
+          "numberOfRunners": 12,
+          "winPercentage": 173.50427350427353,
+          "startTime": "2022-01-20T19:00:00.000Z",
+          "raceId": 1965463335280001,
+          "raceName": "19:00 Newcastle",
+          "sportName": "Horse Racing",
+          "in-running-flag": false,
+          "status": "open",
+          "race-length": "0m 6f 0y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.49,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 19:00:00",
+      "bet-placed-time": "14:26:56  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1965463328410001,
+      "event-name": "15:55 Newcastle",
+      "runner-name": "8 One Punch Terri",
+      "decimal-odds": 2.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965463328410001,
+        "start": "2022-01-20T15:55:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "1m 2f 42y",
+        "allRunners": {
+          "8 One Punch Terri": {
+            "runnerId": 1965463329300001,
+            "back": 2.72,
+            "lay": 2.84,
+            "name": "8 One Punch Terri",
+            "event-name": "15:55 Newcastle",
+            "numberOfRunners": 9,
+            "winPercentage": 127.94117647058823,
+            "startTime": "2022-01-20T15:55:00.000Z",
+            "raceId": 1965463328410001,
+            "raceName": "15:55 Newcastle",
+            "sportName": "Horse Racing",
+            "in-running-flag": false,
+            "status": "open",
+            "race-length": "1m 2f 42y"
+          },
+          "9 Rose Of Lancashire": {
+            "runnerId": 1965463329330001,
+            "back": 6.2,
+            "lay": 6.4,
+            "name": "9 Rose Of Lancashire",
+            "event-name": "15:55 Newcastle"
+          },
+          "2 Lukoutoldmakezebak": {
+            "runnerId": 1965463329090101,
+            "back": 6.4,
+            "lay": 6.6,
+            "name": "2 Lukoutoldmakezebak",
+            "event-name": "15:55 Newcastle"
+          },
+          "6 Ranger Bob": {
+            "runnerId": 1965463329230001,
+            "back": 8.4,
+            "lay": 8.8,
+            "name": "6 Ranger Bob",
+            "event-name": "15:55 Newcastle"
+          },
+          "7 Visitant": {
+            "runnerId": 1965463329260101,
+            "back": 10,
+            "lay": 11,
+            "name": "7 Visitant",
+            "event-name": "15:55 Newcastle"
+          },
+          "5 Quoteline Direct": {
+            "runnerId": 1965463329190101,
+            "back": 16,
+            "lay": 20,
+            "name": "5 Quoteline Direct",
+            "event-name": "15:55 Newcastle"
+          },
+          "3 New Look": {
+            "runnerId": 1965463329130001,
+            "back": 23,
+            "lay": 36,
+            "name": "3 New Look",
+            "event-name": "15:55 Newcastle"
+          },
+          "1 Allerthorpe": {
+            "runnerId": 1965463329060001,
+            "back": 42,
+            "lay": 0,
+            "name": "1 Allerthorpe",
+            "event-name": "15:55 Newcastle"
+          },
+          "4 Oasis Law": {
+            "runnerId": 1965463329160001,
+            "back": 30,
+            "lay": 70,
+            "name": "4 Oasis Law",
+            "event-name": "15:55 Newcastle"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.49,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965463329300001,
+          "back": 2.72,
+          "lay": 2.84,
+          "name": "8 One Punch Terri",
+          "event-name": "15:55 Newcastle",
+          "numberOfRunners": 9,
+          "winPercentage": 127.94117647058823,
+          "startTime": "2022-01-20T15:55:00.000Z",
+          "raceId": 1965463328410001,
+          "raceName": "15:55 Newcastle",
+          "sportName": "Horse Racing",
+          "in-running-flag": false,
+          "status": "open",
+          "race-length": "1m 2f 42y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.49,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 15:55:00",
+      "bet-placed-time": "14:27:00  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1965463368100001,
+      "event-name": "14:45 Wincanton",
+      "runner-name": "10 Whydah Gally",
+      "decimal-odds": 2.3,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965463368100001,
+        "start": "2022-01-20T14:45:00.000Z",
+        "status": "open",
+        "in-running-flag": true,
+        "race-length": "2m 3f 166y",
+        "allRunners": {
+          "10 Whydah Gally": {
+            "runnerId": 1965463369150001,
+            "back": 2.28,
+            "lay": 2.44,
+            "name": "10 Whydah Gally",
+            "event-name": "14:45 Wincanton",
+            "numberOfRunners": 11,
+            "winPercentage": 171.92982456140354,
+            "startTime": "2022-01-20T14:45:00.000Z",
+            "raceId": 1965463368100001,
+            "raceName": "14:45 Wincanton",
+            "sportName": "Horse Racing",
+            "in-running-flag": true,
+            "status": "open",
+            "race-length": "2m 3f 166y"
+          },
+          "4 Jetaway Joey": {
+            "runnerId": 1965463368970101,
+            "back": 6.2,
+            "lay": 6.8,
+            "name": "4 Jetaway Joey",
+            "event-name": "14:45 Wincanton"
+          },
+          "1 Stormy Flight": {
+            "runnerId": 1965463368890001,
+            "back": 100,
+            "lay": 0,
+            "name": "1 Stormy Flight",
+            "event-name": "14:45 Wincanton"
+          },
+          "2 Welsh Saint": {
+            "runnerId": 1965463368910101,
+            "back": 6.4,
+            "lay": 7.2,
+            "name": "2 Welsh Saint",
+            "event-name": "14:45 Wincanton"
+          },
+          "6 Mr Tambourine Man": {
+            "runnerId": 1965463369030101,
+            "back": 10.5,
+            "lay": 12,
+            "name": "6 Mr Tambourine Man",
+            "event-name": "14:45 Wincanton"
+          },
+          "3 Henry Gondoff": {
+            "runnerId": 1965463368940101,
+            "back": 100,
+            "lay": 0,
+            "name": "3 Henry Gondoff",
+            "event-name": "14:45 Wincanton"
+          },
+          "5 Midnight Midge": {
+            "runnerId": 1965463369000101,
+            "back": 13.5,
+            "lay": 16,
+            "name": "5 Midnight Midge",
+            "event-name": "14:45 Wincanton"
+          },
+          "9 Forever Des Long": {
+            "runnerId": 1965463369120101,
+            "back": 19.5,
+            "lay": 23,
+            "name": "9 Forever Des Long",
+            "event-name": "14:45 Wincanton"
+          },
+          "7 Coal Stock": {
+            "runnerId": 1965463369060101,
+            "back": 29,
+            "lay": 38,
+            "name": "7 Coal Stock",
+            "event-name": "14:45 Wincanton"
+          },
+          "11 Age Of Wisdom": {
+            "runnerId": 1965463369180001,
+            "back": 80,
+            "lay": 160,
+            "name": "11 Age Of Wisdom",
+            "event-name": "14:45 Wincanton"
+          },
+          "8 Smith's Bay": {
+            "runnerId": 1965463369090101,
+            "back": 48,
+            "lay": 75,
+            "name": "8 Smith's Bay",
+            "event-name": "14:45 Wincanton"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 1.2,
+          "currentBalance": 7.09,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965463369150001,
+          "back": 2.28,
+          "lay": 2.44,
+          "name": "10 Whydah Gally",
+          "event-name": "14:45 Wincanton",
+          "numberOfRunners": 11,
+          "winPercentage": 171.92982456140354,
+          "startTime": "2022-01-20T14:45:00.000Z",
+          "raceId": 1965463368100001,
+          "raceName": "14:45 Wincanton",
+          "sportName": "Horse Racing",
+          "in-running-flag": true,
+          "status": "open",
+          "race-length": "2m 3f 166y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 1.2,
+        "currentBalance": 7.09,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 14:45:00",
+      "bet-placed-time": "14:47:03  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1965463326590001,
+      "event-name": "15:25 Newcastle",
+      "runner-name": "6 Vertice",
+      "decimal-odds": 3.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965463326590001,
+        "start": "2022-01-20T15:25:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "1m 2f 42y",
+        "allRunners": {
+          "6 Vertice": {
+            "runnerId": 1965463327540001,
+            "back": 3,
+            "lay": 3.1,
+            "name": "6 Vertice",
+            "event-name": "15:25 Newcastle",
+            "numberOfRunners": 10,
+            "winPercentage": 80.00000000000001,
+            "startTime": "2022-01-20T15:25:00.000Z",
+            "raceId": 1965463326590001,
+            "raceName": "15:25 Newcastle",
+            "sportName": "Horse Racing",
+            "in-running-flag": false,
+            "status": "open",
+            "race-length": "1m 2f 42y"
+          },
+          "9 Smart Boyo": {
+            "runnerId": 1965463327630001,
+            "back": 5.4,
+            "lay": 5.5,
+            "name": "9 Smart Boyo",
+            "event-name": "15:25 Newcastle"
+          },
+          "3 Powerful Hero": {
+            "runnerId": 1965463327450001,
+            "back": 6.8,
+            "lay": 7,
+            "name": "3 Powerful Hero",
+            "event-name": "15:25 Newcastle"
+          },
+          "8 Odd Socks Havana": {
+            "runnerId": 1965463327600001,
+            "back": 7.2,
+            "lay": 7.4,
+            "name": "8 Odd Socks Havana",
+            "event-name": "15:25 Newcastle"
+          },
+          "4 Scots Sonnet": {
+            "runnerId": 1965463327480001,
+            "back": 8.2,
+            "lay": 8.4,
+            "name": "4 Scots Sonnet",
+            "event-name": "15:25 Newcastle"
+          },
+          "10 Toshack": {
+            "runnerId": 1965463327660001,
+            "back": 21,
+            "lay": 24,
+            "name": "10 Toshack",
+            "event-name": "15:25 Newcastle"
+          },
+          "5 Strong Team": {
+            "runnerId": 1965463327510001,
+            "back": 30,
+            "lay": 120,
+            "name": "5 Strong Team",
+            "event-name": "15:25 Newcastle"
+          },
+          "1 Clayton Hall": {
+            "runnerId": 1965463327380001,
+            "back": 38,
+            "lay": 55,
+            "name": "1 Clayton Hall",
+            "event-name": "15:25 Newcastle"
+          },
+          "7 Hungry Helen": {
+            "runnerId": 1965463327570001,
+            "back": 75,
+            "lay": 480,
+            "name": "7 Hungry Helen",
+            "event-name": "15:25 Newcastle"
+          },
+          "2 Poco Contante": {
+            "runnerId": 1965463327420001,
+            "back": 60,
+            "lay": 0,
+            "name": "2 Poco Contante",
+            "event-name": "15:25 Newcastle"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 1.8,
+          "currentBalance": 6.49,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965463327540001,
+          "back": 3,
+          "lay": 3.1,
+          "name": "6 Vertice",
+          "event-name": "15:25 Newcastle",
+          "numberOfRunners": 10,
+          "winPercentage": 80.00000000000001,
+          "startTime": "2022-01-20T15:25:00.000Z",
+          "raceId": 1965463326590001,
+          "raceName": "15:25 Newcastle",
+          "sportName": "Horse Racing",
+          "in-running-flag": false,
+          "status": "open",
+          "race-length": "1m 2f 42y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 1.8,
+        "currentBalance": 6.49,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 15:25:00",
+      "bet-placed-time": "14:48:21  20-01-2022"
     }
   ],
   "Soccer": [
@@ -279,6 +821,292 @@
       },
       "event-start-time": "20/01/2022, 17:00:00",
       "bet-placed-time": "07:48:24  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1965116481890001,
+      "event-name": "Aris Thessaloniki vs AS Lamia",
+      "runner-name": "Aris Thessaloniki",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965116481890001,
+        "start": "2022-01-20T19:30:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Aris Thessaloniki": {
+            "runnerId": 1965116484040001,
+            "back": 1.78,
+            "lay": 1.85,
+            "name": "Aris Thessaloniki",
+            "event-name": "Aris Thessaloniki vs AS Lamia",
+            "numberOfRunners": 3,
+            "winPercentage": 88.20224719101124,
+            "startTime": "2022-01-20T19:30:00.000Z",
+            "raceId": 1965116481890001,
+            "raceName": "Aris Thessaloniki vs AS Lamia",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "AS Lamia": {
+            "runnerId": 1965116484070101,
+            "back": 6.4,
+            "lay": 6.8,
+            "name": "AS Lamia",
+            "event-name": "Aris Thessaloniki vs AS Lamia"
+          },
+          "DRAW (Ari/AS )": {
+            "runnerId": 1965116484110101,
+            "back": 3.35,
+            "lay": 3.55,
+            "name": "DRAW (Ari/AS )",
+            "event-name": "Aris Thessaloniki vs AS Lamia"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.69,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965116484040001,
+          "back": 1.78,
+          "lay": 1.85,
+          "name": "Aris Thessaloniki",
+          "event-name": "Aris Thessaloniki vs AS Lamia",
+          "numberOfRunners": 3,
+          "winPercentage": 88.20224719101124,
+          "startTime": "2022-01-20T19:30:00.000Z",
+          "raceId": 1965116481890001,
+          "raceName": "Aris Thessaloniki vs AS Lamia",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.69,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 19:30:00",
+      "bet-placed-time": "14:14:09  20-01-2022"
+    }
+  ],
+  "Greyhound Racing": [
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1966375607890001,
+      "event-name": "16:14 Swindon",
+      "runner-name": "Harji Bhaji",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966375607890001,
+        "start": "2022-01-20T16:14:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "476",
+        "allRunners": {
+          "Leeside Stack": {
+            "runnerId": 1966375608330001,
+            "back": 4.6,
+            "lay": 0,
+            "name": "Leeside Stack",
+            "event-name": "16:14 Swindon"
+          },
+          "Harji Bhaji": {
+            "runnerId": 1966375608360001,
+            "back": 2.08,
+            "lay": 0,
+            "name": "Harji Bhaji",
+            "event-name": "16:14 Swindon",
+            "numberOfRunners": 6,
+            "winPercentage": 80.28846153846153,
+            "startTime": "2022-01-20T16:14:00.000Z",
+            "raceId": 1966375607890001,
+            "raceName": "16:14 Swindon",
+            "sportName": "Greyhound Racing",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Magical Lesley": {
+            "runnerId": 1966375608390001,
+            "back": 9.6,
+            "lay": 0,
+            "name": "Magical Lesley",
+            "event-name": "16:14 Swindon"
+          },
+          "Confey Taylor": {
+            "runnerId": 1966375608420001,
+            "back": 5.1,
+            "lay": 0,
+            "name": "Confey Taylor",
+            "event-name": "16:14 Swindon"
+          },
+          "Arthur Parsnip": {
+            "runnerId": 1966375608450001,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Arthur Parsnip",
+            "event-name": "16:14 Swindon"
+          },
+          "Bricks Hattie": {
+            "runnerId": 1966375608480001,
+            "back": 3.75,
+            "lay": 0,
+            "name": "Bricks Hattie",
+            "event-name": "16:14 Swindon"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 1.4,
+          "currentBalance": 6.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966375608360001,
+          "back": 2.08,
+          "lay": 0,
+          "name": "Harji Bhaji",
+          "event-name": "16:14 Swindon",
+          "numberOfRunners": 6,
+          "winPercentage": 80.28846153846153,
+          "startTime": "2022-01-20T16:14:00.000Z",
+          "raceId": 1966375607890001,
+          "raceName": "16:14 Swindon",
+          "sportName": "Greyhound Racing",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 1.4,
+        "currentBalance": 6.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 16:14:00",
+      "bet-placed-time": "14:47:07  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1966342315980001,
+      "event-name": "21:02 Monmore",
+      "runner-name": "Vixons Thunder",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966342315980001,
+        "start": "2022-01-20T21:02:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "480mtrs",
+        "allRunners": {
+          "Gunner Rosa": {
+            "runnerId": 1966342316510001,
+            "back": 7,
+            "lay": 0,
+            "name": "Gunner Rosa",
+            "event-name": "21:02 Monmore"
+          },
+          "Miss Una": {
+            "runnerId": 1966342316540101,
+            "back": 4.5,
+            "lay": 0,
+            "name": "Miss Una",
+            "event-name": "21:02 Monmore"
+          },
+          "Final Bullet": {
+            "runnerId": 1966342316570101,
+            "back": 4.8,
+            "lay": 0,
+            "name": "Final Bullet",
+            "event-name": "21:02 Monmore"
+          },
+          "Vixons Thunder": {
+            "runnerId": 1966342316600101,
+            "back": 1.83,
+            "lay": 0,
+            "name": "Vixons Thunder",
+            "event-name": "21:02 Monmore",
+            "numberOfRunners": 6,
+            "winPercentage": 118.5792349726776,
+            "startTime": "2022-01-20T21:02:00.000Z",
+            "raceId": 1966342315980001,
+            "raceName": "21:02 Monmore",
+            "sportName": "Greyhound Racing",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "The Way It Is": {
+            "runnerId": 1966342316640001,
+            "back": 6,
+            "lay": 0,
+            "name": "The Way It Is",
+            "event-name": "21:02 Monmore"
+          },
+          "Deeteedee Charly": {
+            "runnerId": 1966342316670001,
+            "back": 4,
+            "lay": 0,
+            "name": "Deeteedee Charly",
+            "event-name": "21:02 Monmore"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 1.4,
+          "currentBalance": 6.89,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966342316600101,
+          "back": 1.83,
+          "lay": 0,
+          "name": "Vixons Thunder",
+          "event-name": "21:02 Monmore",
+          "numberOfRunners": 6,
+          "winPercentage": 118.5792349726776,
+          "startTime": "2022-01-20T21:02:00.000Z",
+          "raceId": 1966342315980001,
+          "raceName": "21:02 Monmore",
+          "sportName": "Greyhound Racing",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 1.4,
+        "currentBalance": 6.89,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 21:02:00",
+      "bet-placed-time": "14:47:07  20-01-2022"
     }
   ]
 }

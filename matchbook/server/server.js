@@ -27,7 +27,6 @@
 	let g_sessionToken = null;
 	let g_db = {};
 	g_db.sportId = {};
-	let g_predictedWinners = [];
 
 	// const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
 	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
@@ -60,9 +59,9 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		// 'Horse Racing',
+		'Horse Racing',
 		'Soccer',
-		// 'Greyhound Racing',
+		'Greyhound Racing',
 		// 'American Football',
 		// 'Basketball',
 		// "Boxing",
@@ -88,7 +87,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -471,7 +470,7 @@
 	// 		},
 
 	luckyMatchFilter = function(sportName, jsonObj, objLevelFilter, callback) {
-		g_predictedWinners = []; 
+		let predictedWinners = []; 
 		for(let prop in jsonObj) {
 			if(jsonObj.hasOwnProperty(prop)) {
 				if(prop === objLevelFilter) { // events: { }
@@ -528,7 +527,7 @@
 											obj["status"] = jsonObj[prop][race]["status"];
 											if(sportName === "Horse Racing") obj["race-length"] = jsonObj[prop][race]["race-length"];
 		
-											g_predictedWinners.push(obj);
+											predictedWinners.push(obj);
 										}
 									}
 								}
@@ -539,23 +538,11 @@
 			}
 		}
 
-		g_betNow = findHotBets(g_predictedWinners);
+		g_betNow = findHotBets(predictedWinners);
 		return callback(null, g_betNow);
 	};
 
 	findLuckyMatch = async (sportName, jsonObj, objLevelFilter, callback) => {
-		if(UTIL.isNullObject(g_moneyStatus)) {
-			if(await FA.isFileExist('./data-Report/money.json'))
-			{
-				g_moneyStatus = await FA.readJsonFile('./data-Report/money.json');
-
-				const todayDateString = new Date().toDateString();
-				if(g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date === todayDateString)
-				{
-					g_sumOfAlreadyPlacedBetAmount = g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount;
-				}
-			}
-		}
 
 		if(UTIL.isNullObject(g_allPredictedWinnerBetList)) {
 			if(await FA.isFileExist('./data-Report/alreadyPlacedBetList.json'))
@@ -570,12 +557,12 @@
 	};
 	
 
-	findHotBets = function(g_predictedWinners) {
+	findHotBets = function(predictedWinners) {
 		g_betNow = [];
 		const todayDateString = new Date().toDateString();
 
-		for(let i = 0; i < g_predictedWinners.length; ++i) {
-			let obj = g_predictedWinners[i];
+		for(let i = 0; i < predictedWinners.length; ++i) {
+			let obj = predictedWinners[i];
 			let startTime = new Date(obj.startTime);
 			let currentTime =  new Date();
 
@@ -596,30 +583,30 @@
 						let betObj = {};
 
 						let fractionNumber = 0;
-						fractionNumber = g_predictedWinners[i].back;
+						fractionNumber = predictedWinners[i].back;
 						let numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
 						let numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
 						let roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
 						let roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
 
 						betObj.odds = roundedOdd; // for reducing the commission charge
-						// betObj.odds = g_predictedWinners[i].back;
-						betObj['runner-id'] = g_predictedWinners[i].runnerId;
+						// betObj.odds = predictedWinners[i].back;
+						betObj['runner-id'] = predictedWinners[i].runnerId;
 					
 						betObj.side = 'back';
 						betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
-						betObj['event-start-time'] = g_predictedWinners[i].startTime;
-						betObj['sportName'] = g_predictedWinners[i].sportName;
-						betObj['sport-id'] = g_db.sportId[g_predictedWinners[i].sportName].id;
+						betObj['event-start-time'] = predictedWinners[i].startTime;
+						betObj['sportName'] = predictedWinners[i].sportName;
+						betObj['sport-id'] = g_db.sportId[predictedWinners[i].sportName].id;
 
 						if(g_isLockedForBetting)
 						{
 							// mock bet
 							betObj['status'] = 'matched';
-							betObj['event-id'] = g_predictedWinners[i].raceId;
-							betObj['event-name'] =  g_predictedWinners[i].raceName;
+							betObj['event-id'] = predictedWinners[i].raceId;
+							betObj['event-name'] =  predictedWinners[i].raceName;
 
-							betObj['runner-name'] = g_predictedWinners[i].name;
+							betObj['runner-name'] = predictedWinners[i].name;
 							betObj['decimal-odds'] = betObj.odds;
 							betObj['stake'] = g_BetStakeValue;
 
@@ -763,12 +750,14 @@
 			if(!g_alreadyPlacedBetList[obj["sport-name"]]) g_alreadyPlacedBetList[obj["sport-name"]] = [];
 			g_alreadyPlacedBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
 		}
+		else
+		{
+			if(!g_currentPredictedWinnerBetList[obj["sport-name"]]) g_currentPredictedWinnerBetList[obj["sport-name"]] = [];
+			g_currentPredictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
+		}
 
 		if(!g_allPredictedWinnerBetList[obj["sport-name"]]) g_allPredictedWinnerBetList[obj["sport-name"]] = [];
 		g_allPredictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
-
-		if(!g_currentPredictedWinnerBetList[obj["sport-name"]]) g_currentPredictedWinnerBetList[obj["sport-name"]] = [];
-		g_currentPredictedWinnerBetList[obj["sport-name"]].push(obj); // Update "already bet placed" global object
 
 		return obj;
 	};
@@ -1016,6 +1005,22 @@
 		});
 	};
 
+	// Local record of money transactions
+	getMoneyStatusRecord = async () => {
+		if(UTIL.isNullObject(g_moneyStatus)) {
+			if(await FA.isFileExist('./data-Report/money.json'))
+			{
+				g_moneyStatus = await FA.readJsonFile('./data-Report/money.json');
+	
+				const todayDateString = new Date().toDateString();
+				if(g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date === todayDateString)
+				{
+					g_sumOfAlreadyPlacedBetAmount = g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount;
+				}
+			}
+		}
+	};
+
 
 	loginCallback = function(err, sessionToken, sessionStartTime) {
 		if(err){
@@ -1029,6 +1034,8 @@
 
 			// findSportsIds(); // run once bcos sports id's are constant
 			getUserBalance();
+
+			getMoneyStatusRecord();
 
 			run();
 		}
