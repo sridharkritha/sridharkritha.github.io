@@ -19,7 +19,7 @@
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
 	const g_todayTotalBetAmountLimit = 3.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
-	let   g_remainingTotalBetAmountLimit = 0; 
+	let   g_sumOfAlreadyPlacedBetAmount = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -552,7 +552,7 @@
 				const todayDateString = new Date().toDateString();
 				if(g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date === todayDateString)
 				{
-					g_remainingTotalBetAmountLimit = g_moneyStatus[todayDateString].remainingTotalBetAmountLimit;
+					g_sumOfAlreadyPlacedBetAmount = g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount;
 				}
 			}
 		}
@@ -625,12 +625,12 @@
 
 							g_betNow.push(betObj);
 						}
-						else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) >= g_BetStakeValue) {
+						else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) >= g_BetStakeValue) {
 							// real bet
 							g_betNow.push(betObj);
 
 							g_userBalance = UTIL.roundIt2D(g_userBalance - g_BetStakeValue);
-							g_remainingTotalBetAmountLimit = UTIL.roundIt2D(g_remainingTotalBetAmountLimit + g_BetStakeValue);
+							g_sumOfAlreadyPlacedBetAmount = UTIL.roundIt2D(g_sumOfAlreadyPlacedBetAmount + g_BetStakeValue);
 
 							
 							if(!g_moneyStatus[todayDateString] || g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date != todayDateString) {
@@ -640,14 +640,14 @@
 								g_moneyStatus[todayDateString].date = todayDateString;
 							}
 							g_moneyStatus[todayDateString].currentBalance = g_userBalance;
-							g_moneyStatus[todayDateString].remainingTotalBetAmountLimit = g_remainingTotalBetAmountLimit;
+							g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount = g_sumOfAlreadyPlacedBetAmount;
 							g_moneyStatus[todayDateString].totalPlacedBets = Math.round((g_moneyStatus[todayDateString].startingBalance - g_moneyStatus[todayDateString].currentBalance) / g_BetStakeValue) 
 						}
 						else if(g_userBalance < g_BetStakeValue) {
 							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
 						}
-						else if(UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_remainingTotalBetAmountLimit) < g_BetStakeValue) {
-							CONNECTIONS.print("must",`Reached your today's bet limit: ${g_remainingTotalBetAmountLimit} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
+						else if(UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) < g_BetStakeValue) {
+							CONNECTIONS.print("must",`Reached your today's bet limit: ${g_sumOfAlreadyPlacedBetAmount} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 						}
 					}
 				}
@@ -779,7 +779,7 @@
 		const metaData = {
 			"stakeValue"                   : g_BetStakeValue,
 			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
-			"remainingTotalBetAmountLimit" : g_remainingTotalBetAmountLimit,
+			"sumOfAlreadyPlacedBetAmount"  : g_sumOfAlreadyPlacedBetAmount,
 			"currentBalance"               : g_userBalance,
 			"winConfidencePercentage"      : g_winConfidencePercentage,
 			"minProfitOdd"                 : g_minProfitOdd

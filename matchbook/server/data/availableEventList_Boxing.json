@@ -24,7 +24,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 6,
+        "sumOfAlreadyPlacedBetAmount": 6,
         "userBalance": 8.85,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7

@@ -14,7 +14,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 2.2,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -33,7 +33,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 2.2,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -52,7 +52,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 2.2,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
@@ -71,7 +71,7 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 6,
-        "remainingTotalBetAmountLimit": 2.2,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
         "userBalance": 8.89,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7

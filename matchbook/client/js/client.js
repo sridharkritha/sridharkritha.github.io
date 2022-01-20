@@ -97,7 +97,7 @@ window.addEventListener('load', function() {
 													"metaData": {
 														"stakeValue": 0.2,
 														"todayTotalBetAmountLimit": 3,
-														"remainingTotalBetAmountLimit": 0,
+														"sumOfAlreadyPlacedBetAmount": 0,
 														"userBalance": 10.35,
 														"winConfidencePercentage": 80,
 														"minProfitOdd": 0.7
@@ -119,7 +119,7 @@ window.addEventListener('load', function() {
 												"metaData": {
 													"stakeValue": 0.2,
 													"todayTotalBetAmountLimit": 3,
-													"remainingTotalBetAmountLimit": 0,
+													"sumOfAlreadyPlacedBetAmount": 0,
 													"userBalance": 10.35,
 													"winConfidencePercentage": 80,
 													"minProfitOdd": 0.7
@@ -248,7 +248,7 @@ window.addEventListener('load', function() {
 													"metaData": {
 														"stakeValue": 0.2,
 														"todayTotalBetAmountLimit": 3,
-														"remainingTotalBetAmountLimit": 0,
+														"sumOfAlreadyPlacedBetAmount": 0,
 														"userBalance": 10.35,
 														"winConfidencePercentage": 80,
 														"minProfitOdd": 0.7
@@ -270,7 +270,7 @@ window.addEventListener('load', function() {
 												"metaData": {
 													"stakeValue": 0.2,
 													"todayTotalBetAmountLimit": 3,
-													"remainingTotalBetAmountLimit": 0,
+													"sumOfAlreadyPlacedBetAmount": 0,
 													"userBalance": 10.35,
 													"winConfidencePercentage": 80,
 													"minProfitOdd": 0.7
@@ -324,7 +324,7 @@ window.addEventListener('load', function() {
 													"metaData": {
 														"stakeValue": 0.2,
 														"todayTotalBetAmountLimit": 3,
-														"remainingTotalBetAmountLimit": 0,
+														"sumOfAlreadyPlacedBetAmount": 0,
 														"userBalance": 10.35,
 														"winConfidencePercentage": 80,
 														"minProfitOdd": 0.7
@@ -346,7 +346,7 @@ window.addEventListener('load', function() {
 												"metaData": {
 													"stakeValue": 0.2,
 													"todayTotalBetAmountLimit": 3,
-													"remainingTotalBetAmountLimit": 0,
+													"sumOfAlreadyPlacedBetAmount": 0,
 													"userBalance": 10.35,
 													"winConfidencePercentage": 80,
 													"minProfitOdd": 0.7
@@ -425,8 +425,8 @@ window.addEventListener('load', function() {
 									<!-- Event Name(3.30 Kempton) -->
 									<div class ="commonClass">(${++eventCounter})   ${eventName}   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']} </div>
 								
-									Today's Bet Amount Limit =  £ ${metaData.remainingTotalBetAmountLimit} / £ ${metaData.todayTotalBetAmountLimit}, 
-									UserBalance = £ ${metaData.userBalance}, 
+									Today's Bet Amount Limit =  £ ${metaData.sumOfAlreadyPlacedBetAmount} / £ ${metaData.todayTotalBetAmountLimit}, 
+									UserBalance = £ ${metaData.currentBalance}, 
 									WinConfidencePercentage = ${metaData.winConfidencePercentage}%, 
 									MinProfitOdd = £ ${metaData.minProfitOdd}, 
 									Stake = £ ${metaData.stakeValue}
