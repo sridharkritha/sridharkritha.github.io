@@ -548,9 +548,11 @@
 			if(await FA.isFileExist('./data-Report/money.json'))
 			{
 				g_moneyStatus = await FA.readJsonFile('./data-Report/money.json');
-				if(g_moneyStatus.account.date === new Date().toDateString())
+
+				const todayDateString = new Date().toDateString();
+				if(g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date === todayDateString)
 				{
-					g_remainingTotalBetAmountLimit = g_moneyStatus.account.remainingTotalBetAmountLimit;
+					g_remainingTotalBetAmountLimit = g_moneyStatus[todayDateString].remainingTotalBetAmountLimit;
 				}
 			}
 		}
@@ -570,7 +572,7 @@
 
 	findHotBets = function(g_predictedWinners) {
 		g_betNow = [];
-		let todayDateString = new Date().toDateString();
+		const todayDateString = new Date().toDateString();
 
 		for(let i = 0; i < g_predictedWinners.length; ++i) {
 			let obj = g_predictedWinners[i];
@@ -631,15 +633,15 @@
 							g_remainingTotalBetAmountLimit = UTIL.roundIt2D(g_remainingTotalBetAmountLimit + g_BetStakeValue);
 
 							
-							if(!g_moneyStatus.account || g_moneyStatus.account && g_moneyStatus.account.date != todayDateString) {
-								g_moneyStatus.account = {};
-								g_moneyStatus.account.startingBalance = UTIL.roundIt2D(g_userBalance + g_BetStakeValue);
-								g_moneyStatus.account.todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
-								g_moneyStatus.account.date = todayDateString;
+							if(!g_moneyStatus[todayDateString] || g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date != todayDateString) {
+								g_moneyStatus[todayDateString] = {};
+								g_moneyStatus[todayDateString].startingBalance = UTIL.roundIt2D(g_userBalance + g_BetStakeValue);
+								g_moneyStatus[todayDateString].todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
+								g_moneyStatus[todayDateString].date = todayDateString;
 							}
-							g_moneyStatus.account.currentBalance = g_userBalance;
-							g_moneyStatus.account.remainingTotalBetAmountLimit = g_remainingTotalBetAmountLimit;
-							g_moneyStatus.account.totalPlacedBets = Math.round((g_moneyStatus.account.startingBalance - g_moneyStatus.account.currentBalance) / g_BetStakeValue) 
+							g_moneyStatus[todayDateString].currentBalance = g_userBalance;
+							g_moneyStatus[todayDateString].remainingTotalBetAmountLimit = g_remainingTotalBetAmountLimit;
+							g_moneyStatus[todayDateString].totalPlacedBets = Math.round((g_moneyStatus[todayDateString].startingBalance - g_moneyStatus[todayDateString].currentBalance) / g_BetStakeValue) 
 						}
 						else if(g_userBalance < g_BetStakeValue) {
 							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
