@@ -360,6 +360,8 @@ window.addEventListener('load', function() {
 
 	let g_runnersStr  = "";
 	let g_logMessages = "";
+	let g_logMessagesBuffer = ""; 
+	const g_logMessageMaxBufferLength = 4000; // string length <= 10,000 
 
 	// enum - constants
 	const g_SYMBOL_CONSTANTS = Object.freeze({
@@ -390,12 +392,18 @@ window.addEventListener('load', function() {
 	};
 
 	renderLogMessages = function(msg) {
-		g_logMessages += msg + "<br/>";
-		// showLogMessages();
+		g_logMessages       += msg + "<br/>";
+		g_logMessagesBuffer += msg + "<br/>";
+		if(g_logMessagesBuffer.length > g_logMessageMaxBufferLength)
+		{
+			g_logMessages = g_logMessagesBuffer;
+			g_logMessagesBuffer = "";
+		}
 	};
 
 	clearLogMessages = () => { 
 		g_logMessages = "";
+		g_logMessagesBuffer = "";
 		fillMainHTMLContent("", "");
 	};
 

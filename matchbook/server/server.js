@@ -87,7 +87,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -628,7 +628,6 @@
 							}
 							g_moneyStatus[todayDateString].currentBalance = g_userBalance;
 							g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount = g_sumOfAlreadyPlacedBetAmount;
-							// g_moneyStatus[todayDateString].totalPlacedBets = Math.round((g_moneyStatus[todayDateString].startingBalance - g_moneyStatus[todayDateString].currentBalance) / g_BetStakeValue) 
 							g_moneyStatus[todayDateString].totalPlacedBets = Math.round(g_sumOfAlreadyPlacedBetAmount / g_BetStakeValue); 
 						}
 						else if(g_userBalance < g_BetStakeValue) {
@@ -900,17 +899,14 @@
 						if(race === g_onlyOne_raceName) events_cbCount.totalCount = 1; // Taking only one race event for testing
 
 						let logMsg = `Sports: ${sport} ############## Event Name: ${race}`;
-						CONNECTIONS.print("logClient", logMsg);
+						// CONNECTIONS.print("logClient", logMsg); // detailed sports and event list
+						console.log(logMsg);
 
 						getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
 							sports_cbCount, events_cbCount, callback_getEventInfo);
 					}
 				}
 				// ); //forEach
-
-
-
-
 			}
 		}
 	};
