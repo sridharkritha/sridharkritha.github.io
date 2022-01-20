@@ -1,378 +1,6 @@
 {
   "id": 15,
   "events": {
-    "CR Belouizdad U21 vs MC Oran U21": {
-      "id": 1966502341280001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "CR Belouizdad U21": {
-          "runnerId": 1966502342940001,
-          "back": 0,
-          "lay": 0
-        },
-        "MC Oran U21": {
-          "runnerId": 1966502342980001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (CR /MC )": {
-          "runnerId": 1966502343020001,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "CS Constantine U21 vs USM Alger U21": {
-      "id": 1966502351730001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "CS Constantine U21": {
-          "runnerId": 1966502354130001,
-          "back": 0,
-          "lay": 0
-        },
-        "USM Alger U21": {
-          "runnerId": 1966502354160101,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (CS /USM)": {
-          "runnerId": 1966502354200001,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "ES Sétif U21 vs RC Arbaa U21": {
-      "id": 1966502334340001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "ES Sétif U21": {
-          "runnerId": 1966502337320101,
-          "back": 0,
-          "lay": 0
-        },
-        "RC Arbaa U21": {
-          "runnerId": 1966502337360001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (ES /RC )": {
-          "runnerId": 1966502337390101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "MC Alger U21 vs HB Chelghoum Laid U21": {
-      "id": 1966502359770001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "MC Alger U21": {
-          "runnerId": 1966502361390001,
-          "back": 0,
-          "lay": 0
-        },
-        "HB Chelghoum Laid U21": {
-          "runnerId": 1966502361430001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (MC /HB )": {
-          "runnerId": 1966502361470001,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "NC Magra U21 vs ASO Chlef U21": {
-      "id": 1966502368970001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "NC Magra U21": {
-          "runnerId": 1966502370780001,
-          "back": 0,
-          "lay": 0
-        },
-        "ASO Chlef U21": {
-          "runnerId": 1966502370820001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (NC /ASO)": {
-          "runnerId": 1966502370850101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "Paradou AC U21 vs US Biskra U21": {
-      "id": 1966502327560001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Paradou AC U21": {
-          "runnerId": 1966502329280001,
-          "back": 0,
-          "lay": 0
-        },
-        "US Biskra U21": {
-          "runnerId": 1966502329310001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Par/US )": {
-          "runnerId": 1966502329340001,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "RC Relizane U21 vs NA Hussein Dey U21": {
-      "id": 1966502376430001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "RC Relizane U21": {
-          "runnerId": 1966502378310101,
-          "back": 0,
-          "lay": 0
-        },
-        "NA Hussein Dey U21": {
-          "runnerId": 1966502378350001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (RC /NA )": {
-          "runnerId": 1966502378390101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "WA Tlemcen U21 vs JS Kabylie U21": {
-      "id": 1966502321220001,
-      "start": "2022-01-20T10:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "WA Tlemcen U21": {
-          "runnerId": 1966502322830101,
-          "back": 0,
-          "lay": 0
-        },
-        "JS Kabylie U21": {
-          "runnerId": 1966502322870001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (WA /JS )": {
-          "runnerId": 1966502322900101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "AFC Leopards vs Mathare United": {
-      "id": 1966221099680001,
-      "start": "2022-01-20T12:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "AFC Leopards": {
-          "runnerId": 1966221101150101,
-          "back": 0,
-          "lay": 0
-        },
-        "Mathare United": {
-          "runnerId": 1966221101190001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (AFC/Mat)": {
-          "runnerId": 1966221101220101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "Bandari FC vs Wazito FC": {
-      "id": 1966221134390001,
-      "start": "2022-01-20T12:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Bandari FC": {
-          "runnerId": 1966221135760201,
-          "back": 0,
-          "lay": 0
-        },
-        "Wazito FC": {
-          "runnerId": 1966221135800001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Ban/Waz)": {
-          "runnerId": 1966221135830101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "Kakamega Homeboyz vs Nairobi City Stars": {
-      "id": 1966221134870101,
-      "start": "2022-01-20T12:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Kakamega Homeboyz": {
-          "runnerId": 1966221136190001,
-          "back": 0,
-          "lay": 0
-        },
-        "Nairobi City Stars": {
-          "runnerId": 1966221136220001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Kak/Nai)": {
-          "runnerId": 1966221136250101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "Tusker FC vs Vihiga Bullets": {
-      "id": 1964810591440001,
-      "start": "2022-01-20T12:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Tusker FC": {
-          "runnerId": 1964810592840001,
-          "back": 0,
-          "lay": 0
-        },
-        "Vihiga Bullets": {
-          "runnerId": 1964810592870101,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Tus/Vih)": {
-          "runnerId": 1964810592900101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0.6,
-        "currentBalance": 7.76,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
     "Eastern Company SC vs El-Ittihad": {
       "id": 1966503575060001,
       "start": "2022-01-20T12:30:00.000Z",
@@ -381,18 +9,18 @@
       "allRunners": {
         "Eastern Company SC": {
           "runnerId": 1966503575530001,
-          "back": 0,
-          "lay": 0
+          "back": 5.9,
+          "lay": 7.8
         },
         "El-Ittihad": {
           "runnerId": 1966503575560101,
-          "back": 0,
-          "lay": 0
+          "back": 1.46,
+          "lay": 1.74
         },
         "DRAW (Eas/El-)": {
           "runnerId": 1966503575610001,
-          "back": 0,
-          "lay": 0
+          "back": 3.9,
+          "lay": 5
         }
       },
       "metaData": {
@@ -412,18 +40,18 @@
       "allRunners": {
         "Pyramids FC": {
           "runnerId": 1966406185880001,
-          "back": 0,
-          "lay": 0
+          "back": 2.54,
+          "lay": 2.96
         },
         "El-Masry": {
           "runnerId": 1966406185920001,
-          "back": 0,
-          "lay": 0
+          "back": 2.8,
+          "lay": 3.25
         },
         "DRAW (Pyr/El-)": {
           "runnerId": 1966406185960001,
-          "back": 0,
-          "lay": 0
+          "back": 3,
+          "lay": 3.6
         }
       },
       "metaData": {
@@ -443,17 +71,17 @@
       "allRunners": {
         "Diagoras GS": {
           "runnerId": 1964880480860001,
-          "back": 0,
-          "lay": 0
+          "back": 3.05,
+          "lay": 3.75
         },
         "PAE Ergotelis": {
           "runnerId": 1964880480890101,
-          "back": 0,
-          "lay": 0
+          "back": 2.6,
+          "lay": 3.2
         },
         "DRAW (Dia/PAE)": {
           "runnerId": 1964880480930001,
-          "back": 0,
+          "back": 2.56,
           "lay": 0
         }
       },
@@ -629,18 +257,18 @@
       "allRunners": {
         "Alanyaspor": {
           "runnerId": 1960489931070101,
-          "back": 2.36,
-          "lay": 2.44
+          "back": 2.34,
+          "lay": 2.42
         },
         "Hatayspor Antakya": {
           "runnerId": 1960489931100101,
-          "back": 3.2,
-          "lay": 3.4
+          "back": 3.15,
+          "lay": 3.3
         },
         "DRAW (Ala/Hat)": {
           "runnerId": 1960489931140001,
-          "back": 3.55,
-          "lay": 3.6
+          "back": 3.65,
+          "lay": 3.75
         }
       },
       "metaData": {
@@ -691,18 +319,18 @@
       "allRunners": {
         "Al-Ettifaq": {
           "runnerId": 1965619693500001,
-          "back": 1.97,
-          "lay": 2.3
+          "back": 2.28,
+          "lay": 2.7
         },
         "Abha": {
           "runnerId": 1965619693530101,
-          "back": 3.75,
-          "lay": 4.6
+          "back": 3.2,
+          "lay": 3.9
         },
         "DRAW (Al-/Abh)": {
           "runnerId": 1965619693570001,
-          "back": 3.25,
-          "lay": 3.95
+          "back": 2.9,
+          "lay": 3.6
         }
       },
       "metaData": {
@@ -722,18 +350,18 @@
       "allRunners": {
         "Al Khalidiyah": {
           "runnerId": 1964810627400001,
-          "back": 0,
-          "lay": 0
+          "back": 2.4,
+          "lay": 2.86
         },
         "Al-Muharraq": {
           "runnerId": 1964810627430001,
-          "back": 0,
-          "lay": 0
+          "back": 2.78,
+          "lay": 3.35
         },
         "DRAW (Al /Al-)": {
           "runnerId": 1964810627470001,
-          "back": 0,
-          "lay": 0
+          "back": 3.1,
+          "lay": 3.8
         }
       },
       "metaData": {
@@ -753,18 +381,18 @@
       "allRunners": {
         "Future FC": {
           "runnerId": 1966503571420001,
-          "back": 0,
-          "lay": 0
+          "back": 1.99,
+          "lay": 2.36
         },
         "Misr Elmaqasah": {
           "runnerId": 1966503571450101,
-          "back": 0,
-          "lay": 0
+          "back": 3.55,
+          "lay": 4.5
         },
         "DRAW (Fut/Mis)": {
           "runnerId": 1966503571490001,
-          "back": 0,
-          "lay": 0
+          "back": 3.15,
+          "lay": 3.95
         }
       },
       "metaData": {
@@ -851,13 +479,13 @@
         },
         "Al-Fateh Al-Hasa": {
           "runnerId": 1965619709960101,
-          "back": 4,
-          "lay": 0
+          "back": 3.95,
+          "lay": 5
         },
         "DRAW (Al-/Al-)": {
           "runnerId": 1965619710000001,
-          "back": 3.75,
-          "lay": 4.7
+          "back": 3.8,
+          "lay": 4.9
         }
       },
       "metaData": {
@@ -877,18 +505,18 @@
       "allRunners": {
         "Ivory Coast": {
           "runnerId": 1962409257480101,
-          "back": 3.35,
-          "lay": 3.6
+          "back": 3.3,
+          "lay": 3.4
         },
         "Algeria": {
           "runnerId": 1962409257520101,
-          "back": 2.42,
-          "lay": 2.6
+          "back": 2.54,
+          "lay": 2.64
         },
         "DRAW (Ivo/Alg)": {
           "runnerId": 1962409257560001,
-          "back": 3.1,
-          "lay": 3.3
+          "back": 3.25,
+          "lay": 3.35
         }
       },
       "metaData": {
@@ -908,18 +536,18 @@
       "allRunners": {
         "Sierra Leone": {
           "runnerId": 1962409265800001,
-          "back": 3.8,
+          "back": 3.95,
           "lay": 4.1
         },
         "Equatorial Guinea": {
           "runnerId": 1962409265840001,
-          "back": 2.6,
-          "lay": 2.76
+          "back": 2.58,
+          "lay": 2.64
         },
         "DRAW (Sie/Equ)": {
           "runnerId": 1962409265880001,
-          "back": 2.62,
-          "lay": 2.74
+          "back": 2.72,
+          "lay": 2.78
         }
       },
       "metaData": {
@@ -944,8 +572,8 @@
         },
         "Kazma Sporting Club": {
           "runnerId": 1966780850000051,
-          "back": 0,
-          "lay": 0
+          "back": 1.4,
+          "lay": 1.56
         },
         "DRAW (Kha/Kaz)": {
           "runnerId": 1966780850030151,
@@ -970,18 +598,18 @@
       "allRunners": {
         "Galatasaray SK": {
           "runnerId": 1960768129390001,
-          "back": 1.77,
-          "lay": 1.84
+          "back": 1.85,
+          "lay": 1.91
         },
         "Kasimpasa SK": {
           "runnerId": 1960768129420001,
-          "back": 4.7,
-          "lay": 5.4
+          "back": 4.5,
+          "lay": 4.8
         },
         "DRAW (Gal/Kas)": {
           "runnerId": 1960768129450101,
           "back": 3.85,
-          "lay": 4.2
+          "lay": 4.1
         }
       },
       "metaData": {
@@ -1001,18 +629,18 @@
       "allRunners": {
         "Al-Najma": {
           "runnerId": 1965085379170001,
-          "back": 0,
-          "lay": 0
+          "back": 2.86,
+          "lay": 3.45
         },
         "Al Ahli Club": {
           "runnerId": 1965085379200101,
-          "back": 0,
-          "lay": 0
+          "back": 2.48,
+          "lay": 2.94
         },
         "DRAW (Al-/Al )": {
           "runnerId": 1965085379240101,
-          "back": 0,
-          "lay": 0
+          "back": 2.94,
+          "lay": 3.6
         }
       },
       "metaData": {
@@ -1033,7 +661,7 @@
         "PSV Eindhoven": {
           "runnerId": 1965071548100001,
           "back": 1.07,
-          "lay": 1.1
+          "lay": 1.09
         },
         "SC Telstar": {
           "runnerId": 1965071548180001,
@@ -1043,7 +671,7 @@
         "DRAW (PSV/SC )": {
           "runnerId": 1965071548250101,
           "back": 14,
-          "lay": 24
+          "lay": 25
         }
       },
       "metaData": {
@@ -1063,18 +691,18 @@
       "allRunners": {
         "Elche CF": {
           "runnerId": 1961582863060001,
-          "back": 6.8,
-          "lay": 7.8
+          "back": 7.4,
+          "lay": 8
         },
         "Real Madrid": {
           "runnerId": 1961582863090101,
-          "back": 1.53,
-          "lay": 1.57
+          "back": 1.51,
+          "lay": 1.53
         },
         "DRAW (Elc/Rea)": {
           "runnerId": 1961582863130001,
-          "back": 4.5,
-          "lay": 4.8
+          "back": 4.6,
+          "lay": 4.9
         }
       },
       "metaData": {
@@ -1094,12 +722,12 @@
       "allRunners": {
         "Getafe": {
           "runnerId": 1960794841660001,
-          "back": 2.08,
+          "back": 2.1,
           "lay": 2.12
         },
         "Granada CF": {
           "runnerId": 1960794841700001,
-          "back": 4.9,
+          "back": 4.8,
           "lay": 5
         },
         "DRAW (Get/Gra)": {
@@ -1282,17 +910,17 @@
       "allRunners": {
         "Gambia": {
           "runnerId": 1962409273900101,
-          "back": 4.2,
-          "lay": 4.6
+          "back": 4.8,
+          "lay": 5.2
         },
         "Tunisia": {
           "runnerId": 1962409273940001,
-          "back": 2.16,
-          "lay": 2.3
+          "back": 2.08,
+          "lay": 2.18
         },
         "DRAW (Gam/Tun)": {
           "runnerId": 1962409273970101,
-          "back": 2.98,
+          "back": 3,
           "lay": 3.2
         }
       },
@@ -1313,18 +941,18 @@
       "allRunners": {
         "Mali": {
           "runnerId": 1962409282250001,
-          "back": 1.37,
-          "lay": 1.42
+          "back": 1.33,
+          "lay": 1.35
         },
         "Mauritania": {
           "runnerId": 1962409282280101,
-          "back": 11.5,
-          "lay": 15
+          "back": 13.5,
+          "lay": 19
         },
         "DRAW (Mal/Mau)": {
           "runnerId": 1962409282350101,
-          "back": 4.6,
-          "lay": 5.2
+          "back": 5.1,
+          "lay": 5.6
         }
       },
       "metaData": {
@@ -1344,18 +972,18 @@
       "allRunners": {
         "Aris Thessaloniki": {
           "runnerId": 1965116484040001,
-          "back": 1.6,
-          "lay": 1.87
+          "back": 1.8,
+          "lay": 1.9
         },
         "AS Lamia": {
           "runnerId": 1965116484070101,
-          "back": 5.5,
-          "lay": 7.2
+          "back": 6,
+          "lay": 6.8
         },
         "DRAW (Ari/AS )": {
           "runnerId": 1965116484110101,
-          "back": 3.4,
-          "lay": 4.3
+          "back": 3.2,
+          "lay": 3.5
         }
       },
       "metaData": {
@@ -1375,18 +1003,18 @@
       "allRunners": {
         "Arsenal": {
           "runnerId": 1962461351100101,
-          "back": 3.7,
-          "lay": 3.75
+          "back": 3.8,
+          "lay": 3.9
         },
         "Liverpool": {
           "runnerId": 1962461351140001,
-          "back": 2.12,
-          "lay": 2.16
+          "back": 2.06,
+          "lay": 2.1
         },
         "DRAW (Ars/Liv)": {
           "runnerId": 1962461351170101,
-          "back": 3.75,
-          "lay": 3.8
+          "back": 3.85,
+          "lay": 3.9
         }
       },
       "metaData": {
@@ -1406,8 +1034,8 @@
       "allRunners": {
         "Hibernian": {
           "runnerId": 1962411067330001,
-          "back": 0,
-          "lay": 0
+          "back": 1.28,
+          "lay": 1.33
         },
         "Cove Rangers": {
           "runnerId": 1962411067360101,
@@ -1416,7 +1044,7 @@
         },
         "DRAW (Hib/Cov)": {
           "runnerId": 1962411067400001,
-          "back": 0,
+          "back": 6,
           "lay": 0
         }
       },
@@ -1468,18 +1096,18 @@
       "allRunners": {
         "AS Roma": {
           "runnerId": 1962436334550101,
-          "back": 1.37,
+          "back": 1.38,
           "lay": 1.39
         },
         "Lecce": {
           "runnerId": 1962436334590001,
-          "back": 9.6,
-          "lay": 10
+          "back": 9.2,
+          "lay": 9.8
         },
         "DRAW (AS /Lec)": {
           "runnerId": 1962436334630001,
-          "back": 5.6,
-          "lay": 6.2
+          "back": 5.8,
+          "lay": 6
         }
       },
       "metaData": {
@@ -1499,18 +1127,18 @@
       "allRunners": {
         "Athletic Bilbao": {
           "runnerId": 1961582836640101,
-          "back": 3.2,
-          "lay": 3.35
+          "back": 3.05,
+          "lay": 3.15
         },
         "FC Barcelona": {
           "runnerId": 1961582836680001,
-          "back": 2.42,
-          "lay": 2.48
+          "back": 2.62,
+          "lay": 2.66
         },
         "DRAW (Ath/FC )": {
           "runnerId": 1961582836710101,
-          "back": 3.45,
-          "lay": 3.55
+          "back": 3.4,
+          "lay": 3.5
         }
       },
       "metaData": {
@@ -1530,18 +1158,18 @@
       "allRunners": {
         "CD Tapatio": {
           "runnerId": 1965107512270001,
-          "back": 2.42,
-          "lay": 2.92
+          "back": 2.44,
+          "lay": 2.98
         },
         "Venados FC": {
           "runnerId": 1965107512300101,
-          "back": 2.82,
-          "lay": 3.45
+          "back": 2.76,
+          "lay": 3.4
         },
         "DRAW (CD /Ven)": {
           "runnerId": 1965107512340001,
           "back": 3,
-          "lay": 3.65
+          "lay": 3.75
         }
       },
       "metaData": {
@@ -1561,18 +1189,18 @@
       "allRunners": {
         "Rionegro Águilas": {
           "runnerId": 1962464160540001,
-          "back": 2.12,
-          "lay": 2.46
+          "back": 2.08,
+          "lay": 2.48
         },
         "Atlético Bucaramanga": {
           "runnerId": 1962464160570001,
-          "back": 0,
-          "lay": 4.4
+          "back": 3.4,
+          "lay": 4.3
         },
         "DRAW (Rio/Atl)": {
           "runnerId": 1962464160600101,
-          "back": 2.98,
-          "lay": 3.6
+          "back": 3,
+          "lay": 3.75
         }
       },
       "metaData": {

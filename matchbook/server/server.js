@@ -60,7 +60,7 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		'Horse Racing',
+		// 'Horse Racing',
 		'Soccer',
 		// 'Greyhound Racing',
 		// 'American Football',
@@ -1005,7 +1005,14 @@
 
 			const jsonFormat = JSON.parse(body);
 			// CONNECTIONS.print("ignore",jsonFormat); // jsonFormat.balance
-			g_userBalance = Math.floor(jsonFormat.balance * 100) / 100;
+
+			// balance: 7.76815
+			// exposure: 0.59999
+			// free-funds: 7.16816
+			// commission-reserve: 0
+
+			// g_userBalance = Math.floor(jsonFormat.balance * 100) / 100;
+			g_userBalance = Math.floor(jsonFormat["free-funds"] * 100) / 100;
 		});
 	};
 
