@@ -1,380 +1,24 @@
 {
-  "id": 24735152712200,
+  "id": 15,
   "events": {
-    "15:25 Newcastle": {
-      "id": 1965463326590001,
-      "start": "2022-01-20T15:25:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "race-length": "1m 2f 42y",
-      "allRunners": {
-        "6 Vertice": {
-          "runnerId": 1965463327540001,
-          "back": 3.05,
-          "lay": 3.3
-        },
-        "9 Smart Boyo": {
-          "runnerId": 1965463327630001,
-          "back": 3.6,
-          "lay": 3.85
-        },
-        "4 Scots Sonnet": {
-          "runnerId": 1965463327480001,
-          "back": 4.5,
-          "lay": 5.2
-        },
-        "8 Odd Socks Havana": {
-          "runnerId": 1965463327600001,
-          "back": 19,
-          "lay": 27
-        },
-        "3 Powerful Hero": {
-          "runnerId": 1965463327450001,
-          "back": 8.2,
-          "lay": 9.6
-        },
-        "10 Toshack": {
-          "runnerId": 1965463327660001,
-          "back": 21,
-          "lay": 30
-        },
-        "1 Clayton Hall": {
-          "runnerId": 1965463327380001,
-          "back": 30,
-          "lay": 50
-        },
-        "5 Strong Team": {
-          "runnerId": 1965463327510001,
-          "back": 95,
-          "lay": 0
-        },
-        "2 Poco Contante": {
-          "runnerId": 1965463327420001,
-          "back": 100,
-          "lay": 0
-        },
-        "7 Hungry Helen": {
-          "runnerId": 1965463327570001,
-          "back": 100,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "15:30 Ludlow": {
-      "id": 1965463940420001,
-      "start": "2022-01-20T15:30:00.000Z",
+    "Adelaide United Women vs Wellington Phoenix Women": {
+      "id": 1965391809370001,
+      "start": "2022-01-21T07:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "race-length": "2m 7f 171y",
       "allRunners": {
-        "1 Another Venture": {
-          "runnerId": 1965463941190001,
-          "back": 2.8,
-          "lay": 2.82
-        },
-        "8 Hogan's Height": {
-          "runnerId": 1965463941420101,
-          "back": 5,
-          "lay": 5.2
-        },
-        "2 Not That Fuisse": {
-          "runnerId": 1965463941230001,
-          "back": 8,
-          "lay": 8.6
-        },
-        "6 Envious Editor": {
-          "runnerId": 1965463941360001,
-          "back": 10.5,
-          "lay": 11.5
-        },
-        "4 Zamparelli": {
-          "runnerId": 1965463941290001,
-          "back": 11,
-          "lay": 12
-        },
-        "10 Ozzy Thomas": {
-          "runnerId": 1965463941490001,
-          "back": 22,
-          "lay": 25
-        },
-        "3 Unai": {
-          "runnerId": 1965463941260001,
-          "back": 26,
-          "lay": 29
-        },
-        "7 Haven't Time": {
-          "runnerId": 1965463941390001,
-          "back": 26,
-          "lay": 27
-        },
-        "5 Bletchley Castle": {
-          "runnerId": 1965463941330001,
-          "back": 60,
-          "lay": 100
-        },
-        "11 Wonderoftheworld": {
-          "runnerId": 1965463941530001,
-          "back": 65,
-          "lay": 95
-        },
-        "9 Iftiraaq": {
-          "runnerId": 1965463941460001,
-          "back": 30,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "15:50 Wincanton": {
-      "id": 1965463370760001,
-      "start": "2022-01-20T15:50:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "3m 2f 162y",
-      "allRunners": {
-        "7 Favori De Sivola": {
-          "runnerId": 1965463371540001,
-          "back": 4.4,
-          "lay": 4.5
-        },
-        "3 Destinee Royale": {
-          "runnerId": 1965463371420001,
-          "back": 4.5,
-          "lay": 4.8
-        },
-        "4 Legends Gold": {
-          "runnerId": 1965463371450001,
-          "back": 5.8,
-          "lay": 5.9
-        },
-        "8 El Paso Wood": {
-          "runnerId": 1965463371570001,
-          "back": 7.4,
-          "lay": 7.6
-        },
-        "5 Captain Chaos": {
-          "runnerId": 1965463371480001,
-          "back": 11,
-          "lay": 12
-        },
-        "1 Colorado Doc": {
-          "runnerId": 1965463371350001,
-          "back": 11.5,
-          "lay": 12.5
-        },
-        "6 Premier D'troice": {
-          "runnerId": 1965463371510001,
-          "back": 15,
-          "lay": 15.5
-        },
-        "2 Quarenta": {
-          "runnerId": 1965463371390001,
-          "back": 40,
-          "lay": 55
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "15:55 Newcastle": {
-      "id": 1965463328410001,
-      "start": "2022-01-20T15:55:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "1m 2f 42y",
-      "allRunners": {
-        "8 One Punch Terri": {
-          "runnerId": 1965463329300001,
-          "back": 2.48,
-          "lay": 2.5
-        },
-        "2 Lukoutoldmakezebak": {
-          "runnerId": 1965463329090101,
-          "back": 6.2,
-          "lay": 6.6
-        },
-        "9 Rose Of Lancashire": {
-          "runnerId": 1965463329330001,
-          "back": 6.6,
-          "lay": 6.8
-        },
-        "7 Visitant": {
-          "runnerId": 1965463329260101,
-          "back": 10,
-          "lay": 11
-        },
-        "6 Ranger Bob": {
-          "runnerId": 1965463329230001,
-          "back": 10.5,
-          "lay": 11.5
-        },
-        "5 Quoteline Direct": {
-          "runnerId": 1965463329190101,
-          "back": 20,
-          "lay": 22
-        },
-        "3 New Look": {
-          "runnerId": 1965463329130001,
-          "back": 29,
-          "lay": 34
-        },
-        "4 Oasis Law": {
-          "runnerId": 1965463329160001,
-          "back": 30,
-          "lay": 90
-        },
-        "1 Allerthorpe": {
-          "runnerId": 1965463329060001,
-          "back": 85,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "16:00 Ludlow": {
-      "id": 1965463942020001,
-      "start": "2022-01-20T16:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "1m 6f 7y",
-      "allRunners": {
-        "2 Carlo Du Berlais": {
-          "runnerId": 1965463942890101,
-          "back": 3.45,
-          "lay": 3.5
-        },
-        "8 Sea The Clouds": {
-          "runnerId": 1965463943070001,
-          "back": 4.6,
-          "lay": 4.7
-        },
-        "1 Tchoupinminzac": {
-          "runnerId": 1965463942860001,
-          "back": 6.8,
-          "lay": 7.2
-        },
-        "10 Robiola": {
-          "runnerId": 1965463943120001,
-          "back": 6.8,
-          "lay": 7.2
-        },
-        "6 Our Nobby": {
-          "runnerId": 1965463943010101,
-          "back": 16,
-          "lay": 16.5
-        },
-        "3 Gabriel's Getaway": {
-          "runnerId": 1965463942920001,
-          "back": 19.5,
-          "lay": 21
-        },
-        "11 Kindgirl": {
-          "runnerId": 1965463943150001,
-          "back": 19.5,
-          "lay": 23
-        },
-        "4 Gilwen Gus": {
-          "runnerId": 1965463942950001,
-          "back": 30,
-          "lay": 65
-        },
-        "5 Just Deegeeteebee": {
-          "runnerId": 1965463942980101,
-          "back": 30,
-          "lay": 65
-        },
-        "7 Prince Mtm": {
-          "runnerId": 1965463943040001,
-          "back": 48,
+        "Adelaide United Women": {
+          "runnerId": 1965391811030001,
+          "back": 0,
           "lay": 0
         },
-        "9 Mythical Fortune": {
-          "runnerId": 1965463943090101,
-          "back": 40,
+        "Wellington Phoenix Women": {
+          "runnerId": 1965391811060001,
+          "back": 0,
           "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "16:20 Wincanton": {
-      "id": 1965463371980001,
-      "start": "2022-01-20T16:20:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "1m 7f 50y",
-      "allRunners": {
-        "3 Twin Power": {
-          "runnerId": 1965463372690101,
-          "back": 3.4,
-          "lay": 3.45
         },
-        "8 Rosy Redrum": {
-          "runnerId": 1965463372850001,
-          "back": 4.3,
-          "lay": 4.4
-        },
-        "5 Getaway Tom": {
-          "runnerId": 1965463372750101,
-          "back": 4.7,
-          "lay": 4.9
-        },
-        "6 Masked Spirit": {
-          "runnerId": 1965463372780001,
-          "back": 8.6,
-          "lay": 8.8
-        },
-        "2 Thank You Blue": {
-          "runnerId": 1965463372660101,
-          "back": 10,
-          "lay": 10.5
-        },
-        "7 Nous Esperons": {
-          "runnerId": 1965463372810101,
-          "back": 18,
-          "lay": 20
-        },
-        "1 Claude Almighty": {
-          "runnerId": 1965463372630001,
-          "back": 34,
-          "lay": 230
-        },
-        "4 Kentford Swansong": {
-          "runnerId": 1965463372720101,
+        "DRAW (Ade/Wel)": {
+          "runnerId": 1965391811090101,
           "back": 0,
           "lay": 0
         }
@@ -382,345 +26,3658 @@
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       }
     },
-    "16:30 Newcastle": {
-      "id": 1965463329760001,
-      "start": "2022-01-20T16:30:00.000Z",
+    "Japan Women vs Myanmar Women": {
+      "id": 1967427243930051,
+      "start": "2022-01-21T08:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "race-length": "1m 0f 5y",
       "allRunners": {
-        "4 Sparka": {
-          "runnerId": 1965463330190001,
-          "back": 2.44,
-          "lay": 2.52
+        "Japan Women": {
+          "runnerId": 1967427244960051,
+          "back": 0,
+          "lay": 0
         },
-        "2 Cephalus": {
-          "runnerId": 1965463330120101,
-          "back": 3.15,
-          "lay": 3.2
+        "Myanmar Women": {
+          "runnerId": 1967427245000151,
+          "back": 0,
+          "lay": 0
         },
-        "1 Truely Aclaimed": {
-          "runnerId": 1965463330090001,
-          "back": 4,
-          "lay": 4.1
-        },
-        "3 Bungle Bay": {
-          "runnerId": 1965463330160001,
-          "back": 27,
-          "lay": 48
+        "DRAW (Jap/Mya)": {
+          "runnerId": 1967427245040151,
+          "back": 0,
+          "lay": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       }
     },
-    "17:00 Newcastle": {
-      "id": 1965463330470001,
-      "start": "2022-01-20T17:00:00.000Z",
+    "Wellington Phoenix vs Western United FC": {
+      "id": 1964606718220001,
+      "start": "2022-01-21T08:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "race-length": "1m 0f 5y",
       "allRunners": {
-        "1 Going Underground": {
-          "runnerId": 1965463331100001,
-          "back": 4.8,
+        "Wellington Phoenix": {
+          "runnerId": 1964606721460101,
+          "back": 2.92,
+          "lay": 3
+        },
+        "Western United FC": {
+          "runnerId": 1964606721500001,
+          "back": 2.52,
+          "lay": 2.6
+        },
+        "DRAW (Wel/Wes)": {
+          "runnerId": 1964606721530101,
+          "back": 3.55,
+          "lay": 3.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Olympique de Medea U21 vs JS Saoura U21": {
+      "id": 1967332979900051,
+      "start": "2022-01-21T09:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Olympique de Medea U21": {
+          "runnerId": 1967332981710151,
+          "back": 0,
+          "lay": 0
+        },
+        "JS Saoura U21": {
+          "runnerId": 1967332981750051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Oly/JS )": {
+          "runnerId": 1967332981790051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Bnei Fureidis FC vs Hapoel Ironi Baqa al-Gharbiyye": {
+      "id": 1965545599540001,
+      "start": "2022-01-21T09:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Bnei Fureidis FC": {
+          "runnerId": 1965545600400001,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Ironi Baqa al-Gharbiyye": {
+          "runnerId": 1965545600450001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1965545600490001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Bnei Eilat vs Hapoel Ashkelon": {
+      "id": 1966343363890001,
+      "start": "2022-01-21T09:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Bnei Eilat": {
+          "runnerId": 1966343365060001,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Ashkelon": {
+          "runnerId": 1966343365100001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Bne/Hap)": {
+          "runnerId": 1966343365130101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "A.S. Nordia Jerusalem vs Hapoel Kfar Shelem": {
+      "id": 1965643049810001,
+      "start": "2022-01-21T10:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "A.S. Nordia Jerusalem": {
+          "runnerId": 1965643051580101,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Kfar Shelem": {
+          "runnerId": 1965643051620001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (A.S/Hap)": {
+          "runnerId": 1965643051670001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Australia Women vs Indonesia Women": {
+      "id": 1967427248910051,
+      "start": "2022-01-21T10:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Australia Women": {
+          "runnerId": 1967427249600051,
+          "back": 0,
+          "lay": 0
+        },
+        "Indonesia Women": {
+          "runnerId": 1967427249640051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Aus/Ind)": {
+          "runnerId": 1967427249680051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Bikat Hayarden vs Maccabi Kabilio Jaffa": {
+      "id": 1965643022760001,
+      "start": "2022-01-21T10:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Bikat Hayarden": {
+          "runnerId": 1965643024560001,
+          "back": 0,
+          "lay": 0
+        },
+        "Maccabi Kabilio Jaffa": {
+          "runnerId": 1965643024600001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Mac)": {
+          "runnerId": 1965643024630101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Bnei Zalafa vs SC Haifa Robbie Shapira": {
+      "id": 1965640519390101,
+      "start": "2022-01-21T10:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Bnei Zalafa": {
+          "runnerId": 1965640520120001,
+          "back": 0,
+          "lay": 0
+        },
+        "SC Haifa Robbie Shapira": {
+          "runnerId": 1965640520150001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/SC )": {
+          "runnerId": 1965640520180001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Ironi Kuseife vs Dimona SC": {
+      "id": 1965643041860001,
+      "start": "2022-01-21T10:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Ironi Kuseife": {
+          "runnerId": 1965643043480001,
+          "back": 0,
+          "lay": 0
+        },
+        "Dimona SC": {
+          "runnerId": 1965643043510101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Iro/Dim)": {
+          "runnerId": 1965643043550001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maccabi Tamra vs Maccabi Tzur Shalom": {
+      "id": 1965545596810001,
+      "start": "2022-01-21T10:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maccabi Tamra": {
+          "runnerId": 1965545597760101,
+          "back": 0,
+          "lay": 0
+        },
+        "Maccabi Tzur Shalom": {
+          "runnerId": 1965545597790101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Mac)": {
+          "runnerId": 1965545597830001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Iksal Imad vs Hapoel Herzliya": {
+      "id": 1965640536740001,
+      "start": "2022-01-21T10:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Iksal Imad": {
+          "runnerId": 1965640537550101,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Herzliya": {
+          "runnerId": 1965640537590101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1965640537630001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Ironi Tiberias vs Ironi Nesher": {
+      "id": 1965640553450001,
+      "start": "2022-01-21T10:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Ironi Tiberias": {
+          "runnerId": 1965640554240101,
+          "back": 0,
+          "lay": 0
+        },
+        "Ironi Nesher": {
+          "runnerId": 1965640554280101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Iro/Iro)": {
+          "runnerId": 1965640554320001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maccabi Ashdod FC vs FC Holon Yermiyahu": {
+      "id": 1965726403090001,
+      "start": "2022-01-21T10:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maccabi Ashdod FC": {
+          "runnerId": 1965726404770001,
+          "back": 0,
+          "lay": 0
+        },
+        "FC Holon Yermiyahu": {
+          "runnerId": 1965726404800001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/FC )": {
+          "runnerId": 1965726404830101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maccabi Herzliya vs Hapoel Marmorek": {
+      "id": 1966287050800001,
+      "start": "2022-01-21T10:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maccabi Herzliya": {
+          "runnerId": 1966287051860101,
+          "back": 4.7,
+          "lay": 5.8
+        },
+        "Hapoel Marmorek": {
+          "runnerId": 1966287051900001,
+          "back": 1.71,
+          "lay": 1.95
+        },
+        "DRAW (Mac/Hap)": {
+          "runnerId": 1966287051940001,
+          "back": 3.5,
+          "lay": 4.3
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Azur vs Shimshon Kafr Qasim": {
+      "id": 1965643030380001,
+      "start": "2022-01-21T11:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Azur": {
+          "runnerId": 1965643032080101,
+          "back": 0,
+          "lay": 0
+        },
+        "Shimshon Kafr Qasim": {
+          "runnerId": 1965643032120101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Shi)": {
+          "runnerId": 1965643032160001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maccabi Yavne vs Shimshon Tel Aviv": {
+      "id": 1966275787680001,
+      "start": "2022-01-21T11:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maccabi Yavne": {
+          "runnerId": 1966275788800001,
+          "back": 0,
+          "lay": 0
+        },
+        "Shimshon Tel Aviv": {
+          "runnerId": 1966275788830101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Shi)": {
+          "runnerId": 1966275788870101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "South Korea vs Moldova": {
+      "id": 1963176644540001,
+      "start": "2022-01-21T11:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "South Korea": {
+          "runnerId": 1963176646410001,
+          "back": 1.1,
+          "lay": 1.33
+        },
+        "Moldova": {
+          "runnerId": 1963176646440101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Sou/Mol)": {
+          "runnerId": 1963176646480101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Kaukab vs MS Tira": {
+      "id": 1965640548310001,
+      "start": "2022-01-21T11:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Kaukab": {
+          "runnerId": 1965640549110101,
+          "back": 0,
+          "lay": 0
+        },
+        "MS Tira": {
+          "runnerId": 1965640549150001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/MS )": {
+          "runnerId": 1965640549190001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maccabi Shaaraim vs Hapoel Bnei Lod": {
+      "id": 1965643059130001,
+      "start": "2022-01-21T11:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maccabi Shaaraim": {
+          "runnerId": 1965643060850101,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Bnei Lod": {
+          "runnerId": 1965643060880101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mac/Hap)": {
+          "runnerId": 1965643060920001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "MS Tzeirey Taibe vs MS Tzeirey Kfar Kana": {
+      "id": 1966290704740001,
+      "start": "2022-01-21T12:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "MS Tzeirey Taibe": {
+          "runnerId": 1966290706710001,
+          "back": 0,
+          "lay": 0
+        },
+        "MS Tzeirey Kfar Kana": {
+          "runnerId": 1966290706740001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (MS /MS )": {
+          "runnerId": 1966290706780001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Thailand Women vs Philippines Women": {
+      "id": 1967427254350051,
+      "start": "2022-01-21T12:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Thailand Women": {
+          "runnerId": 1967427255160151,
+          "back": 0,
+          "lay": 0
+        },
+        "Philippines Women": {
+          "runnerId": 1967427255200051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Tha/Phi)": {
+          "runnerId": 1967427255240051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Bourj FC vs Sporting": {
+      "id": 1967297623490051,
+      "start": "2022-01-21T12:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Bourj FC": {
+          "runnerId": 1967297624470051,
+          "back": 0,
+          "lay": 0
+        },
+        "Sporting": {
+          "runnerId": 1967297624500051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Spo)": {
+          "runnerId": 1967297624530151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Tadamon Sour vs Tripoli SC": {
+      "id": 1967334069380051,
+      "start": "2022-01-21T12:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Tadamon Sour": {
+          "runnerId": 1967334069680051,
+          "back": 0,
+          "lay": 0
+        },
+        "Tripoli SC": {
+          "runnerId": 1967334069720051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Tad/Tri)": {
+          "runnerId": 1967334069760051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al Baten vs Al-Hilal Riyadh": {
+      "id": 1966447761100001,
+      "start": "2022-01-21T12:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al Baten": {
+          "runnerId": 1966447763620001,
+          "back": 0,
+          "lay": 0
+        },
+        "Al-Hilal Riyadh": {
+          "runnerId": 1966447763650001,
+          "back": 1.35,
+          "lay": 1.61
+        },
+        "DRAW (Al /Al-)": {
+          "runnerId": 1966447763680101,
+          "back": 4.4,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Bueine vs Hapoel Bnei Arrara Ara": {
+      "id": 1965640527960001,
+      "start": "2022-01-21T12:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Bueine": {
+          "runnerId": 1965640528780001,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Bnei Arrara Ara": {
+          "runnerId": 1965640528810101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1965640528850001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Ismaily vs National Bank": {
+      "id": 1967334155310051,
+      "start": "2022-01-21T12:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Ismaily": {
+          "runnerId": 1967334155660051,
+          "back": 1.97,
+          "lay": 2.26
+        },
+        "National Bank": {
+          "runnerId": 1967334155700051,
+          "back": 4,
+          "lay": 4.8
+        },
+        "DRAW (Ism/Nat)": {
+          "runnerId": 1967334155740151,
+          "back": 3.05,
+          "lay": 3.75
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Smouha SC vs El Gounah": {
+      "id": 1967334158900051,
+      "start": "2022-01-21T12:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Smouha SC": {
+          "runnerId": 1967334159200051,
+          "back": 1.8,
+          "lay": 2.04
+        },
+        "El Gounah": {
+          "runnerId": 1967334159240051,
+          "back": 4.6,
+          "lay": 5.6
+        },
+        "DRAW (Smo/El )": {
+          "runnerId": 1967334159270151,
+          "back": 3.2,
+          "lay": 3.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Taawoun Buraidah vs Al-Nassr Riyadh": {
+      "id": 1966564077240001,
+      "start": "2022-01-21T12:40:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Taawoun Buraidah": {
+          "runnerId": 1966564079720101,
+          "back": 3.25,
+          "lay": 4.1
+        },
+        "Al-Nassr Riyadh": {
+          "runnerId": 1966564079760001,
+          "back": 1.93,
+          "lay": 2.26
+        },
+        "DRAW (Al-/Al-)": {
+          "runnerId": 1966564079790101,
+          "back": 3.65,
+          "lay": 4.7
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Dhamk vs Al Ahli Jeddah": {
+      "id": 1966447775100001,
+      "start": "2022-01-21T12:55:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Dhamk": {
+          "runnerId": 1966447777670001,
+          "back": 2.76,
+          "lay": 3.45
+        },
+        "Al Ahli Jeddah": {
+          "runnerId": 1966447777700001,
+          "back": 2.36,
+          "lay": 2.84
+        },
+        "DRAW (Dha/Al )": {
+          "runnerId": 1966447777730101,
+          "back": 0,
+          "lay": 3.95
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Bnei Yehuda vs FC Kafr Qasim": {
+      "id": 1965663220140001,
+      "start": "2022-01-21T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Bnei Yehuda": {
+          "runnerId": 1965663222330001,
+          "back": 2.28,
+          "lay": 2.62
+        },
+        "FC Kafr Qasim": {
+          "runnerId": 1965663222360001,
+          "back": 3.3,
+          "lay": 3.95
+        },
+        "DRAW (Bne/FC )": {
+          "runnerId": 1965663222390101,
+          "back": 2.94,
+          "lay": 3.55
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Acre vs Hapoel Umm al-Fahm": {
+      "id": 1965663248740001,
+      "start": "2022-01-21T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Acre": {
+          "runnerId": 1965663253060101,
+          "back": 2.7,
+          "lay": 0
+        },
+        "Hapoel Umm al-Fahm": {
+          "runnerId": 1965663253100001,
+          "back": 2.74,
+          "lay": 0
+        },
+        "DRAW (Hap/Hap)": {
+          "runnerId": 1965663253130101,
+          "back": 0,
+          "lay": 3.3
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Ironi Rishon LeZion vs Agudat Sport Ashdod": {
+      "id": 1965663239460001,
+      "start": "2022-01-21T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Ironi Rishon LeZion": {
+          "runnerId": 1965663242240001,
+          "back": 3.15,
+          "lay": 3.9
+        },
+        "Agudat Sport Ashdod": {
+          "runnerId": 1965663242290001,
+          "back": 2.3,
+          "lay": 2.66
+        },
+        "DRAW (Hap/Agu)": {
+          "runnerId": 1965663242350001,
+          "back": 2.86,
+          "lay": 3.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hapoel Nir Ramat HaSharon vs Maccabi Ahi Nazareth": {
+      "id": 1965663255970001,
+      "start": "2022-01-21T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hapoel Nir Ramat HaSharon": {
+          "runnerId": 1965663258150101,
+          "back": 2.54,
+          "lay": 3.05
+        },
+        "Maccabi Ahi Nazareth": {
+          "runnerId": 1965663258190001,
+          "back": 2.88,
+          "lay": 3.5
+        },
+        "DRAW (Hap/Mac)": {
+          "runnerId": 1965663258230101,
+          "back": 2.82,
+          "lay": 3.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maccabi Bnei Raina vs Hapoel Kfar Saba": {
+      "id": 1965663230630001,
+      "start": "2022-01-21T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maccabi Bnei Raina": {
+          "runnerId": 1965663232800101,
+          "back": 2.7,
+          "lay": 3.3
+        },
+        "Hapoel Kfar Saba": {
+          "runnerId": 1965663232840001,
+          "back": 2.64,
+          "lay": 3.25
+        },
+        "DRAW (Mac/Hap)": {
+          "runnerId": 1965663232870101,
+          "back": 2.84,
+          "lay": 3.45
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Mbeya Kwanza vs KMC": {
+      "id": 1966502260180001,
+      "start": "2022-01-21T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Mbeya Kwanza": {
+          "runnerId": 1966502262330001,
+          "back": 0,
+          "lay": 0
+        },
+        "KMC": {
+          "runnerId": 1966502262360001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mbe/KMC)": {
+          "runnerId": 1966502262400001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Salibikhaet vs Burgan SC": {
+      "id": 1967334282180051,
+      "start": "2022-01-21T13:25:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Salibikhaet": {
+          "runnerId": 1967334282820051,
+          "back": 0,
+          "lay": 0
+        },
+        "Burgan SC": {
+          "runnerId": 1967334282860051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Bur)": {
+          "runnerId": 1967334282900051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "CS Constantine vs USM Alger": {
+      "id": 1965669217890001,
+      "start": "2022-01-21T13:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "CS Constantine": {
+          "runnerId": 1965669220970101,
+          "back": 1.98,
+          "lay": 2.32
+        },
+        "USM Alger": {
+          "runnerId": 1965669221010001,
+          "back": 4,
           "lay": 4.9
         },
-        "3 Balqaa": {
-          "runnerId": 1965463331160101,
-          "back": 4.8,
+        "DRAW (CS /USM)": {
+          "runnerId": 1965669221040101,
+          "back": 2.9,
+          "lay": 3.6
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "East Riffa vs Al Hidd": {
+      "id": 1967440147970051,
+      "start": "2022-01-21T13:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "East Riffa": {
+          "runnerId": 1967440149590051,
+          "back": 2.32,
+          "lay": 2.72
+        },
+        "Al Hidd": {
+          "runnerId": 1967440149620151,
+          "back": 3.05,
+          "lay": 3.65
+        },
+        "DRAW (Eas/Al )": {
+          "runnerId": 1967440149660051,
+          "back": 3,
+          "lay": 3.65
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Brighton & Hove Albion U23 vs Manchester United U23": {
+      "id": 1964803400690001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Brighton & Hove Albion U23": {
+          "runnerId": 1964803402340101,
+          "back": 2.36,
+          "lay": 2.74
+        },
+        "Manchester United U23": {
+          "runnerId": 1964803402380001,
+          "back": 2.48,
+          "lay": 2.92
+        },
+        "DRAW (Bri/Man)": {
+          "runnerId": 1964803402410101,
+          "back": 3.8,
+          "lay": 4.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "CR Belouizdad vs MC Oran": {
+      "id": 1965669231100001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "CR Belouizdad": {
+          "runnerId": 1965669233980001,
+          "back": 1.48,
+          "lay": 1.73
+        },
+        "MC Oran": {
+          "runnerId": 1965669234020001,
+          "back": 7.4,
+          "lay": 10
+        },
+        "DRAW (CR /MC )": {
+          "runnerId": 1965669234060001,
+          "back": 3.45,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "ES Sétif vs RC Arbaa": {
+      "id": 1965669241180001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "ES Sétif": {
+          "runnerId": 1965669244380101,
+          "back": 1.3,
+          "lay": 1.55
+        },
+        "RC Arbaa": {
+          "runnerId": 1965669244420101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (ES /RC )": {
+          "runnerId": 1965669244470001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Jamshedpur FC vs Mumbai City": {
+      "id": 1966450218490001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Jamshedpur FC": {
+          "runnerId": 1966450219420001,
+          "back": 0,
+          "lay": 0
+        },
+        "Mumbai City": {
+          "runnerId": 1966450219450101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Jam/Mum)": {
+          "runnerId": 1966450219490001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "NC Magra vs ASO Chlef": {
+      "id": 1965669252210001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "NC Magra": {
+          "runnerId": 1965669255070001,
+          "back": 2,
+          "lay": 2.32
+        },
+        "ASO Chlef": {
+          "runnerId": 1965669255100101,
+          "back": 0,
+          "lay": 5.3
+        },
+        "DRAW (NC /ASO)": {
+          "runnerId": 1965669255140001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Olympique de Médéa vs JS Saoura": {
+      "id": 1965669275540001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Olympique de Médéa": {
+          "runnerId": 1965669278420001,
+          "back": 0,
+          "lay": 0
+        },
+        "JS Saoura": {
+          "runnerId": 1965669278450101,
+          "back": 0,
+          "lay": 2.6
+        },
+        "DRAW (Oly/JS )": {
+          "runnerId": 1965669278490001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Paradou AC vs US Biskra": {
+      "id": 1965669285240001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Paradou AC": {
+          "runnerId": 1965669288110101,
+          "back": 1.67,
+          "lay": 1.93
+        },
+        "US Biskra": {
+          "runnerId": 1965669288140101,
+          "back": 6,
+          "lay": 7.6
+        },
+        "DRAW (Par/US )": {
+          "runnerId": 1965669288180001,
+          "back": 3.05,
+          "lay": 3.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "RC Relizane vs NA Hussein Dey": {
+      "id": 1965669294330001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "RC Relizane": {
+          "runnerId": 1965669297040001,
+          "back": 0,
+          "lay": 0
+        },
+        "NA Hussein Dey": {
+          "runnerId": 1965669297070101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (RC /NA )": {
+          "runnerId": 1965669297110001,
+          "back": 2.84,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "South Korea Women vs Vietnam Women": {
+      "id": 1967427259170051,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "South Korea Women": {
+          "runnerId": 1967427259920051,
+          "back": 0,
+          "lay": 0
+        },
+        "Vietnam Women": {
+          "runnerId": 1967427259950151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Sou/Vie)": {
+          "runnerId": 1967427259990051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "WA Tlemcen vs JS Kabylie": {
+      "id": 1965669305220001,
+      "start": "2022-01-21T14:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "WA Tlemcen": {
+          "runnerId": 1965669308270101,
+          "back": 3.95,
+          "lay": 4.9
+        },
+        "JS Kabylie": {
+          "runnerId": 1965669308310001,
+          "back": 2,
+          "lay": 2.36
+        },
+        "DRAW (WA /JS )": {
+          "runnerId": 1965669308350001,
+          "back": 2.94,
+          "lay": 3.6
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Nejmeh vs Shabab Sahel": {
+      "id": 1967334073060051,
+      "start": "2022-01-21T14:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Nejmeh": {
+          "runnerId": 1967334073440051,
+          "back": 0,
+          "lay": 0
+        },
+        "Shabab Sahel": {
+          "runnerId": 1967334073470151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Sha)": {
+          "runnerId": 1967334073510151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al Ahly vs Al-Mokawloon al-Arab": {
+      "id": 1967615164220051,
+      "start": "2022-01-21T15:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al Ahly": {
+          "runnerId": 1967615165100151,
+          "back": 2.84,
+          "lay": 3.25
+        },
+        "Al-Mokawloon al-Arab": {
+          "runnerId": 1967615165140051,
+          "back": 2.56,
+          "lay": 2.92
+        },
+        "DRAW (Al /Al-)": {
+          "runnerId": 1967615165170051,
+          "back": 2.96,
+          "lay": 3.65
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Riffa vs Budaiya": {
+      "id": 1965640260640001,
+      "start": "2022-01-21T15:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Riffa": {
+          "runnerId": 1965640263710001,
+          "back": 1.12,
+          "lay": 1.34
+        },
+        "Budaiya": {
+          "runnerId": 1965640263750001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Bud)": {
+          "runnerId": 1965640263780001,
+          "back": 6.6,
+          "lay": 8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Heartland vs Enugu Rangers": {
+      "id": 1965766728970001,
+      "start": "2022-01-21T15:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Heartland": {
+          "runnerId": 1965766731260101,
+          "back": 0,
+          "lay": 0
+        },
+        "Enugu Rangers": {
+          "runnerId": 1965766731300001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Hea/Enu)": {
+          "runnerId": 1965766731330101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Vllaznia Shkodër vs KS Egnatia Rrogozhinë": {
+      "id": 1965892053960001,
+      "start": "2022-01-21T15:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Vllaznia Shkodër": {
+          "runnerId": 1965892054920001,
+          "back": 1.41,
+          "lay": 0
+        },
+        "KS Egnatia Rrogozhinë": {
+          "runnerId": 1965892054950001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Vll/KS )": {
+          "runnerId": 1965892054990001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Dodoma FC vs Kagera Sugar": {
+      "id": 1966779520990051,
+      "start": "2022-01-21T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Dodoma FC": {
+          "runnerId": 1966779522780051,
+          "back": 0,
+          "lay": 0
+        },
+        "Kagera Sugar": {
+          "runnerId": 1966779522810151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Dod/Kag)": {
+          "runnerId": 1966779522850051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "MC Alger vs HB Chelghoum Laid": {
+      "id": 1965669262780001,
+      "start": "2022-01-21T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "MC Alger": {
+          "runnerId": 1965669265670101,
+          "back": 1.42,
+          "lay": 1.67
+        },
+        "HB Chelghoum Laid": {
+          "runnerId": 1965669265710001,
+          "back": 8.2,
+          "lay": 0
+        },
+        "DRAW (MC /HB )": {
+          "runnerId": 1965669265740001,
+          "back": 3.65,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Real de Banjul vs Team Rhino FC": {
+      "id": 1967577402920051,
+      "start": "2022-01-21T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Real de Banjul": {
+          "runnerId": 1967577403650151,
+          "back": 0,
+          "lay": 0
+        },
+        "Team Rhino FC": {
+          "runnerId": 1967577403690051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Rea/Tea)": {
+          "runnerId": 1967577403730051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Samsunspor vs Kocaelispor": {
+      "id": 1965656206760001,
+      "start": "2022-01-21T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Samsunspor": {
+          "runnerId": 1965656211000101,
+          "back": 1.52,
+          "lay": 1.68
+        },
+        "Kocaelispor": {
+          "runnerId": 1965656211040001,
+          "back": 6.2,
+          "lay": 8
+        },
+        "DRAW (Sam/Koc)": {
+          "runnerId": 1965656211080001,
+          "back": 3.9,
+          "lay": 4.9
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Hala Muharraq vs Manama Club": {
+      "id": 1967440150500051,
+      "start": "2022-01-21T16:20:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Hala Muharraq": {
+          "runnerId": 1967440152070051,
+          "back": 0,
+          "lay": 5.6
+        },
+        "Manama Club": {
+          "runnerId": 1967440152100151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Man)": {
+          "runnerId": 1967440152140051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al Salmiya vs Qadsia SC": {
+      "id": 1967615267250051,
+      "start": "2022-01-21T16:25:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al Salmiya": {
+          "runnerId": 1967615268140051,
+          "back": 3.2,
+          "lay": 3.95
+        },
+        "Qadsia SC": {
+          "runnerId": 1967615268170151,
+          "back": 0,
+          "lay": 2.36
+        },
+        "DRAW (Al /Qad)": {
+          "runnerId": 1967615268210051,
+          "back": 3.45,
+          "lay": 4.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Al-Ittihad Jeddah vs Al-Faisaly Harmah": {
+      "id": 1966729913010051,
+      "start": "2022-01-21T17:10:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Al-Ittihad Jeddah": {
+          "runnerId": 1966729915590151,
+          "back": 1.5,
+          "lay": 1.78
+        },
+        "Al-Faisaly Harmah": {
+          "runnerId": 1966729915630151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/Al-)": {
+          "runnerId": 1966729915680051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Fortuna Düsseldorf vs 1. FC Nürnberg": {
+      "id": 1961617704920001,
+      "start": "2022-01-21T17:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Fortuna Düsseldorf": {
+          "runnerId": 1961617706080001,
+          "back": 2.46,
+          "lay": 2.6
+        },
+        "1. FC Nürnberg": {
+          "runnerId": 1961617706110001,
+          "back": 2.98,
+          "lay": 3.2
+        },
+        "DRAW (For/1. )": {
+          "runnerId": 1961617706150001,
+          "back": 3.45,
+          "lay": 3.75
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hamburger SV vs FC St. Pauli": {
+      "id": 1961617690760001,
+      "start": "2022-01-21T17:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hamburger SV": {
+          "runnerId": 1961617691910101,
+          "back": 2.22,
+          "lay": 2.3
+        },
+        "FC St. Pauli": {
+          "runnerId": 1961617691950001,
+          "back": 3.2,
+          "lay": 3.45
+        },
+        "DRAW (Ham/FC )": {
+          "runnerId": 1961617691990001,
+          "back": 3.85,
+          "lay": 4.1
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Borussia Dortmund II vs SC Freiburg II": {
+      "id": 1965914969570001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Borussia Dortmund II": {
+          "runnerId": 1965914971670101,
+          "back": 1.77,
+          "lay": 2.02
+        },
+        "SC Freiburg II": {
+          "runnerId": 1965914971710101,
+          "back": 4.1,
           "lay": 5
         },
-        "5 Saulire Star": {
-          "runnerId": 1965463331220001,
-          "back": 6,
+        "DRAW (Bor/SC )": {
+          "runnerId": 1965914971750101,
+          "back": 3.6,
+          "lay": 4.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Cholet vs FC Bourg-Péronnas": {
+      "id": 1965898519130001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Cholet": {
+          "runnerId": 1965898522440001,
+          "back": 3.4,
+          "lay": 4.4
+        },
+        "FC Bourg-Péronnas": {
+          "runnerId": 1965898522480001,
+          "back": 2.02,
+          "lay": 2.4
+        },
+        "DRAW (Cho/FC )": {
+          "runnerId": 1965898522510001,
+          "back": 3.15,
+          "lay": 3.95
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Crato EC vs AD Iguatu": {
+      "id": 1966780466640051,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Crato EC": {
+          "runnerId": 1966780469470051,
+          "back": 0,
+          "lay": 0
+        },
+        "AD Iguatu": {
+          "runnerId": 1966780469500051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Cra/AD )": {
+          "runnerId": 1966780469530151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "FC Arges Pitesti vs Dinamo Bucuresti": {
+      "id": 1965918398010001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "FC Arges Pitesti": {
+          "runnerId": 1965918401110001,
+          "back": 1.8,
+          "lay": 2.02
+        },
+        "Dinamo Bucuresti": {
+          "runnerId": 1965918401150001,
+          "back": 4.6,
+          "lay": 5.6
+        },
+        "DRAW (FC /Din)": {
+          "runnerId": 1965918401180101,
+          "back": 3.2,
+          "lay": 3.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "FC Atlético Cearense vs Caucaia EC": {
+      "id": 1966780442760051,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "FC Atlético Cearense": {
+          "runnerId": 1966780446050051,
+          "back": 0,
+          "lay": 0
+        },
+        "Caucaia EC": {
+          "runnerId": 1966780446080151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (FC /Cau)": {
+          "runnerId": 1966780446120151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "FC Bastia-Borgo vs CS Sedan Ardennes": {
+      "id": 1965898505370001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "FC Bastia-Borgo": {
+          "runnerId": 1965898508700001,
+          "back": 2.62,
+          "lay": 3.05
+        },
+        "CS Sedan Ardennes": {
+          "runnerId": 1965898508740001,
+          "back": 2.78,
+          "lay": 3.3
+        },
+        "DRAW (FC /CS )": {
+          "runnerId": 1965898508770101,
+          "back": 2.9,
+          "lay": 3.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "FC Villefranche vs Stade Lavallois": {
+      "id": 1965898494540001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "FC Villefranche": {
+          "runnerId": 1965898497870001,
+          "back": 2.14,
+          "lay": 2.5
+        },
+        "Stade Lavallois": {
+          "runnerId": 1965898497910001,
+          "back": 3.6,
+          "lay": 4.4
+        },
+        "DRAW (FC /Sta)": {
+          "runnerId": 1965898497940101,
+          "back": 2.86,
+          "lay": 3.55
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Ferroviário AC vs ADRC Icasa": {
+      "id": 1966780450910051,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Ferroviário AC": {
+          "runnerId": 1966780453970051,
+          "back": 1.3,
+          "lay": 0
+        },
+        "ADRC Icasa": {
+          "runnerId": 1966780454000051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Fer/ADR)": {
+          "runnerId": 1966780454030151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Le Mans FC vs LB Châteauroux": {
+      "id": 1965898547870001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Le Mans FC": {
+          "runnerId": 1965898551350101,
+          "back": 2.92,
+          "lay": 3.6
+        },
+        "LB Châteauroux": {
+          "runnerId": 1965898551390001,
+          "back": 2.62,
+          "lay": 3.2
+        },
+        "DRAW (Le /LB )": {
+          "runnerId": 1965898551430001,
+          "back": 2.62,
+          "lay": 3.25
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Orleans vs US Boulogne": {
+      "id": 1965898468780001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Orleans": {
+          "runnerId": 1965898472500101,
+          "back": 1.73,
+          "lay": 2
+        },
+        "US Boulogne": {
+          "runnerId": 1965898472540001,
+          "back": 4.8,
           "lay": 6.2
         },
-        "7 Cosa Sara": {
-          "runnerId": 1965463331280101,
-          "back": 7.8,
-          "lay": 8.2
+        "DRAW (Orl/US )": {
+          "runnerId": 1965898472570101,
+          "back": 3.25,
+          "lay": 4.1
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Red Star FC 93 vs Chambly Oise FC": {
+      "id": 1965898482460001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Red Star FC 93": {
+          "runnerId": 1965898485910001,
+          "back": 0,
+          "lay": 0
         },
-        "2 Central City": {
-          "runnerId": 1965463331130001,
+        "Chambly Oise FC": {
+          "runnerId": 1965898485950001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Red/Cha)": {
+          "runnerId": 1965898485990001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Stade Briochin vs Créteil": {
+      "id": 1965898557110001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Stade Briochin": {
+          "runnerId": 1965898560470101,
+          "back": 1.9,
+          "lay": 2.24
+        },
+        "Créteil": {
+          "runnerId": 1965898560510001,
+          "back": 4,
+          "lay": 5.2
+        },
+        "DRAW (Sta/Cré)": {
+          "runnerId": 1965898560550001,
+          "back": 3.05,
+          "lay": 3.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "US Avranches vs Sète": {
+      "id": 1965898531240001,
+      "start": "2022-01-21T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "US Avranches": {
+          "runnerId": 1965898534580001,
+          "back": 0,
+          "lay": 0
+        },
+        "Sète": {
+          "runnerId": 1965898534620001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (US /Sèt)": {
+          "runnerId": 1965898534650101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "De Graafschap vs Almere City": {
+      "id": 1965057642650001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "De Graafschap": {
+          "runnerId": 1965057644340101,
+          "back": 1.58,
+          "lay": 1.78
+        },
+        "Almere City": {
+          "runnerId": 1965057644370101,
+          "back": 5.1,
+          "lay": 6.4
+        },
+        "DRAW (De /Alm)": {
+          "runnerId": 1965057644410001,
+          "back": 4.1,
+          "lay": 5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Den Bosch vs FC Eindhoven": {
+      "id": 1964892925870001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Den Bosch": {
+          "runnerId": 1964892927170101,
+          "back": 3.65,
+          "lay": 4.5
+        },
+        "FC Eindhoven": {
+          "runnerId": 1964892927210001,
+          "back": 1.85,
+          "lay": 2.12
+        },
+        "DRAW (Den/FC )": {
+          "runnerId": 1964892927270001,
+          "back": 3.7,
+          "lay": 4.6
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Derby County U23 vs Arsenal U23": {
+      "id": 1965077800460001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Derby County U23": {
+          "runnerId": 1965077802070001,
+          "back": 0,
+          "lay": 0
+        },
+        "Arsenal U23": {
+          "runnerId": 1965077802130001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Der/Ars)": {
+          "runnerId": 1965077802170101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Futebol Clube de Arouca vs Benfica": {
+      "id": 1961629738250001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Futebol Clube de Arouca": {
+          "runnerId": 1961629742520001,
+          "back": 12.5,
+          "lay": 15.5
+        },
+        "Benfica": {
+          "runnerId": 1961629742560001,
+          "back": 1.28,
+          "lay": 1.31
+        },
+        "DRAW (Fut/Ben)": {
+          "runnerId": 1961629742590101,
+          "back": 6.2,
+          "lay": 6.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Helmond Sport vs TOP Oss": {
+      "id": 1965057652640001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Helmond Sport": {
+          "runnerId": 1965057654240101,
+          "back": 3.3,
+          "lay": 3.95
+        },
+        "TOP Oss": {
+          "runnerId": 1965057654280001,
+          "back": 2.02,
+          "lay": 2.34
+        },
+        "DRAW (Hel/TOP)": {
+          "runnerId": 1965057654320001,
+          "back": 3.5,
+          "lay": 4.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Jong AZ Alkmaar vs VVV-Venlo": {
+      "id": 1964892811590001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Jong AZ Alkmaar": {
+          "runnerId": 1964892813850101,
+          "back": 2.4,
+          "lay": 2.92
+        },
+        "VVV-Venlo": {
+          "runnerId": 1964892813890101,
+          "back": 2.46,
+          "lay": 3
+        },
+        "DRAW (Jon/VVV)": {
+          "runnerId": 1964892813930001,
+          "back": 3.55,
+          "lay": 4.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Jong FC Utrecht vs FC Dordrecht": {
+      "id": 1964895791450001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Jong FC Utrecht": {
+          "runnerId": 1964895792540001,
+          "back": 1.91,
+          "lay": 2.22
+        },
+        "FC Dordrecht": {
+          "runnerId": 1964895792570101,
+          "back": 3.35,
+          "lay": 4.1
+        },
+        "DRAW (Jon/FC )": {
+          "runnerId": 1964895792610101,
+          "back": 3.7,
+          "lay": 4.7
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Jong PSV Eindhoven vs SBV Excelsior": {
+      "id": 1965057675790001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Jong PSV Eindhoven": {
+          "runnerId": 1965057677370001,
+          "back": 2.68,
+          "lay": 3.15
+        },
+        "SBV Excelsior": {
+          "runnerId": 1965057677400101,
+          "back": 2.22,
+          "lay": 2.58
+        },
+        "DRAW (Jon/SBV)": {
+          "runnerId": 1965057677440001,
+          "back": 3.85,
+          "lay": 4.7
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "MVV Maastricht vs FC Volendam": {
+      "id": 1965057664110001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "MVV Maastricht": {
+          "runnerId": 1965057665790101,
           "back": 7.6,
-          "lay": 8.6
+          "lay": 9.2
         },
-        "6 Zenzero": {
-          "runnerId": 1965463331250101,
+        "FC Volendam": {
+          "runnerId": 1965057665830101,
+          "back": 1.38,
+          "lay": 1.49
+        },
+        "DRAW (MVV/FC )": {
+          "runnerId": 1965057665870001,
+          "back": 4.9,
+          "lay": 6.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Norwich City U23 vs Burnley U23": {
+      "id": 1965943651480001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Norwich City U23": {
+          "runnerId": 1965943653890001,
+          "back": 2.22,
+          "lay": 2.52
+        },
+        "Burnley U23": {
+          "runnerId": 1965943653920101,
+          "back": 2.56,
+          "lay": 3.15
+        },
+        "DRAW (Nor/Bur)": {
+          "runnerId": 1965943653960001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Pacajus EC vs Maracana EC": {
+      "id": 1966780458740051,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Pacajus EC": {
+          "runnerId": 1966780461540051,
+          "back": 0,
+          "lay": 0
+        },
+        "Maracana EC": {
+          "runnerId": 1966780461570151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Pac/Mar)": {
+          "runnerId": 1966780461610051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Roda JC vs ADO Den Haag": {
+      "id": 1965057687180001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Roda JC": {
+          "runnerId": 1965057688830001,
+          "back": 1.96,
+          "lay": 2.2
+        },
+        "ADO Den Haag": {
+          "runnerId": 1965057688870001,
+          "back": 3.3,
+          "lay": 3.9
+        },
+        "DRAW (Rod/ADO)": {
+          "runnerId": 1965057688910001,
+          "back": 3.75,
+          "lay": 4.7
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "RWD Molenbeek vs Lommel SK": {
+      "id": 1965893719650001,
+      "start": "2022-01-21T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "RWD Molenbeek": {
+          "runnerId": 1965893721090001,
+          "back": 1.79,
+          "lay": 2.1
+        },
+        "Lommel SK": {
+          "runnerId": 1965893721130001,
+          "back": 3.5,
+          "lay": 4.4
+        },
+        "DRAW (RWD/Lom)": {
+          "runnerId": 1965893721170001,
+          "back": 3.85,
+          "lay": 4.9
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Eintracht Frankfurt vs Arminia Bielefeld": {
+      "id": 1961621412080001,
+      "start": "2022-01-21T19:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Eintracht Frankfurt": {
+          "runnerId": 1961621414820101,
+          "back": 1.78,
+          "lay": 1.8
+        },
+        "Arminia Bielefeld": {
+          "runnerId": 1961621414860001,
+          "back": 5.3,
+          "lay": 5.6
+        },
+        "DRAW (Ein/Arm)": {
+          "runnerId": 1961621414890101,
+          "back": 3.85,
+          "lay": 4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "KAA Gent Women vs KRC Genk Women": {
+      "id": 1965898840760001,
+      "start": "2022-01-21T19:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "KAA Gent Women": {
+          "runnerId": 1965898842790101,
+          "back": 0,
+          "lay": 0
+        },
+        "KRC Genk Women": {
+          "runnerId": 1965898842830001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (KAA/KRC)": {
+          "runnerId": 1965898842860101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Parma vs Frosinone": {
+      "id": 1961622004280001,
+      "start": "2022-01-21T19:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Parma": {
+          "runnerId": 1961622006970001,
+          "back": 2.72,
+          "lay": 2.88
+        },
+        "Frosinone": {
+          "runnerId": 1961622007010001,
+          "back": 2.84,
+          "lay": 3.15
+        },
+        "DRAW (Par/Fro)": {
+          "runnerId": 1961622007040101,
+          "back": 3.05,
+          "lay": 3.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "English Premier League 2021/22": {
+      "id": 1763764555650029,
+      "start": "2022-01-21T19:30:01.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Manchester City": {
+          "runnerId": 1763775523660029,
+          "back": 0,
+          "lay": 0
+        },
+        "Liverpool": {
+          "runnerId": 1763775524560029,
+          "back": 0,
+          "lay": 0
+        },
+        "Chelsea": {
+          "runnerId": 1763775523710029,
+          "back": 0,
+          "lay": 0
+        },
+        "Tottenham Hotspur": {
+          "runnerId": 1763775524640129,
+          "back": 0,
+          "lay": 0
+        },
+        "Manchester United": {
+          "runnerId": 1763775524590129,
+          "back": 0,
+          "lay": 0
+        },
+        "Leicester City": {
+          "runnerId": 1763775524670129,
+          "back": 0,
+          "lay": 0
+        },
+        "Arsenal": {
+          "runnerId": 1763775524710029,
+          "back": 0,
+          "lay": 0
+        },
+        "West Ham": {
+          "runnerId": 1763775524730129,
+          "back": 0,
+          "lay": 0
+        },
+        "Leeds United": {
+          "runnerId": 1763775524790129,
+          "back": 0,
+          "lay": 0
+        },
+        "Everton": {
+          "runnerId": 1763775524760029,
+          "back": 0,
+          "lay": 0
+        },
+        "Aston Villa": {
+          "runnerId": 1763775524820029,
+          "back": 0,
+          "lay": 0
+        },
+        "Norwich City": {
+          "runnerId": 1763775524850029,
+          "back": 0,
+          "lay": 0
+        },
+        "Watford": {
+          "runnerId": 1763775524880029,
+          "back": 0,
+          "lay": 0
+        },
+        "Newcastle United": {
+          "runnerId": 1763775524910029,
+          "back": 0,
+          "lay": 0
+        },
+        "Wolverhampton Wanderers": {
+          "runnerId": 1763775524930129,
+          "back": 0,
+          "lay": 0
+        },
+        "Crystal Palace": {
+          "runnerId": 1763775524960129,
+          "back": 0,
+          "lay": 0
+        },
+        "Southampton": {
+          "runnerId": 1763775524990129,
+          "back": 0,
+          "lay": 0
+        },
+        "Brighton & Hove Albion": {
+          "runnerId": 1763775525020029,
+          "back": 0,
+          "lay": 0
+        },
+        "Burnley": {
+          "runnerId": 1763775525040129,
+          "back": 0,
+          "lay": 0
+        },
+        "Brentford": {
+          "runnerId": 1763775525070029,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Cefn Druids vs Caernarfon Town": {
+      "id": 1965913512900001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Cefn Druids": {
+          "runnerId": 1965913515540101,
+          "back": 0,
+          "lay": 0
+        },
+        "Caernarfon Town": {
+          "runnerId": 1965913515580101,
+          "back": 1.1,
+          "lay": 1.33
+        },
+        "DRAW (Cef/Cae)": {
+          "runnerId": 1965913515620101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "College 1975 FC vs FCB Magpies": {
+      "id": 1967570937440051,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "College 1975 FC": {
+          "runnerId": 1967570938070051,
+          "back": 0,
+          "lay": 0
+        },
+        "FCB Magpies": {
+          "runnerId": 1967570938110051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Col/FCB)": {
+          "runnerId": 1967570938150051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Crusaders vs Glentoran": {
+      "id": 1965904575750001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Crusaders": {
+          "runnerId": 1965904578640001,
+          "back": 2.16,
+          "lay": 2.58
+        },
+        "Glentoran": {
+          "runnerId": 1965904578680001,
+          "back": 2.8,
+          "lay": 3.45
+        },
+        "DRAW (Cru/Gle)": {
+          "runnerId": 1965904578710101,
+          "back": 3.5,
+          "lay": 4.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Hellas Verona vs Bologna": {
+      "id": 1961610855890001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Hellas Verona": {
+          "runnerId": 1961610861480101,
+          "back": 1.98,
+          "lay": 2.04
+        },
+        "Bologna": {
+          "runnerId": 1961610861510101,
+          "back": 4.1,
+          "lay": 4.3
+        },
+        "DRAW (Hel/Bol)": {
+          "runnerId": 1961610861550001,
+          "back": 3.7,
+          "lay": 3.9
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "KV Oostende vs Royal Antwerp": {
+      "id": 1961604725470001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "KV Oostende": {
+          "runnerId": 1961604726740001,
+          "back": 3.85,
+          "lay": 4.3
+        },
+        "Royal Antwerp": {
+          "runnerId": 1961604726780001,
+          "back": 1.88,
+          "lay": 1.98
+        },
+        "DRAW (KV /Roy)": {
+          "runnerId": 1961604726820001,
+          "back": 4,
+          "lay": 4.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Larne vs Cliftonville": {
+      "id": 1965904589340001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Larne": {
+          "runnerId": 1965904592220101,
+          "back": 1.84,
+          "lay": 2.14
+        },
+        "Cliftonville": {
+          "runnerId": 1965904592260001,
+          "back": 3.65,
+          "lay": 4.6
+        },
+        "DRAW (Lar/Cli)": {
+          "runnerId": 1965904592310001,
+          "back": 3.55,
+          "lay": 4.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Maldon & Tiptree vs Hashtag United": {
+      "id": 1965918031600001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Maldon & Tiptree": {
+          "runnerId": 1965918033040101,
+          "back": 0,
+          "lay": 0
+        },
+        "Hashtag United": {
+          "runnerId": 1965918033080001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mal/Has)": {
+          "runnerId": 1965918033120001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Notts County vs Barnet": {
+      "id": 1965074612800001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Notts County": {
+          "runnerId": 1965074614280101,
+          "back": 1.46,
+          "lay": 1.74
+        },
+        "Barnet": {
+          "runnerId": 1965074614350101,
+          "back": 5.7,
+          "lay": 7.4
+        },
+        "DRAW (Not/Bar)": {
+          "runnerId": 1965074614420001,
+          "back": 4,
+          "lay": 5.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Penybont FC vs Aberystwyth Town": {
+      "id": 1965913523130001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Penybont FC": {
+          "runnerId": 1965913525550101,
+          "back": 0,
+          "lay": 0
+        },
+        "Aberystwyth Town": {
+          "runnerId": 1965913525590001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Pen/Abe)": {
+          "runnerId": 1965913525630101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Rangers vs Stirling Albion": {
+      "id": 1963461300410001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Rangers": {
+          "runnerId": 1963461301350001,
+          "back": 0,
+          "lay": 0
+        },
+        "Stirling Albion": {
+          "runnerId": 1963461301380101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Ran/Sti)": {
+          "runnerId": 1963461301420001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Southend United vs King's Lynn Town": {
+      "id": 1965074620870001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Southend United": {
+          "runnerId": 1965074622740001,
+          "back": 1.55,
+          "lay": 1.76
+        },
+        "King's Lynn Town": {
+          "runnerId": 1965074622770101,
+          "back": 5.6,
+          "lay": 7.4
+        },
+        "DRAW (Sou/Kin)": {
+          "runnerId": 1965074622810001,
+          "back": 3.75,
+          "lay": 4.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "The New Saints vs Gap Connah's Quay": {
+      "id": 1965913536030001,
+      "start": "2022-01-21T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "The New Saints": {
+          "runnerId": 1965913538480001,
+          "back": 1.48,
+          "lay": 1.66
+        },
+        "Gap Connah's Quay": {
+          "runnerId": 1965913538510101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (The/Gap)": {
+          "runnerId": 1965913538550001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Ards FC vs Annagh United": {
+      "id": 1965926687090001,
+      "start": "2022-01-21T20:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Ards FC": {
+          "runnerId": 1965926688290101,
+          "back": 0,
+          "lay": 0
+        },
+        "Annagh United": {
+          "runnerId": 1965926688330101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Ard/Ann)": {
+          "runnerId": 1965926688370101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "CD Tenerife vs Real Oviedo": {
+      "id": 1961588282500001,
+      "start": "2022-01-21T20:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "CD Tenerife": {
+          "runnerId": 1961588285470001,
+          "back": 2.32,
+          "lay": 2.44
+        },
+        "Real Oviedo": {
+          "runnerId": 1961588285510001,
+          "back": 3.95,
+          "lay": 4.3
+        },
+        "DRAW (CD /Rea)": {
+          "runnerId": 1961588285540001,
+          "back": 2.94,
+          "lay": 3.1
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Espanyol vs Real Betis": {
+      "id": 1961627079460001,
+      "start": "2022-01-21T20:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Espanyol": {
+          "runnerId": 1961627082410101,
+          "back": 3.4,
+          "lay": 3.5
+        },
+        "Real Betis": {
+          "runnerId": 1961627082450001,
+          "back": 2.38,
+          "lay": 2.42
+        },
+        "DRAW (Esp/Rea)": {
+          "runnerId": 1961627082480001,
+          "back": 3.45,
+          "lay": 3.55
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Olympique Lyonnais vs Saint-Étienne": {
+      "id": 1961606735320001,
+      "start": "2022-01-21T20:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Olympique Lyonnais": {
+          "runnerId": 1961606737680101,
+          "back": 1.39,
+          "lay": 1.41
+        },
+        "Saint-Étienne": {
+          "runnerId": 1961606737720001,
           "back": 9.4,
           "lay": 9.8
         },
-        "4 Publicist": {
-          "runnerId": 1965463331190001,
-          "back": 14.5,
-          "lay": 15
-        },
-        "8 Gloryella": {
-          "runnerId": 1965463331310101,
-          "back": 21,
-          "lay": 690
+        "DRAW (Oly/Sai)": {
+          "runnerId": 1961606737750001,
+          "back": 5.5,
+          "lay": 5.8
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       }
     },
-    "17:30 Newcastle": {
-      "id": 1965463331710001,
-      "start": "2022-01-20T17:30:00.000Z",
+    "Watford vs Norwich City": {
+      "id": 1956466400810016,
+      "start": "2022-01-21T20:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "race-length": "0m 5f 0y",
       "allRunners": {
-        "5 Look Out Louis": {
-          "runnerId": 1965463332470101,
-          "back": 5.5,
-          "lay": 6
+        "Watford": {
+          "runnerId": 1956466406110016,
+          "back": 2.12,
+          "lay": 2.16
         },
-        "7 Ballyare": {
-          "runnerId": 1965463332530101,
-          "back": 5.2,
-          "lay": 5.4
+        "Norwich City": {
+          "runnerId": 1956466406140116,
+          "back": 3.9,
+          "lay": 3.95
         },
-        "2 Night On Earth": {
-          "runnerId": 1965463332370001,
-          "back": 6.4,
+        "DRAW (Wat/Nor)": {
+          "runnerId": 1956466406180016,
+          "back": 3.55,
+          "lay": 3.65
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Bolivia vs Trinidad and Tobago": {
+      "id": 1963865142000001,
+      "start": "2022-01-21T21:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Bolivia": {
+          "runnerId": 1963865143940001,
+          "back": 1.16,
+          "lay": 1.2
+        },
+        "Trinidad and Tobago": {
+          "runnerId": 1963865143970101,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Bol/Tri)": {
+          "runnerId": 1963865144010001,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Sporting San Jose FC vs Guadalupe FC": {
+      "id": 1965453688430001,
+      "start": "2022-01-21T21:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Sporting San Jose FC": {
+          "runnerId": 1965453690820001,
+          "back": 0,
+          "lay": 0
+        },
+        "Guadalupe FC": {
+          "runnerId": 1965453690850001,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Spo/Gua)": {
+          "runnerId": 1965453690880101,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Paços de Ferreira vs Boavista FC": {
+      "id": 1961629753570001,
+      "start": "2022-01-21T21:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Paços de Ferreira": {
+          "runnerId": 1961629757810001,
+          "back": 2.66,
+          "lay": 2.84
+        },
+        "Boavista FC": {
+          "runnerId": 1961629757840101,
+          "back": 2.94,
+          "lay": 3.1
+        },
+        "DRAW (Paç/Boa)": {
+          "runnerId": 1961629757880101,
+          "back": 3.05,
+          "lay": 3.25
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Santa Fe vs La Equidad": {
+      "id": 1963512757820001,
+      "start": "2022-01-21T23:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Santa Fe": {
+          "runnerId": 1963512758920101,
+          "back": 2,
+          "lay": 2.24
+        },
+        "La Equidad": {
+          "runnerId": 1963512758960001,
+          "back": 4.2,
+          "lay": 5
+        },
+        "DRAW (San/La )": {
+          "runnerId": 1963512758990101,
+          "back": 2.94,
+          "lay": 3.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      }
+    },
+    "Santos FC U20 vs América-MG U20": {
+      "id": 1966127007140001,
+      "start": "2022-01-21T23:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "allRunners": {
+        "Santos FC U20": {
+          "runnerId": 1966127008140001,
+          "back": 1.51,
+          "lay": 1.7
+        },
+        "América-MG U20": {
+          "runnerId": 1966127008180001,
+          "back": 5.4,
           "lay": 7
         },
-        "6 Ornate": {
-          "runnerId": 1965463332500101,
-          "back": 6.8,
-          "lay": 7.6
-        },
-        "1 Melodic Charm": {
-          "runnerId": 1965463332340001,
-          "back": 7.6,
-          "lay": 8.4
-        },
-        "8 Buniann": {
-          "runnerId": 1965463332570001,
-          "back": 9.4,
-          "lay": 12.5
-        },
-        "3 Miss Nay Never": {
-          "runnerId": 1965463332410001,
-          "back": 11,
-          "lay": 15.5
-        },
-        "4 Outrage": {
-          "runnerId": 1965463332440001,
-          "back": 17,
-          "lay": 24
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "18:00 Newcastle": {
-      "id": 1965463332990001,
-      "start": "2022-01-20T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 5f 0y",
-      "allRunners": {
-        "4 Antiphon": {
-          "runnerId": 1965463333560001,
-          "back": 2.48,
-          "lay": 2.68
-        },
-        "3 Firebomb": {
-          "runnerId": 1965463333520101,
-          "back": 2.82,
-          "lay": 2.98
-        },
-        "6 Lunasa": {
-          "runnerId": 1965463333610101,
-          "back": 6.6,
-          "lay": 7.6
-        },
-        "1 Unfinishedsympathy": {
-          "runnerId": 1965463333450001,
-          "back": 7.4,
-          "lay": 8.8
-        },
-        "2 Coolmeen Royal": {
-          "runnerId": 1965463333490001,
-          "back": 0,
-          "lay": 0
-        },
-        "5 Coast": {
-          "runnerId": 1965463333590001,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "18:30 Newcastle": {
-      "id": 1965463333960001,
-      "start": "2022-01-20T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 7f 14y",
-      "allRunners": {
-        "6 Swinton": {
-          "runnerId": 1965463334770101,
-          "back": 3.05,
-          "lay": 3.2
-        },
-        "5 How Impressive": {
-          "runnerId": 1965463334740001,
+        "DRAW (San/Amé)": {
+          "runnerId": 1966127008220001,
           "back": 4.1,
-          "lay": 5.1
-        },
-        "4 Dion Baker": {
-          "runnerId": 1965463334710001,
-          "back": 4.9,
           "lay": 5.3
-        },
-        "7 The Ganges": {
-          "runnerId": 1965463334800101,
-          "back": 9.4,
-          "lay": 13
-        },
-        "9 Crazy Maisie": {
-          "runnerId": 1965463334860101,
-          "back": 13.5,
-          "lay": 18.5
-        },
-        "1 Ba Na Hills": {
-          "runnerId": 1965463334620001,
-          "back": 17,
-          "lay": 27
-        },
-        "2 Beattie Is Back": {
-          "runnerId": 1965463334650001,
-          "back": 21,
-          "lay": 40
-        },
-        "3 Come On John": {
-          "runnerId": 1965463334680001,
-          "back": 29,
-          "lay": 48
-        },
-        "8 Boasted": {
-          "runnerId": 1965463334840001,
-          "back": 30,
-          "lay": 150
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
-    "19:00 Newcastle": {
-      "id": 1965463335280001,
-      "start": "2022-01-20T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "race-length": "0m 6f 0y",
-      "allRunners": {
-        "10 Intervention": {
-          "runnerId": 1965463336380001,
-          "back": 2.4,
-          "lay": 2.46
-        },
-        "3 Blackjack": {
-          "runnerId": 1965463336180001,
-          "back": 6.6,
-          "lay": 7.4
-        },
-        "7 Thaki": {
-          "runnerId": 1965463336290101,
-          "back": 10,
-          "lay": 16
-        },
-        "8 Tathmeen": {
-          "runnerId": 1965463336320101,
-          "back": 12.5,
-          "lay": 14
-        },
-        "5 Bakr": {
-          "runnerId": 1965463336240001,
-          "back": 14,
-          "lay": 17.5
-        },
-        "2 Ginato": {
-          "runnerId": 1965463336150001,
-          "back": 11,
-          "lay": 16.5
-        },
-        "11 Oriental Lilly": {
-          "runnerId": 1965463336410001,
-          "back": 12.5,
-          "lay": 16.5
-        },
-        "9 Absolute Dream": {
-          "runnerId": 1965463336350001,
-          "back": 21,
-          "lay": 38
-        },
-        "4 I Know How": {
-          "runnerId": 1965463336210001,
-          "back": 30,
-          "lay": 65
-        },
-        "1 Tistaahal": {
-          "runnerId": 1965463336110001,
-          "back": 30,
-          "lay": 180
-        },
-        "12 Charlemaine": {
-          "runnerId": 1965463336440001,
-          "back": 42,
-          "lay": 0
-        },
-        "6 Excessable": {
-          "runnerId": 1965463336260101,
-          "back": 30,
-          "lay": 180
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 2.6,
-        "currentBalance": 6.15,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       }

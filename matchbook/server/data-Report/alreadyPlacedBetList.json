@@ -659,6 +659,145 @@
       },
       "event-start-time": "20/01/2022, 15:25:00",
       "bet-placed-time": "14:48:21  20-01-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1965463940420001,
+      "event-name": "15:30 Ludlow",
+      "runner-name": "1 Another Venture",
+      "decimal-odds": 2.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1965463940420001,
+        "start": "2022-01-20T15:30:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "2m 7f 171y",
+        "allRunners": {
+          "1 Another Venture": {
+            "runnerId": 1965463941190001,
+            "back": 2.74,
+            "lay": 2.78,
+            "name": "1 Another Venture",
+            "event-name": "15:30 Ludlow",
+            "numberOfRunners": 11,
+            "winPercentage": 82.48175182481751,
+            "startTime": "2022-01-20T15:30:00.000Z",
+            "raceId": 1965463940420001,
+            "raceName": "15:30 Ludlow",
+            "sportName": "Horse Racing",
+            "in-running-flag": false,
+            "status": "open",
+            "race-length": "2m 7f 171y"
+          },
+          "8 Hogan's Height": {
+            "runnerId": 1965463941420101,
+            "back": 5,
+            "lay": 5.3,
+            "name": "8 Hogan's Height",
+            "event-name": "15:30 Ludlow"
+          },
+          "2 Not That Fuisse": {
+            "runnerId": 1965463941230001,
+            "back": 8.4,
+            "lay": 8.6,
+            "name": "2 Not That Fuisse",
+            "event-name": "15:30 Ludlow"
+          },
+          "6 Envious Editor": {
+            "runnerId": 1965463941360001,
+            "back": 10.5,
+            "lay": 11,
+            "name": "6 Envious Editor",
+            "event-name": "15:30 Ludlow"
+          },
+          "4 Zamparelli": {
+            "runnerId": 1965463941290001,
+            "back": 11,
+            "lay": 11.5,
+            "name": "4 Zamparelli",
+            "event-name": "15:30 Ludlow"
+          },
+          "10 Ozzy Thomas": {
+            "runnerId": 1965463941490001,
+            "back": 21,
+            "lay": 23,
+            "name": "10 Ozzy Thomas",
+            "event-name": "15:30 Ludlow"
+          },
+          "7 Haven't Time": {
+            "runnerId": 1965463941390001,
+            "back": 24,
+            "lay": 26,
+            "name": "7 Haven't Time",
+            "event-name": "15:30 Ludlow"
+          },
+          "3 Unai": {
+            "runnerId": 1965463941260001,
+            "back": 26,
+            "lay": 29,
+            "name": "3 Unai",
+            "event-name": "15:30 Ludlow"
+          },
+          "5 Bletchley Castle": {
+            "runnerId": 1965463941330001,
+            "back": 75,
+            "lay": 90,
+            "name": "5 Bletchley Castle",
+            "event-name": "15:30 Ludlow"
+          },
+          "11 Wonderoftheworld": {
+            "runnerId": 1965463941530001,
+            "back": 85,
+            "lay": 110,
+            "name": "11 Wonderoftheworld",
+            "event-name": "15:30 Ludlow"
+          },
+          "9 Iftiraaq": {
+            "runnerId": 1965463941460001,
+            "back": 280,
+            "lay": 970,
+            "name": "9 Iftiraaq",
+            "event-name": "15:30 Ludlow"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 2.6,
+          "currentBalance": 6.15,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1965463941190001,
+          "back": 2.74,
+          "lay": 2.78,
+          "name": "1 Another Venture",
+          "event-name": "15:30 Ludlow",
+          "numberOfRunners": 11,
+          "winPercentage": 82.48175182481751,
+          "startTime": "2022-01-20T15:30:00.000Z",
+          "raceId": 1965463940420001,
+          "raceName": "15:30 Ludlow",
+          "sportName": "Horse Racing",
+          "in-running-flag": false,
+          "status": "open",
+          "race-length": "2m 7f 171y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 2.6,
+        "currentBalance": 6.15,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 15:30:00",
+      "bet-placed-time": "15:29:49  20-01-2022"
     }
   ],
   "Soccer": [
@@ -1413,6 +1552,108 @@
       },
       "event-start-time": "20/01/2022, 15:28:00",
       "bet-placed-time": "15:20:09  20-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1966428343080001,
+      "event-name": "16:58 Crayford",
+      "runner-name": "Nissels Missile",
+      "decimal-odds": 2.4,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966428343080001,
+        "start": "2022-01-20T16:58:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "380mtrs",
+        "allRunners": {
+          "Nissels Missile": {
+            "runnerId": 1966428343600001,
+            "back": 2.38,
+            "lay": 2.76,
+            "name": "Nissels Missile",
+            "event-name": "16:58 Crayford",
+            "numberOfRunners": 6,
+            "winPercentage": 80.67226890756302,
+            "startTime": "2022-01-20T16:58:00.000Z",
+            "raceId": 1966428343080001,
+            "raceName": "16:58 Crayford",
+            "sportName": "Greyhound Racing",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Never Ending": {
+            "runnerId": 1966428343630101,
+            "back": 8.2,
+            "lay": 12.5,
+            "name": "Never Ending",
+            "event-name": "16:58 Crayford"
+          },
+          "Deanridge Blewit": {
+            "runnerId": 1966428343660101,
+            "back": 4.3,
+            "lay": 5.3,
+            "name": "Deanridge Blewit",
+            "event-name": "16:58 Crayford"
+          },
+          "Roman Lilly": {
+            "runnerId": 1966428343690001,
+            "back": 12.5,
+            "lay": 23,
+            "name": "Roman Lilly",
+            "event-name": "16:58 Crayford"
+          },
+          "Icaals Tilly": {
+            "runnerId": 1966428343720001,
+            "back": 5.1,
+            "lay": 7.4,
+            "name": "Icaals Tilly",
+            "event-name": "16:58 Crayford"
+          },
+          "Sheriff Sky": {
+            "runnerId": 1966428343750101,
+            "back": 6.8,
+            "lay": 8.6,
+            "name": "Sheriff Sky",
+            "event-name": "16:58 Crayford"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 2.8,
+          "currentBalance": 6.7,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966428343600001,
+          "back": 2.38,
+          "lay": 2.76,
+          "name": "Nissels Missile",
+          "event-name": "16:58 Crayford",
+          "numberOfRunners": 6,
+          "winPercentage": 80.67226890756302,
+          "startTime": "2022-01-20T16:58:00.000Z",
+          "raceId": 1966428343080001,
+          "raceName": "16:58 Crayford",
+          "sportName": "Greyhound Racing",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 2.8,
+        "currentBalance": 6.7,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "20/01/2022, 16:58:00",
+      "bet-placed-time": "16:53:06  20-01-2022"
     }
   ]
 }

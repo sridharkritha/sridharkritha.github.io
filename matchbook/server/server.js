@@ -57,37 +57,39 @@
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	// let g_sportsInterested = ['ALL'];
-	let g_sportsInterested = [
-		'Horse Racing',
-		'Soccer',
-		'Greyhound Racing',
-		// 'American Football',
-		// 'Basketball',
-		// "Boxing",
-		// "Golf",
-		// 'Ice Hockey',
-		// 'Rugby Union',
-		// 'Enhanced Specials',
-		// 'Snooker',
+	let g_sportsInterested = ['ALL'];
+	// let g_sportsInterested = [
+	// 	'Horse Racing',
+	// 	'Soccer',
+	// 	'Greyhound Racing',
+
+	// 	'American Football',
+	// 	'Basketball',
+	// 	"Boxing",
+	// 	"Golf",
+
+	// 	'Ice Hockey',
+	// 	'Rugby Union',
+	// 	// 'Enhanced Specials',
+	// 	// 'Snooker',
 
 
-		// "Baseball",
-		// "Chess",
-	//	 'Cricket',
-		// "Cycling",
-		// "Motor Sport",
-		// "Rugby League",
-		// "Table Tennis",
-		// 'Tennis',
-		// "Volleyball"
-	];
+	// 	// "Baseball",
+	// 	// "Chess",
+	// 	// "Cricket",
+	// 	// "Cycling",
+	// 	// "Motor Sport",
+	// 	// "Rugby League",
+	// 	// "Table Tennis",
+	// 	// "Tennis",
+	// 	// "Volleyball"
+	// ];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = false; // false => REAL MONEY
+	const g_isLockedForBetting = true; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -629,6 +631,7 @@
 							g_moneyStatus[todayDateString].currentBalance = g_userBalance;
 							g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount = g_sumOfAlreadyPlacedBetAmount;
 							g_moneyStatus[todayDateString].totalPlacedBets = Math.round(g_sumOfAlreadyPlacedBetAmount / g_BetStakeValue); 
+							g_moneyStatus[todayDateString].profit = UTIL.roundIt2D(g_userBalance - g_moneyStatus[todayDateString].startingBalance);
 						}
 						else if(g_userBalance < g_BetStakeValue) {
 							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
@@ -810,73 +813,14 @@
 		});
 	};
 
-	run = function()
-	{
-		++g_betScanRound;
-
-		let scanCurrentTime = new Date();
-
-		let elapsedTime = scanCurrentTime - g_lastCycleElapsedTime;
-		
-		g_lastCycleElapsedTime = scanCurrentTime.getTime();
-
-		let runningTime = TIMER.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
-
-
-
-		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
-		let logMsg = `BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`;
-		CONNECTIONS.print("logClient", logMsg);
-		if(g_onlyOne_raceName) 	console.log(`############## Only one race event mode: ${g_onlyOne_raceName} ##################`);
-
-		findSportsIds();
-	};
-
-	findSportsIds = function() {
-		// input  - null
-		// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
-		// https://api.matchbook.com/edge/rest/lookups/sports
-		getSports(callback_getSports);
-	};
-
-	callback_getSports = async function(err, data) {
-		if(err) {
-			CONNECTIONS.print("must",err);
-			throw new Error(err);
-		}
-		else{
-			if(g_sportsInterested.length === 1 && g_sportsInterested[0].toLowerCase() === 'all') {
-				g_sportsInterested = g_sportsList;
-			}
-
-			let sports_cbCount = new callbackCount(0, g_sportsInterested.length);
-			// Calling callback functions inside a loop
-			// g_sportsInterested.forEach(function(sport) {
-			for (const sport of g_sportsInterested) {
-				// input  - sports id
-				// output - event id
-				// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
-				// getEvents('24735152712200'); // sportsid
-				// getEvents(g_db.sportId['Horse Racing'], function(err, data) {
-
-				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
-				const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-				CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
-				////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-				getEvents(sport, sports_cbCount, callback_getEvents);
-			}
-			//); //forEach
-		}
-	};
 
 	callback_getEvents = async function(err, sports_cbCount, sport) {
 		if(err){
 			CONNECTIONS.print("must",err);
 			CONNECTIONS.print("must","ERROR: TRYING AGAIN BY A NEW REQUEST");
-			run();
 
-			// throw new Error(err);
+			// run();
+			throw new Error(err);
 		}
 		else{
 			if('events' in g_db.sportId[sport]) {
@@ -884,29 +828,32 @@
 				let races = Object.keys(g_db.sportId[sport].events);
 				let events_cbCount = new callbackCount(0, races.length);
 
-				// races.forEach(function(race) {
-				for (const race of races) {
-					// input  - event id
-					// output - id (player)
-					// https://api.matchbook.com/edge/rest/events/1033210398700016
+				if(races.length) {
+					for (const race of races) {
+						// input  - event id
+						// output - id (player)
+						// https://api.matchbook.com/edge/rest/events/1033210398700016
 
-					/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
-					const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-					CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
-					////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-					// g_onlyOne_raceName === "14:00 Southwell"
-					if(!g_onlyOne_raceName || race === g_onlyOne_raceName) {
-						if(race === g_onlyOne_raceName) events_cbCount.totalCount = 1; // Taking only one race event for testing
+						/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+						const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+						CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+						////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+						// g_onlyOne_raceName === "14:00 Southwell"
+						if(!g_onlyOne_raceName || race === g_onlyOne_raceName) {
+							if(race === g_onlyOne_raceName) events_cbCount.totalCount = 1; // Taking only one race event for testing
 
-						let logMsg = `Sports: ${sport} ############## Event Name: ${race}`;
-						// CONNECTIONS.print("logClient", logMsg); // detailed sports and event list
-						console.log(logMsg);
+							let logMsg = `Sports: ${sport} ############## Event Name: ${race}`;
+							// CONNECTIONS.print("logClient", logMsg); // detailed sports and event list
+							console.log(logMsg);
 
-						getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
-							sports_cbCount, events_cbCount, callback_getEventInfo);
+							getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
+								sports_cbCount, events_cbCount, callback_getEventInfo);
+						}
 					}
 				}
-				// ); //forEach
+				else {
+					goToNextSports(sports_cbCount, events_cbCount, true);
+				}
 			}
 		}
 	};
@@ -918,31 +865,36 @@
 		}
 
 		if(isReadyForBetting) {
-
-			++sports_cbCount.currentCount;
-
 			submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
 
-			if(events_cbCount.totalCount && events_cbCount.currentCount === events_cbCount.totalCount &&
-				sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
-			{
-				events_cbCount.currentCount = events_cbCount.totalCount = 0;
-				sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
+			goToNextSports(sports_cbCount, events_cbCount, false);
+		}
+	};
 
-				let currentTime = new Date().getTime();
-				remainingTime = currentTime - g_lastCycleElapsedTime;
-				remainingTime = (g_betCycleTime - remainingTime) > 0 ? g_betCycleTime - remainingTime : 0;
+	goToNextSports = (sports_cbCount, events_cbCount, isEmptyEvent) => {
+		++sports_cbCount.currentCount;
 
-				setTimeout(function() {
-					// Check for session expire timeout
-					if(currentTime - new Date(g_sessionStartTime).getTime() > g_sessionExpireTimeLimit) {
-						getNewSession();
-					}
-					else {
-						run(); // LOOPS
-					}
-				}.bind(this), remainingTime);
-			}
+		// submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
+
+		if((isEmptyEvent || events_cbCount.totalCount) && events_cbCount.currentCount === events_cbCount.totalCount &&
+			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
+		{
+			events_cbCount.currentCount = events_cbCount.totalCount = 0;
+			sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
+
+			let currentTime = new Date().getTime();
+			remainingTime = currentTime - g_lastCycleElapsedTime;
+			remainingTime = (g_betCycleTime - remainingTime) > 0 ? g_betCycleTime - remainingTime : 0;
+
+			setTimeout(function() {
+				// Check for session expire timeout
+				if(currentTime - new Date(g_sessionStartTime).getTime() > g_sessionExpireTimeLimit) {
+					getNewSession();
+				}
+				else {
+					run(); // LOOPS
+				}
+			}.bind(this), remainingTime);
 		}
 	};
 
@@ -1018,18 +970,76 @@
 		}
 	};
 
+	callback_getSports = async function(err, data) {
+		if(err) {
+			CONNECTIONS.print("must",err);
+			throw new Error(err);
+		}
+		else{
+			if(g_sportsInterested.length === 1 && g_sportsInterested[0].toLowerCase() === 'all') {
+				g_sportsInterested = g_sportsList;
+			}
+
+			let sports_cbCount = new callbackCount(0, g_sportsInterested.length);
+
+			// Calling callback functions inside a loop
+			// g_sportsInterested.forEach(function(sport) {
+			for (const sport of g_sportsInterested) {
+				// input  - sports id
+				// output - event id
+				// https://api.matchbook.com/edge/rest/events?sport-ids=24735152712200
+				// getEvents('24735152712200'); // sportsid
+				// getEvents(g_db.sportId['Horse Racing'], function(err, data) {
+
+				/////////////// Wait for before giving a new Http request //////////////////////////////////////////////////////
+				const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+				CONNECTIONS.print("ignore",`${result} of min wait time is finished, ready for giving a next Http request - ${new Date().getTime()}`);
+				////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+				getEvents(sport, sports_cbCount, callback_getEvents);
+			}
+			//); //forEach
+		}
+	};
+
+	findSportsIds = function() {
+		// input  - null
+		// output - sports id - {"name":"Horse Racing","id":24735152712200,"type":"SPORT"}
+		// https://api.matchbook.com/edge/rest/lookups/sports
+		getSports(callback_getSports);
+	};
+
+	run = function()
+	{
+		++g_betScanRound;
+
+		let scanCurrentTime = new Date();
+
+		let elapsedTime = scanCurrentTime - g_lastCycleElapsedTime;
+		
+		g_lastCycleElapsedTime = scanCurrentTime.getTime();
+
+		let runningTime = TIMER.milliSecondsToHMS(scanCurrentTime - g_scanStartTime);
+
+		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
+		let logMsg = `BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`;
+		CONNECTIONS.print("logClient", logMsg);
+		if(g_onlyOne_raceName) 	console.log(`############## Only one race event mode: ${g_onlyOne_raceName} ##################`);
+
+		findSportsIds();
+	};
 
 	loginCallback = function(err, sessionToken, sessionStartTime) {
-		if(err){
+		if(err) {
 			g_sessionToken = null;
 			g_sessionStartTime = 0;
 			CONNECTIONS.print("must",err);
 		}
-		else{
+		else {
 			g_sessionToken = sessionToken;
 			g_sessionStartTime = sessionStartTime;
 
-			// findSportsIds(); // run once bcos sports id's are constant
+			// findSportsIds(); // execute once because sports id's are constant
 			getUserBalance();
 
 			getMoneyStatusRecord();
@@ -1042,18 +1052,7 @@
 		DOOR.getLastSession(loginCallback);
 	};
 
-	////////////////////////////////////////////////////////////////////////
-	myTest = async (value) => {
-		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
-		CONNECTIONS.print("ignore",`sri-after: ${new Date().getTime()}    ${result}`);
-	};
 
-	myTestWrapper = async (value) => {
-		let result = await myTest(value);
-		result = result;
-	}
-
-	///////////////////////////////////////////////////////////////////////
 
 	// Entry Function
 	(function () {
@@ -1100,9 +1099,20 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 }()); // namespace
 
+/*
+	////////////////////////////////////////////////////////////////////////
+	myTest = async (value) => {
+		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");
+		CONNECTIONS.print("ignore",`sri-after: ${new Date().getTime()}    ${result}`);
+	};
 
+	myTestWrapper = async (value) => {
+		let result = await myTest(value);
+		result = result;
+	}
 
-
+	///////////////////////////////////////////////////////////////////////
+*/
 
 
 
