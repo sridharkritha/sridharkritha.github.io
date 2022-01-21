@@ -47,6 +47,10 @@ const CONNECTIONS = (function() {
 					CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_LOG_MESSAGES_EVENT', msg); // notify the client
 					break;
 
+				case "extra":
+					// console.log(msg);
+					break;
+
 				default:
 					console.log(msg);
 					break;

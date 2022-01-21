@@ -57,33 +57,34 @@
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	let g_sportsInterested = ['ALL'];
-	// let g_sportsInterested = [
-	// 	'Horse Racing',
-	// 	'Soccer',
-	// 	'Greyhound Racing',
+	// let g_sportsInterested = ['ALL'];
+	let g_sportsInterested = [
+		'Horse Racing', //.
+		'Soccer', //.
+		'Greyhound Racing', //.
 
-	// 	'American Football',
-	// 	'Basketball',
-	// 	"Boxing",
-	// 	"Golf",
+		'American Football',//.
+		'Basketball', //.
+		"Boxing", //.
+		"Golf", //.
 
-	// 	'Ice Hockey',
-	// 	'Rugby Union',
-	// 	'Enhanced Specials',
-	// 	'Snooker',
+		'Ice Hockey', //.
+		'Rugby Union', //.
+		'Enhanced Specials', //.
+		'Snooker', //.
 
 
-	// 	"Baseball",
-	// 	"Chess",
-	// 	"Cricket",
-	// 	"Cycling",
-	// 	"Motor Sport",
-	// 	"Rugby League",
-	// 	"Table Tennis",
-	// 	"Tennis",
-	// 	"Volleyball"
-	// ];
+		"Baseball", //.
+		"Cricket", //.
+		"Motor Sport", //.
+		"Tennis", //.
+
+		"Volleyball",
+		"Chess",
+		"Cycling",
+		"Rugby League",
+		"Table Tennis",
+	];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -844,7 +845,7 @@
 
 							let logMsg = `Sports: ${sport} ############## Event Name: ${race}`;
 							// CONNECTIONS.print("logClient", logMsg); // detailed sports and event list
-							console.log(logMsg);
+							CONNECTIONS.print("extra", logMsg);
 
 							getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
 								sports_cbCount, events_cbCount, callback_getEventInfo);
@@ -852,8 +853,11 @@
 					}
 				}
 				else {
-					goToNextSports(sports_cbCount, events_cbCount, true);
+					goToNextSports(sport, sports_cbCount, events_cbCount, true);
 				}
+			}
+			else {
+				goToNextSports(sport, sports_cbCount, new callbackCount(0, 0), true);
 			}
 		}
 	};
@@ -874,7 +878,7 @@
 	goToNextSports = (sportsName, sports_cbCount, events_cbCount, isEmptyEvent) => {
 		++sports_cbCount.currentCount;
 
-		console.log(`Events( ${sportsName} ): ${events_cbCount.currentCount} / ${events_cbCount.totalCount} #######  Sports: ${sports_cbCount.currentCount} / ${sports_cbCount.totalCount}`);
+		console.log(`Events(${sportsName}) : ${events_cbCount.currentCount} / ${events_cbCount.totalCount} #######  Sports: ${sports_cbCount.currentCount} / ${sports_cbCount.totalCount}`);
 
 		if((isEmptyEvent || events_cbCount.totalCount) && events_cbCount.currentCount === events_cbCount.totalCount &&
 			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
