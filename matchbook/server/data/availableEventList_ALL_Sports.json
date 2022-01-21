@@ -1,37 +1,6 @@
 {
   "id": 15,
   "events": {
-    "Adelaide United Women vs Wellington Phoenix Women": {
-      "id": 1965391809370001,
-      "start": "2022-01-21T07:35:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Adelaide United Women": {
-          "runnerId": 1965391811030001,
-          "back": 0,
-          "lay": 0
-        },
-        "Wellington Phoenix Women": {
-          "runnerId": 1965391811060001,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Ade/Wel)": {
-          "runnerId": 1965391811090101,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      }
-    },
     "Japan Women vs Myanmar Women": {
       "id": 1967427243930051,
       "start": "2022-01-21T08:00:00.000Z",
@@ -72,17 +41,17 @@
         "Wellington Phoenix": {
           "runnerId": 1964606721460101,
           "back": 2.92,
-          "lay": 3
+          "lay": 3.05
         },
         "Western United FC": {
           "runnerId": 1964606721500001,
-          "back": 2.52,
-          "lay": 2.6
+          "back": 2.54,
+          "lay": 2.62
         },
         "DRAW (Wel/Wes)": {
           "runnerId": 1964606721530101,
           "back": 3.55,
-          "lay": 3.8
+          "lay": 3.7
         }
       },
       "metaData": {
@@ -567,8 +536,8 @@
       "allRunners": {
         "South Korea": {
           "runnerId": 1963176646410001,
-          "back": 1.1,
-          "lay": 1.33
+          "back": 1.08,
+          "lay": 1.32
         },
         "Moldova": {
           "runnerId": 1963176646440101,
@@ -877,7 +846,7 @@
       "allRunners": {
         "Smouha SC": {
           "runnerId": 1967334159200051,
-          "back": 1.8,
+          "back": 1.81,
           "lay": 2.04
         },
         "El Gounah": {
@@ -908,13 +877,13 @@
       "allRunners": {
         "Al-Taawoun Buraidah": {
           "runnerId": 1966564079720101,
-          "back": 3.25,
-          "lay": 4.1
+          "back": 3.3,
+          "lay": 4.2
         },
         "Al-Nassr Riyadh": {
           "runnerId": 1966564079760001,
           "back": 1.93,
-          "lay": 2.26
+          "lay": 2.22
         },
         "DRAW (Al-/Al-)": {
           "runnerId": 1966564079790101,
@@ -940,7 +909,7 @@
         "Dhamk": {
           "runnerId": 1966447777670001,
           "back": 2.76,
-          "lay": 3.45
+          "lay": 3.4
         },
         "Al Ahli Jeddah": {
           "runnerId": 1966447777700001,
@@ -1011,7 +980,7 @@
         },
         "DRAW (Hap/Hap)": {
           "runnerId": 1965663253130101,
-          "back": 0,
+          "back": 2.8,
           "lay": 3.3
         }
       },
@@ -1032,13 +1001,13 @@
       "allRunners": {
         "Hapoel Ironi Rishon LeZion": {
           "runnerId": 1965663242240001,
-          "back": 3.15,
-          "lay": 3.9
+          "back": 3.05,
+          "lay": 3.85
         },
         "Agudat Sport Ashdod": {
           "runnerId": 1965663242290001,
-          "back": 2.3,
-          "lay": 2.66
+          "back": 2.32,
+          "lay": 2.8
         },
         "DRAW (Hap/Agu)": {
           "runnerId": 1965663242350001,
@@ -1068,7 +1037,7 @@
         },
         "Maccabi Ahi Nazareth": {
           "runnerId": 1965663258190001,
-          "back": 2.88,
+          "back": 2.92,
           "lay": 3.5
         },
         "DRAW (Hap/Mac)": {
@@ -1094,7 +1063,7 @@
       "allRunners": {
         "Maccabi Bnei Raina": {
           "runnerId": 1965663232800101,
-          "back": 2.7,
+          "back": 2.68,
           "lay": 3.3
         },
         "Hapoel Kfar Saba": {
@@ -1105,7 +1074,7 @@
         "DRAW (Mac/Hap)": {
           "runnerId": 1965663232870101,
           "back": 2.84,
-          "lay": 3.45
+          "lay": 3.5
         }
       },
       "metaData": {
@@ -1281,16 +1250,16 @@
         "CR Belouizdad": {
           "runnerId": 1965669233980001,
           "back": 1.48,
-          "lay": 1.73
+          "lay": 1.71
         },
         "MC Oran": {
           "runnerId": 1965669234020001,
-          "back": 7.4,
-          "lay": 10
+          "back": 7.8,
+          "lay": 10.5
         },
         "DRAW (CR /MC )": {
           "runnerId": 1965669234060001,
-          "back": 3.45,
+          "back": 3.5,
           "lay": 0
         }
       },
@@ -1378,8 +1347,8 @@
         },
         "ASO Chlef": {
           "runnerId": 1965669255100101,
-          "back": 0,
-          "lay": 5.3
+          "back": 4.2,
+          "lay": 5.5
         },
         "DRAW (NC /ASO)": {
           "runnerId": 1965669255140001,
@@ -1435,13 +1404,13 @@
       "allRunners": {
         "Paradou AC": {
           "runnerId": 1965669288110101,
-          "back": 1.67,
-          "lay": 1.93
+          "back": 1.65,
+          "lay": 1.94
         },
         "US Biskra": {
           "runnerId": 1965669288140101,
           "back": 6,
-          "lay": 7.6
+          "lay": 0
         },
         "DRAW (Par/US )": {
           "runnerId": 1965669288180001,
@@ -1528,18 +1497,18 @@
       "allRunners": {
         "WA Tlemcen": {
           "runnerId": 1965669308270101,
-          "back": 3.95,
-          "lay": 4.9
+          "back": 4.6,
+          "lay": 5.6
         },
         "JS Kabylie": {
           "runnerId": 1965669308310001,
-          "back": 2,
-          "lay": 2.36
+          "back": 1.8,
+          "lay": 2.06
         },
         "DRAW (WA /JS )": {
           "runnerId": 1965669308350001,
-          "back": 2.94,
-          "lay": 3.6
+          "back": 3.3,
+          "lay": 3.9
         }
       },
       "metaData": {
@@ -1751,7 +1720,7 @@
         "HB Chelghoum Laid": {
           "runnerId": 1965669265710001,
           "back": 8.2,
-          "lay": 0
+          "lay": 10.5
         },
         "DRAW (MC /HB )": {
           "runnerId": 1965669265740001,
@@ -1807,13 +1776,13 @@
       "allRunners": {
         "Samsunspor": {
           "runnerId": 1965656211000101,
-          "back": 1.52,
+          "back": 1.53,
           "lay": 1.68
         },
         "Kocaelispor": {
           "runnerId": 1965656211040001,
           "back": 6.2,
-          "lay": 8
+          "lay": 0
         },
         "DRAW (Sam/Koc)": {
           "runnerId": 1965656211080001,
@@ -1870,17 +1839,17 @@
         "Al Salmiya": {
           "runnerId": 1967615268140051,
           "back": 3.2,
-          "lay": 3.95
+          "lay": 3.8
         },
         "Qadsia SC": {
           "runnerId": 1967615268170151,
-          "back": 0,
+          "back": 2.06,
           "lay": 2.36
         },
         "DRAW (Al /Qad)": {
           "runnerId": 1967615268210051,
           "back": 3.45,
-          "lay": 4.4
+          "lay": 4.3
         }
       },
       "metaData": {
@@ -1962,13 +1931,13 @@
       "allRunners": {
         "Hamburger SV": {
           "runnerId": 1961617691910101,
-          "back": 2.22,
-          "lay": 2.3
+          "back": 2.16,
+          "lay": 2.22
         },
         "FC St. Pauli": {
           "runnerId": 1961617691950001,
-          "back": 3.2,
-          "lay": 3.45
+          "back": 3.35,
+          "lay": 3.55
         },
         "DRAW (Ham/FC )": {
           "runnerId": 1961617691990001,
@@ -2025,7 +1994,7 @@
         "Cholet": {
           "runnerId": 1965898522440001,
           "back": 3.4,
-          "lay": 4.4
+          "lay": 4.3
         },
         "FC Bourg-Péronnas": {
           "runnerId": 1965898522480001,
@@ -2241,18 +2210,18 @@
       "allRunners": {
         "Le Mans FC": {
           "runnerId": 1965898551350101,
-          "back": 2.92,
-          "lay": 3.6
+          "back": 3.2,
+          "lay": 4
         },
         "LB Châteauroux": {
           "runnerId": 1965898551390001,
-          "back": 2.62,
-          "lay": 3.2
+          "back": 2.26,
+          "lay": 2.74
         },
         "DRAW (Le /LB )": {
           "runnerId": 1965898551430001,
-          "back": 2.62,
-          "lay": 3.25
+          "back": 2.84,
+          "lay": 3.5
         }
       },
       "metaData": {
@@ -2365,18 +2334,18 @@
       "allRunners": {
         "US Avranches": {
           "runnerId": 1965898534580001,
-          "back": 0,
-          "lay": 0
+          "back": 2.22,
+          "lay": 2.54
         },
         "Sète": {
           "runnerId": 1965898534620001,
-          "back": 0,
-          "lay": 0
+          "back": 3.35,
+          "lay": 3.95
         },
         "DRAW (US /Sèt)": {
           "runnerId": 1965898534650101,
-          "back": 0,
-          "lay": 0
+          "back": 2.98,
+          "lay": 3.65
         }
       },
       "metaData": {
@@ -2397,16 +2366,16 @@
         "De Graafschap": {
           "runnerId": 1965057644340101,
           "back": 1.58,
-          "lay": 1.78
+          "lay": 1.76
         },
         "Almere City": {
           "runnerId": 1965057644370101,
           "back": 5.1,
-          "lay": 6.4
+          "lay": 5.8
         },
         "DRAW (De /Alm)": {
           "runnerId": 1965057644410001,
-          "back": 4.1,
+          "back": 4.2,
           "lay": 5
         }
       },
@@ -2495,11 +2464,11 @@
         "Benfica": {
           "runnerId": 1961629742560001,
           "back": 1.28,
-          "lay": 1.31
+          "lay": 1.3
         },
         "DRAW (Fut/Ben)": {
           "runnerId": 1961629742590101,
-          "back": 6.2,
+          "back": 6.4,
           "lay": 6.8
         }
       },
@@ -2520,18 +2489,18 @@
       "allRunners": {
         "Helmond Sport": {
           "runnerId": 1965057654240101,
-          "back": 3.3,
-          "lay": 3.95
+          "back": 3.45,
+          "lay": 4.3
         },
         "TOP Oss": {
           "runnerId": 1965057654280001,
-          "back": 2.02,
-          "lay": 2.34
+          "back": 1.95,
+          "lay": 2.3
         },
         "DRAW (Hel/TOP)": {
           "runnerId": 1965057654320001,
-          "back": 3.5,
-          "lay": 4.2
+          "back": 3.35,
+          "lay": 4.3
         }
       },
       "metaData": {
@@ -2552,12 +2521,12 @@
         "Jong AZ Alkmaar": {
           "runnerId": 1964892813850101,
           "back": 2.4,
-          "lay": 2.92
+          "lay": 2.88
         },
         "VVV-Venlo": {
           "runnerId": 1964892813890101,
-          "back": 2.46,
-          "lay": 3
+          "back": 2.48,
+          "lay": 2.98
         },
         "DRAW (Jon/VVV)": {
           "runnerId": 1964892813930001,
@@ -2582,18 +2551,18 @@
       "allRunners": {
         "Jong FC Utrecht": {
           "runnerId": 1964895792540001,
-          "back": 1.91,
+          "back": 1.93,
           "lay": 2.22
         },
         "FC Dordrecht": {
           "runnerId": 1964895792570101,
           "back": 3.35,
-          "lay": 4.1
+          "lay": 4
         },
         "DRAW (Jon/FC )": {
           "runnerId": 1964895792610101,
-          "back": 3.7,
-          "lay": 4.7
+          "back": 3.75,
+          "lay": 4.6
         }
       },
       "metaData": {
@@ -2613,12 +2582,12 @@
       "allRunners": {
         "Jong PSV Eindhoven": {
           "runnerId": 1965057677370001,
-          "back": 2.68,
-          "lay": 3.15
+          "back": 2.5,
+          "lay": 3
         },
         "SBV Excelsior": {
           "runnerId": 1965057677400101,
-          "back": 2.22,
+          "back": 2.3,
           "lay": 2.58
         },
         "DRAW (Jon/SBV)": {
@@ -2645,16 +2614,16 @@
         "MVV Maastricht": {
           "runnerId": 1965057665790101,
           "back": 7.6,
-          "lay": 9.2
+          "lay": 8.6
         },
         "FC Volendam": {
           "runnerId": 1965057665830101,
           "back": 1.38,
-          "lay": 1.49
+          "lay": 1.48
         },
         "DRAW (MVV/FC )": {
           "runnerId": 1965057665870001,
-          "back": 4.9,
+          "back": 5.2,
           "lay": 6.2
         }
       },
@@ -2768,18 +2737,18 @@
       "allRunners": {
         "RWD Molenbeek": {
           "runnerId": 1965893721090001,
-          "back": 1.79,
-          "lay": 2.1
+          "back": 1.89,
+          "lay": 2.16
         },
         "Lommel SK": {
           "runnerId": 1965893721130001,
           "back": 3.5,
-          "lay": 4.4
+          "lay": 4.3
         },
         "DRAW (RWD/Lom)": {
           "runnerId": 1965893721170001,
-          "back": 3.85,
-          "lay": 4.9
+          "back": 3.8,
+          "lay": 4.5
         }
       },
       "metaData": {
@@ -2800,12 +2769,12 @@
         "Eintracht Frankfurt": {
           "runnerId": 1961621414820101,
           "back": 1.78,
-          "lay": 1.8
+          "lay": 1.81
         },
         "Arminia Bielefeld": {
           "runnerId": 1961621414860001,
           "back": 5.3,
-          "lay": 5.6
+          "lay": 5.5
         },
         "DRAW (Ein/Arm)": {
           "runnerId": 1961621414890101,
@@ -3070,7 +3039,7 @@
       "allRunners": {
         "Crusaders": {
           "runnerId": 1965904578640001,
-          "back": 2.16,
+          "back": 2.18,
           "lay": 2.58
         },
         "Glentoran": {
@@ -3101,17 +3070,17 @@
       "allRunners": {
         "Hellas Verona": {
           "runnerId": 1961610861480101,
-          "back": 1.98,
-          "lay": 2.04
+          "back": 2,
+          "lay": 2.02
         },
         "Bologna": {
           "runnerId": 1961610861510101,
-          "back": 4.1,
+          "back": 4.2,
           "lay": 4.3
         },
         "DRAW (Hel/Bol)": {
           "runnerId": 1961610861550001,
-          "back": 3.7,
+          "back": 3.75,
           "lay": 3.9
         }
       },
@@ -3137,8 +3106,8 @@
         },
         "Royal Antwerp": {
           "runnerId": 1961604726780001,
-          "back": 1.88,
-          "lay": 1.98
+          "back": 1.92,
+          "lay": 2
         },
         "DRAW (KV /Roy)": {
           "runnerId": 1961604726820001,
@@ -3163,13 +3132,13 @@
       "allRunners": {
         "Larne": {
           "runnerId": 1965904592220101,
-          "back": 1.84,
-          "lay": 2.14
+          "back": 1.82,
+          "lay": 2.12
         },
         "Cliftonville": {
           "runnerId": 1965904592260001,
-          "back": 3.65,
-          "lay": 4.6
+          "back": 3.8,
+          "lay": 4.8
         },
         "DRAW (Lar/Cli)": {
           "runnerId": 1965904592310001,
@@ -3225,18 +3194,18 @@
       "allRunners": {
         "Notts County": {
           "runnerId": 1965074614280101,
-          "back": 1.46,
-          "lay": 1.74
+          "back": 0,
+          "lay": 0
         },
         "Barnet": {
           "runnerId": 1965074614350101,
-          "back": 5.7,
-          "lay": 7.4
+          "back": 0,
+          "lay": 0
         },
         "DRAW (Not/Bar)": {
           "runnerId": 1965074614420001,
-          "back": 4,
-          "lay": 5.2
+          "back": 0,
+          "lay": 0
         }
       },
       "metaData": {
@@ -3318,18 +3287,18 @@
       "allRunners": {
         "Southend United": {
           "runnerId": 1965074622740001,
-          "back": 1.55,
-          "lay": 1.76
+          "back": 1.59,
+          "lay": 1.8
         },
         "King's Lynn Town": {
           "runnerId": 1965074622770101,
-          "back": 5.6,
-          "lay": 7.4
+          "back": 5.3,
+          "lay": 0
         },
         "DRAW (Sou/Kin)": {
           "runnerId": 1965074622810001,
-          "back": 3.75,
-          "lay": 4.8
+          "back": 3.7,
+          "lay": 4.7
         }
       },
       "metaData": {
@@ -3386,11 +3355,11 @@
         "Annagh United": {
           "runnerId": 1965926688330101,
           "back": 0,
-          "lay": 0
+          "lay": 3.3
         },
         "DRAW (Ard/Ann)": {
           "runnerId": 1965926688370101,
-          "back": 0,
+          "back": 3.55,
           "lay": 0
         }
       },
@@ -3411,18 +3380,18 @@
       "allRunners": {
         "CD Tenerife": {
           "runnerId": 1961588285470001,
-          "back": 2.32,
-          "lay": 2.44
+          "back": 2.36,
+          "lay": 2.48
         },
         "Real Oviedo": {
           "runnerId": 1961588285510001,
-          "back": 3.95,
-          "lay": 4.3
+          "back": 3.85,
+          "lay": 4.2
         },
         "DRAW (CD /Rea)": {
           "runnerId": 1961588285540001,
           "back": 2.94,
-          "lay": 3.1
+          "lay": 3.05
         }
       },
       "metaData": {
@@ -3447,8 +3416,8 @@
         },
         "Real Betis": {
           "runnerId": 1961627082450001,
-          "back": 2.38,
-          "lay": 2.42
+          "back": 2.34,
+          "lay": 2.4
         },
         "DRAW (Esp/Rea)": {
           "runnerId": 1961627082480001,
@@ -3545,8 +3514,8 @@
         },
         "DRAW (Bol/Tri)": {
           "runnerId": 1963865144010001,
-          "back": 0,
-          "lay": 0
+          "back": 7.8,
+          "lay": 9.6
         }
       },
       "metaData": {
@@ -3598,12 +3567,12 @@
         "Paços de Ferreira": {
           "runnerId": 1961629757810001,
           "back": 2.66,
-          "lay": 2.84
+          "lay": 2.8
         },
         "Boavista FC": {
           "runnerId": 1961629757840101,
-          "back": 2.94,
-          "lay": 3.1
+          "back": 2.98,
+          "lay": 3.15
         },
         "DRAW (Paç/Boa)": {
           "runnerId": 1961629757880101,

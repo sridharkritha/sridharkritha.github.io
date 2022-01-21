@@ -87,10 +87,10 @@ const TIMER = (function() {
 
 		awaitForMaxReqTimeSlot : (type) => {
 			// TEST (start) 
-			return new Promise(resolve => setTimeout(() => {
-				TIMER.g_reqTypeTimer[type] = new Date();
-				resolve(`${type} : ${TIMER.g_minHttpReqWaitTime()[type]} ms`);
-			}, 0));
+			// return new Promise(resolve => setTimeout(() => {
+			// 	TIMER.g_reqTypeTimer[type] = new Date();
+			// 	resolve(`${type} : ${TIMER.g_minHttpReqWaitTime()[type]} ms`);
+			// }, 0));
 			// TEST (end)
 
 

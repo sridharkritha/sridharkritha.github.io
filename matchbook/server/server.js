@@ -70,19 +70,19 @@
 
 	// 	'Ice Hockey',
 	// 	'Rugby Union',
-	// 	// 'Enhanced Specials',
-	// 	// 'Snooker',
+	// 	'Enhanced Specials',
+	// 	'Snooker',
 
 
-	// 	// "Baseball",
-	// 	// "Chess",
-	// 	// "Cricket",
-	// 	// "Cycling",
-	// 	// "Motor Sport",
-	// 	// "Rugby League",
-	// 	// "Table Tennis",
-	// 	// "Tennis",
-	// 	// "Volleyball"
+	// 	"Baseball",
+	// 	"Chess",
+	// 	"Cricket",
+	// 	"Cycling",
+	// 	"Motor Sport",
+	// 	"Rugby League",
+	// 	"Table Tennis",
+	// 	"Tennis",
+	// 	"Volleyball"
 	// ];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -155,6 +155,22 @@
 							return true;
 					}
 				}
+			}
+		}
+
+		return false;
+	};
+
+	isCorrectBetTime = (eventStartTime) => {
+		const currentTime = new Date();
+
+		// check same date (Ignore any time difference) or not ?
+		if(currentTime.toISOString().split('T')[0] === eventStartTime.toISOString().split('T')[0])
+		{
+			// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
+			if(currentTime.getTime() > (eventStartTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
+			{
+				return true;
 			}
 		}
 
@@ -566,80 +582,64 @@
 		for(let i = 0; i < predictedWinners.length; ++i) {
 			let obj = predictedWinners[i];
 			let startTime = new Date(obj.startTime);
-			let currentTime =  new Date();
 
-			// { 	"runner-id":1052216604020016,
-				// 	"side":"back",
-				// 	"odds": 2.4,
-				// 	"stake": 0.0
-			// }
-
-			if( startTime.getDate() === currentTime.getDate() && startTime.getMonth() === currentTime.getMonth() && 
-				startTime.getFullYear() === currentTime.getFullYear())
+			if(isCorrectBetTime(startTime))
 			{
-				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
-				if(currentTime.getTime() > (startTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
+				let betObj = {};
+
+				let fractionNumber = 0;
+				fractionNumber = predictedWinners[i].back;
+				let numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
+				let numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
+				let roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
+				let roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
+
+				betObj.odds = roundedOdd; // for reducing the commission charge
+				// betObj.odds = predictedWinners[i].back;
+				betObj['runner-id'] = predictedWinners[i].runnerId;
+			
+				betObj.side = 'back';
+				betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
+				betObj['event-start-time'] = predictedWinners[i].startTime;
+				betObj['sportName'] = predictedWinners[i].sportName;
+				betObj['sport-id'] = g_db.sportId[predictedWinners[i].sportName].id;
+
+				if(g_isLockedForBetting)
 				{
-					if(!(currentTime.getTime() > startTime.getTime() + 2*60*1000))
-					{
-						let betObj = {};
+					// mock bet
+					betObj['status'] = 'matched';
+					betObj['event-id'] = predictedWinners[i].raceId;
+					betObj['event-name'] =  predictedWinners[i].raceName;
 
-						let fractionNumber = 0;
-						fractionNumber = predictedWinners[i].back;
-						let numberBeforeDecimalPoint  = Math.floor(fractionNumber); // 2.13453 => 2
-						let numberAfterDecimalPoint = (fractionNumber % 1).toFixed(2); // 2.13453 => 0.13
-						let roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
-						let roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
+					betObj['runner-name'] = predictedWinners[i].name;
+					betObj['decimal-odds'] = betObj.odds;
+					betObj['stake'] = g_BetStakeValue;
 
-						betObj.odds = roundedOdd; // for reducing the commission charge
-						// betObj.odds = predictedWinners[i].back;
-						betObj['runner-id'] = predictedWinners[i].runnerId;
-					
-						betObj.side = 'back';
-						betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
-						betObj['event-start-time'] = predictedWinners[i].startTime;
-						betObj['sportName'] = predictedWinners[i].sportName;
-						betObj['sport-id'] = g_db.sportId[predictedWinners[i].sportName].id;
+					g_betNow.push(betObj);
+				}
+				else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) >= g_BetStakeValue) {
+					// real bet
+					g_betNow.push(betObj);
 
-						if(g_isLockedForBetting)
-						{
-							// mock bet
-							betObj['status'] = 'matched';
-							betObj['event-id'] = predictedWinners[i].raceId;
-							betObj['event-name'] =  predictedWinners[i].raceName;
+					g_userBalance = UTIL.roundIt2D(g_userBalance - g_BetStakeValue);
+					g_sumOfAlreadyPlacedBetAmount = UTIL.roundIt2D(g_sumOfAlreadyPlacedBetAmount + g_BetStakeValue);
 
-							betObj['runner-name'] = predictedWinners[i].name;
-							betObj['decimal-odds'] = betObj.odds;
-							betObj['stake'] = g_BetStakeValue;
-
-							g_betNow.push(betObj);
-						}
-						else if(g_userBalance >= g_BetStakeValue && UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) >= g_BetStakeValue) {
-							// real bet
-							g_betNow.push(betObj);
-
-							g_userBalance = UTIL.roundIt2D(g_userBalance - g_BetStakeValue);
-							g_sumOfAlreadyPlacedBetAmount = UTIL.roundIt2D(g_sumOfAlreadyPlacedBetAmount + g_BetStakeValue);
-
-							
-							if(!g_moneyStatus[todayDateString] || g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date != todayDateString) {
-								g_moneyStatus[todayDateString] = {};
-								g_moneyStatus[todayDateString].startingBalance = UTIL.roundIt2D(g_userBalance + g_BetStakeValue);
-								g_moneyStatus[todayDateString].todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
-								g_moneyStatus[todayDateString].date = todayDateString;
-							}
-							g_moneyStatus[todayDateString].currentBalance = g_userBalance;
-							g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount = g_sumOfAlreadyPlacedBetAmount;
-							g_moneyStatus[todayDateString].totalPlacedBets = Math.round(g_sumOfAlreadyPlacedBetAmount / g_BetStakeValue); 
-							g_moneyStatus[todayDateString].profit = UTIL.roundIt2D(g_userBalance - g_moneyStatus[todayDateString].startingBalance);
-						}
-						else if(g_userBalance < g_BetStakeValue) {
-							CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
-						}
-						else if(UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) < g_BetStakeValue) {
-							CONNECTIONS.print("must",`Reached your today's bet limit: ${g_sumOfAlreadyPlacedBetAmount} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
-						}
+					if(!g_moneyStatus[todayDateString] || g_moneyStatus[todayDateString] && g_moneyStatus[todayDateString].date != todayDateString) {
+						g_moneyStatus[todayDateString] = {};
+						g_moneyStatus[todayDateString].startingBalance = UTIL.roundIt2D(g_userBalance + g_BetStakeValue);
+						g_moneyStatus[todayDateString].todayTotalBetAmountLimit = g_todayTotalBetAmountLimit;
+						g_moneyStatus[todayDateString].date = todayDateString;
 					}
+					g_moneyStatus[todayDateString].currentBalance = g_userBalance;
+					g_moneyStatus[todayDateString].sumOfAlreadyPlacedBetAmount = g_sumOfAlreadyPlacedBetAmount;
+					g_moneyStatus[todayDateString].totalPlacedBets = Math.round(g_sumOfAlreadyPlacedBetAmount / g_BetStakeValue); 
+					g_moneyStatus[todayDateString].profit = UTIL.roundIt2D(g_userBalance - g_moneyStatus[todayDateString].startingBalance);
+				}
+				else if(g_userBalance < g_BetStakeValue) {
+					CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
+				}
+				else if(UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) < g_BetStakeValue) {
+					CONNECTIONS.print("must",`Reached your today's bet limit: ${g_sumOfAlreadyPlacedBetAmount} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 				}
 			}
 		}
@@ -804,12 +804,12 @@
 						}
 						else{
 							if(data) {
-								return callback(null, sports_cbCount, events_cbCount, true);
+								return callback(null, sportName, sports_cbCount, events_cbCount, true);
 							}
 						}
 					});
 			}
-			return callback(null, sports_cbCount, events_cbCount, false);
+			return callback(null, sportName, sports_cbCount, events_cbCount, false);
 		});
 	};
 
@@ -858,7 +858,7 @@
 		}
 	};
 
-	callback_getEventInfo = function(err, sports_cbCount, events_cbCount, isReadyForBetting) {
+	callback_getEventInfo = function(err, sportsName, sports_cbCount, events_cbCount, isReadyForBetting) {
 		if(err){
 			CONNECTIONS.print("must",err);
 			throw new Error(err);
@@ -867,14 +867,14 @@
 		if(isReadyForBetting) {
 			submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
 
-			goToNextSports(sports_cbCount, events_cbCount, false);
+			goToNextSports(sportsName, sports_cbCount, events_cbCount, false);
 		}
 	};
 
-	goToNextSports = (sports_cbCount, events_cbCount, isEmptyEvent) => {
+	goToNextSports = (sportsName, sports_cbCount, events_cbCount, isEmptyEvent) => {
 		++sports_cbCount.currentCount;
 
-		// submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
+		console.log(`Events( ${sportsName} ): ${events_cbCount.currentCount} / ${events_cbCount.totalCount} #######  Sports: ${sports_cbCount.currentCount} / ${sports_cbCount.totalCount}`);
 
 		if((isEmptyEvent || events_cbCount.totalCount) && events_cbCount.currentCount === events_cbCount.totalCount &&
 			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
