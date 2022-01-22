@@ -1,720 +1,48 @@
 {
-  "Greyhound Racing": [
-    {
-      "status": "matched",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1967298223990051,
-      "event-name": "20:46 Nottingham",
-      "runner-name": "De Bumblebee",
-      "decimal-odds": 2.1,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1967298223990051,
-        "start": "2022-01-21T20:46:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "race-length": "480",
-        "allRunners": {
-          "De Bumblebee": {
-            "runnerId": 1967298224470051,
-            "back": 2.08,
-            "lay": 0,
-            "name": "De Bumblebee",
-            "event-name": "20:46 Nottingham",
-            "numberOfRunners": 6,
-            "winPercentage": 82.69230769230768,
-            "startTime": "2022-01-21T20:46:00.000Z",
-            "raceId": 1967298223990051,
-            "raceName": "20:46 Nottingham",
-            "sportName": "Greyhound Racing",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "Swift Canary": {
-            "runnerId": 1967298224490151,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Swift Canary",
-            "event-name": "20:46 Nottingham"
-          },
-          "Bogger Bruno": {
-            "runnerId": 1967298224950051,
-            "back": 3.8,
-            "lay": 0,
-            "name": "Bogger Bruno",
-            "event-name": "20:46 Nottingham"
-          },
-          "Shawshank Sky": {
-            "runnerId": 1967298224970151,
-            "back": 4.3,
-            "lay": 0,
-            "name": "Shawshank Sky",
-            "event-name": "20:46 Nottingham"
-          },
-          "Colarhouse Sonny": {
-            "runnerId": 1967298225000051,
-            "back": 9.2,
-            "lay": 0,
-            "name": "Colarhouse Sonny",
-            "event-name": "20:46 Nottingham"
-          },
-          "Burghead Franby": {
-            "runnerId": 1967298225030051,
-            "back": 3.8,
-            "lay": 0,
-            "name": "Burghead Franby",
-            "event-name": "20:46 Nottingham"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1967298224470051,
-          "back": 2.08,
-          "lay": 0,
-          "name": "De Bumblebee",
-          "event-name": "20:46 Nottingham",
-          "numberOfRunners": 6,
-          "winPercentage": 82.69230769230768,
-          "startTime": "2022-01-21T20:46:00.000Z",
-          "raceId": 1967298223990051,
-          "raceName": "20:46 Nottingham",
-          "sportName": "Greyhound Racing",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 20:46:00",
-      "bet-placed-time": "18:57:19  21-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1967303403860051,
-      "event-name": "21:12 Romford",
-      "runner-name": "Geelo Gold Dust",
-      "decimal-odds": 1.8,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1967303403860051,
-        "start": "2022-01-21T21:12:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "race-length": "400mtrs",
-        "allRunners": {
-          "Lemming Devon": {
-            "runnerId": 1967303404380051,
-            "back": 4.6,
-            "lay": 0,
-            "name": "Lemming Devon",
-            "event-name": "21:12 Romford"
-          },
-          "Playbook": {
-            "runnerId": 1967303404410051,
-            "back": 6.6,
-            "lay": 0,
-            "name": "Playbook",
-            "event-name": "21:12 Romford"
-          },
-          "Bang On Sonia": {
-            "runnerId": 1967303404440051,
-            "back": 6.2,
-            "lay": 0,
-            "name": "Bang On Sonia",
-            "event-name": "21:12 Romford"
-          },
-          "Fire Paper": {
-            "runnerId": 1967303404470051,
-            "back": 5.1,
-            "lay": 0,
-            "name": "Fire Paper",
-            "event-name": "21:12 Romford"
-          },
-          "Geelo Gold Dust": {
-            "runnerId": 1967303404490151,
-            "back": 1.73,
-            "lay": 0,
-            "name": "Geelo Gold Dust",
-            "event-name": "21:12 Romford",
-            "numberOfRunners": 6,
-            "winPercentage": 165.8959537572254,
-            "startTime": "2022-01-21T21:12:00.000Z",
-            "raceId": 1967303403860051,
-            "raceName": "21:12 Romford",
-            "sportName": "Greyhound Racing",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "Milton Susie": {
-            "runnerId": 1967303404520151,
-            "back": 11,
-            "lay": 0,
-            "name": "Milton Susie",
-            "event-name": "21:12 Romford"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1967303404490151,
-          "back": 1.73,
-          "lay": 0,
-          "name": "Geelo Gold Dust",
-          "event-name": "21:12 Romford",
-          "numberOfRunners": 6,
-          "winPercentage": 165.8959537572254,
-          "startTime": "2022-01-21T21:12:00.000Z",
-          "raceId": 1967303403860051,
-          "raceName": "21:12 Romford",
-          "sportName": "Greyhound Racing",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 21:12:00",
-      "bet-placed-time": "18:57:19  21-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1967303407680051,
-      "event-name": "21:42 Romford",
-      "runner-name": "Slippy Eva",
-      "decimal-odds": 1.9,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1967303407680051,
-        "start": "2022-01-21T21:42:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "race-length": "750mtrs",
-        "allRunners": {
-          "Slippy Eva": {
-            "runnerId": 1967303408190051,
-            "back": 1.81,
-            "lay": 0,
-            "name": "Slippy Eva",
-            "event-name": "21:42 Romford",
-            "numberOfRunners": 6,
-            "winPercentage": 82.32044198895026,
-            "startTime": "2022-01-21T21:42:00.000Z",
-            "raceId": 1967303407680051,
-            "raceName": "21:42 Romford",
-            "sportName": "Greyhound Racing",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "Florican Trend": {
-            "runnerId": 1967303408220051,
-            "back": 5.1,
-            "lay": 0,
-            "name": "Florican Trend",
-            "event-name": "21:42 Romford"
-          },
-          "Bubbly Angel": {
-            "runnerId": 1967303408250151,
-            "back": 3.3,
-            "lay": 0,
-            "name": "Bubbly Angel",
-            "event-name": "21:42 Romford"
-          },
-          "Slippy Mick": {
-            "runnerId": 1967303408280151,
-            "back": 8.2,
-            "lay": 0,
-            "name": "Slippy Mick",
-            "event-name": "21:42 Romford"
-          },
-          "Nolas Marvel": {
-            "runnerId": 1967303408310051,
-            "back": 11,
-            "lay": 0,
-            "name": "Nolas Marvel",
-            "event-name": "21:42 Romford"
-          },
-          "Unprecedented": {
-            "runnerId": 1967303408350051,
-            "back": 7.2,
-            "lay": 0,
-            "name": "Unprecedented",
-            "event-name": "21:42 Romford"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1967303408190051,
-          "back": 1.81,
-          "lay": 0,
-          "name": "Slippy Eva",
-          "event-name": "21:42 Romford",
-          "numberOfRunners": 6,
-          "winPercentage": 82.32044198895026,
-          "startTime": "2022-01-21T21:42:00.000Z",
-          "raceId": 1967303407680051,
-          "raceName": "21:42 Romford",
-          "sportName": "Greyhound Racing",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 21:42:00",
-      "bet-placed-time": "18:57:19  21-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1967303388510051,
-      "event-name": "18:58 Romford",
-      "runner-name": "Blastoff Mason",
-      "decimal-odds": 2.2,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1967303388510051,
-        "start": "2022-01-21T18:58:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "race-length": "400mtrs",
-        "allRunners": {
-          "Moorstown Victor": {
-            "runnerId": 1967303389010051,
-            "back": 12,
-            "lay": 13,
-            "name": "Moorstown Victor",
-            "event-name": "18:58 Romford"
-          },
-          "Stradeen Azzurro": {
-            "runnerId": 1967303389040051,
-            "back": 36,
-            "lay": 42,
-            "name": "Stradeen Azzurro",
-            "event-name": "18:58 Romford"
-          },
-          "Blastoff Mason": {
-            "runnerId": 1967303389070151,
-            "back": 2.18,
-            "lay": 2.22,
-            "name": "Blastoff Mason",
-            "event-name": "18:58 Romford",
-            "numberOfRunners": 6,
-            "winPercentage": 81.19266055045871,
-            "startTime": "2022-01-21T18:58:00.000Z",
-            "raceId": 1967303388510051,
-            "raceName": "18:58 Romford",
-            "sportName": "Greyhound Racing",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "Drahan Jet": {
-            "runnerId": 1967303389100151,
-            "back": 3.95,
-            "lay": 4.2,
-            "name": "Drahan Jet",
-            "event-name": "18:58 Romford"
-          },
-          "Swift Cope": {
-            "runnerId": 1967303389140051,
-            "back": 14,
-            "lay": 15,
-            "name": "Swift Cope",
-            "event-name": "18:58 Romford"
-          },
-          "Farran Patsy": {
-            "runnerId": 1967303389170051,
-            "back": 7.4,
-            "lay": 8,
-            "name": "Farran Patsy",
-            "event-name": "18:58 Romford"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1967303389070151,
-          "back": 2.18,
-          "lay": 2.22,
-          "name": "Blastoff Mason",
-          "event-name": "18:58 Romford",
-          "numberOfRunners": 6,
-          "winPercentage": 81.19266055045871,
-          "startTime": "2022-01-21T18:58:00.000Z",
-          "raceId": 1967303388510051,
-          "raceName": "18:58 Romford",
-          "sportName": "Greyhound Racing",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 18:58:00",
-      "bet-placed-time": "18:57:43  21-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1967298225360051,
-      "event-name": "21:01 Nottingham",
-      "runner-name": "Havana Fiefdom",
-      "decimal-odds": 2.3,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1967298225360051,
-        "start": "2022-01-21T21:01:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "race-length": "500",
-        "allRunners": {
-          "Jaxx Jurassic": {
-            "runnerId": 1967298226750051,
-            "back": 4.6,
-            "lay": 0,
-            "name": "Jaxx Jurassic",
-            "event-name": "21:01 Nottingham"
-          },
-          "Havana Fiefdom": {
-            "runnerId": 1967298226780151,
-            "back": 2.24,
-            "lay": 0,
-            "name": "Havana Fiefdom",
-            "event-name": "21:01 Nottingham",
-            "numberOfRunners": 6,
-            "winPercentage": 105.35714285714282,
-            "startTime": "2022-01-21T21:01:00.000Z",
-            "raceId": 1967298225360051,
-            "raceName": "21:01 Nottingham",
-            "sportName": "Greyhound Racing",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "Annadown Lola": {
-            "runnerId": 1967298226820051,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Annadown Lola",
-            "event-name": "21:01 Nottingham"
-          },
-          "Goldsmith Teddy": {
-            "runnerId": 1967298226850051,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Goldsmith Teddy",
-            "event-name": "21:01 Nottingham"
-          },
-          "Swift Lockjaw": {
-            "runnerId": 1967298226880051,
-            "back": 0,
-            "lay": 0,
-            "name": "Swift Lockjaw",
-            "event-name": "21:01 Nottingham"
-          },
-          "Merry Mia": {
-            "runnerId": 1967298226910151,
-            "back": 0,
-            "lay": 0,
-            "name": "Merry Mia",
-            "event-name": "21:01 Nottingham"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1967298226780151,
-          "back": 2.24,
-          "lay": 0,
-          "name": "Havana Fiefdom",
-          "event-name": "21:01 Nottingham",
-          "numberOfRunners": 6,
-          "winPercentage": 105.35714285714282,
-          "startTime": "2022-01-21T21:01:00.000Z",
-          "raceId": 1967298225360051,
-          "raceName": "21:01 Nottingham",
-          "sportName": "Greyhound Racing",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 21:01:00",
-      "bet-placed-time": "18:58:39  21-01-2022"
-    }
-  ],
   "Soccer": [
     {
       "status": "matched",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1964892925870001,
-      "event-name": "Den Bosch vs FC Eindhoven",
-      "runner-name": "FC Eindhoven",
-      "decimal-odds": 2,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1964892925870001,
-        "start": "2022-01-21T19:00:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "allRunners": {
-          "Den Bosch": {
-            "runnerId": 1964892927170101,
-            "back": 4.2,
-            "lay": 4.4,
-            "name": "Den Bosch",
-            "event-name": "Den Bosch vs FC Eindhoven"
-          },
-          "FC Eindhoven": {
-            "runnerId": 1964892927210001,
-            "back": 1.92,
-            "lay": 1.95,
-            "name": "FC Eindhoven",
-            "event-name": "Den Bosch vs FC Eindhoven",
-            "numberOfRunners": 3,
-            "winPercentage": 100.52083333333336,
-            "startTime": "2022-01-21T19:00:00.000Z",
-            "raceId": 1964892925870001,
-            "raceName": "Den Bosch vs FC Eindhoven",
-            "sportName": "Soccer",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "DRAW (Den/FC )": {
-            "runnerId": 1964892927270001,
-            "back": 3.85,
-            "lay": 4.1,
-            "name": "DRAW (Den/FC )",
-            "event-name": "Den Bosch vs FC Eindhoven"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1964892927210001,
-          "back": 1.92,
-          "lay": 1.95,
-          "name": "FC Eindhoven",
-          "event-name": "Den Bosch vs FC Eindhoven",
-          "numberOfRunners": 3,
-          "winPercentage": 100.52083333333336,
-          "startTime": "2022-01-21T19:00:00.000Z",
-          "raceId": 1964892925870001,
-          "raceName": "Den Bosch vs FC Eindhoven",
-          "sportName": "Soccer",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 19:00:00",
-      "bet-placed-time": "18:57:21  21-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1964895791450001,
-      "event-name": "Jong FC Utrecht vs FC Dordrecht",
-      "runner-name": "Jong FC Utrecht",
-      "decimal-odds": 2,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1964895791450001,
-        "start": "2022-01-21T19:00:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "allRunners": {
-          "Jong FC Utrecht": {
-            "runnerId": 1964895792540001,
-            "back": 1.99,
-            "lay": 2.04,
-            "name": "Jong FC Utrecht",
-            "event-name": "Jong FC Utrecht vs FC Dordrecht",
-            "numberOfRunners": 3,
-            "winPercentage": 83.41708542713567,
-            "startTime": "2022-01-21T19:00:00.000Z",
-            "raceId": 1964895791450001,
-            "raceName": "Jong FC Utrecht vs FC Dordrecht",
-            "sportName": "Soccer",
-            "in-running-flag": false,
-            "status": "open"
-          },
-          "FC Dordrecht": {
-            "runnerId": 1964895792570101,
-            "back": 3.65,
-            "lay": 3.95,
-            "name": "FC Dordrecht",
-            "event-name": "Jong FC Utrecht vs FC Dordrecht"
-          },
-          "DRAW (Jon/FC )": {
-            "runnerId": 1964895792610101,
-            "back": 4.2,
-            "lay": 4.4,
-            "name": "DRAW (Jon/FC )",
-            "event-name": "Jong FC Utrecht vs FC Dordrecht"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "todayTotalBetAmountLimit": 3,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.5,
-          "winConfidencePercentage": 80,
-          "minProfitOdd": 0.7
-        },
-        "luckyWinner": {
-          "runnerId": 1964895792540001,
-          "back": 1.99,
-          "lay": 2.04,
-          "name": "Jong FC Utrecht",
-          "event-name": "Jong FC Utrecht vs FC Dordrecht",
-          "numberOfRunners": 3,
-          "winPercentage": 83.41708542713567,
-          "startTime": "2022-01-21T19:00:00.000Z",
-          "raceId": 1964895791450001,
-          "raceName": "Jong FC Utrecht vs FC Dordrecht",
-          "sportName": "Soccer",
-          "in-running-flag": false,
-          "status": "open"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 3,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.5,
-        "winConfidencePercentage": 80,
-        "minProfitOdd": 0.7
-      },
-      "event-start-time": "21/01/2022, 19:00:00",
-      "bet-placed-time": "18:57:21  21-01-2022"
-    },
-    {
-      "status": "matched",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1965057687180001,
-      "event-name": "Roda JC vs ADO Den Haag",
-      "runner-name": "Roda JC",
+      "event-id": 1961603058140001,
+      "event-name": "Yeni Malatyaspor vs Besiktas JK",
+      "runner-name": "Besiktas JK",
       "decimal-odds": 1.8,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1965057687180001,
-        "start": "2022-01-21T19:00:00.000Z",
+        "id": 1961603058140001,
+        "start": "2022-01-22T10:30:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "allRunners": {
-          "Roda JC": {
-            "runnerId": 1965057688830001,
-            "back": 1.75,
-            "lay": 1.81,
-            "name": "Roda JC",
-            "event-name": "Roda JC vs ADO Den Haag",
+          "Yeni Malatyaspor": {
+            "runnerId": 1961603059860101,
+            "back": 4.7,
+            "lay": 5.2,
+            "name": "Yeni Malatyaspor",
+            "event-name": "Yeni Malatyaspor vs Besiktas JK"
+          },
+          "Besiktas JK": {
+            "runnerId": 1961603059900001,
+            "back": 1.78,
+            "lay": 1.83,
+            "name": "Besiktas JK",
+            "event-name": "Yeni Malatyaspor vs Besiktas JK",
             "numberOfRunners": 3,
-            "winPercentage": 134.28571428571428,
-            "startTime": "2022-01-21T19:00:00.000Z",
-            "raceId": 1965057687180001,
-            "raceName": "Roda JC vs ADO Den Haag",
+            "winPercentage": 121.91011235955057,
+            "startTime": "2022-01-22T10:30:00.000Z",
+            "raceId": 1961603058140001,
+            "raceName": "Yeni Malatyaspor vs Besiktas JK",
             "sportName": "Soccer",
             "in-running-flag": false,
             "status": "open"
           },
-          "ADO Den Haag": {
-            "runnerId": 1965057688870001,
-            "back": 4.8,
-            "lay": 5.1,
-            "name": "ADO Den Haag",
-            "event-name": "Roda JC vs ADO Den Haag"
-          },
-          "DRAW (Rod/ADO)": {
-            "runnerId": 1965057688910001,
-            "back": 4.1,
-            "lay": 4.4,
-            "name": "DRAW (Rod/ADO)",
-            "event-name": "Roda JC vs ADO Den Haag"
+          "DRAW (Yen/Bes)": {
+            "runnerId": 1961603059930001,
+            "back": 3.95,
+            "lay": 4.3,
+            "name": "DRAW (Yen/Bes)",
+            "event-name": "Yeni Malatyaspor vs Besiktas JK"
           }
         },
         "metaData": {
@@ -726,16 +54,16 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1965057688830001,
-          "back": 1.75,
-          "lay": 1.81,
-          "name": "Roda JC",
-          "event-name": "Roda JC vs ADO Den Haag",
+          "runnerId": 1961603059900001,
+          "back": 1.78,
+          "lay": 1.83,
+          "name": "Besiktas JK",
+          "event-name": "Yeni Malatyaspor vs Besiktas JK",
           "numberOfRunners": 3,
-          "winPercentage": 134.28571428571428,
-          "startTime": "2022-01-21T19:00:00.000Z",
-          "raceId": 1965057687180001,
-          "raceName": "Roda JC vs ADO Den Haag",
+          "winPercentage": 121.91011235955057,
+          "startTime": "2022-01-22T10:30:00.000Z",
+          "raceId": 1961603058140001,
+          "raceName": "Yeni Malatyaspor vs Besiktas JK",
           "sportName": "Soccer",
           "in-running-flag": false,
           "status": "open"
@@ -749,52 +77,852 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "21/01/2022, 19:00:00",
-      "bet-placed-time": "18:57:21  21-01-2022"
+      "event-start-time": "22/01/2022, 10:30:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
     },
     {
       "status": "matched",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1965893719650001,
-      "event-name": "RWD Molenbeek vs Lommel SK",
-      "runner-name": "RWD Molenbeek",
+      "event-id": 1966462087670001,
+      "event-name": "Vilafranquense vs Nacional da Madeira",
+      "runner-name": "Nacional da Madeira",
       "decimal-odds": 1.9,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1965893719650001,
-        "start": "2022-01-21T19:00:00.000Z",
+        "id": 1966462087670001,
+        "start": "2022-01-22T11:00:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "allRunners": {
-          "RWD Molenbeek": {
-            "runnerId": 1965893721090001,
-            "back": 1.83,
+          "Vilafranquense": {
+            "runnerId": 1966462089490001,
+            "back": 3.8,
+            "lay": 4.5,
+            "name": "Vilafranquense",
+            "event-name": "Vilafranquense vs Nacional da Madeira"
+          },
+          "Nacional da Madeira": {
+            "runnerId": 1966462089540001,
+            "back": 1.84,
             "lay": 2.04,
-            "name": "RWD Molenbeek",
-            "event-name": "RWD Molenbeek vs Lommel SK",
+            "name": "Nacional da Madeira",
+            "event-name": "Vilafranquense vs Nacional da Madeira",
             "numberOfRunners": 3,
-            "winPercentage": 102.18579234972677,
-            "startTime": "2022-01-21T19:00:00.000Z",
-            "raceId": 1965893719650001,
-            "raceName": "RWD Molenbeek vs Lommel SK",
+            "winPercentage": 101.08695652173913,
+            "startTime": "2022-01-22T11:00:00.000Z",
+            "raceId": 1966462087670001,
+            "raceName": "Vilafranquense vs Nacional da Madeira",
             "sportName": "Soccer",
             "in-running-flag": false,
             "status": "open"
           },
-          "Lommel SK": {
-            "runnerId": 1965893721130001,
+          "DRAW (Vil/Nac)": {
+            "runnerId": 1966462089570001,
+            "back": 3.7,
+            "lay": 4.1,
+            "name": "DRAW (Vil/Nac)",
+            "event-name": "Vilafranquense vs Nacional da Madeira"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966462089540001,
+          "back": 1.84,
+          "lay": 2.04,
+          "name": "Nacional da Madeira",
+          "event-name": "Vilafranquense vs Nacional da Madeira",
+          "numberOfRunners": 3,
+          "winPercentage": 101.08695652173913,
+          "startTime": "2022-01-22T11:00:00.000Z",
+          "raceId": 1966462087670001,
+          "raceName": "Vilafranquense vs Nacional da Madeira",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 11:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962177810480001,
+      "event-name": "FC Ingolstadt 04 vs SV Darmstadt 98",
+      "runner-name": "SV Darmstadt 98",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962177810480001,
+        "start": "2022-01-22T12:30:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "FC Ingolstadt 04": {
+            "runnerId": 1962177811770001,
+            "back": 4.4,
+            "lay": 4.6,
+            "name": "FC Ingolstadt 04",
+            "event-name": "FC Ingolstadt 04 vs SV Darmstadt 98"
+          },
+          "SV Darmstadt 98": {
+            "runnerId": 1962177811800101,
+            "back": 1.85,
+            "lay": 1.91,
+            "name": "SV Darmstadt 98",
+            "event-name": "FC Ingolstadt 04 vs SV Darmstadt 98",
+            "numberOfRunners": 3,
+            "winPercentage": 113.5135135135135,
+            "startTime": "2022-01-22T12:30:00.000Z",
+            "raceId": 1962177810480001,
+            "raceName": "FC Ingolstadt 04 vs SV Darmstadt 98",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (FC /SV )": {
+            "runnerId": 1962177811840001,
+            "back": 3.95,
+            "lay": 4.2,
+            "name": "DRAW (FC /SV )",
+            "event-name": "FC Ingolstadt 04 vs SV Darmstadt 98"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962177811800101,
+          "back": 1.85,
+          "lay": 1.91,
+          "name": "SV Darmstadt 98",
+          "event-name": "FC Ingolstadt 04 vs SV Darmstadt 98",
+          "numberOfRunners": 3,
+          "winPercentage": 113.5135135135135,
+          "startTime": "2022-01-22T12:30:00.000Z",
+          "raceId": 1962177810480001,
+          "raceName": "FC Ingolstadt 04 vs SV Darmstadt 98",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 12:30:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962162154380001,
+      "event-name": "Adana Demirspor vs Fatih Karagümrük Istanbul",
+      "runner-name": "Adana Demirspor",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962162154380001,
+        "start": "2022-01-22T13:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Adana Demirspor": {
+            "runnerId": 1962162156140001,
+            "back": 1.92,
+            "lay": 2.02,
+            "name": "Adana Demirspor",
+            "event-name": "Adana Demirspor vs Fatih Karagümrük Istanbul",
+            "numberOfRunners": 3,
+            "winPercentage": 87.50000000000001,
+            "startTime": "2022-01-22T13:00:00.000Z",
+            "raceId": 1962162154380001,
+            "raceName": "Adana Demirspor vs Fatih Karagümrük Istanbul",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Fatih Karagümrük Istanbul": {
+            "runnerId": 1962162156180001,
+            "back": 4.2,
+            "lay": 4.6,
+            "name": "Fatih Karagümrük Istanbul",
+            "event-name": "Adana Demirspor vs Fatih Karagümrük Istanbul"
+          },
+          "DRAW (Ada/Fat)": {
+            "runnerId": 1962162156210101,
+            "back": 3.6,
+            "lay": 3.85,
+            "name": "DRAW (Ada/Fat)",
+            "event-name": "Adana Demirspor vs Fatih Karagümrük Istanbul"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962162156140001,
+          "back": 1.92,
+          "lay": 2.02,
+          "name": "Adana Demirspor",
+          "event-name": "Adana Demirspor vs Fatih Karagümrük Istanbul",
+          "numberOfRunners": 3,
+          "winPercentage": 87.50000000000001,
+          "startTime": "2022-01-22T13:00:00.000Z",
+          "raceId": 1962162154380001,
+          "raceName": "Adana Demirspor vs Fatih Karagümrük Istanbul",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 13:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1966468248650001,
+      "event-name": "FC Würzburg Kickers vs Waldhof Mannheim",
+      "runner-name": "Waldhof Mannheim",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966468248650001,
+        "start": "2022-01-22T13:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "FC Würzburg Kickers": {
+            "runnerId": 1966468250410001,
+            "back": 4,
+            "lay": 4.9,
+            "name": "FC Würzburg Kickers",
+            "event-name": "FC Würzburg Kickers vs Waldhof Mannheim"
+          },
+          "Waldhof Mannheim": {
+            "runnerId": 1966468250450001,
+            "back": 1.77,
+            "lay": 2.02,
+            "name": "Waldhof Mannheim",
+            "event-name": "FC Würzburg Kickers vs Waldhof Mannheim",
+            "numberOfRunners": 3,
+            "winPercentage": 111.86440677966101,
+            "startTime": "2022-01-22T13:00:00.000Z",
+            "raceId": 1966468248650001,
+            "raceName": "FC Würzburg Kickers vs Waldhof Mannheim",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (FC /Wal)": {
+            "runnerId": 1966468250490001,
+            "back": 3.75,
+            "lay": 4.5,
+            "name": "DRAW (FC /Wal)",
+            "event-name": "FC Würzburg Kickers vs Waldhof Mannheim"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966468250450001,
+          "back": 1.77,
+          "lay": 2.02,
+          "name": "Waldhof Mannheim",
+          "event-name": "FC Würzburg Kickers vs Waldhof Mannheim",
+          "numberOfRunners": 3,
+          "winPercentage": 111.86440677966101,
+          "startTime": "2022-01-22T13:00:00.000Z",
+          "raceId": 1966468248650001,
+          "raceName": "FC Würzburg Kickers vs Waldhof Mannheim",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 13:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962147960570001,
+      "event-name": "Levante UD vs Cádiz",
+      "runner-name": "Levante UD",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962147960570001,
+        "start": "2022-01-22T13:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Levante UD": {
+            "runnerId": 1962147963390001,
+            "back": 1.85,
+            "lay": 1.88,
+            "name": "Levante UD",
+            "event-name": "Levante UD vs Cádiz",
+            "numberOfRunners": 3,
+            "winPercentage": 97.29729729729728,
+            "startTime": "2022-01-22T13:00:00.000Z",
+            "raceId": 1962147960570001,
+            "raceName": "Levante UD vs Cádiz",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Cádiz": {
+            "runnerId": 1962147963430001,
+            "back": 5,
+            "lay": 5.3,
+            "name": "Cádiz",
+            "event-name": "Levante UD vs Cádiz"
+          },
+          "DRAW (Lev/Cád)": {
+            "runnerId": 1962147963460101,
+            "back": 3.65,
+            "lay": 3.8,
+            "name": "DRAW (Lev/Cád)",
+            "event-name": "Levante UD vs Cádiz"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962147963390001,
+          "back": 1.85,
+          "lay": 1.88,
+          "name": "Levante UD",
+          "event-name": "Levante UD vs Cádiz",
+          "numberOfRunners": 3,
+          "winPercentage": 97.29729729729728,
+          "startTime": "2022-01-22T13:00:00.000Z",
+          "raceId": 1962147960570001,
+          "raceName": "Levante UD vs Cádiz",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 13:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962136774700001,
+      "event-name": "Monza vs Reggina",
+      "runner-name": "Monza",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962136774700001,
+        "start": "2022-01-22T13:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Monza": {
+            "runnerId": 1962136777490001,
+            "back": 1.77,
+            "lay": 1.85,
+            "name": "Monza",
+            "event-name": "Monza vs Reggina",
+            "numberOfRunners": 3,
+            "winPercentage": 103.38983050847457,
+            "startTime": "2022-01-22T13:00:00.000Z",
+            "raceId": 1962136774700001,
+            "raceName": "Monza vs Reggina",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Reggina": {
+            "runnerId": 1962136777530001,
+            "back": 5.2,
+            "lay": 6,
+            "name": "Reggina",
+            "event-name": "Monza vs Reggina"
+          },
+          "DRAW (Mon/Reg)": {
+            "runnerId": 1962136777560101,
+            "back": 3.6,
+            "lay": 4,
+            "name": "DRAW (Mon/Reg)",
+            "event-name": "Monza vs Reggina"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962136777490001,
+          "back": 1.77,
+          "lay": 1.85,
+          "name": "Monza",
+          "event-name": "Monza vs Reggina",
+          "numberOfRunners": 3,
+          "winPercentage": 103.38983050847457,
+          "startTime": "2022-01-22T13:00:00.000Z",
+          "raceId": 1962136774700001,
+          "raceName": "Monza vs Reggina",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 13:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962181551160001,
+      "event-name": "SpVgg Greuther Fürth vs 1. FSV Mainz 05",
+      "runner-name": "1. FSV Mainz 05",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962181551160001,
+        "start": "2022-01-22T14:30:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "SpVgg Greuther Fürth": {
+            "runnerId": 1962181553920101,
+            "back": 5.2,
+            "lay": 5.4,
+            "name": "SpVgg Greuther Fürth",
+            "event-name": "SpVgg Greuther Fürth vs 1. FSV Mainz 05"
+          },
+          "1. FSV Mainz 05": {
+            "runnerId": 1962181553960001,
+            "back": 1.8,
+            "lay": 1.83,
+            "name": "1. FSV Mainz 05",
+            "event-name": "SpVgg Greuther Fürth vs 1. FSV Mainz 05",
+            "numberOfRunners": 3,
+            "winPercentage": 108.33333333333333,
+            "startTime": "2022-01-22T14:30:00.000Z",
+            "raceId": 1962181551160001,
+            "raceName": "SpVgg Greuther Fürth vs 1. FSV Mainz 05",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (SpV/1. )": {
+            "runnerId": 1962181554000001,
+            "back": 3.75,
+            "lay": 3.95,
+            "name": "DRAW (SpV/1. )",
+            "event-name": "SpVgg Greuther Fürth vs 1. FSV Mainz 05"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962181553960001,
+          "back": 1.8,
+          "lay": 1.83,
+          "name": "1. FSV Mainz 05",
+          "event-name": "SpVgg Greuther Fürth vs 1. FSV Mainz 05",
+          "numberOfRunners": 3,
+          "winPercentage": 108.33333333333333,
+          "startTime": "2022-01-22T14:30:00.000Z",
+          "raceId": 1962181551160001,
+          "raceName": "SpVgg Greuther Fürth vs 1. FSV Mainz 05",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 14:30:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962416506000001,
+      "event-name": "Birmingham City vs Barnsley",
+      "runner-name": "Birmingham City",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962416506000001,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Birmingham City": {
+            "runnerId": 1962416508390101,
+            "back": 1.89,
+            "lay": 1.93,
+            "name": "Birmingham City",
+            "event-name": "Birmingham City vs Barnsley",
+            "numberOfRunners": 3,
+            "winPercentage": 90.4761904761905,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1962416506000001,
+            "raceName": "Birmingham City vs Barnsley",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Barnsley": {
+            "runnerId": 1962416508420101,
+            "back": 5,
+            "lay": 5.2,
+            "name": "Barnsley",
+            "event-name": "Birmingham City vs Barnsley"
+          },
+          "DRAW (Bir/Bar)": {
+            "runnerId": 1962416508450101,
+            "back": 3.6,
+            "lay": 3.65,
+            "name": "DRAW (Bir/Bar)",
+            "event-name": "Birmingham City vs Barnsley"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962416508390101,
+          "back": 1.89,
+          "lay": 1.93,
+          "name": "Birmingham City",
+          "event-name": "Birmingham City vs Barnsley",
+          "numberOfRunners": 3,
+          "winPercentage": 90.4761904761905,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1962416506000001,
+          "raceName": "Birmingham City vs Barnsley",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1963208579430001,
+      "event-name": "Cambridge United vs Crewe Alexandra",
+      "runner-name": "Cambridge United",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1963208579430001,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Cambridge United": {
+            "runnerId": 1963208584080001,
+            "back": 1.97,
+            "lay": 2.04,
+            "name": "Cambridge United",
+            "event-name": "Cambridge United vs Crewe Alexandra",
+            "numberOfRunners": 3,
+            "winPercentage": 82.74111675126903,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963208579430001,
+            "raceName": "Cambridge United vs Crewe Alexandra",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Crewe Alexandra": {
+            "runnerId": 1963208584110101,
+            "back": 4,
+            "lay": 4.6,
+            "name": "Crewe Alexandra",
+            "event-name": "Cambridge United vs Crewe Alexandra"
+          },
+          "DRAW (Cam/Cre)": {
+            "runnerId": 1963208584140101,
+            "back": 3.6,
+            "lay": 3.9,
+            "name": "DRAW (Cam/Cre)",
+            "event-name": "Cambridge United vs Crewe Alexandra"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1963208584080001,
+          "back": 1.97,
+          "lay": 2.04,
+          "name": "Cambridge United",
+          "event-name": "Cambridge United vs Crewe Alexandra",
+          "numberOfRunners": 3,
+          "winPercentage": 82.74111675126903,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963208579430001,
+          "raceName": "Cambridge United vs Crewe Alexandra",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1963208611000001,
+      "event-name": "Charlton Athletic vs Fleetwood Town",
+      "runner-name": "Charlton Athletic",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1963208611000001,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Charlton Athletic": {
+            "runnerId": 1963208615360101,
+            "back": 1.82,
+            "lay": 1.87,
+            "name": "Charlton Athletic",
+            "event-name": "Charlton Athletic vs Fleetwood Town",
+            "numberOfRunners": 3,
+            "winPercentage": 106.04395604395604,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963208611000001,
+            "raceName": "Charlton Athletic vs Fleetwood Town",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Fleetwood Town": {
+            "runnerId": 1963208615400001,
+            "back": 4.8,
+            "lay": 5.2,
+            "name": "Fleetwood Town",
+            "event-name": "Charlton Athletic vs Fleetwood Town"
+          },
+          "DRAW (Cha/Fle)": {
+            "runnerId": 1963208615430001,
+            "back": 3.75,
+            "lay": 4,
+            "name": "DRAW (Cha/Fle)",
+            "event-name": "Charlton Athletic vs Fleetwood Town"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1963208615360101,
+          "back": 1.82,
+          "lay": 1.87,
+          "name": "Charlton Athletic",
+          "event-name": "Charlton Athletic vs Fleetwood Town",
+          "numberOfRunners": 3,
+          "winPercentage": 106.04395604395604,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963208611000001,
+          "raceName": "Charlton Athletic vs Fleetwood Town",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1966732769540051,
+      "event-name": "Dulwich Hamlet vs Concord Rangers",
+      "runner-name": "Dulwich Hamlet",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966732769540051,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Dulwich Hamlet": {
+            "runnerId": 1966732770750151,
+            "back": 1.88,
+            "lay": 2.18,
+            "name": "Dulwich Hamlet",
+            "event-name": "Dulwich Hamlet vs Concord Rangers",
+            "numberOfRunners": 3,
+            "winPercentage": 94.14893617021278,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1966732769540051,
+            "raceName": "Dulwich Hamlet vs Concord Rangers",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Concord Rangers": {
+            "runnerId": 1966732770790151,
+            "back": 3.65,
+            "lay": 4.4,
+            "name": "Concord Rangers",
+            "event-name": "Dulwich Hamlet vs Concord Rangers"
+          },
+          "DRAW (Dul/Con)": {
+            "runnerId": 1966732770830051,
             "back": 3.7,
             "lay": 4.4,
-            "name": "Lommel SK",
-            "event-name": "RWD Molenbeek vs Lommel SK"
-          },
-          "DRAW (RWD/Lom)": {
-            "runnerId": 1965893721170001,
-            "back": 3.9,
-            "lay": 4.5,
-            "name": "DRAW (RWD/Lom)",
-            "event-name": "RWD Molenbeek vs Lommel SK"
+            "name": "DRAW (Dul/Con)",
+            "event-name": "Dulwich Hamlet vs Concord Rangers"
           }
         },
         "metaData": {
@@ -806,16 +934,16 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1965893721090001,
-          "back": 1.83,
-          "lay": 2.04,
-          "name": "RWD Molenbeek",
-          "event-name": "RWD Molenbeek vs Lommel SK",
+          "runnerId": 1966732770750151,
+          "back": 1.88,
+          "lay": 2.18,
+          "name": "Dulwich Hamlet",
+          "event-name": "Dulwich Hamlet vs Concord Rangers",
           "numberOfRunners": 3,
-          "winPercentage": 102.18579234972677,
-          "startTime": "2022-01-21T19:00:00.000Z",
-          "raceId": 1965893719650001,
-          "raceName": "RWD Molenbeek vs Lommel SK",
+          "winPercentage": 94.14893617021278,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1966732769540051,
+          "raceName": "Dulwich Hamlet vs Concord Rangers",
           "sportName": "Soccer",
           "in-running-flag": false,
           "status": "open"
@@ -829,52 +957,132 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "21/01/2022, 19:00:00",
-      "bet-placed-time": "18:57:21  21-01-2022"
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
     },
     {
       "status": "matched",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1961621412080001,
-      "event-name": "Eintracht Frankfurt vs Arminia Bielefeld",
-      "runner-name": "Eintracht Frankfurt",
+      "event-id": 1963187220230001,
+      "event-name": "Harrogate Town vs Oldham Athletic",
+      "runner-name": "Harrogate Town",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1963187220230001,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Harrogate Town": {
+            "runnerId": 1963187221080001,
+            "back": 1.84,
+            "lay": 1.91,
+            "name": "Harrogate Town",
+            "event-name": "Harrogate Town vs Oldham Athletic",
+            "numberOfRunners": 3,
+            "winPercentage": 103.80434782608695,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963187220230001,
+            "raceName": "Harrogate Town vs Oldham Athletic",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Oldham Athletic": {
+            "runnerId": 1963187221120001,
+            "back": 4.5,
+            "lay": 4.9,
+            "name": "Oldham Athletic",
+            "event-name": "Harrogate Town vs Oldham Athletic"
+          },
+          "DRAW (Har/Old)": {
+            "runnerId": 1963187221160001,
+            "back": 3.75,
+            "lay": 4.1,
+            "name": "DRAW (Har/Old)",
+            "event-name": "Harrogate Town vs Oldham Athletic"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1963187221080001,
+          "back": 1.84,
+          "lay": 1.91,
+          "name": "Harrogate Town",
+          "event-name": "Harrogate Town vs Oldham Athletic",
+          "numberOfRunners": 3,
+          "winPercentage": 103.80434782608695,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963187220230001,
+          "raceName": "Harrogate Town vs Oldham Athletic",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:23  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1963208633890001,
+      "event-name": "Ipswich Town vs Accrington Stanley",
+      "runner-name": "Ipswich Town",
       "decimal-odds": 1.8,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1961621412080001,
-        "start": "2022-01-21T19:30:00.000Z",
+        "id": 1963208633890001,
+        "start": "2022-01-22T15:00:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "allRunners": {
-          "Eintracht Frankfurt": {
-            "runnerId": 1961621414820101,
+          "Ipswich Town": {
+            "runnerId": 1963208637970001,
             "back": 1.74,
-            "lay": 1.75,
-            "name": "Eintracht Frankfurt",
-            "event-name": "Eintracht Frankfurt vs Arminia Bielefeld",
+            "lay": 1.82,
+            "name": "Ipswich Town",
+            "event-name": "Ipswich Town vs Accrington Stanley",
             "numberOfRunners": 3,
-            "winPercentage": 127.01149425287356,
-            "startTime": "2022-01-21T19:30:00.000Z",
-            "raceId": 1961621412080001,
-            "raceName": "Eintracht Frankfurt vs Arminia Bielefeld",
+            "winPercentage": 118.39080459770113,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963208633890001,
+            "raceName": "Ipswich Town vs Accrington Stanley",
             "sportName": "Soccer",
             "in-running-flag": false,
             "status": "open"
           },
-          "Arminia Bielefeld": {
-            "runnerId": 1961621414860001,
-            "back": 5.7,
-            "lay": 5.8,
-            "name": "Arminia Bielefeld",
-            "event-name": "Eintracht Frankfurt vs Arminia Bielefeld"
+          "Accrington Stanley": {
+            "runnerId": 1963208638010001,
+            "back": 5.1,
+            "lay": 5.7,
+            "name": "Accrington Stanley",
+            "event-name": "Ipswich Town vs Accrington Stanley"
           },
-          "DRAW (Ein/Arm)": {
-            "runnerId": 1961621414890101,
-            "back": 3.95,
-            "lay": 4,
-            "name": "DRAW (Ein/Arm)",
-            "event-name": "Eintracht Frankfurt vs Arminia Bielefeld"
+          "DRAW (Ips/Acc)": {
+            "runnerId": 1963208638040101,
+            "back": 3.8,
+            "lay": 4.1,
+            "name": "DRAW (Ips/Acc)",
+            "event-name": "Ipswich Town vs Accrington Stanley"
           }
         },
         "metaData": {
@@ -886,16 +1094,16 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1961621414820101,
+          "runnerId": 1963208637970001,
           "back": 1.74,
-          "lay": 1.75,
-          "name": "Eintracht Frankfurt",
-          "event-name": "Eintracht Frankfurt vs Arminia Bielefeld",
+          "lay": 1.82,
+          "name": "Ipswich Town",
+          "event-name": "Ipswich Town vs Accrington Stanley",
           "numberOfRunners": 3,
-          "winPercentage": 127.01149425287356,
-          "startTime": "2022-01-21T19:30:00.000Z",
-          "raceId": 1961621412080001,
-          "raceName": "Eintracht Frankfurt vs Arminia Bielefeld",
+          "winPercentage": 118.39080459770113,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963208633890001,
+          "raceName": "Ipswich Town vs Accrington Stanley",
           "sportName": "Soccer",
           "in-running-flag": false,
           "status": "open"
@@ -909,52 +1117,52 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "21/01/2022, 19:30:00",
-      "bet-placed-time": "18:57:22  21-01-2022"
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
     },
     {
       "status": "matched",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1965898840760001,
-      "event-name": "KAA Gent Women vs KRC Genk Women",
-      "runner-name": "KAA Gent Women",
-      "decimal-odds": 1.9,
+      "event-id": 1957238964610016,
+      "event-name": "Leeds United vs Newcastle United",
+      "runner-name": "Leeds United",
+      "decimal-odds": 2.1,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1965898840760001,
-        "start": "2022-01-21T19:30:00.000Z",
+        "id": 1957238964610016,
+        "start": "2022-01-22T15:00:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "allRunners": {
-          "KAA Gent Women": {
-            "runnerId": 1965898842790101,
-            "back": 1.86,
-            "lay": 2.18,
-            "name": "KAA Gent Women",
-            "event-name": "KAA Gent Women vs KRC Genk Women",
+          "Leeds United": {
+            "runnerId": 1957238968910116,
+            "back": 2.08,
+            "lay": 2.12,
+            "name": "Leeds United",
+            "event-name": "Leeds United vs Newcastle United",
             "numberOfRunners": 3,
-            "winPercentage": 85.48387096774194,
-            "startTime": "2022-01-21T19:30:00.000Z",
-            "raceId": 1965898840760001,
-            "raceName": "KAA Gent Women vs KRC Genk Women",
+            "winPercentage": 80.28846153846153,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1957238964610016,
+            "raceName": "Leeds United vs Newcastle United",
             "sportName": "Soccer",
             "in-running-flag": false,
             "status": "open"
           },
-          "KRC Genk Women": {
-            "runnerId": 1965898842830001,
-            "back": 3.45,
-            "lay": 4,
-            "name": "KRC Genk Women",
-            "event-name": "KAA Gent Women vs KRC Genk Women"
+          "Newcastle United": {
+            "runnerId": 1957238968950016,
+            "back": 3.8,
+            "lay": 3.9,
+            "name": "Newcastle United",
+            "event-name": "Leeds United vs Newcastle United"
           },
-          "DRAW (KAA/KRC)": {
-            "runnerId": 1965898842860101,
-            "back": 3.9,
-            "lay": 4.8,
-            "name": "DRAW (KAA/KRC)",
-            "event-name": "KAA Gent Women vs KRC Genk Women"
+          "DRAW (Lee/New)": {
+            "runnerId": 1957238968980016,
+            "back": 3.75,
+            "lay": 3.9,
+            "name": "DRAW (Lee/New)",
+            "event-name": "Leeds United vs Newcastle United"
           }
         },
         "metaData": {
@@ -966,16 +1174,16 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1965898842790101,
-          "back": 1.86,
-          "lay": 2.18,
-          "name": "KAA Gent Women",
-          "event-name": "KAA Gent Women vs KRC Genk Women",
+          "runnerId": 1957238968910116,
+          "back": 2.08,
+          "lay": 2.12,
+          "name": "Leeds United",
+          "event-name": "Leeds United vs Newcastle United",
           "numberOfRunners": 3,
-          "winPercentage": 85.48387096774194,
-          "startTime": "2022-01-21T19:30:00.000Z",
-          "raceId": 1965898840760001,
-          "raceName": "KAA Gent Women vs KRC Genk Women",
+          "winPercentage": 80.28846153846153,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1957238964610016,
+          "raceName": "Leeds United vs Newcastle United",
           "sportName": "Soccer",
           "in-running-flag": false,
           "status": "open"
@@ -989,52 +1197,132 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "21/01/2022, 19:30:00",
-      "bet-placed-time": "18:57:22  21-01-2022"
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
     },
     {
       "status": "matched",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1961610855890001,
-      "event-name": "Hellas Verona vs Bologna",
-      "runner-name": "Hellas Verona",
+      "event-id": 1957238982710016,
+      "event-name": "Manchester United vs West Ham",
+      "runner-name": "Manchester United",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1957238982710016,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Manchester United": {
+            "runnerId": 1957238987260016,
+            "back": 2.02,
+            "lay": 2.04,
+            "name": "Manchester United",
+            "event-name": "Manchester United vs West Ham",
+            "numberOfRunners": 3,
+            "winPercentage": 88.11881188118811,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1957238982710016,
+            "raceName": "Manchester United vs West Ham",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "West Ham": {
+            "runnerId": 1957238987290016,
+            "back": 4.1,
+            "lay": 4.2,
+            "name": "West Ham",
+            "event-name": "Manchester United vs West Ham"
+          },
+          "DRAW (Man/Wes)": {
+            "runnerId": 1957238987320116,
+            "back": 3.8,
+            "lay": 3.95,
+            "name": "DRAW (Man/Wes)",
+            "event-name": "Manchester United vs West Ham"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1957238987260016,
+          "back": 2.02,
+          "lay": 2.04,
+          "name": "Manchester United",
+          "event-name": "Manchester United vs West Ham",
+          "numberOfRunners": 3,
+          "winPercentage": 88.11881188118811,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1957238982710016,
+          "raceName": "Manchester United vs West Ham",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1963208662260001,
+      "event-name": "Morecambe vs Wycombe Wanderers",
+      "runner-name": "Wycombe Wanderers",
       "decimal-odds": 2,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1961610855890001,
-        "start": "2022-01-21T19:45:00.000Z",
+        "id": 1963208662260001,
+        "start": "2022-01-22T15:00:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "allRunners": {
-          "Hellas Verona": {
-            "runnerId": 1961610861480101,
-            "back": 1.94,
-            "lay": 1.95,
-            "name": "Hellas Verona",
-            "event-name": "Hellas Verona vs Bologna",
+          "Morecambe": {
+            "runnerId": 1963208666420101,
+            "back": 4.2,
+            "lay": 4.7,
+            "name": "Morecambe",
+            "event-name": "Morecambe vs Wycombe Wanderers"
+          },
+          "Wycombe Wanderers": {
+            "runnerId": 1963208666460001,
+            "back": 1.91,
+            "lay": 1.99,
+            "name": "Wycombe Wanderers",
+            "event-name": "Morecambe vs Wycombe Wanderers",
             "numberOfRunners": 3,
-            "winPercentage": 98.45360824742268,
-            "startTime": "2022-01-21T19:45:00.000Z",
-            "raceId": 1961610855890001,
-            "raceName": "Hellas Verona vs Bologna",
+            "winPercentage": 93.71727748691102,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963208662260001,
+            "raceName": "Morecambe vs Wycombe Wanderers",
             "sportName": "Soccer",
             "in-running-flag": false,
             "status": "open"
           },
-          "Bologna": {
-            "runnerId": 1961610861510101,
-            "back": 4.4,
-            "lay": 4.5,
-            "name": "Bologna",
-            "event-name": "Hellas Verona vs Bologna"
-          },
-          "DRAW (Hel/Bol)": {
-            "runnerId": 1961610861550001,
-            "back": 3.85,
-            "lay": 3.9,
-            "name": "DRAW (Hel/Bol)",
-            "event-name": "Hellas Verona vs Bologna"
+          "DRAW (Mor/Wyc)": {
+            "runnerId": 1963208666500001,
+            "back": 3.7,
+            "lay": 3.95,
+            "name": "DRAW (Mor/Wyc)",
+            "event-name": "Morecambe vs Wycombe Wanderers"
           }
         },
         "metaData": {
@@ -1046,16 +1334,16 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1961610861480101,
-          "back": 1.94,
-          "lay": 1.95,
-          "name": "Hellas Verona",
-          "event-name": "Hellas Verona vs Bologna",
+          "runnerId": 1963208666460001,
+          "back": 1.91,
+          "lay": 1.99,
+          "name": "Wycombe Wanderers",
+          "event-name": "Morecambe vs Wycombe Wanderers",
           "numberOfRunners": 3,
-          "winPercentage": 98.45360824742268,
-          "startTime": "2022-01-21T19:45:00.000Z",
-          "raceId": 1961610855890001,
-          "raceName": "Hellas Verona vs Bologna",
+          "winPercentage": 93.71727748691102,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963208662260001,
+          "raceName": "Morecambe vs Wycombe Wanderers",
           "sportName": "Soccer",
           "in-running-flag": false,
           "status": "open"
@@ -1069,52 +1357,52 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "21/01/2022, 19:45:00",
-      "bet-placed-time": "18:57:22  21-01-2022"
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
     },
     {
       "status": "matched",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1961604725470001,
-      "event-name": "KV Oostende vs Royal Antwerp",
-      "runner-name": "Royal Antwerp",
-      "decimal-odds": 1.9,
+      "event-id": 1963187269730001,
+      "event-name": "Salford City vs Colchester United",
+      "runner-name": "Salford City",
+      "decimal-odds": 1.8,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1961604725470001,
-        "start": "2022-01-21T19:45:00.000Z",
+        "id": 1963187269730001,
+        "start": "2022-01-22T15:00:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "allRunners": {
-          "KV Oostende": {
-            "runnerId": 1961604726740001,
-            "back": 4.3,
-            "lay": 4.8,
-            "name": "KV Oostende",
-            "event-name": "KV Oostende vs Royal Antwerp"
-          },
-          "Royal Antwerp": {
-            "runnerId": 1961604726780001,
-            "back": 1.88,
-            "lay": 1.93,
-            "name": "Royal Antwerp",
-            "event-name": "KV Oostende vs Royal Antwerp",
+          "Salford City": {
+            "runnerId": 1963187270600101,
+            "back": 1.73,
+            "lay": 1.78,
+            "name": "Salford City",
+            "event-name": "Salford City vs Colchester United",
             "numberOfRunners": 3,
-            "winPercentage": 104.78723404255321,
-            "startTime": "2022-01-21T19:45:00.000Z",
-            "raceId": 1961604725470001,
-            "raceName": "KV Oostende vs Royal Antwerp",
+            "winPercentage": 108.09248554913295,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963187269730001,
+            "raceName": "Salford City vs Colchester United",
             "sportName": "Soccer",
             "in-running-flag": false,
             "status": "open"
           },
-          "DRAW (KV /Roy)": {
-            "runnerId": 1961604726820001,
-            "back": 3.85,
-            "lay": 4.1,
-            "name": "DRAW (KV /Roy)",
-            "event-name": "KV Oostende vs Royal Antwerp"
+          "Colchester United": {
+            "runnerId": 1963187270640001,
+            "back": 5.6,
+            "lay": 6.2,
+            "name": "Colchester United",
+            "event-name": "Salford City vs Colchester United"
+          },
+          "DRAW (Sal/Col)": {
+            "runnerId": 1963187270670101,
+            "back": 3.6,
+            "lay": 3.9,
+            "name": "DRAW (Sal/Col)",
+            "event-name": "Salford City vs Colchester United"
           }
         },
         "metaData": {
@@ -1126,16 +1414,16 @@
           "minProfitOdd": 0.7
         },
         "luckyWinner": {
-          "runnerId": 1961604726780001,
-          "back": 1.88,
-          "lay": 1.93,
-          "name": "Royal Antwerp",
-          "event-name": "KV Oostende vs Royal Antwerp",
+          "runnerId": 1963187270600101,
+          "back": 1.73,
+          "lay": 1.78,
+          "name": "Salford City",
+          "event-name": "Salford City vs Colchester United",
           "numberOfRunners": 3,
-          "winPercentage": 104.78723404255321,
-          "startTime": "2022-01-21T19:45:00.000Z",
-          "raceId": 1961604725470001,
-          "raceName": "KV Oostende vs Royal Antwerp",
+          "winPercentage": 108.09248554913295,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963187269730001,
+          "raceName": "Salford City vs Colchester United",
           "sportName": "Soccer",
           "in-running-flag": false,
           "status": "open"
@@ -1149,8 +1437,594 @@
         "winConfidencePercentage": 80,
         "minProfitOdd": 0.7
       },
-      "event-start-time": "21/01/2022, 19:45:00",
-      "bet-placed-time": "18:57:22  21-01-2022"
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1963187283590001,
+      "event-name": "Scunthorpe United vs Newport County",
+      "runner-name": "Newport County",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1963187283590001,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Scunthorpe United": {
+            "runnerId": 1963187284440001,
+            "back": 4.5,
+            "lay": 5,
+            "name": "Scunthorpe United",
+            "event-name": "Scunthorpe United vs Newport County"
+          },
+          "Newport County": {
+            "runnerId": 1963187284470101,
+            "back": 1.81,
+            "lay": 1.9,
+            "name": "Newport County",
+            "event-name": "Scunthorpe United vs Newport County",
+            "numberOfRunners": 3,
+            "winPercentage": 109.94475138121545,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1963187283590001,
+            "raceName": "Scunthorpe United vs Newport County",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (Scu/New)": {
+            "runnerId": 1963187284510001,
+            "back": 3.8,
+            "lay": 4,
+            "name": "DRAW (Scu/New)",
+            "event-name": "Scunthorpe United vs Newport County"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1963187284470101,
+          "back": 1.81,
+          "lay": 1.9,
+          "name": "Newport County",
+          "event-name": "Scunthorpe United vs Newport County",
+          "numberOfRunners": 3,
+          "winPercentage": 109.94475138121545,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1963187283590001,
+          "raceName": "Scunthorpe United vs Newport County",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962298064350001,
+      "event-name": "Stoke City vs Fulham",
+      "runner-name": "Fulham",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962298064350001,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Stoke City": {
+            "runnerId": 1962298067140101,
+            "back": 4.6,
+            "lay": 4.9,
+            "name": "Stoke City",
+            "event-name": "Stoke City vs Fulham"
+          },
+          "Fulham": {
+            "runnerId": 1962298067170101,
+            "back": 1.94,
+            "lay": 1.96,
+            "name": "Fulham",
+            "event-name": "Stoke City vs Fulham",
+            "numberOfRunners": 3,
+            "winPercentage": 90.7216494845361,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1962298064350001,
+            "raceName": "Stoke City vs Fulham",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (Sto/Ful)": {
+            "runnerId": 1962298067210001,
+            "back": 3.7,
+            "lay": 3.75,
+            "name": "DRAW (Sto/Ful)",
+            "event-name": "Stoke City vs Fulham"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962298067170101,
+          "back": 1.94,
+          "lay": 1.96,
+          "name": "Fulham",
+          "event-name": "Stoke City vs Fulham",
+          "numberOfRunners": 3,
+          "winPercentage": 90.7216494845361,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1962298064350001,
+          "raceName": "Stoke City vs Fulham",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962182244070001,
+      "event-name": "Perugia vs Pordenone",
+      "runner-name": "Perugia",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962182244070001,
+        "start": "2022-01-22T15:15:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Perugia": {
+            "runnerId": 1962182246690001,
+            "back": 1.76,
+            "lay": 1.84,
+            "name": "Perugia",
+            "event-name": "Perugia vs Pordenone",
+            "numberOfRunners": 3,
+            "winPercentage": 104.54545454545455,
+            "startTime": "2022-01-22T15:15:00.000Z",
+            "raceId": 1962182244070001,
+            "raceName": "Perugia vs Pordenone",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Pordenone": {
+            "runnerId": 1962182246730001,
+            "back": 5.4,
+            "lay": 6,
+            "name": "Pordenone",
+            "event-name": "Perugia vs Pordenone"
+          },
+          "DRAW (Per/Por)": {
+            "runnerId": 1962182246760101,
+            "back": 3.6,
+            "lay": 3.9,
+            "name": "DRAW (Per/Por)",
+            "event-name": "Perugia vs Pordenone"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962182246690001,
+          "back": 1.76,
+          "lay": 1.84,
+          "name": "Perugia",
+          "event-name": "Perugia vs Pordenone",
+          "numberOfRunners": 3,
+          "winPercentage": 104.54545454545455,
+          "startTime": "2022-01-22T15:15:00.000Z",
+          "raceId": 1962182244070001,
+          "raceName": "Perugia vs Pordenone",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:15:00",
+      "bet-placed-time": "06:29:24  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1966725991920051,
+      "event-name": "Clyde vs Queen's Park",
+      "runner-name": "Queen's Park",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966725991920051,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Clyde": {
+            "runnerId": 1966725996200051,
+            "back": 3.75,
+            "lay": 4.1,
+            "name": "Clyde",
+            "event-name": "Clyde vs Queen's Park"
+          },
+          "Queen's Park": {
+            "runnerId": 1966725996230151,
+            "back": 2,
+            "lay": 2.08,
+            "name": "Queen's Park",
+            "event-name": "Clyde vs Queen's Park",
+            "numberOfRunners": 3,
+            "winPercentage": 85.00000000000001,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1966725991920051,
+            "raceName": "Clyde vs Queen's Park",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (Cly/Que)": {
+            "runnerId": 1966725996270051,
+            "back": 3.7,
+            "lay": 4.1,
+            "name": "DRAW (Cly/Que)",
+            "event-name": "Clyde vs Queen's Park"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966725996230151,
+          "back": 2,
+          "lay": 2.08,
+          "name": "Queen's Park",
+          "event-name": "Clyde vs Queen's Park",
+          "numberOfRunners": 3,
+          "winPercentage": 85.00000000000001,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1966725991920051,
+          "raceName": "Clyde vs Queen's Park",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:30:34  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1962182256150001,
+      "event-name": "Como vs Crotone",
+      "runner-name": "Como",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1962182256150001,
+        "start": "2022-01-22T13:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Como": {
+            "runnerId": 1962182259020101,
+            "back": 1.99,
+            "lay": 2.04,
+            "name": "Como",
+            "event-name": "Como vs Crotone",
+            "numberOfRunners": 3,
+            "winPercentage": 80.90452261306532,
+            "startTime": "2022-01-22T13:00:00.000Z",
+            "raceId": 1962182256150001,
+            "raceName": "Como vs Crotone",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "Crotone": {
+            "runnerId": 1962182259060101,
+            "back": 4.1,
+            "lay": 4.5,
+            "name": "Crotone",
+            "event-name": "Como vs Crotone"
+          },
+          "DRAW (Com/Cro)": {
+            "runnerId": 1962182259110001,
+            "back": 3.6,
+            "lay": 3.9,
+            "name": "DRAW (Com/Cro)",
+            "event-name": "Como vs Crotone"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1962182259020101,
+          "back": 1.99,
+          "lay": 2.04,
+          "name": "Como",
+          "event-name": "Como vs Crotone",
+          "numberOfRunners": 3,
+          "winPercentage": 80.90452261306532,
+          "startTime": "2022-01-22T13:00:00.000Z",
+          "raceId": 1962182256150001,
+          "raceName": "Como vs Crotone",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 13:00:00",
+      "bet-placed-time": "06:31:09  22-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1966732728970051,
+      "event-name": "Billericay Town vs Havant & Waterlooville",
+      "runner-name": "Havant & Waterlooville",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1966732728970051,
+        "start": "2022-01-22T15:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "allRunners": {
+          "Billericay Town": {
+            "runnerId": 1966732730260151,
+            "back": 3.45,
+            "lay": 4.1,
+            "name": "Billericay Town",
+            "event-name": "Billericay Town vs Havant & Waterlooville"
+          },
+          "Havant & Waterlooville": {
+            "runnerId": 1966732730300051,
+            "back": 1.88,
+            "lay": 2.12,
+            "name": "Havant & Waterlooville",
+            "event-name": "Billericay Town vs Havant & Waterlooville",
+            "numberOfRunners": 3,
+            "winPercentage": 83.51063829787236,
+            "startTime": "2022-01-22T15:00:00.000Z",
+            "raceId": 1966732728970051,
+            "raceName": "Billericay Town vs Havant & Waterlooville",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open"
+          },
+          "DRAW (Bil/Hav)": {
+            "runnerId": 1966732730330151,
+            "back": 3.9,
+            "lay": 4.9,
+            "name": "DRAW (Bil/Hav)",
+            "event-name": "Billericay Town vs Havant & Waterlooville"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1966732730300051,
+          "back": 1.88,
+          "lay": 2.12,
+          "name": "Havant & Waterlooville",
+          "event-name": "Billericay Town vs Havant & Waterlooville",
+          "numberOfRunners": 3,
+          "winPercentage": 83.51063829787236,
+          "startTime": "2022-01-22T15:00:00.000Z",
+          "raceId": 1966732728970051,
+          "raceName": "Billericay Town vs Havant & Waterlooville",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 15:00:00",
+      "bet-placed-time": "06:32:19  22-01-2022"
+    }
+  ],
+  "Horse Racing": [
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1967189719290051,
+      "event-name": "14:00 Haydock",
+      "runner-name": "6 Tommy's Oscar",
+      "decimal-odds": 1.8,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1967189719290051,
+        "start": "2022-01-22T14:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "race-length": "1m 7f 144y",
+        "allRunners": {
+          "6 Tommy's Oscar": {
+            "runnerId": 1967189719910151,
+            "back": 1.71,
+            "lay": 1.77,
+            "name": "6 Tommy's Oscar",
+            "event-name": "14:00 Haydock",
+            "numberOfRunners": 6,
+            "winPercentage": 95.90643274853801,
+            "startTime": "2022-01-22T14:00:00.000Z",
+            "raceId": 1967189719290051,
+            "raceName": "14:00 Haydock",
+            "sportName": "Horse Racing",
+            "in-running-flag": false,
+            "status": "open",
+            "race-length": "1m 7f 144y"
+          },
+          "4 Hunters Call": {
+            "runnerId": 1967189719850051,
+            "back": 3.35,
+            "lay": 3.5,
+            "name": "4 Hunters Call",
+            "event-name": "14:00 Haydock"
+          },
+          "5 Rockadenn": {
+            "runnerId": 1967189719880051,
+            "back": 15,
+            "lay": 110,
+            "name": "5 Rockadenn",
+            "event-name": "14:00 Haydock"
+          },
+          "3 Global Citizen": {
+            "runnerId": 1967189719820051,
+            "back": 12,
+            "lay": 36,
+            "name": "3 Global Citizen",
+            "event-name": "14:00 Haydock"
+          },
+          "1 Navajo Pass": {
+            "runnerId": 1967189719760051,
+            "back": 11.5,
+            "lay": 20,
+            "name": "1 Navajo Pass",
+            "event-name": "14:00 Haydock"
+          },
+          "2 Garo De Juilley": {
+            "runnerId": 1967189719790051,
+            "back": 29,
+            "lay": 0,
+            "name": "2 Garo De Juilley",
+            "event-name": "14:00 Haydock"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 3,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.5,
+          "winConfidencePercentage": 80,
+          "minProfitOdd": 0.7
+        },
+        "luckyWinner": {
+          "runnerId": 1967189719910151,
+          "back": 1.71,
+          "lay": 1.77,
+          "name": "6 Tommy's Oscar",
+          "event-name": "14:00 Haydock",
+          "numberOfRunners": 6,
+          "winPercentage": 95.90643274853801,
+          "startTime": "2022-01-22T14:00:00.000Z",
+          "raceId": 1967189719290051,
+          "raceName": "14:00 Haydock",
+          "sportName": "Horse Racing",
+          "in-running-flag": false,
+          "status": "open",
+          "race-length": "1m 7f 144y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 3,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.5,
+        "winConfidencePercentage": 80,
+        "minProfitOdd": 0.7
+      },
+      "event-start-time": "22/01/2022, 14:00:00",
+      "bet-placed-time": "06:34:14  22-01-2022"
     }
   ]
 }

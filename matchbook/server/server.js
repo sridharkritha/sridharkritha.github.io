@@ -28,10 +28,6 @@
 	let g_db = {};
 	g_db.sportId = {};
 
-	// const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
-	// const g_onlyOne_raceName = "Burkina Faso vs Ethiopia";
-	const g_onlyOne_raceName = null; 
-
 	let g_alreadyPlacedBetList = {};			// client report data
 	let g_allPredictedWinnerBetList = {};			// client report data
 	let g_currentPredictedWinnerBetList = {};	// client report data
@@ -51,6 +47,10 @@
 	let g_maxRunnersCount = 25; // 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
+	// const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
+	const g_onlyOne_raceName = "Pablo Andujar vs Alex De Minaur";
+	// const g_onlyOne_raceName = null; 
+
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
 	'Cross Sport Specials','Current Events','Cycling','Darts','Gaelic Football','Golf','Greyhound Racing','Horse Racing',
@@ -59,31 +59,31 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		'Horse Racing', //.
-		'Soccer', //.
-		'Greyhound Racing', //.
+		// 'Horse Racing', //.
+		// 'Soccer', //.
+		// 'Greyhound Racing', //.
 
-		'American Football',//.
-		'Basketball', //.
-		"Boxing", //.
-		"Golf", //.
+		// 'American Football',//.
+		// 'Basketball', //.
+		// "Boxing", //.
+		// "Golf", //.
 
-		'Ice Hockey', //.
-		'Rugby Union', //.
-		'Enhanced Specials', //.
-		'Snooker', //.
+		// 'Ice Hockey', //.
+		// 'Rugby Union', //.
+		// 'Enhanced Specials', //.
+		// 'Snooker', //.
 
 
-		"Baseball", //.
-		"Cricket", //.
-		"Motor Sport", //.
+		// "Baseball", //.
+		// "Cricket", //.
+		// "Motor Sport", //.
 		"Tennis", //.
 
-		"Volleyball",
-		"Chess",
-		"Cycling",
-		"Rugby League",
-		"Table Tennis",
+		// "Volleyball",
+		// "Chess",
+		// "Cycling",
+		// "Rugby League",
+		// "Table Tennis",
 	];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -166,7 +166,7 @@
 		const currentTime = new Date();
 
 		// check same date (Ignore any time difference) or not ?
-		if(currentTime.toISOString().split('T')[0] === eventStartTime.toISOString().split('T')[0])
+		if(UTIL.isSameDate(currentTime, eventStartTime))
 		{
 			// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 			if(currentTime.getTime() > (eventStartTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
@@ -217,8 +217,7 @@
 							currentDate = new Date(extraArgs.filterDay);
 						}
 
-						if(dateObject.getDate() !== currentDate.getDate() || dateObject.getMonth() !== currentDate.getMonth()
-							|| dateObject.getFullYear() !== currentDate.getFullYear())
+						if(!UTIL.isSameDate(dateObject, currentDate))
 						{
 							// CONNECTIONS.print("ignore",'SKIP: ' + dateObject + ' !== ' + currentDate);
 							continue; // skip
@@ -536,6 +535,8 @@
 										let profitOdd = luckyRunner[0][1].back - 1;
 									
 										jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+
+										console.log(`Sports: ${sportName} #### Event: ${raceName} #### Win(%): ${UTIL.roundIt2D(winPercentage)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
 			
 										// Build the predictedWinner list
 										if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
@@ -816,14 +817,14 @@
 
 
 	callback_getEvents = async function(err, sports_cbCount, sport) {
-		if(err){
+		if(err) {
 			CONNECTIONS.print("must",err);
 			CONNECTIONS.print("must","ERROR: TRYING AGAIN BY A NEW REQUEST");
 
 			// run();
 			throw new Error(err);
 		}
-		else{
+		else {
 			if('events' in g_db.sportId[sport]) {
 				// 14:00 Newbury, 14:10 Fontwell, 14:20 Ayr, 14:35 Newbury, 14:40 Fairview...... etc
 				let races = Object.keys(g_db.sportId[sport].events);
@@ -863,7 +864,7 @@
 	};
 
 	callback_getEventInfo = function(err, sportsName, sports_cbCount, events_cbCount, isReadyForBetting) {
-		if(err){
+		if(err) {
 			CONNECTIONS.print("must",err);
 			throw new Error(err);
 		}
@@ -878,10 +879,10 @@
 	goToNextSports = (sportsName, sports_cbCount, events_cbCount, isEmptyEvent) => {
 		++sports_cbCount.currentCount;
 
-		console.log(`Events(${sportsName}) : ${events_cbCount.currentCount} / ${events_cbCount.totalCount} #######  Sports: ${sports_cbCount.currentCount} / ${sports_cbCount.totalCount}`);
+		console.log(`${UTIL.formatString(`Events(${sportsName})`, 30)} : ${events_cbCount.currentCount.toString().padStart(3, "0")} / ${events_cbCount.totalCount.toString().padStart(3, "0")} #######  Sports: ${sports_cbCount.currentCount.toString().padStart(2, "0")} / ${sports_cbCount.totalCount.toString().padStart(2, "0")}`);
 
 		if((isEmptyEvent || events_cbCount.totalCount) && events_cbCount.currentCount === events_cbCount.totalCount &&
-			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)		
+			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)
 		{
 			events_cbCount.currentCount = events_cbCount.totalCount = 0;
 			sports_cbCount.currentCount = sports_cbCount.totalCount = 0;
@@ -903,11 +904,11 @@
 	};
 
 	callback_submitOffers = function(err, response) {
-		if(err){
+		if(err) {
 			CONNECTIONS.print("must",err);
 		}
-		else{
-			//CONNECTIONS.print("ignore",response);
+		else {
+			// CONNECTIONS.print("ignore",response);
 			const nSubmittedBets = response.body.offers.length;
 			for(let i = 0; i < nSubmittedBets; ++i) {
 				let lastBetResult = response.body.offers[i];
@@ -979,7 +980,7 @@
 			CONNECTIONS.print("must",err);
 			throw new Error(err);
 		}
-		else{
+		else {
 			if(g_sportsInterested.length === 1 && g_sportsInterested[0].toLowerCase() === 'all') {
 				g_sportsInterested = g_sportsList;
 			}
@@ -1002,7 +1003,6 @@
 
 				getEvents(sport, sports_cbCount, callback_getEvents);
 			}
-			//); //forEach
 		}
 	};
 

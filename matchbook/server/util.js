@@ -22,6 +22,19 @@ const UTIL = (function() {
 			return true;
 		},
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		formatString : (str, length) => {
+			// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
+			if(str.length < length) return str.padEnd(length," ");
+	
+			console.log(`Error: String(${str}) length is larger than format length(${length})`);
+			return null;
+		},
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		isSameDate : (dateObjOne, dateObjTwo) => {
+			// check same date (Ignore any time difference) or not ?
+			return dateObjOne.toISOString().split('T')[0] === dateObjTwo.toISOString().split('T')[0] ? true : false;
+		},
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		getDefaultOptions: function()
 		{
@@ -49,6 +62,8 @@ module.exports.getDefaultOptions = UTIL.getDefaultOptions;
 module.exports.randomIntFromInterval = UTIL.randomIntFromInterval;
 module.exports.roundIt2D = UTIL.roundIt2D;
 module.exports.isNullObject = UTIL.isNullObject;
+module.exports.formatString = UTIL.formatString;
+module.exports.isSameDate = UTIL.isSameDate;
 
 
 
