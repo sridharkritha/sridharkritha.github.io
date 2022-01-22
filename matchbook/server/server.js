@@ -18,7 +18,7 @@
 	const g_scanStartTime = new Date();
 
 	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 3.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 4.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_sumOfAlreadyPlacedBetAmount = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -41,15 +41,15 @@
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
 	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
-	let g_minProfitOdd = 0.7; // 0.7 ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	let g_winConfidencePercentage = 100; // 80 => comparison with nearest competitor ex: 100  (100% or more)
+	let g_minProfitOdd = 0.8; // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 
 	let g_maxRunnersCount = 25; // 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "17:05 Southwell"; // test only one race
-	const g_onlyOne_raceName = "Pablo Andujar vs Alex De Minaur";
-	// const g_onlyOne_raceName = null; 
+	// const g_onlyOne_raceName = "Benoit Paire vs Stefanos Tsitsipas";
+	const g_onlyOne_raceName = null; 
 
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
@@ -59,31 +59,31 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		// 'Horse Racing', //.
-		// 'Soccer', //.
-		// 'Greyhound Racing', //.
+		'Horse Racing', //.
+		'Soccer', //.
+		'Greyhound Racing', //.
 
-		// 'American Football',//.
-		// 'Basketball', //.
-		// "Boxing", //.
-		// "Golf", //.
+		'American Football',//.
+		'Basketball', //.
+		"Boxing", //.
+		"Golf", //.
 
-		// 'Ice Hockey', //.
-		// 'Rugby Union', //.
-		// 'Enhanced Specials', //.
-		// 'Snooker', //.
+		'Ice Hockey', //.
+		'Rugby Union', //.
+		'Enhanced Specials', //.
+		'Snooker', //.
 
 
-		// "Baseball", //.
-		// "Cricket", //.
-		// "Motor Sport", //.
+		"Baseball", //.
+		"Cricket", //.
+		"Motor Sport", //.
 		"Tennis", //.
 
-		// "Volleyball",
-		// "Chess",
-		// "Cycling",
-		// "Rugby League",
-		// "Table Tennis",
+		"Volleyball",
+		"Chess",
+		"Cycling",
+		"Rugby League",
+		"Table Tennis",
 	];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -99,7 +99,7 @@
 	{
 		g_betMinutesOffset = 600; //(600 = 10hrs before) place bet: +1 min before the start time, -5 min after the start time
 
-		// g_winConfidencePercentage = 1; // ex: 100  (100% or more)
+		// g_winConfidencePercentage = 1; // ex: 100 => (100% or more)
 		// g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		// g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
@@ -161,6 +161,8 @@
 
 		return false;
 	};
+
+	// in-running-flag
 
 	isCorrectBetTime = (eventStartTime) => {
 		const currentTime = new Date();
