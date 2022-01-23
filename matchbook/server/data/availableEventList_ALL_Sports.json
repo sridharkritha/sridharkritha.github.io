@@ -1,4269 +1,478 @@
 {
-  "id": 4,
+  "id": 15,
   "events": {
-    "Changwon LG Sakers vs Suwon KT Sonicboom": {
-      "id": 1967191067120051,
-      "start": "2022-01-22T08:00:00.000Z",
+    "English Premier League 2021/22": {
+      "id": 1763764555650029,
+      "start": "2022-01-23T14:00:00.000Z",
       "status": "open",
       "in-running-flag": true,
-      "allRunners": {
-        "Changwon LG Sakers": {
-          "runnerId": 1967191072880051,
-          "back": 1.4,
-          "lay": 2.08
-        },
-        "Suwon KT Sonicboom": {
-          "runnerId": 1967191072920351,
-          "back": 1.93,
-          "lay": 3.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": "2022-01-23T17:21:58.594Z"
     },
-    "Seoul SK Knights vs Wonju Dongbu Promy": {
-      "id": 1967191067430051,
-      "start": "2022-01-22T08:00:00.000Z",
+    "Marítimo vs Belenenses": {
+      "id": 1963240935920001,
+      "start": "2022-01-23T15:31:00.000Z",
       "status": "open",
       "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Sparta Rotterdam vs FC Utrecht": {
+      "id": 1964015761150001,
+      "start": "2022-01-23T15:44:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Africa Cup of Nations": {
+      "id": 1953585200010016,
+      "start": "2022-01-23T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Burkina Faso vs Gabon": {
+      "id": 1965836149240001,
+      "start": "2022-01-23T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Galatasaray SK vs Trabzonspor": {
+      "id": 1963211784500001,
+      "start": "2022-01-23T16:02:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Montpellier HSC vs AS Monaco": {
+      "id": 1963216534840001,
+      "start": "2022-01-23T16:05:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Chelsea vs Tottenham Hotspur": {
+      "id": 1958009096940016,
+      "start": "2022-01-23T16:30:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z",
       "allRunners": {
-        "Seoul SK Knights": {
-          "runnerId": 1967191072930051,
-          "back": 0,
-          "lay": 0
+        "Chelsea": {
+          "runnerId": 1958009102100016,
+          "back": 2.14,
+          "lay": 2.18
         },
-        "Wonju Dongbu Promy": {
-          "runnerId": 1967191072960251,
-          "back": 0,
-          "lay": 0
+        "Tottenham Hotspur": {
+          "runnerId": 1958009102130116,
+          "back": 6,
+          "lay": 6.2
+        },
+        "DRAW (Che/Tot)": {
+          "runnerId": 1958009102170016,
+          "back": 2.64,
+          "lay": 2.7
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.89,
+        "winConfidencePercentage": 80,
         "minProfitOdd": 0.8
       }
+    },
+    "Hertha BSC vs FC Bayern München": {
+      "id": 1963231820010001,
+      "start": "2022-01-23T16:33:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Empoli vs AS Roma": {
+      "id": 1963221015320001,
+      "start": "2022-01-23T17:00:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Huesca vs Ponferradina": {
+      "id": 1963194729770001,
+      "start": "2022-01-23T17:15:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "Girona vs Lugo": {
+      "id": 1963194714150001,
+      "start": "2022-01-23T17:17:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:21:58.594Z"
+    },
+    "KV Mechelen vs Anderlecht": {
+      "id": 1963213912520001,
+      "start": "2022-01-23T17:30:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:30:09.737Z"
+    },
+    "Rayo Vallecano vs Athletic Bilbao": {
+      "id": 1963238151610001,
+      "start": "2022-01-23T17:31:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:32:09.837Z"
+    },
+    "Real Sociedad vs Getafe": {
+      "id": 1963238122660001,
+      "start": "2022-01-23T17:32:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-23T17:33:05.837Z"
     },
-    "Afyon Belediye vs Semt77 Yalova Belediyespor": {
-      "id": 1967301675900051,
-      "start": "2022-01-22T10:00:00.000Z",
+    "Achuapa FC vs FC Santa Lucia Cotzumalguapa": {
+      "id": 1968973216340051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Afyon Belediye": {
-          "runnerId": 1967301676400051,
-          "back": 0,
-          "lay": 0
-        },
-        "Semt77 Yalova Belediyespor": {
-          "runnerId": 1967301676450051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Kocaeli BB vs Fethiye Belediyespor": {
-      "id": 1968141850310051,
-      "start": "2022-01-22T11:00:00.000Z",
+    "Benfica B vs Penafiel": {
+      "id": 1967576659100051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Kocaeli BB": {
-          "runnerId": 1968141850570051,
-          "back": 1.83,
-          "lay": 2.14
-        },
-        "Fethiye Belediyespor": {
-          "runnerId": 1968141850620051,
-          "back": 1.87,
-          "lay": 2.22
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Zhejiang Golden Bulls vs Shanghai Sharks": {
-      "id": 1968152003440051,
-      "start": "2022-01-22T11:35:00.000Z",
+    "Deportivo Iztapa vs Solola FC": {
+      "id": 1968973201960051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Zhejiang Golden Bulls": {
-          "runnerId": 1968152003630051,
-          "back": 2.04,
-          "lay": 2.42
-        },
-        "Shanghai Sharks": {
-          "runnerId": 1968152003670051,
-          "back": 1.7,
-          "lay": 1.97
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Ningbo Fubon Rocket vs Xinjiang Guanghui Flying Tigers": {
-      "id": 1968152005750051,
-      "start": "2022-01-22T12:00:00.000Z",
+    "Deportivo Mictlán vs Aurora FC": {
+      "id": 1969224362190051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Ningbo Fubon Rocket": {
-          "runnerId": 1968152006150051,
-          "back": 26,
-          "lay": 36
-        },
-        "Xinjiang Guanghui Flying Tigers": {
-          "runnerId": 1968152006190151,
-          "back": 1.02,
-          "lay": 1.04
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Merkezefendi Belediyesi Denizli Basket vs Royal Hali Gaziantep BB": {
-      "id": 1967301678680051,
-      "start": "2022-01-22T12:30:00.000Z",
+    "FC FCSB vs CFR Cluj": {
+      "id": 1967586245570051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Merkezefendi Belediyesi Denizli Basket": {
-          "runnerId": 1967301679410051,
-          "back": 0,
-          "lay": 0
-        },
-        "Royal Hali Gaziantep BB": {
-          "runnerId": 1967301679450151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Bornova Belediyespor vs Akhisar Belediye": {
-      "id": 1968141853680051,
-      "start": "2022-01-22T12:45:00.000Z",
+    "Gil Vicente vs Portimonense": {
+      "id": 1963240917840001,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Bornova Belediyespor": {
-          "runnerId": 1968141853890051,
-          "back": 0,
-          "lay": 0
-        },
-        "Akhisar Belediye": {
-          "runnerId": 1968141853930051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Kouvot Kouvola vs Tampereen Pyrintö": {
-      "id": 1967288956080051,
-      "start": "2022-01-22T13:00:00.000Z",
+    "Plataneros La Blanca vs Coatepeque": {
+      "id": 1969224325840051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Kouvot Kouvola": {
-          "runnerId": 1967288956420051,
-          "back": 1.33,
-          "lay": 1.46
-        },
-        "Tampereen Pyrintö": {
-          "runnerId": 1967288956470151,
-          "back": 3.15,
-          "lay": 4.1
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Final Spor vs Konyaspor": {
-      "id": 1968423062770051,
-      "start": "2022-01-22T14:30:00.000Z",
+    "Pumas UNAM vs Tigres de la UANL": {
+      "id": 1967569272490051,
+      "start": "2022-01-23T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Final Spor": {
-          "runnerId": 1968423063140051,
-          "back": 0,
-          "lay": 0
-        },
-        "Konyaspor": {
-          "runnerId": 1968423063180051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Aris BC vs AS Apollon Patras": {
-      "id": 1968424057110051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Maccabi Petah Tikva vs Hapoel Be'er Sheva": {
+      "id": 1967564863090051,
+      "start": "2022-01-23T18:15:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Aris BC": {
-          "runnerId": 1968424057930051,
-          "back": 1.2,
-          "lay": 1.45
-        },
-        "AS Apollon Patras": {
-          "runnerId": 1968424057960151,
-          "back": 3.2,
-          "lay": 6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "BK Liepaja vs KK Viimsi/Sportland": {
-      "id": 1968389900480051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Manchester City Women vs Arsenal Women": {
+      "id": 1966724573650051,
+      "start": "2022-01-23T18:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "BK Liepaja": {
-          "runnerId": 1968389900860151,
-          "back": 2.3,
-          "lay": 0
-        },
-        "KK Viimsi/Sportland": {
-          "runnerId": 1968389900900151,
-          "back": 1.56,
-          "lay": 1.77
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "BK Ogre vs TalTech Basketball": {
-      "id": 1968389825440051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "ABC Futebol vs América-RN": {
+      "id": 1968449358190051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "BK Ogre": {
-          "runnerId": 1968389825900051,
-          "back": 0,
-          "lay": 0
-        },
-        "TalTech Basketball": {
-          "runnerId": 1968389825940051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "CSM Miercurea Ciuc vs CSM Focsani": {
-      "id": 1968433243360051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Altos vs Alagoinhas Atlético Clube": {
+      "id": 1967588678460051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "CSM Miercurea Ciuc": {
-          "runnerId": 1968433243790051,
-          "back": 1.91,
-          "lay": 2.26
-        },
-        "CSM Focsani": {
-          "runnerId": 1968433243830051,
-          "back": 1.79,
-          "lay": 2.1
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Ionikos BC Hellenic Coin vs Larisa B.C. Bread Factory": {
-      "id": 1968424051880051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Athlético Paranaense vs Paraná Clube": {
+      "id": 1968963272090051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Ionikos BC Hellenic Coin": {
-          "runnerId": 1968424052740051,
-          "back": 0,
-          "lay": 0
-        },
-        "Larisa B.C. Bread Factory": {
-          "runnerId": 1968424052780051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Kauhajoki Karhu vs Lahti Basketball": {
-      "id": 1967569570420051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Barcelona Futebol Clube vs EC Vitória": {
+      "id": 1969222402000051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Kauhajoki Karhu": {
-          "runnerId": 1967569570670051,
-          "back": 0,
-          "lay": 0
-        },
-        "Lahti Basketball": {
-          "runnerId": 1967569570720051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Kobrat Lapua vs Helsinki Seagulls": {
-      "id": 1967569572790051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Cruzeiro de Arapiraca vs Clube Sociedade Esportiva": {
+      "id": 1969223873400051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Kobrat Lapua": {
-          "runnerId": 1967569573010051,
-          "back": 3.75,
-          "lay": 4.8
-        },
-        "Helsinki Seagulls": {
-          "runnerId": 1967569573040151,
-          "back": 1.26,
-          "lay": 1.37
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Pärnu Sadam vs Tartu Ülikool": {
-      "id": 1968389821690051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Fortune FC vs Falcons FC": {
+      "id": 1968971992840051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Pärnu Sadam": {
-          "runnerId": 1968389822280051,
-          "back": 1.15,
-          "lay": 1.37
-        },
-        "Tartu Ülikool": {
-          "runnerId": 1968389822310151,
-          "back": 3.7,
-          "lay": 7.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Salon Vilpas Vikings vs Kataja Basket": {
-      "id": 1967569577380051,
-      "start": "2022-01-22T15:00:00.000Z",
+    "Globo FC vs SC Santa Cruz RN": {
+      "id": 1968449373060051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Salon Vilpas Vikings": {
-          "runnerId": 1967569577600051,
-          "back": 1.13,
-          "lay": 1.31
-        },
-        "Kataja Basket": {
-          "runnerId": 1967569577640051,
-          "back": 4.2,
-          "lay": 8.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "BC Lietkabelis vs Labas Gas Prienai": {
-      "id": 1968422452140051,
-      "start": "2022-01-22T15:20:00.000Z",
+    "Gremio Novorizontino vs Palmeiras": {
+      "id": 1969224251760051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "BC Lietkabelis": {
-          "runnerId": 1968422453210051,
-          "back": 0,
-          "lay": 0
-        },
-        "Labas Gas Prienai": {
-          "runnerId": 1968422453240151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Cherno More Ticha vs Academic": {
-      "id": 1968436301750051,
-      "start": "2022-01-22T16:00:00.000Z",
+    "Londrina vs Maringá": {
+      "id": 1968963305340051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Cherno More Ticha": {
-          "runnerId": 1968436302550051,
-          "back": 0,
-          "lay": 0
-        },
-        "Academic": {
-          "runnerId": 1968436302590051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "CSM Targu Jiu vs CSM CSU Oradea": {
-      "id": 1968433253380051,
-      "start": "2022-01-22T16:00:00.000Z",
+    "Nigeria vs Tunisia": {
+      "id": 1967563584400051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "CSM Targu Jiu": {
-          "runnerId": 1968433253580051,
-          "back": 0,
-          "lay": 0
-        },
-        "CSM CSU Oradea": {
-          "runnerId": 1968433253620051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "KK Zdravlje Leskovac vs KK Dynamic BG VIP PAY": {
-      "id": 1968446128610051,
-      "start": "2022-01-22T16:00:00.000Z",
+    "RKC Waalwijk vs Fortuna Sittard": {
+      "id": 1964291245070001,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "KK Zdravlje Leskovac": {
-          "runnerId": 1968446128990051,
-          "back": 0,
-          "lay": 0
-        },
-        "KK Dynamic BG VIP PAY": {
-          "runnerId": 1968446129030051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "KK Škrljevo vs KK Gorica": {
-      "id": 1968443966380051,
-      "start": "2022-01-22T16:00:00.000Z",
+    "Royal Excel Mouscron vs KSK Lierse Kempenzonen": {
+      "id": 1967559114740051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "KK Škrljevo": {
-          "runnerId": 1968443966940051,
-          "back": 2.56,
-          "lay": 0
-        },
-        "KK Gorica": {
-          "runnerId": 1968443966970151,
-          "back": 0,
-          "lay": 1.65
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Partizan NIS vs Cibona": {
-      "id": 1967606517970051,
-      "start": "2022-01-22T16:00:00.000Z",
+    "SD Juazeirense vs Esporte Clube Jacuipense": {
+      "id": 1969222416420051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Partizan NIS": {
-          "runnerId": 1967606518190051,
-          "back": 0,
-          "lay": 0
-        },
-        "Cibona": {
-          "runnerId": 1967606518240051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Spartak Pleven vs Shumen": {
-      "id": 1968436306110051,
-      "start": "2022-01-22T16:00:00.000Z",
+    "Tigres FC Zipaquira vs Real Cartagena": {
+      "id": 1966742630120051,
+      "start": "2022-01-23T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Spartak Pleven": {
-          "runnerId": 1968436306760051,
-          "back": 0,
-          "lay": 0
-        },
-        "Shumen": {
-          "runnerId": 1968436306790151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Hapoel Yossi Avrahami Eilat vs Hapoel Bank Yahav Jerusalem": {
-      "id": 1968216309670051,
-      "start": "2022-01-22T16:10:00.000Z",
+    "Club Football Estrela vs CD Trofense": {
+      "id": 1967576689970051,
+      "start": "2022-01-23T19:30:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Hapoel Yossi Avrahami Eilat": {
-          "runnerId": 1968216310090051,
-          "back": 2.2,
-          "lay": 2.62
-        },
-        "Hapoel Bank Yahav Jerusalem": {
-          "runnerId": 1968216310130051,
-          "back": 1.61,
-          "lay": 1.84
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Anwil Wloclawek vs WKS Slask Wroclaw": {
-      "id": 1966743865750051,
-      "start": "2022-01-22T16:30:00.000Z",
+    "AC Milan vs Juventus": {
+      "id": 1963220981630001,
+      "start": "2022-01-23T19:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Anwil Wloclawek": {
-          "runnerId": 1966743866000051,
-          "back": 1.4,
-          "lay": 1.56
-        },
-        "WKS Slask Wroclaw": {
-          "runnerId": 1966743866040151,
-          "back": 2.78,
-          "lay": 3.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Ece Bulls Kapfenberg vs Swans Gmünden": {
-      "id": 1968429595690051,
-      "start": "2022-01-22T16:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Ece Bulls Kapfenberg": {
-          "runnerId": 1968429596530051,
-          "back": 0,
-          "lay": 0
-        },
-        "Swans Gmünden": {
-          "runnerId": 1968429596570051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Raiffeisen Flyers Wels vs BC GGMT Vienna": {
-      "id": 1968429600640051,
-      "start": "2022-01-22T16:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Raiffeisen Flyers Wels": {
-          "runnerId": 1968429601130151,
-          "back": 0,
-          "lay": 0
-        },
-        "BC GGMT Vienna": {
-          "runnerId": 1968429601180051,
-          "back": 1.11,
-          "lay": 1.17
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "BC Prievidza vs BC Komarno": {
-      "id": 1968427436910051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "BC Prievidza": {
-          "runnerId": 1968427437300051,
-          "back": 0,
-          "lay": 0
-        },
-        "BC Komarno": {
-          "runnerId": 1968427437340051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "BK Iskra Svit vs BKM Lucenec": {
-      "id": 1968427403540051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "BK Iskra Svit": {
-          "runnerId": 1968427404000051,
-          "back": 2.26,
-          "lay": 2.72
-        },
-        "BKM Lucenec": {
-          "runnerId": 1968427404040051,
-          "back": 1.58,
-          "lay": 1.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "CSM Galati vs ABC Athletic Constanta": {
-      "id": 1968433247580051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "CSM Galati": {
-          "runnerId": 1968433247940051,
-          "back": 1.55,
-          "lay": 1.84
-        },
-        "ABC Athletic Constanta": {
-          "runnerId": 1968433247970151,
-          "back": 2.18,
-          "lay": 2.82
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "GBA Lions Jindrichuv Hradec vs ERA Nymburk": {
-      "id": 1968424900130051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "GBA Lions Jindrichuv Hradec": {
-          "runnerId": 1968424900340051,
-          "back": 0,
-          "lay": 0
-        },
-        "ERA Nymburk": {
-          "runnerId": 1968424900380151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Hofstra Pride at Northeastern Huskies": {
-      "id": 1968401445720051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Hofstra Pride": {
-          "runnerId": 1968401445980051,
-          "back": 1.63,
-          "lay": 1.86
-        },
-        "Northeastern Huskies": {
-          "runnerId": 1968401445930051,
-          "back": 2.16,
-          "lay": 2.6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "MoraBanc Andorra vs Baxi Manresa": {
-      "id": 1966769855740051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "MoraBanc Andorra": {
-          "runnerId": 1966769856080051,
-          "back": 1.72,
-          "lay": 2.02
-        },
-        "Baxi Manresa": {
-          "runnerId": 1966769856130051,
-          "back": 1.98,
-          "lay": 2.4
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Northern Kentucky Norse at Indiana-Purdue Indianapolis Jaguars": {
-      "id": 1968401451760051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Northern Kentucky Norse": {
-          "runnerId": 1968401452010051,
-          "back": 0,
-          "lay": 0
-        },
-        "Indiana-Purdue Indianapolis Jaguars": {
-          "runnerId": 1968401451960051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Ratiopharm Ulm vs BV Chemnitz 99": {
-      "id": 1968170379570051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Ratiopharm Ulm": {
-          "runnerId": 1968170380500051,
-          "back": 1.38,
-          "lay": 1.53
-        },
-        "BV Chemnitz 99": {
-          "runnerId": 1968170380530051,
-          "back": 2.88,
-          "lay": 3.65
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Rutgers Scarlet Knights at Minnesota Golden Gophers": {
-      "id": 1968401443250051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Rutgers Scarlet Knights": {
-          "runnerId": 1968401443520051,
-          "back": 1.98,
-          "lay": 2.34
-        },
-        "Minnesota Golden Gophers": {
-          "runnerId": 1968401443470051,
-          "back": 1.74,
-          "lay": 2.04
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Seton Hall Pirates at St. John's Red Storm": {
-      "id": 1968401462480051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Seton Hall Pirates": {
-          "runnerId": 1968401462720151,
-          "back": 0,
-          "lay": 0
-        },
-        "St. John's Red Storm": {
-          "runnerId": 1968401462680051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Syracuse Orange at Duke Blue Devils": {
-      "id": 1968401459720051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Syracuse Orange": {
-          "runnerId": 1968401459940051,
-          "back": 5.4,
-          "lay": 7.2
-        },
-        "Duke Blue Devils": {
-          "runnerId": 1968401459900051,
-          "back": 1.16,
-          "lay": 1.23
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "UMBC Retrievers at Maine Black Bears": {
-      "id": 1968401471620051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "UMBC Retrievers": {
-          "runnerId": 1968401471860051,
-          "back": 0,
-          "lay": 0
-        },
-        "Maine Black Bears": {
-          "runnerId": 1968401471820051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Valmiera Glass VIA vs Tallinna Kalev/TLÜ": {
-      "id": 1968389829370051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Valmiera Glass VIA": {
-          "runnerId": 1968389829830051,
-          "back": 0,
-          "lay": 0
-        },
-        "Tallinna Kalev/TLÜ": {
-          "runnerId": 1968389829870051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Villanova Wildcats at Georgetown Hoyas": {
-      "id": 1968401720590051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Villanova Wildcats": {
-          "runnerId": 1968401720850151,
-          "back": 0,
-          "lay": 0
-        },
-        "Georgetown Hoyas": {
-          "runnerId": 1968401720810051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Virginia Tech Hokies at Boston College Eagles": {
-      "id": 1968401455920051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Virginia Tech Hokies": {
-          "runnerId": 1968401456170051,
-          "back": 1.4,
-          "lay": 1.55
-        },
-        "Boston College Eagles": {
-          "runnerId": 1968401456120051,
-          "back": 2.8,
-          "lay": 3.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "West Virginia Mountaineers at Texas Tech Red Raiders": {
-      "id": 1968401449160051,
-      "start": "2022-01-22T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "West Virginia Mountaineers": {
-          "runnerId": 1968401449410051,
-          "back": 3.7,
-          "lay": 4.7
-        },
-        "Texas Tech Red Raiders": {
-          "runnerId": 1968401449360051,
-          "back": 1.27,
-          "lay": 1.38
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Galatasaray NEF vs Petkim Spor": {
-      "id": 1967582896050051,
-      "start": "2022-01-22T17:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Galatasaray NEF": {
-          "runnerId": 1967582896290051,
-          "back": 0,
-          "lay": 0
-        },
-        "Petkim Spor": {
-          "runnerId": 1967582896330051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "BK JIP Pardubice vs BC Geosan Kolín": {
-      "id": 1968424902640051,
-      "start": "2022-01-22T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "BK JIP Pardubice": {
-          "runnerId": 1968424902840051,
-          "back": 0,
-          "lay": 0
-        },
-        "BC Geosan Kolín": {
-          "runnerId": 1968424902880051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "George Washington Colonials at Rhode Island Rams": {
-      "id": 1968401466630051,
-      "start": "2022-01-22T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "George Washington Colonials": {
-          "runnerId": 1968401466900051,
-          "back": 8.4,
-          "lay": 11.5
-        },
-        "Rhode Island Rams": {
-          "runnerId": 1968401466850051,
-          "back": 1.09,
-          "lay": 1.14
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "AEK Athens vs PAOK Thessaloniki BC": {
-      "id": 1968424064940051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "AEK Athens": {
-          "runnerId": 1968424065890151,
-          "back": 1.55,
-          "lay": 1.76
-        },
-        "PAOK Thessaloniki BC": {
-          "runnerId": 1968424065930051,
-          "back": 2.3,
-          "lay": 2.82
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "BK IMMOunited Dukes vs SKN St. Pölten": {
-      "id": 1968429610210051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "BK IMMOunited Dukes": {
-          "runnerId": 1968429610700051,
-          "back": 2.3,
-          "lay": 2.78
-        },
-        "SKN St. Pölten": {
-          "runnerId": 1968429610740051,
-          "back": 1.56,
-          "lay": 1.77
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "CB Ciudad de Valladolid vs Palmer Alma Mediterránea Palma": {
-      "id": 1968175867930051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "CB Ciudad de Valladolid": {
-          "runnerId": 1968175869080051,
-          "back": 1.28,
-          "lay": 1.39
-        },
-        "Palmer Alma Mediterránea Palma": {
-          "runnerId": 1968175869120051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Ehingen Urspringschule vs VfL SparkassenStars Bochum": {
-      "id": 1968421050930051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Ehingen Urspringschule": {
-          "runnerId": 1968421051240151,
-          "back": 0,
-          "lay": 0
-        },
-        "VfL SparkassenStars Bochum": {
-          "runnerId": 1968421051290051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Eisbären Bremerhaven vs Vfl Kirchheim Knights": {
-      "id": 1968421047380051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Eisbären Bremerhaven": {
-          "runnerId": 1968421047820051,
-          "back": 0,
-          "lay": 0
-        },
-        "Vfl Kirchheim Knights": {
-          "runnerId": 1968421047860051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Elon Phoenix at Delaware Fightin' Blue Hens": {
-      "id": 1968401683620051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Elon Phoenix": {
-          "runnerId": 1968401683850151,
-          "back": 0,
-          "lay": 0
-        },
-        "Delaware Fightin' Blue Hens": {
-          "runnerId": 1968401683810051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Fos Provence Basket vs Le Mans Sarthe Basket": {
-      "id": 1968169854720051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Fos Provence Basket": {
-          "runnerId": 1968169855970051,
-          "back": 2.84,
-          "lay": 3.35
-        },
-        "Le Mans Sarthe Basket": {
-          "runnerId": 1968169856000151,
-          "back": 1.42,
-          "lay": 1.55
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Hapoel Galil Elyon vs Hapoel U-NET Holon": {
-      "id": 1968216263340051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Hapoel Galil Elyon": {
-          "runnerId": 1968216264080151,
-          "back": 1.8,
-          "lay": 2.12
-        },
-        "Hapoel U-NET Holon": {
-          "runnerId": 1968216264120051,
-          "back": 1.89,
-          "lay": 2.26
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Kentucky Wildcats at Auburn Tigers": {
-      "id": 1968401773580051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Kentucky Wildcats": {
-          "runnerId": 1968401773850051,
-          "back": 0,
-          "lay": 0
-        },
-        "Auburn Tigers": {
-          "runnerId": 1968401773800051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "KK Mornar Bar vs KK FMP": {
-      "id": 1967606521390051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "KK Mornar Bar": {
-          "runnerId": 1967606521610051,
-          "back": 1.4,
-          "lay": 1.65
-        },
-        "KK FMP": {
-          "runnerId": 1967606521660051,
-          "back": 2.52,
-          "lay": 3.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Lehigh Mountain Hawks at Boston Terriers": {
-      "id": 1968401479470051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Lehigh Mountain Hawks": {
-          "runnerId": 1968401479710151,
-          "back": 0,
-          "lay": 0
-        },
-        "Boston Terriers": {
-          "runnerId": 1968401479670051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Oakland Golden Grizzlies at Wisconsin-Green Bay Phoenix": {
-      "id": 1968401610300051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Oakland Golden Grizzlies": {
-          "runnerId": 1968401610570151,
-          "back": 0,
-          "lay": 0
-        },
-        "Wisconsin-Green Bay Phoenix": {
-          "runnerId": 1968401610530051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Tennessee-Chattanooga Mocs at Virginia Military Institute Keydets": {
-      "id": 1968401474050051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Tennessee-Chattanooga Mocs": {
-          "runnerId": 1968401474330151,
-          "back": 0,
-          "lay": 0
-        },
-        "Virginia Military Institute Keydets": {
-          "runnerId": 1968401474290051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "UMass Lowell River Hawks at New Hampshire Wildcats": {
-      "id": 1968401468930051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "UMass Lowell River Hawks": {
-          "runnerId": 1968401469190051,
-          "back": 0,
-          "lay": 0
-        },
-        "New Hampshire Wildcats": {
-          "runnerId": 1968401469150051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Valparaiso Crusaders at Indiana State Sycamores": {
-      "id": 1968401481940051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Valparaiso Crusaders": {
-          "runnerId": 1968401482180151,
-          "back": 2.34,
-          "lay": 2.84
-        },
-        "Indiana State Sycamores": {
-          "runnerId": 1968401482140051,
-          "back": 1.54,
-          "lay": 1.75
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Vanderbilt Commodores at Florida Gators": {
-      "id": 1968401477080051,
-      "start": "2022-01-22T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Vanderbilt Commodores": {
-          "runnerId": 1968401477300151,
-          "back": 3.15,
-          "lay": 3.95
-        },
-        "Florida Gators": {
-          "runnerId": 1968401477270051,
-          "back": 1.33,
-          "lay": 1.47
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Famila Basket Schio Women vs VBW Arka Gdynia Women": {
-      "id": 1967605068440051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Famila Basket Schio Women": {
-          "runnerId": 1967605068770051,
-          "back": 1.08,
-          "lay": 1.31
-        },
-        "VBW Arka Gdynia Women": {
-          "runnerId": 1967605068820051,
-          "back": 4.2,
-          "lay": 13.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Itzehoe Eagles vs ROMERSTROM Gladiators Trier": {
-      "id": 1968421057060051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Itzehoe Eagles": {
-          "runnerId": 1968421057370051,
-          "back": 0,
-          "lay": 0
-        },
-        "ROMERSTROM Gladiators Trier": {
-          "runnerId": 1968421057400151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Orleans Loiret Basket vs AS Monaco Basket": {
-      "id": 1968169871650051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Orleans Loiret Basket": {
-          "runnerId": 1968169872790151,
-          "back": 3.05,
-          "lay": 3.65
-        },
-        "AS Monaco Basket": {
-          "runnerId": 1968169872820151,
-          "back": 1.37,
-          "lay": 1.49
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "PS Karlsruhe LIONS vs Science City Jena": {
-      "id": 1968421060700051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "PS Karlsruhe LIONS": {
-          "runnerId": 1968421061130051,
-          "back": 0,
-          "lay": 0
-        },
-        "Science City Jena": {
-          "runnerId": 1968421061170051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Sokol Hradec Králové vs MMCITÉ Brno": {
-      "id": 1968424897540051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Sokol Hradec Králové": {
-          "runnerId": 1968424898160151,
-          "back": 1.62,
-          "lay": 1.85
-        },
-        "MMCITÉ Brno": {
-          "runnerId": 1968424898200151,
-          "back": 2.16,
-          "lay": 2.62
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "U.S. Army Black Knights at U.S. Naval Academy Midshipmen": {
-      "id": 1968401484670051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "U.S. Army Black Knights": {
-          "runnerId": 1968401484910151,
-          "back": 0,
-          "lay": 0
-        },
-        "U.S. Naval Academy Midshipmen": {
-          "runnerId": 1968401484870051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "USK Praha vs BK Olomoucko": {
-      "id": 1968424894420051,
-      "start": "2022-01-22T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "USK Praha": {
-          "runnerId": 1968424894800051,
-          "back": 0,
-          "lay": 0
-        },
-        "BK Olomoucko": {
-          "runnerId": 1968424894830151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "American Eagles at Loyola-Maryland Greyhounds": {
-      "id": 1968401680820051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "American Eagles": {
-          "runnerId": 1968401681080051,
-          "back": 0,
-          "lay": 0
-        },
-        "Loyola-Maryland Greyhounds": {
-          "runnerId": 1968401681030051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "BK Opava vs BK Nova Hut Ostrava": {
-      "id": 1968424891410051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "BK Opava": {
-          "runnerId": 1968424891950051,
-          "back": 0,
-          "lay": 0
-        },
-        "BK Nova Hut Ostrava": {
-          "runnerId": 1968424891980151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Boulazac Basket Dordogne vs Saint-Chamond": {
-      "id": 1968389025830051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Boulazac Basket Dordogne": {
-          "runnerId": 1968389026770051,
-          "back": 0,
-          "lay": 0
-        },
-        "Saint-Chamond": {
-          "runnerId": 1968389026810051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Bowling Green State Falcons at Western Michigan Broncos": {
-      "id": 1968401489600051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Bowling Green State Falcons": {
-          "runnerId": 1968401489860051,
-          "back": 1.28,
-          "lay": 1.39
-        },
-        "Western Michigan Broncos": {
-          "runnerId": 1968401489810051,
-          "back": 3.55,
-          "lay": 4.6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Brown Bears at Columbia Lions": {
-      "id": 1968401487180051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Brown Bears": {
-          "runnerId": 1968401487450151,
-          "back": 0,
-          "lay": 0
-        },
-        "Columbia Lions": {
-          "runnerId": 1968401487410051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Bucknell Bison at Holy Cross Crusaders": {
-      "id": 1968401502010051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Bucknell Bison": {
-          "runnerId": 1968401502270051,
-          "back": 0,
-          "lay": 0
-        },
-        "Holy Cross Crusaders": {
-          "runnerId": 1968401502230051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Cholet Basket vs JL Bourg": {
-      "id": 1968169844090051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Cholet Basket": {
-          "runnerId": 1968169845140051,
-          "back": 2.42,
-          "lay": 2.94
-        },
-        "JL Bourg": {
-          "runnerId": 1968169845170151,
-          "back": 1.51,
-          "lay": 1.71
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Coastal Carolina Chanticleers at Georgia State Panthers": {
-      "id": 1968401500000051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Coastal Carolina Chanticleers": {
-          "runnerId": 1968401500260051,
-          "back": 0,
-          "lay": 0
-        },
-        "Georgia State Panthers": {
-          "runnerId": 1968401500220051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Colorado State Rams at U.S. Air Force Falcons": {
-      "id": 1968401497660051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Colorado State Rams": {
-          "runnerId": 1968401497900151,
-          "back": 0,
-          "lay": 0
-        },
-        "U.S. Air Force Falcons": {
-          "runnerId": 1968401497870051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Davidson Wildcats at Fordham Rams": {
-      "id": 1968401494940051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Davidson Wildcats": {
-          "runnerId": 1968401495180151,
-          "back": 1.2,
-          "lay": 1.29
-        },
-        "Fordham Rams": {
-          "runnerId": 1968401495140051,
-          "back": 4.4,
-          "lay": 6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Florida State Seminoles at Miami Hurricanes": {
-      "id": 1968401692040051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Florida State Seminoles": {
-          "runnerId": 1968401692310051,
-          "back": 0,
-          "lay": 0
-        },
-        "Miami Hurricanes": {
-          "runnerId": 1968401692260051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Gardner-Webb Runnin' Bulldogs at Winthrop Eagles": {
-      "id": 1968401678310051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Gardner-Webb Runnin' Bulldogs": {
-          "runnerId": 1968401678560151,
-          "back": 0,
-          "lay": 0
-        },
-        "Winthrop Eagles": {
-          "runnerId": 1968401678520051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Harvard Crimson at Cornell Big Red": {
-      "id": 1968401667740051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Harvard Crimson": {
-          "runnerId": 1968401667990151,
-          "back": 0,
-          "lay": 0
-        },
-        "Cornell Big Red": {
-          "runnerId": 1968401667950051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Oklahoma State Cowboys at Texas Longhorns": {
-      "id": 1968401492540051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Oklahoma State Cowboys": {
-          "runnerId": 1968401492790051,
-          "back": 3.75,
-          "lay": 4.8
-        },
-        "Texas Longhorns": {
-          "runnerId": 1968401492730051,
-          "back": 1.26,
-          "lay": 1.37
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Princeton Tigers at Dartmouth Big Green": {
-      "id": 1968401508530051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Princeton Tigers": {
-          "runnerId": 1968401508770151,
-          "back": 0,
-          "lay": 0
-        },
-        "Dartmouth Big Green": {
-          "runnerId": 1968401508730051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Southern Mississippi Golden Eagles at Middle Tennessee State Blue Raiders": {
-      "id": 1968401649400051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Southern Mississippi Golden Eagles": {
-          "runnerId": 1968401649700151,
-          "back": 0,
-          "lay": 0
-        },
-        "Middle Tennessee State Blue Raiders": {
-          "runnerId": 1968401649660051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Tulane Green Wave at UCF Knights": {
-      "id": 1968401506210051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Tulane Green Wave": {
-          "runnerId": 1968401506440151,
-          "back": 0,
-          "lay": 0
-        },
-        "UCF Knights": {
-          "runnerId": 1968401506410051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "UNC Wilmington Seahawks at Towson Tigers": {
-      "id": 1968401504210051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "UNC Wilmington Seahawks": {
-          "runnerId": 1968401504450151,
-          "back": 0,
-          "lay": 0
-        },
-        "Towson Tigers": {
-          "runnerId": 1968401504420051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "UNC-Asheville Bulldogs at Radford Highlanders": {
-      "id": 1968401714800051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "UNC-Asheville Bulldogs": {
-          "runnerId": 1968401715030051,
-          "back": 0,
-          "lay": 0
-        },
-        "Radford Highlanders": {
-          "runnerId": 1968401714990051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "William & Mary Tribe at Drexel Dragons": {
-      "id": 1968401717440051,
-      "start": "2022-01-22T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "William & Mary Tribe": {
-          "runnerId": 1968401717670051,
-          "back": 0,
-          "lay": 0
-        },
-        "Drexel Dragons": {
-          "runnerId": 1968401717630051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Kennesaw State Owls at Lipscomb Bisons": {
-      "id": 1968401703730051,
-      "start": "2022-01-22T19:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Kennesaw State Owls": {
-          "runnerId": 1968401703970151,
-          "back": 0,
-          "lay": 0
-        },
-        "Lipscomb Bisons": {
-          "runnerId": 1968401703930051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Bristol Flyers vs Glasgow Rocks": {
-      "id": 1968394598410051,
-      "start": "2022-01-22T19:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Bristol Flyers": {
-          "runnerId": 1968394599450051,
-          "back": 0,
-          "lay": 0
-        },
-        "Glasgow Rocks": {
-          "runnerId": 1968394599480051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "HAKRO Merlins Crailsheim vs EWE Baskets Oldenburg": {
-      "id": 1968170367610051,
-      "start": "2022-01-22T19:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "HAKRO Merlins Crailsheim": {
-          "runnerId": 1968170368110051,
-          "back": 1.36,
-          "lay": 1.62
-        },
-        "EWE Baskets Oldenburg": {
-          "runnerId": 1968170368140151,
-          "back": 2.6,
-          "lay": 3.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "JobStairs Giessen 46ers vs Hamburg Towers": {
-      "id": 1968170374920051,
-      "start": "2022-01-22T19:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "JobStairs Giessen 46ers": {
-          "runnerId": 1968170375410051,
-          "back": 3.15,
-          "lay": 4
-        },
-        "Hamburg Towers": {
-          "runnerId": 1968170375450051,
-          "back": 1.33,
-          "lay": 1.47
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Metropolitans 92 vs SIG Strasbourg": {
-      "id": 1968169860730051,
-      "start": "2022-01-22T19:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Metropolitans 92": {
-          "runnerId": 1968169862100051,
-          "back": 1.37,
-          "lay": 1.51
-        },
-        "SIG Strasbourg": {
-          "runnerId": 1968169862130151,
-          "back": 2.96,
-          "lay": 3.75
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Saint Joseph's Hawks at Virginia Commonwealth Rams": {
-      "id": 1968401712240051,
-      "start": "2022-01-22T19:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Saint Joseph's Hawks": {
-          "runnerId": 1968401712510051,
-          "back": 0,
-          "lay": 0
-        },
-        "Virginia Commonwealth Rams": {
-          "runnerId": 1968401712470051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Alcorn State Braves at Florida A&M Rattlers": {
-      "id": 1968680196370051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Alcorn State Braves": {
-          "runnerId": 1968680196620151,
-          "back": 0,
-          "lay": 0
-        },
-        "Florida A&M Rattlers": {
-          "runnerId": 1968680196570051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Appalachian State Mountaineers at Georgia Southern Eagles": {
-      "id": 1968401527070051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Appalachian State Mountaineers": {
-          "runnerId": 1968401527310051,
-          "back": 0,
-          "lay": 0
-        },
-        "Georgia Southern Eagles": {
-          "runnerId": 1968401527260051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Baylor Bears at Oklahoma Sooners": {
-      "id": 1968401515350051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Baylor Bears": {
-          "runnerId": 1968401515610151,
-          "back": 0,
-          "lay": 0
-        },
-        "Oklahoma Sooners": {
-          "runnerId": 1968401515570051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Charlotte 49ers at Rice Owls": {
-      "id": 1968401512010051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Charlotte 49ers": {
-          "runnerId": 1968401512260051,
-          "back": 0,
-          "lay": 0
-        },
-        "Rice Owls": {
-          "runnerId": 1968401512220051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Detroit Titans at Wisconsin-Milwaukee Panthers": {
-      "id": 1968401519990051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Detroit Titans": {
-          "runnerId": 1968401520230051,
-          "back": 0,
-          "lay": 0
-        },
-        "Wisconsin-Milwaukee Panthers": {
-          "runnerId": 1968401520190051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Grand Canyon University at Sam Houston State Bearkats": {
-      "id": 1968401661980051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Grand Canyon University": {
-          "runnerId": 1968401662230051,
-          "back": 0,
-          "lay": 0
-        },
-        "Sam Houston State Bearkats": {
-          "runnerId": 1968401662190051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Longwood Lancers at Presbyterian Blue Hose": {
-      "id": 1968401542420051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Longwood Lancers": {
-          "runnerId": 1968401542670051,
-          "back": 0,
-          "lay": 0
-        },
-        "Presbyterian Blue Hose": {
-          "runnerId": 1968401542630051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "New Mexico State Aggies at Stephen F. Austin State Lumberjacks": {
-      "id": 1968401658690051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "New Mexico State Aggies": {
-          "runnerId": 1968401658950051,
-          "back": 0,
-          "lay": 0
-        },
-        "Stephen F. Austin State Lumberjacks": {
-          "runnerId": 1968401658910051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "San Jose State Spartans at UNLV Rebels": {
-      "id": 1968401723380051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "San Jose State Spartans": {
-          "runnerId": 1968401723640051,
-          "back": 0,
-          "lay": 0
-        },
-        "UNLV Rebels": {
-          "runnerId": 1968401723590051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "South Alabama Jaguars at Louisiana-Monroe Warhawks": {
-      "id": 1968401522460051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "South Alabama Jaguars": {
-          "runnerId": 1968401523160151,
-          "back": 0,
-          "lay": 0
-        },
-        "Louisiana-Monroe Warhawks": {
-          "runnerId": 1968401523120051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "South Dakota State Jackrabbits at Western Illinois Fighting Leathernecks": {
-      "id": 1968401524600051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "South Dakota State Jackrabbits": {
-          "runnerId": 1968401524840051,
-          "back": 0,
-          "lay": 0
-        },
-        "Western Illinois Fighting Leathernecks": {
-          "runnerId": 1968401524800051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Texas State Bobcats at Arkansas State Red Wolves": {
-      "id": 1968401529550051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Texas State Bobcats": {
-          "runnerId": 1968401529820051,
-          "back": 0,
-          "lay": 0
-        },
-        "Arkansas State Red Wolves": {
-          "runnerId": 1968401529770051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Texas-Arlington Mavericks at Arkansas-Little Rock Trojans": {
-      "id": 1968401517540051,
-      "start": "2022-01-22T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Texas-Arlington Mavericks": {
-          "runnerId": 1968401517790051,
-          "back": 0,
-          "lay": 0
-        },
-        "Arkansas-Little Rock Trojans": {
-          "runnerId": 1968401517750051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Georgia Bulldogs at South Carolina Gamecocks": {
-      "id": 1968401532690051,
-      "start": "2022-01-22T20:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Georgia Bulldogs": {
-          "runnerId": 1968401532950051,
-          "back": 0,
-          "lay": 0
-        },
-        "South Carolina Gamecocks": {
-          "runnerId": 1968401532910051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Mississippi Valley State Delta Devils at Grambling State Tigers": {
-      "id": 1968680373180051,
-      "start": "2022-01-22T20:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Mississippi Valley State Delta Devils": {
-          "runnerId": 1968680373430051,
-          "back": 0,
-          "lay": 0
-        },
-        "Grambling State Tigers": {
-          "runnerId": 1968680373390051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Missouri State Bears at Loyola of Chicago Ramblers": {
-      "id": 1968401708020051,
-      "start": "2022-01-22T20:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Missouri State Bears": {
-          "runnerId": 1968401708260151,
-          "back": 0,
-          "lay": 0
-        },
-        "Loyola of Chicago Ramblers": {
-          "runnerId": 1968401708230051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Northern Illinois Huskies at Miami RedHawks": {
-      "id": 1968401671770051,
-      "start": "2022-01-22T20:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Northern Illinois Huskies": {
-          "runnerId": 1968401672040051,
-          "back": 0,
-          "lay": 0
-        },
-        "Miami RedHawks": {
-          "runnerId": 1968401671990051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Alabama Birmingham Blazers at Louisiana Tech Bulldogs": {
-      "id": 1968680156560051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Alabama Birmingham Blazers": {
-          "runnerId": 1968680157310151,
-          "back": 0,
-          "lay": 0
-        },
-        "Louisiana Tech Bulldogs": {
-          "runnerId": 1968680157270151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Austin Peay State Governors at Tennessee State Tigers": {
-      "id": 1968680186200051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Austin Peay State Governors": {
-          "runnerId": 1968680186990051,
-          "back": 0,
-          "lay": 0
-        },
-        "Tennessee State Tigers": {
-          "runnerId": 1968680186950151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Cal Irvine Anteaters at Long Beach State 49ers": {
-      "id": 1968680285150051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Cal Irvine Anteaters": {
-          "runnerId": 1968680286580051,
-          "back": 0,
-          "lay": 0
-        },
-        "Long Beach State 49ers": {
-          "runnerId": 1968680286540151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "California Baptist Lancers at Abilene Christian University": {
-      "id": 1968680182360051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "California Baptist Lancers": {
-          "runnerId": 1968680183140051,
-          "back": 0,
-          "lay": 0
-        },
-        "Abilene Christian University": {
-          "runnerId": 1968680183100151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Charleston Cougars at James Madison Dukes": {
-      "id": 1968680205900051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Charleston Cougars": {
-          "runnerId": 1968680206740051,
-          "back": 0,
-          "lay": 0
-        },
-        "James Madison Dukes": {
-          "runnerId": 1968680206700051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Charleston Southern Buccaneers at South Carolina Upstate Spartans": {
-      "id": 1968680378560051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Charleston Southern Buccaneers": {
-          "runnerId": 1968680378810051,
-          "back": 0,
-          "lay": 0
-        },
-        "South Carolina Upstate Spartans": {
-          "runnerId": 1968680378760051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Florida Gulf Coast Eagles at Jacksonville State Gamecocks": {
-      "id": 1968680423780051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Florida Gulf Coast Eagles": {
-          "runnerId": 1968680424020151,
-          "back": 0,
-          "lay": 0
-        },
-        "Jacksonville State Gamecocks": {
-          "runnerId": 1968680423980051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "High Point Panthers at Hampton Pirates": {
-      "id": 1968680430380051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "High Point Panthers": {
-          "runnerId": 1968680430640051,
-          "back": 0,
-          "lay": 0
-        },
-        "Hampton Pirates": {
-          "runnerId": 1968680430600051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Howard Bison at Morgan State Bears": {
-      "id": 1968680462400051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Howard Bison": {
-          "runnerId": 1968680462700151,
-          "back": 0,
-          "lay": 0
-        },
-        "Morgan State Bears": {
-          "runnerId": 1968680462660051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Idaho State Bengals at Southern Utah Thunderbirds": {
-      "id": 1968680166820051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Idaho State Bengals": {
-          "runnerId": 1968680167600151,
-          "back": 0,
-          "lay": 0
-        },
-        "Southern Utah Thunderbirds": {
-          "runnerId": 1968680167570051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Jackson State Tigers at Bethune-Cookman Wildcats": {
-      "id": 1968680442860051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Jackson State Tigers": {
-          "runnerId": 1968680451510151,
-          "back": 0,
-          "lay": 0
-        },
-        "Bethune-Cookman Wildcats": {
-          "runnerId": 1968680451470051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Kansas Jayhawks at Kansas State Wildcats": {
-      "id": 1968680194260051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Kansas Jayhawks": {
-          "runnerId": 1968680194970051,
-          "back": 0,
-          "lay": 0
-        },
-        "Kansas State Wildcats": {
-          "runnerId": 1968680194930051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Lamar Cardinals at Utah Valley Wolverines": {
-      "id": 1968680147400051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Lamar Cardinals": {
-          "runnerId": 1968680148250051,
-          "back": 0,
-          "lay": 0
-        },
-        "Utah Valley Wolverines": {
-          "runnerId": 1968680148210051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Marshall Thundering Herd at Florida Atlantic Owls": {
-      "id": 1968680201780051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Marshall Thundering Herd": {
-          "runnerId": 1968680202620051,
-          "back": 0,
-          "lay": 0
-        },
-        "Florida Atlantic Owls": {
-          "runnerId": 1968680202580051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Mississippi Rebels at Mississippi State Bulldogs": {
-      "id": 1968680161140051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Mississippi Rebels": {
-          "runnerId": 1968680161930051,
-          "back": 0,
-          "lay": 0
-        },
-        "Mississippi State Bulldogs": {
-          "runnerId": 1968680161890151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Montana Grizzlies at Northern Arizona Lumberjacks": {
-      "id": 1968680170960051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Montana Grizzlies": {
-          "runnerId": 1968680171910151,
-          "back": 0,
-          "lay": 0
-        },
-        "Northern Arizona Lumberjacks": {
-          "runnerId": 1968680171880051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Nebraska Omaha Mavericks at Denver Pioneers": {
-      "id": 1968680189720051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Nebraska Omaha Mavericks": {
-          "runnerId": 1968680190420051,
-          "back": 0,
-          "lay": 0
-        },
-        "Denver Pioneers": {
-          "runnerId": 1968680190380051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Notre Dame Fighting Irish at Louisville Cardinals": {
-      "id": 1968680175040051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Notre Dame Fighting Irish": {
-          "runnerId": 1968680175710151,
-          "back": 0,
-          "lay": 0
-        },
-        "Louisville Cardinals": {
-          "runnerId": 1968680175680051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "South Carolina State Bulldogs at Maryland-Eastern Shore Hawks": {
-      "id": 1968680432480051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "South Carolina State Bulldogs": {
-          "runnerId": 1968680432740051,
-          "back": 0,
-          "lay": 0
-        },
-        "Maryland-Eastern Shore Hawks": {
-          "runnerId": 1968680432700051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Southeastern Louisiana Lions at Nicholls State Colonels": {
-      "id": 1968680198350051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Southeastern Louisiana Lions": {
-          "runnerId": 1968680198600151,
-          "back": 0,
-          "lay": 0
-        },
-        "Nicholls State Colonels": {
-          "runnerId": 1968680198560051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Southern Illinois-Edwardsville Cougars at Morehead State Eagles": {
-      "id": 1968680437160051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Southern Illinois-Edwardsville Cougars": {
-          "runnerId": 1968680439280051,
-          "back": 0,
-          "lay": 0
-        },
-        "Morehead State Eagles": {
-          "runnerId": 1968680439240051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Texas Christian Horned Frogs at Iowa State Cyclones": {
-      "id": 1968680152150051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Texas Christian Horned Frogs": {
-          "runnerId": 1968680152960051,
-          "back": 0,
-          "lay": 0
-        },
-        "Iowa State Cyclones": {
-          "runnerId": 1968680152920051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "The Citadel Bulldogs at East Tennessee State Buccaneers": {
-      "id": 1968680178690051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "The Citadel Bulldogs": {
-          "runnerId": 1968680179510151,
-          "back": 0,
-          "lay": 0
-        },
-        "East Tennessee State Buccaneers": {
-          "runnerId": 1968680179480051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Virginia Cavaliers at North Carolina State Wolfpack": {
-      "id": 1968680215230051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Virginia Cavaliers": {
-          "runnerId": 1968680216090051,
-          "back": 0,
-          "lay": 0
-        },
-        "North Carolina State Wolfpack": {
-          "runnerId": 1968680216050051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Yale Bulldogs at Pennsylvania Quakers": {
-      "id": 1968680496560051,
-      "start": "2022-01-22T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Yale Bulldogs": {
-          "runnerId": 1968680497470051,
-          "back": 0,
-          "lay": 0
-        },
-        "Pennsylvania Quakers": {
-          "runnerId": 1968680497430051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
-    },
-    "Houston Baptist Huskies at Texas A&M Corpus Christi Islanders": {
-      "id": 1968680217540051,
-      "start": "2022-01-22T21:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "allRunners": {
-        "Houston Baptist Huskies": {
-          "runnerId": 1968680217780051,
-          "back": 0,
-          "lay": 0
-        },
-        "Texas A&M Corpus Christi Islanders": {
-          "runnerId": 1968680217740051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "North Carolina Central Eagles at Delaware State Hornets": {
-      "id": 1968680228170051,
-      "start": "2022-01-22T21:30:00.000Z",
+    "Paris Saint-Germain vs Stade Reims": {
+      "id": 1963216578330001,
+      "start": "2022-01-23T19:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "North Carolina Central Eagles": {
-          "runnerId": 1968680228430151,
-          "back": 0,
-          "lay": 0
-        },
-        "Delaware State Hornets": {
-          "runnerId": 1968680228390151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Penn State Nittany Lions at Iowa Hawkeyes": {
-      "id": 1968680504620051,
-      "start": "2022-01-22T21:30:00.000Z",
+    "ACD Potiguar vs Força e Luz": {
+      "id": 1968449363260051,
+      "start": "2022-01-23T20:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Penn State Nittany Lions": {
-          "runnerId": 1968680505200151,
-          "back": 0,
-          "lay": 0
-        },
-        "Iowa Hawkeyes": {
-          "runnerId": 1968680505170051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Richmond Spiders at La Salle Explorers": {
-      "id": 1968680225700051,
-      "start": "2022-01-22T21:30:00.000Z",
+    "Alcorcón vs Mirandés": {
+      "id": 1963474929880001,
+      "start": "2022-01-23T20:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Richmond Spiders": {
-          "runnerId": 1968680226690051,
-          "back": 0,
-          "lay": 0
-        },
-        "La Salle Explorers": {
-          "runnerId": 1968680226650051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Southeast Missouri State Redhawks at Eastern Illinois Panthers": {
-      "id": 1968680221290051,
-      "start": "2022-01-22T21:30:00.000Z",
+    "Cercle Brugge vs Zulte Waregem": {
+      "id": 1963213844770001,
+      "start": "2022-01-23T20:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Southeast Missouri State Redhawks": {
-          "runnerId": 1968680222090151,
-          "back": 0,
-          "lay": 0
-        },
-        "Eastern Illinois Panthers": {
-          "runnerId": 1968680222060051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Stetson Hatters at University of North Alabama": {
-      "id": 1968680055730051,
-      "start": "2022-01-22T21:30:00.000Z",
+    "Deportivo Alaves vs FC Barcelona": {
+      "id": 1963238036360001,
+      "start": "2022-01-23T20:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Stetson Hatters": {
-          "runnerId": 1968680056000051,
-          "back": 0,
-          "lay": 0
-        },
-        "University of North Alabama": {
-          "runnerId": 1968680055950051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Campbell Fighting Camels at North Carolina A&T Aggies": {
-      "id": 1968680375080051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "Valledupar F.C. vs Real Santander": {
+      "id": 1966742623190051,
+      "start": "2022-01-23T20:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Campbell Fighting Camels": {
-          "runnerId": 1968680375310151,
-          "back": 0,
-          "lay": 0
-        },
-        "North Carolina A&T Aggies": {
-          "runnerId": 1968680375270051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "McNeese State Cowboys at Incarnate Word Cardinals": {
-      "id": 1968680419740051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "FC Porto vs Famalicão": {
+      "id": 1963240889900001,
+      "start": "2022-01-23T20:30:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "McNeese State Cowboys": {
-          "runnerId": 1968680419990051,
-          "back": 0,
-          "lay": 0
-        },
-        "Incarnate Word Cardinals": {
-          "runnerId": 1968680419940051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Northern Colorado Bears at Eastern Washington Eagles": {
-      "id": 1968680237880051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "Atletico Marte vs Luis Ángel Firpo": {
+      "id": 1967555606510051,
+      "start": "2022-01-23T21:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Northern Colorado Bears": {
-          "runnerId": 1968680238800051,
-          "back": 0,
-          "lay": 0
-        },
-        "Eastern Washington Eagles": {
-          "runnerId": 1968680238740051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Northwestern State Demons at New Orleans Privateers": {
-      "id": 1968680233880051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "Deportivo Nueva Concepcion vs Malacateco": {
+      "id": 1968973223020051,
+      "start": "2022-01-23T21:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Northwestern State Demons": {
-          "runnerId": 1968680234120151,
-          "back": 0,
-          "lay": 0
-        },
-        "New Orleans Privateers": {
-          "runnerId": 1968680234080051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Sacramento State Hornets at Idaho Vandals": {
-      "id": 1968680427870051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "Lobos ULMX vs Yalmakan FC": {
+      "id": 1969500580830051,
+      "start": "2022-01-23T21:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Sacramento State Hornets": {
-          "runnerId": 1968680428780051,
-          "back": 0,
-          "lay": 0
-        },
-        "Idaho Vandals": {
-          "runnerId": 1968680428740051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Samford Bulldogs at North Carolina Greensboro Spartans": {
-      "id": 1968680126800051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "Sousa EC vs CS Alagoano": {
+      "id": 1967588667680051,
+      "start": "2022-01-23T21:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Samford Bulldogs": {
-          "runnerId": 1968680127610151,
-          "back": 0,
-          "lay": 0
-        },
-        "North Carolina Greensboro Spartans": {
-          "runnerId": 1968680127580051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Western Carolina Catamounts at Mercer Bears": {
-      "id": 1968680231850051,
-      "start": "2022-01-22T22:00:00.000Z",
+    "Wallidan FC vs GAMTEL Football Club": {
+      "id": 1968972002690051,
+      "start": "2022-01-23T21:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Western Carolina Catamounts": {
-          "runnerId": 1968680232690151,
-          "back": 0,
-          "lay": 0
-        },
-        "Mercer Bears": {
-          "runnerId": 1968680232660051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "DePaul Blue Demons at Creighton Bluejays": {
-      "id": 1968680241440051,
-      "start": "2022-01-22T22:30:00.000Z",
+    "Independiente Medellín vs Deportes Tolima": {
+      "id": 1965112755280001,
+      "start": "2022-01-23T21:05:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "DePaul Blue Demons": {
-          "runnerId": 1968680242140151,
-          "back": 0,
-          "lay": 0
-        },
-        "Creighton Bluejays": {
-          "runnerId": 1968680242100051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Arkansas-Pine Bluff Golden Lions at Southern Jaguars": {
-      "id": 1968680262270051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "CD Fas vs CD Aguila": {
+      "id": 1967834043330051,
+      "start": "2022-01-23T21:15:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Arkansas-Pine Bluff Golden Lions": {
-          "runnerId": 1968680262520051,
-          "back": 0,
-          "lay": 0
-        },
-        "Southern Jaguars": {
-          "runnerId": 1968680262470051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Coppin State Eagles at Norfolk State Spartans": {
-      "id": 1968680251850051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "CD Municipal Limeno vs CD Platense": {
+      "id": 1967834056770051,
+      "start": "2022-01-23T21:15:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Coppin State Eagles": {
-          "runnerId": 1968680252110051,
-          "back": 0,
-          "lay": 0
-        },
-        "Norfolk State Spartans": {
-          "runnerId": 1968680252060051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Drake Bulldogs at Northern Iowa Panthers": {
-      "id": 1968680260000051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "Motagua vs C.D.S. Vida": {
+      "id": 1967846417260051,
+      "start": "2022-01-23T22:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Drake Bulldogs": {
-          "runnerId": 1968680260800151,
-          "back": 0,
-          "lay": 0
-        },
-        "Northern Iowa Panthers": {
-          "runnerId": 1968680260770051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "East Carolina Pirates at Houston Cougars": {
-      "id": 1968680245780051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "Operário Ferroviário vs Clube Esportivo União": {
+      "id": 1968963314350051,
+      "start": "2022-01-23T22:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "East Carolina Pirates": {
-          "runnerId": 1968680246610151,
-          "back": 0,
-          "lay": 0
-        },
-        "Houston Cougars": {
-          "runnerId": 1968680246580051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "LSU Tigers at Tennessee Volunteers": {
-      "id": 1968680249890051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "Reboceros de La Piedad vs Sporting Canamy": {
+      "id": 1969500594190051,
+      "start": "2022-01-23T22:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "LSU Tigers": {
-          "runnerId": 1968680250550051,
-          "back": 0,
-          "lay": 0
-        },
-        "Tennessee Volunteers": {
-          "runnerId": 1968680250510051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Missouri Tigers at Alabama Crimson Tide": {
-      "id": 1968680255900051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "Universidad Católica vs Colo-Colo": {
+      "id": 1968961368780051,
+      "start": "2022-01-23T22:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Missouri Tigers": {
-          "runnerId": 1968680256560151,
-          "back": 0,
-          "lay": 0
-        },
-        "Alabama Crimson Tide": {
-          "runnerId": 1968680256530051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Old Dominion Monarchs at North Texas Mean Green": {
-      "id": 1968680382150051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "Marathón vs Olimpia": {
+      "id": 1967846439540051,
+      "start": "2022-01-23T22:06:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Old Dominion Monarchs": {
-          "runnerId": 1968680382940051,
-          "back": 0,
-          "lay": 0
-        },
-        "North Texas Mean Green": {
-          "runnerId": 1968680382900051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Pittsburgh Panthers at Clemson Tigers": {
-      "id": 1968680210420051,
-      "start": "2022-01-22T23:00:00.000Z",
+    "Club Atletico Morelia vs Raya2": {
+      "id": 1967882662310051,
+      "start": "2022-01-23T23:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Pittsburgh Panthers": {
-          "runnerId": 1968680211270051,
-          "back": 0,
-          "lay": 0
-        },
-        "Clemson Tigers": {
-          "runnerId": 1968680211230051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "Alabama State Hornets at Prairie View A&M Panthers": {
-      "id": 1968680264160051,
-      "start": "2022-01-22T23:30:00.000Z",
+    "Club Deportivo Platense vs CD Real España": {
+      "id": 1967846431130051,
+      "start": "2022-01-23T23:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "Alabama State Hornets": {
-          "runnerId": 1968680264400051,
-          "back": 0,
-          "lay": 0
-        },
-        "Prairie View A&M Panthers": {
-          "runnerId": 1968680264360051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     },
-    "USC Trojans at Utah Utes": {
-      "id": 1968680268050051,
-      "start": "2022-01-22T23:30:00.000Z",
+    "Jaguares de Córdoba vs Deportivo Cali": {
+      "id": 1965112763690001,
+      "start": "2022-01-23T23:10:00.000Z",
       "status": "open",
       "in-running-flag": false,
-      "allRunners": {
-        "USC Trojans": {
-          "runnerId": 1968680268690151,
-          "back": 0,
-          "lay": 0
-        },
-        "Utah Utes": {
-          "runnerId": 1968680268650151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.4,
-        "currentBalance": 5.1,
-        "winConfidencePercentage": 100,
-        "minProfitOdd": 0.8
-      }
+      "realStartTime": 0
     }
   }
 }

@@ -35,6 +35,36 @@ const UTIL = (function() {
 			return dateObjOne.toISOString().split('T')[0] === dateObjTwo.toISOString().split('T')[0] ? true : false;
 		},
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// 1760 yards = 1 mile
+		// 220 yards  = 1 furlong
+		// 8 furlongs = 1 mile
+		// mfyString = "3m 4f 200y";   => 6360 yards
+		convertMfyToYards : (mfyString) => {
+			const arr = mfyString.split(" ");
+			return arr[0].split("m")[0] * 1760 + arr[1].split("f")[0] * 220 + Number(arr[2].split("y")[0]);
+		},
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// Horse speed = 30 miles/hour  or 31 miles/hour
+		// 1 furlongs  = 15 seconds     or 14.56 seconds  or  15.21 seconds
+		// 1 yard      = (15/220) seconds 
+
+		// const str = "0m 5f 0y";   // shortest Length =>             runningTime = 1.25 seconds
+		// const str = "2m 0f 167y"; // market closed = 12f = 3rd min; runningTime = 4.189772727272727
+		// const str = "2m 0f 204y"; // market closed = 4th min;       runningTime = 4.2318181818181815
+		calculateRaceRunningTime : (sports, trackYardsLength) => {
+			let raceRunningTimeInSec = 0;
+			const horseSpeedPerYardInSeconds = 15 / 220; // 1 furlongs = 15 seconds (or) 30 miles/hour
+			switch(sports) {
+				case "Horse Racing":
+					raceRunningTimeInSec = trackYardsLength * horseSpeedPerYardInSeconds;
+				break;
+			}
+
+			return raceRunningTimeInSec;
+		},
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		getDefaultOptions: function()
 		{
@@ -64,6 +94,8 @@ module.exports.roundIt2D = UTIL.roundIt2D;
 module.exports.isNullObject = UTIL.isNullObject;
 module.exports.formatString = UTIL.formatString;
 module.exports.isSameDate = UTIL.isSameDate;
+module.exports.convertMfyToYards = UTIL.convertMfyToYards;
+module.exports.calculateRaceRunningTime = UTIL.calculateRaceRunningTime;
 
 
 
