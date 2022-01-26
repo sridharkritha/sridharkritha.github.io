@@ -164,7 +164,7 @@
 
 
 	isWinningHorse = (sportName, winPercentage, profitOdd, runnersCount) => {
-		const wc = WC.getSportsWinningConstants(sportName);
+		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
 		
 		if((winPercentage > wc.g_maxWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd))
 		{
@@ -193,7 +193,7 @@
 			raceRunningTime = UTIL.calculateRaceRunningTime(sportName, raceLength); // seconds
 		}
 
-		const wc = WC.getSportsWinningConstants(sportName);
+		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
 
 		// check same date (Ignore any time difference) or not ?
 		if(UTIL.isSameDate(currentTime, eventStartTime))
@@ -873,7 +873,7 @@
 
 	// Get meta data for each event
 	getEventMetaData = (sportName) => {
-		const wc = WC.getSportsWinningConstants(sportName);
+		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
 		// meta data
 		const metaData = {
 			"stakeValue"                   : wc.g_BetStakeValue,

@@ -47,6 +47,14 @@ const WC = (function() {
 				// Counts
 				"g_maxRunnersCount"            : 25
 			},
+
+			"Test Constants": {
+
+				"g_minProfitOdd"               : 0.1, // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				"g_betMinutesOffset"           : 600, // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
+				"g_minWinConfidencePercentage" : 80,  // 80  => comparison with nearest competitor ex: 100  (100% or more)
+				// "g_whichDayEvent"           : '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
+			},
 	
 			"Horse Racing": {
 				// Time
@@ -60,8 +68,8 @@ const WC = (function() {
 
 			"Greyhound Racing": {
 				// Time
-				"g_betMinutesOffset"        : -1,   // -1 => 1 minute after event start time
-				"ignore_realStartTime"      : true
+				"g_betMinutesOffset"           : -1,   // -1 => 1 minute after event start time
+				"ignore_realStartTime"         : true
 			},
 	
 			"Tennis": {
@@ -75,14 +83,19 @@ const WC = (function() {
 			},
 		}),
 
-		getSportsWinningConstants: (sportsName) => { 
+		getSportsWinningConstants: (sportsName, isLockedForBetting) => { 
 			let mergedWinningConsts = WC.sportsWinningConstants["allSports"];
 			if(WC.sportsWinningConstants[sportsName])
 			{
 				// merge the objects properties
 				mergedWinningConsts = { ...WC.sportsWinningConstants["allSports"], ...WC.sportsWinningConstants[sportsName] };
 
-				if(mergedWinningConsts.autoBetAtBestWinningTime) delete mergedWinningConsts.g_betMinutesOffset
+				// Fake / Test bet
+				if(isLockedForBetting) {
+					mergedWinningConsts = { ...mergedWinningConsts, ...WC.sportsWinningConstants["Test Constants"] };
+				}
+
+				if(mergedWinningConsts.autoBetAtBestWinningTime) delete mergedWinningConsts.g_betMinutesOffset;
 			}
 
 			return mergedWinningConsts;
