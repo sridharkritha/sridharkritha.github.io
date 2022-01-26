@@ -1,132 +1,313 @@
 {
-  "Horse Racing": [
+  "Greyhound Racing": [
     {
       "status": "matched",
-      "sport-id": 24735152712200,
-      "sport-name": "Horse Racing",
-      "event-id": 1967190946260051,
-      "event-name": "19:00 Wolverhampton",
-      "runner-name": "4 Chase The Dollar",
-      "decimal-odds": 3,
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1968161733000051,
+      "event-name": "17:44 Towcester",
+      "runner-name": "Kirabilly Kathy",
+      "decimal-odds": 2,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1967190946260051,
-        "start": "2022-01-22T19:00:00.000Z",
+        "id": 1968161733000051,
+        "start": "2022-01-23T17:44:00.000Z",
         "status": "open",
-        "in-running-flag": true,
-        "realStartTime": "2022-01-22T19:02:35.008Z",
-        "race-length": "2m 0f 120y",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "270mtrs",
         "allRunners": {
-          "4 Chase The Dollar": {
-            "runnerId": 1967190947020151,
-            "back": 2.96,
-            "lay": 3.6,
-            "name": "4 Chase The Dollar",
-            "event-name": "19:00 Wolverhampton",
-            "numberOfRunners": 9,
-            "winPercentage": 31.756756756756758,
-            "startTime": "2022-01-22T19:00:00.000Z",
-            "raceId": 1967190946260051,
-            "raceName": "19:00 Wolverhampton",
-            "sportName": "Horse Racing",
-            "in-running-flag": true,
+          "Kirabilly Kathy": {
+            "runnerId": 1968161733510051,
+            "withdrawn": false,
+            "back": 1.91,
+            "lay": 1.94,
+            "name": "Kirabilly Kathy",
+            "event-name": "17:44 Towcester",
+            "numberOfRunners": 6,
+            "winPercentage": 161.7801047120419,
+            "startTime": "2022-01-23T17:44:00.000Z",
+            "raceId": 1968161733000051,
+            "raceName": "17:44 Towcester",
+            "sportName": "Greyhound Racing",
+            "in-running-flag": false,
             "status": "open",
-            "realStartTime": "2022-01-22T19:02:35.008Z",
-            "race-length": "2m 0f 120y"
+            "realStartTime": 0
           },
-          "3 Beat The Breeze": {
-            "runnerId": 1967190946990151,
-            "back": 4.2,
-            "lay": 4.6,
-            "name": "3 Beat The Breeze",
-            "event-name": "19:00 Wolverhampton"
+          "Mudtown Moon": {
+            "runnerId": 1968161733540151,
+            "withdrawn": false,
+            "back": 14,
+            "lay": 17,
+            "name": "Mudtown Moon",
+            "event-name": "17:44 Towcester"
           },
-          "2 Sophar Sogood": {
-            "runnerId": 1967190946960051,
-            "back": 3.9,
-            "lay": 5.5,
-            "name": "2 Sophar Sogood",
-            "event-name": "19:00 Wolverhampton"
-          },
-          "7 Tribal Commander": {
-            "runnerId": 1967190947120051,
-            "back": 10.5,
-            "lay": 15,
-            "name": "7 Tribal Commander",
-            "event-name": "19:00 Wolverhampton"
-          },
-          "5 Lleyton": {
-            "runnerId": 1967190947060051,
-            "back": 9,
-            "lay": 12,
-            "name": "5 Lleyton",
-            "event-name": "19:00 Wolverhampton"
-          },
-          "8 Garrison Commander": {
-            "runnerId": 1967190947160051,
-            "back": 29,
+          "Sherry Baby": {
+            "runnerId": 1968161733570151,
+            "withdrawn": false,
+            "back": 24,
             "lay": 36,
-            "name": "8 Garrison Commander",
-            "event-name": "19:00 Wolverhampton"
+            "name": "Sherry Baby",
+            "event-name": "17:44 Towcester"
           },
-          "1 Affluence": {
-            "runnerId": 1967190946930051,
-            "back": 40,
-            "lay": 55,
-            "name": "1 Affluence",
-            "event-name": "19:00 Wolverhampton"
+          "Salthill Danny": {
+            "runnerId": 1968161733600151,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 8.2,
+            "name": "Salthill Danny",
+            "event-name": "17:44 Towcester"
           },
-          "6 Running Cloud": {
-            "runnerId": 1967190947090051,
-            "back": 70,
-            "lay": 80,
-            "name": "6 Running Cloud",
-            "event-name": "19:00 Wolverhampton"
+          "Malton Manor": {
+            "runnerId": 1968161733630151,
+            "withdrawn": false,
+            "back": 5,
+            "lay": 5.7,
+            "name": "Malton Manor",
+            "event-name": "17:44 Towcester"
           },
-          "9 Celtic Classic": {
-            "runnerId": 1967190947190051,
-            "back": 55,
-            "lay": 85,
-            "name": "9 Celtic Classic",
-            "event-name": "19:00 Wolverhampton"
+          "Millhouse Turbo": {
+            "runnerId": 1968161733660151,
+            "withdrawn": false,
+            "back": 11.5,
+            "lay": 14.5,
+            "name": "Millhouse Turbo",
+            "event-name": "17:44 Towcester"
           }
         },
         "metaData": {
           "stakeValue": 0.2,
           "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 1.8,
+          "sumOfAlreadyPlacedBetAmount": 0,
           "currentBalance": 6.89,
           "winConfidencePercentage": 1,
           "minProfitOdd": 0.1
         },
         "luckyWinner": {
-          "runnerId": 1967190947020151,
-          "back": 2.96,
-          "lay": 3.6,
-          "name": "4 Chase The Dollar",
-          "event-name": "19:00 Wolverhampton",
-          "numberOfRunners": 9,
-          "winPercentage": 31.756756756756758,
-          "startTime": "2022-01-22T19:00:00.000Z",
-          "raceId": 1967190946260051,
-          "raceName": "19:00 Wolverhampton",
-          "sportName": "Horse Racing",
-          "in-running-flag": true,
+          "runnerId": 1968161733510051,
+          "withdrawn": false,
+          "back": 1.91,
+          "lay": 1.94,
+          "name": "Kirabilly Kathy",
+          "event-name": "17:44 Towcester",
+          "numberOfRunners": 6,
+          "winPercentage": 161.7801047120419,
+          "startTime": "2022-01-23T17:44:00.000Z",
+          "raceId": 1968161733000051,
+          "raceName": "17:44 Towcester",
+          "sportName": "Greyhound Racing",
+          "in-running-flag": false,
           "status": "open",
-          "realStartTime": "2022-01-22T19:02:35.008Z",
-          "race-length": "2m 0f 120y"
+          "realStartTime": 0
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.8,
+        "sumOfAlreadyPlacedBetAmount": 0,
         "currentBalance": 6.89,
         "winConfidencePercentage": 1,
         "minProfitOdd": 0.1
       },
-      "event-start-time": "22/01/2022, 19:00:00",
-      "bet-placed-time": "19:06:10  22-01-2022"
+      "event-start-time": "23/01/2022, 17:44:00",
+      "bet-placed-time": "17:38:23  23-01-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1968140487960051,
+      "event-name": "19:09 Swindon",
+      "runner-name": "Roxanne Reign",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1968140487960051,
+        "start": "2022-01-23T19:09:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "476",
+        "allRunners": {
+          "Roxanne Reign": {
+            "runnerId": 1968140488420051,
+            "withdrawn": false,
+            "back": 2.02,
+            "lay": 0,
+            "name": "Roxanne Reign",
+            "event-name": "19:09 Swindon",
+            "numberOfRunners": 6,
+            "winPercentage": 117.82178217821783,
+            "startTime": "2022-01-23T19:09:00.000Z",
+            "raceId": 1968140487960051,
+            "raceName": "19:09 Swindon",
+            "sportName": "Greyhound Racing",
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "Moymet Castle": {
+            "runnerId": 1968140488450051,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 0,
+            "name": "Moymet Castle",
+            "event-name": "19:09 Swindon"
+          },
+          "Confey Rocket": {
+            "runnerId": 1968140488470151,
+            "withdrawn": false,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Confey Rocket",
+            "event-name": "19:09 Swindon"
+          },
+          "Skibb Sky": {
+            "runnerId": 1968140488510051,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 0,
+            "name": "Skibb Sky",
+            "event-name": "19:09 Swindon"
+          },
+          "Vegas Flyer": {
+            "runnerId": 1968140488540051,
+            "withdrawn": false,
+            "back": 5.1,
+            "lay": 0,
+            "name": "Vegas Flyer",
+            "event-name": "19:09 Swindon"
+          },
+          "Ashway Ruby": {
+            "runnerId": 1968140488570051,
+            "withdrawn": false,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Ashway Ruby",
+            "event-name": "19:09 Swindon"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.89,
+          "winConfidencePercentage": 1,
+          "minProfitOdd": 0.1
+        },
+        "luckyWinner": {
+          "runnerId": 1968140488420051,
+          "withdrawn": false,
+          "back": 2.02,
+          "lay": 0,
+          "name": "Roxanne Reign",
+          "event-name": "19:09 Swindon",
+          "numberOfRunners": 6,
+          "winPercentage": 117.82178217821783,
+          "startTime": "2022-01-23T19:09:00.000Z",
+          "raceId": 1968140487960051,
+          "raceName": "19:09 Swindon",
+          "sportName": "Greyhound Racing",
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.89,
+        "winConfidencePercentage": 1,
+        "minProfitOdd": 0.1
+      },
+      "event-start-time": "23/01/2022, 19:09:00",
+      "bet-placed-time": "17:38:23  23-01-2022"
+    }
+  ],
+  "Soccer": [
+    {
+      "status": "matched",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1963240917840001,
+      "event-name": "Gil Vicente vs Portimonense",
+      "runner-name": "Gil Vicente",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1963240917840001,
+        "start": "2022-01-23T18:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "allRunners": {
+          "Gil Vicente": {
+            "runnerId": 1963240921890001,
+            "back": 1.9,
+            "lay": 1.93,
+            "name": "Gil Vicente",
+            "event-name": "Gil Vicente vs Portimonense",
+            "numberOfRunners": 3,
+            "winPercentage": 97.36842105263159,
+            "startTime": "2022-01-23T18:00:00.000Z",
+            "raceId": 1963240917840001,
+            "raceName": "Gil Vicente vs Portimonense",
+            "sportName": "Soccer",
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "Portimonense": {
+            "runnerId": 1963240921920101,
+            "back": 4.6,
+            "lay": 4.8,
+            "name": "Portimonense",
+            "event-name": "Gil Vicente vs Portimonense"
+          },
+          "DRAW (Gil/Por)": {
+            "runnerId": 1963240921960001,
+            "back": 3.75,
+            "lay": 3.8,
+            "name": "DRAW (Gil/Por)",
+            "event-name": "Gil Vicente vs Portimonense"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 6.89,
+          "winConfidencePercentage": 1,
+          "minProfitOdd": 0.1
+        },
+        "luckyWinner": {
+          "runnerId": 1963240921890001,
+          "back": 1.9,
+          "lay": 1.93,
+          "name": "Gil Vicente",
+          "event-name": "Gil Vicente vs Portimonense",
+          "numberOfRunners": 3,
+          "winPercentage": 97.36842105263159,
+          "startTime": "2022-01-23T18:00:00.000Z",
+          "raceId": 1963240917840001,
+          "raceName": "Gil Vicente vs Portimonense",
+          "sportName": "Soccer",
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.89,
+        "winConfidencePercentage": 1,
+        "minProfitOdd": 0.1
+      },
+      "event-start-time": "23/01/2022, 18:00:00",
+      "bet-placed-time": "17:38:24  23-01-2022"
     }
   ]
 }

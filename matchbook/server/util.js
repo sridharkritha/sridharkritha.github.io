@@ -44,6 +44,8 @@ const UTIL = (function() {
 			return arr[0].split("m")[0] * 1760 + arr[1].split("f")[0] * 220 + Number(arr[2].split("y")[0]);
 		},
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// 265mtrs / 642mtrs <= dog race
+
 		// Horse speed = 30 miles/hour  or 31 miles/hour
 		// 1 furlongs  = 15 seconds     or 14.56 seconds  or  15.21 seconds
 		// 1 yard      = (15/220) seconds 

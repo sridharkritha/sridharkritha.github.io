@@ -5,7 +5,7 @@ const WC = (function() {
 	// 	"allSports": {
 	// 		"g_BetStakeValue"           : 0.2,  // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
 	// 		"g_betMinutesOffset"        : 600,  // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-	// 		"g_winConfidencePercentage" : 80,   // 80 => comparison with nearest competitor ex: 100  (100% or more)
+	// 		"g_minWinConfidencePercentage" : 80,   // 80 => comparison with nearest competitor ex: 100  (100% or more)
 	// 		"g_minProfitOdd"            : 0.8,  // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	// 		"g_maxRunnersCount"         : 25
 	// 	},
@@ -13,7 +13,7 @@ const WC = (function() {
 	// 	"Horse Racing": {
 	// 		"autoBetAtBestWinningTime"  : true, // ignore "g_betMinutesOffset"
 	// 		// "g_betMinutesOffset"     : 3,    // place bet: +1 min before the start time, -5 min after the start time
-	// 		"g_winConfidencePercentage" : 80,   // ex: 80 => (80% or more)
+	// 		"g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
 	// 		"g_minProfitOdd"            : 0.7   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	// 	},
 
@@ -22,7 +22,7 @@ const WC = (function() {
 	// 		// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 	// 		"g_betMinutesOffset": 3,         // g_betMinutesOffset
 
-	// 		"g_winConfidencePercentage": 80, // ex: 80 => (80% or more)
+	// 		"g_minWinConfidencePercentage": 80, // ex: 80 => (80% or more)
 
 	// 		"g_minProfitOdd": 0.7 // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	// 	},
@@ -34,28 +34,44 @@ const WC = (function() {
 
 		sportsWinningConstants : Object.freeze({
 			"allSports": {
-				"g_BetStakeValue"           : 0.2,  // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-				"g_betMinutesOffset"        : 600,  // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-				"g_winConfidencePercentage" : 80,   // 80 => comparison with nearest competitor ex: 100  (100% or more)
-				"g_minProfitOdd"            : 0.8,  // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
-				"g_maxRunnersCount"         : 25
+				// Time
+				"autoBetAtBestWinningTime"     : false, // true => ignores "g_betMinutesOffset"
+				"g_betMinutesOffset"           : 600,  // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
+				"ignore_realStartTime"         : false,
+				// Money
+				"g_BetStakeValue"              : 0.2,  // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
+				"g_minProfitOdd"               : 0.8,  // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				// Win
+				"g_minWinConfidencePercentage" : 80,   // 80  => comparison with nearest competitor ex: 100  (100% or more)
+				"g_maxWinConfidencePercentage" : 150,  // 150 => comparison with nearest competitor ex: 100  (100% or more)
+				// Counts
+				"g_maxRunnersCount"            : 25
 			},
 	
 			"Horse Racing": {
-				"autoBetAtBestWinningTime"  : true, // ignores "g_betMinutesOffset"
-				// "g_betMinutesOffset"     : 3,    // place bet: +1 min before the start time, -5 min after the start time
-				"g_winConfidencePercentage" : 80,   // ex: 80 => (80% or more)
-				"g_minProfitOdd"            : 0.7   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				// Time
+				"autoBetAtBestWinningTime"     : true, // ignores "g_betMinutesOffset"
+				"g_betMinutesOffset"           : -1,    // place bet: +1 min before the start time, -5 min after the start time
+				// Money
+				"g_minProfitOdd"               : 0.7,   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				// Win
+				"g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
+			},
+
+			"Greyhound Racing": {
+				// Time
+				"g_betMinutesOffset"        : -1,   // -1 => 1 minute after event start time
+				"ignore_realStartTime"      : true
 			},
 	
 			"Tennis": {
 				// "betAfterEventStarted": true, // "in-running-flag"
 				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
-				"g_betMinutesOffset": 3,         // g_betMinutesOffset
+				"g_betMinutesOffset"           : 3,         // g_betMinutesOffset
 	
-				"g_winConfidencePercentage": 80, // ex: 80 => (80% or more)
+				"g_minWinConfidencePercentage" : 80, // ex: 80 => (80% or more)
 	
-				"g_minProfitOdd": 0.7 // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				"g_minProfitOdd"               : 0.7 // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 			},
 		}),
 

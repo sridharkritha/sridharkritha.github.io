@@ -547,14 +547,14 @@ window.addEventListener('load', function() {
 		"allSports": {
 			"g_BetStakeValue"           : 0.2,  // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
 			"g_betMinutesOffset"        : 600,  // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-			"g_winConfidencePercentage" : 80,   // 80 => comparison with nearest competitor ex: 100  (100% or more)
+			"g_minWinConfidencePercentage" : 80,   // 80 => comparison with nearest competitor ex: 100  (100% or more)
 			"g_minProfitOdd"            : 0.8,  // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		},
 
 		"Horse Racing": {
 			"autoBetAtBestWinningTime"  : true, // ignore "g_betMinutesOffset"
 			// "g_betMinutesOffset"     : 3,    // place bet: +1 min before the start time, -5 min after the start time
-			"g_winConfidencePercentage" : 80,   // ex: 80 => (80% or more)
+			"g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
 			"g_minProfitOdd"            : 0.7   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		},
 
@@ -563,7 +563,7 @@ window.addEventListener('load', function() {
 			// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
 			"g_betMinutesOffset": 3,         // g_betMinutesOffset
 
-			"g_winConfidencePercentage": 80, // ex: 80 => (80% or more)
+			"g_minWinConfidencePercentage": 80, // ex: 80 => (80% or more)
 
 			"g_minProfitOdd": 0.7 // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		},

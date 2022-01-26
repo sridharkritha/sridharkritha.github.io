@@ -42,15 +42,14 @@
 	const g_sportsIdNameMapping = {};
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
-	let g_betMinutesOffset = 600; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-	let g_winConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
-	let g_minProfitOdd = 0.8; // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
-
-	let g_maxRunnersCount = 25; // 16; // 8
+	let g_betMinutesOffset = -1; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
+	// let g_minWinConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
+	// let g_minProfitOdd = 0.8; // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+	// let g_maxRunnersCount = 25; // 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
-	const g_onlyOne_raceName = "Chelsea vs Tottenham Hotspur"; // test only one race
-	// const g_onlyOne_raceName = "Benoit Paire vs Stefanos Tsitsipas";
+	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
+	const g_onlyOne_raceName = "Felix Auger-Aliassime vs Daniil Medvedev";
 	// const g_onlyOne_raceName = null; 
 
 	/*
@@ -62,7 +61,7 @@
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
 		// 'Horse Racing', //.
-		'Soccer', //.
+		// 'Soccer', //.
 		// 'Greyhound Racing', //.
 
 		// 'American Football',//.
@@ -79,7 +78,7 @@
 		// "Baseball", //.
 		// "Cricket", //.
 		// "Motor Sport", //.
-		// "Tennis", //.
+		"Tennis", //.
 
 		// "Volleyball",
 		// "Chess",
@@ -99,9 +98,9 @@
 
 	if(g_isLockedForBetting)
 	{
-		g_betMinutesOffset = 600; //(600 = 10hrs before) place bet: +1 min before the start time, -5 min after the start time
-		g_winConfidencePercentage = 1; // ex: 100 => (100% or more)
-		g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
+		// g_betMinutesOffset = 600; //(600 = 10hrs before) place bet: +1 min before the start time, -5 min after the start time
+		// g_minWinConfidencePercentage = 1; // ex: 100 => (100% or more)
+		// g_minProfitOdd = 0.1; // ex: 1 (1/1 = 1 even odd [or] 2.00 in decimal)
 		// g_whichDayEvent = '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 	}
 	/////////////////////////////////////////// socket.io //////////////////////////////////////////////////////////////////
@@ -166,7 +165,12 @@
 
 	isWinningHorse = (sportName, winPercentage, profitOdd, runnersCount) => {
 		const wc = WC.getSportsWinningConstants(sportName);
-		if((winPercentage > wc.g_winConfidencePercentage) && (profitOdd > wc.g_minProfitOdd) && runnersCount <= wc.g_maxRunnersCount)
+		
+		if((winPercentage > wc.g_maxWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd))
+		{
+			return true;
+		}
+		else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd) && runnersCount <= wc.g_maxRunnersCount)
 		{
 			return true;
 		}
@@ -181,7 +185,7 @@
 		const realStartTime  = eventObj["realStartTime"];
 		const inRunningFlag  = eventObj["in-running-flag"];
 		const sportName      = eventObj["sportName"];
-		
+
 		let raceLength = 0;
 		let raceRunningTime = 0;
 		if(sportName === "Horse Racing") {
@@ -189,20 +193,44 @@
 			raceRunningTime = UTIL.calculateRaceRunningTime(sportName, raceLength); // seconds
 		}
 
+		const wc = WC.getSportsWinningConstants(sportName);
+
 		// check same date (Ignore any time difference) or not ?
 		if(UTIL.isSameDate(currentTime, eventStartTime))
 		{
-			// after the race started
-			if(g_betMinutesOffset <= 0 && inRunningFlag && realStartTime) {
-				// g_betMinutesOffset = -5; // place bet: +1 min before the start time, -5 min after the start time
-				if(currentTime.getTime() > (realStartTime.getTime() - (g_betMinutesOffset * 60 * 1000))) {
+			// Do NOT check the time if the WIN confidence exceeds the max value and the profit expected
+			if((eventObj.winPercentage > wc.g_maxWinConfidencePercentage) && (eventObj.profitOdd > wc.g_minProfitOdd))
+			{
+				return true;
+			}
+			// Dog race - A very quick race so do NOT wait for real start time. Go with event start time
+			else if(wc["ignore_realStartTime"] && currentTime > (eventStartTime - (g_betMinutesOffset * 60 * 1000)))
+			{
+				return true;
+			}
+			// Horse race - Place bet at a correct time depends up on the race length and horse speed.
+			else if(wc.autoBetAtBestWinningTime && inRunningFlag && realStartTime) {
+				// if(currentTime > realStartTime + 60 * 1000) {   // 1 min after game start
+				if(currentTime > realStartTime + Math.round(raceRunningTime * 75 / 100 * 1000)) {   // At 75% time of total running time
 					return true;
 				}
 			}
-			// before the race starts
-			else if(g_betMinutesOffset > 0 && currentTime.getTime() > (eventStartTime.getTime() - (g_betMinutesOffset * 60 * 1000))) {
-				return true;
+			// After the race started
+			else if(g_betMinutesOffset <= 0 && inRunningFlag && realStartTime) {
+				// g_betMinutesOffset = -5; // place bet: +1 min before the start time, -5 min after the start time
+				if(currentTime > (realStartTime - (g_betMinutesOffset * 60 * 1000))) {
+					return true;
+				}
 			}
+			// Before the race starts
+			else if(g_betMinutesOffset > 0 && currentTime > (eventStartTime - (g_betMinutesOffset * 60 * 1000))) {
+				return true; ///////////////
+			}
+			// g_betMinutesOffset = -2; // place bet: +1 min before the start time, -5 min after the start time
+			// else if(currentTime.getTime() > (eventStartTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
+			// {
+			// 	return true;
+			// }
 
 			/*
 			// in-running-flag
@@ -612,10 +640,11 @@
 			
 										// Build the predictedWinner list
 										if(isWinningHorse(sportName, winPercentage, profitOdd, luckyRunner.length))
-										// if((winPercentage > g_winConfidencePercentage) && (profitOdd > g_minProfitOdd) && luckyRunner.length <= g_maxRunnersCount)
 										{
 											let obj = luckyRunner[0][1];
 											obj.sportName = sportName;
+											obj["winPercentage"] = winPercentage;
+											obj["profitOdd"] = profitOdd;
 											obj["in-running-flag"] = jsonObj[prop][race]["in-running-flag"];
 											obj["status"] = jsonObj[prop][race]["status"];
 											obj["realStartTime"] = jsonObj[prop][race]["realStartTime"];
@@ -843,15 +872,18 @@
 	};
 
 	// Get meta data for each event
-	getEventMetaData = () => {
+	getEventMetaData = (sportName) => {
+		const wc = WC.getSportsWinningConstants(sportName);
 		// meta data
 		const metaData = {
-			"stakeValue"                   : g_BetStakeValue,
+			"stakeValue"                   : wc.g_BetStakeValue,
+			"minWinConfidencePercentage"   : wc.g_minWinConfidencePercentage,
+			"maxWinConfidencePercentage"   : wc.g_maxWinConfidencePercentage,
+			"minProfitOdd"                 : wc.g_minProfitOdd,
+
 			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
 			"sumOfAlreadyPlacedBetAmount"  : g_sumOfAlreadyPlacedBetAmount,
 			"currentBalance"               : g_userBalance,
-			"winConfidencePercentage"      : g_winConfidencePercentage,
-			"minProfitOdd"                 : g_minProfitOdd
 		};
 
 		return metaData;
@@ -866,7 +898,7 @@
 			g_db.sportId[sportName].events[event].id = eventId;
 			g_db.sportId[sportName].events[event].start = startTime;
 			// g_db["sportId"][sportName]["events"][raceName]["metaData"] = metaData;
-			g_db.sportId[sportName].events[event].metaData = getEventMetaData();
+			g_db.sportId[sportName].events[event].metaData = getEventMetaData(sportName);
 
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
@@ -904,6 +936,7 @@
 				// 14:00 Newbury, 14:10 Fontwell, 14:20 Ayr, 14:35 Newbury, 14:40 Fairview...... etc
 				let races = Object.keys(g_db.sportId[sport].events);
 				let events_cbCount = new callbackCount(0, races.length);
+				let isOnlyOneRaceExist = false;
 
 				if(races.length) {
 					for (const race of races) {
@@ -917,7 +950,10 @@
 						////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 						// g_onlyOne_raceName === "14:00 Southwell"
 						if(!g_onlyOne_raceName || race === g_onlyOne_raceName) {
-							if(race === g_onlyOne_raceName) events_cbCount.totalCount = 1; // Taking only one race event for testing
+							if(race === g_onlyOne_raceName) {
+								events_cbCount.totalCount = 1; // Taking only one race event for testing
+								isOnlyOneRaceExist = true;
+							}
 
 							let logMsg = `Sports: ${sport} ############## Event Name: ${race}`;
 							// CONNECTIONS.print("logClient", logMsg); // detailed sports and event list
@@ -927,12 +963,19 @@
 								sports_cbCount, events_cbCount, callback_getEventInfo);
 						}
 					}
+
+					if(g_onlyOne_raceName && !isOnlyOneRaceExist) {
+						console.log(`${g_onlyOne_raceName} is NOT exist anymore !!!.`);
+						goToNextSports(sport, sports_cbCount, new callbackCount(0, 0), true);
+					}
+
 				}
 				else {
 					goToNextSports(sport, sports_cbCount, events_cbCount, true);
 				}
 			}
 			else {
+				console.log(`There is NO events available inside the sport (${sport}) !!!.`);
 				goToNextSports(sport, sports_cbCount, new callbackCount(0, 0), true);
 			}
 		}
@@ -1103,7 +1146,7 @@
 		// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
 		let logMsg = `BetScanRound: ${g_betScanRound.toString().padStart(5, "0")} ## RunningTime: ${runningTime} ## ScanCurrentTime: ${TIMER.getTimeFromDateObj(scanCurrentTime)} ## ScanStartTime: ${TIMER.getTimeFromDateObj(g_scanStartTime)} ## ElapsedTime: ${elapsedTime.toString().padStart(5, "0")}ms (${TIMER.milliSecondsToHMS(elapsedTime)}) ## Date: ${scanCurrentTime.toDateString()}`;
 		CONNECTIONS.print("logClient", logMsg);
-		if(g_onlyOne_raceName) 	console.log(`############## Only one race event mode: ${g_onlyOne_raceName} ##################`);
+		if(g_onlyOne_raceName) 	console.log(`############## warning: ONLY ONE RACE EVENT MODE IS ACTIVE: ${g_onlyOne_raceName} ##################`);
 
 		findSportsIds();
 	};
