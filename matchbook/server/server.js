@@ -49,7 +49,7 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	const g_onlyOne_raceName = "Felix Auger-Aliassime vs Daniil Medvedev";
+	const g_onlyOne_raceName = "Dubai Desert Classic 2022";
 	// const g_onlyOne_raceName = null; 
 
 	/*
@@ -67,7 +67,7 @@
 		// 'American Football',//.
 		// 'Basketball', //.
 		// "Boxing", //.
-		// "Golf", //.
+		"Golf", //.
 
 		// 'Ice Hockey', //.
 		// 'Rugby Union', //.
@@ -78,7 +78,7 @@
 		// "Baseball", //.
 		// "Cricket", //.
 		// "Motor Sport", //.
-		"Tennis", //.
+		// "Tennis", //.
 
 		// "Volleyball",
 		// "Chess",
@@ -261,7 +261,14 @@
 					const index = extraArgs.keys.indexOf("start");
 					let dateString;
 
-					if(index !== -1)
+					const indexInRunningFlag = extraArgs.keys.indexOf("in-running-flag");
+					if(indexInRunningFlag !== -1 && jsonFormat[extraArgs.obj][key][extraArgs.keys[indexInRunningFlag]])
+					{
+						// sports like "Golf" takes more than one day so fetch the event details as per the "in-running-flag"
+						// instead of today's or tomorrow's date
+						console.log(`MORE THAN A DAY LONG EVENT. EVENT(${jsonFormat[extraArgs.obj][key].name}) START ON: ${jsonFormat[extraArgs.obj][key][extraArgs.keys[index]]}`);
+					}
+					else if(index !== -1)
 					{
 						dateString = jsonFormat[extraArgs.obj][key][extraArgs.keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
 						let dateObject = new Date(dateString);
