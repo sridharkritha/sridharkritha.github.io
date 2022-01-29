@@ -6,26 +6,26 @@
       "start": "2022-01-26T17:00:00.000Z",
       "status": "open",
       "in-running-flag": true,
-      "realStartTime": "2022-01-29T08:45:57.636Z"
+      "realStartTime": "2022-01-29T09:34:36.559Z"
     },
     "Dubai Desert Classic 2022": {
       "id": 1970715550100051,
       "start": "2022-01-27T03:10:00.000Z",
       "status": "open",
       "in-running-flag": true,
-      "realStartTime": "2022-01-29T08:45:57.636Z",
+      "realStartTime": "2022-01-29T09:34:36.560Z",
       "allRunners": {
         "Tyrrell Hatton": {
           "runnerId": 1970715556420051,
           "withdrawn": false,
-          "back": 2.44,
-          "lay": 3.2
+          "back": 2.38,
+          "lay": 2.76
         },
         "Rory McIlroy": {
           "runnerId": 1970715554970051,
           "withdrawn": false,
-          "back": 3.7,
-          "lay": 0
+          "back": 5.2,
+          "lay": 8
         },
         "Viktor Hovland": {
           "runnerId": 1970715558690151,
@@ -36,13 +36,13 @@
         "Justin Harding": {
           "runnerId": 1970715556560051,
           "withdrawn": false,
-          "back": 5.6,
-          "lay": 11
+          "back": 6,
+          "lay": 0
         },
         "Tommy Fleetwood": {
           "runnerId": 1970715555880051,
           "withdrawn": false,
-          "back": 9.8,
+          "back": 0,
           "lay": 0
         },
         "Collin Morikawa": {
@@ -54,13 +54,13 @@
         "Erik Van Rooyen": {
           "runnerId": 1970715557540151,
           "withdrawn": false,
-          "back": 9.2,
+          "back": 11.5,
           "lay": 0
         },
         "Paul Casey": {
           "runnerId": 1970715555000051,
           "withdrawn": false,
-          "back": 0,
+          "back": 9.4,
           "lay": 0
         },
         "Adam Scott": {
@@ -78,7 +78,7 @@
         "Bernd Wiesberger": {
           "runnerId": 1970715555630051,
           "withdrawn": false,
-          "back": 7.8,
+          "back": 0,
           "lay": 0
         },
         "JB Hansen": {
@@ -198,7 +198,7 @@
         "Richard Bland": {
           "runnerId": 1970715554730151,
           "withdrawn": false,
-          "back": 0,
+          "back": 11.5,
           "lay": 0
         },
         "George Coetzee": {
@@ -234,7 +234,7 @@
         "Lee Westwood": {
           "runnerId": 1970715555270151,
           "withdrawn": false,
-          "back": 11.5,
+          "back": 6.4,
           "lay": 0
         },
         "David Drysdale": {

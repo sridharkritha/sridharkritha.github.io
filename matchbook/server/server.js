@@ -170,10 +170,14 @@
 		{
 			return true;
 		}
-		else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd) && runnersCount <= wc.g_maxRunnersCount)
+		else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd))
 		{
 			return true;
 		}
+		// else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd) && runnersCount <= wc.g_maxRunnersCount)
+		// {
+		// 	return true;
+		// }
 
 		return false;
 	};
@@ -633,7 +637,8 @@
 								{
 									const halfPlayersCount = Math.ceil((luckyRunner.length - nonRunnerCount) / 2);
 									// At least half of the players should have some betting before doing win calculation 
-									if(luckyRunner[halfPlayersCount][0] != Number.MAX_VALUE) {
+									// (or) At least #16 players have some valid odds.
+									if(luckyRunner[halfPlayersCount][0] != Number.MAX_VALUE || nPlayerHasValidOdd > 15) {
 										// Calculating the win chance by comparing with very next competitor 
 										let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
 										luckyRunner[0][1].numberOfRunners = luckyRunner.length;
