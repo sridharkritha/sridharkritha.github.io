@@ -49,8 +49,8 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	const g_onlyOne_raceName = "Dubai Desert Classic 2022";
-	// const g_onlyOne_raceName = null; 
+	// const g_onlyOne_raceName = "Dubai Desert Classic 2022";
+	const g_onlyOne_raceName = null; 
 
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
@@ -60,14 +60,14 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		// 'Horse Racing', //.
+		'Horse Racing', //.
 		// 'Soccer', //.
 		// 'Greyhound Racing', //.
 
 		// 'American Football',//.
 		// 'Basketball', //.
 		// "Boxing", //.
-		"Golf", //.
+		// "Golf", //.
 
 		// 'Ice Hockey', //.
 		// 'Rugby Union', //.
@@ -984,17 +984,17 @@
 
 					if(g_onlyOne_raceName && !isOnlyOneRaceExist) {
 						console.log(`${g_onlyOne_raceName} is NOT exist anymore !!!.`);
-						goToNextSports(sport, sports_cbCount, new callbackCount(0, 0), true);
+						goToNextSports(sport, sports_cbCount, "NOTHING", new callbackCount(0, 0), true);
 					}
 
 				}
 				else {
-					goToNextSports(sport, sports_cbCount, events_cbCount, true);
+					goToNextSports(sport, sports_cbCount, "NOTHING", events_cbCount, true);
 				}
 			}
 			else {
 				console.log(`There is NO events available inside the sport (${sport}) !!!.`);
-				goToNextSports(sport, sports_cbCount, new callbackCount(0, 0), true);
+				goToNextSports(sport, sports_cbCount, "NOTHING", new callbackCount(0, 0), true);
 			}
 		}
 	};
@@ -1017,6 +1017,7 @@
 
 		console.log(`${UTIL.formatString(`Events(${eventName})`, 30)} : ${events_cbCount.currentCount.toString().padStart(3, "0")} / ${events_cbCount.totalCount.toString().padStart(3, "0")} #######  ${UTIL.formatString(`Sports(${sportsName})`, 30)}: ${sports_cbCount.currentCount.toString().padStart(2, "0")} / ${sports_cbCount.totalCount.toString().padStart(2, "0")}`);
 
+
 		if((isEmptyEvent || events_cbCount.totalCount) && events_cbCount.currentCount === events_cbCount.totalCount &&
 			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)
 		{
@@ -1036,6 +1037,9 @@
 					run(); // LOOPS
 				}
 			}.bind(this), remainingTime);
+		}
+		else {
+			console.log(`${UTIL.formatString(`Events(${eventName})`, 30)} : ${events_cbCount.currentCount.toString().padStart(3, "0")} / ${events_cbCount.totalCount.toString().padStart(3, "0")} #######  ${UTIL.formatString(`Sports(${sportsName})`, 30)}: ${sports_cbCount.currentCount.toString().padStart(2, "0")} / ${sports_cbCount.totalCount.toString().padStart(2, "0")}`);
 		}
 	};
 

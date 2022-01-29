@@ -43,8 +43,12 @@ const UTIL = (function() {
 		// 220 yards  = 1 furlong
 		// 8 furlongs = 1 mile
 		// mfyString = "3m 4f 200y";   => 6360 yards
-		convertMfyToYards : (mfyString) => {
+		convertMfyToYards : (mfyString) => {	
 			const arr = mfyString.split(" ");
+			if(!mfyString || !arr.length) {
+				console.log("0 length Horse Race !!!");
+				return 0;
+			}
 			return arr[0].split("m")[0] * 1760 + arr[1].split("f")[0] * 220 + Number(arr[2].split("y")[0]);
 		},
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
