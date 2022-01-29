@@ -1,6 +1,7 @@
 // Namespace using Module Pattern 
 const UTIL = (function() {
 	// Private Members
+	const CONNECTIONS = require("./connections");
 	return {
 		///////////////////////   Public Members ///////////////////////////////////////////////////////////////////////
 
@@ -26,8 +27,11 @@ const UTIL = (function() {
 			// g_betScanRound.toString().padStart(5, "0"); // 1 ==> 00001
 			if(str.length < length) return str.padEnd(length," ");
 	
-			console.log(`Error: String(${str}) length is larger than format length(${length})`);
-			return null;
+			CONNECTIONS.print("warnings",`Warning: String(${str}) length is larger than format length(${length})`);
+			// console.log(`Warning: String(${str}) length is larger than format length(${length})`);
+			
+			// return str.substring(0, length); // trimmed string
+			return str.slice(0, length-1) + ")"; // trimmed string
 		},
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		isSameDate : (dateObjOne, dateObjTwo) => {

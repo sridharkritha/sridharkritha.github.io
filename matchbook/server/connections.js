@@ -39,6 +39,9 @@ const CONNECTIONS = (function() {
 				case "ignore":
 					// console.log(msg);
 					break;
+				case "warnings":
+					// console.log(msg);
+					break;
 				case "log":
 					console.log(msg);
 					break;

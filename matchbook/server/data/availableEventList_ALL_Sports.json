@@ -1,0 +1,512 @@
+{
+  "id": 8,
+  "events": {
+    "Farmers Insurance Open 2022": {
+      "id": 1970714827500051,
+      "start": "2022-01-26T17:00:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-29T08:19:04.097Z"
+    },
+    "Dubai Desert Classic 2022": {
+      "id": 1970715550100051,
+      "start": "2022-01-27T03:10:00.000Z",
+      "status": "open",
+      "in-running-flag": true,
+      "realStartTime": "2022-01-29T08:19:04.098Z",
+      "allRunners": {
+        "Tyrrell Hatton": {
+          "runnerId": 1970715556420051,
+          "withdrawn": false,
+          "back": 3.45,
+          "lay": 5.8
+        },
+        "Rory McIlroy": {
+          "runnerId": 1970715554970051,
+          "withdrawn": false,
+          "back": 3.7,
+          "lay": 8.6
+        },
+        "Viktor Hovland": {
+          "runnerId": 1970715558690151,
+          "withdrawn": false,
+          "back": 6.4,
+          "lay": 0
+        },
+        "Justin Harding": {
+          "runnerId": 1970715556560051,
+          "withdrawn": false,
+          "back": 4.7,
+          "lay": 0
+        },
+        "Tommy Fleetwood": {
+          "runnerId": 1970715555880051,
+          "withdrawn": false,
+          "back": 9.2,
+          "lay": 0
+        },
+        "Collin Morikawa": {
+          "runnerId": 1970715558190051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Erik Van Rooyen": {
+          "runnerId": 1970715557540151,
+          "withdrawn": false,
+          "back": 9.2,
+          "lay": 0
+        },
+        "Paul Casey": {
+          "runnerId": 1970715555000051,
+          "withdrawn": false,
+          "back": 9.4,
+          "lay": 0
+        },
+        "Adam Scott": {
+          "runnerId": 1970715554590151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Shane Lowry": {
+          "runnerId": 1970715556080051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Bernd Wiesberger": {
+          "runnerId": 1970715555630051,
+          "withdrawn": false,
+          "back": 9.8,
+          "lay": 0
+        },
+        "JB Hansen": {
+          "runnerId": 1970715557080051,
+          "withdrawn": false,
+          "back": 10.5,
+          "lay": 0
+        },
+        "Rafael Cabrera Bello": {
+          "runnerId": 1970715555350051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Dean Burmester": {
+          "runnerId": 1970715556280151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Alexander Björk": {
+          "runnerId": 1970715557630051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Laurie Canter": {
+          "runnerId": 1970715556390051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Shubhankar Sharma": {
+          "runnerId": 1970715557230151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Romain Langasque": {
+          "runnerId": 1970715558050051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Garrick Higgo": {
+          "runnerId": 1970715558660051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Thorbjorn Olesen": {
+          "runnerId": 1970715556180051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Jordan Smith": {
+          "runnerId": 1970715557470151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Henrik Stenson": {
+          "runnerId": 1970715555140051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Scott Jamieson": {
+          "runnerId": 1970715556250051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Kiradech Aphibarnrat": {
+          "runnerId": 1970715556140151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Sergio Garcia": {
+          "runnerId": 1970715554880151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Thomas Pieters": {
+          "runnerId": 1970715557320051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Padraig Harrington": {
+          "runnerId": 1970715554290051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Edoardo Molinari": {
+          "runnerId": 1970715554370051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Charl Schwartzel": {
+          "runnerId": 1970715554560051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Thomas Bjorn": {
+          "runnerId": 1970715554700051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Richard Bland": {
+          "runnerId": 1970715554730151,
+          "withdrawn": false,
+          "back": 9.4,
+          "lay": 0
+        },
+        "George Coetzee": {
+          "runnerId": 1970715554770051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Pablo Larrazabal": {
+          "runnerId": 1970715554920151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Ross Fisher": {
+          "runnerId": 1970715555070051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Robert Rock": {
+          "runnerId": 1970715555100151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Justin Walters": {
+          "runnerId": 1970715555170051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Lee Westwood": {
+          "runnerId": 1970715555270151,
+          "withdrawn": false,
+          "back": 9.8,
+          "lay": 0
+        },
+        "David Drysdale": {
+          "runnerId": 1970715555420051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Julien Guerrier": {
+          "runnerId": 1970715555450151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Soren Kjeldsen": {
+          "runnerId": 1970715555490051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Richie Ramsay": {
+          "runnerId": 1970715555520051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "David Horsey": {
+          "runnerId": 1970715555660151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Fabrizio Zanotti": {
+          "runnerId": 1970715555700051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Ashun Wu": {
+          "runnerId": 1970715555910151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Nino Bertasio": {
+          "runnerId": 1970715556040151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Jorge Campillo": {
+          "runnerId": 1970715556110051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Atiwit Janewattananond": {
+          "runnerId": 1970715556210051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Joakim Lagergren": {
+          "runnerId": 1970715556490151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Hao Tong Li": {
+          "runnerId": 1970715557010051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Andrea Pavan": {
+          "runnerId": 1970715556620151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Kalle Samooja": {
+          "runnerId": 1970715556660051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Sebastian Garcia Rodriguez": {
+          "runnerId": 1970715556690051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Lucas Bjerregaard": {
+          "runnerId": 1970715556760051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Adrian Otaegui": {
+          "runnerId": 1970715556830151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Andy Sullivan": {
+          "runnerId": 1970715556870051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "David Law": {
+          "runnerId": 1970715556940051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Brandon Stone": {
+          "runnerId": 1970715556970151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Danie van Tonder": {
+          "runnerId": 1970715557040151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Alexander Levy": {
+          "runnerId": 1970715557120051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Ryan Fox": {
+          "runnerId": 1970715557150051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Nacho Elvira": {
+          "runnerId": 1970715557280151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Grant Forrest": {
+          "runnerId": 1970715557370151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Daniel Gavins": {
+          "runnerId": 1970715557670051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Sebastian Soderberg": {
+          "runnerId": 1970715557820051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Lucas Herbert": {
+          "runnerId": 1970715557900051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Marcus Armitage": {
+          "runnerId": 1970715557930151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "John Catlin": {
+          "runnerId": 1970715557970151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Sam Horsfield": {
+          "runnerId": 1970715558010051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Johannes Veerman": {
+          "runnerId": 1970715558080151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Matt Wallace": {
+          "runnerId": 1970715558150151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Adrian Meronk": {
+          "runnerId": 1970715558290151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Maverick Antcliff": {
+          "runnerId": 1970715558360151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Nicolai von Dellingshausen": {
+          "runnerId": 1970715558430151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Rasmus Hoejgaard": {
+          "runnerId": 1970715558480051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Victor Perez": {
+          "runnerId": 1970715558580151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Matthew Jordan": {
+          "runnerId": 1970715558730051,
+          "back": 0,
+          "lay": 0
+        },
+        "Antoine Rozner": {
+          "runnerId": 1970715558760151,
+          "back": 0,
+          "lay": 0
+        },
+        "Matthias Schmid": {
+          "runnerId": 1970715558800051,
+          "back": 0,
+          "lay": 0
+        },
+        "Joshua Hill": {
+          "runnerId": 1970715558910051,
+          "back": 0,
+          "lay": 0
+        },
+        "Thongchai Jaidee": {
+          "runnerId": 1974264501260051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        " Ricardo Gouveia": {
+          "runnerId": 1974265273720051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.89
+      }
+    }
+  }
+}

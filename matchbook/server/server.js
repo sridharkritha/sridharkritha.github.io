@@ -920,12 +920,12 @@
 						}
 						else{
 							if(data) {
-								return callback(null, sportName, sports_cbCount, events_cbCount, true);
+								return callback(null, sportName, sports_cbCount, event, events_cbCount, true);
 							}
 						}
 					});
 			}
-			return callback(null, sportName, sports_cbCount, events_cbCount, false);
+			return callback(null, sportName, sports_cbCount, event, events_cbCount, false);
 		});
 	};
 
@@ -988,7 +988,7 @@
 		}
 	};
 
-	callback_getEventInfo = function(err, sportsName, sports_cbCount, events_cbCount, isReadyForBetting) {
+	callback_getEventInfo = function(err, sportsName, sports_cbCount, eventName, events_cbCount, isReadyForBetting) {
 		if(err) {
 			CONNECTIONS.print("must",err);
 			throw new Error(err);
@@ -997,14 +997,14 @@
 		if(isReadyForBetting) {
 			submitOffers(callback_submitOffers); // sports wise bet submission not as submitting all sports bet in one go.
 
-			goToNextSports(sportsName, sports_cbCount, events_cbCount, false);
+			goToNextSports(sportsName, sports_cbCount, eventName, events_cbCount, false);
 		}
 	};
 
-	goToNextSports = (sportsName, sports_cbCount, events_cbCount, isEmptyEvent) => {
+	goToNextSports = (sportsName, sports_cbCount, eventName, events_cbCount, isEmptyEvent) => {
 		++sports_cbCount.currentCount;
 
-		console.log(`${UTIL.formatString(`Events(${sportsName})`, 30)} : ${events_cbCount.currentCount.toString().padStart(3, "0")} / ${events_cbCount.totalCount.toString().padStart(3, "0")} #######  Sports: ${sports_cbCount.currentCount.toString().padStart(2, "0")} / ${sports_cbCount.totalCount.toString().padStart(2, "0")}`);
+		console.log(`${UTIL.formatString(`Events(${eventName})`, 30)} : ${events_cbCount.currentCount.toString().padStart(3, "0")} / ${events_cbCount.totalCount.toString().padStart(3, "0")} #######  ${UTIL.formatString(`Sports(${sportsName})`, 30)}: ${sports_cbCount.currentCount.toString().padStart(2, "0")} / ${sports_cbCount.totalCount.toString().padStart(2, "0")}`);
 
 		if((isEmptyEvent || events_cbCount.totalCount) && events_cbCount.currentCount === events_cbCount.totalCount &&
 			sports_cbCount.totalCount && sports_cbCount.currentCount === sports_cbCount.totalCount)
