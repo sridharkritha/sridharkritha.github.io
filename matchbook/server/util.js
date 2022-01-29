@@ -31,7 +31,7 @@ const UTIL = (function() {
 			// console.log(`Warning: String(${str}) length is larger than format length(${length})`);
 			
 			// return str.substring(0, length); // trimmed string
-			return str.slice(0, length-1) + ")"; // trimmed string
+			return str.slice(0, length-4) + "...)"; // trimmed string
 		},
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		isSameDate : (dateObjOne, dateObjTwo) => {

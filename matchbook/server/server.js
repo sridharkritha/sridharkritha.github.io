@@ -608,6 +608,7 @@
 								const raceName = race;
 								const luckyRunner = [];
 								let nonRunnerCount = 0;
+								let nPlayerHasValidOdd  = 0;
 
 								for(let runner in jsonObj[prop][race]["allRunners"]) { 
 									if(jsonObj[prop][race]["allRunners"].hasOwnProperty(runner)) {
@@ -617,8 +618,10 @@
 											runnerObj['event-name'] = raceName;
 											if(runnerObj.withdrawn)  nonRunnerCount += 1;
 											let back = jsonObj[prop][race]["allRunners"][runner].back;
+											++nPlayerHasValidOdd;
 											if(!back) {
 												back = Number.MAX_VALUE;
+												--nPlayerHasValidOdd;
 											}
 											luckyRunner.push([back, runnerObj]);
 										}
@@ -659,6 +662,9 @@
 		
 											predictedWinners.push(obj);
 										}
+									}
+									else {
+										console.log(`WAITING....MORE THAN 1/2 OF THE PLAYERS(${nPlayerHasValidOdd} / ${luckyRunner.length}) ODDS ARE ZERO !!!`);
 									}
 								}
 							}
