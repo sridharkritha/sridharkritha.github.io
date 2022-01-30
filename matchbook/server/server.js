@@ -49,7 +49,7 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	// const g_onlyOne_raceName = "Dubai Desert Classic 2022";
+	// const g_onlyOne_raceName = "Cardiff City vs Nottingham Forest";
 	const g_onlyOne_raceName = null; 
 
 	/*
@@ -60,8 +60,8 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		'Horse Racing', //.
-		// 'Soccer', //.
+		// 'Horse Racing', //.
+		'Soccer', //.
 		// 'Greyhound Racing', //.
 
 		// 'American Football',//.
@@ -263,10 +263,12 @@
 				{
 					key = Number(key);
 					const index = extraArgs.keys.indexOf("start");
-					let dateString;
+					let dateString = jsonFormat[extraArgs.obj][key][extraArgs.keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
+					let dateObject = new Date(dateString);
+					let currentDate = new Date();
 
 					const indexInRunningFlag = extraArgs.keys.indexOf("in-running-flag");
-					if(indexInRunningFlag !== -1 && jsonFormat[extraArgs.obj][key][extraArgs.keys[indexInRunningFlag]])
+					if(!UTIL.isSameDate(dateObject, currentDate) && indexInRunningFlag !== -1 && jsonFormat[extraArgs.obj][key][extraArgs.keys[indexInRunningFlag]])
 					{
 						// sports like "Golf" takes more than one day so fetch the event details as per the "in-running-flag"
 						// instead of today's or tomorrow's date
@@ -274,9 +276,6 @@
 					}
 					else if(index !== -1)
 					{
-						dateString = jsonFormat[extraArgs.obj][key][extraArgs.keys[index]]; // "start": "2019-03-01T16:10:00.000Z"
-						let dateObject = new Date(dateString);
-						let currentDate = new Date();
 						if(extraArgs.filterDay === 'today')
 						{
 							// Thu Feb 28 2019 22:04:39 GMT+0000
