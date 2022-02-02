@@ -435,7 +435,7 @@ window.addEventListener('load', function() {
 								
 									Today's Bet Amount Limit =  £ ${metaData.sumOfAlreadyPlacedBetAmount} / £ ${metaData.todayTotalBetAmountLimit}, 
 									UserBalance = £ ${metaData.currentBalance}, 
-									WinConfidencePercentage = ${metaData.winConfidencePercentage}%, 
+									WinConfidencePercentage = ${metaData.minWinConfidencePercentage}%, 
 									MinProfitOdd = £ ${metaData.minProfitOdd}, 
 									Stake = £ ${metaData.stakeValue}
 								</div>
