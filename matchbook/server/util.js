@@ -55,7 +55,7 @@ const UTIL = (function() {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// 265mtrs / 642mtrs <= dog race
 
-		// Horse speed = 30 miles/hour  or 31 miles/hour
+		// Horse speed = 30 or 31 miles/hour
 		// 1 furlongs  = 15 seconds     or 14.56 seconds  or  15.21 seconds
 		// 1 yard      = (15/220) seconds 
 

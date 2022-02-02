@@ -57,13 +57,13 @@ const WC = (function() {
 			},
 	
 			"Horse Racing": {
-				// Time
-				"autoBetAtBestWinningTime"     : true, // ignores "g_betMinutesOffset"
-				"g_betMinutesOffset"           : -1,    // place bet: +1 min before the start time, -5 min after the start time
-				// Money
-				"g_minProfitOdd"               : 0.7,   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
-				// Win
-				"g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
+				// // Time
+				// "autoBetAtBestWinningTime"     : true, // ignores "g_betMinutesOffset"
+				// "g_betMinutesOffset"           : -1,    // place bet: +1 min before the start time, -5 min after the start time
+				// // Money
+				// "g_minProfitOdd"               : 0.7,   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				// // Win
+				// "g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
 			},
 
 			"Greyhound Racing": {
@@ -75,11 +75,13 @@ const WC = (function() {
 			"Tennis": {
 				// "betAfterEventStarted": true, // "in-running-flag"
 				// g_betMinutesOffset = -1; // place bet: +1 min before the start time, -5 min after the start time
-				"g_betMinutesOffset"           : 3,         // g_betMinutesOffset
+
+
+				// "g_betMinutesOffset"           : 3,         // g_betMinutesOffset
 	
-				"g_minWinConfidencePercentage" : 80, // ex: 80 => (80% or more)
+				// "g_minWinConfidencePercentage" : 80, // ex: 80 => (80% or more)
 	
-				"g_minProfitOdd"               : 0.7 // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				// "g_minProfitOdd"               : 0.7 // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 			},
 		}),
 

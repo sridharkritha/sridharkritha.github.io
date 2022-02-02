@@ -1,612 +1,510 @@
 {
-  "id": 15,
+  "id": 24735152712200,
   "events": {
-    "Africa Cup of Nations": {
-      "id": 1953585200010016,
-      "start": "2022-01-30T15:00:00.000Z",
+    "17:30 Kempton": {
+      "id": 1976690725100051,
+      "start": "2022-02-02T17:30:00.000Z",
       "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z"
-    },
-    "Egypt vs Morocco": {
-      "id": 1972691471810051,
-      "start": "2022-01-30T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z"
-    },
-    "FC Cartagena vs Fuenlabrada": {
-      "id": 1969113885270051,
-      "start": "2022-01-30T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z"
-    },
-    "KAA Gent vs Royal Antwerp": {
-      "id": 1969192693340051,
-      "start": "2022-01-30T15:02:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z"
-    },
-    "Vizela vs Vitoria de Guimaraes": {
-      "id": 1969218902170051,
-      "start": "2022-01-30T15:28:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z"
-    },
-    "Portimonense vs Tondela": {
-      "id": 1969162463540051,
-      "start": "2022-01-30T15:29:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z"
-    },
-    "Cardiff City vs Nottingham Forest": {
-      "id": 1969166385900051,
-      "start": "2022-01-30T16:01:00.000Z",
-      "status": "open",
-      "in-running-flag": true,
-      "realStartTime": "2022-01-30T16:30:25.266Z",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 0f 0y",
       "allRunners": {
-        "Cardiff City": {
-          "runnerId": 1969166388370151,
-          "back": 1.7,
-          "lay": 1.76
+        "7 Recuerdame": {
+          "runnerId": 1976690726030151,
+          "withdrawn": false,
+          "back": 4.4,
+          "lay": 4.5
         },
-        "Nottingham Forest": {
-          "runnerId": 1969166388410051,
-          "back": 6,
-          "lay": 6.6
+        "4 Jems Bond": {
+          "runnerId": 1976690725940151,
+          "withdrawn": false,
+          "back": 5.5,
+          "lay": 5.6
         },
-        "DRAW (Car/Not)": {
-          "runnerId": 1969166388450051,
-          "back": 3.75,
-          "lay": 3.95
+        "2 Broughtons Flare": {
+          "runnerId": 1976690725890051,
+          "withdrawn": false,
+          "back": 6.4,
+          "lay": 6.8
+        },
+        "5 Pedestal": {
+          "runnerId": 1976690725970151,
+          "withdrawn": false,
+          "back": 6.8,
+          "lay": 7
+        },
+        "1 Amalfi Salsa": {
+          "runnerId": 1976690725860051,
+          "withdrawn": false,
+          "back": 10,
+          "lay": 10.5
+        },
+        "6 Disarming": {
+          "runnerId": 1976690726000151,
+          "withdrawn": false,
+          "back": 12,
+          "lay": 12.5
+        },
+        "10 Chloellie": {
+          "runnerId": 1976690726130051,
+          "withdrawn": false,
+          "back": 18,
+          "lay": 18.5
+        },
+        "8 Connemera Queen": {
+          "runnerId": 1976690726060151,
+          "withdrawn": false,
+          "back": 20,
+          "lay": 22
+        },
+        "3 Julie Johnston": {
+          "runnerId": 1976690725920051,
+          "withdrawn": false,
+          "back": 95,
+          "lay": 110
+        },
+        "9 Nicky Baby": {
+          "runnerId": 1976690726090151,
+          "withdrawn": false,
+          "back": 170,
+          "lay": 210
         }
       },
       "metaData": {
         "stakeValue": 0.2,
         "minWinConfidencePercentage": 80,
         "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
+        "minProfitOdd": 0.1,
         "todayTotalBetAmountLimit": 4,
         "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.89
+        "currentBalance": 6.29
       }
     },
-    "Apollon Limassol vs Olympiakos Nicosia": {
-      "id": 1975217411800051,
-      "start": "2022-01-30T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Birkirkara vs Gzira United FC": {
-      "id": 1973595330750051,
-      "start": "2022-01-30T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "CSD Puerto San Jose vs Plataneros La Blanca": {
-      "id": 1975250375200051,
-      "start": "2022-01-30T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Marquense vs Deportivo Xinabajul": {
-      "id": 1975250371790051,
-      "start": "2022-01-30T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Solola FC vs Municipal": {
-      "id": 1974402167090051,
-      "start": "2022-01-30T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Suchitepéquez vs Siquinala FC": {
-      "id": 1975250367510051,
-      "start": "2022-01-30T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Mirandés vs Málaga": {
-      "id": 1969175842240051,
-      "start": "2022-01-30T17:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "UD Las Palmas vs Real Sociedad B": {
-      "id": 1969175817710051,
-      "start": "2022-01-30T17:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Académica de Coimbra vs Leixões": {
-      "id": 1974166454520051,
-      "start": "2022-01-30T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "FC Bergerac vs Saint-Étienne": {
-      "id": 1968297006920051,
-      "start": "2022-01-30T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "PAOK vs Olympiacos": {
-      "id": 1974419463290051,
-      "start": "2022-01-30T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Standard de Liège vs KV Mechelen": {
-      "id": 1969192729580051,
-      "start": "2022-01-30T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Arosa Sociedad Cultural vs Club Marino de Luanco": {
-      "id": 1975229272810051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "CD Castellon vs UCAM Murcia CF": {
-      "id": 1974385356230051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "CD Tapatio vs Jaibos Tampico Madero": {
-      "id": 1974435854270051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Dinamo Bucuresti vs FC FCSB": {
-      "id": 1971647328130051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "FC Atlético Cearense vs Maracana EC": {
-      "id": 1974444867050051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Hapoel Tel Aviv vs Hapoel Hadera FC": {
-      "id": 1973555340910051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Malacateco vs CSD Cobán Imperial": {
-      "id": 1974402156410051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Sporting de Braga vs Moreirense FC": {
-      "id": 1969218883190051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Waterhouse vs Dunbeholden FC": {
-      "id": 1975486485620051,
-      "start": "2022-01-30T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Crato EC vs ADRC Icasa": {
-      "id": 1974444856100051,
-      "start": "2022-01-30T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Ferroviário AC vs AD Iguatu": {
-      "id": 1974444878470051,
-      "start": "2022-01-30T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Maccabi Netanya vs Maccabi Haifa": {
-      "id": 1973555372590051,
-      "start": "2022-01-30T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "AD Bahia de Feira vs Alagoinhas Atlético Clube": {
-      "id": 1975528013850051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "AD Frei Paulistano vs CS Maruinense": {
-      "id": 1975531307690051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "ASA vs Murici FC": {
-      "id": 1975528981610051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Associacao Desportiva Atletica Gloriense vs Falcon FC": {
-      "id": 1975531318160051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "ASSU vs Potyguar Seridoense": {
-      "id": 1974445004400051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Botafogo FR vs Bangu Atlético Clube": {
-      "id": 1973609145170051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "CS Alagoano vs Botafogo PB": {
-      "id": 1975503060930051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Elite United FC vs Fortune FC": {
-      "id": 1975492157900051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Guarany de Bage vs Clube Esportivo Aimore": {
-      "id": 1975528153870051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Pacajus EC vs Caucaia EC": {
-      "id": 1974444891110051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Patriotas F.C. vs Deportivo Pereira": {
-      "id": 1973310492790051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Patrocinense MG vs Uberlândia EC": {
-      "id": 1974451116910051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "RWD Molenbeek vs Royal Excel Mouscron": {
-      "id": 1973549744650051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "SC Santa Cruz RN vs ABC Futebol": {
-      "id": 1974445014440051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Senegal vs Equatorial Guinea": {
-      "id": 1972776369420051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "SER Caxias Do Sul vs EC São José": {
-      "id": 1975528179830051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "São Paulo vs Ituano FC": {
-      "id": 1974449004820051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "União Recreativa dos Trabalhadores vs AA Caldense": {
-      "id": 1974451131440051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Újpest FC vs Ferencvárosi TC": {
-      "id": 1974679485920051,
-      "start": "2022-01-30T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Kortrijk vs Club Brugge": {
-      "id": 1969471515610051,
-      "start": "2022-01-30T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Ponferradina vs CD Tenerife": {
-      "id": 1969455825120051,
-      "start": "2022-01-30T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Pouso Alegre vs Villa Nova AC": {
-      "id": 1974451123730051,
-      "start": "2022-01-30T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "RC Lens vs AS Monaco": {
-      "id": 1968297041810051,
-      "start": "2022-01-30T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Real Santander vs Tigres FC Zipaquira": {
-      "id": 1974689326570051,
-      "start": "2022-01-30T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Yalmakan FC vs Reboceros de La Piedad": {
-      "id": 1975529582230051,
-      "start": "2022-01-30T20:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Canada vs USA": {
-      "id": 1973698529080051,
-      "start": "2022-01-30T20:05:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Cavalier vs Portmore United FC": {
-      "id": 1975486492890051,
-      "start": "2022-01-30T20:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "FC Porto vs Marítimo": {
-      "id": 1969495721930051,
-      "start": "2022-01-30T20:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "CD Municipal Limeno vs CD Aguila": {
-      "id": 1973804002000051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Chimaltenango FC vs CSD Zacapa Tellioz": {
-      "id": 1975529322750051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Deportivo Agua Blanca vs Deportivo Mictlán": {
-      "id": 1975529327730051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Deportivo San Pedro vs Coatepeque": {
-      "id": 1975529319800051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Fortaleza EC vs Sousa EC": {
-      "id": 1975503042490051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Guastatoya vs Achuapa FC": {
-      "id": 1974688107400051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Lobos ULMX vs Inter Playa del Carmen": {
-      "id": 1975529590470051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Madureira EC vs Fluminense FC": {
-      "id": 1973609124120051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Sampaio Corrêa FC vs Altos": {
-      "id": 1975503051920051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "WAA Banjul vs Real de Banjul": {
-      "id": 1975492160880051,
-      "start": "2022-01-30T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Independiente Medellín vs Deportivo Cali": {
-      "id": 1973310467300051,
-      "start": "2022-01-30T21:05:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Club Deportivo ZAP vs Cafetaleros de Chiapas": {
-      "id": 1975529600540051,
-      "start": "2022-01-30T21:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "EC Santo André vs Corinthians": {
-      "id": 1974726870210051,
-      "start": "2022-01-30T21:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "SD Juazeirense vs EC Vitória da Conquista": {
-      "id": 1975527957140051,
-      "start": "2022-01-30T21:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "América-MG vs Democrata GV": {
-      "id": 1974728459970051,
-      "start": "2022-01-30T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Cianorte Futebol Clube vs Cascavel FC": {
-      "id": 1975528819820051,
-      "start": "2022-01-30T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "EC São Luiz vs EC Juventude": {
-      "id": 1975528172920051,
-      "start": "2022-01-30T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Novo Hamburgo vs Ypiranga": {
-      "id": 1975528163150051,
-      "start": "2022-01-30T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Clube Esportivo União vs Coritiba": {
-      "id": 1975528838910051,
-      "start": "2022-01-30T23:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Mexico vs Costa Rica": {
-      "id": 1973693528010051,
-      "start": "2022-01-30T23:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Rio Branco SC vs Operário Ferroviário": {
-      "id": 1975528828460051,
-      "start": "2022-01-30T23:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Panama vs Jamaica": {
-      "id": 1973679126040051,
-      "start": "2022-01-30T23:05:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "América de Cali vs Atlético Bucaramanga": {
-      "id": 1973310442540051,
-      "start": "2022-01-30T23:10:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
-    },
-    "Gremio Novorizontino vs Mirassol FC": {
-      "id": 1974726853090051,
-      "start": "2022-01-30T23:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0
+    "18:00 Kempton": {
+      "id": 1976690726600051,
+      "start": "2022-02-02T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 0f 0y",
+      "allRunners": {
+        "8 Magical Dias": {
+          "runnerId": 1976690727470051,
+          "withdrawn": false,
+          "back": 2.76,
+          "lay": 2.8
+        },
+        "3 Queen's Fair": {
+          "runnerId": 1976690727310051,
+          "withdrawn": false,
+          "back": 5.2,
+          "lay": 5.3
+        },
+        "6 Gia Darling": {
+          "runnerId": 1976690727410051,
+          "withdrawn": false,
+          "back": 5.3,
+          "lay": 5.4
+        },
+        "4 Melodramatica": {
+          "runnerId": 1976690727340051,
+          "withdrawn": false,
+          "back": 7.2,
+          "lay": 7.6
+        },
+        "9 Silver Vision": {
+          "runnerId": 1976690727500151,
+          "withdrawn": false,
+          "back": 13,
+          "lay": 13.5
+        },
+        "7 Luckyboylovelywife": {
+          "runnerId": 1976690727440051,
+          "withdrawn": false,
+          "back": 32,
+          "lay": 44
+        },
+        "2 Miss Messenger": {
+          "runnerId": 1976690727270151,
+          "withdrawn": false,
+          "back": 44,
+          "lay": 70
+        },
+        "1 Daruan": {
+          "runnerId": 1976690727240051,
+          "withdrawn": false,
+          "back": 75,
+          "lay": 0
+        },
+        "5 Brolly": {
+          "runnerId": 1976690727370151,
+          "withdrawn": false,
+          "back": 230,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.1,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.29
+      }
+    },
+    "18:30 Kempton": {
+      "id": 1976690727950051,
+      "start": "2022-02-02T18:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 2f 219y",
+      "allRunners": {
+        "1 Nuble": {
+          "runnerId": 1976690728540051,
+          "withdrawn": false,
+          "back": 3.4,
+          "lay": 3.45
+        },
+        "3 How Hard Can It Be": {
+          "runnerId": 1976690728600051,
+          "withdrawn": false,
+          "back": 3.6,
+          "lay": 3.7
+        },
+        "6 Eltham Palace": {
+          "runnerId": 1976690728690051,
+          "withdrawn": false,
+          "back": 6.2,
+          "lay": 6.6
+        },
+        "4 Parikarma": {
+          "runnerId": 1976690728630051,
+          "withdrawn": false,
+          "back": 8.8,
+          "lay": 9.4
+        },
+        "5 Baileys Warrior": {
+          "runnerId": 1976690728660151,
+          "withdrawn": false,
+          "back": 13.5,
+          "lay": 15
+        },
+        "2 Samille": {
+          "runnerId": 1976690728560151,
+          "withdrawn": false,
+          "back": 17.5,
+          "lay": 18.5
+        },
+        "7 My Jeanie Rai": {
+          "runnerId": 1976690728720051,
+          "withdrawn": false,
+          "back": 32,
+          "lay": 42
+        },
+        "8 Typewritten": {
+          "runnerId": 1976690728750051,
+          "withdrawn": true,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.1,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.29
+      }
+    },
+    "19:00 Kempton": {
+      "id": 1976690729150051,
+      "start": "2022-02-02T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 2f 219y",
+      "allRunners": {
+        "9 Almufeed": {
+          "runnerId": 1976690730140051,
+          "withdrawn": false,
+          "back": 2.78,
+          "lay": 2.8
+        },
+        "7 Crown Power": {
+          "runnerId": 1976690730080051,
+          "withdrawn": false,
+          "back": 5.8,
+          "lay": 6
+        },
+        "6 Elmejor": {
+          "runnerId": 1976690730050051,
+          "withdrawn": false,
+          "back": 6.6,
+          "lay": 6.8
+        },
+        "1 Daheer": {
+          "runnerId": 1976690729900051,
+          "withdrawn": false,
+          "back": 7.4,
+          "lay": 7.8
+        },
+        "3 Angel On High": {
+          "runnerId": 1976690729960051,
+          "withdrawn": false,
+          "back": 15.5,
+          "lay": 16
+        },
+        "2 City Tour": {
+          "runnerId": 1976690729930051,
+          "withdrawn": false,
+          "back": 16,
+          "lay": 25
+        },
+        "5 Bristol Hill": {
+          "runnerId": 1976690730020051,
+          "withdrawn": false,
+          "back": 23,
+          "lay": 34
+        },
+        "8 Berrahri": {
+          "runnerId": 1976690730110051,
+          "withdrawn": false,
+          "back": 29,
+          "lay": 75
+        },
+        "10 Hackbridge": {
+          "runnerId": 1976690730170051,
+          "withdrawn": false,
+          "back": 40,
+          "lay": 100
+        },
+        "4 Just The Man": {
+          "runnerId": 1976690729990051,
+          "withdrawn": true,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.1,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.29
+      }
+    },
+    "19:30 Kempton": {
+      "id": 1976690730620051,
+      "start": "2022-02-02T19:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 7f 0y",
+      "allRunners": {
+        "8 Enduring": {
+          "runnerId": 1976690731630051,
+          "withdrawn": false,
+          "back": 4.6,
+          "lay": 5
+        },
+        "3 Epsom Faithfull": {
+          "runnerId": 1976690731470151,
+          "withdrawn": false,
+          "back": 8.6,
+          "lay": 9.2
+        },
+        "6 Love Dreams": {
+          "runnerId": 1976690731570051,
+          "withdrawn": false,
+          "back": 8.8,
+          "lay": 9.2
+        },
+        "5 Main Target": {
+          "runnerId": 1976690731540051,
+          "withdrawn": false,
+          "back": 8.6,
+          "lay": 9.8
+        },
+        "4 Global Acclaim": {
+          "runnerId": 1976690731510051,
+          "withdrawn": false,
+          "back": 9.2,
+          "lay": 10
+        },
+        "2 George Morland": {
+          "runnerId": 1976690731440151,
+          "withdrawn": false,
+          "back": 9.8,
+          "lay": 12
+        },
+        "7 Good Humor": {
+          "runnerId": 1976690731600051,
+          "withdrawn": false,
+          "back": 11,
+          "lay": 13
+        },
+        "9 Lough Cutra": {
+          "runnerId": 1976690731660151,
+          "withdrawn": false,
+          "back": 16,
+          "lay": 21
+        },
+        "10 Mutaraafeq": {
+          "runnerId": 1976690731700051,
+          "withdrawn": false,
+          "back": 18.5,
+          "lay": 26
+        },
+        "11 Nefarious": {
+          "runnerId": 1976690731730051,
+          "withdrawn": false,
+          "back": 19.5,
+          "lay": 30
+        },
+        "1 Mount Mogan": {
+          "runnerId": 1976690731410051,
+          "withdrawn": false,
+          "back": 21,
+          "lay": 38
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.1,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.29
+      }
+    },
+    "20:00 Kempton": {
+      "id": 1976690732230051,
+      "start": "2022-02-02T20:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 6f 0y",
+      "allRunners": {
+        "6 Meganseigthteen": {
+          "runnerId": 1976690732910051,
+          "withdrawn": false,
+          "back": 4.7,
+          "lay": 5.4
+        },
+        "1 Sassy Rascal": {
+          "runnerId": 1976690732750051,
+          "withdrawn": false,
+          "back": 4.8,
+          "lay": 5.4
+        },
+        "3 Red Showgirl": {
+          "runnerId": 1976690732810051,
+          "withdrawn": false,
+          "back": 5.2,
+          "lay": 5.8
+        },
+        "2 Boafo Boy": {
+          "runnerId": 1976690732780051,
+          "withdrawn": false,
+          "back": 5.7,
+          "lay": 7.4
+        },
+        "4 Bonita B": {
+          "runnerId": 1976690732840151,
+          "withdrawn": false,
+          "back": 6.8,
+          "lay": 7.2
+        },
+        "5 Exclusive Times": {
+          "runnerId": 1976690732880051,
+          "withdrawn": false,
+          "back": 8.2,
+          "lay": 8.6
+        },
+        "7 Madame Fenella": {
+          "runnerId": 1976690732940051,
+          "withdrawn": true,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.1,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.29
+      }
+    },
+    "20:30 Kempton": {
+      "id": 1976690733300051,
+      "start": "2022-02-02T20:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 7f 218y",
+      "allRunners": {
+        "5 Prince Abu": {
+          "runnerId": 1976690733920151,
+          "withdrawn": false,
+          "back": 2.68,
+          "lay": 2.82
+        },
+        "4 This Ones For Fred": {
+          "runnerId": 1976690733890151,
+          "withdrawn": false,
+          "back": 3.4,
+          "lay": 4.2
+        },
+        "2 Smith": {
+          "runnerId": 1976690733840051,
+          "withdrawn": false,
+          "back": 5.1,
+          "lay": 6.6
+        },
+        "3 Mardoof": {
+          "runnerId": 1976690733870051,
+          "withdrawn": false,
+          "back": 9,
+          "lay": 13.5
+        },
+        "7 Mindspin": {
+          "runnerId": 1976690733980151,
+          "withdrawn": false,
+          "back": 13,
+          "lay": 18
+        },
+        "1 Abel Tasman": {
+          "runnerId": 1976690733810051,
+          "withdrawn": false,
+          "back": 13,
+          "lay": 27
+        },
+        "6 Ulysses": {
+          "runnerId": 1976690733950151,
+          "withdrawn": false,
+          "back": 7,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.1,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 6.29
+      }
     }
   }
 }

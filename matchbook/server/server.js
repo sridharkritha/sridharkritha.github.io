@@ -42,14 +42,14 @@
 	const g_sportsIdNameMapping = {};
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
-	let g_betMinutesOffset = -1; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
+	// let g_betMinutesOffset = -1; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
 	// let g_minWinConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
 	// let g_minProfitOdd = 0.8; // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 	// let g_maxRunnersCount = 25; // 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	// const g_onlyOne_raceName = "Cardiff City vs Nottingham Forest";
+	// const g_onlyOne_raceName = "19:00 Kempton";
 	const g_onlyOne_raceName = null; 
 
 	/*
@@ -60,8 +60,8 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	// let g_sportsInterested = ['ALL'];
 	let g_sportsInterested = [
-		// 'Horse Racing', //.
-		'Soccer', //.
+		'Horse Racing', //.
+		// 'Soccer', //.
 		// 'Greyhound Racing', //.
 
 		// 'American Football',//.
@@ -207,39 +207,39 @@
 			{
 				return true;
 			}
-			// Dog race - A very quick race so do NOT wait for real start time. Go with event start time
-			else if(wc["ignore_realStartTime"] && currentTime > (eventStartTime - (g_betMinutesOffset * 60 * 1000)))
+			// Dog race - A very quick race so do NOT wait for the real start time. Go with the event start time
+			else if(wc["ignore_realStartTime"] && currentTime > (eventStartTime - (wc.g_betMinutesOffset * 60 * 1000)))
 			{
 				return true;
 			}
 			// Horse race - Place bet at a correct time depends up on the race length and horse speed.
 			else if(wc.autoBetAtBestWinningTime && inRunningFlag && realStartTime) {
 				// if(currentTime > realStartTime + 60 * 1000) {   // 1 min after game start
-				if(currentTime > realStartTime + Math.round(raceRunningTime * 75 / 100 * 1000)) {   // At 75% time of total running time
+				if(currentTime > realStartTime + Math.round(raceRunningTime * 50 / 100 * 1000)) {   // At 75% time of total running time
 					return true;
 				}
 			}
 			// After the race started
-			else if(g_betMinutesOffset <= 0 && inRunningFlag && realStartTime) {
-				// g_betMinutesOffset = -5; // place bet: +1 min before the start time, -5 min after the start time
-				if(currentTime > (realStartTime - (g_betMinutesOffset * 60 * 1000))) {
+			else if(wc.g_betMinutesOffset <= 0 && inRunningFlag && realStartTime) {
+				// wc.g_betMinutesOffset = -5; // place bet: +1 min before the start time, -5 min after the start time
+				if(currentTime > (realStartTime - (wc.g_betMinutesOffset * 60 * 1000))) {
 					return true;
 				}
 			}
 			// Before the race starts
-			else if(g_betMinutesOffset > 0 && currentTime > (eventStartTime - (g_betMinutesOffset * 60 * 1000))) {
+			else if(wc.g_betMinutesOffset > 0 && currentTime > (eventStartTime - (wc.g_betMinutesOffset * 60 * 1000))) {
 				return true; ///////////////
 			}
-			// g_betMinutesOffset = -2; // place bet: +1 min before the start time, -5 min after the start time
-			// else if(currentTime.getTime() > (eventStartTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
+			// wc.g_betMinutesOffset = -2; // place bet: +1 min before the start time, -5 min after the start time
+			// else if(currentTime.getTime() > (eventStartTime.getTime() - (wc.g_betMinutesOffset * 60 * 1000)))
 			// {
 			// 	return true;
 			// }
 
 			/*
 			// in-running-flag
-			g_betMinutesOffset = -2; // place bet: +1 min before the start time, -5 min after the start time
-			if(currentTime.getTime() > (eventStartTime.getTime() - (g_betMinutesOffset * 60 * 1000)))
+			wc.g_betMinutesOffset = -2; // place bet: +1 min before the start time, -5 min after the start time
+			if(currentTime.getTime() > (eventStartTime.getTime() - (wc.g_betMinutesOffset * 60 * 1000)))
 			{
 				return true;
 			}
