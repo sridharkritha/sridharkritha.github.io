@@ -650,7 +650,8 @@
 									
 										jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
 
-										console.log(`Sports: ${sportName} #### Event: ${raceName} #### Win(%): ${UTIL.roundIt2D(winPercentage)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
+										// console.log(`Sports: ${sportName} #### Event: ${raceName} #### Win(%): ${UTIL.roundIt2D(winPercentage)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
+										console.log(`${UTIL.formatString(`Sports: (${sportName})`, 28)} #### ${UTIL.formatString(`Event: (${raceName})`, 60)}  #### ${UTIL.formatString(`Win(%): ${UTIL.roundIt2D(winPercentage)}`, 18)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
 			
 										// Build the predictedWinner list
 										if(isWinningHorse(sportName, winPercentage, profitOdd, luckyRunner.length))

@@ -1005,6 +1005,422 @@
       },
       "event-start-time": "02/02/2022, 18:02:00",
       "bet-placed-time": "17:43:22  02-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1977621776650051,
+      "event-name": "21:12 Doncaster",
+      "runner-name": "Makemydaypunk",
+      "decimal-odds": 2.2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977621776650051,
+        "start": "2022-02-02T21:12:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "275mtrs",
+        "allRunners": {
+          "Sedrina": {
+            "runnerId": 1977621777160051,
+            "withdrawn": false,
+            "back": 4.3,
+            "lay": 0,
+            "name": "Sedrina",
+            "event-name": "21:12 Doncaster"
+          },
+          "Ballymac South": {
+            "runnerId": 1977621777190151,
+            "withdrawn": false,
+            "back": 4.1,
+            "lay": 0,
+            "name": "Ballymac South",
+            "event-name": "21:12 Doncaster"
+          },
+          "Clees Domino": {
+            "runnerId": 1977621777220151,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 0,
+            "name": "Clees Domino",
+            "event-name": "21:12 Doncaster"
+          },
+          "Ballymac Doyle": {
+            "runnerId": 1977621777260051,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 0,
+            "name": "Ballymac Doyle",
+            "event-name": "21:12 Doncaster"
+          },
+          "Eden Rhaegal": {
+            "runnerId": 1977621777290051,
+            "withdrawn": false,
+            "back": 5.1,
+            "lay": 0,
+            "name": "Eden Rhaegal",
+            "event-name": "21:12 Doncaster"
+          },
+          "Makemydaypunk": {
+            "runnerId": 1977621777320051,
+            "withdrawn": false,
+            "back": 2.14,
+            "lay": 0,
+            "name": "Makemydaypunk",
+            "event-name": "21:12 Doncaster",
+            "numberOfRunners": 6,
+            "winPercentage": 91.58878504672894,
+            "startTime": "2022-02-02T21:12:00.000Z",
+            "raceId": 1977621776650051,
+            "raceName": "21:12 Doncaster",
+            "sportName": "Greyhound Racing",
+            "profitOdd": 1.1400000000000001,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 1.6,
+          "currentBalance": 4.69
+        },
+        "luckyWinner": {
+          "runnerId": 1977621777320051,
+          "withdrawn": false,
+          "back": 2.14,
+          "lay": 0,
+          "name": "Makemydaypunk",
+          "event-name": "21:12 Doncaster",
+          "numberOfRunners": 6,
+          "winPercentage": 91.58878504672894,
+          "startTime": "2022-02-02T21:12:00.000Z",
+          "raceId": 1977621776650051,
+          "raceName": "21:12 Doncaster",
+          "sportName": "Greyhound Racing",
+          "profitOdd": 1.1400000000000001,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 1.6,
+        "currentBalance": 4.69
+      },
+      "event-start-time": "02/02/2022, 21:12:00",
+      "bet-placed-time": "17:45:50  02-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1977659683740051,
+      "event-name": "21:26 Yarmouth",
+      "runner-name": "The Other Lottie",
+      "decimal-odds": 2.5,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977659683740051,
+        "start": "2022-02-02T21:26:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "462",
+        "allRunners": {
+          "Tusken Raider": {
+            "runnerId": 1977659684200051,
+            "withdrawn": false,
+            "back": 9.6,
+            "lay": 0,
+            "name": "Tusken Raider",
+            "event-name": "21:26 Yarmouth"
+          },
+          "The Other Lottie": {
+            "runnerId": 1977659684240051,
+            "withdrawn": false,
+            "back": 2.44,
+            "lay": 0,
+            "name": "The Other Lottie",
+            "event-name": "21:26 Yarmouth",
+            "numberOfRunners": 6,
+            "winPercentage": 88.52459016393442,
+            "startTime": "2022-02-02T21:26:00.000Z",
+            "raceId": 1977659683740051,
+            "raceName": "21:26 Yarmouth",
+            "sportName": "Greyhound Racing",
+            "profitOdd": 1.44,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "Thymelea Boris": {
+            "runnerId": 1977659684270051,
+            "withdrawn": false,
+            "back": 4.6,
+            "lay": 0,
+            "name": "Thymelea Boris",
+            "event-name": "21:26 Yarmouth"
+          },
+          "Saleen Luke": {
+            "runnerId": 1977659684300051,
+            "withdrawn": false,
+            "back": 0,
+            "lay": 0,
+            "name": "Saleen Luke",
+            "event-name": "21:26 Yarmouth"
+          },
+          "Buckos Ace": {
+            "runnerId": 1977659684330051,
+            "withdrawn": false,
+            "back": 9.2,
+            "lay": 0,
+            "name": "Buckos Ace",
+            "event-name": "21:26 Yarmouth"
+          },
+          "Kereight John": {
+            "runnerId": 1977659684360051,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 0,
+            "name": "Kereight John",
+            "event-name": "21:26 Yarmouth"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 1.8,
+          "currentBalance": 4.69
+        },
+        "luckyWinner": {
+          "runnerId": 1977659684240051,
+          "withdrawn": false,
+          "back": 2.44,
+          "lay": 0,
+          "name": "The Other Lottie",
+          "event-name": "21:26 Yarmouth",
+          "numberOfRunners": 6,
+          "winPercentage": 88.52459016393442,
+          "startTime": "2022-02-02T21:26:00.000Z",
+          "raceId": 1977659683740051,
+          "raceName": "21:26 Yarmouth",
+          "sportName": "Greyhound Racing",
+          "profitOdd": 1.44,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 1.8,
+        "currentBalance": 4.69
+      },
+      "event-start-time": "02/02/2022, 21:26:00",
+      "bet-placed-time": "18:00:05  02-02-2022"
+    }
+  ],
+  "Soccer": [
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1973555181250051,
+      "event-name": "Rayo Vallecano vs Real Mallorca",
+      "runner-name": "Rayo Vallecano",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1973555181250051,
+        "start": "2022-02-02T19:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "allRunners": {
+          "Rayo Vallecano": {
+            "runnerId": 1973555186480151,
+            "withdrawn": false,
+            "back": 1.92,
+            "lay": 1.94,
+            "name": "Rayo Vallecano",
+            "event-name": "Rayo Vallecano vs Real Mallorca",
+            "numberOfRunners": 3,
+            "winPercentage": 82.29166666666667,
+            "startTime": "2022-02-02T19:00:00.000Z",
+            "raceId": 1973555181250051,
+            "raceName": "Rayo Vallecano vs Real Mallorca",
+            "sportName": "Soccer",
+            "profitOdd": 0.9199999999999999,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "Real Mallorca": {
+            "runnerId": 1973555186520051,
+            "withdrawn": false,
+            "back": 4.8,
+            "lay": 5,
+            "name": "Real Mallorca",
+            "event-name": "Rayo Vallecano vs Real Mallorca"
+          },
+          "DRAW (Ray/Rea)": {
+            "runnerId": 1973555186560051,
+            "withdrawn": false,
+            "back": 3.5,
+            "lay": 3.65,
+            "name": "DRAW (Ray/Rea)",
+            "event-name": "Rayo Vallecano vs Real Mallorca"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 2,
+          "currentBalance": 4.49
+        },
+        "luckyWinner": {
+          "runnerId": 1973555186480151,
+          "withdrawn": false,
+          "back": 1.92,
+          "lay": 1.94,
+          "name": "Rayo Vallecano",
+          "event-name": "Rayo Vallecano vs Real Mallorca",
+          "numberOfRunners": 3,
+          "winPercentage": 82.29166666666667,
+          "startTime": "2022-02-02T19:00:00.000Z",
+          "raceId": 1973555181250051,
+          "raceName": "Rayo Vallecano vs Real Mallorca",
+          "sportName": "Soccer",
+          "profitOdd": 0.9199999999999999,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2,
+        "currentBalance": 4.49
+      },
+      "event-start-time": "02/02/2022, 19:00:00",
+      "bet-placed-time": "18:00:05  02-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1971819613130051,
+      "event-name": "Kortrijk vs Royal Antwerp",
+      "runner-name": "Royal Antwerp",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1971819613130051,
+        "start": "2022-02-02T17:45:00.000Z",
+        "status": "open",
+        "in-running-flag": true,
+        "realStartTime": "2022-02-02T17:59:57.649Z",
+        "allRunners": {
+          "Kortrijk": {
+            "runnerId": 1971819614560151,
+            "withdrawn": false,
+            "back": 4.3,
+            "lay": 4.8,
+            "name": "Kortrijk",
+            "event-name": "Kortrijk vs Royal Antwerp"
+          },
+          "Royal Antwerp": {
+            "runnerId": 1971819614600051,
+            "withdrawn": false,
+            "back": 1.88,
+            "lay": 1.96,
+            "name": "Royal Antwerp",
+            "event-name": "Kortrijk vs Royal Antwerp",
+            "numberOfRunners": 3,
+            "winPercentage": 96.80851063829789,
+            "startTime": "2022-02-02T17:45:00.000Z",
+            "raceId": 1971819613130051,
+            "raceName": "Kortrijk vs Royal Antwerp",
+            "sportName": "Soccer",
+            "profitOdd": 0.8799999999999999,
+            "in-running-flag": true,
+            "status": "open",
+            "realStartTime": "2022-02-02T17:59:57.649Z"
+          },
+          "DRAW (Kor/Roy)": {
+            "runnerId": 1971819614640051,
+            "withdrawn": false,
+            "back": 3.7,
+            "lay": 3.8,
+            "name": "DRAW (Kor/Roy)",
+            "event-name": "Kortrijk vs Royal Antwerp"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 2.2,
+          "currentBalance": 4.29
+        },
+        "luckyWinner": {
+          "runnerId": 1971819614600051,
+          "withdrawn": false,
+          "back": 1.88,
+          "lay": 1.96,
+          "name": "Royal Antwerp",
+          "event-name": "Kortrijk vs Royal Antwerp",
+          "numberOfRunners": 3,
+          "winPercentage": 96.80851063829789,
+          "startTime": "2022-02-02T17:45:00.000Z",
+          "raceId": 1971819613130051,
+          "raceName": "Kortrijk vs Royal Antwerp",
+          "sportName": "Soccer",
+          "profitOdd": 0.8799999999999999,
+          "in-running-flag": true,
+          "status": "open",
+          "realStartTime": "2022-02-02T17:59:57.649Z"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.29
+      },
+      "event-start-time": "02/02/2022, 17:45:00",
+      "bet-placed-time": "18:05:08  02-02-2022"
     }
   ]
 }
