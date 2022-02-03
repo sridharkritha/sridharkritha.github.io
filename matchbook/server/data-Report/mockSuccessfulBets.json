@@ -1,737 +1,79 @@
 {
-  "Horse Racing": [
-    {
-      "status": "open",
-      "sport-id": 24735152712200,
-      "sport-name": "Horse Racing",
-      "event-id": 1976690730620051,
-      "event-name": "19:30 Kempton",
-      "runner-name": "8 Enduring",
-      "decimal-odds": 4.9,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1976690730620051,
-        "start": "2022-02-02T19:30:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "realStartTime": 0,
-        "race-length": "0m 7f 0y",
-        "allRunners": {
-          "8 Enduring": {
-            "runnerId": 1976690731630051,
-            "withdrawn": false,
-            "back": 4.8,
-            "lay": 4.9,
-            "name": "8 Enduring",
-            "event-name": "19:30 Kempton",
-            "numberOfRunners": 11,
-            "winPercentage": 83.33333333333336,
-            "startTime": "2022-02-02T19:30:00.000Z",
-            "raceId": 1976690730620051,
-            "raceName": "19:30 Kempton",
-            "sportName": "Horse Racing",
-            "profitOdd": 3.8,
-            "in-running-flag": false,
-            "status": "open",
-            "realStartTime": 0,
-            "race-length": "0m 7f 0y"
-          },
-          "3 Epsom Faithfull": {
-            "runnerId": 1976690731470151,
-            "withdrawn": false,
-            "back": 8.8,
-            "lay": 9,
-            "name": "3 Epsom Faithfull",
-            "event-name": "19:30 Kempton"
-          },
-          "4 Global Acclaim": {
-            "runnerId": 1976690731510051,
-            "withdrawn": false,
-            "back": 9.2,
-            "lay": 11,
-            "name": "4 Global Acclaim",
-            "event-name": "19:30 Kempton"
-          },
-          "5 Main Target": {
-            "runnerId": 1976690731540051,
-            "withdrawn": false,
-            "back": 9,
-            "lay": 9.2,
-            "name": "5 Main Target",
-            "event-name": "19:30 Kempton"
-          },
-          "6 Love Dreams": {
-            "runnerId": 1976690731570051,
-            "withdrawn": false,
-            "back": 9,
-            "lay": 9.2,
-            "name": "6 Love Dreams",
-            "event-name": "19:30 Kempton"
-          },
-          "7 Good Humor": {
-            "runnerId": 1976690731600051,
-            "withdrawn": false,
-            "back": 10.5,
-            "lay": 11.5,
-            "name": "7 Good Humor",
-            "event-name": "19:30 Kempton"
-          },
-          "2 George Morland": {
-            "runnerId": 1976690731440151,
-            "withdrawn": false,
-            "back": 10.5,
-            "lay": 11,
-            "name": "2 George Morland",
-            "event-name": "19:30 Kempton"
-          },
-          "9 Lough Cutra": {
-            "runnerId": 1976690731660151,
-            "withdrawn": false,
-            "back": 15.5,
-            "lay": 21,
-            "name": "9 Lough Cutra",
-            "event-name": "19:30 Kempton"
-          },
-          "10 Mutaraafeq": {
-            "runnerId": 1976690731700051,
-            "withdrawn": false,
-            "back": 19,
-            "lay": 24,
-            "name": "10 Mutaraafeq",
-            "event-name": "19:30 Kempton"
-          },
-          "11 Nefarious": {
-            "runnerId": 1976690731730051,
-            "withdrawn": false,
-            "back": 19.5,
-            "lay": 29,
-            "name": "11 Nefarious",
-            "event-name": "19:30 Kempton"
-          },
-          "1 Mount Mogan": {
-            "runnerId": 1976690731410051,
-            "withdrawn": false,
-            "back": 25,
-            "lay": 38,
-            "name": "1 Mount Mogan",
-            "event-name": "19:30 Kempton"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.29
-        },
-        "luckyWinner": {
-          "runnerId": 1976690731630051,
-          "withdrawn": false,
-          "back": 4.8,
-          "lay": 4.9,
-          "name": "8 Enduring",
-          "event-name": "19:30 Kempton",
-          "numberOfRunners": 11,
-          "winPercentage": 83.33333333333336,
-          "startTime": "2022-02-02T19:30:00.000Z",
-          "raceId": 1976690730620051,
-          "raceName": "19:30 Kempton",
-          "sportName": "Horse Racing",
-          "profitOdd": 3.8,
-          "in-running-flag": false,
-          "status": "open",
-          "realStartTime": 0,
-          "race-length": "0m 7f 0y"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.29
-      },
-      "event-start-time": "02/02/2022, 19:30:00",
-      "bet-placed-time": "17:38:12  02-02-2022"
-    },
-    {
-      "status": "open",
-      "sport-id": 24735152712200,
-      "sport-name": "Horse Racing",
-      "event-id": 1976690729150051,
-      "event-name": "19:00 Kempton",
-      "runner-name": "9 Almufeed",
-      "decimal-odds": 2.9,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1976690729150051,
-        "start": "2022-02-02T19:00:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "realStartTime": 0,
-        "race-length": "1m 2f 219y",
-        "allRunners": {
-          "9 Almufeed": {
-            "runnerId": 1976690730140051,
-            "withdrawn": false,
-            "back": 2.8,
-            "lay": 2.82,
-            "name": "9 Almufeed",
-            "event-name": "19:00 Kempton",
-            "numberOfRunners": 10,
-            "winPercentage": 100,
-            "startTime": "2022-02-02T19:00:00.000Z",
-            "raceId": 1976690729150051,
-            "raceName": "19:00 Kempton",
-            "sportName": "Horse Racing",
-            "profitOdd": 1.7999999999999998,
-            "in-running-flag": false,
-            "status": "open",
-            "realStartTime": 0,
-            "race-length": "1m 2f 219y"
-          },
-          "7 Crown Power": {
-            "runnerId": 1976690730080051,
-            "withdrawn": false,
-            "back": 5.6,
-            "lay": 5.9,
-            "name": "7 Crown Power",
-            "event-name": "19:00 Kempton"
-          },
-          "6 Elmejor": {
-            "runnerId": 1976690730050051,
-            "withdrawn": false,
-            "back": 6.4,
-            "lay": 6.8,
-            "name": "6 Elmejor",
-            "event-name": "19:00 Kempton"
-          },
-          "1 Daheer": {
-            "runnerId": 1976690729900051,
-            "withdrawn": false,
-            "back": 7.2,
-            "lay": 7.6,
-            "name": "1 Daheer",
-            "event-name": "19:00 Kempton"
-          },
-          "3 Angel On High": {
-            "runnerId": 1976690729960051,
-            "withdrawn": false,
-            "back": 14,
-            "lay": 19,
-            "name": "3 Angel On High",
-            "event-name": "19:00 Kempton"
-          },
-          "2 City Tour": {
-            "runnerId": 1976690729930051,
-            "withdrawn": false,
-            "back": 20,
-            "lay": 25,
-            "name": "2 City Tour",
-            "event-name": "19:00 Kempton"
-          },
-          "5 Bristol Hill": {
-            "runnerId": 1976690730020051,
-            "withdrawn": false,
-            "back": 23,
-            "lay": 34,
-            "name": "5 Bristol Hill",
-            "event-name": "19:00 Kempton"
-          },
-          "8 Berrahri": {
-            "runnerId": 1976690730110051,
-            "withdrawn": false,
-            "back": 32,
-            "lay": 110,
-            "name": "8 Berrahri",
-            "event-name": "19:00 Kempton"
-          },
-          "10 Hackbridge": {
-            "runnerId": 1976690730170051,
-            "withdrawn": false,
-            "back": 34,
-            "lay": 120,
-            "name": "10 Hackbridge",
-            "event-name": "19:00 Kempton"
-          },
-          "4 Just The Man": {
-            "runnerId": 1976690729990051,
-            "withdrawn": true,
-            "back": 0,
-            "lay": 0,
-            "name": "4 Just The Man",
-            "event-name": "19:00 Kempton"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0,
-          "currentBalance": 6.29
-        },
-        "luckyWinner": {
-          "runnerId": 1976690730140051,
-          "withdrawn": false,
-          "back": 2.8,
-          "lay": 2.82,
-          "name": "9 Almufeed",
-          "event-name": "19:00 Kempton",
-          "numberOfRunners": 10,
-          "winPercentage": 100,
-          "startTime": "2022-02-02T19:00:00.000Z",
-          "raceId": 1976690729150051,
-          "raceName": "19:00 Kempton",
-          "sportName": "Horse Racing",
-          "profitOdd": 1.7999999999999998,
-          "in-running-flag": false,
-          "status": "open",
-          "realStartTime": 0,
-          "race-length": "1m 2f 219y"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 6.29
-      },
-      "event-start-time": "02/02/2022, 19:00:00",
-      "bet-placed-time": "17:38:12  02-02-2022"
-    }
-  ],
   "Greyhound Racing": [
     {
       "status": "open",
       "sport-id": 241798357140019,
       "sport-name": "Greyhound Racing",
-      "event-id": 1977659682790051,
-      "event-name": "21:11 Yarmouth",
-      "runner-name": "Brosna Zipperer",
-      "decimal-odds": 2.2,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1977659682790051,
-        "start": "2022-02-02T21:11:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "realStartTime": 0,
-        "race-length": "462",
-        "allRunners": {
-          "Tamna Juliet": {
-            "runnerId": 1977659683270051,
-            "withdrawn": false,
-            "back": 6.6,
-            "lay": 0,
-            "name": "Tamna Juliet",
-            "event-name": "21:11 Yarmouth"
-          },
-          "Brosna Zipperer": {
-            "runnerId": 1977659683310051,
-            "withdrawn": false,
-            "back": 2.12,
-            "lay": 0,
-            "name": "Brosna Zipperer",
-            "event-name": "21:11 Yarmouth",
-            "numberOfRunners": 6,
-            "winPercentage": 102.83018867924527,
-            "startTime": "2022-02-02T21:11:00.000Z",
-            "raceId": 1977659682790051,
-            "raceName": "21:11 Yarmouth",
-            "sportName": "Greyhound Racing",
-            "profitOdd": 1.12,
-            "in-running-flag": false,
-            "status": "open",
-            "realStartTime": 0
-          },
-          "Jessies Babe": {
-            "runnerId": 1977659683340051,
-            "withdrawn": false,
-            "back": 5.1,
-            "lay": 0,
-            "name": "Jessies Babe",
-            "event-name": "21:11 Yarmouth"
-          },
-          "Trevets Blue": {
-            "runnerId": 1977659683370151,
-            "withdrawn": false,
-            "back": 4.3,
-            "lay": 0,
-            "name": "Trevets Blue",
-            "event-name": "21:11 Yarmouth"
-          },
-          "Streaky Bacon": {
-            "runnerId": 1977659683400151,
-            "withdrawn": false,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Streaky Bacon",
-            "event-name": "21:11 Yarmouth"
-          },
-          "Jaxx Blue Ocean": {
-            "runnerId": 1977659683430051,
-            "withdrawn": false,
-            "back": 6.2,
-            "lay": 0,
-            "name": "Jaxx Blue Ocean",
-            "event-name": "21:11 Yarmouth"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0.4,
-          "currentBalance": 5.89
-        },
-        "luckyWinner": {
-          "runnerId": 1977659683310051,
-          "withdrawn": false,
-          "back": 2.12,
-          "lay": 0,
-          "name": "Brosna Zipperer",
-          "event-name": "21:11 Yarmouth",
-          "numberOfRunners": 6,
-          "winPercentage": 102.83018867924527,
-          "startTime": "2022-02-02T21:11:00.000Z",
-          "raceId": 1977659682790051,
-          "raceName": "21:11 Yarmouth",
-          "sportName": "Greyhound Racing",
-          "profitOdd": 1.12,
-          "in-running-flag": false,
-          "status": "open",
-          "realStartTime": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0.4,
-        "currentBalance": 5.89
-      },
-      "event-start-time": "02/02/2022, 21:11:00",
-      "bet-placed-time": "17:43:22  02-02-2022"
-    },
-    {
-      "status": "open",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1977659678970051,
-      "event-name": "20:06 Yarmouth",
-      "runner-name": "Dominance",
+      "event-id": 1978434463590051,
+      "event-name": "15:11 Romford",
+      "runner-name": "Chopchop Latte",
       "decimal-odds": 2.3,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1977659678970051,
-        "start": "2022-02-02T20:06:00.000Z",
+        "id": 1978434463590051,
+        "start": "2022-02-03T15:11:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "realStartTime": 0,
-        "race-length": "462",
+        "race-length": "400mtrs",
         "allRunners": {
-          "Swift Lacerate": {
-            "runnerId": 1977659679450051,
-            "withdrawn": false,
-            "back": 4.3,
-            "lay": 0,
-            "name": "Swift Lacerate",
-            "event-name": "20:06 Yarmouth"
-          },
-          "Coill Bhui Liath": {
-            "runnerId": 1977659679480151,
-            "withdrawn": false,
-            "back": 0,
-            "lay": 0,
-            "name": "Coill Bhui Liath",
-            "event-name": "20:06 Yarmouth"
-          },
-          "Deadly Tornado": {
-            "runnerId": 1977659679510051,
-            "withdrawn": false,
-            "back": 6.6,
-            "lay": 0,
-            "name": "Deadly Tornado",
-            "event-name": "20:06 Yarmouth"
-          },
-          "Dominance": {
-            "runnerId": 1977659679540051,
-            "withdrawn": false,
-            "back": 2.26,
-            "lay": 0,
-            "name": "Dominance",
-            "event-name": "20:06 Yarmouth",
-            "numberOfRunners": 6,
-            "winPercentage": 90.26548672566372,
-            "startTime": "2022-02-02T20:06:00.000Z",
-            "raceId": 1977659678970051,
-            "raceName": "20:06 Yarmouth",
-            "sportName": "Greyhound Racing",
-            "profitOdd": 1.2599999999999998,
-            "in-running-flag": false,
-            "status": "open",
-            "realStartTime": 0
-          },
-          "Favourite Trick": {
-            "runnerId": 1977659679570051,
-            "withdrawn": false,
-            "back": 6.6,
-            "lay": 0,
-            "name": "Favourite Trick",
-            "event-name": "20:06 Yarmouth"
-          },
-          "James Choice": {
-            "runnerId": 1977659679590151,
-            "withdrawn": false,
-            "back": 8.2,
-            "lay": 0,
-            "name": "James Choice",
-            "event-name": "20:06 Yarmouth"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0.4,
-          "currentBalance": 5.89
-        },
-        "luckyWinner": {
-          "runnerId": 1977659679540051,
-          "withdrawn": false,
-          "back": 2.26,
-          "lay": 0,
-          "name": "Dominance",
-          "event-name": "20:06 Yarmouth",
-          "numberOfRunners": 6,
-          "winPercentage": 90.26548672566372,
-          "startTime": "2022-02-02T20:06:00.000Z",
-          "raceId": 1977659678970051,
-          "raceName": "20:06 Yarmouth",
-          "sportName": "Greyhound Racing",
-          "profitOdd": 1.2599999999999998,
-          "in-running-flag": false,
-          "status": "open",
-          "realStartTime": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0.4,
-        "currentBalance": 5.89
-      },
-      "event-start-time": "02/02/2022, 20:06:00",
-      "bet-placed-time": "17:43:22  02-02-2022"
-    },
-    {
-      "status": "open",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1977631040240051,
-      "event-name": "20:43 Harlow",
-      "runner-name": "Endova Piper",
-      "decimal-odds": 1.9,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1977631040240051,
-        "start": "2022-02-02T20:43:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "realStartTime": 0,
-        "race-length": "238mtrs",
-        "allRunners": {
-          "VACANT": {
-            "runnerId": 1977631040740051,
-            "withdrawn": false,
-            "back": 0,
-            "lay": 0,
-            "name": "VACANT",
-            "event-name": "20:43 Harlow"
-          },
-          "Endova Piper": {
-            "runnerId": 1977631040770051,
-            "withdrawn": false,
-            "back": 1.84,
-            "lay": 0,
-            "name": "Endova Piper",
-            "event-name": "20:43 Harlow",
-            "numberOfRunners": 6,
-            "winPercentage": 109.2391304347826,
-            "startTime": "2022-02-02T20:43:00.000Z",
-            "raceId": 1977631040240051,
-            "raceName": "20:43 Harlow",
-            "sportName": "Greyhound Racing",
-            "profitOdd": 0.8400000000000001,
-            "in-running-flag": false,
-            "status": "open",
-            "realStartTime": 0
-          },
-          "Sam Starr": {
-            "runnerId": 1977631040800051,
-            "withdrawn": false,
-            "back": 4.3,
-            "lay": 0,
-            "name": "Sam Starr",
-            "event-name": "20:43 Harlow"
-          },
-          "Pennys Meghan": {
-            "runnerId": 1977631040830051,
-            "withdrawn": false,
-            "back": 11,
-            "lay": 0,
-            "name": "Pennys Meghan",
-            "event-name": "20:43 Harlow"
-          },
-          "Layton Legend": {
-            "runnerId": 1977631040860051,
-            "withdrawn": false,
-            "back": 3.85,
-            "lay": 0,
-            "name": "Layton Legend",
-            "event-name": "20:43 Harlow"
-          },
-          "Crackaway Oxo": {
-            "runnerId": 1977631040890051,
-            "withdrawn": false,
-            "back": 4.6,
-            "lay": 0,
-            "name": "Crackaway Oxo",
-            "event-name": "20:43 Harlow"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0.4,
-          "currentBalance": 5.89
-        },
-        "luckyWinner": {
-          "runnerId": 1977631040770051,
-          "withdrawn": false,
-          "back": 1.84,
-          "lay": 0,
-          "name": "Endova Piper",
-          "event-name": "20:43 Harlow",
-          "numberOfRunners": 6,
-          "winPercentage": 109.2391304347826,
-          "startTime": "2022-02-02T20:43:00.000Z",
-          "raceId": 1977631040240051,
-          "raceName": "20:43 Harlow",
-          "sportName": "Greyhound Racing",
-          "profitOdd": 0.8400000000000001,
-          "in-running-flag": false,
-          "status": "open",
-          "realStartTime": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0.4,
-        "currentBalance": 5.89
-      },
-      "event-start-time": "02/02/2022, 20:43:00",
-      "bet-placed-time": "17:43:22  02-02-2022"
-    },
-    {
-      "status": "open",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1977621769120051,
-      "event-name": "19:56 Doncaster",
-      "runner-name": "Barnside Nala",
-      "decimal-odds": 2.3,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1977621769120051,
-        "start": "2022-02-02T19:56:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "realStartTime": 0,
-        "race-length": "450mtrs",
-        "allRunners": {
-          "Frainey Shadow": {
-            "runnerId": 1977621769610051,
-            "withdrawn": false,
-            "back": 6.2,
-            "lay": 0,
-            "name": "Frainey Shadow",
-            "event-name": "19:56 Doncaster"
-          },
-          "Mahogany Teidi": {
-            "runnerId": 1977621769640051,
+          "Rough Tommo": {
+            "runnerId": 1978434464100051,
             "withdrawn": false,
             "back": 4.1,
             "lay": 0,
-            "name": "Mahogany Teidi",
-            "event-name": "19:56 Doncaster"
+            "name": "Rough Tommo",
+            "event-name": "15:11 Romford"
           },
-          "Brennans James": {
-            "runnerId": 1977621769670051,
+          "Keysys Rocket": {
+            "runnerId": 1978434464140051,
             "withdrawn": false,
             "back": 6.2,
             "lay": 0,
-            "name": "Brennans James",
-            "event-name": "19:56 Doncaster"
+            "name": "Keysys Rocket",
+            "event-name": "15:11 Romford"
           },
-          "Barnside Nala": {
-            "runnerId": 1977621769700051,
+          "Scottish Jim": {
+            "runnerId": 1978434464170051,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 0,
+            "name": "Scottish Jim",
+            "event-name": "15:11 Romford"
+          },
+          "Bonville Lulu": {
+            "runnerId": 1978434464200051,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 0,
+            "name": "Bonville Lulu",
+            "event-name": "15:11 Romford"
+          },
+          "Mayses Maudie": {
+            "runnerId": 1978434464230051,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 0,
+            "name": "Mayses Maudie",
+            "event-name": "15:11 Romford"
+          },
+          "Chopchop Latte": {
+            "runnerId": 1978434464260051,
             "withdrawn": false,
             "back": 2.26,
             "lay": 0,
-            "name": "Barnside Nala",
-            "event-name": "19:56 Doncaster",
+            "name": "Chopchop Latte",
+            "event-name": "15:11 Romford",
             "numberOfRunners": 6,
             "winPercentage": 81.41592920353983,
-            "startTime": "2022-02-02T19:56:00.000Z",
-            "raceId": 1977621769120051,
-            "raceName": "19:56 Doncaster",
+            "startTime": "2022-02-03T15:11:00.000Z",
+            "raceId": 1978434463590051,
+            "raceName": "15:11 Romford",
             "sportName": "Greyhound Racing",
             "profitOdd": 1.2599999999999998,
             "in-running-flag": false,
             "status": "open",
             "realStartTime": 0
-          },
-          "Minor Jet": {
-            "runnerId": 1977621769730051,
-            "withdrawn": false,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Minor Jet",
-            "event-name": "19:56 Doncaster"
-          },
-          "Gilti Luna": {
-            "runnerId": 1977621769760051,
-            "withdrawn": false,
-            "back": 5.1,
-            "lay": 0,
-            "name": "Gilti Luna",
-            "event-name": "19:56 Doncaster"
           }
         },
         "metaData": {
@@ -740,21 +82,21 @@
           "maxWinConfidencePercentage": 150,
           "minProfitOdd": 0.8,
           "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0.4,
-          "currentBalance": 5.89
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
         },
         "luckyWinner": {
-          "runnerId": 1977621769700051,
+          "runnerId": 1978434464260051,
           "withdrawn": false,
           "back": 2.26,
           "lay": 0,
-          "name": "Barnside Nala",
-          "event-name": "19:56 Doncaster",
+          "name": "Chopchop Latte",
+          "event-name": "15:11 Romford",
           "numberOfRunners": 6,
           "winPercentage": 81.41592920353983,
-          "startTime": "2022-02-02T19:56:00.000Z",
-          "raceId": 1977621769120051,
-          "raceName": "19:56 Doncaster",
+          "startTime": "2022-02-03T15:11:00.000Z",
+          "raceId": 1978434463590051,
+          "raceName": "15:11 Romford",
           "sportName": "Greyhound Racing",
           "profitOdd": 1.2599999999999998,
           "in-running-flag": false,
@@ -768,86 +110,86 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0.4,
-        "currentBalance": 5.89
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
       },
-      "event-start-time": "02/02/2022, 19:56:00",
-      "bet-placed-time": "17:43:22  02-02-2022"
+      "event-start-time": "03/02/2022, 15:11:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
     },
     {
       "status": "open",
       "sport-id": 241798357140019,
       "sport-name": "Greyhound Racing",
-      "event-id": 1977631027290051,
-      "event-name": "18:48 Harlow",
-      "runner-name": "Jumeirah Emms",
-      "decimal-odds": 1.9,
+      "event-id": 1978485727680051,
+      "event-name": "16:18 Crayford",
+      "runner-name": "Ballymac Joe",
+      "decimal-odds": 2.2,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1977631027290051,
-        "start": "2022-02-02T18:48:00.000Z",
+        "id": 1978485727680051,
+        "start": "2022-02-03T16:18:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "realStartTime": 0,
-        "race-length": "592mtrs",
+        "race-length": "380mtrs",
         "allRunners": {
-          "Ballyhooly Anna": {
-            "runnerId": 1977631027810051,
+          "Dark Heart": {
+            "runnerId": 1978485728200051,
             "withdrawn": false,
-            "back": 16,
+            "back": 5.1,
             "lay": 0,
-            "name": "Ballyhooly Anna",
-            "event-name": "18:48 Harlow"
+            "name": "Dark Heart",
+            "event-name": "16:18 Crayford"
           },
-          "Ballymac Marcel": {
-            "runnerId": 1977631027840051,
+          "Key Trio": {
+            "runnerId": 1978485728230051,
             "withdrawn": false,
-            "back": 9.2,
+            "back": 5.1,
             "lay": 0,
-            "name": "Ballymac Marcel",
-            "event-name": "18:48 Harlow"
+            "name": "Key Trio",
+            "event-name": "16:18 Crayford"
           },
-          "Finulagh Magic": {
-            "runnerId": 1977631027870151,
+          "Phat Pop": {
+            "runnerId": 1978485728260051,
             "withdrawn": false,
-            "back": 6.6,
+            "back": 5.1,
             "lay": 0,
-            "name": "Finulagh Magic",
-            "event-name": "18:48 Harlow"
+            "name": "Phat Pop",
+            "event-name": "16:18 Crayford"
           },
-          "Mollys Princess": {
-            "runnerId": 1977631027900051,
+          "Night Dream": {
+            "runnerId": 1978485728290151,
             "withdrawn": false,
-            "back": 4.6,
+            "back": 5.1,
             "lay": 0,
-            "name": "Mollys Princess",
-            "event-name": "18:48 Harlow"
+            "name": "Night Dream",
+            "event-name": "16:18 Crayford"
           },
-          "Jumeirah Emms": {
-            "runnerId": 1977631027930051,
+          "Deanridge Smidge": {
+            "runnerId": 1978485728320151,
             "withdrawn": false,
-            "back": 1.86,
+            "back": 4.7,
             "lay": 0,
-            "name": "Jumeirah Emms",
-            "event-name": "18:48 Harlow",
+            "name": "Deanridge Smidge",
+            "event-name": "16:18 Crayford"
+          },
+          "Ballymac Joe": {
+            "runnerId": 1978485728360051,
+            "withdrawn": false,
+            "back": 2.1,
+            "lay": 0,
+            "name": "Ballymac Joe",
+            "event-name": "16:18 Crayford",
             "numberOfRunners": 6,
-            "winPercentage": 90.86021505376343,
-            "startTime": "2022-02-02T18:48:00.000Z",
-            "raceId": 1977631027290051,
-            "raceName": "18:48 Harlow",
+            "winPercentage": 123.80952380952381,
+            "startTime": "2022-02-03T16:18:00.000Z",
+            "raceId": 1978485727680051,
+            "raceName": "16:18 Crayford",
             "sportName": "Greyhound Racing",
-            "profitOdd": 0.8600000000000001,
+            "profitOdd": 1.1,
             "in-running-flag": false,
             "status": "open",
             "realStartTime": 0
-          },
-          "Dapper Lily": {
-            "runnerId": 1977631027960051,
-            "withdrawn": false,
-            "back": 3.55,
-            "lay": 0,
-            "name": "Dapper Lily",
-            "event-name": "18:48 Harlow"
           }
         },
         "metaData": {
@@ -856,23 +198,23 @@
           "maxWinConfidencePercentage": 150,
           "minProfitOdd": 0.8,
           "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0.4,
-          "currentBalance": 5.89
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
         },
         "luckyWinner": {
-          "runnerId": 1977631027930051,
+          "runnerId": 1978485728360051,
           "withdrawn": false,
-          "back": 1.86,
+          "back": 2.1,
           "lay": 0,
-          "name": "Jumeirah Emms",
-          "event-name": "18:48 Harlow",
+          "name": "Ballymac Joe",
+          "event-name": "16:18 Crayford",
           "numberOfRunners": 6,
-          "winPercentage": 90.86021505376343,
-          "startTime": "2022-02-02T18:48:00.000Z",
-          "raceId": 1977631027290051,
-          "raceName": "18:48 Harlow",
+          "winPercentage": 123.80952380952381,
+          "startTime": "2022-02-03T16:18:00.000Z",
+          "raceId": 1978485727680051,
+          "raceName": "16:18 Crayford",
           "sportName": "Greyhound Racing",
-          "profitOdd": 0.8600000000000001,
+          "profitOdd": 1.1,
           "in-running-flag": false,
           "status": "open",
           "realStartTime": 0
@@ -884,202 +226,86 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0.4,
-        "currentBalance": 5.89
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
       },
-      "event-start-time": "02/02/2022, 18:48:00",
-      "bet-placed-time": "17:43:22  02-02-2022"
+      "event-start-time": "03/02/2022, 16:18:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
     },
     {
-      "status": "matched",
+      "status": "open",
       "sport-id": 241798357140019,
       "sport-name": "Greyhound Racing",
-      "event-id": 1977605511990051,
-      "event-name": "18:02 Hove",
-      "runner-name": "Gemini Aria",
+      "event-id": 1978521725890051,
+      "event-name": "21:01 Sunderland",
+      "runner-name": "Ballybrien Slick",
       "decimal-odds": 2,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1977605511990051,
-        "start": "2022-02-02T18:02:00.000Z",
+        "id": 1978521725890051,
+        "start": "2022-02-03T21:01:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "realStartTime": 0,
-        "race-length": "500mtrs",
+        "race-length": "450",
         "allRunners": {
-          "Gemini Aria": {
-            "runnerId": 1977605512500051,
-            "withdrawn": false,
-            "back": 1.97,
-            "lay": 34,
-            "name": "Gemini Aria",
-            "event-name": "18:02 Hove",
-            "numberOfRunners": 6,
-            "winPercentage": 80.20304568527918,
-            "startTime": "2022-02-02T18:02:00.000Z",
-            "raceId": 1977605511990051,
-            "raceName": "18:02 Hove",
-            "sportName": "Greyhound Racing",
-            "profitOdd": 0.97,
-            "in-running-flag": false,
-            "status": "open",
-            "realStartTime": 0
-          },
-          "Salvo Strange": {
-            "runnerId": 1977605512530151,
-            "withdrawn": false,
-            "back": 3.55,
-            "lay": 0,
-            "name": "Salvo Strange",
-            "event-name": "18:02 Hove"
-          },
-          "Olive Tree": {
-            "runnerId": 1977605512560151,
-            "withdrawn": false,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Olive Tree",
-            "event-name": "18:02 Hove"
-          },
-          "Anvic Lively": {
-            "runnerId": 1977605512590151,
-            "withdrawn": false,
-            "back": 4.1,
-            "lay": 0,
-            "name": "Anvic Lively",
-            "event-name": "18:02 Hove"
-          },
-          "Distant Class": {
-            "runnerId": 1977605512620151,
-            "withdrawn": false,
-            "back": 6.2,
-            "lay": 0,
-            "name": "Distant Class",
-            "event-name": "18:02 Hove"
-          },
-          "Rogue Venom": {
-            "runnerId": 1977605512650151,
-            "withdrawn": false,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Rogue Venom",
-            "event-name": "18:02 Hove"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 0.4,
-          "currentBalance": 5.89
-        },
-        "luckyWinner": {
-          "runnerId": 1977605512500051,
-          "withdrawn": false,
-          "back": 1.97,
-          "lay": 34,
-          "name": "Gemini Aria",
-          "event-name": "18:02 Hove",
-          "numberOfRunners": 6,
-          "winPercentage": 80.20304568527918,
-          "startTime": "2022-02-02T18:02:00.000Z",
-          "raceId": 1977605511990051,
-          "raceName": "18:02 Hove",
-          "sportName": "Greyhound Racing",
-          "profitOdd": 0.97,
-          "in-running-flag": false,
-          "status": "open",
-          "realStartTime": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0.4,
-        "currentBalance": 5.89
-      },
-      "event-start-time": "02/02/2022, 18:02:00",
-      "bet-placed-time": "17:43:22  02-02-2022"
-    },
-    {
-      "status": "open",
-      "sport-id": 241798357140019,
-      "sport-name": "Greyhound Racing",
-      "event-id": 1977621776650051,
-      "event-name": "21:12 Doncaster",
-      "runner-name": "Makemydaypunk",
-      "decimal-odds": 2.2,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1977621776650051,
-        "start": "2022-02-02T21:12:00.000Z",
-        "status": "open",
-        "in-running-flag": false,
-        "realStartTime": 0,
-        "race-length": "275mtrs",
-        "allRunners": {
-          "Sedrina": {
-            "runnerId": 1977621777160051,
-            "withdrawn": false,
-            "back": 4.3,
-            "lay": 0,
-            "name": "Sedrina",
-            "event-name": "21:12 Doncaster"
-          },
-          "Ballymac South": {
-            "runnerId": 1977621777190151,
-            "withdrawn": false,
-            "back": 4.1,
-            "lay": 0,
-            "name": "Ballymac South",
-            "event-name": "21:12 Doncaster"
-          },
-          "Clees Domino": {
-            "runnerId": 1977621777220151,
-            "withdrawn": false,
-            "back": 5.6,
-            "lay": 0,
-            "name": "Clees Domino",
-            "event-name": "21:12 Doncaster"
-          },
-          "Ballymac Doyle": {
-            "runnerId": 1977621777260051,
-            "withdrawn": false,
-            "back": 6.6,
-            "lay": 0,
-            "name": "Ballymac Doyle",
-            "event-name": "21:12 Doncaster"
-          },
-          "Eden Rhaegal": {
-            "runnerId": 1977621777290051,
+          "Limoncello": {
+            "runnerId": 1978521726430051,
             "withdrawn": false,
             "back": 5.1,
             "lay": 0,
-            "name": "Eden Rhaegal",
-            "event-name": "21:12 Doncaster"
+            "name": "Limoncello",
+            "event-name": "21:01 Sunderland"
           },
-          "Makemydaypunk": {
-            "runnerId": 1977621777320051,
+          "Ballybrien Slick": {
+            "runnerId": 1978521726470051,
             "withdrawn": false,
-            "back": 2.14,
+            "back": 1.95,
             "lay": 0,
-            "name": "Makemydaypunk",
-            "event-name": "21:12 Doncaster",
+            "name": "Ballybrien Slick",
+            "event-name": "21:01 Sunderland",
             "numberOfRunners": 6,
-            "winPercentage": 91.58878504672894,
-            "startTime": "2022-02-02T21:12:00.000Z",
-            "raceId": 1977621776650051,
-            "raceName": "21:12 Doncaster",
+            "winPercentage": 125.64102564102566,
+            "startTime": "2022-02-03T21:01:00.000Z",
+            "raceId": 1978521725890051,
+            "raceName": "21:01 Sunderland",
             "sportName": "Greyhound Racing",
-            "profitOdd": 1.1400000000000001,
+            "profitOdd": 0.95,
             "in-running-flag": false,
             "status": "open",
             "realStartTime": 0
+          },
+          "Watermelon High": {
+            "runnerId": 1978521726490151,
+            "withdrawn": false,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Watermelon High",
+            "event-name": "21:01 Sunderland"
+          },
+          "Longacres Swan": {
+            "runnerId": 1978521726520151,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 0,
+            "name": "Longacres Swan",
+            "event-name": "21:01 Sunderland"
+          },
+          "Bred For Pace": {
+            "runnerId": 1978521726550151,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 0,
+            "name": "Bred For Pace",
+            "event-name": "21:01 Sunderland"
+          },
+          "Miniblitz": {
+            "runnerId": 1978521726580051,
+            "withdrawn": false,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Miniblitz",
+            "event-name": "21:01 Sunderland"
           }
         },
         "metaData": {
@@ -1088,23 +314,23 @@
           "maxWinConfidencePercentage": 150,
           "minProfitOdd": 0.8,
           "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 1.6,
-          "currentBalance": 4.69
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
         },
         "luckyWinner": {
-          "runnerId": 1977621777320051,
+          "runnerId": 1978521726470051,
           "withdrawn": false,
-          "back": 2.14,
+          "back": 1.95,
           "lay": 0,
-          "name": "Makemydaypunk",
-          "event-name": "21:12 Doncaster",
+          "name": "Ballybrien Slick",
+          "event-name": "21:01 Sunderland",
           "numberOfRunners": 6,
-          "winPercentage": 91.58878504672894,
-          "startTime": "2022-02-02T21:12:00.000Z",
-          "raceId": 1977621776650051,
-          "raceName": "21:12 Doncaster",
+          "winPercentage": 125.64102564102566,
+          "startTime": "2022-02-03T21:01:00.000Z",
+          "raceId": 1978521725890051,
+          "raceName": "21:01 Sunderland",
           "sportName": "Greyhound Racing",
-          "profitOdd": 1.1400000000000001,
+          "profitOdd": 0.95,
           "in-running-flag": false,
           "status": "open",
           "realStartTime": 0
@@ -1116,86 +342,86 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.6,
-        "currentBalance": 4.69
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
       },
-      "event-start-time": "02/02/2022, 21:12:00",
-      "bet-placed-time": "17:45:50  02-02-2022"
+      "event-start-time": "03/02/2022, 21:01:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
     },
     {
       "status": "open",
       "sport-id": 241798357140019,
       "sport-name": "Greyhound Racing",
-      "event-id": 1977659683740051,
-      "event-name": "21:26 Yarmouth",
-      "runner-name": "The Other Lottie",
-      "decimal-odds": 2.5,
+      "event-id": 1978485711490051,
+      "event-name": "18:26 Perry Barr",
+      "runner-name": "Bower Christy",
+      "decimal-odds": 2.3,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1977659683740051,
-        "start": "2022-02-02T21:26:00.000Z",
+        "id": 1978485711490051,
+        "start": "2022-02-03T18:26:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "realStartTime": 0,
-        "race-length": "462",
+        "race-length": "480",
         "allRunners": {
-          "Tusken Raider": {
-            "runnerId": 1977659684200051,
+          "Bower Christy": {
+            "runnerId": 1978485711970051,
             "withdrawn": false,
-            "back": 9.6,
+            "back": 2.2,
             "lay": 0,
-            "name": "Tusken Raider",
-            "event-name": "21:26 Yarmouth"
-          },
-          "The Other Lottie": {
-            "runnerId": 1977659684240051,
-            "withdrawn": false,
-            "back": 2.44,
-            "lay": 0,
-            "name": "The Other Lottie",
-            "event-name": "21:26 Yarmouth",
+            "name": "Bower Christy",
+            "event-name": "18:26 Perry Barr",
             "numberOfRunners": 6,
-            "winPercentage": 88.52459016393442,
-            "startTime": "2022-02-02T21:26:00.000Z",
-            "raceId": 1977659683740051,
-            "raceName": "21:26 Yarmouth",
+            "winPercentage": 86.36363636363633,
+            "startTime": "2022-02-03T18:26:00.000Z",
+            "raceId": 1978485711490051,
+            "raceName": "18:26 Perry Barr",
             "sportName": "Greyhound Racing",
-            "profitOdd": 1.44,
+            "profitOdd": 1.2000000000000002,
             "in-running-flag": false,
             "status": "open",
             "realStartTime": 0
           },
-          "Thymelea Boris": {
-            "runnerId": 1977659684270051,
+          "Tyler Steel": {
+            "runnerId": 1978485712000151,
             "withdrawn": false,
             "back": 4.6,
             "lay": 0,
-            "name": "Thymelea Boris",
-            "event-name": "21:26 Yarmouth"
+            "name": "Tyler Steel",
+            "event-name": "18:26 Perry Barr"
           },
-          "Saleen Luke": {
-            "runnerId": 1977659684300051,
-            "withdrawn": false,
-            "back": 0,
-            "lay": 0,
-            "name": "Saleen Luke",
-            "event-name": "21:26 Yarmouth"
-          },
-          "Buckos Ace": {
-            "runnerId": 1977659684330051,
-            "withdrawn": false,
-            "back": 9.2,
-            "lay": 0,
-            "name": "Buckos Ace",
-            "event-name": "21:26 Yarmouth"
-          },
-          "Kereight John": {
-            "runnerId": 1977659684360051,
+          "Harton Larry": {
+            "runnerId": 1978485712030151,
             "withdrawn": false,
             "back": 5.6,
             "lay": 0,
-            "name": "Kereight John",
-            "event-name": "21:26 Yarmouth"
+            "name": "Harton Larry",
+            "event-name": "18:26 Perry Barr"
+          },
+          "Hero Gem": {
+            "runnerId": 1978485712060151,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 0,
+            "name": "Hero Gem",
+            "event-name": "18:26 Perry Barr"
+          },
+          "Lemming Pepper": {
+            "runnerId": 1978485712100151,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 0,
+            "name": "Lemming Pepper",
+            "event-name": "18:26 Perry Barr"
+          },
+          "Bower Pickles": {
+            "runnerId": 1978485712130151,
+            "withdrawn": false,
+            "back": 4.1,
+            "lay": 0,
+            "name": "Bower Pickles",
+            "event-name": "18:26 Perry Barr"
           }
         },
         "metaData": {
@@ -1204,23 +430,23 @@
           "maxWinConfidencePercentage": 150,
           "minProfitOdd": 0.8,
           "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 1.8,
-          "currentBalance": 4.69
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
         },
         "luckyWinner": {
-          "runnerId": 1977659684240051,
+          "runnerId": 1978485711970051,
           "withdrawn": false,
-          "back": 2.44,
+          "back": 2.2,
           "lay": 0,
-          "name": "The Other Lottie",
-          "event-name": "21:26 Yarmouth",
+          "name": "Bower Christy",
+          "event-name": "18:26 Perry Barr",
           "numberOfRunners": 6,
-          "winPercentage": 88.52459016393442,
-          "startTime": "2022-02-02T21:26:00.000Z",
-          "raceId": 1977659683740051,
-          "raceName": "21:26 Yarmouth",
+          "winPercentage": 86.36363636363633,
+          "startTime": "2022-02-03T18:26:00.000Z",
+          "raceId": 1978485711490051,
+          "raceName": "18:26 Perry Barr",
           "sportName": "Greyhound Racing",
-          "profitOdd": 1.44,
+          "profitOdd": 1.2000000000000002,
           "in-running-flag": false,
           "status": "open",
           "realStartTime": 0
@@ -1232,11 +458,821 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1.8,
-        "currentBalance": 4.69
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
       },
-      "event-start-time": "02/02/2022, 21:26:00",
-      "bet-placed-time": "18:00:05  02-02-2022"
+      "event-start-time": "03/02/2022, 18:26:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1978434470630051,
+      "event-name": "16:08 Romford",
+      "runner-name": "Phoenix Ranger",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978434470630051,
+        "start": "2022-02-03T16:08:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "400mtrs",
+        "allRunners": {
+          "Earls Magical": {
+            "runnerId": 1978434471130051,
+            "withdrawn": false,
+            "back": 4.6,
+            "lay": 0,
+            "name": "Earls Magical",
+            "event-name": "16:08 Romford"
+          },
+          "Can But Dream": {
+            "runnerId": 1978434471170051,
+            "withdrawn": false,
+            "back": 7.2,
+            "lay": 0,
+            "name": "Can But Dream",
+            "event-name": "16:08 Romford"
+          },
+          "Over The Lough": {
+            "runnerId": 1978434471200051,
+            "withdrawn": false,
+            "back": 4.1,
+            "lay": 0,
+            "name": "Over The Lough",
+            "event-name": "16:08 Romford"
+          },
+          "Kingdom Hill": {
+            "runnerId": 1978434471230051,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 0,
+            "name": "Kingdom Hill",
+            "event-name": "16:08 Romford"
+          },
+          "Madabout Wacker": {
+            "runnerId": 1978434471260151,
+            "withdrawn": false,
+            "back": 6.2,
+            "lay": 0,
+            "name": "Madabout Wacker",
+            "event-name": "16:08 Romford"
+          },
+          "Phoenix Ranger": {
+            "runnerId": 1978434471290151,
+            "withdrawn": false,
+            "back": 2,
+            "lay": 0,
+            "name": "Phoenix Ranger",
+            "event-name": "16:08 Romford",
+            "numberOfRunners": 6,
+            "winPercentage": 104.99999999999999,
+            "startTime": "2022-02-03T16:08:00.000Z",
+            "raceId": 1978434470630051,
+            "raceName": "16:08 Romford",
+            "sportName": "Greyhound Racing",
+            "profitOdd": 1,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
+        },
+        "luckyWinner": {
+          "runnerId": 1978434471290151,
+          "withdrawn": false,
+          "back": 2,
+          "lay": 0,
+          "name": "Phoenix Ranger",
+          "event-name": "16:08 Romford",
+          "numberOfRunners": 6,
+          "winPercentage": 104.99999999999999,
+          "startTime": "2022-02-03T16:08:00.000Z",
+          "raceId": 1978434470630051,
+          "raceName": "16:08 Romford",
+          "sportName": "Greyhound Racing",
+          "profitOdd": 1,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
+      },
+      "event-start-time": "03/02/2022, 16:08:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1978550745970051,
+      "event-name": "17:14 Swindon",
+      "runner-name": "Ballymac Seamie",
+      "decimal-odds": 2.4,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978550745970051,
+        "start": "2022-02-03T17:14:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "476",
+        "allRunners": {
+          "Ballymac Seamie": {
+            "runnerId": 1978550746420051,
+            "withdrawn": false,
+            "back": 2.3,
+            "lay": 0,
+            "name": "Ballymac Seamie",
+            "event-name": "17:14 Swindon",
+            "numberOfRunners": 6,
+            "winPercentage": 86.95652173913044,
+            "startTime": "2022-02-03T17:14:00.000Z",
+            "raceId": 1978550745970051,
+            "raceName": "17:14 Swindon",
+            "sportName": "Greyhound Racing",
+            "profitOdd": 1.2999999999999998,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "Clorane Arthur": {
+            "runnerId": 1978550746450151,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 0,
+            "name": "Clorane Arthur",
+            "event-name": "17:14 Swindon"
+          },
+          "Tuxedo Roco": {
+            "runnerId": 1978550746480151,
+            "withdrawn": false,
+            "back": 4.3,
+            "lay": 0,
+            "name": "Tuxedo Roco",
+            "event-name": "17:14 Swindon"
+          },
+          "Ashway Pearl": {
+            "runnerId": 1978550746510151,
+            "withdrawn": false,
+            "back": 4.6,
+            "lay": 0,
+            "name": "Ashway Pearl",
+            "event-name": "17:14 Swindon"
+          },
+          "Mohican Morgana": {
+            "runnerId": 1978550746550051,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 0,
+            "name": "Mohican Morgana",
+            "event-name": "17:14 Swindon"
+          },
+          "Listen Jack": {
+            "runnerId": 1978550746570151,
+            "withdrawn": false,
+            "back": 7.2,
+            "lay": 0,
+            "name": "Listen Jack",
+            "event-name": "17:14 Swindon"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
+        },
+        "luckyWinner": {
+          "runnerId": 1978550746420051,
+          "withdrawn": false,
+          "back": 2.3,
+          "lay": 0,
+          "name": "Ballymac Seamie",
+          "event-name": "17:14 Swindon",
+          "numberOfRunners": 6,
+          "winPercentage": 86.95652173913044,
+          "startTime": "2022-02-03T17:14:00.000Z",
+          "raceId": 1978550745970051,
+          "raceName": "17:14 Swindon",
+          "sportName": "Greyhound Racing",
+          "profitOdd": 1.2999999999999998,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
+      },
+      "event-start-time": "03/02/2022, 17:14:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
+    }
+  ],
+  "Horse Racing": [
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1977564953840051,
+      "event-name": "15:10 Wincanton",
+      "runner-name": "1 Honneur D'Ajonc",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977564953840051,
+        "start": "2022-02-03T15:10:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "1m 7f 50y",
+        "allRunners": {
+          "1 Honneur D'Ajonc": {
+            "runnerId": 1977564954640051,
+            "withdrawn": false,
+            "back": 2.04,
+            "lay": 2.06,
+            "name": "1 Honneur D'Ajonc",
+            "event-name": "15:10 Wincanton",
+            "numberOfRunners": 11,
+            "winPercentage": 135.2941176470588,
+            "startTime": "2022-02-03T15:10:00.000Z",
+            "raceId": 1977564953840051,
+            "raceName": "15:10 Wincanton",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.04,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "1m 7f 50y"
+          },
+          "8 Thanksforthehelp": {
+            "runnerId": 1977564954840051,
+            "withdrawn": false,
+            "back": 4.8,
+            "lay": 5,
+            "name": "8 Thanksforthehelp",
+            "event-name": "15:10 Wincanton"
+          },
+          "4 Future Investment": {
+            "runnerId": 1977564954720151,
+            "withdrawn": false,
+            "back": 5,
+            "lay": 5.1,
+            "name": "4 Future Investment",
+            "event-name": "15:10 Wincanton"
+          },
+          "10 Harlem Soul": {
+            "runnerId": 1977564954890151,
+            "withdrawn": false,
+            "back": 19,
+            "lay": 21,
+            "name": "10 Harlem Soul",
+            "event-name": "15:10 Wincanton"
+          },
+          "6 South Mountain": {
+            "runnerId": 1977564954780151,
+            "withdrawn": false,
+            "back": 32,
+            "lay": 38,
+            "name": "6 South Mountain",
+            "event-name": "15:10 Wincanton"
+          },
+          "3 Estate Italiana": {
+            "runnerId": 1977564954700051,
+            "withdrawn": false,
+            "back": 50,
+            "lay": 0,
+            "name": "3 Estate Italiana",
+            "event-name": "15:10 Wincanton"
+          },
+          "2 Benandgone": {
+            "runnerId": 1977564954670051,
+            "withdrawn": false,
+            "back": 150,
+            "lay": 0,
+            "name": "2 Benandgone",
+            "event-name": "15:10 Wincanton"
+          },
+          "5 Kentford Drake": {
+            "runnerId": 1977564954750151,
+            "withdrawn": false,
+            "back": 55,
+            "lay": 0,
+            "name": "5 Kentford Drake",
+            "event-name": "15:10 Wincanton"
+          },
+          "7 Tamgho Borget": {
+            "runnerId": 1977564954810051,
+            "withdrawn": false,
+            "back": 75,
+            "lay": 260,
+            "name": "7 Tamgho Borget",
+            "event-name": "15:10 Wincanton"
+          },
+          "9 Christopher Clive": {
+            "runnerId": 1977564954860151,
+            "withdrawn": false,
+            "back": 130,
+            "lay": 970,
+            "name": "9 Christopher Clive",
+            "event-name": "15:10 Wincanton"
+          },
+          "11 Olympe De Gouges": {
+            "runnerId": 1977564954920051,
+            "withdrawn": false,
+            "back": 100,
+            "lay": 0,
+            "name": "11 Olympe De Gouges",
+            "event-name": "15:10 Wincanton"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
+        },
+        "luckyWinner": {
+          "runnerId": 1977564954640051,
+          "withdrawn": false,
+          "back": 2.04,
+          "lay": 2.06,
+          "name": "1 Honneur D'Ajonc",
+          "event-name": "15:10 Wincanton",
+          "numberOfRunners": 11,
+          "winPercentage": 135.2941176470588,
+          "startTime": "2022-02-03T15:10:00.000Z",
+          "raceId": 1977564953840051,
+          "raceName": "15:10 Wincanton",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.04,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "1m 7f 50y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
+      },
+      "event-start-time": "03/02/2022, 15:10:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1977564952680051,
+      "event-name": "14:40 Wincanton",
+      "runner-name": "5 Plenty Of Time",
+      "decimal-odds": 2.7,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977564952680051,
+        "start": "2022-02-03T14:40:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "2m 5f 82y",
+        "allRunners": {
+          "5 Plenty Of Time": {
+            "runnerId": 1977564953370051,
+            "withdrawn": false,
+            "back": 2.66,
+            "lay": 2.68,
+            "name": "5 Plenty Of Time",
+            "event-name": "14:40 Wincanton",
+            "numberOfRunners": 8,
+            "winPercentage": 84.21052631578948,
+            "startTime": "2022-02-03T14:40:00.000Z",
+            "raceId": 1977564952680051,
+            "raceName": "14:40 Wincanton",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.6600000000000001,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "2m 5f 82y"
+          },
+          "1 Petticoat Lucy": {
+            "runnerId": 1977564953250051,
+            "withdrawn": false,
+            "back": 4.9,
+            "lay": 5.2,
+            "name": "1 Petticoat Lucy",
+            "event-name": "14:40 Wincanton"
+          },
+          "2 Barford Diva": {
+            "runnerId": 1977564953280151,
+            "withdrawn": false,
+            "back": 6.8,
+            "lay": 7,
+            "name": "2 Barford Diva",
+            "event-name": "14:40 Wincanton"
+          },
+          "6 Sabrina": {
+            "runnerId": 1977564953390151,
+            "withdrawn": false,
+            "back": 7.4,
+            "lay": 7.6,
+            "name": "6 Sabrina",
+            "event-name": "14:40 Wincanton"
+          },
+          "4 Mansoline": {
+            "runnerId": 1977564953340051,
+            "withdrawn": false,
+            "back": 10,
+            "lay": 10.5,
+            "name": "4 Mansoline",
+            "event-name": "14:40 Wincanton"
+          },
+          "3 Head And Heart": {
+            "runnerId": 1977564953310051,
+            "withdrawn": false,
+            "back": 18.5,
+            "lay": 20,
+            "name": "3 Head And Heart",
+            "event-name": "14:40 Wincanton"
+          },
+          "8 Whatcoloristhewind": {
+            "runnerId": 1977564953450051,
+            "withdrawn": false,
+            "back": 430,
+            "lay": 980,
+            "name": "8 Whatcoloristhewind",
+            "event-name": "14:40 Wincanton"
+          },
+          "7 Thequeenbee": {
+            "runnerId": 1977564953420151,
+            "withdrawn": false,
+            "back": 500,
+            "lay": 0,
+            "name": "7 Thequeenbee",
+            "event-name": "14:40 Wincanton"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
+        },
+        "luckyWinner": {
+          "runnerId": 1977564953370051,
+          "withdrawn": false,
+          "back": 2.66,
+          "lay": 2.68,
+          "name": "5 Plenty Of Time",
+          "event-name": "14:40 Wincanton",
+          "numberOfRunners": 8,
+          "winPercentage": 84.21052631578948,
+          "startTime": "2022-02-03T14:40:00.000Z",
+          "raceId": 1977564952680051,
+          "raceName": "14:40 Wincanton",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.6600000000000001,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "2m 5f 82y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
+      },
+      "event-start-time": "03/02/2022, 14:40:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1977564957010051,
+      "event-name": "16:10 Wincanton",
+      "runner-name": "5 El Paso Wood",
+      "decimal-odds": 2.7,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977564957010051,
+        "start": "2022-02-03T16:10:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "3m 1f 30y",
+        "allRunners": {
+          "5 El Paso Wood": {
+            "runnerId": 1977564957610051,
+            "withdrawn": false,
+            "back": 2.66,
+            "lay": 2.76,
+            "name": "5 El Paso Wood",
+            "event-name": "16:10 Wincanton",
+            "numberOfRunners": 6,
+            "winPercentage": 80.45112781954886,
+            "startTime": "2022-02-03T16:10:00.000Z",
+            "raceId": 1977564957010051,
+            "raceName": "16:10 Wincanton",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.6600000000000001,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "3m 1f 30y"
+          },
+          "6 Faustinovick": {
+            "runnerId": 1977564957640051,
+            "withdrawn": false,
+            "back": 4.8,
+            "lay": 5.3,
+            "name": "6 Faustinovick",
+            "event-name": "16:10 Wincanton"
+          },
+          "4 Jeremy Pass": {
+            "runnerId": 1977564957580051,
+            "withdrawn": false,
+            "back": 5.9,
+            "lay": 6.4,
+            "name": "4 Jeremy Pass",
+            "event-name": "16:10 Wincanton"
+          },
+          "1 Rapper": {
+            "runnerId": 1977564957490051,
+            "withdrawn": false,
+            "back": 8,
+            "lay": 9.6,
+            "name": "1 Rapper",
+            "event-name": "16:10 Wincanton"
+          },
+          "2 Didero Vallis": {
+            "runnerId": 1977564957520051,
+            "withdrawn": false,
+            "back": 9.4,
+            "lay": 14.5,
+            "name": "2 Didero Vallis",
+            "event-name": "16:10 Wincanton"
+          },
+          "3 Christmas In April": {
+            "runnerId": 1977564957540151,
+            "withdrawn": false,
+            "back": 14.5,
+            "lay": 19.5,
+            "name": "3 Christmas In April",
+            "event-name": "16:10 Wincanton"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
+        },
+        "luckyWinner": {
+          "runnerId": 1977564957610051,
+          "withdrawn": false,
+          "back": 2.66,
+          "lay": 2.76,
+          "name": "5 El Paso Wood",
+          "event-name": "16:10 Wincanton",
+          "numberOfRunners": 6,
+          "winPercentage": 80.45112781954886,
+          "startTime": "2022-02-03T16:10:00.000Z",
+          "raceId": 1977564957010051,
+          "raceName": "16:10 Wincanton",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.6600000000000001,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "3m 1f 30y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
+      },
+      "event-start-time": "03/02/2022, 16:10:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1977587811330051,
+      "event-name": "19:30 Chelmsford",
+      "runner-name": "1 Al Qaasim",
+      "decimal-odds": 2.7,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977587811330051,
+        "start": "2022-02-03T19:30:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "1m 2f",
+        "allRunners": {
+          "1 Al Qaasim": {
+            "runnerId": 1977587812330051,
+            "withdrawn": false,
+            "back": 2.64,
+            "lay": 2.8,
+            "name": "1 Al Qaasim",
+            "event-name": "19:30 Chelmsford",
+            "numberOfRunners": 12,
+            "winPercentage": 93.18181818181816,
+            "startTime": "2022-02-03T19:30:00.000Z",
+            "raceId": 1977587811330051,
+            "raceName": "19:30 Chelmsford",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.6400000000000001,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "1m 2f"
+          },
+          "4 Bella Colorossa": {
+            "runnerId": 1977587812420051,
+            "withdrawn": false,
+            "back": 5.1,
+            "lay": 7,
+            "name": "4 Bella Colorossa",
+            "event-name": "19:30 Chelmsford"
+          },
+          "2 Smokey Malone": {
+            "runnerId": 1977587812360151,
+            "withdrawn": false,
+            "back": 11,
+            "lay": 15,
+            "name": "2 Smokey Malone",
+            "event-name": "19:30 Chelmsford"
+          },
+          "7 Copake": {
+            "runnerId": 1977587812510051,
+            "withdrawn": false,
+            "back": 11.5,
+            "lay": 17.5,
+            "name": "7 Copake",
+            "event-name": "19:30 Chelmsford"
+          },
+          "5 Artisan Bleu": {
+            "runnerId": 1977587812450051,
+            "withdrawn": false,
+            "back": 12,
+            "lay": 21,
+            "name": "5 Artisan Bleu",
+            "event-name": "19:30 Chelmsford"
+          },
+          "8 Mustang Kodi": {
+            "runnerId": 1977587812540051,
+            "withdrawn": false,
+            "back": 50,
+            "lay": 0,
+            "name": "8 Mustang Kodi",
+            "event-name": "19:30 Chelmsford"
+          },
+          "3 Rania": {
+            "runnerId": 1977587812390051,
+            "withdrawn": false,
+            "back": 19,
+            "lay": 85,
+            "name": "3 Rania",
+            "event-name": "19:30 Chelmsford"
+          },
+          "6 Doonbeg Farmer": {
+            "runnerId": 1977587812480051,
+            "withdrawn": false,
+            "back": 19.5,
+            "lay": 0,
+            "name": "6 Doonbeg Farmer",
+            "event-name": "19:30 Chelmsford"
+          },
+          "9 Brass Clankers": {
+            "runnerId": 1977587812570051,
+            "withdrawn": false,
+            "back": 9.8,
+            "lay": 14,
+            "name": "9 Brass Clankers",
+            "event-name": "19:30 Chelmsford"
+          },
+          "10 Cents In The City": {
+            "runnerId": 1977587812610051,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 0,
+            "name": "10 Cents In The City",
+            "event-name": "19:30 Chelmsford"
+          },
+          "11 Tilsworth Lukey": {
+            "runnerId": 1977587812640051,
+            "withdrawn": false,
+            "back": 25,
+            "lay": 0,
+            "name": "11 Tilsworth Lukey",
+            "event-name": "19:30 Chelmsford"
+          },
+          "12 Ivahunch": {
+            "runnerId": 1977587812670051,
+            "withdrawn": false,
+            "back": 19,
+            "lay": 34,
+            "name": "12 Ivahunch",
+            "event-name": "19:30 Chelmsford"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.15
+        },
+        "luckyWinner": {
+          "runnerId": 1977587812330051,
+          "withdrawn": false,
+          "back": 2.64,
+          "lay": 2.8,
+          "name": "1 Al Qaasim",
+          "event-name": "19:30 Chelmsford",
+          "numberOfRunners": 12,
+          "winPercentage": 93.18181818181816,
+          "startTime": "2022-02-03T19:30:00.000Z",
+          "raceId": 1977587811330051,
+          "raceName": "19:30 Chelmsford",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.6400000000000001,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "1m 2f"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.15
+      },
+      "event-start-time": "03/02/2022, 19:30:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
     }
   ],
   "Soccer": [
@@ -1244,51 +1280,51 @@
       "status": "open",
       "sport-id": 15,
       "sport-name": "Soccer",
-      "event-id": 1973555181250051,
-      "event-name": "Rayo Vallecano vs Real Mallorca",
-      "runner-name": "Rayo Vallecano",
-      "decimal-odds": 2,
+      "event-id": 1974679741940051,
+      "event-name": "Real Sociedad vs Real Betis",
+      "runner-name": "Real Sociedad",
+      "decimal-odds": 2.1,
       "stake": 0.2,
       "event-full-details": {
-        "id": 1973555181250051,
-        "start": "2022-02-02T19:00:00.000Z",
+        "id": 1974679741940051,
+        "start": "2022-02-03T19:00:00.000Z",
         "status": "open",
         "in-running-flag": false,
         "realStartTime": 0,
         "allRunners": {
-          "Rayo Vallecano": {
-            "runnerId": 1973555186480151,
+          "Real Sociedad": {
+            "runnerId": 1974679747020151,
             "withdrawn": false,
-            "back": 1.92,
-            "lay": 1.94,
-            "name": "Rayo Vallecano",
-            "event-name": "Rayo Vallecano vs Real Mallorca",
+            "back": 2.06,
+            "lay": 2.08,
+            "name": "Real Sociedad",
+            "event-name": "Real Sociedad vs Real Betis",
             "numberOfRunners": 3,
-            "winPercentage": 82.29166666666667,
-            "startTime": "2022-02-02T19:00:00.000Z",
-            "raceId": 1973555181250051,
-            "raceName": "Rayo Vallecano vs Real Mallorca",
+            "winPercentage": 82.03883495145631,
+            "startTime": "2022-02-03T19:00:00.000Z",
+            "raceId": 1974679741940051,
+            "raceName": "Real Sociedad vs Real Betis",
             "sportName": "Soccer",
-            "profitOdd": 0.9199999999999999,
+            "profitOdd": 1.06,
             "in-running-flag": false,
             "status": "open",
             "realStartTime": 0
           },
-          "Real Mallorca": {
-            "runnerId": 1973555186520051,
+          "Real Betis": {
+            "runnerId": 1974679747060051,
             "withdrawn": false,
-            "back": 4.8,
-            "lay": 5,
-            "name": "Real Mallorca",
-            "event-name": "Rayo Vallecano vs Real Mallorca"
+            "back": 3.95,
+            "lay": 4,
+            "name": "Real Betis",
+            "event-name": "Real Sociedad vs Real Betis"
           },
-          "DRAW (Ray/Rea)": {
-            "runnerId": 1973555186560051,
+          "DRAW (Rea/Rea)": {
+            "runnerId": 1974679747100051,
             "withdrawn": false,
-            "back": 3.5,
-            "lay": 3.65,
-            "name": "DRAW (Ray/Rea)",
-            "event-name": "Rayo Vallecano vs Real Mallorca"
+            "back": 3.75,
+            "lay": 3.8,
+            "name": "DRAW (Rea/Rea)",
+            "event-name": "Real Sociedad vs Real Betis"
           }
         },
         "metaData": {
@@ -1297,23 +1333,23 @@
           "maxWinConfidencePercentage": 150,
           "minProfitOdd": 0.8,
           "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 2,
-          "currentBalance": 4.49
+          "sumOfAlreadyPlacedBetAmount": 1.2,
+          "currentBalance": 5.95
         },
         "luckyWinner": {
-          "runnerId": 1973555186480151,
+          "runnerId": 1974679747020151,
           "withdrawn": false,
-          "back": 1.92,
-          "lay": 1.94,
-          "name": "Rayo Vallecano",
-          "event-name": "Rayo Vallecano vs Real Mallorca",
+          "back": 2.06,
+          "lay": 2.08,
+          "name": "Real Sociedad",
+          "event-name": "Real Sociedad vs Real Betis",
           "numberOfRunners": 3,
-          "winPercentage": 82.29166666666667,
-          "startTime": "2022-02-02T19:00:00.000Z",
-          "raceId": 1973555181250051,
-          "raceName": "Rayo Vallecano vs Real Mallorca",
+          "winPercentage": 82.03883495145631,
+          "startTime": "2022-02-03T19:00:00.000Z",
+          "raceId": 1974679741940051,
+          "raceName": "Real Sociedad vs Real Betis",
           "sportName": "Soccer",
-          "profitOdd": 0.9199999999999999,
+          "profitOdd": 1.06,
           "in-running-flag": false,
           "status": "open",
           "realStartTime": 0
@@ -1325,102 +1361,11 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2,
-        "currentBalance": 4.49
+        "sumOfAlreadyPlacedBetAmount": 1.2,
+        "currentBalance": 5.95
       },
-      "event-start-time": "02/02/2022, 19:00:00",
-      "bet-placed-time": "18:00:05  02-02-2022"
-    },
-    {
-      "status": "open",
-      "sport-id": 15,
-      "sport-name": "Soccer",
-      "event-id": 1971819613130051,
-      "event-name": "Kortrijk vs Royal Antwerp",
-      "runner-name": "Royal Antwerp",
-      "decimal-odds": 1.9,
-      "stake": 0.2,
-      "event-full-details": {
-        "id": 1971819613130051,
-        "start": "2022-02-02T17:45:00.000Z",
-        "status": "open",
-        "in-running-flag": true,
-        "realStartTime": "2022-02-02T17:59:57.649Z",
-        "allRunners": {
-          "Kortrijk": {
-            "runnerId": 1971819614560151,
-            "withdrawn": false,
-            "back": 4.3,
-            "lay": 4.8,
-            "name": "Kortrijk",
-            "event-name": "Kortrijk vs Royal Antwerp"
-          },
-          "Royal Antwerp": {
-            "runnerId": 1971819614600051,
-            "withdrawn": false,
-            "back": 1.88,
-            "lay": 1.96,
-            "name": "Royal Antwerp",
-            "event-name": "Kortrijk vs Royal Antwerp",
-            "numberOfRunners": 3,
-            "winPercentage": 96.80851063829789,
-            "startTime": "2022-02-02T17:45:00.000Z",
-            "raceId": 1971819613130051,
-            "raceName": "Kortrijk vs Royal Antwerp",
-            "sportName": "Soccer",
-            "profitOdd": 0.8799999999999999,
-            "in-running-flag": true,
-            "status": "open",
-            "realStartTime": "2022-02-02T17:59:57.649Z"
-          },
-          "DRAW (Kor/Roy)": {
-            "runnerId": 1971819614640051,
-            "withdrawn": false,
-            "back": 3.7,
-            "lay": 3.8,
-            "name": "DRAW (Kor/Roy)",
-            "event-name": "Kortrijk vs Royal Antwerp"
-          }
-        },
-        "metaData": {
-          "stakeValue": 0.2,
-          "minWinConfidencePercentage": 80,
-          "maxWinConfidencePercentage": 150,
-          "minProfitOdd": 0.8,
-          "todayTotalBetAmountLimit": 4,
-          "sumOfAlreadyPlacedBetAmount": 2.2,
-          "currentBalance": 4.29
-        },
-        "luckyWinner": {
-          "runnerId": 1971819614600051,
-          "withdrawn": false,
-          "back": 1.88,
-          "lay": 1.96,
-          "name": "Royal Antwerp",
-          "event-name": "Kortrijk vs Royal Antwerp",
-          "numberOfRunners": 3,
-          "winPercentage": 96.80851063829789,
-          "startTime": "2022-02-02T17:45:00.000Z",
-          "raceId": 1971819613130051,
-          "raceName": "Kortrijk vs Royal Antwerp",
-          "sportName": "Soccer",
-          "profitOdd": 0.8799999999999999,
-          "in-running-flag": true,
-          "status": "open",
-          "realStartTime": "2022-02-02T17:59:57.649Z"
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.29
-      },
-      "event-start-time": "02/02/2022, 17:45:00",
-      "bet-placed-time": "18:05:08  02-02-2022"
+      "event-start-time": "03/02/2022, 19:00:00",
+      "bet-placed-time": "14:30:10  03-02-2022"
     }
   ]
 }

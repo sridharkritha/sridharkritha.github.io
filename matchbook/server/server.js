@@ -192,10 +192,10 @@
 
 		let raceLength = 0;
 		let raceRunningTime = 0;
-		if(sportName === "Horse Racing") {
-			raceLength = UTIL.convertMfyToYards(eventObj["race-length"]); // "3m 4f 200y" => 6360 yards
-			raceRunningTime = UTIL.calculateRaceRunningTime(sportName, raceLength); // seconds
-		}
+		// if(sportName === "Horse Racing") {
+		// 	raceLength = UTIL.convertMfyToYards(eventObj["race-length"]); // "3m 4f 200y" => 6360 yards
+		// 	raceRunningTime = UTIL.calculateRaceRunningTime(sportName, raceLength); // seconds
+		// }
 
 		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
 

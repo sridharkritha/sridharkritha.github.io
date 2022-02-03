@@ -1,819 +1,27 @@
 {
-  "id": 241798357140019,
+  "id": 15,
   "events": {
-    "18:09 Doncaster": {
-      "id": 1977621754570051,
-      "start": "2022-02-02T18:09:00.000Z",
+    "Al Bidda SC vs Al Shahaniya": {
+      "id": 1979413929890051,
+      "start": "2022-02-03T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "483mtrs",
       "allRunners": {
-        "Hello Chiara": {
-          "runnerId": 1977621755160051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 4.9
-        },
-        "Jumeirah Smile": {
-          "runnerId": 1977621755190051,
-          "withdrawn": false,
-          "back": 9.6,
-          "lay": 10.5
-        },
-        "Shoe Box": {
-          "runnerId": 1977621755220051,
-          "withdrawn": false,
-          "back": 6.4,
-          "lay": 6.6
-        },
-        "Free For All": {
-          "runnerId": 1977621755250051,
-          "withdrawn": false,
-          "back": 11.5,
-          "lay": 12
-        },
-        "Pennys Endeavour": {
-          "runnerId": 1977621755280051,
-          "withdrawn": false,
-          "back": 3.75,
-          "lay": 3.8
-        },
-        "Romantic Rachel": {
-          "runnerId": 1977621755310151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 5.3
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:17 Harlow": {
-      "id": 1977631022700051,
-      "start": "2022-02-02T18:17:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "238mtrs",
-      "allRunners": {
-        "Trade Pippy": {
-          "runnerId": 1977631023260051,
-          "withdrawn": false,
-          "back": 3.75,
-          "lay": 4.6
-        },
-        "Anmima Biddy": {
-          "runnerId": 1977631023290051,
-          "withdrawn": false,
-          "back": 6.8,
-          "lay": 60
-        },
-        "Gifted Customer": {
-          "runnerId": 1977631023320051,
-          "withdrawn": false,
-          "back": 9.4,
-          "lay": 140
-        },
-        "Ballinabola Poll": {
-          "runnerId": 1977631023350051,
-          "withdrawn": false,
-          "back": 3.15,
-          "lay": 12.5
-        },
-        "Lemon Joan": {
-          "runnerId": 1977631023380051,
-          "withdrawn": false,
-          "back": 6.4,
-          "lay": 120
-        },
-        "Kippers Model": {
-          "runnerId": 1977631023410051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 13.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:19 Sunderland": {
-      "id": 1977549221440051,
-      "start": "2022-02-02T18:19:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Derrinasafa Ryan": {
-          "runnerId": 1977549221910051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 150
-        },
-        "Ohthere Bella": {
-          "runnerId": 1977549221940051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 7
-        },
-        "Strawberry Lady": {
-          "runnerId": 1977549221970051,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 19
-        },
-        "Kilmessan Sky": {
-          "runnerId": 1977549222000051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 9.6
-        },
-        "Bannside Phoenix": {
-          "runnerId": 1977549222020151,
-          "withdrawn": false,
-          "back": 2.6,
-          "lay": 4
-        },
-        "Dapper Dalia": {
-          "runnerId": 1977549222050151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 150
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:26 Yarmouth": {
-      "id": 1977659673040051,
-      "start": "2022-02-02T18:26:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Pretty Mischief": {
-          "runnerId": 1977659673580051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Millgan Leahpeah": {
-          "runnerId": 1977659673620051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 0
-        },
-        "Rough Romeo": {
-          "runnerId": 1977659673650051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Vince The Prince": {
-          "runnerId": 1977659673680051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 0
-        },
-        "Me Me Me": {
-          "runnerId": 1977659673710051,
-          "withdrawn": false,
-          "back": 9.6,
-          "lay": 0
-        },
-        "Taylors Special": {
-          "runnerId": 1977659673740051,
-          "withdrawn": false,
-          "back": 3.3,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:28 Doncaster": {
-      "id": 1977621757280051,
-      "start": "2022-02-02T18:28:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "483mtrs",
-      "allRunners": {
-        "Sligo Ed": {
-          "runnerId": 1977621757810051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Ballymac Sirocco": {
-          "runnerId": 1977621757850051,
-          "withdrawn": false,
-          "back": 1.7,
-          "lay": 8.2
-        },
-        "Lightfoot Tuchel": {
-          "runnerId": 1977621757880151,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        },
-        "My Blue Boy": {
-          "runnerId": 1977621757920051,
-          "withdrawn": false,
-          "back": 7.2,
-          "lay": 0
-        },
-        "Brennans Kante": {
-          "runnerId": 1977621757950051,
-          "withdrawn": false,
-          "back": 3.3,
-          "lay": 34
-        },
-        "Ballymac Mumba": {
-          "runnerId": 1977621757970151,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:33 Harlow": {
-      "id": 1977631025060051,
-      "start": "2022-02-02T18:33:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "415mtrs",
-      "allRunners": {
-        "Rave Force": {
-          "runnerId": 1977631025540051,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        },
-        "Decisive Giovani": {
-          "runnerId": 1977631025570151,
-          "withdrawn": false,
-          "back": 2.64,
-          "lay": 42
-        },
-        "Roseville Eske": {
-          "runnerId": 1977631025600151,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Fancy Miss": {
-          "runnerId": 1977631025630151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Shale Sabor": {
-          "runnerId": 1977631025670051,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Herecomesdanny": {
-          "runnerId": 1977631025690151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:36 Sunderland": {
-      "id": 1977549222570051,
-      "start": "2022-02-02T18:36:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Moanduff Ruby": {
-          "runnerId": 1977549223030051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Mucho Macho Isla": {
-          "runnerId": 1977549223060051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Coologue General": {
-          "runnerId": 1977549223090051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Ciarans Diva": {
-          "runnerId": 1977549223120051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 17
-        },
-        "Droopys Beatrice": {
-          "runnerId": 1977549223140151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Holdem Liffey": {
-          "runnerId": 1977549223170151,
-          "withdrawn": false,
-          "back": 2.68,
-          "lay": 34
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:41 Yarmouth": {
-      "id": 1977659674250051,
-      "start": "2022-02-02T18:41:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Drumdoit Nala": {
-          "runnerId": 1977659674720051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Marroway Boy": {
-          "runnerId": 1977659674760051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Moors Trulymadly": {
-          "runnerId": 1977659674790151,
-          "withdrawn": false,
-          "back": 7.6,
-          "lay": 0
-        },
-        "Bon Accord": {
-          "runnerId": 1977659674820051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Farloe Trooper": {
-          "runnerId": 1977659674850151,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Moors Nightmare": {
-          "runnerId": 1977659674880151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:43 Doncaster": {
-      "id": 1977621759580051,
-      "start": "2022-02-02T18:43:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450mtrs",
-      "allRunners": {
-        "Boss Girl": {
-          "runnerId": 1977621760090051,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        },
-        "Coonough Des": {
-          "runnerId": 1977621760120051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Titanic Tip": {
-          "runnerId": 1977621760150051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Brennans Darcy": {
-          "runnerId": 1977621760190051,
-          "withdrawn": false,
-          "back": 7.6,
-          "lay": 0
-        },
-        "Glaise Ranger": {
-          "runnerId": 1977621760220051,
-          "withdrawn": false,
-          "back": 2.52,
-          "lay": 0
-        },
-        "Pennys Calypso": {
-          "runnerId": 1977621760250051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:48 Harlow": {
-      "id": 1977631027290051,
-      "start": "2022-02-02T18:48:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "592mtrs",
-      "allRunners": {
-        "Ballyhooly Anna": {
-          "runnerId": 1977631027810051,
-          "withdrawn": false,
-          "back": 16,
-          "lay": 0
-        },
-        "Ballymac Marcel": {
-          "runnerId": 1977631027840051,
-          "withdrawn": false,
-          "back": 9.2,
-          "lay": 0
-        },
-        "Finulagh Magic": {
-          "runnerId": 1977631027870151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Mollys Princess": {
-          "runnerId": 1977631027900051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Jumeirah Emms": {
-          "runnerId": 1977631027930051,
-          "withdrawn": false,
-          "back": 1.85,
-          "lay": 0
-        },
-        "Dapper Lily": {
-          "runnerId": 1977631027960051,
-          "withdrawn": false,
-          "back": 3.3,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:51 Sunderland": {
-      "id": 1977549223510051,
-      "start": "2022-02-02T18:51:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Knockalton Beany": {
-          "runnerId": 1977549223980051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Ross Endeavour": {
-          "runnerId": 1977549224010051,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Blue Ruby Two": {
-          "runnerId": 1977549224040151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Droopys Smoothy": {
-          "runnerId": 1977549224070151,
-          "withdrawn": false,
-          "back": 3.15,
-          "lay": 0
-        },
-        "In Your Eyes": {
-          "runnerId": 1977549224100151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Mucho Macho Leah": {
-          "runnerId": 1977549224140051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:53 Youghal": {
-      "id": 1977596062790051,
-      "start": "2022-02-02T18:53:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Johnstown Dan": {
-          "runnerId": 1977596063310051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Hollyhill Dash": {
-          "runnerId": 1977596063340151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Dunbar Delta": {
-          "runnerId": 1977596063380051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Bingo Player": {
-          "runnerId": 1977596063410051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Geelo Ballito": {
-          "runnerId": 1977596063440051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Why Magic": {
-          "runnerId": 1977596063470051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:58 Doncaster": {
-      "id": 1977621762520051,
-      "start": "2022-02-02T18:58:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450mtrs",
-      "allRunners": {
-        "No Opinion": {
-          "runnerId": 1977621763050051,
-          "withdrawn": false,
-          "back": 2.76,
-          "lay": 0
-        },
-        "Pennys Charisma": {
-          "runnerId": 1977621763090051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Mill Zuri": {
-          "runnerId": 1977621763120051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Eden Bolt": {
-          "runnerId": 1977621763150051,
-          "withdrawn": false,
-          "back": 7.2,
-          "lay": 0
-        },
-        "Ballymac Donie": {
-          "runnerId": 1977621763180051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Craan Maggie": {
-          "runnerId": 1977621763210151,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "18:59 Yarmouth": {
-      "id": 1977659675230051,
-      "start": "2022-02-02T18:59:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Jumeirah Carmen": {
-          "runnerId": 1977659675730051,
-          "withdrawn": false,
-          "back": 4.7,
-          "lay": 0
-        },
-        "Lavan Boy": {
-          "runnerId": 1977659675760051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Moors Asha": {
-          "runnerId": 1977659675800051,
-          "withdrawn": false,
-          "back": 3.65,
-          "lay": 0
-        },
-        "Brickhill Arnold": {
-          "runnerId": 1977659675820151,
-          "withdrawn": false,
-          "back": 2.52,
-          "lay": 0
-        },
-        " Long White Socks (res)": {
-          "runnerId": 1978680556850051,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "Wardys Girl": {
-          "runnerId": 1977659675890051,
-          "withdrawn": true,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:07 Harlow": {
-      "id": 1977631029370051,
-      "start": "2022-02-02T19:07:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "415mtrs",
-      "allRunners": {
-        "Mousey Megan": {
-          "runnerId": 1977631029890051,
-          "withdrawn": false,
+        "Al Bidda SC": {
+          "runnerId": 1979413930510051,
+          "back": 6,
+          "lay": 7.6
+        },
+        "Al Shahaniya": {
+          "runnerId": 1979413930550051,
+          "back": 1.53,
+          "lay": 1.7
+        },
+        "DRAW (Al /Al )": {
+          "runnerId": 1979413930580151,
           "back": 3.85,
-          "lay": 0
-        },
-        "Manic Flash": {
-          "runnerId": 1977631029920051,
-          "withdrawn": false,
-          "back": 2.78,
-          "lay": 0
-        },
-        "Milltown Milk": {
-          "runnerId": 1977631029950051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Obsidion": {
-          "runnerId": 1977631029980051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Seneca Magpie": {
-          "runnerId": 1977631030010051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Cooly Contessa": {
-          "runnerId": 1977631030040151,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
+          "lay": 4.9
         }
       },
       "metaData": {
@@ -822,706 +30,96 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     },
-    "19:09 Sunderland": {
-      "id": 1977549224490051,
-      "start": "2022-02-02T19:09:00.000Z",
+    "Al Waab Sports Club vs Al-Kharitiyath SC": {
+      "id": 1979413968610051,
+      "start": "2022-02-03T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "261",
       "allRunners": {
-        "Banner Puma": {
-          "runnerId": 1977549224960051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Ferryforth Jack": {
-          "runnerId": 1977549224990051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 0
-        },
-        "Solway Moonlight": {
-          "runnerId": 1977549225020051,
-          "withdrawn": false,
-          "back": 7.2,
-          "lay": 0
-        },
-        "Loughlea Line": {
-          "runnerId": 1977549225050051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Kanturk Leg": {
-          "runnerId": 1977549225080051,
-          "withdrawn": false,
-          "back": 2.82,
-          "lay": 0
-        },
-        "Got The Box": {
-          "runnerId": 1977549225110051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:12 Youghal": {
-      "id": 1977596064570051,
-      "start": "2022-02-02T19:12:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Trumpers Shauna": {
-          "runnerId": 1977596065080051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Mega Jill": {
-          "runnerId": 1977596065120051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Rollaway Bob": {
-          "runnerId": 1977596065150051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Canvas Maud": {
-          "runnerId": 1977596065180051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Dipity": {
-          "runnerId": 1977596065210051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Margos Lass": {
-          "runnerId": 1977596065240051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:16 Yarmouth": {
-      "id": 1977659676220051,
-      "start": "2022-02-02T19:16:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "All About Gold": {
-          "runnerId": 1977659676680051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Chelms Tornado": {
-          "runnerId": 1977659676710151,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Gracias Lorenzo": {
-          "runnerId": 1977659676740151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Drumdoit Lucy": {
-          "runnerId": 1977659676770151,
-          "withdrawn": false,
-          "back": 2.92,
-          "lay": 0
-        },
-        "Lakeview Floyd": {
-          "runnerId": 1977659676810051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Heavens Willow": {
-          "runnerId": 1977659676830151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:18 Doncaster": {
-      "id": 1977621764930051,
-      "start": "2022-02-02T19:18:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450mtrs",
-      "allRunners": {
-        "Bull Run Rubble": {
-          "runnerId": 1977621765440051,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        },
-        "Kidya Not": {
-          "runnerId": 1977621765470151,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Mollycoddler": {
-          "runnerId": 1977621765510051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Tile Kicker": {
-          "runnerId": 1977621765540051,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        },
-        "Pennys Seven": {
-          "runnerId": 1977621765570051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Jumeirah Cross": {
-          "runnerId": 1977621765600051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:24 Harlow": {
-      "id": 1977631031500051,
-      "start": "2022-02-02T19:24:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "592mtrs",
-      "allRunners": {
-        "Smokin Sam": {
-          "runnerId": 1977631032000051,
-          "withdrawn": false,
-          "back": 12.5,
-          "lay": 0
-        },
-        "Philfen Afina": {
-          "runnerId": 1977631032030151,
-          "withdrawn": false,
-          "back": 2.06,
-          "lay": 0
-        },
-        "Lubagh Silver": {
-          "runnerId": 1977631032060151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Malbay Pippa": {
-          "runnerId": 1977631032090151,
-          "withdrawn": false,
-          "back": 9.6,
-          "lay": 0
-        },
-        "Diesel Minnie": {
-          "runnerId": 1977631032120051,
-          "withdrawn": false,
-          "back": 2.52,
-          "lay": 0
-        },
-        "Lolas Wish": {
-          "runnerId": 1977631032150051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:26 Sunderland": {
-      "id": 1977549225450051,
-      "start": "2022-02-02T19:26:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Evolution Faith": {
-          "runnerId": 1977549225920051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 0
-        },
-        "Olwinns Robin": {
-          "runnerId": 1977549225950051,
-          "withdrawn": false,
-          "back": 2.72,
-          "lay": 0
-        },
-        "Leamaneigh Rebel": {
-          "runnerId": 1977549225980051,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Kerryroad Hazel": {
-          "runnerId": 1977549226010051,
-          "withdrawn": false,
-          "back": 7.6,
-          "lay": 0
-        },
-        "Laurens Lillian": {
-          "runnerId": 1977549226040051,
-          "withdrawn": false,
-          "back": 9.2,
-          "lay": 0
-        },
-        "Dixie Pearl": {
-          "runnerId": 1977549226070051,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:28 Youghal": {
-      "id": 1977596066310051,
-      "start": "2022-02-02T19:28:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Canvas Act": {
-          "runnerId": 1977596066810051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Hollyhill Raven": {
-          "runnerId": 1977596066840151,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Slaneyside Tatoo": {
-          "runnerId": 1977596066870151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Ballybrack Storm": {
-          "runnerId": 1977596066900151,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Areyouathome": {
-          "runnerId": 1977596066940051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Seaviewblackjack": {
-          "runnerId": 1977596066970051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:34 Yarmouth": {
-      "id": 1977659677160051,
-      "start": "2022-02-02T19:34:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Khaleesi Legend": {
-          "runnerId": 1977659677580051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Hermajespleasure": {
-          "runnerId": 1977659677610151,
-          "withdrawn": false,
-          "back": 1.48,
-          "lay": 0
-        },
-        "Kelseys Ranger": {
-          "runnerId": 1977659677640151,
-          "withdrawn": false,
-          "back": 12.5,
-          "lay": 0
-        },
-        "Wind Up Matey": {
-          "runnerId": 1977659677670051,
-          "withdrawn": false,
-          "back": 7.2,
-          "lay": 0
-        },
-        "Mill Gino": {
-          "runnerId": 1977659677700151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:36 Doncaster": {
-      "id": 1977621767080051,
-      "start": "2022-02-02T19:36:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450mtrs",
-      "allRunners": {
-        "Yahoo Maura": {
-          "runnerId": 1977621767590051,
-          "withdrawn": false,
-          "back": 4.5,
-          "lay": 0
-        },
-        "Aherla Rock": {
-          "runnerId": 1977621767630051,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        },
-        "Optic Magic": {
-          "runnerId": 1977621767660051,
-          "withdrawn": false,
-          "back": 2.92,
-          "lay": 0
-        },
-        "Runtellgrandad": {
-          "runnerId": 1977621767690051,
-          "withdrawn": false,
-          "back": 8.6,
-          "lay": 0
-        },
-        "Hunters Missy": {
-          "runnerId": 1977621767720151,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Miss Cain": {
-          "runnerId": 1977621767750151,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:41 Sunderland": {
-      "id": 1977549226410051,
-      "start": "2022-02-02T19:41:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Mainstreet Messi": {
-          "runnerId": 1977549226870051,
-          "withdrawn": false,
-          "back": 2.66,
-          "lay": 0
-        },
-        "Lisneal Sonic": {
-          "runnerId": 1977549226900051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Curly John God": {
-          "runnerId": 1977549226930051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Go On My Cocker": {
-          "runnerId": 1977549226960051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Jumeirah Storm": {
-          "runnerId": 1977549226990051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Tenerife Casa": {
-          "runnerId": 1977549227010151,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:42 Youghal": {
-      "id": 1977596068120051,
-      "start": "2022-02-02T19:42:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Black Maverick": {
-          "runnerId": 1977596068630051,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Whitty Mccoy": {
-          "runnerId": 1977596068660051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Cavies Coast": {
-          "runnerId": 1977596068690051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Witches Elwood": {
-          "runnerId": 1977596068720051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Why Sally": {
-          "runnerId": 1977596068750051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Bellers Panda": {
-          "runnerId": 1977596068780051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:44 Harlow": {
-      "id": 1977631033830051,
-      "start": "2022-02-02T19:44:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "238mtrs",
-      "allRunners": {
-        "Active Diva": {
-          "runnerId": 1977631034370051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Little Coco": {
-          "runnerId": 1977631034420051,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        },
-        "Spartan General": {
-          "runnerId": 1977631034450051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Hitthelids Kay": {
-          "runnerId": 1977631034480151,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        },
-        "Busters Millie": {
-          "runnerId": 1977631034510151,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Dods Tiger": {
-          "runnerId": 1977631034550051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:51 Yarmouth": {
-      "id": 1977659678020051,
-      "start": "2022-02-02T19:51:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "277",
-      "allRunners": {
-        "Scullys Sicario": {
-          "runnerId": 1977659678490051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Moors Bronco": {
-          "runnerId": 1977659678520051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Derrytresk Happy": {
-          "runnerId": 1977659678550051,
-          "withdrawn": false,
+        "Al Waab Sports Club": {
+          "runnerId": 1979413969200151,
           "back": 0,
           "lay": 0
         },
-        "Rag Doll Alan": {
-          "runnerId": 1977659678580151,
-          "withdrawn": false,
-          "back": 4.8,
+        "Al-Kharitiyath SC": {
+          "runnerId": 1979413969230151,
+          "back": 1.26,
+          "lay": 1.51
+        },
+        "DRAW (Al /Al-)": {
+          "runnerId": 1979413969270051,
+          "back": 5.1,
+          "lay": 6.6
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Al-Markhiya vs Al-Mesaimeer": {
+      "id": 1979413950730051,
+      "start": "2022-02-03T15:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Al-Markhiya": {
+          "runnerId": 1979413951390051,
+          "back": 1.58,
+          "lay": 1.72
+        },
+        "Al-Mesaimeer": {
+          "runnerId": 1979413951430051,
+          "back": 5.3,
+          "lay": 6.4
+        },
+        "DRAW (Al-/Al-)": {
+          "runnerId": 1979413951470151,
+          "back": 4.2,
+          "lay": 5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Gombe United vs MFM FC": {
+      "id": 1978597461290051,
+      "start": "2022-02-03T15:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Gombe United": {
+          "runnerId": 1978597463720051,
+          "back": 0,
           "lay": 0
         },
-        "Adamant Trooper": {
-          "runnerId": 1977659678610151,
-          "withdrawn": false,
-          "back": 2.9,
+        "MFM FC": {
+          "runnerId": 1978597463750151,
+          "back": 0,
           "lay": 0
         },
-        "Moors Oreo": {
-          "runnerId": 1977659678640051,
-          "withdrawn": false,
-          "back": 6.2,
+        "DRAW (Gom/MFM)": {
+          "runnerId": 1978597463780151,
+          "back": 0,
           "lay": 0
         }
       },
@@ -1531,53 +129,64 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     },
-    "19:54 Youghal": {
-      "id": 1977596069900051,
-      "start": "2022-02-02T19:54:00.000Z",
+    "Lusail vs Muaither SC": {
+      "id": 1979413911250051,
+      "start": "2022-02-03T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "525yds",
       "allRunners": {
-        "Witches Neptune": {
-          "runnerId": 1977596070410051,
-          "withdrawn": false,
+        "Lusail": {
+          "runnerId": 1979413911940051,
+          "back": 2.02,
+          "lay": 2.4
+        },
+        "Muaither SC": {
+          "runnerId": 1979413911980051,
+          "back": 3.25,
+          "lay": 4.1
+        },
+        "DRAW (Lus/Mua)": {
+          "runnerId": 1979413912010151,
+          "back": 3.3,
+          "lay": 4.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Rio Ave U23 vs Benfica U23": {
+      "id": 1978583336620051,
+      "start": "2022-02-03T15:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Rio Ave U23": {
+          "runnerId": 1978583338040151,
+          "back": 5.9,
+          "lay": 7.2
+        },
+        "Benfica U23": {
+          "runnerId": 1978583338080051,
+          "back": 1.46,
+          "lay": 1.65
+        },
+        "DRAW (Rio/Ben)": {
+          "runnerId": 1978583338110151,
           "back": 4.4,
-          "lay": 0
-        },
-        "Blitzn Rebel": {
-          "runnerId": 1977596070440051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Tobereen View": {
-          "runnerId": 1977596070470051,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Slaneyside Twink": {
-          "runnerId": 1977596070500051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Springside Jiver": {
-          "runnerId": 1977596070530151,
-          "withdrawn": false,
-          "back": 2.52,
-          "lay": 0
-        },
-        "Churchtown Jonjo": {
-          "runnerId": 1977596070560151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
+          "lay": 5.2
         }
       },
       "metaData": {
@@ -1586,108 +195,274 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     },
-    "19:56 Doncaster": {
-      "id": 1977621769120051,
-      "start": "2022-02-02T19:56:00.000Z",
+    "Zenit Saint-Petersburg vs FC Midtjylland": {
+      "id": 1977702916980051,
+      "start": "2022-02-03T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "450mtrs",
       "allRunners": {
-        "Frainey Shadow": {
-          "runnerId": 1977621769610051,
+        "Zenit Saint-Petersburg": {
+          "runnerId": 1977702920690151,
           "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
+          "back": 1.62,
+          "lay": 1.92
         },
-        "Mahogany Teidi": {
-          "runnerId": 1977621769640051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Brennans James": {
-          "runnerId": 1977621769670051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Barnside Nala": {
-          "runnerId": 1977621769700051,
-          "withdrawn": false,
-          "back": 2.2,
-          "lay": 0
-        },
-        "Minor Jet": {
-          "runnerId": 1977621769730051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Gilti Luna": {
-          "runnerId": 1977621769760051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "19:58 Sunderland": {
-      "id": 1977549227370051,
-      "start": "2022-02-02T19:58:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Choctaw Razan": {
-          "runnerId": 1977549227830051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Mongys Diamond": {
-          "runnerId": 1977549227860151,
-          "withdrawn": false,
-          "back": 2.9,
-          "lay": 0
-        },
-        "Margie": {
-          "runnerId": 1977549227890151,
+        "FC Midtjylland": {
+          "runnerId": 1977702920730051,
           "withdrawn": false,
           "back": 4.2,
-          "lay": 0
+          "lay": 5.4
         },
-        "Kilbannon Victor": {
-          "runnerId": 1977549227920151,
+        "DRAW (Zen/FC )": {
+          "runnerId": 1977702920760151,
           "withdrawn": false,
-          "back": 6.2,
+          "back": 4,
+          "lay": 5.1
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Al Birah vs Thagafi Tulkarem": {
+      "id": 1978881455890051,
+      "start": "2022-02-03T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Al Birah": {
+          "runnerId": 1978881456980051,
+          "back": 0,
           "lay": 0
         },
-        "Clonkil Pet": {
-          "runnerId": 1977549227950151,
+        "Thagafi Tulkarem": {
+          "runnerId": 1978881457010051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al /Tha)": {
+          "runnerId": 1978881457040151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Maccabi Yavne vs Hapoel Kfar Shelem": {
+      "id": 1977754359770051,
+      "start": "2022-02-03T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Maccabi Yavne": {
+          "runnerId": 1977754361560051,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "Hapoel Kfar Shelem": {
+          "runnerId": 1977754361610151,
+          "withdrawn": false,
+          "back": 1.51,
+          "lay": 1.79
+        },
+        "DRAW (Mac/Hap)": {
+          "runnerId": 1977754361640151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Simba SC vs Tanzania Prisons": {
+      "id": 1978885312780051,
+      "start": "2022-02-03T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Simba SC": {
+          "runnerId": 1978885314920151,
+          "back": 0,
+          "lay": 0
+        },
+        "Tanzania Prisons": {
+          "runnerId": 1978885314960051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Sim/Tan)": {
+          "runnerId": 1978885315000051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Al-Jazira Club vs AS Pirae": {
+      "id": 1977045087870051,
+      "start": "2022-02-03T16:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Al-Jazira Club": {
+          "runnerId": 1977045089640151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "AS Pirae": {
+          "runnerId": 1977045089680151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Al-/AS )": {
+          "runnerId": 1977045089710151,
+          "withdrawn": false,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Avellino vs Juve Stabia": {
+      "id": 1978879283030051,
+      "start": "2022-02-03T17:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Avellino": {
+          "runnerId": 1978879284450051,
+          "back": 1.73,
+          "lay": 1.93
+        },
+        "Juve Stabia": {
+          "runnerId": 1978879284480051,
+          "back": 4.8,
+          "lay": 5.8
+        },
+        "DRAW (Ave/Juv)": {
+          "runnerId": 1978879284520051,
+          "back": 3.35,
+          "lay": 4.1
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Potenza vs Foggia": {
+      "id": 1978879267510051,
+      "start": "2022-02-03T17:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Potenza": {
+          "runnerId": 1978879268990151,
+          "back": 0,
+          "lay": 4.4
+        },
+        "Foggia": {
+          "runnerId": 1978879269030051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Pot/Fog)": {
+          "runnerId": 1978879269070051,
+          "back": 2.88,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "USM Alger vs JS Kabylie": {
+      "id": 1977783409380051,
+      "start": "2022-02-03T17:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "USM Alger": {
+          "runnerId": 1977783412430051,
+          "withdrawn": false,
+          "back": 1.6,
+          "lay": 1.88
+        },
+        "JS Kabylie": {
+          "runnerId": 1977783412460051,
+          "withdrawn": false,
+          "back": 6,
+          "lay": 7.6
+        },
+        "DRAW (USM/JS )": {
+          "runnerId": 1977783412500051,
           "withdrawn": false,
           "back": 3.35,
-          "lay": 0
-        },
-        "Crystal Lyla": {
-          "runnerId": 1977549227990051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
+          "lay": 4.1
         }
       },
       "metaData": {
@@ -1696,273 +471,34 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     },
-    "20:03 Harlow": {
-      "id": 1977631036360051,
-      "start": "2022-02-02T20:03:00.000Z",
+    "CD Trofense vs FC Porto B": {
+      "id": 1977181336660051,
+      "start": "2022-02-03T18:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "592mtrs",
       "allRunners": {
-        "Octagon Sulos": {
-          "runnerId": 1977631036880051,
+        "CD Trofense": {
+          "runnerId": 1977181340010051,
           "withdrawn": false,
-          "back": 10.5,
-          "lay": 0
+          "back": 2.56,
+          "lay": 2.84
         },
-        "Ashville Blondie": {
-          "runnerId": 1977631036900151,
+        "FC Porto B": {
+          "runnerId": 1977181340040151,
           "withdrawn": false,
-          "back": 2.18,
-          "lay": 0
+          "back": 3.1,
+          "lay": 3.25
         },
-        "Gavins Roddick": {
-          "runnerId": 1977631036930151,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Essjay Jack": {
-          "runnerId": 1977631036960151,
-          "withdrawn": false,
-          "back": 10,
-          "lay": 0
-        },
-        "Congress Flash": {
-          "runnerId": 1977631036990151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Southfield Billy": {
-          "runnerId": 1977631037020151,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:06 Yarmouth": {
-      "id": 1977659678970051,
-      "start": "2022-02-02T20:06:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Swift Lacerate": {
-          "runnerId": 1977659679450051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Coill Bhui Liath": {
-          "runnerId": 1977659679480151,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "Deadly Tornado": {
-          "runnerId": 1977659679510051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Dominance": {
-          "runnerId": 1977659679540051,
-          "withdrawn": false,
-          "back": 2.26,
-          "lay": 0
-        },
-        "Favourite Trick": {
-          "runnerId": 1977659679570051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "James Choice": {
-          "runnerId": 1977659679590151,
-          "withdrawn": false,
-          "back": 7.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:09 Youghal": {
-      "id": 1977596071680051,
-      "start": "2022-02-02T20:09:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Churchtown Bucks": {
-          "runnerId": 1977596072210051,
-          "withdrawn": false,
-          "back": 2.76,
-          "lay": 0
-        },
-        "Aghaburren Blitz": {
-          "runnerId": 1977596072240051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Slaneyside Major": {
-          "runnerId": 1977596072260151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Ardrath Benny": {
-          "runnerId": 1977596072290151,
-          "withdrawn": false,
-          "back": 7.6,
-          "lay": 0
-        },
-        "Sizzler": {
-          "runnerId": 1977596072320151,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Ballydorgan Duke": {
-          "runnerId": 1977596072350151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:12 Sunderland": {
-      "id": 1977549228320051,
-      "start": "2022-02-02T20:12:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Steeple Rd Emily": {
-          "runnerId": 1977549228800051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Cashen Bugatti": {
-          "runnerId": 1977549228830051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Couzins Lily": {
-          "runnerId": 1977549228860151,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Skeough Tyson": {
-          "runnerId": 1977549228890051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Blue Moose": {
-          "runnerId": 1977549228920151,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Diddlers Diva": {
-          "runnerId": 1977549228960051,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:17 Doncaster": {
-      "id": 1977621771000051,
-      "start": "2022-02-02T20:17:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450mtrs",
-      "allRunners": {
-        "Mulcair Dawn": {
-          "runnerId": 1977621771510051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Nettys Turbo": {
-          "runnerId": 1977621771540151,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Luttons Ethan": {
-          "runnerId": 1977621771570151,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "Carlsbush Legend": {
-          "runnerId": 1977621771610051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Zari China": {
-          "runnerId": 1977621771640051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Bandit Bolt": {
-          "runnerId": 1977621771670051,
+        "DRAW (CD /FC )": {
+          "runnerId": 1977181340080151,
           "withdrawn": false,
           "back": 3.25,
-          "lay": 0
+          "lay": 3.4
         }
       },
       "metaData": {
@@ -1971,53 +507,34 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     },
-    "20:21 Yarmouth": {
-      "id": 1977659679920051,
-      "start": "2022-02-02T20:21:00.000Z",
+    "Resende FC vs Portuguesa RJ": {
+      "id": 1977159555750051,
+      "start": "2022-02-03T18:30:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "462",
       "allRunners": {
-        "Way Out Virginia": {
-          "runnerId": 1977659680390051,
+        "Resende FC": {
+          "runnerId": 1977159560560151,
           "withdrawn": false,
           "back": 3.25,
-          "lay": 0
+          "lay": 3.85
         },
-        "Ratchies Mofarra": {
-          "runnerId": 1977659680420051,
+        "Portuguesa RJ": {
+          "runnerId": 1977159560600151,
           "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
+          "back": 2.28,
+          "lay": 2.74
         },
-        "Fahrenheit Loki": {
-          "runnerId": 1977659680450051,
+        "DRAW (Res/Por)": {
+          "runnerId": 1977159560650051,
           "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Springwell Jolly": {
-          "runnerId": 1977659680480051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Pretty Mystery": {
-          "runnerId": 1977659680500151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Heavens Rocket": {
-          "runnerId": 1977659680530151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
+          "back": 2.9,
+          "lay": 3.45
         }
       },
       "metaData": {
@@ -2026,1097 +543,201 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     },
-    "20:23 Harlow": {
-      "id": 1977631038320051,
-      "start": "2022-02-02T20:23:00.000Z",
+    "Africa Cup of Nations": {
+      "id": 1953585200010016,
+      "start": "2022-02-03T19:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "415mtrs",
       "allRunners": {
-        "Sminky Pearl": {
-          "runnerId": 1977631038820051,
+        "Senegal": {
+          "runnerId": 1953586233720016,
           "withdrawn": false,
-          "back": 2.76,
-          "lay": 0
+          "back": 1.91,
+          "lay": 1.99
         },
-        "Long Phoenix": {
-          "runnerId": 1977631038850151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "La Dinero": {
-          "runnerId": 1977631038890151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Savana Mags": {
-          "runnerId": 1977631038920151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Measure Me": {
-          "runnerId": 1977631038950151,
-          "withdrawn": false,
-          "back": 2.52,
-          "lay": 0
-        },
-        "Orange Brendan": {
-          "runnerId": 1977631038980051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:27 Sunderland": {
-      "id": 1977549229290051,
-      "start": "2022-02-02T20:27:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Restless Spirit": {
-          "runnerId": 1977549229770051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Derrinasafa Lisa": {
-          "runnerId": 1977549229810051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Kapalua": {
-          "runnerId": 1977549229840051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Horseleap Liz": {
-          "runnerId": 1977549229870051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 0
-        },
-        "Droopys Intent": {
-          "runnerId": 1977549229900051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Headford Martin": {
-          "runnerId": 1977549229930051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:29 Youghal": {
-      "id": 1977596073430051,
-      "start": "2022-02-02T20:29:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Cherrypark Hero": {
-          "runnerId": 1977596073940051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Witches France": {
-          "runnerId": 1977596073970051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Ronnies Flyer": {
-          "runnerId": 1977596074000151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Seaview Boss": {
-          "runnerId": 1977596074030051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Falcon": {
-          "runnerId": 1977596074060051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Dromana Fury": {
-          "runnerId": 1977596074090051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:36 Yarmouth": {
-      "id": 1977659680860051,
-      "start": "2022-02-02T20:36:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Swift Presence": {
-          "runnerId": 1977659681320051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Waikiki Jim": {
-          "runnerId": 1977659681350051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Stockton": {
-          "runnerId": 1977659681380051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Moors Stevie Gee": {
-          "runnerId": 1977659681410151,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Foyle News": {
-          "runnerId": 1977659681440151,
-          "withdrawn": false,
-          "back": 2.62,
-          "lay": 0
-        },
-        "Germania Jaxx": {
-          "runnerId": 1977659681470151,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:38 Doncaster": {
-      "id": 1977621772890051,
-      "start": "2022-02-02T20:38:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "275mtrs",
-      "allRunners": {
-        "Pennys Venture": {
-          "runnerId": 1977621773410051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Moss Bonnie": {
-          "runnerId": 1977621773440051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Magale Blue": {
-          "runnerId": 1977621773470051,
-          "withdrawn": false,
-          "back": 7.2,
-          "lay": 0
-        },
-        "Tobergal Honey": {
-          "runnerId": 1977621773500151,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Bull Run Topper": {
-          "runnerId": 1977621773530051,
-          "withdrawn": false,
-          "back": 3.65,
-          "lay": 0
-        },
-        "Bungee": {
-          "runnerId": 1977621773560151,
-          "withdrawn": false,
-          "back": 3.05,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:43 Harlow": {
-      "id": 1977631040240051,
-      "start": "2022-02-02T20:43:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "238mtrs",
-      "allRunners": {
-        "VACANT": {
-          "runnerId": 1977631040740051,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "Endova Piper": {
-          "runnerId": 1977631040770051,
-          "withdrawn": false,
-          "back": 1.84,
-          "lay": 0
-        },
-        "Sam Starr": {
-          "runnerId": 1977631040800051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Pennys Meghan": {
-          "runnerId": 1977631040830051,
-          "withdrawn": false,
-          "back": 11,
-          "lay": 0
-        },
-        "Layton Legend": {
-          "runnerId": 1977631040860051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Crackaway Oxo": {
-          "runnerId": 1977631040890051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:46 Sunderland": {
-      "id": 1977549230280051,
-      "start": "2022-02-02T20:46:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Pennylane Noble": {
-          "runnerId": 1977549230740051,
-          "withdrawn": false,
-          "back": 2.82,
-          "lay": 0
-        },
-        "Wasneverajockey": {
-          "runnerId": 1977549230770151,
-          "withdrawn": false,
-          "back": 3.5,
-          "lay": 0
-        },
-        "Lanody Vet": {
-          "runnerId": 1977549230800151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Spangenberg": {
-          "runnerId": 1977549230830151,
-          "withdrawn": false,
-          "back": 3.3,
-          "lay": 0
-        },
-        "Conors Jet": {
-          "runnerId": 1977549230870051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Superior Force": {
-          "runnerId": 1977549230900051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:47 Youghal": {
-      "id": 1977596075150051,
-      "start": "2022-02-02T20:47:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Sarou Sharon": {
-          "runnerId": 1977596075670051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Deady Pat": {
-          "runnerId": 1977596075700051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Canvas Lady": {
-          "runnerId": 1977596075730051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Witches Jupiter": {
-          "runnerId": 1977596075760051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Whitty Chick": {
-          "runnerId": 1977596075790151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Stunning Ninja": {
-          "runnerId": 1977596075830051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:52 Yarmouth": {
-      "id": 1977659681820051,
-      "start": "2022-02-02T20:52:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Universal Boy": {
-          "runnerId": 1977659682320051,
-          "withdrawn": false,
-          "back": 2.88,
-          "lay": 0
-        },
-        "Swift Effigy": {
-          "runnerId": 1977659682350051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Swift Quaff": {
-          "runnerId": 1977659682380151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Ruffian Fury": {
-          "runnerId": 1977659682410051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Allen Diva": {
-          "runnerId": 1977659682470051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        " Saleen Zoe (res)": {
-          "runnerId": 1978682671830051,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "20:54 Doncaster": {
-      "id": 1977621774680051,
-      "start": "2022-02-02T20:54:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "275mtrs",
-      "allRunners": {
-        "Eden Simba": {
-          "runnerId": 1977621775240051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Moss Millie": {
-          "runnerId": 1977621775270151,
-          "withdrawn": false,
-          "back": 2.32,
-          "lay": 0
-        },
-        "Seans Hulk": {
-          "runnerId": 1977621775310051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Ballygur Ava": {
-          "runnerId": 1977621775340051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Ballymac Maggie": {
-          "runnerId": 1977621775370051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Luttons Matty": {
-          "runnerId": 1977621775400051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:01 Sunderland": {
-      "id": 1977549231230051,
-      "start": "2022-02-02T21:01:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Clonadrum Lisa": {
-          "runnerId": 1977549231690051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Pennylane Prince": {
-          "runnerId": 1977549231720151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Coolatee Megan": {
-          "runnerId": 1977549231750151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Glamorous Vicky": {
-          "runnerId": 1977549231780151,
-          "withdrawn": false,
-          "back": 2.82,
-          "lay": 0
-        },
-        "Tiermana Hayes": {
-          "runnerId": 1977549231820051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Tiermana Caramel": {
-          "runnerId": 1977549231850051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:02 Harlow": {
-      "id": 1977631042830051,
-      "start": "2022-02-02T21:02:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "415mtrs",
-      "allRunners": {
-        "Dai The Spy": {
-          "runnerId": 1977631043360051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Tickettoride": {
-          "runnerId": 1977631043390151,
-          "withdrawn": false,
-          "back": 3.3,
-          "lay": 0
-        },
-        "Moss Row Pat": {
-          "runnerId": 1977631043420151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Essjay Betty": {
-          "runnerId": 1977631043450151,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Dropdown Lovely": {
-          "runnerId": 1977631043480151,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Watchameen": {
-          "runnerId": 1977631043520051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:06 Youghal": {
-      "id": 1977596077030051,
-      "start": "2022-02-02T21:06:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Slaneyside O Dea": {
-          "runnerId": 1977596077540051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Witches Utah": {
-          "runnerId": 1977596077570051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Aldworth Ridge": {
-          "runnerId": 1977596077600051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Range Rover": {
-          "runnerId": 1977596077630051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Johnstown Donna": {
-          "runnerId": 1977596077660151,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Nellies Syd": {
-          "runnerId": 1977596077690151,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:11 Yarmouth": {
-      "id": 1977659682790051,
-      "start": "2022-02-02T21:11:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Tamna Juliet": {
-          "runnerId": 1977659683270051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Brosna Zipperer": {
-          "runnerId": 1977659683310051,
-          "withdrawn": false,
-          "back": 2.12,
-          "lay": 0
-        },
-        "Jessies Babe": {
-          "runnerId": 1977659683340051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Trevets Blue": {
-          "runnerId": 1977659683370151,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        " Chamberlain Rafa (res)": {
-          "runnerId": 1978683645670051,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "Jaxx Blue Ocean": {
-          "runnerId": 1977659683430051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:12 Doncaster": {
-      "id": 1977621776650051,
-      "start": "2022-02-02T21:12:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "275mtrs",
-      "allRunners": {
-        "Sedrina": {
-          "runnerId": 1977621777160051,
-          "withdrawn": false,
-          "back": 4.3,
-          "lay": 0
-        },
-        "Ballymac South": {
-          "runnerId": 1977621777190151,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Clees Domino": {
-          "runnerId": 1977621777220151,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Ballymac Doyle": {
-          "runnerId": 1977621777260051,
-          "withdrawn": false,
-          "back": 6.6,
-          "lay": 0
-        },
-        "Eden Rhaegal": {
-          "runnerId": 1977621777290051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Makemydaypunk": {
-          "runnerId": 1977621777320051,
-          "withdrawn": false,
-          "back": 1.8,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:16 Sunderland": {
-      "id": 1977549232190051,
-      "start": "2022-02-02T21:16:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "450",
-      "allRunners": {
-        "Bashful Kate": {
-          "runnerId": 1977549232660051,
-          "withdrawn": false,
-          "back": 3.75,
-          "lay": 0
-        },
-        "Obedient Boy": {
-          "runnerId": 1977549232690051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        },
-        "Pepper Pot": {
-          "runnerId": 1977549232720151,
-          "withdrawn": false,
-          "back": 3.75,
-          "lay": 0
-        },
-        "Malbay Panda": {
-          "runnerId": 1977549232750051,
-          "withdrawn": false,
-          "back": 4.4,
-          "lay": 0
-        },
-        "Tromora Gloss": {
-          "runnerId": 1977549232780051,
-          "withdrawn": false,
-          "back": 3.75,
-          "lay": 0
-        },
-        "Avas Court": {
-          "runnerId": 1977549232810051,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:18 Harlow": {
-      "id": 1977631044690051,
-      "start": "2022-02-02T21:18:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "238mtrs",
-      "allRunners": {
-        "Rosehill Wiggles": {
-          "runnerId": 1977631045220051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Changing": {
-          "runnerId": 1977631045250051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Mileheight Dolly": {
-          "runnerId": 1977631045280051,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Little Rona": {
-          "runnerId": 1977631045310051,
-          "withdrawn": false,
-          "back": 2.52,
-          "lay": 0
-        },
-        "Front Runner": {
-          "runnerId": 1977631045330151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Sunville Puma": {
-          "runnerId": 1977631045360151,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:22 Youghal": {
-      "id": 1977596078820051,
-      "start": "2022-02-02T21:22:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "525yds",
-      "allRunners": {
-        "Kerryroad Peg": {
-          "runnerId": 1977596079320051,
-          "withdrawn": false,
-          "back": 3.55,
-          "lay": 0
-        },
-        "Corrin Tracy": {
-          "runnerId": 1977596079360051,
-          "withdrawn": false,
-          "back": 3.3,
-          "lay": 0
-        },
-        "Murleys Joker": {
-          "runnerId": 1977596079390051,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        },
-        "Slaneyside Patsy": {
-          "runnerId": 1977596079420051,
-          "withdrawn": false,
-          "back": 4.1,
-          "lay": 0
-        },
-        "Quality Molly": {
-          "runnerId": 1977596079450051,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "Ballydorgan Trio": {
-          "runnerId": 1977596079480051,
-          "withdrawn": false,
-          "back": 5.1,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:26 Yarmouth": {
-      "id": 1977659683740051,
-      "start": "2022-02-02T21:26:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "462",
-      "allRunners": {
-        "Tusken Raider": {
-          "runnerId": 1977659684200051,
-          "withdrawn": false,
-          "back": 9.6,
-          "lay": 0
-        },
-        "The Other Lottie": {
-          "runnerId": 1977659684240051,
-          "withdrawn": false,
-          "back": 2.2,
-          "lay": 0
-        },
-        "Thymelea Boris": {
-          "runnerId": 1977659684270051,
-          "withdrawn": false,
-          "back": 4.6,
-          "lay": 0
-        },
-        "Saleen Luke": {
-          "runnerId": 1977659684300051,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "Buckos Ace": {
-          "runnerId": 1977659684330051,
-          "withdrawn": false,
-          "back": 9.2,
-          "lay": 0
-        },
-        "Kereight John": {
-          "runnerId": 1977659684360051,
-          "withdrawn": false,
-          "back": 5.6,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
-      }
-    },
-    "21:28 Doncaster": {
-      "id": 1977621778460051,
-      "start": "2022-02-02T21:28:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "275mtrs",
-      "allRunners": {
-        "Moss Turbo": {
-          "runnerId": 1977621778960051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 0
-        },
-        "Nolas Panda": {
-          "runnerId": 1977621778990151,
-          "withdrawn": false,
-          "back": 6.2,
-          "lay": 0
-        },
-        "All Wound Up": {
-          "runnerId": 1977621779020051,
+        "Cameroon": {
+          "runnerId": 1953587217260016,
           "withdrawn": false,
           "back": 3.15,
+          "lay": 3.35
+        },
+        "Egypt": {
+          "runnerId": 1953586707310016,
+          "withdrawn": false,
+          "back": 5.2,
+          "lay": 5.7
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Cameroon vs Egypt": {
+      "id": 1976124146920051,
+      "start": "2022-02-03T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Cameroon": {
+          "runnerId": 1976124148120051,
+          "back": 2.34,
+          "lay": 2.38
+        },
+        "Egypt": {
+          "runnerId": 1976124148160051,
+          "back": 4.2,
+          "lay": 4.5
+        },
+        "DRAW (Cam/Egy)": {
+          "runnerId": 1976124148190151,
+          "back": 2.88,
+          "lay": 2.96
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "La Equidad vs Rionegro Águilas": {
+      "id": 1977634728940051,
+      "start": "2022-02-03T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "La Equidad": {
+          "runnerId": 1977634731740051,
+          "withdrawn": false,
+          "back": 2.02,
+          "lay": 2.26
+        },
+        "Rionegro Águilas": {
+          "runnerId": 1977634731770151,
+          "withdrawn": false,
+          "back": 4,
+          "lay": 4.9
+        },
+        "DRAW (La /Rio)": {
+          "runnerId": 1977634731810051,
+          "withdrawn": false,
+          "back": 3,
+          "lay": 3.6
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Manchester City Women vs Tottenham Hotspur Women": {
+      "id": 1978920658500051,
+      "start": "2022-02-03T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Manchester City Women": {
+          "runnerId": 1978920660830151,
+          "back": 1.37,
+          "lay": 1.47
+        },
+        "Tottenham Hotspur Women": {
+          "runnerId": 1978920660870151,
+          "back": 0,
+          "lay": 9.2
+        },
+        "DRAW (Man/Tot)": {
+          "runnerId": 1978920660910051,
+          "back": 5.1,
+          "lay": 6.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Real Sociedad vs Real Betis": {
+      "id": 1974679741940051,
+      "start": "2022-02-03T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Real Sociedad": {
+          "runnerId": 1974679747020151,
+          "back": 2.06,
+          "lay": 2.08
+        },
+        "Real Betis": {
+          "runnerId": 1974679747060051,
+          "back": 3.95,
+          "lay": 4
+        },
+        "DRAW (Rea/Rea)": {
+          "runnerId": 1974679747100051,
+          "back": 3.75,
+          "lay": 3.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Breidablik vs Brentford FC B": {
+      "id": 1977702935540051,
+      "start": "2022-02-03T19:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Breidablik": {
+          "runnerId": 1977702938150051,
+          "back": 0,
           "lay": 0
         },
-        "Lisduff Jet": {
-          "runnerId": 1977621779050151,
-          "withdrawn": false,
-          "back": 7.2,
+        "Brentford FC B": {
+          "runnerId": 1977702938180051,
+          "back": 0,
           "lay": 0
         },
-        "Luttons Archie": {
-          "runnerId": 1977621779080151,
-          "withdrawn": false,
-          "back": 8.2,
-          "lay": 0
-        },
-        "Kangaroo Kelly": {
-          "runnerId": 1977621779120051,
-          "withdrawn": false,
-          "back": 2.76,
+        "DRAW (Bre/Bre)": {
+          "runnerId": 1977702938220051,
+          "back": 0,
           "lay": 0
         }
       },
@@ -3126,8 +747,587 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.4,
-        "currentBalance": 4.09
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Fram Reykjavik vs KR Reykjavik": {
+      "id": 1978810155400051,
+      "start": "2022-02-03T19:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Fram Reykjavik": {
+          "runnerId": 1978810156420151,
+          "back": 0,
+          "lay": 0
+        },
+        "KR Reykjavik": {
+          "runnerId": 1978810156460051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Fra/KR )": {
+          "runnerId": 1978810156490151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "KAS Eupen vs Anderlecht": {
+      "id": 1977189880020051,
+      "start": "2022-02-03T19:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "KAS Eupen": {
+          "runnerId": 1977189881170151,
+          "back": 6.6,
+          "lay": 7.2
+        },
+        "Anderlecht": {
+          "runnerId": 1977189881210051,
+          "back": 1.54,
+          "lay": 1.56
+        },
+        "DRAW (KAS/And)": {
+          "runnerId": 1977189881250051,
+          "back": 4.5,
+          "lay": 4.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Farense vs Académica de Coimbra": {
+      "id": 1977181317580051,
+      "start": "2022-02-03T20:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Farense": {
+          "runnerId": 1977181320690051,
+          "back": 1.72,
+          "lay": 1.8
+        },
+        "Académica de Coimbra": {
+          "runnerId": 1977181320730051,
+          "back": 5.7,
+          "lay": 6.2
+        },
+        "DRAW (Far/Aca)": {
+          "runnerId": 1977181320760151,
+          "back": 3.7,
+          "lay": 3.95
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Athletic Bilbao vs Real Madrid": {
+      "id": 1974679716790051,
+      "start": "2022-02-03T20:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Athletic Bilbao": {
+          "runnerId": 1974679721470051,
+          "withdrawn": false,
+          "back": 3.1,
+          "lay": 3.15
+        },
+        "Real Madrid": {
+          "runnerId": 1974679721510051,
+          "withdrawn": false,
+          "back": 2.6,
+          "lay": 2.62
+        },
+        "DRAW (Ath/Rea)": {
+          "runnerId": 1974679721550051,
+          "withdrawn": false,
+          "back": 3.35,
+          "lay": 3.4
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "AD Guanacasteca vs Municipal Grecia": {
+      "id": 1977636245590051,
+      "start": "2022-02-03T21:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "AD Guanacasteca": {
+          "runnerId": 1977636249090051,
+          "withdrawn": false,
+          "back": 2.74,
+          "lay": 3.25
+        },
+        "Municipal Grecia": {
+          "runnerId": 1977636249130051,
+          "withdrawn": false,
+          "back": 2.54,
+          "lay": 2.96
+        },
+        "DRAW (AD /Mun)": {
+          "runnerId": 1977636249160151,
+          "withdrawn": false,
+          "back": 3.2,
+          "lay": 3.9
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Botafogo FR vs Madureira EC": {
+      "id": 1977159568690051,
+      "start": "2022-02-03T21:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Botafogo FR": {
+          "runnerId": 1977159572880151,
+          "withdrawn": false,
+          "back": 1.5,
+          "lay": 1.67
+        },
+        "Madureira EC": {
+          "runnerId": 1977159572920051,
+          "withdrawn": false,
+          "back": 7,
+          "lay": 9.2
+        },
+        "DRAW (Bot/Mad)": {
+          "runnerId": 1977159572950151,
+          "withdrawn": false,
+          "back": 3.65,
+          "lay": 4.6
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Unión Magdalena vs Deportivo Pasto": {
+      "id": 1977634747850051,
+      "start": "2022-02-03T21:05:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Unión Magdalena": {
+          "runnerId": 1977634751560051,
+          "withdrawn": false,
+          "back": 1.97,
+          "lay": 2.22
+        },
+        "Deportivo Pasto": {
+          "runnerId": 1977634751590051,
+          "withdrawn": false,
+          "back": 3.85,
+          "lay": 4.8
+        },
+        "DRAW (Uni/Dep)": {
+          "runnerId": 1977634751630051,
+          "withdrawn": false,
+          "back": 3.25,
+          "lay": 3.75
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Azuriz FC vs Maringá": {
+      "id": 1978891224430051,
+      "start": "2022-02-03T21:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Azuriz FC": {
+          "runnerId": 1978891226130051,
+          "back": 0,
+          "lay": 0
+        },
+        "Maringá": {
+          "runnerId": 1978891226160151,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Azu/Mar)": {
+          "runnerId": 1978891226200051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Clube Esportivo Aimore vs SER Caxias Do Sul": {
+      "id": 1978853691110051,
+      "start": "2022-02-03T22:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Clube Esportivo Aimore": {
+          "runnerId": 1978853692340151,
+          "back": 0,
+          "lay": 0
+        },
+        "SER Caxias Do Sul": {
+          "runnerId": 1978853692380051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Clu/SER)": {
+          "runnerId": 1978853692410151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Clube Esportivo União vs Cianorte Futebol Clube": {
+      "id": 1978891233810051,
+      "start": "2022-02-03T22:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Clube Esportivo União": {
+          "runnerId": 1978891235230151,
+          "back": 0,
+          "lay": 0
+        },
+        "Cianorte Futebol Clube": {
+          "runnerId": 1978891235270051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Clu/Cia)": {
+          "runnerId": 1978891235310051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Ituano FC vs Inter Limeira": {
+      "id": 1978017907610051,
+      "start": "2022-02-03T22:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Ituano FC": {
+          "runnerId": 1978017910210051,
+          "back": 1.98,
+          "lay": 2.28
+        },
+        "Inter Limeira": {
+          "runnerId": 1978017910250051,
+          "back": 4.1,
+          "lay": 5
+        },
+        "DRAW (Itu/Int)": {
+          "runnerId": 1978017910280051,
+          "back": 2.96,
+          "lay": 3.65
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Mirassol FC vs Guarani SP": {
+      "id": 1978017918160051,
+      "start": "2022-02-03T22:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Mirassol FC": {
+          "runnerId": 1978017920630151,
+          "withdrawn": false,
+          "back": 2.04,
+          "lay": 2.32
+        },
+        "Guarani SP": {
+          "runnerId": 1978017920670051,
+          "withdrawn": false,
+          "back": 3.8,
+          "lay": 4.6
+        },
+        "DRAW (Mir/Gua)": {
+          "runnerId": 1978017920700151,
+          "withdrawn": false,
+          "back": 3,
+          "lay": 3.65
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Clube Sociedade Esportiva vs Jacyoba AC": {
+      "id": 1978919839970051,
+      "start": "2022-02-03T23:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Clube Sociedade Esportiva": {
+          "runnerId": 1978919841440051,
+          "back": 0,
+          "lay": 0
+        },
+        "Jacyoba AC": {
+          "runnerId": 1978919841480051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Clu/Jac)": {
+          "runnerId": 1978919841520051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Murici FC vs Cruzeiro de Arapiraca": {
+      "id": 1978919860290051,
+      "start": "2022-02-03T23:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Murici FC": {
+          "runnerId": 1978919862050051,
+          "back": 0,
+          "lay": 0
+        },
+        "Cruzeiro de Arapiraca": {
+          "runnerId": 1978919862090051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Mur/Cru)": {
+          "runnerId": 1978919862120151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Jaguares de Córdoba vs Patriotas F.C.": {
+      "id": 1977634712750051,
+      "start": "2022-02-03T23:10:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Jaguares de Córdoba": {
+          "runnerId": 1977634715990051,
+          "withdrawn": false,
+          "back": 1.67,
+          "lay": 1.91
+        },
+        "Patriotas F.C.": {
+          "runnerId": 1977634716030051,
+          "withdrawn": false,
+          "back": 5.3,
+          "lay": 6.4
+        },
+        "DRAW (Jag/Pat)": {
+          "runnerId": 1977634716060151,
+          "withdrawn": false,
+          "back": 3.45,
+          "lay": 4.1
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Fluminense FC vs Audax RJ": {
+      "id": 1977440889990051,
+      "start": "2022-02-03T23:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Fluminense FC": {
+          "runnerId": 1977440894370051,
+          "back": 1.25,
+          "lay": 1.34
+        },
+        "Audax RJ": {
+          "runnerId": 1977440894400151,
+          "back": 0,
+          "lay": 18.5
+        },
+        "DRAW (Flu/Aud)": {
+          "runnerId": 1977440894440051,
+          "back": 5.5,
+          "lay": 7.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
+      }
+    },
+    "Sergipe vs AD Confianca": {
+      "id": 1978894380190051,
+      "start": "2022-02-03T23:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Sergipe": {
+          "runnerId": 1978894381390051,
+          "back": 0,
+          "lay": 0
+        },
+        "AD Confianca": {
+          "runnerId": 1978894381420051,
+          "back": 0,
+          "lay": 0
+        },
+        "DRAW (Ser/AD )": {
+          "runnerId": 1978894381450151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 4.95
       }
     }
   }
