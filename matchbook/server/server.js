@@ -42,15 +42,11 @@
 	const g_sportsIdNameMapping = {};
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
-	// let g_betMinutesOffset = -1; // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-	// let g_minWinConfidencePercentage = 80; // 80 => comparison with nearest competitor ex: 100  (100% or more)
-	// let g_minProfitOdd = 0.8; // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
-	// let g_maxRunnersCount = 25; // 16; // 8
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	const g_onlyOne_raceName = "13:00 Catterick";
-	// const g_onlyOne_raceName = null; 
+	// const g_onlyOne_raceName = "13:00 Catterick";
+	const g_onlyOne_raceName = null; 
 
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
@@ -58,34 +54,33 @@
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	// let g_sportsInterested = ['ALL'];
-	let g_sportsInterested = [
-		'Horse Racing', //.
-		// 'Soccer', //.
-		// 'Greyhound Racing', //.
+	let g_sportsInterested = ['ALL'];
+	// let g_sportsInterested = [
+	// 	'Horse Racing', //.
+	// 	// 'Soccer', //.
+	// 	// 'Greyhound Racing', //.
 
-		// 'American Football',//.
-		// 'Basketball', //.
-		// "Boxing", //.
-		// "Golf", //.
+	// 	// 'American Football',//.
+	// 	// 'Basketball', //.
+	// 	// "Boxing", //.
+	// 	// "Golf", //.
 
-		// 'Ice Hockey', //.
-		// 'Rugby Union', //.
-		// 'Enhanced Specials', //.
-		// 'Snooker', //.
+	// 	// 'Ice Hockey', //.
+	// 	// 'Rugby Union', //.
+	// 	// 'Enhanced Specials', //.
+	// 	// 'Snooker', //.
 
+	// 	// "Baseball", //.
+	// 	// "Cricket", //.
+	// 	// "Motor Sport", //.
+	// 	// "Tennis", //.
 
-		// "Baseball", //.
-		// "Cricket", //.
-		// "Motor Sport", //.
-		// "Tennis", //.
-
-		// "Volleyball",
-		// "Chess",
-		// "Cycling",
-		// "Rugby League",
-		// "Table Tennis",
-	];
+	// 	// "Volleyball",
+	// 	// "Chess",
+	// 	// "Cycling",
+	// 	// "Rugby League",
+	// 	// "Table Tennis",
+	// ];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -161,7 +156,6 @@
 
 		return false;
 	};
-
 
 	isWinningHorse = (sportName, winPercentage, profitOdd, runnersCount) => {
 		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
@@ -503,7 +497,7 @@
 	};
 
 	// Get Event
-	getEvent = async function (event_id, returnFunction) {
+	getEvent = async function (event_id, callback) {
 		const options = UTIL.getDefaultOptions();
 		options.qs = {
 			'exchange-type': 'back-lay',
@@ -581,7 +575,7 @@
 				}
 			}
 
-			returnFunction(runnersObj); // return the object from the callback function 
+			callback(runnersObj); // return the object from the callback function 
 		});
 	};
 
@@ -1128,7 +1122,6 @@
 			let sports_cbCount = new callbackCount(0, g_sportsInterested.length);
 
 			// Calling callback functions inside a loop
-			// g_sportsInterested.forEach(function(sport) {
 			for (const sport of g_sportsInterested) {
 				// input  - sports id
 				// output - event id
@@ -1197,7 +1190,6 @@
 	};
 
 
-
 	// Entry Function
 	(function () {
 
@@ -1214,36 +1206,33 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 		getNewSession();
 
-
-		////////////////////////////////////////////////////////////////////////
-		// correct
-		// (async () => {
-		// 	await myTest("one");
-		// 	await myTest("two");
-		// 	await myTest("three");
-		// 	await myTest("four");
-		// 	await myTest("five");
-		// })();
-
-
-
-		// Wrong
-		// myTestWrapper("one");
-		// myTestWrapper("two");
-		// myTestWrapper("three");
-		// myTestWrapper("four");
-		// myTestWrapper("five");
-
-		// myTest("one").then(myTest("two")).then(myTest("three")).then(myTest("four")).then(myTest("five"));
-
-		////////////////////////////////////////////////////////////////////////
 	})(); // IIF - Main entry (login)
-
-
 
 }()); // namespace
 
 /*
+	////////////////////////////////////////////////////////////////////////
+	// correct
+	// (async () => {
+	// 	await myTest("one");
+	// 	await myTest("two");
+	// 	await myTest("three");
+	// 	await myTest("four");
+	// 	await myTest("five");
+	// })();
+
+
+
+	// Wrong
+	// myTestWrapper("one");
+	// myTestWrapper("two");
+	// myTestWrapper("three");
+	// myTestWrapper("four");
+	// myTestWrapper("five");
+
+	// myTest("one").then(myTest("two")).then(myTest("three")).then(myTest("four")).then(myTest("five"));
+
+	////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////
 	myTest = async (value) => {
 		const result = await TIMER.awaitForMaxReqTimeSlot("EVENTS");

@@ -479,6 +479,156 @@
       },
       "event-start-time": "04/02/2022, 16:10:00",
       "bet-placed-time": "07:05:18  04-02-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1978424437910051,
+      "event-name": "18:00 Dundalk",
+      "runner-name": "3 The Pargey Bee",
+      "decimal-odds": 2.3,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978424437910051,
+        "start": "2022-02-04T18:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "7f",
+        "allRunners": {
+          "4 Cherry Bloom": {
+            "runnerId": 1978424438890151,
+            "withdrawn": false,
+            "back": 8.8,
+            "lay": 0,
+            "name": "4 Cherry Bloom",
+            "event-name": "18:00 Dundalk"
+          },
+          "1 Kirsapp": {
+            "runnerId": 1978424438800051,
+            "withdrawn": false,
+            "back": 11,
+            "lay": 0,
+            "name": "1 Kirsapp",
+            "event-name": "18:00 Dundalk"
+          },
+          "2 Dubirango": {
+            "runnerId": 1978424438830151,
+            "withdrawn": false,
+            "back": 5.2,
+            "lay": 26,
+            "name": "2 Dubirango",
+            "event-name": "18:00 Dundalk"
+          },
+          "3 The Pargey Bee": {
+            "runnerId": 1978424438860151,
+            "withdrawn": false,
+            "back": 2.2,
+            "lay": 3.75,
+            "name": "3 The Pargey Bee",
+            "event-name": "18:00 Dundalk",
+            "numberOfRunners": 10,
+            "winPercentage": 136.36363636363635,
+            "startTime": "2022-02-04T18:00:00.000Z",
+            "raceId": 1978424437910051,
+            "raceName": "18:00 Dundalk",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.2000000000000002,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "7f"
+          },
+          "5 Susan's Pass": {
+            "runnerId": 1978424438920151,
+            "withdrawn": false,
+            "back": 9.2,
+            "lay": 0,
+            "name": "5 Susan's Pass",
+            "event-name": "18:00 Dundalk"
+          },
+          "6 Clarinbridge": {
+            "runnerId": 1978424438950151,
+            "withdrawn": false,
+            "back": 5.6,
+            "lay": 34,
+            "name": "6 Clarinbridge",
+            "event-name": "18:00 Dundalk"
+          },
+          "7 Urban Oasis": {
+            "runnerId": 1978424438990051,
+            "withdrawn": false,
+            "back": 11,
+            "lay": 0,
+            "name": "7 Urban Oasis",
+            "event-name": "18:00 Dundalk"
+          },
+          "8 Decorated Guest": {
+            "runnerId": 1978424439010151,
+            "withdrawn": false,
+            "back": 10.5,
+            "lay": 0,
+            "name": "8 Decorated Guest",
+            "event-name": "18:00 Dundalk"
+          },
+          "9 Victory Lantern": {
+            "runnerId": 1978424439040151,
+            "withdrawn": false,
+            "back": 5.7,
+            "lay": 0,
+            "name": "9 Victory Lantern",
+            "event-name": "18:00 Dundalk"
+          },
+          "10 Penny Pingleton": {
+            "runnerId": 1978424439070151,
+            "withdrawn": false,
+            "back": 6,
+            "lay": 0,
+            "name": "10 Penny Pingleton",
+            "event-name": "18:00 Dundalk"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 1,
+          "currentBalance": 6.25
+        },
+        "luckyWinner": {
+          "runnerId": 1978424438860151,
+          "withdrawn": false,
+          "back": 2.2,
+          "lay": 3.75,
+          "name": "3 The Pargey Bee",
+          "event-name": "18:00 Dundalk",
+          "numberOfRunners": 10,
+          "winPercentage": 136.36363636363635,
+          "startTime": "2022-02-04T18:00:00.000Z",
+          "raceId": 1978424437910051,
+          "raceName": "18:00 Dundalk",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.2000000000000002,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "7f"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 1,
+        "currentBalance": 6.25
+      },
+      "event-start-time": "04/02/2022, 18:00:00",
+      "bet-placed-time": "08:20:29  04-02-2022"
     }
   ],
   "Soccer": [
@@ -572,6 +722,215 @@
       },
       "event-start-time": "04/02/2022, 17:00:00",
       "bet-placed-time": "07:05:33  04-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1977756610870051,
+      "event-name": "Al-Ittihad Kalba vs Al-Sharjah",
+      "runner-name": "Al-Sharjah",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1977756610870051,
+        "start": "2022-02-04T16:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "allRunners": {
+          "Al-Ittihad Kalba": {
+            "runnerId": 1977756612960051,
+            "withdrawn": false,
+            "back": 3.6,
+            "lay": 4.6,
+            "name": "Al-Ittihad Kalba",
+            "event-name": "Al-Ittihad Kalba vs Al-Sharjah"
+          },
+          "Al-Sharjah": {
+            "runnerId": 1977756613000051,
+            "withdrawn": false,
+            "back": 1.88,
+            "lay": 2.16,
+            "name": "Al-Sharjah",
+            "event-name": "Al-Ittihad Kalba vs Al-Sharjah",
+            "numberOfRunners": 3,
+            "winPercentage": 80.85106382978724,
+            "startTime": "2022-02-04T16:00:00.000Z",
+            "raceId": 1977756610870051,
+            "raceName": "Al-Ittihad Kalba vs Al-Sharjah",
+            "sportName": "Soccer",
+            "profitOdd": 0.8799999999999999,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "DRAW (Al-/Al-)": {
+            "runnerId": 1977756613040051,
+            "withdrawn": false,
+            "back": 3.4,
+            "lay": 4.4,
+            "name": "DRAW (Al-/Al-)",
+            "event-name": "Al-Ittihad Kalba vs Al-Sharjah"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 1.4,
+          "currentBalance": 5.85
+        },
+        "luckyWinner": {
+          "runnerId": 1977756613000051,
+          "withdrawn": false,
+          "back": 1.88,
+          "lay": 2.16,
+          "name": "Al-Sharjah",
+          "event-name": "Al-Ittihad Kalba vs Al-Sharjah",
+          "numberOfRunners": 3,
+          "winPercentage": 80.85106382978724,
+          "startTime": "2022-02-04T16:00:00.000Z",
+          "raceId": 1977756610870051,
+          "raceName": "Al-Ittihad Kalba vs Al-Sharjah",
+          "sportName": "Soccer",
+          "profitOdd": 0.8799999999999999,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 1.4,
+        "currentBalance": 5.85
+      },
+      "event-start-time": "04/02/2022, 16:00:00",
+      "bet-placed-time": "08:23:25  04-02-2022"
+    }
+  ],
+  "Greyhound Racing": [
+    {
+      "status": "open",
+      "sport-id": 241798357140019,
+      "sport-name": "Greyhound Racing",
+      "event-id": 1979304049550051,
+      "event-name": "08:27 Towcester",
+      "runner-name": "Stellasglamorous",
+      "decimal-odds": 2.5,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1979304049550051,
+        "start": "2022-02-04T08:27:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "270mtrs",
+        "allRunners": {
+          "Lilys Pearl": {
+            "runnerId": 1979304050080051,
+            "withdrawn": false,
+            "back": 6.8,
+            "lay": 9,
+            "name": "Lilys Pearl",
+            "event-name": "08:27 Towcester"
+          },
+          "Salacres Ocean": {
+            "runnerId": 1979304050110051,
+            "withdrawn": false,
+            "back": 5.2,
+            "lay": 5.7,
+            "name": "Salacres Ocean",
+            "event-name": "08:27 Towcester"
+          },
+          "Stellasglamorous": {
+            "runnerId": 1979304050140051,
+            "withdrawn": false,
+            "back": 2.44,
+            "lay": 2.74,
+            "name": "Stellasglamorous",
+            "event-name": "08:27 Towcester",
+            "numberOfRunners": 6,
+            "winPercentage": 113.11475409836066,
+            "startTime": "2022-02-04T08:27:00.000Z",
+            "raceId": 1979304049550051,
+            "raceName": "08:27 Towcester",
+            "sportName": "Greyhound Racing",
+            "profitOdd": 1.44,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "Centurion": {
+            "runnerId": 1979304050170051,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 10,
+            "name": "Centurion",
+            "event-name": "08:27 Towcester"
+          },
+          "Ballymac Babes": {
+            "runnerId": 1979304050200051,
+            "withdrawn": false,
+            "back": 8.4,
+            "lay": 12,
+            "name": "Ballymac Babes",
+            "event-name": "08:27 Towcester"
+          },
+          "Da Hurricane": {
+            "runnerId": 1979304050230151,
+            "withdrawn": false,
+            "back": 15.5,
+            "lay": 36,
+            "name": "Da Hurricane",
+            "event-name": "08:27 Towcester"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 100,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 1.2,
+          "currentBalance": 6.05
+        },
+        "luckyWinner": {
+          "runnerId": 1979304050140051,
+          "withdrawn": false,
+          "back": 2.44,
+          "lay": 2.74,
+          "name": "Stellasglamorous",
+          "event-name": "08:27 Towcester",
+          "numberOfRunners": 6,
+          "winPercentage": 113.11475409836066,
+          "startTime": "2022-02-04T08:27:00.000Z",
+          "raceId": 1979304049550051,
+          "raceName": "08:27 Towcester",
+          "sportName": "Greyhound Racing",
+          "profitOdd": 1.44,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 100,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 1.2,
+        "currentBalance": 6.05
+      },
+      "event-start-time": "04/02/2022, 08:27:00",
+      "bet-placed-time": "08:22:40  04-02-2022"
     }
   ]
 }
