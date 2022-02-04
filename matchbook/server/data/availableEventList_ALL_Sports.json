@@ -1,302 +1,95 @@
 {
-  "id": 9,
+  "id": 24735152712200,
   "events": {
-    "Kamil Majchrzak vs Lorenzo Musetti": {
-      "id": 1978561117130051,
-      "start": "2022-02-04T07:35:00.000Z",
+    "10:20 Fairview": {
+      "id": 1979188840080051,
+      "start": "2022-02-04T10:20:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Kamil Majchrzak": {
-          "runnerId": 1978561117470051,
-          "back": 1.71,
-          "lay": 1.76
-        },
-        "Lorenzo Musetti": {
-          "runnerId": 1978561117500151,
-          "back": 2.32,
-          "lay": 2.42
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "0m 6f 211y"
     },
-    "Jay Friend vs Luis Diego Chavez Villalpando": {
-      "id": 1979333915260151,
-      "start": "2022-02-04T08:35:00.000Z",
+    "10:55 Fairview": {
+      "id": 1979188875430051,
+      "start": "2022-02-04T10:55:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Jay Friend": {
-          "runnerId": 1979333916120051,
-          "back": 0,
-          "lay": 0
-        },
-        "Luis Diego Chavez Villalpando": {
-          "runnerId": 1979333916160051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "1m 1f 98y"
     },
-    "Jean Christian Morandais vs Ignasi De Rueda De Genover": {
-      "id": 1979333914650051,
-      "start": "2022-02-04T08:35:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Jean Christian Morandais": {
-          "runnerId": 1979333914930051,
-          "back": 0,
-          "lay": 0
-        },
-        "Ignasi De Rueda De Genover": {
-          "runnerId": 1979333914970051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Emil Ruusuvuori vs Jiri Vesely": {
-      "id": 1979224213290051,
-      "start": "2022-02-04T09:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Emil Ruusuvuori": {
-          "runnerId": 1979224213650051,
-          "back": 1.39,
-          "lay": 1.42
-        },
-        "Jiri Vesely": {
-          "runnerId": 1979224213680151,
-          "back": 3.4,
-          "lay": 3.6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Jip Van Assendelft vs Kuzey Cekirge": {
-      "id": 1979333914750051,
-      "start": "2022-02-04T09:45:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Jip Van Assendelft": {
-          "runnerId": 1979333915090051,
-          "back": 0,
-          "lay": 0
-        },
-        "Kuzey Cekirge": {
-          "runnerId": 1979333915130151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Roberto Ortega-Olmedo vs Vladyslav Manafov": {
-      "id": 1979333927180051,
-      "start": "2022-02-04T09:45:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Roberto Ortega-Olmedo": {
-          "runnerId": 1979333927400051,
-          "back": 0,
-          "lay": 0
-        },
-        "Vladyslav Manafov": {
-          "runnerId": 1979333927440051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "João Sousa vs Daniel Altmaier": {
-      "id": 1978477184930051,
-      "start": "2022-02-04T10:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "João Sousa": {
-          "runnerId": 1978477185280051,
-          "back": 2.58,
-          "lay": 2.72
-        },
-        "Daniel Altmaier": {
-          "runnerId": 1978477185320151,
-          "back": 1.58,
-          "lay": 1.63
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Martins Podzus vs David Perez Sanz": {
-      "id": 1979334091760051,
-      "start": "2022-02-04T11:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Martins Podzus": {
-          "runnerId": 1979334092020051,
-          "back": 0,
-          "lay": 0
-        },
-        "David Perez Sanz": {
-          "runnerId": 1979334092070051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Yurii Dzhavakian vs Marcelo Zormann Da Silva": {
-      "id": 1979333915240051,
-      "start": "2022-02-04T11:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Yurii Dzhavakian": {
-          "runnerId": 1979333916110051,
-          "back": 0,
-          "lay": 0
-        },
-        "Marcelo Zormann Da Silva": {
-          "runnerId": 1979333916150251,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Elias Ymer vs Stefano Travaglia": {
-      "id": 1979346567740051,
+    "11:30 Fairview": {
+      "id": 1979188877680051,
       "start": "2022-02-04T11:30:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Elias Ymer": {
-          "runnerId": 1979346568090051,
-          "back": 1.87,
-          "lay": 1.94
-        },
-        "Stefano Travaglia": {
-          "runnerId": 1979346568130051,
-          "back": 2.06,
-          "lay": 2.16
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "1m 1f 98y"
     },
-    "Filip Krajinovic vs Damir Dzumhur": {
-      "id": 1979412393470051,
-      "start": "2022-02-04T13:35:00.000Z",
+    "12:05 Fairview": {
+      "id": 1979188880270051,
+      "start": "2022-02-04T12:05:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
+      "race-length": "1m 1f 98y"
+    },
+    "12:40 Fairview": {
+      "id": 1979188881630051,
+      "start": "2022-02-04T12:40:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 5f 212y"
+    },
+    "13:00 Catterick": {
+      "id": 1978418119110051,
+      "start": "2022-02-04T13:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 7f 156y",
       "allRunners": {
-        "Filip Krajinovic": {
-          "runnerId": 1979412393730151,
-          "back": 1.45,
-          "lay": 1.52
+        "2 Icone D'aubrelle": {
+          "runnerId": 1978418119770051,
+          "withdrawn": false,
+          "back": 3.15,
+          "lay": 4.2
         },
-        "Damir Dzumhur": {
-          "runnerId": 1979412393780051,
-          "back": 2.94,
+        "1 Collingham": {
+          "runnerId": 1978418119740051,
+          "withdrawn": false,
+          "back": 3.1,
           "lay": 3.2
+        },
+        "3 Jaramillo": {
+          "runnerId": 1978418119810051,
+          "withdrawn": false,
+          "back": 3.25,
+          "lay": 4.8
+        },
+        "7 Sanosuke": {
+          "runnerId": 1978418119930051,
+          "withdrawn": false,
+          "back": 12,
+          "lay": 95
+        },
+        "4 Monsieur Pom Pom": {
+          "runnerId": 1978418119840051,
+          "withdrawn": false,
+          "back": 7.6,
+          "lay": 480
+        },
+        "5 Piecederesistance": {
+          "runnerId": 1978418119870051,
+          "withdrawn": false,
+          "back": 10.5,
+          "lay": 0
+        },
+        "6 Professor Calculus": {
+          "runnerId": 1978418119900051,
+          "withdrawn": false,
+          "back": 6,
+          "lay": 990
         }
       },
       "metaData": {
@@ -305,485 +98,305 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
+        "sumOfAlreadyPlacedBetAmount": 1,
+        "currentBalance": 6.25
       }
     },
-    "Sean Daryabeigi vs Jake Trondson": {
-      "id": 1979499132880051,
-      "start": "2022-02-04T14:00:00.000Z",
+    "13:15 Fairview": {
+      "id": 1979188883040051,
+      "start": "2022-02-04T13:15:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Sean Daryabeigi": {
-          "runnerId": 1979499133120051,
-          "back": 0,
-          "lay": 0
-        },
-        "Jake Trondson": {
-          "runnerId": 1979499133160151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "0m 4f 214y"
     },
-    "Stefano Liokossis vs Luca Julian Hotze": {
-      "id": 1979499133290051,
-      "start": "2022-02-04T14:00:00.000Z",
+    "13:20 Chepstow": {
+      "id": 1978418718050051,
+      "start": "2022-02-04T13:20:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Stefano Liokossis": {
-          "runnerId": 1979499133660051,
-          "back": 0,
-          "lay": 0
-        },
-        "Luca Julian Hotze": {
-          "runnerId": 1979499133700051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "2m 0f 11y"
     },
-    "Alexander Bublik vs Roberto Bautista Agut": {
-      "id": 1978825863060051,
+    "13:30 Catterick": {
+      "id": 1978418120560051,
+      "start": "2022-02-04T13:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 7f 145y"
+    },
+    "13:40 Lingfield": {
+      "id": 1978420530650051,
+      "start": "2022-02-04T13:40:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 0f 1y"
+    },
+    "13:50 Fairview": {
+      "id": 1979188884160051,
+      "start": "2022-02-04T13:50:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 4f 214y"
+    },
+    "13:55 Chepstow": {
+      "id": 1978418720230051,
+      "start": "2022-02-04T13:55:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "2m 7f 131y"
+    },
+    "14:05 Catterick": {
+      "id": 1978418121390051,
+      "start": "2022-02-04T14:05:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "3m 1f 71y"
+    },
+    "14:15 Lingfield": {
+      "id": 1978420531930051,
+      "start": "2022-02-04T14:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 7f 1y"
+    },
+    "14:23 Fairview": {
+      "id": 1979188885780051,
+      "start": "2022-02-04T14:23:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 4f 214y"
+    },
+    "14:25 Chepstow": {
+      "id": 1978418721020051,
+      "start": "2022-02-04T14:25:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "2m 7f 131y"
+    },
+    "14:35 Catterick": {
+      "id": 1978418122190051,
       "start": "2022-02-04T14:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Alexander Bublik": {
-          "runnerId": 1978825863590051,
-          "back": 3,
-          "lay": 3.2
-        },
-        "Roberto Bautista Agut": {
-          "runnerId": 1978825863630051,
-          "back": 1.46,
-          "lay": 1.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "3m 1f 54y"
     },
-    "Jonathan Mridha vs Karl Friberg": {
-      "id": 1979499133320051,
+    "14:45 Lingfield": {
+      "id": 1978420532740051,
+      "start": "2022-02-04T14:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 6f 1y"
+    },
+    "15:00 Chepstow": {
+      "id": 1978418722520051,
       "start": "2022-02-04T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Jonathan Mridha": {
-          "runnerId": 1979499133680051,
-          "back": 0,
-          "lay": 0
-        },
-        "Karl Friberg": {
-          "runnerId": 1979499133710151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "2m 3f 98y"
     },
-    "Thomas Fabbiano vs Cedrik-Marcel Stebe": {
-      "id": 1978739030710051,
-      "start": "2022-02-04T15:00:00.000Z",
+    "15:10 Catterick": {
+      "id": 1978418122750051,
+      "start": "2022-02-04T15:10:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Thomas Fabbiano": {
-          "runnerId": 1978739031220151,
-          "back": 2.26,
-          "lay": 2.52
-        },
-        "Cedrik-Marcel Stebe": {
-          "runnerId": 1978739031260051,
-          "back": 1.66,
-          "lay": 1.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "2m 3f 66y"
     },
-    "Victor Nunez vs Mwendwa Mbithi": {
-      "id": 1979499144170051,
-      "start": "2022-02-04T15:00:00.000Z",
+    "15:20 Lingfield": {
+      "id": 1978420534330051,
+      "start": "2022-02-04T15:20:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Victor Nunez": {
-          "runnerId": 1979499144370051,
-          "back": 0,
-          "lay": 0
-        },
-        "Mwendwa Mbithi": {
-          "runnerId": 1979499144410051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "0m 5f 6y"
     },
-    "Boris Arias vs Ricardo Rodriguez-Pace": {
-      "id": 1979499144310051,
+    "15:30 Chepstow": {
+      "id": 1978418724590051,
+      "start": "2022-02-04T15:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "3m 2f 54y"
+    },
+    "15:40 Catterick": {
+      "id": 1978418123740051,
+      "start": "2022-02-04T15:40:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "2m 3f 51y"
+    },
+    "15:50 Lingfield": {
+      "id": 1978420535850051,
+      "start": "2022-02-04T15:50:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 2f 0y"
+    },
+    "15:55 Dundalk": {
+      "id": 1978424423140051,
+      "start": "2022-02-04T15:55:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "5f"
+    },
+    "16:00 Chepstow": {
+      "id": 1978418726980051,
       "start": "2022-02-04T16:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Boris Arias": {
-          "runnerId": 1979499144500051,
-          "back": 0,
-          "lay": 0
-        },
-        "Ricardo Rodriguez-Pace": {
-          "runnerId": 1979499144530051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "2m 3f 100y"
     },
-    "Noureldin Adam vs Brayden Michna": {
-      "id": 1979499144900051,
-      "start": "2022-02-04T16:00:00.000Z",
+    "16:10 Newcastle": {
+      "id": 1978420538500051,
+      "start": "2022-02-04T16:10:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Noureldin Adam": {
-          "runnerId": 1979499145090051,
-          "back": 0,
-          "lay": 0
-        },
-        "Brayden Michna": {
-          "runnerId": 1979499145120151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "1m 2f 42y"
     },
-    "Yoshihito Nishioka vs William Blumberg": {
-      "id": 1979598823690051,
-      "start": "2022-02-04T16:00:00.000Z",
+    "16:15 Catterick": {
+      "id": 1978418124710051,
+      "start": "2022-02-04T16:15:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Yoshihito Nishioka": {
-          "runnerId": 1979598825630051,
-          "back": 1.21,
-          "lay": 1.28
-        },
-        "William Blumberg": {
-          "runnerId": 1979598825680051,
-          "back": 4.6,
-          "lay": 5.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "2m 3f 66y"
     },
-    "Ernesto Escobedo vs Dominic Stephan Stricker": {
-      "id": 1978805312340051,
+    "16:24 Lingfield": {
+      "id": 1978420536720051,
+      "start": "2022-02-04T16:24:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 2f 0y"
+    },
+    "16:30 Dundalk": {
+      "id": 1978424426040051,
+      "start": "2022-02-04T16:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 4f"
+    },
+    "16:35 Chepstow": {
+      "id": 1978418728990051,
+      "start": "2022-02-04T16:35:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "2m 0f 11y"
+    },
+    "16:45 Newcastle": {
+      "id": 1978420556230051,
+      "start": "2022-02-04T16:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 6f 0y"
+    },
+    "17:00 Dundalk": {
+      "id": 1978424428950051,
       "start": "2022-02-04T17:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Ernesto Escobedo": {
-          "runnerId": 1978805312840051,
-          "back": 1.76,
-          "lay": 2.2
-        },
-        "Dominic Stephan Stricker": {
-          "runnerId": 1978805312870151,
-          "back": 1.84,
-          "lay": 2.32
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "1m 2f 150yds"
     },
-    "Albert Ramos-Vinolas vs Lorenzo Sonego": {
-      "id": 1979688614840051,
+    "17:15 Newcastle": {
+      "id": 1978420557230051,
+      "start": "2022-02-04T17:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 6f 0y"
+    },
+    "17:30 Dundalk": {
+      "id": 1978424433450051,
       "start": "2022-02-04T17:30:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Albert Ramos-Vinolas": {
-          "runnerId": 1979688615500051,
-          "back": 2.14,
-          "lay": 2.26
-        },
-        "Lorenzo Sonego": {
-          "runnerId": 1979688615530151,
-          "back": 1.79,
-          "lay": 1.87
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "1m 2f 150yds"
     },
-    "Mikael Ymer vs Richard Gasquet": {
-      "id": 1979662730010051,
-      "start": "2022-02-04T18:35:00.000Z",
+    "17:45 Newcastle": {
+      "id": 1978420558290051,
+      "start": "2022-02-04T17:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Mikael Ymer": {
-          "runnerId": 1979662730520051,
-          "back": 1.66,
-          "lay": 1.74
-        },
-        "Richard Gasquet": {
-          "runnerId": 1979662730560051,
-          "back": 2.36,
-          "lay": 2.5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "0m 5f 0y"
     },
-    "Juan Ignacio Londero vs Nikola Milojevic": {
-      "id": 1978960631650051,
+    "18:00 Dundalk": {
+      "id": 1978424437910051,
+      "start": "2022-02-04T18:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "7f"
+    },
+    "18:15 Newcastle": {
+      "id": 1978420559750051,
+      "start": "2022-02-04T18:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m 0f 5y"
+    },
+    "18:30 Dundalk": {
+      "id": 1978424440610051,
+      "start": "2022-02-04T18:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m"
+    },
+    "18:45 Newcastle": {
+      "id": 1978420560730051,
+      "start": "2022-02-04T18:45:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "0m 7f 14y"
+    },
+    "19:00 Dundalk": {
+      "id": 1978424443360051,
+      "start": "2022-02-04T19:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "race-length": "1m"
+    },
+    "19:15 Newcastle": {
+      "id": 1978420562000051,
       "start": "2022-02-04T19:15:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Juan Ignacio Londero": {
-          "runnerId": 1978960632430051,
-          "back": 1.59,
-          "lay": 1.62
-        },
-        "Nikola Milojevic": {
-          "runnerId": 1978960632470051,
-          "back": 2.62,
-          "lay": 2.7
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "0m 7f 14y"
     },
-    "Alexander Zverev vs Adrian Mannarino": {
-      "id": 1979615695580051,
-      "start": "2022-02-04T19:35:00.000Z",
+    "19:30 Dundalk": {
+      "id": 1978424447470051,
+      "start": "2022-02-04T19:30:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "allRunners": {
-        "Alexander Zverev": {
-          "runnerId": 1979615695920051,
-          "back": 1.17,
-          "lay": 1.22
-        },
-        "Adrian Mannarino": {
-          "runnerId": 1979615695960051,
-          "back": 5.6,
-          "lay": 6.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Diego Sebastian Schwartzman vs Daniel Elahi Galan": {
-      "id": 1978879496770051,
-      "start": "2022-02-04T21:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Diego Sebastian Schwartzman": {
-          "runnerId": 1978879497360051,
-          "back": 1.24,
-          "lay": 1.27
-        },
-        "Daniel Elahi Galan": {
-          "runnerId": 1978879497390051,
-          "back": 4.8,
-          "lay": 5.2
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Sebastian Baez vs Alejandro Tabilo": {
-      "id": 1979844699300051,
-      "start": "2022-02-04T23:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Sebastian Baez": {
-          "runnerId": 1979844699850051,
-          "back": 1.53,
-          "lay": 1.64
-        },
-        "Alejandro Tabilo": {
-          "runnerId": 1979844699880151,
-          "back": 2.58,
-          "lay": 2.9
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
-    },
-    "Michael Mmoh vs Alexis Galarneau": {
-      "id": 1979717339800051,
-      "start": "2022-02-04T23:05:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Michael Mmoh": {
-          "runnerId": 1979717340330051,
-          "back": 0,
-          "lay": 0
-        },
-        "Alexis Galarneau": {
-          "runnerId": 1979717340360151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 0,
-        "currentBalance": 7.25
-      }
+      "race-length": "1m"
     }
   }
 }

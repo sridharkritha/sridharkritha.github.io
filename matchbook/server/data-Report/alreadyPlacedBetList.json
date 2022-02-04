@@ -1,0 +1,577 @@
+{
+  "Horse Racing": [
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1978418120560051,
+      "event-name": "13:30 Catterick",
+      "runner-name": "1 Here We Have It",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978418120560051,
+        "start": "2022-02-04T13:30:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "1m 7f 145y",
+        "allRunners": {
+          "1 Here We Have It": {
+            "runnerId": 1978418120950051,
+            "withdrawn": false,
+            "back": 2.04,
+            "lay": 2.6,
+            "name": "1 Here We Have It",
+            "event-name": "13:30 Catterick",
+            "numberOfRunners": 5,
+            "winPercentage": 115.68627450980394,
+            "startTime": "2022-02-04T13:30:00.000Z",
+            "raceId": 1978418120560051,
+            "raceName": "13:30 Catterick",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.04,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "1m 7f 145y"
+          },
+          "4 Altumanina": {
+            "runnerId": 1978418121050151,
+            "withdrawn": false,
+            "back": 9,
+            "lay": 34,
+            "name": "4 Altumanina",
+            "event-name": "13:30 Catterick"
+          },
+          "5 Onenightintown": {
+            "runnerId": 1978418121080151,
+            "withdrawn": false,
+            "back": 16,
+            "lay": 50,
+            "name": "5 Onenightintown",
+            "event-name": "13:30 Catterick"
+          },
+          "2 Blueberry Wine": {
+            "runnerId": 1978418120980151,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 6,
+            "name": "2 Blueberry Wine",
+            "event-name": "13:30 Catterick"
+          },
+          "3 Wheelbahri": {
+            "runnerId": 1978418121020051,
+            "withdrawn": false,
+            "back": 4.6,
+            "lay": 19.5,
+            "name": "3 Wheelbahri",
+            "event-name": "13:30 Catterick"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.25
+        },
+        "luckyWinner": {
+          "runnerId": 1978418120950051,
+          "withdrawn": false,
+          "back": 2.04,
+          "lay": 2.6,
+          "name": "1 Here We Have It",
+          "event-name": "13:30 Catterick",
+          "numberOfRunners": 5,
+          "winPercentage": 115.68627450980394,
+          "startTime": "2022-02-04T13:30:00.000Z",
+          "raceId": 1978418120560051,
+          "raceName": "13:30 Catterick",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.04,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "1m 7f 145y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      },
+      "event-start-time": "04/02/2022, 13:30:00",
+      "bet-placed-time": "07:05:18  04-02-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1978420536720051,
+      "event-name": "16:24 Lingfield",
+      "runner-name": "3 No Flies On Me",
+      "decimal-odds": 2,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978420536720051,
+        "start": "2022-02-04T16:24:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "1m 2f 0y",
+        "allRunners": {
+          "6 Forge Valley Lad": {
+            "runnerId": 1978420538160051,
+            "withdrawn": false,
+            "back": 3.6,
+            "lay": 18.5,
+            "name": "6 Forge Valley Lad",
+            "event-name": "16:24 Lingfield"
+          },
+          "1 Noble Peace": {
+            "runnerId": 1978420538010051,
+            "withdrawn": false,
+            "back": 4.8,
+            "lay": 6.8,
+            "name": "1 Noble Peace",
+            "event-name": "16:24 Lingfield"
+          },
+          "2 Rushmore": {
+            "runnerId": 1978420538040051,
+            "withdrawn": false,
+            "back": 11,
+            "lay": 85,
+            "name": "2 Rushmore",
+            "event-name": "16:24 Lingfield"
+          },
+          "3 No Flies On Me": {
+            "runnerId": 1978420538070151,
+            "withdrawn": false,
+            "back": 1.96,
+            "lay": 2.26,
+            "name": "3 No Flies On Me",
+            "event-name": "16:24 Lingfield",
+            "numberOfRunners": 6,
+            "winPercentage": 83.6734693877551,
+            "startTime": "2022-02-04T16:24:00.000Z",
+            "raceId": 1978420536720051,
+            "raceName": "16:24 Lingfield",
+            "sportName": "Horse Racing",
+            "profitOdd": 0.96,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "1m 2f 0y"
+          },
+          "4 Courtside": {
+            "runnerId": 1978420538100051,
+            "withdrawn": false,
+            "back": 11.5,
+            "lay": 0,
+            "name": "4 Courtside",
+            "event-name": "16:24 Lingfield"
+          },
+          "5 Santa Florentina": {
+            "runnerId": 1978420538130051,
+            "withdrawn": false,
+            "back": 10.5,
+            "lay": 0,
+            "name": "5 Santa Florentina",
+            "event-name": "16:24 Lingfield"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.25
+        },
+        "luckyWinner": {
+          "runnerId": 1978420538070151,
+          "withdrawn": false,
+          "back": 1.96,
+          "lay": 2.26,
+          "name": "3 No Flies On Me",
+          "event-name": "16:24 Lingfield",
+          "numberOfRunners": 6,
+          "winPercentage": 83.6734693877551,
+          "startTime": "2022-02-04T16:24:00.000Z",
+          "raceId": 1978420536720051,
+          "raceName": "16:24 Lingfield",
+          "sportName": "Horse Racing",
+          "profitOdd": 0.96,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "1m 2f 0y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      },
+      "event-start-time": "04/02/2022, 16:24:00",
+      "bet-placed-time": "07:05:18  04-02-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1978418121390051,
+      "event-name": "14:05 Catterick",
+      "runner-name": "4 Maliboo",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978418121390051,
+        "start": "2022-02-04T14:05:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "3m 1f 71y",
+        "allRunners": {
+          "2 Dalyotin": {
+            "runnerId": 1978418121810151,
+            "withdrawn": false,
+            "back": 4.4,
+            "lay": 7,
+            "name": "2 Dalyotin",
+            "event-name": "14:05 Catterick"
+          },
+          "1 No Hiding Place": {
+            "runnerId": 1978418121790051,
+            "withdrawn": false,
+            "back": 3.9,
+            "lay": 7,
+            "name": "1 No Hiding Place",
+            "event-name": "14:05 Catterick"
+          },
+          "5 Moyode Lady": {
+            "runnerId": 1978418121900051,
+            "withdrawn": false,
+            "back": 8.2,
+            "lay": 20,
+            "name": "5 Moyode Lady",
+            "event-name": "14:05 Catterick"
+          },
+          "3 Skiddaw Tara": {
+            "runnerId": 1978418121840151,
+            "withdrawn": false,
+            "back": 8.6,
+            "lay": 55,
+            "name": "3 Skiddaw Tara",
+            "event-name": "14:05 Catterick"
+          },
+          "4 Maliboo": {
+            "runnerId": 1978418121870051,
+            "withdrawn": false,
+            "back": 2.04,
+            "lay": 2.8,
+            "name": "4 Maliboo",
+            "event-name": "14:05 Catterick",
+            "numberOfRunners": 5,
+            "winPercentage": 91.17647058823529,
+            "startTime": "2022-02-04T14:05:00.000Z",
+            "raceId": 1978418121390051,
+            "raceName": "14:05 Catterick",
+            "sportName": "Horse Racing",
+            "profitOdd": 1.04,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "3m 1f 71y"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.25
+        },
+        "luckyWinner": {
+          "runnerId": 1978418121870051,
+          "withdrawn": false,
+          "back": 2.04,
+          "lay": 2.8,
+          "name": "4 Maliboo",
+          "event-name": "14:05 Catterick",
+          "numberOfRunners": 5,
+          "winPercentage": 91.17647058823529,
+          "startTime": "2022-02-04T14:05:00.000Z",
+          "raceId": 1978418121390051,
+          "raceName": "14:05 Catterick",
+          "sportName": "Horse Racing",
+          "profitOdd": 1.04,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "3m 1f 71y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      },
+      "event-start-time": "04/02/2022, 14:05:00",
+      "bet-placed-time": "07:05:18  04-02-2022"
+    },
+    {
+      "status": "matched",
+      "sport-id": 24735152712200,
+      "sport-name": "Horse Racing",
+      "event-id": 1978420538500051,
+      "event-name": "16:10 Newcastle",
+      "runner-name": "1 Dragons Will Rise",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978420538500051,
+        "start": "2022-02-04T16:10:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "race-length": "1m 2f 42y",
+        "allRunners": {
+          "1 Dragons Will Rise": {
+            "runnerId": 1978420539170051,
+            "withdrawn": false,
+            "back": 1.87,
+            "lay": 2.42,
+            "name": "1 Dragons Will Rise",
+            "event-name": "16:10 Newcastle",
+            "numberOfRunners": 9,
+            "winPercentage": 231.55080213903742,
+            "startTime": "2022-02-04T16:10:00.000Z",
+            "raceId": 1978420538500051,
+            "raceName": "16:10 Newcastle",
+            "sportName": "Horse Racing",
+            "profitOdd": 0.8700000000000001,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0,
+            "race-length": "1m 2f 42y"
+          },
+          "2 El Picador": {
+            "runnerId": 1978420539200151,
+            "withdrawn": false,
+            "back": 6.6,
+            "lay": 480,
+            "name": "2 El Picador",
+            "event-name": "16:10 Newcastle"
+          },
+          "3 Hooflepuff": {
+            "runnerId": 1978420539230151,
+            "withdrawn": false,
+            "back": 6.2,
+            "lay": 12,
+            "name": "3 Hooflepuff",
+            "event-name": "16:10 Newcastle"
+          },
+          "4 Simple Star": {
+            "runnerId": 1978420539260051,
+            "withdrawn": false,
+            "back": 11,
+            "lay": 0,
+            "name": "4 Simple Star",
+            "event-name": "16:10 Newcastle"
+          },
+          "5 Early Morning Dew": {
+            "runnerId": 1978420539290151,
+            "withdrawn": false,
+            "back": 11,
+            "lay": 0,
+            "name": "5 Early Morning Dew",
+            "event-name": "16:10 Newcastle"
+          },
+          "6 Star Of St James": {
+            "runnerId": 1978420539320051,
+            "withdrawn": false,
+            "back": 10,
+            "lay": 0,
+            "name": "6 Star Of St James",
+            "event-name": "16:10 Newcastle"
+          },
+          "7 Mr Coco Bean": {
+            "runnerId": 1978420539350151,
+            "withdrawn": false,
+            "back": 10,
+            "lay": 44,
+            "name": "7 Mr Coco Bean",
+            "event-name": "16:10 Newcastle"
+          },
+          "8 Termonator": {
+            "runnerId": 1978420539380151,
+            "withdrawn": false,
+            "back": 12,
+            "lay": 0,
+            "name": "8 Termonator",
+            "event-name": "16:10 Newcastle"
+          },
+          "9 Velma": {
+            "runnerId": 1978420539410151,
+            "withdrawn": false,
+            "back": 10.5,
+            "lay": 0,
+            "name": "9 Velma",
+            "event-name": "16:10 Newcastle"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0,
+          "currentBalance": 7.25
+        },
+        "luckyWinner": {
+          "runnerId": 1978420539170051,
+          "withdrawn": false,
+          "back": 1.87,
+          "lay": 2.42,
+          "name": "1 Dragons Will Rise",
+          "event-name": "16:10 Newcastle",
+          "numberOfRunners": 9,
+          "winPercentage": 231.55080213903742,
+          "startTime": "2022-02-04T16:10:00.000Z",
+          "raceId": 1978420538500051,
+          "raceName": "16:10 Newcastle",
+          "sportName": "Horse Racing",
+          "profitOdd": 0.8700000000000001,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0,
+          "race-length": "1m 2f 42y"
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      },
+      "event-start-time": "04/02/2022, 16:10:00",
+      "bet-placed-time": "07:05:18  04-02-2022"
+    }
+  ],
+  "Soccer": [
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1978050271150051,
+      "event-name": "NK Slaven Belupo vs HNK Šibenik",
+      "runner-name": "NK Slaven Belupo",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "event-full-details": {
+        "id": 1978050271150051,
+        "start": "2022-02-04T17:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "allRunners": {
+          "NK Slaven Belupo": {
+            "runnerId": 1978050274730151,
+            "withdrawn": false,
+            "back": 1.86,
+            "lay": 2.08,
+            "name": "NK Slaven Belupo",
+            "event-name": "NK Slaven Belupo vs HNK Šibenik",
+            "numberOfRunners": 3,
+            "winPercentage": 80.10752688172043,
+            "startTime": "2022-02-04T17:00:00.000Z",
+            "raceId": 1978050271150051,
+            "raceName": "NK Slaven Belupo vs HNK Šibenik",
+            "sportName": "Soccer",
+            "profitOdd": 0.8600000000000001,
+            "in-running-flag": false,
+            "status": "open",
+            "realStartTime": 0
+          },
+          "HNK Šibenik": {
+            "runnerId": 1978050274770051,
+            "withdrawn": false,
+            "back": 4.1,
+            "lay": 5,
+            "name": "HNK Šibenik",
+            "event-name": "NK Slaven Belupo vs HNK Šibenik"
+          },
+          "DRAW (NK /HNK)": {
+            "runnerId": 1978050274810051,
+            "withdrawn": false,
+            "back": 3.35,
+            "lay": 4,
+            "name": "DRAW (NK /HNK)",
+            "event-name": "NK Slaven Belupo vs HNK Šibenik"
+          }
+        },
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 80,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 4,
+          "sumOfAlreadyPlacedBetAmount": 0.8,
+          "currentBalance": 6.45
+        },
+        "luckyWinner": {
+          "runnerId": 1978050274730151,
+          "withdrawn": false,
+          "back": 1.86,
+          "lay": 2.08,
+          "name": "NK Slaven Belupo",
+          "event-name": "NK Slaven Belupo vs HNK Šibenik",
+          "numberOfRunners": 3,
+          "winPercentage": 80.10752688172043,
+          "startTime": "2022-02-04T17:00:00.000Z",
+          "raceId": 1978050271150051,
+          "raceName": "NK Slaven Belupo vs HNK Šibenik",
+          "sportName": "Soccer",
+          "profitOdd": 0.8600000000000001,
+          "in-running-flag": false,
+          "status": "open",
+          "realStartTime": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0.8,
+        "currentBalance": 6.45
+      },
+      "event-start-time": "04/02/2022, 17:00:00",
+      "bet-placed-time": "07:05:33  04-02-2022"
+    }
+  ]
+}

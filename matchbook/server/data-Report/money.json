@@ -1,0 +1,11 @@
+{
+  "Fri Feb 04 2022": {
+    "startingBalance": 7.25,
+    "todayTotalBetAmountLimit": 4,
+    "date": "Fri Feb 04 2022",
+    "currentBalance": 6.25,
+    "sumOfAlreadyPlacedBetAmount": 1,
+    "totalPlacedBets": 5,
+    "profit": -1
+  }
+}

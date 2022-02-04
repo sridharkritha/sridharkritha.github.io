@@ -64,12 +64,16 @@ const WC = (function() {
 				// "g_minProfitOdd"               : 0.7,   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 				// // Win
 				// "g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
+				// Counts
+				"g_maxRunnersCount"               : 7
 			},
 
 			"Greyhound Racing": {
 				// Time
 				// "g_betMinutesOffset"           : -1,   // -1 => 1 minute after event start time
 				// "ignore_realStartTime"         : true
+				// Win
+				"g_minWinConfidencePercentage"    : 100,   // 80  => comparison with nearest competitor ex: 100  (100% or more)
 			},
 	
 			"Tennis": {
