@@ -1,27 +1,22 @@
 {
-  "id": 15,
+  "id": 9,
   "events": {
-    "Al Bidda SC vs Al Shahaniya": {
-      "id": 1979413929890051,
-      "start": "2022-02-03T15:00:00.000Z",
+    "Kamil Majchrzak vs Lorenzo Musetti": {
+      "id": 1978561117130051,
+      "start": "2022-02-04T07:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Al Bidda SC": {
-          "runnerId": 1979413930510051,
-          "back": 6,
-          "lay": 7.6
+        "Kamil Majchrzak": {
+          "runnerId": 1978561117470051,
+          "back": 1.71,
+          "lay": 1.76
         },
-        "Al Shahaniya": {
-          "runnerId": 1979413930550051,
-          "back": 1.53,
-          "lay": 1.7
-        },
-        "DRAW (Al /Al )": {
-          "runnerId": 1979413930580151,
-          "back": 3.85,
-          "lay": 4.9
+        "Lorenzo Musetti": {
+          "runnerId": 1978561117500151,
+          "back": 2.32,
+          "lay": 2.42
         }
       },
       "metaData": {
@@ -30,95 +25,24 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Al Waab Sports Club vs Al-Kharitiyath SC": {
-      "id": 1979413968610051,
-      "start": "2022-02-03T15:00:00.000Z",
+    "Jay Friend vs Luis Diego Chavez Villalpando": {
+      "id": 1979333915260151,
+      "start": "2022-02-04T08:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Al Waab Sports Club": {
-          "runnerId": 1979413969200151,
+        "Jay Friend": {
+          "runnerId": 1979333916120051,
           "back": 0,
           "lay": 0
         },
-        "Al-Kharitiyath SC": {
-          "runnerId": 1979413969230151,
-          "back": 1.26,
-          "lay": 1.51
-        },
-        "DRAW (Al /Al-)": {
-          "runnerId": 1979413969270051,
-          "back": 5.1,
-          "lay": 6.6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Al-Markhiya vs Al-Mesaimeer": {
-      "id": 1979413950730051,
-      "start": "2022-02-03T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Al-Markhiya": {
-          "runnerId": 1979413951390051,
-          "back": 1.58,
-          "lay": 1.72
-        },
-        "Al-Mesaimeer": {
-          "runnerId": 1979413951430051,
-          "back": 5.3,
-          "lay": 6.4
-        },
-        "DRAW (Al-/Al-)": {
-          "runnerId": 1979413951470151,
-          "back": 4.2,
-          "lay": 5
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Gombe United vs MFM FC": {
-      "id": 1978597461290051,
-      "start": "2022-02-03T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Gombe United": {
-          "runnerId": 1978597463720051,
-          "back": 0,
-          "lay": 0
-        },
-        "MFM FC": {
-          "runnerId": 1978597463750151,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Gom/MFM)": {
-          "runnerId": 1978597463780151,
+        "Luis Diego Chavez Villalpando": {
+          "runnerId": 1979333916160051,
           "back": 0,
           "lay": 0
         }
@@ -129,131 +53,24 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Lusail vs Muaither SC": {
-      "id": 1979413911250051,
-      "start": "2022-02-03T15:00:00.000Z",
+    "Jean Christian Morandais vs Ignasi De Rueda De Genover": {
+      "id": 1979333914650051,
+      "start": "2022-02-04T08:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Lusail": {
-          "runnerId": 1979413911940051,
-          "back": 2.02,
-          "lay": 2.4
-        },
-        "Muaither SC": {
-          "runnerId": 1979413911980051,
-          "back": 3.25,
-          "lay": 4.1
-        },
-        "DRAW (Lus/Mua)": {
-          "runnerId": 1979413912010151,
-          "back": 3.3,
-          "lay": 4.2
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Rio Ave U23 vs Benfica U23": {
-      "id": 1978583336620051,
-      "start": "2022-02-03T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Rio Ave U23": {
-          "runnerId": 1978583338040151,
-          "back": 5.9,
-          "lay": 7.2
-        },
-        "Benfica U23": {
-          "runnerId": 1978583338080051,
-          "back": 1.46,
-          "lay": 1.65
-        },
-        "DRAW (Rio/Ben)": {
-          "runnerId": 1978583338110151,
-          "back": 4.4,
-          "lay": 5.2
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Zenit Saint-Petersburg vs FC Midtjylland": {
-      "id": 1977702916980051,
-      "start": "2022-02-03T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Zenit Saint-Petersburg": {
-          "runnerId": 1977702920690151,
-          "withdrawn": false,
-          "back": 1.62,
-          "lay": 1.92
-        },
-        "FC Midtjylland": {
-          "runnerId": 1977702920730051,
-          "withdrawn": false,
-          "back": 4.2,
-          "lay": 5.4
-        },
-        "DRAW (Zen/FC )": {
-          "runnerId": 1977702920760151,
-          "withdrawn": false,
-          "back": 4,
-          "lay": 5.1
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Al Birah vs Thagafi Tulkarem": {
-      "id": 1978881455890051,
-      "start": "2022-02-03T16:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Al Birah": {
-          "runnerId": 1978881456980051,
+        "Jean Christian Morandais": {
+          "runnerId": 1979333914930051,
           "back": 0,
           "lay": 0
         },
-        "Thagafi Tulkarem": {
-          "runnerId": 1978881457010051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Al /Tha)": {
-          "runnerId": 1978881457040151,
+        "Ignasi De Rueda De Genover": {
+          "runnerId": 1979333914970051,
           "back": 0,
           "lay": 0
         }
@@ -264,381 +81,25 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Maccabi Yavne vs Hapoel Kfar Shelem": {
-      "id": 1977754359770051,
-      "start": "2022-02-03T16:00:00.000Z",
+    "Emil Ruusuvuori vs Jiri Vesely": {
+      "id": 1979224213290051,
+      "start": "2022-02-04T09:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Maccabi Yavne": {
-          "runnerId": 1977754361560051,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
+        "Emil Ruusuvuori": {
+          "runnerId": 1979224213650051,
+          "back": 1.39,
+          "lay": 1.42
         },
-        "Hapoel Kfar Shelem": {
-          "runnerId": 1977754361610151,
-          "withdrawn": false,
-          "back": 1.51,
-          "lay": 1.79
-        },
-        "DRAW (Mac/Hap)": {
-          "runnerId": 1977754361640151,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Simba SC vs Tanzania Prisons": {
-      "id": 1978885312780051,
-      "start": "2022-02-03T16:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Simba SC": {
-          "runnerId": 1978885314920151,
-          "back": 0,
-          "lay": 0
-        },
-        "Tanzania Prisons": {
-          "runnerId": 1978885314960051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Sim/Tan)": {
-          "runnerId": 1978885315000051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Al-Jazira Club vs AS Pirae": {
-      "id": 1977045087870051,
-      "start": "2022-02-03T16:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Al-Jazira Club": {
-          "runnerId": 1977045089640151,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "AS Pirae": {
-          "runnerId": 1977045089680151,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Al-/AS )": {
-          "runnerId": 1977045089710151,
-          "withdrawn": false,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Avellino vs Juve Stabia": {
-      "id": 1978879283030051,
-      "start": "2022-02-03T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Avellino": {
-          "runnerId": 1978879284450051,
-          "back": 1.73,
-          "lay": 1.93
-        },
-        "Juve Stabia": {
-          "runnerId": 1978879284480051,
-          "back": 4.8,
-          "lay": 5.8
-        },
-        "DRAW (Ave/Juv)": {
-          "runnerId": 1978879284520051,
-          "back": 3.35,
-          "lay": 4.1
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Potenza vs Foggia": {
-      "id": 1978879267510051,
-      "start": "2022-02-03T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Potenza": {
-          "runnerId": 1978879268990151,
-          "back": 0,
-          "lay": 4.4
-        },
-        "Foggia": {
-          "runnerId": 1978879269030051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Pot/Fog)": {
-          "runnerId": 1978879269070051,
-          "back": 2.88,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "USM Alger vs JS Kabylie": {
-      "id": 1977783409380051,
-      "start": "2022-02-03T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "USM Alger": {
-          "runnerId": 1977783412430051,
-          "withdrawn": false,
-          "back": 1.6,
-          "lay": 1.88
-        },
-        "JS Kabylie": {
-          "runnerId": 1977783412460051,
-          "withdrawn": false,
-          "back": 6,
-          "lay": 7.6
-        },
-        "DRAW (USM/JS )": {
-          "runnerId": 1977783412500051,
-          "withdrawn": false,
-          "back": 3.35,
-          "lay": 4.1
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "CD Trofense vs FC Porto B": {
-      "id": 1977181336660051,
-      "start": "2022-02-03T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "CD Trofense": {
-          "runnerId": 1977181340010051,
-          "withdrawn": false,
-          "back": 2.56,
-          "lay": 2.84
-        },
-        "FC Porto B": {
-          "runnerId": 1977181340040151,
-          "withdrawn": false,
-          "back": 3.1,
-          "lay": 3.25
-        },
-        "DRAW (CD /FC )": {
-          "runnerId": 1977181340080151,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 3.4
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Resende FC vs Portuguesa RJ": {
-      "id": 1977159555750051,
-      "start": "2022-02-03T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Resende FC": {
-          "runnerId": 1977159560560151,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 3.85
-        },
-        "Portuguesa RJ": {
-          "runnerId": 1977159560600151,
-          "withdrawn": false,
-          "back": 2.28,
-          "lay": 2.74
-        },
-        "DRAW (Res/Por)": {
-          "runnerId": 1977159560650051,
-          "withdrawn": false,
-          "back": 2.9,
-          "lay": 3.45
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Africa Cup of Nations": {
-      "id": 1953585200010016,
-      "start": "2022-02-03T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Senegal": {
-          "runnerId": 1953586233720016,
-          "withdrawn": false,
-          "back": 1.91,
-          "lay": 1.99
-        },
-        "Cameroon": {
-          "runnerId": 1953587217260016,
-          "withdrawn": false,
-          "back": 3.15,
-          "lay": 3.35
-        },
-        "Egypt": {
-          "runnerId": 1953586707310016,
-          "withdrawn": false,
-          "back": 5.2,
-          "lay": 5.7
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Cameroon vs Egypt": {
-      "id": 1976124146920051,
-      "start": "2022-02-03T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Cameroon": {
-          "runnerId": 1976124148120051,
-          "back": 2.34,
-          "lay": 2.38
-        },
-        "Egypt": {
-          "runnerId": 1976124148160051,
-          "back": 4.2,
-          "lay": 4.5
-        },
-        "DRAW (Cam/Egy)": {
-          "runnerId": 1976124148190151,
-          "back": 2.88,
-          "lay": 2.96
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "La Equidad vs Rionegro Águilas": {
-      "id": 1977634728940051,
-      "start": "2022-02-03T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "La Equidad": {
-          "runnerId": 1977634731740051,
-          "withdrawn": false,
-          "back": 2.02,
-          "lay": 2.26
-        },
-        "Rionegro Águilas": {
-          "runnerId": 1977634731770151,
-          "withdrawn": false,
-          "back": 4,
-          "lay": 4.9
-        },
-        "DRAW (La /Rio)": {
-          "runnerId": 1977634731810051,
-          "withdrawn": false,
-          "back": 3,
+        "Jiri Vesely": {
+          "runnerId": 1979224213680151,
+          "back": 3.4,
           "lay": 3.6
         }
       },
@@ -648,31 +109,26 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Manchester City Women vs Tottenham Hotspur Women": {
-      "id": 1978920658500051,
-      "start": "2022-02-03T19:00:00.000Z",
+    "Jip Van Assendelft vs Kuzey Cekirge": {
+      "id": 1979333914750051,
+      "start": "2022-02-04T09:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Manchester City Women": {
-          "runnerId": 1978920660830151,
-          "back": 1.37,
-          "lay": 1.47
-        },
-        "Tottenham Hotspur Women": {
-          "runnerId": 1978920660870151,
+        "Jip Van Assendelft": {
+          "runnerId": 1979333915090051,
           "back": 0,
-          "lay": 9.2
+          "lay": 0
         },
-        "DRAW (Man/Tot)": {
-          "runnerId": 1978920660910051,
-          "back": 5.1,
-          "lay": 6.2
+        "Kuzey Cekirge": {
+          "runnerId": 1979333915130151,
+          "back": 0,
+          "lay": 0
         }
       },
       "metaData": {
@@ -681,31 +137,138 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Real Sociedad vs Real Betis": {
-      "id": 1974679741940051,
-      "start": "2022-02-03T19:00:00.000Z",
+    "Roberto Ortega-Olmedo vs Vladyslav Manafov": {
+      "id": 1979333927180051,
+      "start": "2022-02-04T09:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Real Sociedad": {
-          "runnerId": 1974679747020151,
+        "Roberto Ortega-Olmedo": {
+          "runnerId": 1979333927400051,
+          "back": 0,
+          "lay": 0
+        },
+        "Vladyslav Manafov": {
+          "runnerId": 1979333927440051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "João Sousa vs Daniel Altmaier": {
+      "id": 1978477184930051,
+      "start": "2022-02-04T10:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "João Sousa": {
+          "runnerId": 1978477185280051,
+          "back": 2.58,
+          "lay": 2.72
+        },
+        "Daniel Altmaier": {
+          "runnerId": 1978477185320151,
+          "back": 1.58,
+          "lay": 1.63
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Martins Podzus vs David Perez Sanz": {
+      "id": 1979334091760051,
+      "start": "2022-02-04T11:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Martins Podzus": {
+          "runnerId": 1979334092020051,
+          "back": 0,
+          "lay": 0
+        },
+        "David Perez Sanz": {
+          "runnerId": 1979334092070051,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Yurii Dzhavakian vs Marcelo Zormann Da Silva": {
+      "id": 1979333915240051,
+      "start": "2022-02-04T11:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Yurii Dzhavakian": {
+          "runnerId": 1979333916110051,
+          "back": 0,
+          "lay": 0
+        },
+        "Marcelo Zormann Da Silva": {
+          "runnerId": 1979333916150251,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Elias Ymer vs Stefano Travaglia": {
+      "id": 1979346567740051,
+      "start": "2022-02-04T11:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Elias Ymer": {
+          "runnerId": 1979346568090051,
+          "back": 1.87,
+          "lay": 1.94
+        },
+        "Stefano Travaglia": {
+          "runnerId": 1979346568130051,
           "back": 2.06,
-          "lay": 2.08
-        },
-        "Real Betis": {
-          "runnerId": 1974679747060051,
-          "back": 3.95,
-          "lay": 4
-        },
-        "DRAW (Rea/Rea)": {
-          "runnerId": 1974679747100051,
-          "back": 3.75,
-          "lay": 3.8
+          "lay": 2.16
         }
       },
       "metaData": {
@@ -714,31 +277,26 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Breidablik vs Brentford FC B": {
-      "id": 1977702935540051,
-      "start": "2022-02-03T19:30:00.000Z",
+    "Filip Krajinovic vs Damir Dzumhur": {
+      "id": 1979412393470051,
+      "start": "2022-02-04T13:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Breidablik": {
-          "runnerId": 1977702938150051,
-          "back": 0,
-          "lay": 0
+        "Filip Krajinovic": {
+          "runnerId": 1979412393730151,
+          "back": 1.45,
+          "lay": 1.52
         },
-        "Brentford FC B": {
-          "runnerId": 1977702938180051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Bre/Bre)": {
-          "runnerId": 1977702938220051,
-          "back": 0,
-          "lay": 0
+        "Damir Dzumhur": {
+          "runnerId": 1979412393780051,
+          "back": 2.94,
+          "lay": 3.2
         }
       },
       "metaData": {
@@ -747,29 +305,24 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Fram Reykjavik vs KR Reykjavik": {
-      "id": 1978810155400051,
-      "start": "2022-02-03T19:30:00.000Z",
+    "Sean Daryabeigi vs Jake Trondson": {
+      "id": 1979499132880051,
+      "start": "2022-02-04T14:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Fram Reykjavik": {
-          "runnerId": 1978810156420151,
+        "Sean Daryabeigi": {
+          "runnerId": 1979499133120051,
           "back": 0,
           "lay": 0
         },
-        "KR Reykjavik": {
-          "runnerId": 1978810156460051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Fra/KR )": {
-          "runnerId": 1978810156490151,
+        "Jake Trondson": {
+          "runnerId": 1979499133160151,
           "back": 0,
           "lay": 0
         }
@@ -780,239 +333,24 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "KAS Eupen vs Anderlecht": {
-      "id": 1977189880020051,
-      "start": "2022-02-03T19:45:00.000Z",
+    "Stefano Liokossis vs Luca Julian Hotze": {
+      "id": 1979499133290051,
+      "start": "2022-02-04T14:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "KAS Eupen": {
-          "runnerId": 1977189881170151,
-          "back": 6.6,
-          "lay": 7.2
-        },
-        "Anderlecht": {
-          "runnerId": 1977189881210051,
-          "back": 1.54,
-          "lay": 1.56
-        },
-        "DRAW (KAS/And)": {
-          "runnerId": 1977189881250051,
-          "back": 4.5,
-          "lay": 4.8
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Farense vs Académica de Coimbra": {
-      "id": 1977181317580051,
-      "start": "2022-02-03T20:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Farense": {
-          "runnerId": 1977181320690051,
-          "back": 1.72,
-          "lay": 1.8
-        },
-        "Académica de Coimbra": {
-          "runnerId": 1977181320730051,
-          "back": 5.7,
-          "lay": 6.2
-        },
-        "DRAW (Far/Aca)": {
-          "runnerId": 1977181320760151,
-          "back": 3.7,
-          "lay": 3.95
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Athletic Bilbao vs Real Madrid": {
-      "id": 1974679716790051,
-      "start": "2022-02-03T20:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Athletic Bilbao": {
-          "runnerId": 1974679721470051,
-          "withdrawn": false,
-          "back": 3.1,
-          "lay": 3.15
-        },
-        "Real Madrid": {
-          "runnerId": 1974679721510051,
-          "withdrawn": false,
-          "back": 2.6,
-          "lay": 2.62
-        },
-        "DRAW (Ath/Rea)": {
-          "runnerId": 1974679721550051,
-          "withdrawn": false,
-          "back": 3.35,
-          "lay": 3.4
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "AD Guanacasteca vs Municipal Grecia": {
-      "id": 1977636245590051,
-      "start": "2022-02-03T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "AD Guanacasteca": {
-          "runnerId": 1977636249090051,
-          "withdrawn": false,
-          "back": 2.74,
-          "lay": 3.25
-        },
-        "Municipal Grecia": {
-          "runnerId": 1977636249130051,
-          "withdrawn": false,
-          "back": 2.54,
-          "lay": 2.96
-        },
-        "DRAW (AD /Mun)": {
-          "runnerId": 1977636249160151,
-          "withdrawn": false,
-          "back": 3.2,
-          "lay": 3.9
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Botafogo FR vs Madureira EC": {
-      "id": 1977159568690051,
-      "start": "2022-02-03T21:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Botafogo FR": {
-          "runnerId": 1977159572880151,
-          "withdrawn": false,
-          "back": 1.5,
-          "lay": 1.67
-        },
-        "Madureira EC": {
-          "runnerId": 1977159572920051,
-          "withdrawn": false,
-          "back": 7,
-          "lay": 9.2
-        },
-        "DRAW (Bot/Mad)": {
-          "runnerId": 1977159572950151,
-          "withdrawn": false,
-          "back": 3.65,
-          "lay": 4.6
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Unión Magdalena vs Deportivo Pasto": {
-      "id": 1977634747850051,
-      "start": "2022-02-03T21:05:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Unión Magdalena": {
-          "runnerId": 1977634751560051,
-          "withdrawn": false,
-          "back": 1.97,
-          "lay": 2.22
-        },
-        "Deportivo Pasto": {
-          "runnerId": 1977634751590051,
-          "withdrawn": false,
-          "back": 3.85,
-          "lay": 4.8
-        },
-        "DRAW (Uni/Dep)": {
-          "runnerId": 1977634751630051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 3.75
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Azuriz FC vs Maringá": {
-      "id": 1978891224430051,
-      "start": "2022-02-03T21:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Azuriz FC": {
-          "runnerId": 1978891226130051,
+        "Stefano Liokossis": {
+          "runnerId": 1979499133660051,
           "back": 0,
           "lay": 0
         },
-        "Maringá": {
-          "runnerId": 1978891226160151,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Azu/Mar)": {
-          "runnerId": 1978891226200051,
+        "Luca Julian Hotze": {
+          "runnerId": 1979499133700051,
           "back": 0,
           "lay": 0
         }
@@ -1023,133 +361,26 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Clube Esportivo Aimore vs SER Caxias Do Sul": {
-      "id": 1978853691110051,
-      "start": "2022-02-03T22:00:00.000Z",
+    "Alexander Bublik vs Roberto Bautista Agut": {
+      "id": 1978825863060051,
+      "start": "2022-02-04T14:35:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Clube Esportivo Aimore": {
-          "runnerId": 1978853692340151,
-          "back": 0,
-          "lay": 0
-        },
-        "SER Caxias Do Sul": {
-          "runnerId": 1978853692380051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Clu/SER)": {
-          "runnerId": 1978853692410151,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Clube Esportivo União vs Cianorte Futebol Clube": {
-      "id": 1978891233810051,
-      "start": "2022-02-03T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Clube Esportivo União": {
-          "runnerId": 1978891235230151,
-          "back": 0,
-          "lay": 0
-        },
-        "Cianorte Futebol Clube": {
-          "runnerId": 1978891235270051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Clu/Cia)": {
-          "runnerId": 1978891235310051,
-          "back": 0,
-          "lay": 0
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Ituano FC vs Inter Limeira": {
-      "id": 1978017907610051,
-      "start": "2022-02-03T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Ituano FC": {
-          "runnerId": 1978017910210051,
-          "back": 1.98,
-          "lay": 2.28
-        },
-        "Inter Limeira": {
-          "runnerId": 1978017910250051,
-          "back": 4.1,
-          "lay": 5
-        },
-        "DRAW (Itu/Int)": {
-          "runnerId": 1978017910280051,
-          "back": 2.96,
-          "lay": 3.65
-        }
-      },
-      "metaData": {
-        "stakeValue": 0.2,
-        "minWinConfidencePercentage": 80,
-        "maxWinConfidencePercentage": 150,
-        "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
-      }
-    },
-    "Mirassol FC vs Guarani SP": {
-      "id": 1978017918160051,
-      "start": "2022-02-03T22:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "allRunners": {
-        "Mirassol FC": {
-          "runnerId": 1978017920630151,
-          "withdrawn": false,
-          "back": 2.04,
-          "lay": 2.32
-        },
-        "Guarani SP": {
-          "runnerId": 1978017920670051,
-          "withdrawn": false,
-          "back": 3.8,
-          "lay": 4.6
-        },
-        "DRAW (Mir/Gua)": {
-          "runnerId": 1978017920700151,
-          "withdrawn": false,
+        "Alexander Bublik": {
+          "runnerId": 1978825863590051,
           "back": 3,
-          "lay": 3.65
+          "lay": 3.2
+        },
+        "Roberto Bautista Agut": {
+          "runnerId": 1978825863630051,
+          "back": 1.46,
+          "lay": 1.5
         }
       },
       "metaData": {
@@ -1158,29 +389,24 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Clube Sociedade Esportiva vs Jacyoba AC": {
-      "id": 1978919839970051,
-      "start": "2022-02-03T23:00:00.000Z",
+    "Jonathan Mridha vs Karl Friberg": {
+      "id": 1979499133320051,
+      "start": "2022-02-04T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Clube Sociedade Esportiva": {
-          "runnerId": 1978919841440051,
+        "Jonathan Mridha": {
+          "runnerId": 1979499133680051,
           "back": 0,
           "lay": 0
         },
-        "Jacyoba AC": {
-          "runnerId": 1978919841480051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Clu/Jac)": {
-          "runnerId": 1978919841520051,
+        "Karl Friberg": {
+          "runnerId": 1979499133710151,
           "back": 0,
           "lay": 0
         }
@@ -1191,31 +417,26 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Murici FC vs Cruzeiro de Arapiraca": {
-      "id": 1978919860290051,
-      "start": "2022-02-03T23:00:00.000Z",
+    "Thomas Fabbiano vs Cedrik-Marcel Stebe": {
+      "id": 1978739030710051,
+      "start": "2022-02-04T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Murici FC": {
-          "runnerId": 1978919862050051,
-          "back": 0,
-          "lay": 0
+        "Thomas Fabbiano": {
+          "runnerId": 1978739031220151,
+          "back": 2.26,
+          "lay": 2.52
         },
-        "Cruzeiro de Arapiraca": {
-          "runnerId": 1978919862090051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Mur/Cru)": {
-          "runnerId": 1978919862120151,
-          "back": 0,
-          "lay": 0
+        "Cedrik-Marcel Stebe": {
+          "runnerId": 1978739031260051,
+          "back": 1.66,
+          "lay": 1.8
         }
       },
       "metaData": {
@@ -1224,34 +445,26 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Jaguares de Córdoba vs Patriotas F.C.": {
-      "id": 1977634712750051,
-      "start": "2022-02-03T23:10:00.000Z",
+    "Victor Nunez vs Mwendwa Mbithi": {
+      "id": 1979499144170051,
+      "start": "2022-02-04T15:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Jaguares de Córdoba": {
-          "runnerId": 1977634715990051,
-          "withdrawn": false,
-          "back": 1.67,
-          "lay": 1.91
+        "Victor Nunez": {
+          "runnerId": 1979499144370051,
+          "back": 0,
+          "lay": 0
         },
-        "Patriotas F.C.": {
-          "runnerId": 1977634716030051,
-          "withdrawn": false,
-          "back": 5.3,
-          "lay": 6.4
-        },
-        "DRAW (Jag/Pat)": {
-          "runnerId": 1977634716060151,
-          "withdrawn": false,
-          "back": 3.45,
-          "lay": 4.1
+        "Mwendwa Mbithi": {
+          "runnerId": 1979499144410051,
+          "back": 0,
+          "lay": 0
         }
       },
       "metaData": {
@@ -1260,31 +473,26 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Fluminense FC vs Audax RJ": {
-      "id": 1977440889990051,
-      "start": "2022-02-03T23:15:00.000Z",
+    "Boris Arias vs Ricardo Rodriguez-Pace": {
+      "id": 1979499144310051,
+      "start": "2022-02-04T16:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Fluminense FC": {
-          "runnerId": 1977440894370051,
-          "back": 1.25,
-          "lay": 1.34
-        },
-        "Audax RJ": {
-          "runnerId": 1977440894400151,
+        "Boris Arias": {
+          "runnerId": 1979499144500051,
           "back": 0,
-          "lay": 18.5
+          "lay": 0
         },
-        "DRAW (Flu/Aud)": {
-          "runnerId": 1977440894440051,
-          "back": 5.5,
-          "lay": 7.2
+        "Ricardo Rodriguez-Pace": {
+          "runnerId": 1979499144530051,
+          "back": 0,
+          "lay": 0
         }
       },
       "metaData": {
@@ -1293,29 +501,24 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     },
-    "Sergipe vs AD Confianca": {
-      "id": 1978894380190051,
-      "start": "2022-02-03T23:30:00.000Z",
+    "Noureldin Adam vs Brayden Michna": {
+      "id": 1979499144900051,
+      "start": "2022-02-04T16:00:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
       "allRunners": {
-        "Sergipe": {
-          "runnerId": 1978894381390051,
+        "Noureldin Adam": {
+          "runnerId": 1979499145090051,
           "back": 0,
           "lay": 0
         },
-        "AD Confianca": {
-          "runnerId": 1978894381420051,
-          "back": 0,
-          "lay": 0
-        },
-        "DRAW (Ser/AD )": {
-          "runnerId": 1978894381450151,
+        "Brayden Michna": {
+          "runnerId": 1979499145120151,
           "back": 0,
           "lay": 0
         }
@@ -1326,8 +529,260 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 2.2,
-        "currentBalance": 4.95
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Yoshihito Nishioka vs William Blumberg": {
+      "id": 1979598823690051,
+      "start": "2022-02-04T16:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Yoshihito Nishioka": {
+          "runnerId": 1979598825630051,
+          "back": 1.21,
+          "lay": 1.28
+        },
+        "William Blumberg": {
+          "runnerId": 1979598825680051,
+          "back": 4.6,
+          "lay": 5.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Ernesto Escobedo vs Dominic Stephan Stricker": {
+      "id": 1978805312340051,
+      "start": "2022-02-04T17:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Ernesto Escobedo": {
+          "runnerId": 1978805312840051,
+          "back": 1.76,
+          "lay": 2.2
+        },
+        "Dominic Stephan Stricker": {
+          "runnerId": 1978805312870151,
+          "back": 1.84,
+          "lay": 2.32
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Albert Ramos-Vinolas vs Lorenzo Sonego": {
+      "id": 1979688614840051,
+      "start": "2022-02-04T17:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Albert Ramos-Vinolas": {
+          "runnerId": 1979688615500051,
+          "back": 2.14,
+          "lay": 2.26
+        },
+        "Lorenzo Sonego": {
+          "runnerId": 1979688615530151,
+          "back": 1.79,
+          "lay": 1.87
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Mikael Ymer vs Richard Gasquet": {
+      "id": 1979662730010051,
+      "start": "2022-02-04T18:35:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Mikael Ymer": {
+          "runnerId": 1979662730520051,
+          "back": 1.66,
+          "lay": 1.74
+        },
+        "Richard Gasquet": {
+          "runnerId": 1979662730560051,
+          "back": 2.36,
+          "lay": 2.5
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Juan Ignacio Londero vs Nikola Milojevic": {
+      "id": 1978960631650051,
+      "start": "2022-02-04T19:15:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Juan Ignacio Londero": {
+          "runnerId": 1978960632430051,
+          "back": 1.59,
+          "lay": 1.62
+        },
+        "Nikola Milojevic": {
+          "runnerId": 1978960632470051,
+          "back": 2.62,
+          "lay": 2.7
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Alexander Zverev vs Adrian Mannarino": {
+      "id": 1979615695580051,
+      "start": "2022-02-04T19:35:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Alexander Zverev": {
+          "runnerId": 1979615695920051,
+          "back": 1.17,
+          "lay": 1.22
+        },
+        "Adrian Mannarino": {
+          "runnerId": 1979615695960051,
+          "back": 5.6,
+          "lay": 6.8
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Diego Sebastian Schwartzman vs Daniel Elahi Galan": {
+      "id": 1978879496770051,
+      "start": "2022-02-04T21:30:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Diego Sebastian Schwartzman": {
+          "runnerId": 1978879497360051,
+          "back": 1.24,
+          "lay": 1.27
+        },
+        "Daniel Elahi Galan": {
+          "runnerId": 1978879497390051,
+          "back": 4.8,
+          "lay": 5.2
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Sebastian Baez vs Alejandro Tabilo": {
+      "id": 1979844699300051,
+      "start": "2022-02-04T23:00:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Sebastian Baez": {
+          "runnerId": 1979844699850051,
+          "back": 1.53,
+          "lay": 1.64
+        },
+        "Alejandro Tabilo": {
+          "runnerId": 1979844699880151,
+          "back": 2.58,
+          "lay": 2.9
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
+      }
+    },
+    "Michael Mmoh vs Alexis Galarneau": {
+      "id": 1979717339800051,
+      "start": "2022-02-04T23:05:00.000Z",
+      "status": "open",
+      "in-running-flag": false,
+      "realStartTime": 0,
+      "allRunners": {
+        "Michael Mmoh": {
+          "runnerId": 1979717340330051,
+          "back": 0,
+          "lay": 0
+        },
+        "Alexis Galarneau": {
+          "runnerId": 1979717340360151,
+          "back": 0,
+          "lay": 0
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 4,
+        "sumOfAlreadyPlacedBetAmount": 0,
+        "currentBalance": 7.25
       }
     }
   }

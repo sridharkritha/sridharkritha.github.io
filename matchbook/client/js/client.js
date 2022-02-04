@@ -431,7 +431,7 @@ window.addEventListener('load', function() {
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
-									<div class ="commonClass">(${++eventCounter})   ${eventName}   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']} </div>
+									<div class ="commonClass">(${++eventCounter})   <b>${eventName}</b>   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']} </div>
 								
 									Today's Bet Amount Limit =  £ ${metaData.sumOfAlreadyPlacedBetAmount} / £ ${metaData.todayTotalBetAmountLimit}, 
 									UserBalance = £ ${metaData.currentBalance}, 
