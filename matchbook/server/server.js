@@ -45,8 +45,8 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	// const g_onlyOne_raceName = "13:45 Lingfield";
-	const g_onlyOne_raceName = null; 
+	const g_onlyOne_raceName = "16:40 Leopardstown";
+	//const g_onlyOne_raceName = null; 
 
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
@@ -54,33 +54,33 @@
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	let g_sportsInterested = ['ALL'];
-	// let g_sportsInterested = [
-	// 	// 'Horse Racing', //.
-	// 	'Soccer', //.
-	// 	// 'Greyhound Racing', //.
+	// let g_sportsInterested = ['ALL'];
+	let g_sportsInterested = [
+		'Horse Racing', //.
+		// 'Soccer', //.
+		// 'Greyhound Racing', //.
 
-	// 	// 'American Football',//.
-	// 	// 'Basketball', //.
-	// 	// "Boxing", //.
-	// 	// "Golf", //.
+		// 'American Football',//.
+		// 'Basketball', //.
+		// "Boxing", //.
+		// "Golf", //.
 
-	// 	// 'Ice Hockey', //.
-	// 	// 'Rugby Union', //.
-	// 	// 'Enhanced Specials', //.
-	// 	// 'Snooker', //.
+		// 'Ice Hockey', //.
+		// 'Rugby Union', //.
+		// 'Enhanced Specials', //.
+		// 'Snooker', //.
 
-	// 	// "Baseball", //.
-	// 	// "Cricket", //.
-	// 	// "Motor Sport", //.
-	// 	// "Tennis", //.
+		// "Baseball", //.
+		// "Cricket", //.
+		// "Motor Sport", //.
+		// "Tennis", //.
 
-	// 	// "Volleyball",
-	// 	// "Chess",
-	// 	// "Cycling",
-	// 	// "Rugby League",
-	// 	// "Table Tennis",
-	// ];
+		// "Volleyball",
+		// "Chess",
+		// "Cycling",
+		// "Rugby League",
+		// "Table Tennis",
+	];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -536,49 +536,62 @@
 			// jsonFormat.in-running-flag: false
 			// jsonFormat.race-length: "0m 7f 14y"
 
-			const runnersObj = {};
+			// const runnersObj = {};
+			const marketObj = {};
 
 			if(jsonFormat.markets && jsonFormat.markets.length)
 			//if(jsonFormat.markets.length && (jsonFormat.markets[0].name === 'WIN' || jsonFormat.markets[0].name === 'Winner'))
 			{
-				let runners = jsonFormat.markets[0].runners;
-
-				for(let runner in runners)
+				for(market in jsonFormat.markets)
 				{
-					if(runners.hasOwnProperty(runner))
-					{
-						runner = Number(runner);
-						
-						runnersObj[runners[runner].name] = {};
-						runnersObj[runners[runner].name].runnerId = runners[runner].id;
-						runnersObj[runners[runner].name].withdrawn = runners[runner].withdrawn; // true = NON-RUNNER
-						// runnersObj[runners[runner].name].extraInfo = {};
-						// if(runners[runner]["race-length"]) runnersObj[runners[runner].name].extraInfo["race-length"] = runners[runner]["race-length"];
+					// let runners = jsonFormat.markets[0].runners;
+					let runners = jsonFormat.markets[market].runners;
+					const runnersObj = {};
+					//marketObj[market].runnersObj = {};
 
-						const back = [];
-						const lay = [];
-						for(let price in runners[runner]['prices'])
+					for(let runner in runners)
+					{
+						if(runners.hasOwnProperty(runner))
 						{
-							if(runners[runner]['prices'].hasOwnProperty(price))
+							runner = Number(runner);
+							
+							runnersObj[runners[runner].name] = {};
+							runnersObj[runners[runner].name].runnerId = runners[runner].id;
+							runnersObj[runners[runner].name].withdrawn = runners[runner].withdrawn; // true = NON-RUNNER
+	
+							const back = [];
+							const lay = [];
+							for(let price in runners[runner]['prices'])
 							{
-								if(runners[runner]['prices'][price]['side'] === "back")
+								if(runners[runner]['prices'].hasOwnProperty(price))
 								{
-									back.push(Number(runners[runner]['prices'][price].odds));
-								}
-								else if(runners[runner]['prices'][price]['side'] === "lay")
-								{
-									lay.push(Number(runners[runner]['prices'][price].odds));
+									if(runners[runner]['prices'][price]['side'] === "back")
+									{
+										back.push(Number(runners[runner]['prices'][price].odds));
+									}
+									else if(runners[runner]['prices'][price]['side'] === "lay")
+									{
+										lay.push(Number(runners[runner]['prices'][price].odds));
+									}
 								}
 							}
+	
+							runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
+							runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
 						}
-
-						runnersObj[runners[runner].name].back = back.length ? Math.max.apply(null, back): 0;
-						runnersObj[runners[runner].name].lay  =  lay.length ? Math.min.apply(null, lay): 0;
 					}
+
+					// marketObj[market].runnersObj = runnersObj;
+					// marketObj[jsonFormat.markets[market].name]["runners"] = runnersObj;
+					marketObj[jsonFormat.markets[market].name] = {};
+					// marketObj[jsonFormat.markets[market].name]["runners"] = {};
+					marketObj[jsonFormat.markets[market].name]["allRunners"] = runnersObj;
+					marketObj[jsonFormat.markets[market].name]["number-of-winners"] = jsonFormat.markets[market]["number-of-winners"];
 				}
 			}
 
-			callback(runnersObj); // return the object from the callback function 
+			// callback(runnersObj); // return the object from the callback function 
+			callback(marketObj); // return the object from the callback function 
 		});
 	};
 
@@ -606,67 +619,73 @@
 							{
 								const startTime = jsonObj[prop][race].start;
 								const raceName = race;
-								const luckyRunner = [];
-								let nonRunnerCount = 0;
-								let nPlayerHasValidOdd  = 0;
 
-								for(let runner in jsonObj[prop][race]["allRunners"]) { 
-									if(jsonObj[prop][race]["allRunners"].hasOwnProperty(runner)) {
-										if(typeof jsonObj[prop][race]["allRunners"][runner] === "object") {
-											let runnerObj = jsonObj[prop][race]["allRunners"][runner];
-											runnerObj.name = runner;
-											runnerObj['event-name'] = raceName;
-											if(runnerObj.withdrawn)  nonRunnerCount += 1;
-											let back = jsonObj[prop][race]["allRunners"][runner].back;
-											++nPlayerHasValidOdd;
-											if(!back) {
-												back = Number.MAX_VALUE;
-												--nPlayerHasValidOdd;
-											}
-											luckyRunner.push([back, runnerObj]);
-										}
-									}
-								}
-		
-								luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
-								if(luckyRunner.length > 1)
+								for(let market in jsonObj[prop][race]["markets"]) 
 								{
-									const halfPlayersCount = Math.ceil((luckyRunner.length - nonRunnerCount) / 2);
-									// At least half of the players should have some betting before doing win calculation 
-									// (or) At least #16 players have some valid odds.
-									if(luckyRunner[halfPlayersCount][0] != Number.MAX_VALUE || nPlayerHasValidOdd > 15) {
-										// Calculating the win chance by comparing with very next competitor 
-										let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
-										luckyRunner[0][1].numberOfRunners = luckyRunner.length;
-										// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
-										luckyRunner[0][1].winPercentage = winPercentage;
-										luckyRunner[0][1].startTime = startTime;
-										luckyRunner[0][1].raceId = raceId;
-										luckyRunner[0][1].raceName = raceName;
-										let profitOdd = luckyRunner[0][1].back - 1;
-									
-										jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+									const luckyRunner = [];
+									let nonRunnerCount = 0;
+									let nPlayerHasValidOdd  = 0;
 
-										// console.log(`Sports: ${sportName} #### Event: ${raceName} #### Win(%): ${UTIL.roundIt2D(winPercentage)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
-										console.log(`${UTIL.formatString(`Sports: (${sportName})`, 28)} #### ${UTIL.formatString(`Event: (${raceName})`, 60)}  #### ${UTIL.formatString(`Win(%): ${UTIL.roundIt2D(winPercentage)}`, 18)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
-			
-										// Build the predictedWinner list
-										if(isWinningHorse(sportName, winPercentage, profitOdd, luckyRunner.length))
-										{
-											let obj = luckyRunner[0][1];
-											obj.sportName = sportName;
-											obj["winPercentage"] = winPercentage;
-											obj["profitOdd"] = profitOdd;
-											obj["in-running-flag"] = jsonObj[prop][race]["in-running-flag"];
-											obj["status"] = jsonObj[prop][race]["status"];
-											obj["realStartTime"] = jsonObj[prop][race]["realStartTime"];
-											if(sportName === "Horse Racing") obj["race-length"] = jsonObj[prop][race]["race-length"];
-		
-											predictedWinners.push(obj);
+									for(let runner in jsonObj[prop][race]["markets"][market]["allRunners"]) { 
+										if(jsonObj[prop][race]["markets"][market]["allRunners"].hasOwnProperty(runner)) {
+											if(typeof jsonObj[prop][race]["markets"][market]["allRunners"][runner] === "object") {
+												let runnerObj = jsonObj[prop][race]["markets"][market]["allRunners"][runner];
+												runnerObj.name = runner;
+												runnerObj['event-name'] = raceName;
+												runnerObj['market'] = market;
+												if(runnerObj.withdrawn)  nonRunnerCount += 1;
+												let back = jsonObj[prop][race]["markets"][market]["allRunners"][runner].back;
+												++nPlayerHasValidOdd;
+												if(!back) {
+													back = Number.MAX_VALUE;
+													--nPlayerHasValidOdd;
+												}
+												luckyRunner.push([back, runnerObj]);
+											}
 										}
 									}
-									else {
-										console.log(`WAITING....MORE THAN 1/2 OF THE PLAYERS(${nPlayerHasValidOdd} / ${luckyRunner.length}) ODDS ARE ZERO !!!`);
+
+		
+									luckyRunner.sort(function(a, b) { return a[0] - b[0]; });
+									if(luckyRunner.length > 1)
+									{
+										const halfPlayersCount = Math.ceil((luckyRunner.length - nonRunnerCount) / 2);
+										// At least half of the players should have some betting before doing win calculation 
+										// (or) At least #16 players have some valid odds.
+										if(luckyRunner[halfPlayersCount][0] != Number.MAX_VALUE || nPlayerHasValidOdd > 15) {
+											// Calculating the win chance by comparing with very next competitor 
+											let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+											luckyRunner[0][1].numberOfRunners = luckyRunner.length;
+											// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
+											luckyRunner[0][1].winPercentage = winPercentage;
+											luckyRunner[0][1].startTime = startTime;
+											luckyRunner[0][1].raceId = raceId;
+											luckyRunner[0][1].raceName = raceName;
+											let profitOdd = luckyRunner[0][1].back - 1;
+										
+											jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+
+											// console.log(`Sports: ${sportName} #### Event: ${raceName} #### Win(%): ${UTIL.roundIt2D(winPercentage)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
+											console.log(`${UTIL.formatString(`Sports: (${sportName})`, 28)} #### ${UTIL.formatString(`Event: (${raceName})`, 60)}  #### ${UTIL.formatString(`Win(%): ${UTIL.roundIt2D(winPercentage)}`, 18)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
+				
+											// Build the predictedWinner list
+											if(isWinningHorse(sportName, winPercentage, profitOdd, luckyRunner.length))
+											{
+												let obj = luckyRunner[0][1];
+												obj.sportName = sportName;
+												obj["winPercentage"] = winPercentage;
+												obj["profitOdd"] = profitOdd;
+												obj["in-running-flag"] = jsonObj[prop][race]["in-running-flag"];
+												obj["status"] = jsonObj[prop][race]["status"];
+												obj["realStartTime"] = jsonObj[prop][race]["realStartTime"];
+												if(sportName === "Horse Racing") obj["race-length"] = jsonObj[prop][race]["race-length"];
+			
+												predictedWinners.push(obj);
+											}
+										}
+										else {
+											console.log(`WAITING....MORE THAN 1/2 OF THE PLAYERS(${nPlayerHasValidOdd} / ${luckyRunner.length}) ODDS ARE ZERO !!!`);
+										}
 									}
 								}
 							}
@@ -724,6 +743,9 @@
 				betObj['event-start-time'] = predictedWinners[i].startTime;
 				betObj['sportName'] = predictedWinners[i].sportName;
 				betObj['sport-id'] = g_db.sportId[predictedWinners[i].sportName].id;
+				betObj['market'] = predictedWinners[i].market;
+
+				// 'market'
 
 				if(g_isLockedForBetting)
 				{
@@ -854,6 +876,7 @@
 			"sport-name": getSportsNameBySportsId(lastBetResult['sport-id']),
 			"event-id":lastBetResult['event-id'],
 			"event-name":lastBetResult['event-name'],
+			"market":lastBetResult['market'],
 
 			"runner-name":lastBetResult['runner-name'],
 			"decimal-odds":lastBetResult['decimal-odds'],
@@ -907,14 +930,15 @@
 
 
 	getEventInfo = function(sportName, event, eventInfoObj, sports_cbCount, events_cbCount, callback) {
-		getEvent(eventInfoObj.id, function(obj) {
-			// CONNECTIONS.print("ignore",obj);
+		getEvent(eventInfoObj.id, function(marketObj) {
+			// CONNECTIONS.print("ignore",marketObj);
 
 			const eventInfoObjClone = { ...eventInfoObj }; // 1 level shallow clone. Note: "eventInfoObj" will be modified on next line.
 			// g_db.sportId[sportName].events[event].metaData = getEventMetaData(sportName, eventInfoObj); // TypeError: Converting circular structure to JSON 
 			g_db.sportId[sportName].events[event].metaData = getEventMetaData(sportName, eventInfoObjClone);
 
-			g_db.sportId[sportName].events[event].allRunners = obj;           // "eventInfoObj" modified here
+			// g_db.sportId[sportName].events[event].allRunners = marketObj;  // "eventInfoObj" modified here
+			g_db.sportId[sportName].events[event].markets = marketObj;        // "eventInfoObj" modified here
 			g_db.sportId[sportName].events[event].id = eventInfoObj.id;       // event id
 			g_db.sportId[sportName].events[event].start = eventInfoObj.start; // event start time
 

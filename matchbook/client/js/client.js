@@ -429,12 +429,13 @@ window.addEventListener('load', function() {
 					metaData = predictedWinnerList[sport][eventNo]['metaData'];
 
 					let raceCourseLength = '';
-					if(metaData.eventInfoObj['race-length']) raceCourseLength = `Length: ${metaData.eventInfoObj['race-length']}`;
+					if(metaData.eventInfoObj['race-length']) raceCourseLength = ` / Length: ${metaData.eventInfoObj['race-length']}`;
 
+					let market = predictedWinnerList[sport][eventNo].market;
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
-									<div class ="commonClass">(${++eventCounter})   <b>${eventName}</b>   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']}  ${raceCourseLength}</div>
+									<div class ="commonClass">(${++eventCounter})   <b>${eventName}</b>   (${sport.toUpperCase()}) / Date: ${predictedWinnerList[sport][eventNo]['event-start-time']} / Market: ${market}  ${raceCourseLength}</div>
 								
 									Today's Bet Amount Limit =  £ ${metaData.sumOfAlreadyPlacedBetAmount} / £ ${metaData.todayTotalBetAmountLimit}, 
 									UserBalance = £ ${metaData.currentBalance}, 
@@ -446,11 +447,11 @@ window.addEventListener('load', function() {
 
 					printRunner(predictedWinnerList[sport][eventNo]['runner-name'], predictedWinnerList[sport][eventNo]['decimal-odds'], 'cssWinnerClass');
 
-					for (let runner in eventFullDetails.allRunners) {
+					for (let runner in eventFullDetails.markets[market].allRunners) {
 						// Players List
-						if (eventFullDetails.allRunners.hasOwnProperty(runner)) {
-							if(predictedWinnerList[sport][eventNo]['runner-name'] != eventFullDetails.allRunners[runner].name)
-								printRunner(eventFullDetails.allRunners[runner].name, eventFullDetails.allRunners[runner].back);
+						if (eventFullDetails.markets[market].allRunners.hasOwnProperty(runner)) {
+							if(predictedWinnerList[sport][eventNo]['runner-name'] != eventFullDetails.markets[market].allRunners[runner].name)
+								printRunner(eventFullDetails.markets[market].allRunners[runner].name, eventFullDetails.markets[market].allRunners[runner].back);
 						}
 					}
 
