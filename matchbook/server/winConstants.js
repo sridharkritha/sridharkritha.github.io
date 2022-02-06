@@ -45,15 +45,14 @@ const WC = (function() {
 				"g_minWinConfidencePercentage" : 80,   // 80  => comparison with nearest competitor ex: 100  (100% or more)
 				"g_maxWinConfidencePercentage" : 150,  // 150 => comparison with nearest competitor ex: 100  (100% or more)
 				// Counts
-				"g_maxRunnersCount"            : 25
+				"g_maxRunnersCount"            : 100
 			},
 
 			"Test Constants": {
-
-				"g_minProfitOdd"               : 0.8, // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
-				"g_betMinutesOffset"           : 600, // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-				"g_minWinConfidencePercentage" : 80,  // 80  => comparison with nearest competitor ex: 100  (100% or more)
-				// "g_whichDayEvent"           : '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
+				"g_betMinutesOffset"              : 600, // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
+				// "g_minProfitOdd"               : 0.8, // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
+				// "g_minWinConfidencePercentage" : 80,  // 80  => comparison with nearest competitor ex: 100  (100% or more)
+				// "g_whichDayEvent"              : '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 			},
 	
 			"Horse Racing": {
@@ -65,7 +64,7 @@ const WC = (function() {
 				// // Win
 				// "g_minWinConfidencePercentage" : 80,   // ex: 80 => (80% or more)
 				// Counts
-				"g_maxRunnersCount"               : 7
+				"g_maxRunnersCount"               : 8
 			},
 
 			"Greyhound Racing": {
@@ -73,7 +72,12 @@ const WC = (function() {
 				// "g_betMinutesOffset"           : -1,   // -1 => 1 minute after event start time
 				// "ignore_realStartTime"         : true
 				// Win
-				"g_minWinConfidencePercentage"    : 100,   // 80  => comparison with nearest competitor ex: 100  (100% or more)
+				"g_minWinConfidencePercentage"    : 110,   // 80  => comparison with nearest competitor ex: 100  (100% or more)
+			},
+
+			"Soccer": {
+				// Win
+				"g_minWinConfidencePercentage"    : 110,   // 80  => comparison with nearest competitor ex: 100  (100% or more)
 			},
 	
 			"Tennis": {

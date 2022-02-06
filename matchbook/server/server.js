@@ -18,8 +18,8 @@
 	let g_betScanRound = 0;
 	const g_scanStartTime = new Date();
 
-	const g_BetStakeValue = 0.2;         // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 4.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_BetStakeValue = 0.2;            // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
+	const g_todayTotalBetAmountLimit = 8.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_sumOfAlreadyPlacedBetAmount = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
@@ -45,7 +45,7 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	// const g_onlyOne_raceName = "13:00 Catterick";
+	// const g_onlyOne_raceName = "13:45 Lingfield";
 	const g_onlyOne_raceName = null; 
 
 	/*
@@ -56,8 +56,8 @@
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
 	let g_sportsInterested = ['ALL'];
 	// let g_sportsInterested = [
-	// 	'Horse Racing', //.
-	// 	// 'Soccer', //.
+	// 	// 'Horse Racing', //.
+	// 	'Soccer', //.
 	// 	// 'Greyhound Racing', //.
 
 	// 	// 'American Football',//.
@@ -86,7 +86,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = false; // false => REAL MONEY
+	const g_isLockedForBetting = true; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -159,19 +159,20 @@
 
 	isWinningHorse = (sportName, winPercentage, profitOdd, runnersCount) => {
 		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
-		
+		// max
 		if((winPercentage > wc.g_maxWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd))
 		{
 			return true;
 		}
-		else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd))
-		{
-			return true;
-		}
-		// else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd) && runnersCount <= wc.g_maxRunnersCount)
+		// min
+		// else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd))
 		// {
 		// 	return true;
 		// }
+		else if((winPercentage > wc.g_minWinConfidencePercentage) && (profitOdd > wc.g_minProfitOdd) && runnersCount <= wc.g_maxRunnersCount)
+		{
+			return true;
+		}
 
 		return false;
 	};
@@ -551,6 +552,8 @@
 						runnersObj[runners[runner].name] = {};
 						runnersObj[runners[runner].name].runnerId = runners[runner].id;
 						runnersObj[runners[runner].name].withdrawn = runners[runner].withdrawn; // true = NON-RUNNER
+						// runnersObj[runners[runner].name].extraInfo = {};
+						// if(runners[runner]["race-length"]) runnersObj[runners[runner].name].extraInfo["race-length"] = runners[runner]["race-length"];
 
 						const back = [];
 						const lay = [];
@@ -754,10 +757,10 @@
 					g_moneyStatus[todayDateString].profit = UTIL.roundIt2D(g_userBalance - g_moneyStatus[todayDateString].startingBalance);
 				}
 				else if(g_userBalance < g_BetStakeValue) {
-					CONNECTIONS.print("must","User Balance is VERY LOW !!!!");
+					CONNECTIONS.print("logClient","User Balance is VERY LOW !!!!");
 				}
 				else if(UTIL.roundIt2D(g_todayTotalBetAmountLimit - g_sumOfAlreadyPlacedBetAmount) < g_BetStakeValue) {
-					CONNECTIONS.print("must",`Reached your today's bet limit: ${g_sumOfAlreadyPlacedBetAmount} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
+					CONNECTIONS.print("logClient",`Reached your today's bet limit: ${g_sumOfAlreadyPlacedBetAmount} / ${g_todayTotalBetAmountLimit} => No more bets allowed !!!!`);
 				}
 			}
 		}
@@ -884,7 +887,7 @@
 	};
 
 	// Get meta data for each event
-	getEventMetaData = (sportName) => {
+	getEventMetaData = (sportName, eventInfoObj) => {
 		const wc = WC.getSportsWinningConstants(sportName, g_isLockedForBetting);
 		// meta data
 		const metaData = {
@@ -896,21 +899,25 @@
 			"todayTotalBetAmountLimit"     : g_todayTotalBetAmountLimit,
 			"sumOfAlreadyPlacedBetAmount"  : g_sumOfAlreadyPlacedBetAmount,
 			"currentBalance"               : g_userBalance,
+			"eventInfoObj"                 : eventInfoObj
 		};
 
 		return metaData;
 	};
 
 
-	getEventInfo = function(sportName, event, eventId, startTime, sports_cbCount, events_cbCount, callback) {
-		getEvent(eventId, function(obj) {
+	getEventInfo = function(sportName, event, eventInfoObj, sports_cbCount, events_cbCount, callback) {
+		getEvent(eventInfoObj.id, function(obj) {
 			// CONNECTIONS.print("ignore",obj);
-			
-			g_db.sportId[sportName].events[event].allRunners = obj;
-			g_db.sportId[sportName].events[event].id = eventId;
-			g_db.sportId[sportName].events[event].start = startTime;
-			// g_db["sportId"][sportName]["events"][raceName]["metaData"] = metaData;
-			g_db.sportId[sportName].events[event].metaData = getEventMetaData(sportName);
+
+			const eventInfoObjClone = { ...eventInfoObj }; // 1 level shallow clone. Note: "eventInfoObj" will be modified on next line.
+			// g_db.sportId[sportName].events[event].metaData = getEventMetaData(sportName, eventInfoObj); // TypeError: Converting circular structure to JSON 
+			g_db.sportId[sportName].events[event].metaData = getEventMetaData(sportName, eventInfoObjClone);
+
+			g_db.sportId[sportName].events[event].allRunners = obj;           // "eventInfoObj" modified here
+			g_db.sportId[sportName].events[event].id = eventInfoObj.id;       // event id
+			g_db.sportId[sportName].events[event].start = eventInfoObj.start; // event start time
+
 
 			++events_cbCount.currentCount;
 			if(events_cbCount.currentCount === events_cbCount.totalCount)
@@ -971,8 +978,9 @@
 							// CONNECTIONS.print("logClient", logMsg); // detailed sports and event list
 							CONNECTIONS.print("extra", logMsg);
 
-							getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
-								sports_cbCount, events_cbCount, callback_getEventInfo);
+							// getEventInfo(sport, race, g_db.sportId[sport].events[race].id, g_db.sportId[sport].events[race].start, 
+							// 	sports_cbCount, events_cbCount, callback_getEventInfo);
+							getEventInfo(sport, race, g_db.sportId[sport].events[race],	sports_cbCount, events_cbCount, callback_getEventInfo);
 						}
 					}
 

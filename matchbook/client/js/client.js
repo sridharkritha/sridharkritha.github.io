@@ -428,10 +428,13 @@ window.addEventListener('load', function() {
 					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
 					metaData = predictedWinnerList[sport][eventNo]['metaData'];
 
+					let raceCourseLength = '';
+					if(metaData.eventInfoObj['race-length']) raceCourseLength = `Length: ${metaData.eventInfoObj['race-length']}`;
+
 					g_runnersStr += ` <br/>
 								<div class="eventName">
 									<!-- Event Name(3.30 Kempton) -->
-									<div class ="commonClass">(${++eventCounter})   <b>${eventName}</b>   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']} </div>
+									<div class ="commonClass">(${++eventCounter})   <b>${eventName}</b>   (${sport.toUpperCase()})     ${predictedWinnerList[sport][eventNo]['event-start-time']}  ${raceCourseLength}</div>
 								
 									Today's Bet Amount Limit =  £ ${metaData.sumOfAlreadyPlacedBetAmount} / £ ${metaData.todayTotalBetAmountLimit}, 
 									UserBalance = £ ${metaData.currentBalance}, 
