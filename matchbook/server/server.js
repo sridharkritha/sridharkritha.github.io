@@ -45,8 +45,8 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	const g_onlyOne_raceName = "16:40 Leopardstown";
-	//const g_onlyOne_raceName = null; 
+	// const g_onlyOne_raceName = "16:40 Leopardstown";
+	const g_onlyOne_raceName = null; 
 
 	/*
 	const sportsName = ['American Football','Athletics','Australian Rules','Baseball','Basketball','Boxing','Cricket','Cross Sport Special',
@@ -54,33 +54,33 @@
 	'Horse Racing (Ante Post)','Horse Racing Beta','Hurling','Ice Hockey'];
 	*/
 	// ['Horse Racing'];  ['ALL']; ['Cricket']; ['Horse Racing','Greyhound Racing', 'Cricket'];
-	// let g_sportsInterested = ['ALL'];
-	let g_sportsInterested = [
-		'Horse Racing', //.
-		// 'Soccer', //.
-		// 'Greyhound Racing', //.
+	let g_sportsInterested = ['ALL'];
+	// let g_sportsInterested = [
+	// 	'Horse Racing', //.
+	// 	// 'Soccer', //.
+	// 	// 'Greyhound Racing', //.
 
-		// 'American Football',//.
-		// 'Basketball', //.
-		// "Boxing", //.
-		// "Golf", //.
+	// 	// 'American Football',//.
+	// 	// 'Basketball', //.
+	// 	// "Boxing", //.
+	// 	// "Golf", //.
 
-		// 'Ice Hockey', //.
-		// 'Rugby Union', //.
-		// 'Enhanced Specials', //.
-		// 'Snooker', //.
+	// 	// 'Ice Hockey', //.
+	// 	// 'Rugby Union', //.
+	// 	// 'Enhanced Specials', //.
+	// 	// 'Snooker', //.
 
-		// "Baseball", //.
-		// "Cricket", //.
-		// "Motor Sport", //.
-		// "Tennis", //.
+	// 	// "Baseball", //.
+	// 	// "Cricket", //.
+	// 	// "Motor Sport", //.
+	// 	// "Tennis", //.
 
-		// "Volleyball",
-		// "Chess",
-		// "Cycling",
-		// "Rugby League",
-		// "Table Tennis",
-	];
+	// 	// "Volleyball",
+	// 	// "Chess",
+	// 	// "Cycling",
+	// 	// "Rugby League",
+	// 	// "Table Tennis",
+	// ];
 
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -544,10 +544,8 @@
 			{
 				for(market in jsonFormat.markets)
 				{
-					// let runners = jsonFormat.markets[0].runners;
 					let runners = jsonFormat.markets[market].runners;
 					const runnersObj = {};
-					//marketObj[market].runnersObj = {};
 
 					for(let runner in runners)
 					{
@@ -581,16 +579,12 @@
 						}
 					}
 
-					// marketObj[market].runnersObj = runnersObj;
-					// marketObj[jsonFormat.markets[market].name]["runners"] = runnersObj;
 					marketObj[jsonFormat.markets[market].name] = {};
-					// marketObj[jsonFormat.markets[market].name]["runners"] = {};
 					marketObj[jsonFormat.markets[market].name]["allRunners"] = runnersObj;
 					marketObj[jsonFormat.markets[market].name]["number-of-winners"] = jsonFormat.markets[market]["number-of-winners"];
 				}
 			}
 
-			// callback(runnersObj); // return the object from the callback function 
 			callback(marketObj); // return the object from the callback function 
 		});
 	};
@@ -654,7 +648,7 @@
 										// (or) At least #16 players have some valid odds.
 										if(luckyRunner[halfPlayersCount][0] != Number.MAX_VALUE || nPlayerHasValidOdd > 15) {
 											// Calculating the win chance by comparing with very next competitor 
-											let winPercentage = (luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0];
+											let winPercentage = UTIL.roundIt2D((luckyRunner[1][0] - luckyRunner[0][0]) * 100 / luckyRunner[0][0]);
 											luckyRunner[0][1].numberOfRunners = luckyRunner.length;
 											// winPercentage = winPercentage + (5 / luckyRunner.length * 6);
 											luckyRunner[0][1].winPercentage = winPercentage;
@@ -744,6 +738,7 @@
 				betObj['sportName'] = predictedWinners[i].sportName;
 				betObj['sport-id'] = g_db.sportId[predictedWinners[i].sportName].id;
 				betObj['market'] = predictedWinners[i].market;
+				betObj['winPercentage'] = predictedWinners[i].winPercentage;
 
 				// 'market'
 
@@ -877,6 +872,8 @@
 			"event-id":lastBetResult['event-id'],
 			"event-name":lastBetResult['event-name'],
 			"market":lastBetResult['market'],
+			"winPercentage":lastBetResult['winPercentage'],
+
 
 			"runner-name":lastBetResult['runner-name'],
 			"decimal-odds":lastBetResult['decimal-odds'],
