@@ -2233,6 +2233,312 @@
       },
       "event-start-time": "10/02/2022, 13:00:00",
       "bet-placed-time": "08:20:15  10-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 9,
+      "sport-name": "Tennis",
+      "event-id": 1983995392240051,
+      "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+      "market": "Set Betting",
+      "runner-name": "Petra Kvitova 2-0",
+      "decimal-odds": 2.1,
+      "stake": 0.2,
+      "runner-id": 1983995392890051,
+      "winPercentage": 102.97,
+      "event-full-details": {
+        "id": 1983995392240051,
+        "start": "2022-02-10T11:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 100,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 8,
+          "sumOfAlreadyPlacedBetAmount": 2,
+          "currentBalance": 12.11,
+          "eventInfoObj": {
+            "id": 1983995392240051,
+            "start": "2022-02-10T11:00:00.000Z",
+            "status": "open",
+            "in-running-flag": false,
+            "realStartTime": 0
+          }
+        },
+        "markets": {
+          "Moneyline": {
+            "market-id": 1983995392460051,
+            "allRunners": {
+              "Irina-Camelia Begu": {
+                "runnerId": 1983995392660051,
+                "withdrawn": false,
+                "back": 3.15,
+                "lay": 3.35,
+                "name": "Irina-Camelia Begu",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Moneyline"
+              },
+              "Petra Kvitova": {
+                "runnerId": 1983995392700051,
+                "withdrawn": false,
+                "back": 1.43,
+                "lay": 1.46,
+                "name": "Petra Kvitova",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Moneyline",
+                "numberOfRunners": 2,
+                "winPercentage": 120.28,
+                "startTime": "2022-02-10T11:00:00.000Z",
+                "raceId": 1983995392240051,
+                "raceName": "Irina-Camelia Begu vs Petra Kvitova"
+              }
+            },
+            "number-of-winners": 1,
+            "luckyWinner": {
+              "runnerId": 1983995392700051,
+              "withdrawn": false,
+              "back": 1.43,
+              "lay": 1.46,
+              "name": "Petra Kvitova",
+              "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+              "market-name": "Moneyline",
+              "numberOfRunners": 2,
+              "winPercentage": 120.28,
+              "startTime": "2022-02-10T11:00:00.000Z",
+              "raceId": 1983995392240051,
+              "raceName": "Irina-Camelia Begu vs Petra Kvitova"
+            }
+          },
+          "Total": {
+            "market-id": 1984291329620051,
+            "allRunners": {
+              "OVER 22.0": {
+                "runnerId": 1984291329690051,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 0,
+                "name": "OVER 22.0",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Total"
+              },
+              "UNDER 22.0": {
+                "runnerId": 1984291329740051,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 0,
+                "name": "UNDER 22.0",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Total"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Handicap": {
+            "market-id": 1985191998660048,
+            "allRunners": {
+              "Irina-Camelia Begu +5.0": {
+                "runnerId": 1985191998730048,
+                "back": 1.56,
+                "lay": 2.06,
+                "name": "Irina-Camelia Begu +5.0",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Handicap",
+                "numberOfRunners": 2,
+                "winPercentage": 25,
+                "startTime": "2022-02-10T11:00:00.000Z",
+                "raceId": 1983995392240051,
+                "raceName": "Irina-Camelia Begu vs Petra Kvitova"
+              },
+              "Petra Kvitova -5.0": {
+                "runnerId": 1985191998780048,
+                "back": 1.95,
+                "lay": 2.8,
+                "name": "Petra Kvitova -5.0",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Handicap"
+              }
+            },
+            "number-of-winners": 1,
+            "luckyWinner": {
+              "runnerId": 1985191998730048,
+              "back": 1.56,
+              "lay": 2.06,
+              "name": "Irina-Camelia Begu +5.0",
+              "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+              "market-name": "Handicap",
+              "numberOfRunners": 2,
+              "winPercentage": 25,
+              "startTime": "2022-02-10T11:00:00.000Z",
+              "raceId": 1983995392240051,
+              "raceName": "Irina-Camelia Begu vs Petra Kvitova"
+            }
+          },
+          "First Set Winner": {
+            "market-id": 1983995392420051,
+            "allRunners": {
+              "Irina-Camelia Begu": {
+                "runnerId": 1983995392580151,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 0,
+                "name": "Irina-Camelia Begu",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "First Set Winner"
+              },
+              "Petra Kvitova": {
+                "runnerId": 1983995392620051,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 0,
+                "name": "Petra Kvitova",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "First Set Winner"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Second Set Winner": {
+            "market-id": 1983995392490051,
+            "allRunners": {
+              "Irina-Camelia Begu": {
+                "runnerId": 1983995392730151,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 0,
+                "name": "Irina-Camelia Begu",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Second Set Winner"
+              },
+              "Petra Kvitova": {
+                "runnerId": 1983995392770151,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 0,
+                "name": "Petra Kvitova",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Second Set Winner"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Set Betting": {
+            "market-id": 1983995392530051,
+            "allRunners": {
+              "Irina-Camelia Begu 2-0": {
+                "runnerId": 1983995392810051,
+                "withdrawn": false,
+                "back": 5.3,
+                "lay": 6.8,
+                "name": "Irina-Camelia Begu 2-0",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Set Betting"
+              },
+              "Irina-Camelia Begu 2-1": {
+                "runnerId": 1983995392850051,
+                "withdrawn": false,
+                "back": 6.2,
+                "lay": 8,
+                "name": "Irina-Camelia Begu 2-1",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Set Betting"
+              },
+              "Petra Kvitova 2-0": {
+                "runnerId": 1983995392890051,
+                "withdrawn": false,
+                "back": 2.02,
+                "lay": 2.22,
+                "name": "Petra Kvitova 2-0",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Set Betting",
+                "numberOfRunners": 4,
+                "winPercentage": 102.97,
+                "startTime": "2022-02-10T11:00:00.000Z",
+                "raceId": 1983995392240051,
+                "raceName": "Irina-Camelia Begu vs Petra Kvitova",
+                "sportName": "Tennis",
+                "profitOdd": 1.02,
+                "in-running-flag": false,
+                "status": "open",
+                "realStartTime": 0
+              },
+              "Petra Kvitova 2-1": {
+                "runnerId": 1983995392930051,
+                "withdrawn": false,
+                "back": 4.1,
+                "lay": 5.2,
+                "name": "Petra Kvitova 2-1",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Set Betting"
+              }
+            },
+            "number-of-winners": 1,
+            "luckyWinner": {
+              "runnerId": 1983995392890051,
+              "withdrawn": false,
+              "back": 2.02,
+              "lay": 2.22,
+              "name": "Petra Kvitova 2-0",
+              "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+              "market-name": "Set Betting",
+              "numberOfRunners": 4,
+              "winPercentage": 102.97,
+              "startTime": "2022-02-10T11:00:00.000Z",
+              "raceId": 1983995392240051,
+              "raceName": "Irina-Camelia Begu vs Petra Kvitova",
+              "sportName": "Tennis",
+              "profitOdd": 1.02,
+              "in-running-flag": false,
+              "status": "open",
+              "realStartTime": 0
+            }
+          },
+          "Total Sets": {
+            "market-id": 1983995392560051,
+            "allRunners": {
+              "2 Sets": {
+                "runnerId": 1983995392970051,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 1.61,
+                "name": "2 Sets",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Total Sets"
+              },
+              "3 Sets": {
+                "runnerId": 1983995393010051,
+                "withdrawn": false,
+                "back": 0,
+                "lay": 2.98,
+                "name": "3 Sets",
+                "event-name": "Irina-Camelia Begu vs Petra Kvitova",
+                "market-name": "Total Sets"
+              }
+            },
+            "number-of-winners": 1
+          }
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 100,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 8,
+        "sumOfAlreadyPlacedBetAmount": 2,
+        "currentBalance": 12.11,
+        "eventInfoObj": {
+          "id": 1983995392240051,
+          "start": "2022-02-10T11:00:00.000Z",
+          "status": "open",
+          "in-running-flag": false,
+          "realStartTime": 0
+        }
+      },
+      "event-start-time": "10/02/2022, 11:00:00",
+      "bet-placed-time": "08:29:51  10-02-2022"
     }
   ],
   "Soccer": [
@@ -6894,6 +7200,744 @@
       },
       "event-start-time": "10/02/2022, 19:45:00",
       "bet-placed-time": "08:20:17  10-02-2022"
+    },
+    {
+      "status": "open",
+      "sport-id": 15,
+      "sport-name": "Soccer",
+      "event-id": 1984707451130048,
+      "event-name": "Anorthosis Famagusta vs Aris Limassol",
+      "market": "Match Result and Total Goals",
+      "runner-name": "Anorthosis Famagusta and Under 3.5",
+      "decimal-odds": 1.9,
+      "stake": 0.2,
+      "runner-id": 1984707454280148,
+      "winPercentage": 116.22,
+      "event-full-details": {
+        "id": 1984707451130048,
+        "start": "2022-02-10T17:00:00.000Z",
+        "status": "open",
+        "in-running-flag": false,
+        "realStartTime": 0,
+        "metaData": {
+          "stakeValue": 0.2,
+          "minWinConfidencePercentage": 110,
+          "maxWinConfidencePercentage": 150,
+          "minProfitOdd": 0.8,
+          "todayTotalBetAmountLimit": 8,
+          "sumOfAlreadyPlacedBetAmount": 1.8,
+          "currentBalance": 12.31,
+          "eventInfoObj": {
+            "id": 1984707451130048,
+            "start": "2022-02-10T17:00:00.000Z",
+            "status": "open",
+            "in-running-flag": false,
+            "realStartTime": 0
+          }
+        },
+        "markets": {
+          "Match Odds": {
+            "market-id": 1984707451770048,
+            "allRunners": {
+              "Anorthosis Famagusta": {
+                "runnerId": 1984707453470048,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Odds"
+              },
+              "Aris Limassol": {
+                "runnerId": 1984707453500048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Odds"
+              },
+              "DRAW (Ano/Ari)": {
+                "runnerId": 1984707453530148,
+                "back": 0,
+                "lay": 0,
+                "name": "DRAW (Ano/Ari)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Odds"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Home Team Total Goals": {
+            "market-id": 1984707451540048,
+            "allRunners": {
+              "OVER 2.5": {
+                "runnerId": 1984707452760048,
+                "back": 0,
+                "lay": 0,
+                "name": "OVER 2.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Home Team Total Goals"
+              },
+              "UNDER 2.5": {
+                "runnerId": 1984707452800048,
+                "back": 0,
+                "lay": 0,
+                "name": "UNDER 2.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Home Team Total Goals"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "1st Half Total": {
+            "market-id": 1984707451960048,
+            "allRunners": {
+              "OVER 2.5": {
+                "runnerId": 1984707453950148,
+                "back": 0,
+                "lay": 0,
+                "name": "OVER 2.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "1st Half Total"
+              },
+              "UNDER 2.5": {
+                "runnerId": 1984707453990048,
+                "back": 0,
+                "lay": 0,
+                "name": "UNDER 2.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "1st Half Total"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Away Team Total Goals": {
+            "market-id": 1984707452290048,
+            "allRunners": {
+              "OVER 2.5": {
+                "runnerId": 1984707455040048,
+                "back": 0,
+                "lay": 0,
+                "name": "OVER 2.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team Total Goals"
+              },
+              "UNDER 2.5": {
+                "runnerId": 1984707455080048,
+                "back": 0,
+                "lay": 0,
+                "name": "UNDER 2.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team Total Goals"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Total": {
+            "market-id": 1984707452630048,
+            "allRunners": {
+              "OVER 2.0": {
+                "runnerId": 1984707456110048,
+                "back": 1.33,
+                "lay": 2.04,
+                "name": "OVER 2.0",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Total",
+                "numberOfRunners": 2,
+                "winPercentage": 48.87,
+                "startTime": "2022-02-10T17:00:00.000Z",
+                "raceId": 1984707451130048,
+                "raceName": "Anorthosis Famagusta vs Aris Limassol"
+              },
+              "UNDER 2.0": {
+                "runnerId": 1984707456150048,
+                "back": 1.98,
+                "lay": 4,
+                "name": "UNDER 2.0",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Total"
+              }
+            },
+            "number-of-winners": 1,
+            "luckyWinner": {
+              "runnerId": 1984707456110048,
+              "back": 1.33,
+              "lay": 2.04,
+              "name": "OVER 2.0",
+              "event-name": "Anorthosis Famagusta vs Aris Limassol",
+              "market-name": "Total",
+              "numberOfRunners": 2,
+              "winPercentage": 48.87,
+              "startTime": "2022-02-10T17:00:00.000Z",
+              "raceId": 1984707451130048,
+              "raceName": "Anorthosis Famagusta vs Aris Limassol"
+            }
+          },
+          "Handicap": {
+            "market-id": 1984707451660048,
+            "allRunners": {
+              "Anorthosis Famagusta (-0.0/0.5)": {
+                "runnerId": 1984707453040148,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta (-0.0/0.5)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Handicap"
+              },
+              "Aris Limassol (+0.0/0.5)": {
+                "runnerId": 1984707453080048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol (+0.0/0.5)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Handicap"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "1st Half Handicap": {
+            "market-id": 1984707452190048,
+            "allRunners": {
+              "Anorthosis Famagusta (-0.0/0.5)": {
+                "runnerId": 1984707454790048,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta (-0.0/0.5)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "1st Half Handicap"
+              },
+              "Aris Limassol (+0.0/0.5)": {
+                "runnerId": 1984707454820048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol (+0.0/0.5)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "1st Half Handicap"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Both Teams To Score": {
+            "market-id": 1984707452090048,
+            "allRunners": {
+              "YES(ANORTHOSIS FAMAGUSTA/ARIS LIMASSOL)": {
+                "runnerId": 1984707454540048,
+                "back": 0,
+                "lay": 0,
+                "name": "YES(ANORTHOSIS FAMAGUSTA/ARIS LIMASSOL)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Both Teams To Score"
+              },
+              "NO(ANORTHOSIS FAMAGUSTA/ARIS LIMASSOL)": {
+                "runnerId": 1984707454570148,
+                "back": 0,
+                "lay": 0,
+                "name": "NO(ANORTHOSIS FAMAGUSTA/ARIS LIMASSOL)",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Both Teams To Score"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Half Time/Full Time": {
+            "market-id": 1984707452350048,
+            "allRunners": {
+              "ANORTHOSIS FAMAGUSTA/ANORTHOSIS FAMAGUSTA": {
+                "runnerId": 1984707455190048,
+                "back": 0,
+                "lay": 0,
+                "name": "ANORTHOSIS FAMAGUSTA/ANORTHOSIS FAMAGUSTA",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "ANORTHOSIS FAMAGUSTA/DRAW": {
+                "runnerId": 1984707455220148,
+                "back": 0,
+                "lay": 0,
+                "name": "ANORTHOSIS FAMAGUSTA/DRAW",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "ANORTHOSIS FAMAGUSTA/ARIS LIMASSOL": {
+                "runnerId": 1984707455260148,
+                "back": 0,
+                "lay": 0,
+                "name": "ANORTHOSIS FAMAGUSTA/ARIS LIMASSOL",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "DRAW/ANORTHOSIS FAMAGUSTA": {
+                "runnerId": 1984707455300148,
+                "back": 0,
+                "lay": 0,
+                "name": "DRAW/ANORTHOSIS FAMAGUSTA",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "DRAW/DRAW": {
+                "runnerId": 1984707455340048,
+                "back": 0,
+                "lay": 0,
+                "name": "DRAW/DRAW",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "DRAW/ARIS LIMASSOL": {
+                "runnerId": 1984707455380048,
+                "back": 0,
+                "lay": 0,
+                "name": "DRAW/ARIS LIMASSOL",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "ARIS LIMASSOL/ANORTHOSIS FAMAGUSTA": {
+                "runnerId": 1984707455420048,
+                "back": 0,
+                "lay": 0,
+                "name": "ARIS LIMASSOL/ANORTHOSIS FAMAGUSTA",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "ARIS LIMASSOL/DRAW": {
+                "runnerId": 1984707455460048,
+                "back": 0,
+                "lay": 0,
+                "name": "ARIS LIMASSOL/DRAW",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              },
+              "ARIS LIMASSOL/ARIS LIMASSOL": {
+                "runnerId": 1984707455490148,
+                "back": 0,
+                "lay": 0,
+                "name": "ARIS LIMASSOL/ARIS LIMASSOL",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half Time/Full Time"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Match Result and Both Teams To Score": {
+            "market-id": 1984707451690048,
+            "allRunners": {
+              "Anorthosis Famagusta and Yes": {
+                "runnerId": 1984707453110048,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta and Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Both Teams To Score"
+              },
+              "Anorthosis Famagusta and No": {
+                "runnerId": 1984707453140148,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta and No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Both Teams To Score"
+              },
+              "Draw and Yes": {
+                "runnerId": 1984707453180048,
+                "back": 3,
+                "lay": 0,
+                "name": "Draw and Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Both Teams To Score"
+              },
+              "Draw and No": {
+                "runnerId": 1984707453210148,
+                "back": 0,
+                "lay": 0,
+                "name": "Draw and No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Both Teams To Score"
+              },
+              "Aris Limassol and Yes": {
+                "runnerId": 1984707453250048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol and Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Both Teams To Score"
+              },
+              "Aris Limassol and No": {
+                "runnerId": 1984707453280148,
+                "back": 4.4,
+                "lay": 0,
+                "name": "Aris Limassol and No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Both Teams To Score"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Home Team To Win To Nil": {
+            "market-id": 1984707451720048,
+            "allRunners": {
+              "Yes": {
+                "runnerId": 1984707453320048,
+                "back": 0,
+                "lay": 0,
+                "name": "Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Home Team To Win To Nil"
+              },
+              "No": {
+                "runnerId": 1984707453360048,
+                "back": 0,
+                "lay": 1.89,
+                "name": "No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Home Team To Win To Nil"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Home Team To Score": {
+            "market-id": 1984707451750048,
+            "allRunners": {
+              "Yes": {
+                "runnerId": 1984707453390148,
+                "back": 0,
+                "lay": 1.37,
+                "name": "Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Home Team To Score"
+              },
+              "No": {
+                "runnerId": 1984707453430048,
+                "back": 0,
+                "lay": 0,
+                "name": "No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Home Team To Score"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "2nd Half Result": {
+            "market-id": 1984707451800048,
+            "allRunners": {
+              "Anorthosis Famagusta": {
+                "runnerId": 1984707453560148,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "2nd Half Result"
+              },
+              "Draw": {
+                "runnerId": 1984707453600048,
+                "back": 0,
+                "lay": 0,
+                "name": "Draw",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "2nd Half Result"
+              },
+              "Aris Limassol": {
+                "runnerId": 1984707453640048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "2nd Half Result"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Draw No Bet": {
+            "market-id": 1984707451840048,
+            "allRunners": {
+              "Anorthosis Famagusta": {
+                "runnerId": 1984707453670148,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Draw No Bet"
+              },
+              "Aris Limassol": {
+                "runnerId": 1984707453710048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Draw No Bet"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "No Draw Both Teams To Score": {
+            "market-id": 1984707451870048,
+            "allRunners": {
+              "Yes": {
+                "runnerId": 1984707453740148,
+                "back": 0,
+                "lay": 0,
+                "name": "Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "No Draw Both Teams To Score"
+              },
+              "No": {
+                "runnerId": 1984707453780048,
+                "back": 0,
+                "lay": 0,
+                "name": "No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "No Draw Both Teams To Score"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Match Result and Total Goals": {
+            "market-id": 1984707452020048,
+            "allRunners": {
+              "Anorthosis Famagusta and Over 3.5": {
+                "runnerId": 1984707454250048,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta and Over 3.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Total Goals"
+              },
+              "Anorthosis Famagusta and Under 3.5": {
+                "runnerId": 1984707454280148,
+                "back": 1.85,
+                "lay": 0,
+                "name": "Anorthosis Famagusta and Under 3.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Total Goals",
+                "numberOfRunners": 6,
+                "winPercentage": 116.22,
+                "startTime": "2022-02-10T17:00:00.000Z",
+                "raceId": 1984707451130048,
+                "raceName": "Anorthosis Famagusta vs Aris Limassol",
+                "sportName": "Soccer",
+                "profitOdd": 0.8500000000000001,
+                "in-running-flag": false,
+                "status": "open",
+                "realStartTime": 0
+              },
+              "Draw and Over 3.5": {
+                "runnerId": 1984707454320048,
+                "back": 6,
+                "lay": 0,
+                "name": "Draw and Over 3.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Total Goals"
+              },
+              "Draw and Under 3.5": {
+                "runnerId": 1984707454360048,
+                "back": 0,
+                "lay": 0,
+                "name": "Draw and Under 3.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Total Goals"
+              },
+              "Aris Limassol and Over 3.5": {
+                "runnerId": 1984707454400048,
+                "back": 8.8,
+                "lay": 0,
+                "name": "Aris Limassol and Over 3.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Total Goals"
+              },
+              "Aris Limassol and Under 3.5": {
+                "runnerId": 1984707454430148,
+                "back": 4,
+                "lay": 0,
+                "name": "Aris Limassol and Under 3.5",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Match Result and Total Goals"
+              }
+            },
+            "number-of-winners": 1,
+            "luckyWinner": {
+              "runnerId": 1984707454280148,
+              "back": 1.85,
+              "lay": 0,
+              "name": "Anorthosis Famagusta and Under 3.5",
+              "event-name": "Anorthosis Famagusta vs Aris Limassol",
+              "market-name": "Match Result and Total Goals",
+              "numberOfRunners": 6,
+              "winPercentage": 116.22,
+              "startTime": "2022-02-10T17:00:00.000Z",
+              "raceId": 1984707451130048,
+              "raceName": "Anorthosis Famagusta vs Aris Limassol",
+              "sportName": "Soccer",
+              "profitOdd": 0.8500000000000001,
+              "in-running-flag": false,
+              "status": "open",
+              "realStartTime": 0
+            }
+          },
+          "Away Team To Win To Nil": {
+            "market-id": 1984707452060048,
+            "allRunners": {
+              "Yes": {
+                "runnerId": 1984707454470048,
+                "back": 0,
+                "lay": 0,
+                "name": "Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team To Win To Nil"
+              },
+              "No": {
+                "runnerId": 1984707454500148,
+                "back": 0,
+                "lay": 0,
+                "name": "No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team To Win To Nil"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Half-time Result": {
+            "market-id": 1984707452120048,
+            "allRunners": {
+              "Anorthosis Famagusta": {
+                "runnerId": 1984707454610048,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half-time Result"
+              },
+              "Draw": {
+                "runnerId": 1984707454640148,
+                "back": 0,
+                "lay": 0,
+                "name": "Draw",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half-time Result"
+              },
+              "Aris Limassol": {
+                "runnerId": 1984707454680048,
+                "back": 0,
+                "lay": 0,
+                "name": "Aris Limassol",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Half-time Result"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Double Chance": {
+            "market-id": 1984707452230048,
+            "allRunners": {
+              "Anorthosis Famagusta or Draw": {
+                "runnerId": 1984707454850148,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta or Draw",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Double Chance"
+              },
+              "Anorthosis Famagusta or Aris Limassol": {
+                "runnerId": 1984707454890048,
+                "back": 0,
+                "lay": 0,
+                "name": "Anorthosis Famagusta or Aris Limassol",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Double Chance"
+              },
+              "Draw or Aris Limassol": {
+                "runnerId": 1984707454920148,
+                "back": 0,
+                "lay": 0,
+                "name": "Draw or Aris Limassol",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Double Chance"
+              }
+            },
+            "number-of-winners": 2
+          },
+          "Away Team Clean Sheet": {
+            "market-id": 1984707452320048,
+            "allRunners": {
+              "Yes": {
+                "runnerId": 1984707455110148,
+                "back": 0,
+                "lay": 0,
+                "name": "Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team Clean Sheet"
+              },
+              "No": {
+                "runnerId": 1984707455150048,
+                "back": 0,
+                "lay": 0,
+                "name": "No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team Clean Sheet"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Odd or Even Total": {
+            "market-id": 1984707452380048,
+            "allRunners": {
+              "Even": {
+                "runnerId": 1984707455530148,
+                "back": 0,
+                "lay": 0,
+                "name": "Even",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Odd or Even Total"
+              },
+              "Odd": {
+                "runnerId": 1984707455570048,
+                "back": 0,
+                "lay": 0,
+                "name": "Odd",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Odd or Even Total"
+              }
+            },
+            "number-of-winners": 1
+          },
+          "Away Team To Score": {
+            "market-id": 1984707452660048,
+            "allRunners": {
+              "Yes": {
+                "runnerId": 1984707456180148,
+                "back": 1.37,
+                "lay": 2.26,
+                "name": "Yes",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team To Score"
+              },
+              "No": {
+                "runnerId": 1984707456220048,
+                "back": 0,
+                "lay": 0,
+                "name": "No",
+                "event-name": "Anorthosis Famagusta vs Aris Limassol",
+                "market-name": "Away Team To Score"
+              }
+            },
+            "number-of-winners": 1
+          }
+        }
+      },
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 110,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 8,
+        "sumOfAlreadyPlacedBetAmount": 1.8,
+        "currentBalance": 12.31,
+        "eventInfoObj": {
+          "id": 1984707451130048,
+          "start": "2022-02-10T17:00:00.000Z",
+          "status": "open",
+          "in-running-flag": false,
+          "realStartTime": 0
+        }
+      },
+      "event-start-time": "10/02/2022, 17:00:00",
+      "bet-placed-time": "08:25:37  10-02-2022"
     }
   ]
 }

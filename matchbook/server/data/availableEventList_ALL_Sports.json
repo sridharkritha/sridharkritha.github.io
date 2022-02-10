@@ -13,8 +13,8 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 8,
-        "sumOfAlreadyPlacedBetAmount": 1.8,
-        "currentBalance": 12.31,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 11.91,
         "eventInfoObj": {
           "id": 1983892583280051,
           "start": "2022-02-10T14:15:00.000Z",
@@ -31,7 +31,7 @@
               "runnerId": 1983892583500051,
               "withdrawn": false,
               "back": 3,
-              "lay": 3.55
+              "lay": 3.5
             }
           },
           "number-of-winners": 1
@@ -50,8 +50,8 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 8,
-        "sumOfAlreadyPlacedBetAmount": 1.8,
-        "currentBalance": 12.31,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 11.91,
         "eventInfoObj": {
           "id": 1984596935100051,
           "start": "2022-02-10T14:15:00.000Z",
@@ -87,8 +87,8 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 8,
-        "sumOfAlreadyPlacedBetAmount": 1.8,
-        "currentBalance": 12.31,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 11.91,
         "eventInfoObj": {
           "id": 1984535239300051,
           "start": "2022-02-10T19:10:00.000Z",
@@ -124,8 +124,8 @@
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
         "todayTotalBetAmountLimit": 8,
-        "sumOfAlreadyPlacedBetAmount": 1.8,
-        "currentBalance": 12.31,
+        "sumOfAlreadyPlacedBetAmount": 2.2,
+        "currentBalance": 11.91,
         "eventInfoObj": {
           "id": 1984831274950048,
           "start": "2022-02-10T19:45:00.000Z",

@@ -65,7 +65,10 @@ window.addEventListener('load', function() {
 									<div class ="commonClass"><b>${sport.toUpperCase()}</b> (# ${predictedWinnerList[sport].length})</div>
 									</div>`;
 
-				for(let eventNo = 0, n = predictedWinnerList[sport].length; eventNo < n; ++eventNo) {
+				const n = predictedWinnerList[sport].length;
+				if(n) predictedWinnerList[sport].sort((a, b) => b.winPercentage - a.winPercentage); // sort - descending order
+
+				for(let eventNo = 0; eventNo < n; ++eventNo) {
 					// Event Name
 					const eventName = predictedWinnerList[sport][eventNo]['event-name'];
 					const eventFullDetails = predictedWinnerList[sport][eventNo]['event-full-details'];
