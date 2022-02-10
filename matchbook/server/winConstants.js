@@ -49,13 +49,14 @@ const WC = (function() {
 			},
 
 			"Test Constants": {
-				"g_betMinutesOffset"              : 600, // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
-				
+				// "g_betMinutesOffset"              : 600, // (600 = 10hrs before). 1 => place bet: +1 min before the start time, -5 min after the start time	
 				// "g_minProfitOdd"                  : 0.01, // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 				// "g_minWinConfidencePercentage"    : 0,  // 80  => comparison with nearest competitor ex: 100  (100% or more)
+				// "g_maxRunnersCount"               : 25,
+
 				// // "g_whichDayEvent"              : '2021-12-26'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 				// // Counts
-				// "g_maxRunnersCount"               : 25
+
 			},
 	
 			"Horse Racing": {
@@ -65,7 +66,7 @@ const WC = (function() {
 				// // Money
 				// "g_minProfitOdd"               : 0.7,   // 0.7 => £0.7,  ex: 1 => £1 (1/1 = 1 even odd [or] 2.00 in decimal)
 				// // Win
-				"g_minWinConfidencePercentage"    : 100,   // ex: 80 => (80% or more)
+				"g_minWinConfidencePercentage"    : 50,   // 100, ex: 80 => (80% or more)
 				// Counts
 				"g_maxRunnersCount"               : 8
 			},

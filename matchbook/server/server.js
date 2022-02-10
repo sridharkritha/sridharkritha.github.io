@@ -45,7 +45,7 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	// const g_onlyOne_raceName = "16:40 Leopardstown";
+	// const g_onlyOne_raceName = "13:45 Thurles";
 	const g_onlyOne_raceName = null; 
 
 	/*
@@ -185,8 +185,9 @@
 		const inRunningFlag  = eventObj["in-running-flag"];
 		const sportName      = eventObj["sportName"];
 
-		let raceLength = 0;
+
 		let raceRunningTime = 0;
+		// let raceLength = 0;
 		// if(sportName === "Horse Racing") {
 		// 	raceLength = UTIL.convertMfyToYards(eventObj["race-length"]); // "3m 4f 200y" => 6360 yards
 		// 	raceRunningTime = UTIL.calculateRaceRunningTime(sportName, raceLength); // seconds
@@ -554,8 +555,11 @@
 							runner = Number(runner);
 							
 							runnersObj[runners[runner].name] = {};
+							// Same HORSE will have different runner-id on different markets. So "Runner-id" is unique.
+							// HORSE - "8 Lassue" - Runner-id => 1982738798240051  (WIN market)
+							// HORSE - "8 Lassue" - Runner-id => 2082738798510051  (Place(2 market))
 							runnersObj[runners[runner].name].runnerId = runners[runner].id;
-							runnersObj[runners[runner].name].withdrawn = runners[runner].withdrawn; // true = NON-RUNNER
+							runnersObj[runners[runner].name].withdrawn = runners[runner].withdrawn; // true => NON-RUNNER
 	
 							const back = [];
 							const lay = [];
@@ -580,6 +584,7 @@
 					}
 
 					marketObj[jsonFormat.markets[market].name] = {};
+					marketObj[jsonFormat.markets[market].name]["market-id"] = jsonFormat.markets[market]["id"]; // Market id
 					marketObj[jsonFormat.markets[market].name]["allRunners"] = runnersObj;
 					marketObj[jsonFormat.markets[market].name]["number-of-winners"] = jsonFormat.markets[market]["number-of-winners"];
 				}
@@ -626,7 +631,7 @@
 												let runnerObj = jsonObj[prop][race]["markets"][market]["allRunners"][runner];
 												runnerObj.name = runner;
 												runnerObj['event-name'] = raceName;
-												runnerObj['market'] = market;
+												runnerObj['market-name'] = market;
 												if(runnerObj.withdrawn)  nonRunnerCount += 1;
 												let back = jsonObj[prop][race]["markets"][market]["allRunners"][runner].back;
 												++nPlayerHasValidOdd;
@@ -657,7 +662,10 @@
 											luckyRunner[0][1].raceName = raceName;
 											let profitOdd = luckyRunner[0][1].back - 1;
 										
-											jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+											// jsonObj[prop][race].luckyWinner = luckyRunner[0][1]; // first element from an array
+											jsonObj[prop][race]["markets"][market].luckyWinner = luckyRunner[0][1]; // first element from an array
+											// if(!jsonObj[prop][race].luckyWinner) jsonObj[prop][race].luckyWinner = {};
+											// jsonObj[prop][race].luckyWinner[market] = luckyRunner[0][1]; // first element from an array
 
 											// console.log(`Sports: ${sportName} #### Event: ${raceName} #### Win(%): ${UTIL.roundIt2D(winPercentage)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
 											console.log(`${UTIL.formatString(`Sports: (${sportName})`, 28)} #### ${UTIL.formatString(`Event: (${raceName})`, 60)}  #### ${UTIL.formatString(`Win(%): ${UTIL.roundIt2D(winPercentage)}`, 18)} #### Odd(${luckyRunner[0][1].name} / ${luckyRunner[1][1].name}): ${luckyRunner[0][0]} / ${luckyRunner[1][0]}`);
@@ -728,17 +736,17 @@
 				let roundToNearestDecimalTen = (Math.ceil((((numberAfterDecimalPoint) * 100)+1)/10)*10)/100; // 0.13 = 0.20
 				let roundedOdd = numberBeforeDecimalPoint + roundToNearestDecimalTen; // 2.13453 => 2.20
 
-				betObj.odds = roundedOdd; // for reducing the commission charge
 				// betObj.odds = predictedWinners[i].back;
-				betObj['runner-id'] = predictedWinners[i].runnerId;
-			
-				betObj.side = 'back';
-				betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
+				betObj.odds = roundedOdd; // for reducing the commission charge
+
+				betObj['runner-id'] = predictedWinners[i].runnerId; // ALWAYS UNIQUE regardless of sports/market within the sports
 				betObj['event-start-time'] = predictedWinners[i].startTime;
 				betObj['sportName'] = predictedWinners[i].sportName;
 				betObj['sport-id'] = g_db.sportId[predictedWinners[i].sportName].id;
-				betObj['market'] = predictedWinners[i].market;
+				betObj['market-name'] = predictedWinners[i]['market-name'];
 				betObj['winPercentage'] = predictedWinners[i].winPercentage;
+				betObj.side = 'back';
+				betObj.stake = g_BetStakeValue; // your MONEY !!!! (1.0)
 
 				// 'market'
 
@@ -799,7 +807,7 @@
 		// 	"exchange-type":"back-lay",
 		// 	"offers":
 		// 	  [{
-		// 		  "runner-id":1052216604020016,
+		// 		  "runner-id":1052216604020016,                  <============== UNIQUE across the whole sportsBook
 		// 		  "side":"back",
 		// 		  "odds": 2.4,
 		// 		  "stake": 0.0
@@ -863,28 +871,81 @@
 		}
 	};
 
+	callback_submitOffers = function(err, response) {
+		if(err) {
+			CONNECTIONS.print("must",err);
+		}
+		else {
+			// CONNECTIONS.print("ignore",response);
+			const nSubmittedBets = response.body.offers.length;
+			for(let i = 0; i < nSubmittedBets; ++i) {
+				let lastBetResult = response.body.offers[i];
+				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
+					let obj = populateDataAfterBetSubmit(lastBetResult, true);
+					CONNECTIONS.print("must",obj);
+				}
+			}
+
+			FA.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
+			FA.writeJsonFile(g_allPredictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
+			FA.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
+
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
+			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
+		}
+	};
+
 
 	populateDataAfterBetSubmit = function(lastBetResult, isRealBet) {
+		// if(isRealBet) {
+		// 	lastBetResult["runner-id"]
+		// }
+		// betObj['runner-id'] = predictedWinners[i].runnerId;
+		// betObj['winPercentage'] = predictedWinners[i].runnerId;
+		// g_db["sportId"][sportName]["events"][eventName]["markets"]["WIN"]
+		// g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']],
+		// g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']]["metaData"],
+
+
+		const sportName   = getSportsNameBySportsId(lastBetResult['sport-id'])
+		const eventName   = lastBetResult['event-name'];
+		const market      = lastBetResult['market-name'];
+		const runnerId    = lastBetResult['runner-id'];
+		const luckyWinner = g_db["sportId"][sportName]["events"][eventName]["markets"][market].luckyWinner;
+
+		if(runnerId === luckyWinner.runnerId) {
+			lastBetResult['winPercentage'] = luckyWinner.winPercentage;
+			lastBetResult['profitOdd'] = luckyWinner.profitOdd;
+			if(!luckyWinner["race-length"]) lastBetResult['race-length'] = luckyWinner['race-length'];
+		}
+
+
 		let obj = 	{
+			// DIRECT: data available DIRECTLY from the AFTER bet submission response
 			"status":lastBetResult['status'],
 			"sport-id":lastBetResult['sport-id'],
-			"sport-name": getSportsNameBySportsId(lastBetResult['sport-id']),
+			"sport-name": sportName,
 			"event-id":lastBetResult['event-id'],
-			"event-name":lastBetResult['event-name'],
-			"market":lastBetResult['market'],
-			"winPercentage":lastBetResult['winPercentage'],
-
-
+			"event-name":eventName,
+			"market":lastBetResult['market-name'],
 			"runner-name":lastBetResult['runner-name'],
 			"decimal-odds":lastBetResult['decimal-odds'],
-			"stake": lastBetResult['stake'], // g_BetStakeValue,
+			"stake": lastBetResult['stake'],
+			"runner-id": lastBetResult['runner-id'],
+
+
+
+			// INDIRECT: Get the data from global object w.r.t unique "runner-id" from the AFTER bet submission response
+
+			"winPercentage":lastBetResult['winPercentage'],
 
 			// g_db["sportId"][sportsName]["events"][eventName]
-			"event-full-details": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']],
+			"event-full-details": g_db["sportId"][sportName]["events"][eventName],
 			// "metaData": lastBetResult['metaData'], // g_db["sportId"]["metaData"],
-			"metaData": g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']]["metaData"],
+			"metaData": g_db["sportId"][sportName]["events"][eventName]["metaData"],
 			// "event-start-time": new Date(lastBetResult['event-start-time']).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
-			"event-start-time": new Date(g_db["sportId"][getSportsNameBySportsId(lastBetResult['sport-id'])]["events"][lastBetResult['event-name']]["start"]).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
+			"event-start-time": new Date(g_db["sportId"][sportName]["events"][eventName]["start"]).toLocaleString('en-GB', { timeZone: 'Europe/London' }),
 			
 			"bet-placed-time": TIMER.getCurrentTimeDate() 
 		};
@@ -1065,32 +1126,6 @@
 			console.log(`${UTIL.formatString(`Events(${eventName})`, 30)} : ${events_cbCount.currentCount.toString().padStart(3, "0")} / ${events_cbCount.totalCount.toString().padStart(3, "0")} #######  ${UTIL.formatString(`Sports(${sportsName})`, 30)}: ${sports_cbCount.currentCount.toString().padStart(2, "0")} / ${sports_cbCount.totalCount.toString().padStart(2, "0")}`);
 		}
 	};
-
-	callback_submitOffers = function(err, response) {
-		if(err) {
-			CONNECTIONS.print("must",err);
-		}
-		else {
-			// CONNECTIONS.print("ignore",response);
-			const nSubmittedBets = response.body.offers.length;
-			for(let i = 0; i < nSubmittedBets; ++i) {
-				let lastBetResult = response.body.offers[i];
-				if(lastBetResult.status === 'matched' || lastBetResult.status === 'open') {
-					let obj = populateDataAfterBetSubmit(lastBetResult, true);
-					CONNECTIONS.print("must",obj);
-				}
-			}
-
-			FA.writeJsonFile(g_alreadyPlacedBetList,'./data-Report/alreadyPlacedBetList.json');
-			FA.writeJsonFile(g_allPredictedWinnerBetList,'./data-Report/mockSuccessfulBets.json');
-			FA.writeJsonFile(g_moneyStatus,'./data-Report/money.json');
-
-			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALREADY_PLACED_BETS_EVENT', JSON.stringify(g_alreadyPlacedBetList)); // notify the client
-			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_ALL_PREDICTED_WINNERS_EVENT', JSON.stringify(g_allPredictedWinnerBetList)); // notify the client
-			CONNECTIONS.notifyAllUser('SERVER_TO_CLIENT_CURRENT_PREDICTED_WINNERS_EVENT', JSON.stringify(g_currentPredictedWinnerBetList)); // notify the client
-		}
-	};
-
 
 	// Get Sports Wallet Balance
 	// Get the new sports balance for the user currently logged in.

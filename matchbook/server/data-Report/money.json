@@ -3,9 +3,18 @@
     "startingBalance": 13.53,
     "todayTotalBetAmountLimit": 8,
     "date": "Tue Feb 08 2022",
-    "currentBalance": 11.13,
-    "sumOfAlreadyPlacedBetAmount": 2.4,
-    "totalPlacedBets": 12,
-    "profit": -2.4
+    "currentBalance": 11.91,
+    "sumOfAlreadyPlacedBetAmount": 4.2,
+    "totalPlacedBets": 21,
+    "profit": -1.62
+  },
+  "Wed Feb 09 2022": {
+    "startingBalance": 14.11,
+    "todayTotalBetAmountLimit": 8,
+    "date": "Wed Feb 09 2022",
+    "currentBalance": 13.91,
+    "sumOfAlreadyPlacedBetAmount": 0.2,
+    "totalPlacedBets": 1,
+    "profit": -0.2
   }
 }
