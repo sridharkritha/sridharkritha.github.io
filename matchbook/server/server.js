@@ -45,7 +45,7 @@
 	let g_whichDayEvent = 'today'; // 'today' or 'tomorrow' or "2019-12-24" (ISO specific date)
 
 	// const g_onlyOne_raceName = "Alex De Minaur vs Jannik Sinner"; // test only one race
-	// const g_onlyOne_raceName = "13:45 Thurles";
+	// const g_onlyOne_raceName = "14:35 Huntingdon";
 	const g_onlyOne_raceName = null; 
 
 	/*
@@ -86,7 +86,7 @@
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$// WARNING !!!! ( false => places the real money bet) //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	
-	const g_isLockedForBetting = true; // false => REAL MONEY
+	const g_isLockedForBetting = false; // false => REAL MONEY
 	
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
