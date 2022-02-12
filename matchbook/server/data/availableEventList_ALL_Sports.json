@@ -1,402 +1,598 @@
 {
-  "id": 24735152712200,
+  "id": 18,
   "events": {
-    "10:20 Fairview": {
-      "id": 1979188840080051,
-      "start": "2022-02-04T10:20:00.000Z",
+    "Exeter Chiefs vs Gloucester": {
+      "id": 1982197548220051,
+      "start": "2022-02-12T15:00:00.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 6f 211y"
-    },
-    "10:55 Fairview": {
-      "id": 1979188875430051,
-      "start": "2022-02-04T10:55:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 1f 98y"
-    },
-    "11:30 Fairview": {
-      "id": 1979188877680051,
-      "start": "2022-02-04T11:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 1f 98y"
-    },
-    "12:05 Fairview": {
-      "id": 1979188880270051,
-      "start": "2022-02-04T12:05:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 1f 98y"
-    },
-    "12:40 Fairview": {
-      "id": 1979188881630051,
-      "start": "2022-02-04T12:40:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 5f 212y"
-    },
-    "13:00 Catterick": {
-      "id": 1978418119110051,
-      "start": "2022-02-04T13:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 7f 156y",
-      "allRunners": {
-        "2 Icone D'aubrelle": {
-          "runnerId": 1978418119770051,
-          "withdrawn": false,
-          "back": 3.15,
-          "lay": 4.2
-        },
-        "1 Collingham": {
-          "runnerId": 1978418119740051,
-          "withdrawn": false,
-          "back": 3.1,
-          "lay": 3.2
-        },
-        "3 Jaramillo": {
-          "runnerId": 1978418119810051,
-          "withdrawn": false,
-          "back": 3.25,
-          "lay": 4.8
-        },
-        "7 Sanosuke": {
-          "runnerId": 1978418119930051,
-          "withdrawn": false,
-          "back": 12,
-          "lay": 95
-        },
-        "4 Monsieur Pom Pom": {
-          "runnerId": 1978418119840051,
-          "withdrawn": false,
-          "back": 7.6,
-          "lay": 480
-        },
-        "5 Piecederesistance": {
-          "runnerId": 1978418119870051,
-          "withdrawn": false,
-          "back": 10.5,
-          "lay": 0
-        },
-        "6 Professor Calculus": {
-          "runnerId": 1978418119900051,
-          "withdrawn": false,
-          "back": 6,
-          "lay": 990
-        }
-      },
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.044Z",
       "metaData": {
         "stakeValue": 0.2,
         "minWinConfidencePercentage": 80,
         "maxWinConfidencePercentage": 150,
         "minProfitOdd": 0.8,
-        "todayTotalBetAmountLimit": 4,
-        "sumOfAlreadyPlacedBetAmount": 1,
-        "currentBalance": 6.25
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1982197548220051,
+          "start": "2022-02-12T15:00:00.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.044Z"
+        }
+      },
+      "markets": {
+        "Match Odds": {
+          "market-id": 1982197548400051,
+          "allRunners": {
+            "Exeter Chiefs": {
+              "runnerId": 1982197548450051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Gloucester": {
+              "runnerId": 1982197548500051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "DRAW (Exe/Glo)": {
+              "runnerId": 1982197548540051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Total": {
+          "market-id": 1987188296110056,
+          "allRunners": {
+            "OVER 47.5": {
+              "runnerId": 1987188296290056,
+              "back": 0,
+              "lay": 0
+            },
+            "UNDER 47.5": {
+              "runnerId": 1987188296330056,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
       }
     },
-    "13:15 Fairview": {
-      "id": 1979188883040051,
-      "start": "2022-02-04T13:15:00.000Z",
+    "Sale Sharks vs Worcester Warriors": {
+      "id": 1982197553950051,
+      "start": "2022-02-12T15:00:00.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 4f 214y"
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.044Z",
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1982197553950051,
+          "start": "2022-02-12T15:00:00.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.044Z"
+        }
+      },
+      "markets": {
+        "Match Odds": {
+          "market-id": 1982197554120051,
+          "allRunners": {
+            "Sale Sharks": {
+              "runnerId": 1982197554170051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Worcester Warriors": {
+              "runnerId": 1982197554210151,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "DRAW (Sal/Wor)": {
+              "runnerId": 1982197554250151,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Total": {
+          "market-id": 1987097103880256,
+          "allRunners": {
+            "OVER 43.5": {
+              "runnerId": 1987097104100056,
+              "back": 0,
+              "lay": 0
+            },
+            "UNDER 43.5": {
+              "runnerId": 1987097104130156,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "13:20 Chepstow": {
-      "id": 1978418718050051,
-      "start": "2022-02-04T13:20:00.000Z",
+    "Wasps vs Bath": {
+      "id": 1982197561870051,
+      "start": "2022-02-12T15:00:00.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 0f 11y"
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.044Z",
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1982197561870051,
+          "start": "2022-02-12T15:00:00.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.044Z"
+        }
+      },
+      "markets": {
+        "Match Odds": {
+          "market-id": 1982197562060051,
+          "allRunners": {
+            "Wasps": {
+              "runnerId": 1982197562110051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Bath": {
+              "runnerId": 1982197562150051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "DRAW (Was/Bat)": {
+              "runnerId": 1982197562190051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Total": {
+          "market-id": 1987119657490056,
+          "allRunners": {
+            "OVER 55.5": {
+              "runnerId": 1987119657550056,
+              "back": 0,
+              "lay": 0
+            },
+            "UNDER 55.5": {
+              "runnerId": 1987119657600056,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "13:30 Catterick": {
-      "id": 1978418120560051,
-      "start": "2022-02-04T13:30:00.000Z",
+    "Bulls vs Cell C Sharks": {
+      "id": 1982182018220051,
+      "start": "2022-02-12T15:05:00.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 7f 145y"
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.044Z",
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1982182018220051,
+          "start": "2022-02-12T15:05:00.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.044Z"
+        }
+      },
+      "markets": {
+        "Match Odds": {
+          "market-id": 1982182018860051,
+          "allRunners": {
+            "Bulls": {
+              "runnerId": 1982182018910051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Cell C Sharks": {
+              "runnerId": 1982182018950151,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "DRAW (Bul/Cel)": {
+              "runnerId": 1982182019000051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Total": {
+          "market-id": 1987121376660056,
+          "allRunners": {
+            "OVER 42.5": {
+              "runnerId": 1987121390580056,
+              "back": 0,
+              "lay": 0
+            },
+            "UNDER 42.5": {
+              "runnerId": 1987121390630056,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Handicap": {
+          "market-id": 1986397045990056,
+          "allRunners": {
+            "Bulls -3.5": {
+              "runnerId": 1986397046100056,
+              "back": 0,
+              "lay": 0
+            },
+            "Cell C Sharks +3.5": {
+              "runnerId": 1986397046140056,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "13:40 Lingfield": {
-      "id": 1978420530650051,
-      "start": "2022-02-04T13:40:00.000Z",
+    "France vs Ireland": {
+      "id": 1982192423330051,
+      "start": "2022-02-12T16:45:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "1m 0f 1y"
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1982192423330051,
+          "start": "2022-02-12T16:45:00.000Z",
+          "status": "open",
+          "in-running-flag": false,
+          "realStartTime": 0
+        }
+      },
+      "markets": {
+        "Match Odds": {
+          "market-id": 1982192423510051,
+          "allRunners": {
+            "France": {
+              "runnerId": 1982192423570051,
+              "withdrawn": false,
+              "back": 1.66,
+              "lay": 1.7
+            },
+            "Ireland": {
+              "runnerId": 1982192423620051,
+              "withdrawn": false,
+              "back": 2.6,
+              "lay": 2.82
+            },
+            "DRAW (Fra/Ire)": {
+              "runnerId": 1982192423660051,
+              "withdrawn": false,
+              "back": 17.5,
+              "lay": 38
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Total": {
+          "market-id": 1987116127190056,
+          "allRunners": {
+            "OVER 50.5": {
+              "runnerId": 1987116127490056,
+              "back": 0,
+              "lay": 0
+            },
+            "UNDER 50.5": {
+              "runnerId": 1987116127540056,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Handicap": {
+          "market-id": 1985345014900048,
+          "allRunners": {
+            "France -5.5": {
+              "runnerId": 1985345014960048,
+              "back": 0,
+              "lay": 0
+            },
+            "Ireland +5.5": {
+              "runnerId": 1985345015000148,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "13:50 Fairview": {
-      "id": 1979188884160051,
-      "start": "2022-02-04T13:50:00.000Z",
+    "RC Toulon vs Bordeaux-Bègles": {
+      "id": 1983652540130051,
+      "start": "2022-02-12T20:05:00.000Z",
       "status": "open",
       "in-running-flag": false,
       "realStartTime": 0,
-      "race-length": "0m 4f 214y"
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1983652540130051,
+          "start": "2022-02-12T20:05:00.000Z",
+          "status": "open",
+          "in-running-flag": false,
+          "realStartTime": 0
+        }
+      },
+      "markets": {
+        "Match Odds": {
+          "market-id": 1983652677120051,
+          "allRunners": {
+            "RC Toulon": {
+              "runnerId": 1983652703870051,
+              "withdrawn": false,
+              "back": 1.68,
+              "lay": 1.73
+            },
+            "Bordeaux-Bègles": {
+              "runnerId": 1983652703920051,
+              "withdrawn": false,
+              "back": 2.5,
+              "lay": 2.7
+            },
+            "DRAW (RC /Bor)": {
+              "runnerId": 1983652703980051,
+              "withdrawn": false,
+              "back": 20,
+              "lay": 29
+            }
+          },
+          "number-of-winners": 1
+        },
+        "Total": {
+          "market-id": 1987236795450056,
+          "allRunners": {
+            "OVER 40.5": {
+              "runnerId": 1987236810280056,
+              "back": 0,
+              "lay": 0
+            },
+            "UNDER 40.5": {
+              "runnerId": 1987236810350056,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "13:55 Chepstow": {
-      "id": 1978418720230051,
-      "start": "2022-02-04T13:55:00.000Z",
+    "The Six Nations - Winner": {
+      "id": 1958474565940016,
+      "start": "2022-02-13T15:00:00.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 7f 131y"
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.046Z",
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1958474565940016,
+          "start": "2022-02-13T15:00:00.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.046Z"
+        }
+      },
+      "markets": {
+        "Outright Winner": {
+          "market-id": 1958478302170016,
+          "allRunners": {
+            "France": {
+              "runnerId": 1958478302200016,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Ireland": {
+              "runnerId": 1958478302260016,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "England": {
+              "runnerId": 1958478302230016,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Scotland": {
+              "runnerId": 1958478302300016,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Wales ": {
+              "runnerId": 1958478302330016,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Italy": {
+              "runnerId": 1958478302360016,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "14:05 Catterick": {
-      "id": 1978418121390051,
-      "start": "2022-02-04T14:05:00.000Z",
+    "The Six Nations - Grand Slam Winner": {
+      "id": 1977569322630051,
+      "start": "2022-02-13T15:00:01.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "3m 1f 71y"
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.046Z",
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1977569322630051,
+          "start": "2022-02-13T15:00:01.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.046Z"
+        }
+      },
+      "markets": {
+        "Winner": {
+          "market-id": 1977572238120051,
+          "allRunners": {
+            "No Grand Slam": {
+              "runnerId": 1977572238150051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "France": {
+              "runnerId": 1977572238190151,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Ireland": {
+              "runnerId": 1977572238250151,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Scotland": {
+              "runnerId": 1977572238310151,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     },
-    "14:15 Lingfield": {
-      "id": 1978420531930051,
-      "start": "2022-02-04T14:15:00.000Z",
+    "The Six Nations - Triple Crown Winner": {
+      "id": 1977560128630051,
+      "start": "2022-02-13T15:00:02.000Z",
       "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 7f 1y"
-    },
-    "14:23 Fairview": {
-      "id": 1979188885780051,
-      "start": "2022-02-04T14:23:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 4f 214y"
-    },
-    "14:25 Chepstow": {
-      "id": 1978418721020051,
-      "start": "2022-02-04T14:25:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 7f 131y"
-    },
-    "14:35 Catterick": {
-      "id": 1978418122190051,
-      "start": "2022-02-04T14:35:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "3m 1f 54y"
-    },
-    "14:45 Lingfield": {
-      "id": 1978420532740051,
-      "start": "2022-02-04T14:45:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 6f 1y"
-    },
-    "15:00 Chepstow": {
-      "id": 1978418722520051,
-      "start": "2022-02-04T15:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 3f 98y"
-    },
-    "15:10 Catterick": {
-      "id": 1978418122750051,
-      "start": "2022-02-04T15:10:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 3f 66y"
-    },
-    "15:20 Lingfield": {
-      "id": 1978420534330051,
-      "start": "2022-02-04T15:20:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 5f 6y"
-    },
-    "15:30 Chepstow": {
-      "id": 1978418724590051,
-      "start": "2022-02-04T15:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "3m 2f 54y"
-    },
-    "15:40 Catterick": {
-      "id": 1978418123740051,
-      "start": "2022-02-04T15:40:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 3f 51y"
-    },
-    "15:50 Lingfield": {
-      "id": 1978420535850051,
-      "start": "2022-02-04T15:50:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 2f 0y"
-    },
-    "15:55 Dundalk": {
-      "id": 1978424423140051,
-      "start": "2022-02-04T15:55:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "5f"
-    },
-    "16:00 Chepstow": {
-      "id": 1978418726980051,
-      "start": "2022-02-04T16:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 3f 100y"
-    },
-    "16:10 Newcastle": {
-      "id": 1978420538500051,
-      "start": "2022-02-04T16:10:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 2f 42y"
-    },
-    "16:15 Catterick": {
-      "id": 1978418124710051,
-      "start": "2022-02-04T16:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 3f 66y"
-    },
-    "16:24 Lingfield": {
-      "id": 1978420536720051,
-      "start": "2022-02-04T16:24:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 2f 0y"
-    },
-    "16:30 Dundalk": {
-      "id": 1978424426040051,
-      "start": "2022-02-04T16:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 4f"
-    },
-    "16:35 Chepstow": {
-      "id": 1978418728990051,
-      "start": "2022-02-04T16:35:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "2m 0f 11y"
-    },
-    "16:45 Newcastle": {
-      "id": 1978420556230051,
-      "start": "2022-02-04T16:45:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 6f 0y"
-    },
-    "17:00 Dundalk": {
-      "id": 1978424428950051,
-      "start": "2022-02-04T17:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 2f 150yds"
-    },
-    "17:15 Newcastle": {
-      "id": 1978420557230051,
-      "start": "2022-02-04T17:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 6f 0y"
-    },
-    "17:30 Dundalk": {
-      "id": 1978424433450051,
-      "start": "2022-02-04T17:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 2f 150yds"
-    },
-    "17:45 Newcastle": {
-      "id": 1978420558290051,
-      "start": "2022-02-04T17:45:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 5f 0y"
-    },
-    "18:00 Dundalk": {
-      "id": 1978424437910051,
-      "start": "2022-02-04T18:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "7f"
-    },
-    "18:15 Newcastle": {
-      "id": 1978420559750051,
-      "start": "2022-02-04T18:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m 0f 5y"
-    },
-    "18:30 Dundalk": {
-      "id": 1978424440610051,
-      "start": "2022-02-04T18:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m"
-    },
-    "18:45 Newcastle": {
-      "id": 1978420560730051,
-      "start": "2022-02-04T18:45:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 7f 14y"
-    },
-    "19:00 Dundalk": {
-      "id": 1978424443360051,
-      "start": "2022-02-04T19:00:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m"
-    },
-    "19:15 Newcastle": {
-      "id": 1978420562000051,
-      "start": "2022-02-04T19:15:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "0m 7f 14y"
-    },
-    "19:30 Dundalk": {
-      "id": 1978424447470051,
-      "start": "2022-02-04T19:30:00.000Z",
-      "status": "open",
-      "in-running-flag": false,
-      "realStartTime": 0,
-      "race-length": "1m"
+      "in-running-flag": true,
+      "realStartTime": "2022-02-12T15:42:23.047Z",
+      "metaData": {
+        "stakeValue": 0.2,
+        "minWinConfidencePercentage": 80,
+        "maxWinConfidencePercentage": 150,
+        "minProfitOdd": 0.8,
+        "todayTotalBetAmountLimit": 15,
+        "sumOfAlreadyPlacedBetAmount": 10.4,
+        "currentBalance": 6.24,
+        "eventInfoObj": {
+          "id": 1977560128630051,
+          "start": "2022-02-13T15:00:02.000Z",
+          "status": "open",
+          "in-running-flag": true,
+          "realStartTime": "2022-02-12T15:42:23.047Z"
+        }
+      },
+      "markets": {
+        "Winner": {
+          "market-id": 1977563157300051,
+          "allRunners": {
+            "No Winner": {
+              "runnerId": 1977563157470051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Ireland": {
+              "runnerId": 1977563157380051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            },
+            "Scotland": {
+              "runnerId": 1977563157440051,
+              "withdrawn": false,
+              "back": 0,
+              "lay": 0
+            }
+          },
+          "number-of-winners": 1
+        }
+      }
     }
   }
 }
