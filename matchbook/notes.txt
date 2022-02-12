@@ -328,7 +328,12 @@ ________________________________________________________________________________
 
 
 
+------------------------------------------------------------------------------------------------------------------------
+Same HORSE will have different runner-id on different markets. 
+Runner-id is unique.
 
+HORSE - "8 Lassue" - Runner-id => 1982738798240051  (WIN market)
+HORSE - "8 Lassue" - Runner-id => 1982738798510051  (Place(2 market))
 
 
 
@@ -338,3 +343,64 @@ Sports            How long it last for ?
 --------------------------------------
 1. Golf               4 days
 2. Horse Race         5 mins
+
+
+------------------------------------------------------------------------------------------------------------------------
+After Bet:
+----------
+
+acceptor-commission-rate: 0.02
+commission-reserve: 0
+commission-type: "NET_WIN"
+created-at: "2022-02-08T18:35:14.932Z"
+currency: "EUR"
+decimal-odds: 2.5
+event-id: 1982792051830051
+event-name: "18:28 Towcester"
+exchange-type: "back-lay"
+id: 1983884435020010
+in-play: false
+keep-in-play: false
+last-modified-time: "2022-02-08T18:35:14.932Z"
+market-id: 1982792052390051
+market-name: "WIN"
+market-type: "outright_ded_fact"
+odds: 2.5
+odds-type: "DECIMAL"
+originator-commission-rate: 0.02
+potential-profit: 0.3
+remaining: 0.2
+remaining-potential-profit: 0.3
+runner-id: 1982792052560151
+runner-name: "Manyana"
+side: "back"
+sport-id: 241798357140019
+stake: 0.2
+status: "open"
+
+
+g_betNow:
+--------
+
+
+event-start-time: "2022-02-08T18:28:00.000Z"
+market: "WIN"
+odds: 2.5
+runner-id: 1982792052560151
+side: "back"
+sport-id: 241798357140019
+sportName: "Greyhound Racing"
+stake: 0.2
+winPercentage: 143.9
+
+
+Offer Submission:
+------------------
+offers: [
+      {
+        'runner-id': 401525949430009,
+        side: 'back',
+        odds: 2.4,
+        stake: 5,
+        'keep-in-play': true
+      }
