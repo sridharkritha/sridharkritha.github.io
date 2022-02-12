@@ -19,7 +19,7 @@
 	const g_scanStartTime = new Date();
 
 	const g_BetStakeValue = 0.2;            // ( 0.1 = 1p, 1 = £1) your REAL MONEY !!!!
-	const g_todayTotalBetAmountLimit = 8.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
+	const g_todayTotalBetAmountLimit = 15.0; // 10 => £10 = max Limit for today = SUM of all bet stakes
 	let   g_sumOfAlreadyPlacedBetAmount = 0; 
 	let   g_userBalance = 0.00;
 	let   g_moneyStatus = {};
