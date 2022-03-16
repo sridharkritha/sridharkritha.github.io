@@ -55,13 +55,13 @@ for (var i = 1; i < 31; i++) {
 mytable += "</tr></tbody></table>";
 document.write(mytable);
 -->
-<h1> Channel 4 ( pick 6 ) </h1>
+<h1> ITV ( pick 7 ) </h1>
 
 
 
 <script type="text/javascript">
 
-var nRaces = 6;
+var nRaces = 7;
 var nHorses = 3;
 function showValue(newValue, slide)
 { 
@@ -108,7 +108,7 @@ for (var race = 0; race < nRaces; ++race)
 			   pot[idx] = horseNo;
 			}
 			start += freq;
-		}      	   
+		}
 	}
 	start = 0;
 	shuffle(pot); 
@@ -142,7 +142,7 @@ for (var race = 0; race < nRaces; ++race)
 		 var sliderID = "slider" + race + row;
 		 var horseID = "horse" + race + row;
 		 // mytable += '<td><INPUT TYPE="TEXT" NAME="horseNo" SIZE="3"></td>';
-		 mytable += "<td><INPUT TYPE='TEXT' style='text-align:center;' value='0' id='" + horseID + "' SIZE='3'></td>";
+		 mytable += "<td><INPUT TYPE='number' style='text-align:center;' value='0' id='" + horseID + "' SIZE='3'></td>";
 		
 		// mytable += "<td><input type=\"range\" min=\"0\" max=\"100\" value=\"0\" step=\"5\" onchange=\'showValue(this.value, \"slider1\")\' /> <span id=\"slider1\">0</span> </td>";
 		 /*
@@ -161,7 +161,7 @@ document.write(mytable);
 
 </script>
 <br>
-<button type="button" onclick="showLuckySix('Hello world!')">Pick Six</button>
-<span id="luckySix"> X X X X X X</span>     
+<button type="button" onclick="showLuckySix('Hello world!')">Pick Seven</button>
+<span id="luckySix"> X X X X X X X</span>
 </body>
 </html>
